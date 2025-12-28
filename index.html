@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -883,7 +883,7 @@
         }
 
         .pricing-features li::before {
-            content: "âœ“";
+            content: "œ“";
             color: #00e676;
             font-weight: bold;
         }
@@ -1328,7 +1328,7 @@
             <div class="paywall-footer">
                 <p>
                     <svg class="lock-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7C8 4.79 9.79 3 12 3C14.21 3 16 4.79 16 7V11"/></svg>
-                    Secure payment via Stripe â€¢ Instant access after purchase
+                    Secure payment via Stripe €¢ Instant access after purchase
                 </p>
             </div>
         </div>
@@ -1453,7 +1453,7 @@
                 <div id="map"></div>
             </div>
             <div class="wells-container" id="wells-container">
-                <h2>Nearby Wells <span class="scroll-hint" id="scroll-hint">â†“ Scroll for more</span></h2>
+                <h2>Nearby Wells <span class="scroll-hint" id="scroll-hint">†“ Scroll for more</span></h2>
                 <div id="summary"></div>
                 <div id="wells-list"></div>
             </div>
@@ -1825,7 +1825,7 @@
                 
                 // Check if we have pre-geocoded coordinates from autocomplete
                 if (addressInput.dataset.lat && addressInput.dataset.lon) {
-                    btn.textContent = 'â³ Searching wells...';
+                    btn.textContent = '³ Searching wells...';
                     location = {
                         lat: parseFloat(addressInput.dataset.lat),
                         lon: parseFloat(addressInput.dataset.lon),
@@ -1835,7 +1835,7 @@
                     delete addressInput.dataset.lat;
                     delete addressInput.dataset.lon;
                 } else {
-                    btn.textContent = 'â³ Geocoding address...';
+                    btn.textContent = '³ Geocoding address...';
                     location = await geocodeAddress(address);
                 }
                 
@@ -1847,7 +1847,7 @@
                     county = detectCounty(location.address);
                 }
                 
-                btn.textContent = 'â³ Searching wells...';
+                btn.textContent = '³ Searching wells...';
                 await searchWells(location.lat, location.lon, radius, county);
             } catch (error) {
                 alert('Error: ' + error.message);
@@ -1872,7 +1872,7 @@
             
             const btn = document.getElementById('search-btn-coords');
             btn.disabled = true;
-            btn.textContent = 'â³ Searching wells...';
+            btn.textContent = '³ Searching wells...';
             
             try {
                 await searchWells(lat, lon, radius, county);
