@@ -1962,7 +1962,14 @@
             
             try {
                 const response = await fetch(url);
-                const data = await response.json();
+                const text = await response.text();
+                
+                // Check for rate limit error
+                if (text.includes('Exceeded Daily Data Limit')) {
+                    throw new Error('RATE_LIMIT');
+                }
+                
+                const data = JSON.parse(text);
                 
                 if (data.ResultList && data.ResultList.length > 0) {
                     // Filter wells with depth data and calculate distances
@@ -1983,6 +1990,9 @@
                     displayNoResults();
                 }
             } catch (error) {
+                if (error.message === 'RATE_LIMIT') {
+                    throw new Error('The Colorado DWR API daily limit has been reached. Please try again tomorrow, or try a different search radius.');
+                }
                 throw new Error('Failed to fetch well data: ' + error.message);
             }
         }
