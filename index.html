@@ -2429,6 +2429,22 @@
             }
         });
     </script>
+    
+    <!-- Visitor Tracking -->
+    <script>
+        (function() {
+            try {
+                fetch('https://well-tracker.trilakes.workers.dev/track', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        page: window.location.pathname,
+                        referrer: document.referrer
+                    })
+                }).catch(() => {});
+            } catch(e) {}
+        })();
+    </script>
 </body>
 </html>
 

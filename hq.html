@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
     <title>HQ - Colorado Well Finder</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #0a0a15 0%, #1a1a2e 50%, #16213e 100%);
@@ -30,10 +27,7 @@
             border: 1px solid rgba(255,255,255,0.1);
             text-align: center;
         }
-        .login-box h2 {
-            color: #4fc3f7;
-            margin-bottom: 20px;
-        }
+        .login-box h2 { color: #4fc3f7; margin-bottom: 20px; }
         .login-box input {
             padding: 15px 20px;
             font-size: 16px;
@@ -53,28 +47,19 @@
             color: #fff;
             cursor: pointer;
         }
-        .dashboard {
-            display: none;
-            padding: 30px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-        .dashboard.active {
-            display: block;
-        }
+        .dashboard { display: none; padding: 20px; max-width: 1600px; margin: 0 auto; }
+        .dashboard.active { display: block; }
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding-bottom: 20px;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
-        header h1 {
-            color: #4fc3f7;
-            font-size: 1.8rem;
-        }
-        .logout-btn {
+        header h1 { color: #4fc3f7; font-size: 1.5rem; }
+        .header-btns { display: flex; gap: 10px; }
+        .btn {
             padding: 10px 20px;
             background: rgba(255,255,255,0.1);
             border: none;
@@ -82,116 +67,126 @@
             color: #fff;
             cursor: pointer;
         }
+        .btn.primary { background: rgba(79, 195, 247, 0.3); color: #4fc3f7; }
+        
+        /* Stats Grid */
         .stats-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        @media (max-width: 1200px) {
+            .stats-grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 600px) {
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
         }
         .stat-card {
             background: rgba(255,255,255,0.05);
-            padding: 25px;
-            border-radius: 15px;
+            padding: 20px;
+            border-radius: 12px;
             border: 1px solid rgba(255,255,255,0.1);
         }
-        .stat-card h3 {
-            color: #888;
-            font-size: 0.9rem;
-            margin-bottom: 10px;
+        .stat-card h3 { color: #888; font-size: 0.75rem; margin-bottom: 8px; text-transform: uppercase; }
+        .stat-card .value { font-size: 2rem; color: #4fc3f7; font-weight: bold; }
+        .stat-card .value.live { color: #4caf50; animation: pulse 2s infinite; }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.6; }
         }
-        .stat-card .value {
-            font-size: 2.5rem;
-            color: #4fc3f7;
-            font-weight: bold;
+        .stat-card .sub { color: #666; font-size: 0.8rem; margin-top: 5px; }
+        
+        /* Main Grid */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 400px;
+            gap: 20px;
         }
-        .stat-card .sub {
-            color: #666;
-            font-size: 0.85rem;
-            margin-top: 5px;
+        @media (max-width: 1000px) {
+            .main-grid { grid-template-columns: 1fr; }
         }
+        
+        /* Map */
+        .map-section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            overflow: hidden;
+        }
+        .map-header {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .map-header h2 { color: #4fc3f7; font-size: 1.1rem; }
+        #visitorMap { height: 400px; }
+        
+        /* Sidebar */
+        .sidebar { display: flex; flex-direction: column; gap: 20px; }
         .section {
             background: rgba(255,255,255,0.05);
-            padding: 25px;
+            padding: 20px;
             border-radius: 15px;
             border: 1px solid rgba(255,255,255,0.1);
-            margin-bottom: 20px;
         }
-        .section h2 {
-            color: #4fc3f7;
-            margin-bottom: 20px;
-            font-size: 1.3rem;
+        .section h2 { color: #4fc3f7; margin-bottom: 15px; font-size: 1rem; }
+        
+        /* Visitor List */
+        .visitor-list { max-height: 300px; overflow-y: auto; }
+        .visitor-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
         }
+        .visitor-item:last-child { border-bottom: none; }
+        .visitor-info { flex: 1; }
+        .visitor-location { color: #fff; font-size: 0.9rem; }
+        .visitor-details { color: #666; font-size: 0.75rem; margin-top: 3px; }
+        .visitor-time { color: #888; font-size: 0.75rem; }
+        .live-dot {
+            width: 8px;
+            height: 8px;
+            background: #4caf50;
+            border-radius: 50%;
+            margin-right: 10px;
+            animation: pulse 2s infinite;
+        }
+        
+        /* Payments */
         .payment-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 12px 0;
             border-bottom: 1px solid rgba(255,255,255,0.05);
         }
-        .payment-row:last-child {
-            border-bottom: none;
-        }
-        .payment-email {
-            color: #fff;
-        }
-        .payment-amount {
-            color: #4caf50;
-            font-weight: bold;
-        }
-        .payment-date {
-            color: #888;
-            font-size: 0.85rem;
-        }
-        .payment-status {
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-        .payment-status.succeeded {
-            background: rgba(76, 175, 80, 0.2);
-            color: #4caf50;
-        }
-        .payment-status.pending {
-            background: rgba(255, 193, 7, 0.2);
-            color: #ffc107;
-        }
-        .quick-links {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-        }
+        .payment-row:last-child { border-bottom: none; }
+        .payment-email { color: #fff; font-size: 0.9rem; }
+        .payment-date { color: #666; font-size: 0.75rem; }
+        .payment-amount { color: #4caf50; font-weight: bold; }
+        
+        /* Quick Links */
+        .quick-links { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
         .quick-link {
             display: block;
-            padding: 20px;
+            padding: 15px;
             background: rgba(255,255,255,0.05);
-            border-radius: 10px;
+            border-radius: 8px;
             text-decoration: none;
             color: #fff;
             text-align: center;
+            font-size: 0.85rem;
             transition: all 0.3s;
         }
-        .quick-link:hover {
-            background: rgba(79, 195, 247, 0.2);
-        }
-        .loading {
-            text-align: center;
-            padding: 40px;
-            color: #888;
-        }
-        .error {
-            color: #f44336;
-            padding: 20px;
-            text-align: center;
-        }
-        .refresh-btn {
-            padding: 10px 20px;
-            background: rgba(79, 195, 247, 0.2);
-            border: none;
-            border-radius: 8px;
-            color: #4fc3f7;
-            cursor: pointer;
-            margin-left: 10px;
-        }
+        .quick-link:hover { background: rgba(79, 195, 247, 0.2); }
+        
+        .loading { text-align: center; padding: 30px; color: #888; }
+        .error { color: #f44336; padding: 20px; text-align: center; }
     </style>
 </head>
 <body>
@@ -209,64 +204,96 @@
     <div class="dashboard" id="dashboard">
         <header>
             <h1>💧 Colorado Well Finder HQ</h1>
-            <div>
-                <button class="refresh-btn" onclick="loadStripeData()">🔄 Refresh</button>
-                <button class="logout-btn" onclick="logout()">Logout</button>
+            <div class="header-btns">
+                <button class="btn primary" onclick="refreshAll()">🔄 Refresh</button>
+                <button class="btn" onclick="logout()">Logout</button>
             </div>
         </header>
 
         <!-- Stats Grid -->
         <div class="stats-grid">
             <div class="stat-card">
-                <h3>TOTAL REVENUE</h3>
-                <div class="value" id="totalRevenue">$0</div>
-                <div class="sub">Lifetime</div>
+                <h3>🟢 Live Now</h3>
+                <div class="value live" id="liveVisitors">0</div>
+                <div class="sub">Active visitors</div>
             </div>
             <div class="stat-card">
-                <h3>TOTAL CUSTOMERS</h3>
+                <h3>👁️ Today</h3>
+                <div class="value" id="todayVisitors">0</div>
+                <div class="sub">Page views</div>
+            </div>
+            <div class="stat-card">
+                <h3>📅 This Week</h3>
+                <div class="value" id="weekVisitors">0</div>
+                <div class="sub">Page views</div>
+            </div>
+            <div class="stat-card">
+                <h3>💰 Revenue</h3>
+                <div class="value" id="totalRevenue">$0</div>
+                <div class="sub">All time</div>
+            </div>
+            <div class="stat-card">
+                <h3>👥 Customers</h3>
                 <div class="value" id="totalCustomers">0</div>
                 <div class="sub">All time</div>
             </div>
             <div class="stat-card">
-                <h3>THIS MONTH</h3>
+                <h3>📈 This Month</h3>
                 <div class="value" id="monthRevenue">$0</div>
-                <div class="sub" id="monthName">December 2025</div>
-            </div>
-            <div class="stat-card">
-                <h3>AVERAGE ORDER</h3>
-                <div class="value" id="avgOrder">$0</div>
-                <div class="sub">Per customer</div>
+                <div class="sub" id="monthName">December</div>
             </div>
         </div>
 
-        <!-- Recent Payments -->
-        <div class="section">
-            <h2>💳 Recent Payments</h2>
-            <div id="paymentsContainer">
-                <div class="loading">Loading payments...</div>
+        <!-- Main Grid -->
+        <div class="main-grid">
+            <!-- Map -->
+            <div class="map-section">
+                <div class="map-header">
+                    <h2>🗺️ Live Visitor Map</h2>
+                    <span id="mapStatus" style="color: #888; font-size: 0.85rem;">Loading...</span>
+                </div>
+                <div id="visitorMap"></div>
             </div>
-        </div>
 
-        <!-- Quick Links -->
-        <div class="section">
-            <h2>🔗 Quick Links</h2>
-            <div class="quick-links">
-                <a href="https://dashboard.stripe.com" target="_blank" class="quick-link">💰 Stripe Dashboard</a>
-                <a href="https://analytics.google.com" target="_blank" class="quick-link">📊 Google Analytics</a>
-                <a href="https://search.google.com/search-console" target="_blank" class="quick-link">🔍 Search Console</a>
-                <a href="https://github.com/trilakes/colorado-well-lookup" target="_blank" class="quick-link">📁 GitHub Repo</a>
-                <a href="https://coloradowell.com" target="_blank" class="quick-link">🌐 Live Site</a>
-                <a href="https://coloradowell.com?access=granted" target="_blank" class="quick-link">✅ Test Unlocked</a>
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Recent Visitors -->
+                <div class="section">
+                    <h2>👥 Recent Visitors</h2>
+                    <div class="visitor-list" id="visitorList">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </div>
+
+                <!-- Recent Payments -->
+                <div class="section">
+                    <h2>💳 Recent Payments</h2>
+                    <div id="paymentsContainer">
+                        <div class="loading">Loading...</div>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="section">
+                    <h2>🔗 Quick Links</h2>
+                    <div class="quick-links">
+                        <a href="https://dashboard.stripe.com" target="_blank" class="quick-link">💰 Stripe</a>
+                        <a href="https://analytics.google.com" target="_blank" class="quick-link">📊 Analytics</a>
+                        <a href="https://search.google.com/search-console" target="_blank" class="quick-link">🔍 Search Console</a>
+                        <a href="https://coloradowell.com" target="_blank" class="quick-link">🌐 Live Site</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // Simple access code (change this!)
         const ACCESS_CODE = 'well2025';
-        
-        // Stripe API Key - stored locally after first entry
+        const TRACKER_URL = 'https://well-tracker.trilakes.workers.dev';
         let STRIPE_KEY = localStorage.getItem('hq_stripe_key') || '';
+        let map = null;
+        let markers = [];
 
         function login() {
             const code = document.getElementById('accessCode').value;
@@ -287,7 +314,10 @@
             document.getElementById('loginScreen').style.display = 'none';
             document.getElementById('dashboard').classList.add('active');
             
-            // Check if we have a Stripe key
+            // Initialize map
+            setTimeout(initMap, 100);
+            
+            // Check for Stripe key
             if (!STRIPE_KEY) {
                 const key = prompt('Enter your Stripe Secret Key (sk_live_...)\\nThis will be saved locally in your browser.');
                 if (key && key.startsWith('sk_')) {
@@ -296,23 +326,149 @@
                 }
             }
             
-            if (STRIPE_KEY) {
-                loadStripeData();
-            } else {
-                document.getElementById('paymentsContainer').innerHTML = '<div class="error">No Stripe key configured. Refresh and enter your key.</div>';
+            refreshAll();
+            
+            // Auto-refresh every 30 seconds
+            setInterval(loadVisitorData, 30000);
+        }
+
+        function initMap() {
+            map = L.map('visitorMap').setView([39.5, -105.5], 4);
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+                attribution: '©OpenStreetMap, ©CartoDB'
+            }).addTo(map);
+        }
+
+        function refreshAll() {
+            loadVisitorData();
+            if (STRIPE_KEY) loadStripeData();
+        }
+
+        async function loadVisitorData() {
+            try {
+                const response = await fetch(`${TRACKER_URL}/visitors?key=well2025hq`);
+                if (!response.ok) throw new Error('Tracker not configured');
+                
+                const data = await response.json();
+                
+                // Update stats
+                document.getElementById('liveVisitors').textContent = data.live || 0;
+                
+                // Calculate today's visitors
+                const today = new Date().toISOString().split('T')[0];
+                const todayCount = data.stats?.[today] || 0;
+                document.getElementById('todayVisitors').textContent = todayCount;
+                
+                // Calculate week
+                let weekCount = 0;
+                for (let i = 0; i < 7; i++) {
+                    const d = new Date();
+                    d.setDate(d.getDate() - i);
+                    const key = d.toISOString().split('T')[0];
+                    weekCount += data.stats?.[key] || 0;
+                }
+                document.getElementById('weekVisitors').textContent = weekCount;
+                
+                // Update map
+                updateMap(data.visitors || []);
+                
+                // Update visitor list
+                updateVisitorList(data.visitors || []);
+                
+                document.getElementById('mapStatus').textContent = `Last updated: ${new Date().toLocaleTimeString()}`;
+                
+            } catch (error) {
+                console.log('Tracker not available:', error);
+                document.getElementById('mapStatus').textContent = 'Tracker not configured - see setup instructions';
+                document.getElementById('visitorList').innerHTML = `
+                    <div class="loading">
+                        <p>Visitor tracking not configured yet.</p>
+                        <p style="font-size: 0.8rem; margin-top: 10px; color: #666;">
+                            Deploy the Cloudflare Worker to enable live tracking.
+                        </p>
+                    </div>
+                `;
             }
+        }
+
+        function updateMap(visitors) {
+            // Clear existing markers
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+            
+            const fiveMinAgo = Date.now() - (5 * 60 * 1000);
+            
+            visitors.forEach(v => {
+                if (v.lat && v.lon) {
+                    const isLive = v.timestamp > fiveMinAgo;
+                    const color = isLive ? '#4caf50' : '#888';
+                    
+                    const marker = L.circleMarker([v.lat, v.lon], {
+                        radius: isLive ? 8 : 5,
+                        fillColor: color,
+                        color: color,
+                        weight: 1,
+                        opacity: 1,
+                        fillOpacity: 0.7
+                    }).addTo(map);
+                    
+                    marker.bindPopup(`
+                        <b>${v.city || 'Unknown'}, ${v.region || ''}</b><br>
+                        ${v.country}<br>
+                        <small>${new Date(v.timestamp).toLocaleString()}</small>
+                    `);
+                    
+                    markers.push(marker);
+                }
+            });
+            
+            // Fit bounds if we have markers
+            if (markers.length > 0) {
+                const group = L.featureGroup(markers);
+                map.fitBounds(group.getBounds().pad(0.3));
+            }
+        }
+
+        function updateVisitorList(visitors) {
+            const container = document.getElementById('visitorList');
+            const fiveMinAgo = Date.now() - (5 * 60 * 1000);
+            
+            if (visitors.length === 0) {
+                container.innerHTML = '<div class="loading">No visitors yet. Share your site!</div>';
+                return;
+            }
+            
+            container.innerHTML = visitors.slice(0, 15).map(v => {
+                const isLive = v.timestamp > fiveMinAgo;
+                const timeAgo = getTimeAgo(v.timestamp);
+                
+                return `
+                    <div class="visitor-item">
+                        ${isLive ? '<div class="live-dot"></div>' : '<div style="width: 18px;"></div>'}
+                        <div class="visitor-info">
+                            <div class="visitor-location">${v.city || 'Unknown'}, ${v.country || ''}</div>
+                            <div class="visitor-details">${v.page || '/'} • ${v.ip?.substring(0, 10)}...</div>
+                        </div>
+                        <div class="visitor-time">${timeAgo}</div>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function getTimeAgo(timestamp) {
+            const seconds = Math.floor((Date.now() - timestamp) / 1000);
+            if (seconds < 60) return 'Just now';
+            if (seconds < 3600) return `${Math.floor(seconds / 60)}m ago`;
+            if (seconds < 86400) return `${Math.floor(seconds / 3600)}h ago`;
+            return `${Math.floor(seconds / 86400)}d ago`;
         }
 
         async function loadStripeData() {
             const container = document.getElementById('paymentsContainer');
-            container.innerHTML = '<div class="loading">Loading payments...</div>';
-
+            
             try {
-                // Fetch payments from Stripe
-                const response = await fetch('https://api.stripe.com/v1/payment_intents?limit=20', {
-                    headers: {
-                        'Authorization': `Bearer ${STRIPE_KEY}`
-                    }
+                const response = await fetch('https://api.stripe.com/v1/payment_intents?limit=10', {
+                    headers: { 'Authorization': `Bearer ${STRIPE_KEY}` }
                 });
 
                 if (!response.ok) throw new Error('Failed to fetch');
@@ -328,42 +484,31 @@
 
                 payments.forEach(p => {
                     totalRevenue += p.amount;
-                    if (p.created >= monthStart) {
-                        monthRevenue += p.amount;
-                    }
+                    if (p.created >= monthStart) monthRevenue += p.amount;
                 });
 
-                // Update stats
-                document.getElementById('totalRevenue').textContent = '$' + (totalRevenue / 100).toFixed(2);
+                document.getElementById('totalRevenue').textContent = '$' + (totalRevenue / 100).toFixed(0);
                 document.getElementById('totalCustomers').textContent = payments.length;
-                document.getElementById('monthRevenue').textContent = '$' + (monthRevenue / 100).toFixed(2);
-                document.getElementById('avgOrder').textContent = payments.length > 0 
-                    ? '$' + ((totalRevenue / 100) / payments.length).toFixed(2) 
-                    : '$0';
-                document.getElementById('monthName').textContent = now.toLocaleDateString('en-US', { month: 'long', year: 'numeric' });
+                document.getElementById('monthRevenue').textContent = '$' + (monthRevenue / 100).toFixed(0);
+                document.getElementById('monthName').textContent = now.toLocaleDateString('en-US', { month: 'long' });
 
-                // Render payments
                 if (payments.length === 0) {
-                    container.innerHTML = '<div class="loading">No payments yet. Your first sale is coming! 🚀</div>';
+                    container.innerHTML = '<div class="loading">No payments yet 🚀</div>';
                     return;
                 }
 
-                container.innerHTML = payments.map(p => `
+                container.innerHTML = payments.slice(0, 5).map(p => `
                     <div class="payment-row">
                         <div>
-                            <div class="payment-email">${p.receipt_email || p.description || 'Customer'}</div>
-                            <div class="payment-date">${new Date(p.created * 1000).toLocaleDateString('en-US', { 
-                                month: 'short', day: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit'
-                            })}</div>
+                            <div class="payment-email">${p.receipt_email || 'Customer'}</div>
+                            <div class="payment-date">${new Date(p.created * 1000).toLocaleDateString()}</div>
                         </div>
                         <div class="payment-amount">$${(p.amount / 100).toFixed(2)}</div>
-                        <span class="payment-status succeeded">✓ Paid</span>
                     </div>
                 `).join('');
 
             } catch (error) {
-                container.innerHTML = `<div class="error">Error loading data. Check Stripe key.</div>`;
-                console.error(error);
+                container.innerHTML = '<div class="loading">Configure Stripe key</div>';
             }
         }
 
