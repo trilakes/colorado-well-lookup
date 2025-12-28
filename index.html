@@ -3,8 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorado Well Finder - Drilling Cost Estimator</title>
-    <meta name="description" content="Find nearby water wells in Colorado and estimate drilling costs. Search by address or coordinates to see well depths and get accurate cost estimates from $50-75/ft.">
+    <title>Colorado Well Finder - How Deep Is My Well? | Drilling Cost Estimator</title>
+    <meta name="description" content="Find out how deep wells are in your Colorado neighborhood before you drill. See your neighbors' well depths, water table data, and get accurate drilling cost estimates ($50-75/ft). Search any address in all 64 Colorado counties.">
+    <meta name="keywords" content="Colorado well drilling cost, how deep is my well Colorado, water well depth Colorado, well drilling prices Colorado, domestic well permit Colorado, water table depth Colorado, well drilling estimate, drill a well cost, Colorado water well, residential well drilling">
+    <meta property="og:title" content="Colorado Well Finder - Know Your Well Depth Before You Drill">
+    <meta property="og:description" content="See exactly how deep your neighbors drilled. Get accurate well drilling cost estimates for any Colorado address.">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Colorado Well Finder">
+    <meta name="twitter:description" content="Find well depths and drilling costs for any Colorado address">
+    <link rel="canonical" href="https://trilakes.github.io/colorado-well-lookup/">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         * {
@@ -918,7 +926,108 @@
             color: #4fc3f7;
         }
 
+        /* Landing Page Feature Styles */
+        .landing-features {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 40px 0;
+        }
+
+        .landing-feature {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 30px 25px;
+            width: 280px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .landing-feature h3 {
+            color: #4fc3f7;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .landing-feature p {
+            color: #aaa;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .landing-proof {
+            background: rgba(0, 230, 118, 0.1);
+            border: 1px solid rgba(0, 230, 118, 0.3);
+            border-radius: 15px;
+            padding: 25px 40px;
+            margin: 30px auto;
+            max-width: 500px;
+        }
+
+        .landing-proof p {
+            color: #00e676;
+            margin: 8px 0;
+            font-size: 0.95rem;
+        }
+
+        .landing-problem {
+            max-width: 700px;
+            margin: 40px auto;
+            text-align: center;
+        }
+
+        .landing-problem h2 {
+            color: #fff;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+        }
+
+        .landing-problem p {
+            color: #aaa;
+            font-size: 1.05rem;
+            line-height: 1.6;
+        }
+
+        .landing-problem strong {
+            color: #4fc3f7;
+        }
+
+        .paywall-content {
+            max-width: 1000px;
+            overflow-y: auto;
+            max-height: 95vh;
+            padding: 20px;
+        }
+
         @media (max-width: 700px) {
+            .landing-features {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .landing-feature {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .landing-proof {
+                padding: 20px;
+            }
+
+            .landing-problem h2 {
+                font-size: 1.3rem;
+            }
+
+            .landing-problem p {
+                font-size: 0.95rem;
+            }
+
             .paywall-title {
                 font-size: 1.8rem;
             }
@@ -1024,9 +1133,42 @@
     <!-- Paywall Overlay -->
     <div class="paywall-overlay" id="paywall">
         <div class="paywall-content">
+            <!-- Hero Section -->
             <h1 class="paywall-title">&#x1F4A7; Colorado Well Finder</h1>
-            <p class="paywall-subtitle">Find nearby wells & get accurate drilling cost estimates</p>
+            <p class="paywall-subtitle">Know exactly how deep to drill <em>before</em> you spend $20,000+</p>
             
+            <!-- Value Props -->
+            <div class="landing-features">
+                <div class="landing-feature">
+                    <div class="feature-icon">&#x1F3E0;</div>
+                    <h3>See Your Neighbors' Wells</h3>
+                    <p>View actual well depths from properties around you. If your neighbor drilled 300ft, you probably will too.</p>
+                </div>
+                <div class="landing-feature">
+                    <div class="feature-icon">&#x1F4B0;</div>
+                    <h3>Accurate Cost Estimates</h3>
+                    <p>Get real drilling costs based on actual well depths in your area. Colorado averages $50-75 per foot.</p>
+                </div>
+                <div class="landing-feature">
+                    <div class="feature-icon">&#x1F4CD;</div>
+                    <h3>Search Any Address</h3>
+                    <p>Just type an address and see all permitted wells within miles. Works for all 64 Colorado counties.</p>
+                </div>
+            </div>
+
+            <!-- Social Proof -->
+            <div class="landing-proof">
+                <p>&#x2705; Data from official Colorado Division of Water Resources permits</p>
+                <p>&#x2705; Over 300,000+ well records searchable</p>
+                <p>&#x2705; Updated with latest permit data</p>
+            </div>
+
+            <!-- Problem/Solution -->
+            <div class="landing-problem">
+                <h2>Drilling a Well is Expensive. Don't Go In Blind.</h2>
+                <p>The average Colorado well costs <strong>$15,000 - $30,000</strong>. Depth is everything. A 200ft well costs half what a 400ft well does. The only way to know how deep you'll need to drill? <strong>Look at what your neighbors already drilled.</strong></p>
+            </div>
+
             <div class="pricing-cards">
                 <div class="pricing-card popular">
                     <div class="pricing-name">Pro Access</div>
