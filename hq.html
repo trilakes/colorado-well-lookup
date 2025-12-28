@@ -290,7 +290,8 @@
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
         const ACCESS_CODE = 'well2025';
-        const TRACKER_URL = 'https://well-tracker.trilakes.workers.dev';
+        // TODO: Replace with your Render URL after deploying tracker-api
+        const TRACKER_URL = 'https://well-tracker.onrender.com';
         let STRIPE_KEY = localStorage.getItem('hq_stripe_key') || '';
         let map = null;
         let markers = [];
