@@ -1656,7 +1656,7 @@
             const resultsDiv = document.getElementById('autocomplete-results');
             
             // Show loading state
-            resultsDiv.innerHTML = '<div class="autocomplete-loading">ðŸ” Searching...</div>';
+            resultsDiv.innerHTML = '<div class="autocomplete-loading">Searching...</div>';
             resultsDiv.classList.add('show');
 
             try {
@@ -1877,7 +1877,7 @@
                 
                 // Check if we have pre-geocoded coordinates from autocomplete
                 if (addressInput.dataset.lat && addressInput.dataset.lon) {
-                    btn.textContent = '³ Searching wells...';
+                    btn.textContent = 'Searching wells...';
                     location = {
                         lat: parseFloat(addressInput.dataset.lat),
                         lon: parseFloat(addressInput.dataset.lon),
@@ -1887,7 +1887,7 @@
                     delete addressInput.dataset.lat;
                     delete addressInput.dataset.lon;
                 } else {
-                    btn.textContent = '³ Geocoding address...';
+                    btn.textContent = 'Geocoding address...';
                     location = await geocodeAddress(address);
                 }
                 
@@ -1899,13 +1899,13 @@
                     county = detectCounty(location.address);
                 }
                 
-                btn.textContent = '³ Searching wells...';
+                btn.textContent = 'Searching wells...';
                 await searchWells(location.lat, location.lon, radius, county);
             } catch (error) {
                 alert('Error: ' + error.message);
             } finally {
                 btn.disabled = false;
-                btn.textContent = 'ðŸ”ŽSearch Wells';
+                btn.textContent = 'Search Wells';
             }
         }
 
@@ -1924,7 +1924,7 @@
             
             const btn = document.getElementById('search-btn-coords');
             btn.disabled = true;
-            btn.textContent = '³ Searching wells...';
+            btn.textContent = 'Searching wells...';
             
             try {
                 await searchWells(lat, lon, radius, county);
@@ -1932,7 +1932,7 @@
                 alert('Error: ' + error.message);
             } finally {
                 btn.disabled = false;
-                btn.textContent = 'ðŸ”ŽSearch Wells';
+                btn.textContent = 'Search Wells';
             }
         }
 
@@ -2044,7 +2044,7 @@
             // Display summary
             document.getElementById('summary').innerHTML = `
                 <div class="summary-box">
-                    <div class="summary-title">ðŸ“Š Area Well Statistics (${wells.length} wells with depth data)</div>
+                    <div class="summary-title">Area Well Statistics (${wells.length} wells with depth data)</div>
                     <div class="summary-grid">
                         <div class="summary-item">
                             <div class="summary-value">${minDepth} ft</div>
@@ -2060,7 +2060,7 @@
                         </div>
                     </div>
                     <div class="cost-estimate">
-                        <div class="cost-title">ðŸ’° Estimated Total Well Costs ($50-75/ft + equipment)</div>
+                        <div class="cost-title">Estimated Total Well Costs ($50-75/ft + equipment)</div>
                         <div class="cost-grid">
                             <div class="cost-item">
                                 <span class="cost-label">${minDepth} ft well:</span>
@@ -2130,10 +2130,10 @@
                                 <div class="well-stat-value">$${cost.totalLow.toLocaleString()}-$${cost.totalHigh.toLocaleString()}</div>
                             </div>
                         </div>
-                        ${well.physicalAddress ? `<div style="margin-top: 10px; color: #888; font-size: 0.9rem;">ðŸ“ ${well.physicalAddress}</div>` : ''}
-                        <div class="click-hint">ðŸ‘† Click for detailed cost breakdown</div>
+                        ${well.physicalAddress ? `<div style="margin-top: 10px; color: #888; font-size: 0.9rem;">${well.physicalAddress}</div>` : ''}
+                        <div class="click-hint">Click for detailed cost breakdown</div>
                         <div class="cost-breakdown" id="cost-${well.permit}">
-                            <div class="cost-breakdown-title">ðŸ’° Cost Breakdown for ${well.depthTotal} ft Well</div>
+                            <div class="cost-breakdown-title">Cost Breakdown for ${well.depthTotal} ft Well</div>
                             <div class="cost-row">
                                 <span class="cost-row-label">Drilling ${well.depthTotal} ft @ $50-75/ft</span>
                                 <span class="cost-row-value">$${cost.drillingLow.toLocaleString()} - $${cost.drillingHigh.toLocaleString()}</span>
