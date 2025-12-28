@@ -394,18 +394,31 @@
                     const color = isLive ? '#4caf50' : '#888';
                     
                     const marker = L.circleMarker([v.lat, v.lon], {
-                        radius: isLive ? 8 : 5,
+                        radius: isLive ? 10 : 6,
                         fillColor: color,
                         color: color,
-                        weight: 1,
+                        weight: 2,
                         opacity: 1,
-                        fillOpacity: 0.7
+                        fillOpacity: 0.8
                     }).addTo(map);
                     
+                    const deviceIcon = v.device === 'Mobile' ? '📱' : '💻';
+                    const browserIcon = v.browser === 'Chrome' ? '🌐' : 
+                                       v.browser === 'Safari' ? '🧭' : 
+                                       v.browser === 'Firefox' ? '🦊' : 
+                                       v.browser === 'Edge' ? '🔷' : '🌐';
+                    
                     marker.bindPopup(`
-                        <b>${v.city || 'Unknown'}, ${v.region || ''}</b><br>
-                        ${v.country}<br>
-                        <small>${new Date(v.timestamp).toLocaleString()}</small>
+                        <div style="min-width: 180px;">
+                            <b style="font-size: 14px;">${v.city || 'Unknown'}, ${v.region || ''}</b><br>
+                            <span style="color: #666;">${v.country || 'Unknown'}</span><br><br>
+                            <b>IP:</b> ${v.ip || 'Unknown'}<br>
+                            <b>Device:</b> ${deviceIcon} ${v.device || 'Unknown'}<br>
+                            <b>Browser:</b> ${browserIcon} ${v.browser || 'Unknown'}<br>
+                            <b>Page:</b> ${v.page || '/'}<br>
+                            <b>Time:</b> ${new Date(v.timestamp).toLocaleString()}<br>
+                            ${v.referrer ? '<b>Referrer:</b> ' + v.referrer.substring(0, 30) + '...<br>' : ''}
+                        </div>
                     `);
                     
                     markers.push(marker);
@@ -431,13 +444,25 @@
             container.innerHTML = visitors.slice(0, 15).map(v => {
                 const isLive = v.timestamp > fiveMinAgo;
                 const timeAgo = getTimeAgo(v.timestamp);
+                const location = v.city ? `${v.city}, ${v.region || v.country}` : (v.country || 'Unknown');
+                const browserIcon = v.browser === 'Chrome' ? '🌐' : 
+                                   v.browser === 'Safari' ? '🧭' : 
+                                   v.browser === 'Firefox' ? '🦊' : 
+                                   v.browser === 'Edge' ? '🔷' : '🌐';
+                const deviceIcon = v.device === 'Mobile' ? '📱' : 
+                                  v.device === 'Tablet' ? '📱' : '💻';
                 
                 return `
                     <div class="visitor-item">
                         ${isLive ? '<div class="live-dot"></div>' : '<div style="width: 18px;"></div>'}
                         <div class="visitor-info">
-                            <div class="visitor-location">${v.city || 'Unknown'}, ${v.country || ''}</div>
-                            <div class="visitor-details">${v.page || '/'} • ${v.ip?.substring(0, 10)}...</div>
+                            <div class="visitor-location">${location}</div>
+                            <div class="visitor-details">
+                                ${deviceIcon} ${browserIcon} ${v.browser || 'Unknown'} • ${v.ip || 'Unknown IP'}
+                            </div>
+                            <div class="visitor-details" style="color: #555;">
+                                ${v.page || '/'} ${v.referrer ? '← ' + new URL(v.referrer).hostname : ''}
+                            </div>
                         </div>
                         <div class="visitor-time">${timeAgo}</div>
                     </div>

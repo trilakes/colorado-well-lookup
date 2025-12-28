@@ -71,36 +71,61 @@ def track():
     try:
         data = request.get_json() or {}
         
-        # Get visitor info from request
+        # Get IP address
+        ip = (request.headers.get('CF-Connecting-IP') or 
+              request.headers.get('X-Forwarded-For', '').split(',')[0].strip() or 
+              request.remote_addr)
+        
+        # Get user agent and parse browser/device
+        user_agent = request.headers.get('User-Agent', '')
+        browser = 'Unknown'
+        device = 'Desktop'
+        
+        if 'Chrome' in user_agent and 'Edg' not in user_agent:
+            browser = 'Chrome'
+        elif 'Edg' in user_agent:
+            browser = 'Edge'
+        elif 'Firefox' in user_agent:
+            browser = 'Firefox'
+        elif 'Safari' in user_agent and 'Chrome' not in user_agent:
+            browser = 'Safari'
+        
+        if 'Mobile' in user_agent or 'Android' in user_agent:
+            device = 'Mobile'
+        elif 'iPad' in user_agent or 'Tablet' in user_agent:
+            device = 'Tablet'
+        
+        # Get visitor info
         visitor = {
-            'ip': request.headers.get('CF-Connecting-IP') or 
-                  request.headers.get('X-Forwarded-For', '').split(',')[0].strip() or 
-                  request.remote_addr,
+            'ip': ip,
             'timestamp': int(datetime.now().timestamp() * 1000),
             'page': data.get('page', '/'),
             'referrer': data.get('referrer', ''),
-            'country': request.headers.get('CF-IPCountry', 'US'),
+            'browser': browser,
+            'device': device,
+            'userAgent': user_agent[:100],  # Truncate for storage
+            'country': 'US',
             'city': None,
             'region': None,
             'lat': None,
             'lon': None
         }
         
-        # Try to get geo info from ipapi.co (free tier: 1000/day)
+        # Try ip-api.com (free, no key needed, 45 req/min)
         try:
-            import urllib.request
-            ip = visitor['ip']
             if ip and ip not in ['127.0.0.1', 'localhost']:
-                geo_url = f'https://ipapi.co/{ip}/json/'
-                with urllib.request.urlopen(geo_url, timeout=2) as response:
+                geo_url = f'http://ip-api.com/json/{ip}?fields=status,country,regionName,city,lat,lon'
+                req = urllib.request.Request(geo_url, headers={'User-Agent': 'WellTracker/1.0'})
+                with urllib.request.urlopen(req, timeout=3) as response:
                     geo = json.loads(response.read().decode())
-                    visitor['city'] = geo.get('city')
-                    visitor['region'] = geo.get('region')
-                    visitor['country'] = geo.get('country_name', visitor['country'])
-                    visitor['lat'] = geo.get('latitude')
-                    visitor['lon'] = geo.get('longitude')
-        except:
-            pass  # Geo lookup failed, continue without it
+                    if geo.get('status') == 'success':
+                        visitor['city'] = geo.get('city')
+                        visitor['region'] = geo.get('regionName')
+                        visitor['country'] = geo.get('country')
+                        visitor['lat'] = geo.get('lat')
+                        visitor['lon'] = geo.get('lon')
+        except Exception as e:
+            print(f"Geo lookup failed: {e}")  # Log for debugging
         
         # Add to visitors list
         visitors.insert(0, visitor)
