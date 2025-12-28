@@ -778,11 +778,11 @@
             right: 0;
             bottom: 0;
             background: rgba(10, 15, 30, 0.97);
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px) env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
             z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
+            display: block;
         }
 
         .paywall-overlay.hidden {
@@ -793,6 +793,8 @@
             max-width: 800px;
             width: 100%;
             text-align: center;
+            margin: 0 auto;
+            padding: 30px 20px;
         }
 
         .paywall-title {
@@ -1034,12 +1036,29 @@
 
         .paywall-content {
             max-width: 1000px;
-            overflow-y: auto;
-            max-height: 95vh;
-            padding: 20px;
+            padding: 20px 15px;
         }
 
         @media (max-width: 700px) {
+            .paywall-overlay {
+                padding-top: max(20px, env(safe-area-inset-top));
+                padding-bottom: max(20px, env(safe-area-inset-bottom));
+            }
+
+            .paywall-content {
+                padding: 15px 10px;
+            }
+
+            .paywall-title {
+                font-size: 1.5rem;
+                margin-top: 10px;
+            }
+
+            .paywall-footer {
+                margin-top: 25px;
+                margin-bottom: 10px;
+                font-size: 0.8rem;
+            }
             .landing-features {
                 flex-direction: column;
                 align-items: center;
@@ -1047,27 +1066,52 @@
 
             .landing-feature {
                 width: 100%;
-                max-width: 320px;
+                max-width: 300px;
+                padding: 15px;
+            }
+
+            .landing-feature h3 {
+                font-size: 1rem;
+            }
+
+            .landing-feature p {
+                font-size: 0.85rem;
+            }
+
+            .feature-icon {
+                width: 40px;
+                height: 40px;
             }
 
             .landing-proof {
-                padding: 20px;
+                padding: 15px;
+                margin: 15px 0;
+            }
+
+            .proof-item {
+                font-size: 0.85rem;
+                padding: 6px 0;
+            }
+
+            .landing-problem {
+                padding: 15px;
             }
 
             .landing-problem h2 {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
 
             .landing-problem p {
-                font-size: 0.95rem;
-            }
-
-            .paywall-title {
-                font-size: 1.8rem;
+                font-size: 0.85rem;
             }
 
             .paywall-subtitle {
-                font-size: 1rem;
+                font-size: 0.9rem;
+                margin-bottom: 25px;
+            }
+
+            .pricing-card {
+                padding: 20px 15px;
             }
 
             .pricing-cards {
@@ -1077,11 +1121,19 @@
 
             .pricing-card {
                 width: 100%;
-                max-width: 350px;
+                max-width: 320px;
             }
 
             .pricing-price {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
+            }
+
+            .pricing-features {
+                font-size: 0.9rem;
+            }
+
+            .pricing-features li {
+                padding: 6px 0;
             }
         }
 
