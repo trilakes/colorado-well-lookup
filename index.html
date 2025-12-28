@@ -1,0 +1,1337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colorado Well Lookup Tool</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 2px solid rgba(255,255,255,0.1);
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #4fc3f7;
+            text-shadow: 0 0 20px rgba(79, 195, 247, 0.5);
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #aaa;
+            font-size: 1.1rem;
+        }
+
+        .search-section {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .search-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+
+        .tab-btn.active {
+            background: linear-gradient(135deg, #4fc3f7, #0288d1);
+            box-shadow: 0 5px 20px rgba(79, 195, 247, 0.4);
+        }
+
+        .tab-btn:hover:not(.active) {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .search-form {
+            display: none;
+        }
+
+        .search-form.active {
+            display: block;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            flex: 1;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #4fc3f7;
+            font-weight: 500;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 10px;
+            background: rgba(0,0,0,0.3);
+            color: #fff;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #4fc3f7;
+            box-shadow: 0 0 15px rgba(79, 195, 247, 0.3);
+        }
+
+        .form-group input::placeholder {
+            color: #666;
+        }
+
+        .search-btn {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #4fc3f7, #0288d1);
+            color: #fff;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .search-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(79, 195, 247, 0.4);
+        }
+
+        .search-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .results-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        @media (max-width: 1000px) {
+            .results-section {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 8px;
+            }
+
+            header {
+                padding: 15px 0;
+                margin-bottom: 15px;
+            }
+
+            header h1 {
+                font-size: 1.4rem;
+                line-height: 1.3;
+            }
+
+            header p {
+                font-size: 0.8rem;
+                padding: 0 10px;
+            }
+
+            .search-section {
+                padding: 12px;
+                margin-bottom: 15px;
+                border-radius: 10px;
+            }
+
+            .search-tabs {
+                flex-direction: column;
+                gap: 8px;
+            }
+
+            .tab-btn {
+                padding: 12px 15px;
+                font-size: 0.85rem;
+            }
+
+            .form-row {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .form-group label {
+                font-size: 0.85rem;
+                margin-bottom: 5px;
+            }
+
+            .form-group input, .form-group select {
+                padding: 12px 10px;
+                font-size: 16px; /* Prevents iOS zoom */
+                border-radius: 8px;
+            }
+
+            .search-btn {
+                padding: 14px;
+                font-size: 1rem;
+                border-radius: 8px;
+            }
+
+            .results-section {
+                gap: 15px;
+            }
+
+            .map-container, .wells-container {
+                padding: 12px;
+                border-radius: 10px;
+            }
+
+            .map-container h2, .wells-container h2 {
+                font-size: 1rem;
+                margin-bottom: 10px;
+                flex-wrap: wrap;
+            }
+
+            .scroll-hint {
+                font-size: 0.65rem;
+            }
+
+            #map {
+                height: 250px;
+                border-radius: 8px;
+            }
+
+            .summary-box {
+                padding: 15px;
+                border-radius: 10px;
+            }
+
+            .summary-title {
+                font-size: 1rem;
+                margin-bottom: 12px;
+            }
+
+            .summary-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 8px;
+            }
+
+            .summary-item {
+                padding: 5px;
+            }
+
+            .summary-value {
+                font-size: 1.2rem;
+            }
+
+            .summary-label {
+                font-size: 0.7rem;
+            }
+
+            .cost-estimate {
+                padding: 12px;
+                margin-top: 12px;
+            }
+
+            .cost-title {
+                font-size: 0.85rem;
+            }
+
+            .cost-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .cost-item {
+                flex-direction: column;
+                gap: 2px;
+                padding: 8px;
+                background: rgba(0,0,0,0.2);
+                border-radius: 6px;
+            }
+
+            .cost-label {
+                font-size: 0.75rem;
+            }
+
+            .cost-value {
+                font-size: 0.9rem;
+            }
+
+            .well-card {
+                padding: 15px;
+                margin-bottom: 12px;
+                border-radius: 8px;
+            }
+
+            .well-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+                margin-bottom: 12px;
+            }
+
+            .well-permit {
+                font-size: 1rem;
+            }
+
+            .well-distance {
+                font-size: 0.8rem;
+                padding: 4px 10px;
+            }
+
+            .well-stats {
+                grid-template-columns: 1fr 1fr;
+                gap: 8px;
+            }
+
+            .well-stat {
+                padding: 10px 8px;
+            }
+
+            .well-stat-label {
+                font-size: 0.7rem;
+            }
+
+            .well-stat-value {
+                font-size: 0.95rem;
+            }
+
+            .well-stat-value.depth {
+                font-size: 1.1rem;
+            }
+
+            .click-hint {
+                font-size: 0.75rem;
+                margin-top: 8px;
+            }
+
+            .cost-breakdown {
+                margin-top: 12px;
+                padding-top: 12px;
+            }
+
+            .cost-breakdown-title {
+                font-size: 0.9rem;
+                margin-bottom: 10px;
+            }
+
+            .cost-row {
+                flex-direction: column;
+                gap: 2px;
+                text-align: center;
+                padding: 10px 8px;
+                margin-bottom: 5px;
+            }
+
+            .cost-row-label {
+                font-size: 0.75rem;
+            }
+
+            .cost-row-value {
+                font-size: 0.9rem;
+            }
+
+            .cost-row.total {
+                margin-top: 8px;
+                padding: 12px 8px;
+            }
+
+            .cost-row.total .cost-row-value {
+                font-size: 1.1rem;
+            }
+
+            .wells-container {
+                max-height: 450px;
+                overflow-y: auto;
+                -webkit-overflow-scrolling: touch;
+                scroll-behavior: smooth;
+                scroll-snap-type: y proximity;
+            }
+
+            .wells-container h2 {
+                position: sticky;
+                top: -12px;
+                z-index: 10;
+                background: rgba(22, 33, 62, 0.98);
+                margin: -12px -12px 12px -12px;
+                padding: 12px;
+                border-radius: 10px 10px 0 0;
+                backdrop-filter: blur(10px);
+            }
+
+            .well-card {
+                scroll-snap-align: start;
+            }
+
+            footer {
+                padding: 20px 10px;
+                margin-top: 20px;
+            }
+
+            footer p {
+                font-size: 0.75rem;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 380px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-value {
+                font-size: 1.4rem;
+            }
+
+            .well-stats {
+                grid-template-columns: 1fr;
+            }
+
+            .well-stat {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .well-stat-label {
+                margin-bottom: 0;
+            }
+        }
+
+        .map-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .map-container h2 {
+            color: #4fc3f7;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        #map {
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .wells-container {
+            background: rgba(255,255,255,0.05);
+            border-radius: 15px;
+            padding: 20px;
+            border: 1px solid rgba(255,255,255,0.1);
+            max-height: 600px;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+            overscroll-behavior: contain;
+        }
+
+        .wells-container h2 {
+            color: #4fc3f7;
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            position: sticky;
+            top: -20px;
+            z-index: 10;
+            background: rgba(22, 33, 62, 0.98);
+            padding: 15px 0;
+            margin-top: -20px;
+            margin-left: -20px;
+            margin-right: -20px;
+            padding-left: 20px;
+            backdrop-filter: blur(10px);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-right: 20px;
+        }
+
+        .scroll-hint {
+            font-size: 0.75rem;
+            color: #00e676;
+            animation: bounce 1.5s ease infinite;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+
+        .scroll-hint.hidden {
+            opacity: 0;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(5px); }
+        }
+
+        .well-card {
+            background: rgba(0,0,0,0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-left: 4px solid #4fc3f7;
+            transition: all 0.3s ease;
+        }
+
+        .well-card:hover {
+            transform: translateX(5px);
+            border-left-color: #00e676;
+            cursor: pointer;
+        }
+
+        .well-card.expanded {
+            background: rgba(0,0,0,0.5);
+        }
+
+        .well-card.shallow {
+            border-left-color: #00e676;
+        }
+
+        .well-card.medium {
+            border-left-color: #ffeb3b;
+        }
+
+        .well-card.deep {
+            border-left-color: #ff5722;
+        }
+
+        .well-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .well-permit {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .well-distance {
+            background: rgba(79, 195, 247, 0.2);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #4fc3f7;
+        }
+
+        .well-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .well-stat {
+            background: rgba(255,255,255,0.05);
+            padding: 12px;
+            border-radius: 8px;
+        }
+
+        .well-stat-label {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 5px;
+        }
+
+        .well-stat-value {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .well-stat-value.depth {
+            color: #4fc3f7;
+            font-size: 1.4rem;
+        }
+
+        .summary-box {
+            background: linear-gradient(135deg, rgba(79, 195, 247, 0.2), rgba(2, 136, 209, 0.2));
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(79, 195, 247, 0.3);
+        }
+
+        .summary-title {
+            font-size: 1.2rem;
+            color: #4fc3f7;
+            margin-bottom: 15px;
+        }
+
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .summary-item {
+            text-align: center;
+        }
+
+        .summary-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .summary-label {
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #4fc3f7;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(79, 195, 247, 0.2);
+            border-top-color: #4fc3f7;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .error-message {
+            background: rgba(244, 67, 54, 0.2);
+            border: 1px solid rgba(244, 67, 54, 0.5);
+            border-radius: 10px;
+            padding: 20px;
+            color: #ff8a80;
+            text-align: center;
+        }
+
+        .cost-estimate {
+            background: linear-gradient(135deg, rgba(0, 230, 118, 0.2), rgba(0, 200, 83, 0.2));
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            border: 1px solid rgba(0, 230, 118, 0.3);
+        }
+
+        .cost-title {
+            font-size: 0.9rem;
+            color: #00e676;
+            margin-bottom: 10px;
+        }
+
+        .cost-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .cost-item {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .cost-label {
+            color: #aaa;
+        }
+
+        .cost-value {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .cost-breakdown {
+            display: none;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .cost-breakdown.show {
+            display: block;
+        }
+
+        .cost-breakdown-title {
+            color: #00e676;
+            font-size: 1rem;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .cost-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 12px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 6px;
+            margin-bottom: 6px;
+        }
+
+        .cost-row.total {
+            background: linear-gradient(135deg, rgba(0, 230, 118, 0.3), rgba(0, 200, 83, 0.3));
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
+
+        .cost-row-label {
+            color: #aaa;
+        }
+
+        .cost-row-value {
+            color: #fff;
+        }
+
+        .cost-row.total .cost-row-label,
+        .cost-row.total .cost-row-value {
+            color: #00e676;
+        }
+
+        .click-hint {
+            font-size: 0.8rem;
+            color: #666;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #4fc3f7;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Colorado Well Lookup Tool</h1>
+            <p>Search well permits and depth data from the Colorado Division of Water Resources</p>
+        </header>
+
+        <section class="search-section">
+            <div class="search-tabs">
+                <button class="tab-btn active" onclick="switchTab('address')">📍 Search by Address</button>
+                <button class="tab-btn" onclick="switchTab('coords')">🌐 Search by Coordinates</button>
+            </div>
+
+            <form id="address-form" class="search-form active" onsubmit="searchByAddress(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Street Address</label>
+                        <input type="text" id="address" placeholder="e.g., 123 Main St, Pueblo, CO" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Search Radius (miles)</label>
+                        <select id="radius-address">
+                            <option value="0.5">0.5 miles</option>
+                            <option value="1" selected>1 mile</option>
+                            <option value="2">2 miles</option>
+                            <option value="5">5 miles</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>County (optional)</label>
+                        <select id="county">
+                            <option value="">Auto-detect</option>
+                            <option value="Pueblo">Pueblo</option>
+                            <option value="El Paso">El Paso</option>
+                            <option value="Denver">Denver</option>
+                            <option value="Jefferson">Jefferson</option>
+                            <option value="Arapahoe">Arapahoe</option>
+                            <option value="Adams">Adams</option>
+                            <option value="Douglas">Douglas</option>
+                            <option value="Boulder">Boulder</option>
+                            <option value="Larimer">Larimer</option>
+                            <option value="Weld">Weld</option>
+                            <option value="Mesa">Mesa</option>
+                            <option value="Park">Park</option>
+                            <option value="Teller">Teller</option>
+                            <option value="Fremont">Fremont</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="search-btn" id="search-btn-address">🔎 Search Wells</button>
+            </form>
+
+            <form id="coords-form" class="search-form" onsubmit="searchByCoords(event)">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Latitude (decimal degrees)</label>
+                        <input type="number" id="lat" step="0.000001" placeholder="e.g., 38.221117" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Longitude (decimal degrees)</label>
+                        <input type="number" id="lon" step="0.000001" placeholder="e.g., -104.906152" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Search Radius (miles)</label>
+                        <select id="radius-coords">
+                            <option value="0.5">0.5 miles</option>
+                            <option value="1" selected>1 mile</option>
+                            <option value="2">2 miles</option>
+                            <option value="5">5 miles</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>County</label>
+                        <select id="county-coords" required>
+                            <option value="Pueblo">Pueblo</option>
+                            <option value="El Paso">El Paso</option>
+                            <option value="Denver">Denver</option>
+                            <option value="Jefferson">Jefferson</option>
+                            <option value="Arapahoe">Arapahoe</option>
+                            <option value="Adams">Adams</option>
+                            <option value="Douglas">Douglas</option>
+                            <option value="Boulder">Boulder</option>
+                            <option value="Larimer">Larimer</option>
+                            <option value="Weld">Weld</option>
+                            <option value="Mesa">Mesa</option>
+                            <option value="Park">Park</option>
+                            <option value="Teller">Teller</option>
+                            <option value="Fremont">Fremont</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="search-btn" id="search-btn-coords">🔎 Search Wells</button>
+            </form>
+        </section>
+
+        <section class="results-section" id="results" style="display: none;">
+            <div class="map-container">
+                <h2>📍 Well Locations</h2>
+                <div id="map"></div>
+            </div>
+            <div class="wells-container" id="wells-container">
+                <h2>💧 Nearby Wells <span class="scroll-hint" id="scroll-hint">↓ Scroll for more</span></h2>
+                <div id="summary"></div>
+                <div id="wells-list"></div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>Data from <a href="https://dwr.state.co.us/Tools/WellPermits" target="_blank">Colorado Division of Water Resources</a></p>
+        <p>Well drilling costs are estimates only - get quotes from licensed drillers</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        let map = null;
+        let markers = [];
+        let searchLat = null;
+        let searchLon = null;
+
+        // Load saved searches from localStorage
+        function loadSavedSearches() {
+            const saved = localStorage.getItem('wellLookupSearches');
+            if (saved) {
+                const data = JSON.parse(saved);
+                if (data.address) document.getElementById('address').value = data.address;
+                if (data.lat) document.getElementById('lat').value = data.lat;
+                if (data.lon) document.getElementById('lon').value = data.lon;
+                if (data.radiusAddress) document.getElementById('radius-address').value = data.radiusAddress;
+                if (data.radiusCoords) document.getElementById('radius-coords').value = data.radiusCoords;
+                if (data.county) document.getElementById('county').value = data.county;
+                if (data.countyCoords) document.getElementById('county-coords').value = data.countyCoords;
+            }
+        }
+
+        // Save searches to localStorage
+        function saveSearches() {
+            const data = {
+                address: document.getElementById('address').value,
+                lat: document.getElementById('lat').value,
+                lon: document.getElementById('lon').value,
+                radiusAddress: document.getElementById('radius-address').value,
+                radiusCoords: document.getElementById('radius-coords').value,
+                county: document.getElementById('county').value,
+                countyCoords: document.getElementById('county-coords').value
+            };
+            localStorage.setItem('wellLookupSearches', JSON.stringify(data));
+        }
+
+        // Calculate drilling cost based on depth
+        function calculateDrillingCost(depth) {
+            // Colorado pricing: $50-75 per foot (all-in rate)
+            const lowRate = 50;
+            const highRate = 75;
+            
+            const drillingLow = depth * lowRate;
+            const drillingHigh = depth * highRate;
+            
+            // Fixed equipment costs (pump, tank, pitless, permit, etc.)
+            const equipmentLow = 5000;
+            const equipmentHigh = 10000;
+            
+            return {
+                lowRate,
+                highRate,
+                drillingLow,
+                drillingHigh,
+                equipmentLow,
+                equipmentHigh,
+                totalLow: drillingLow + equipmentLow,
+                totalHigh: drillingHigh + equipmentHigh
+            };
+        }
+
+        // Load saved searches on page load
+        document.addEventListener('DOMContentLoaded', loadSavedSearches);
+
+        function switchTab(tab) {
+            document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.search-form').forEach(form => form.classList.remove('active'));
+            
+            if (tab === 'address') {
+                document.querySelector('.tab-btn:nth-child(1)').classList.add('active');
+                document.getElementById('address-form').classList.add('active');
+            } else {
+                document.querySelector('.tab-btn:nth-child(2)').classList.add('active');
+                document.getElementById('coords-form').classList.add('active');
+            }
+        }
+
+        async function geocodeAddress(address) {
+            // Use Census geocoder for accurate US addresses
+            const url = `https://geocoding.geo.census.gov/geocoder/locations/onelineaddress?address=${encodeURIComponent(address)}&benchmark=Public_AR_Current&format=json`;
+            
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.result && data.result.addressMatches && data.result.addressMatches.length > 0) {
+                    const match = data.result.addressMatches[0];
+                    return {
+                        lat: match.coordinates.y,
+                        lon: match.coordinates.x,
+                        address: match.matchedAddress
+                    };
+                }
+            } catch (e) {
+                console.error('Census geocoder failed:', e);
+            }
+            
+            // Fallback to Nominatim
+            const nomUrl = `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(address)}`;
+            const response = await fetch(nomUrl, { headers: { 'User-Agent': 'WellLookupTool/1.0' } });
+            const data = await response.json();
+            
+            if (data && data.length > 0) {
+                return {
+                    lat: parseFloat(data[0].lat),
+                    lon: parseFloat(data[0].lon),
+                    address: data[0].display_name
+                };
+            }
+            
+            throw new Error('Address not found');
+        }
+
+        async function searchByAddress(event) {
+            event.preventDefault();
+            const address = document.getElementById('address').value;
+            const radius = parseFloat(document.getElementById('radius-address').value);
+            let county = document.getElementById('county').value;
+            
+            // Save to localStorage
+            saveSearches();
+            
+            const btn = document.getElementById('search-btn-address');
+            btn.disabled = true;
+            btn.textContent = '⏳ Geocoding address...';
+            
+            try {
+                const location = await geocodeAddress(address);
+                searchLat = location.lat;
+                searchLon = location.lon;
+                
+                // Auto-detect county from address if not specified
+                if (!county) {
+                    county = detectCounty(location.address);
+                }
+                
+                btn.textContent = '⏳ Searching wells...';
+                await searchWells(location.lat, location.lon, radius, county);
+            } catch (error) {
+                alert('Error: ' + error.message);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '🔎 Search Wells';
+            }
+        }
+
+        async function searchByCoords(event) {
+            event.preventDefault();
+            const lat = parseFloat(document.getElementById('lat').value);
+            const lon = parseFloat(document.getElementById('lon').value);
+            const radius = parseFloat(document.getElementById('radius-coords').value);
+            const county = document.getElementById('county-coords').value;
+            
+            // Save to localStorage
+            saveSearches();
+            
+            searchLat = lat;
+            searchLon = lon;
+            
+            const btn = document.getElementById('search-btn-coords');
+            btn.disabled = true;
+            btn.textContent = '⏳ Searching wells...';
+            
+            try {
+                await searchWells(lat, lon, radius, county);
+            } catch (error) {
+                alert('Error: ' + error.message);
+            } finally {
+                btn.disabled = false;
+                btn.textContent = '🔎 Search Wells';
+            }
+        }
+
+        function detectCounty(address) {
+            const counties = ['Pueblo', 'El Paso', 'Denver', 'Jefferson', 'Arapahoe', 'Adams', 
+                            'Douglas', 'Boulder', 'Larimer', 'Weld', 'Mesa', 'Park', 'Teller', 'Fremont'];
+            const addressLower = address.toLowerCase();
+            for (const county of counties) {
+                if (addressLower.includes(county.toLowerCase())) {
+                    return county;
+                }
+            }
+            return 'Pueblo'; // Default
+        }
+
+        async function searchWells(lat, lon, radiusMiles, county) {
+            // Convert radius to lat/lon degrees (approximate)
+            const latRadius = radiusMiles / 69;
+            const lonRadius = radiusMiles / 54;
+            
+            const minLat = (lat - latRadius).toFixed(4);
+            const maxLat = (lat + latRadius).toFixed(4);
+            const minLon = (lon - lonRadius).toFixed(4);
+            const maxLon = (lon + lonRadius).toFixed(4);
+            
+            const url = `https://dwr.state.co.us/Rest/GET/api/v2/wellpermits/wellpermit?format=json&county=${county}&latitude=${minLat}~${maxLat}&longitude=${minLon}~${maxLon}`;
+            
+            try {
+                const response = await fetch(url);
+                const data = await response.json();
+                
+                if (data.ResultList && data.ResultList.length > 0) {
+                    // Filter wells with depth data and calculate distances
+                    let wells = data.ResultList
+                        .filter(w => w.depthTotal > 0)
+                        .map(w => {
+                            const dist = Math.sqrt(
+                                Math.pow((w.latitude - lat) * 69, 2) + 
+                                Math.pow((w.longitude - lon) * 54, 2)
+                            );
+                            return { ...w, distance: dist };
+                        })
+                        .filter(w => w.distance <= radiusMiles)
+                        .sort((a, b) => a.distance - b.distance);
+                    
+                    displayResults(wells, lat, lon);
+                } else {
+                    displayNoResults();
+                }
+            } catch (error) {
+                throw new Error('Failed to fetch well data: ' + error.message);
+            }
+        }
+
+        function displayResults(wells, centerLat, centerLon) {
+            document.getElementById('results').style.display = 'grid';
+            
+            // Initialize or update map
+            if (!map) {
+                map = L.map('map').setView([centerLat, centerLon], 14);
+                L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                    attribution: 'ESRI World Imagery'
+                }).addTo(map);
+            } else {
+                map.setView([centerLat, centerLon], 14);
+            }
+            
+            // Clear existing markers
+            markers.forEach(m => map.removeLayer(m));
+            markers = [];
+            
+            // Add search location marker
+            const searchMarker = L.marker([centerLat, centerLon], {
+                icon: L.divIcon({
+                    className: 'search-marker',
+                    html: '<div style="background: #ff5722; width: 20px; height: 20px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.5);"></div>',
+                    iconSize: [20, 20],
+                    iconAnchor: [10, 10]
+                })
+            }).addTo(map).bindPopup('<b>Search Location</b>');
+            markers.push(searchMarker);
+            
+            // Calculate summary stats
+            const depths = wells.map(w => w.depthTotal);
+            const minDepth = Math.min(...depths);
+            const maxDepth = Math.max(...depths);
+            const avgDepth = Math.round(depths.reduce((a, b) => a + b, 0) / depths.length);
+            
+            const waterLevels = wells.filter(w => w.staticWaterLevel > 0).map(w => w.staticWaterLevel);
+            const avgWaterLevel = waterLevels.length > 0 ? 
+                Math.round(waterLevels.reduce((a, b) => a + b, 0) / waterLevels.length) : 'N/A';
+            
+            // Calculate costs for summary
+            const minCost = calculateDrillingCost(minDepth);
+            const avgCost = calculateDrillingCost(avgDepth);
+            const maxCost = calculateDrillingCost(maxDepth);
+            
+            // Display summary
+            document.getElementById('summary').innerHTML = `
+                <div class="summary-box">
+                    <div class="summary-title">📊 Area Well Statistics (${wells.length} wells with depth data)</div>
+                    <div class="summary-grid">
+                        <div class="summary-item">
+                            <div class="summary-value">${minDepth} ft</div>
+                            <div class="summary-label">Shallowest Well</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-value">${avgDepth} ft</div>
+                            <div class="summary-label">Average Depth</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-value">${maxDepth} ft</div>
+                            <div class="summary-label">Deepest Well</div>
+                        </div>
+                    </div>
+                    <div class="cost-estimate">
+                        <div class="cost-title">💰 Estimated Total Well Costs ($50-75/ft + equipment)</div>
+                        <div class="cost-grid">
+                            <div class="cost-item">
+                                <span class="cost-label">${minDepth} ft well:</span>
+                                <span class="cost-value">$${minCost.totalLow.toLocaleString()} - $${minCost.totalHigh.toLocaleString()}</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-label">${avgDepth} ft well:</span>
+                                <span class="cost-value">$${avgCost.totalLow.toLocaleString()} - $${avgCost.totalHigh.toLocaleString()}</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-label">${maxDepth} ft well:</span>
+                                <span class="cost-value">$${maxCost.totalLow.toLocaleString()} - $${maxCost.totalHigh.toLocaleString()}</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-label">Avg static water level:</span>
+                                <span class="cost-value">${avgWaterLevel}${avgWaterLevel !== 'N/A' ? ' ft' : ''}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Display well cards
+            const wellsHtml = wells.slice(0, 25).map((well, index) => {
+                // Add marker to map
+                const depthClass = well.depthTotal < 200 ? 'shallow' : well.depthTotal < 500 ? 'medium' : 'deep';
+                const markerColor = depthClass === 'shallow' ? '#00e676' : depthClass === 'medium' ? '#ffeb3b' : '#ff5722';
+                
+                const marker = L.circleMarker([well.latitude, well.longitude], {
+                    radius: 8,
+                    fillColor: markerColor,
+                    color: '#fff',
+                    weight: 2,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                }).addTo(map).bindPopup(`
+                    <b>Permit: ${well.permit}</b><br>
+                    Depth: ${well.depthTotal} ft<br>
+                    Static Water: ${well.staticWaterLevel || 'N/A'} ft<br>
+                    Aquifer: ${well.associatedAquifers || 'Unknown'}
+                `);
+                markers.push(marker);
+                
+                const cost = calculateDrillingCost(well.depthTotal);
+                
+                return `
+                    <div class="well-card ${depthClass}" onclick="toggleCostBreakdown(this, ${well.depthTotal})">
+                        <div class="well-header">
+                            <span class="well-permit">Permit: ${well.permit}</span>
+                            <span class="well-distance">${well.distance.toFixed(2)} mi</span>
+                        </div>
+                        <div class="well-stats">
+                            <div class="well-stat">
+                                <div class="well-stat-label">Total Depth</div>
+                                <div class="well-stat-value depth">${well.depthTotal} ft</div>
+                            </div>
+                            <div class="well-stat">
+                                <div class="well-stat-label">Static Water Level</div>
+                                <div class="well-stat-value">${well.staticWaterLevel || 'N/A'}${well.staticWaterLevel ? ' ft' : ''}</div>
+                            </div>
+                            <div class="well-stat">
+                                <div class="well-stat-label">Aquifer</div>
+                                <div class="well-stat-value">${well.associatedAquifers || 'Unknown'}</div>
+                            </div>
+                            <div class="well-stat">
+                                <div class="well-stat-label">Est. Total Cost</div>
+                                <div class="well-stat-value">$${cost.totalLow.toLocaleString()}-$${cost.totalHigh.toLocaleString()}</div>
+                            </div>
+                        </div>
+                        ${well.physicalAddress ? `<div style="margin-top: 10px; color: #888; font-size: 0.9rem;">📍 ${well.physicalAddress}</div>` : ''}
+                        <div class="click-hint">👆 Click for detailed cost breakdown</div>
+                        <div class="cost-breakdown" id="cost-${well.permit}">
+                            <div class="cost-breakdown-title">💰 Cost Breakdown for ${well.depthTotal} ft Well</div>
+                            <div class="cost-row">
+                                <span class="cost-row-label">Drilling ${well.depthTotal} ft @ $50-75/ft</span>
+                                <span class="cost-row-value">$${cost.drillingLow.toLocaleString()} - $${cost.drillingHigh.toLocaleString()}</span>
+                            </div>
+                            <div class="cost-row">
+                                <span class="cost-row-label">Pump, Tank, Controls & Equipment</span>
+                                <span class="cost-row-value">$${cost.equipmentLow.toLocaleString()} - $${cost.equipmentHigh.toLocaleString()}</span>
+                            </div>
+                            <div class="cost-row total">
+                                <span class="cost-row-label">TOTAL ESTIMATED</span>
+                                <span class="cost-row-value">$${cost.totalLow.toLocaleString()} - $${cost.totalHigh.toLocaleString()}</span>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+            
+            document.getElementById('wells-list').innerHTML = wellsHtml;
+            
+            // Fit map to show all markers
+            if (markers.length > 1) {
+                const group = L.featureGroup(markers);
+                map.fitBounds(group.getBounds().pad(0.1));
+            }
+        }
+
+        function displayNoResults() {
+            document.getElementById('results').style.display = 'grid';
+            document.getElementById('summary').innerHTML = `
+                <div class="error-message">
+                    <h3>No wells found</h3>
+                    <p>No wells with depth data were found in this area. Try expanding your search radius or checking a different county.</p>
+                </div>
+            `;
+            document.getElementById('wells-list').innerHTML = '';
+        }
+
+        function toggleCostBreakdown(card, depth) {
+            const breakdown = card.querySelector('.cost-breakdown');
+            const hint = card.querySelector('.click-hint');
+            
+            // Close all other breakdowns
+            document.querySelectorAll('.cost-breakdown.show').forEach(el => {
+                if (el !== breakdown) {
+                    el.classList.remove('show');
+                    el.closest('.well-card').classList.remove('expanded');
+                    el.closest('.well-card').querySelector('.click-hint').style.display = 'block';
+                }
+            });
+            
+            // Toggle this one
+            breakdown.classList.toggle('show');
+            card.classList.toggle('expanded');
+            hint.style.display = breakdown.classList.contains('show') ? 'none' : 'block';
+        }
+
+        // Handle scroll hint visibility
+        function setupScrollHint() {
+            const container = document.getElementById('wells-container');
+            const scrollHint = document.getElementById('scroll-hint');
+            
+            if (container && scrollHint) {
+                container.addEventListener('scroll', function() {
+                    if (container.scrollTop > 50) {
+                        scrollHint.classList.add('hidden');
+                    } else {
+                        scrollHint.classList.remove('hidden');
+                    }
+                });
+            }
+        }
+
+        // Setup scroll hint when results are displayed
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSavedSearches();
+            
+            // Observer to detect when results become visible
+            const observer = new MutationObserver(function(mutations) {
+                mutations.forEach(function(mutation) {
+                    if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+                        const results = document.getElementById('results');
+                        if (results && results.style.display !== 'none') {
+                            setTimeout(setupScrollHint, 100);
+                        }
+                    }
+                });
+            });
+            
+            const results = document.getElementById('results');
+            if (results) {
+                observer.observe(results, { attributes: true });
+            }
+        });
+    </script>
+</body>
+</html>
