@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colorado Well Lookup Tool</title>
+    <title>Colorado Well Finder - Drilling Cost Estimator</title>
+    <meta name="description" content="Find nearby water wells in Colorado and estimate drilling costs. Search by address or coordinates to see well depths and get accurate cost estimates from $50-75/ft.">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
     <style>
         * {
@@ -760,13 +761,90 @@
             color: #4fc3f7;
             text-decoration: none;
         }
+
+        /* Address Autocomplete Styles */
+        .autocomplete-wrapper {
+            position: relative;
+            width: 100%;
+        }
+
+        .autocomplete-results {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: rgba(20, 30, 50, 0.98);
+            border: 2px solid #4fc3f7;
+            border-top: none;
+            border-radius: 0 0 10px 10px;
+            max-height: 250px;
+            overflow-y: auto;
+            z-index: 1000;
+            display: none;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .autocomplete-results.show {
+            display: block;
+        }
+
+        .autocomplete-item {
+            padding: 12px 15px;
+            cursor: pointer;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            transition: background 0.2s;
+        }
+
+        .autocomplete-item:last-child {
+            border-bottom: none;
+        }
+
+        .autocomplete-item:hover,
+        .autocomplete-item.active {
+            background: rgba(79, 195, 247, 0.3);
+        }
+
+        .autocomplete-item-main {
+            color: #fff;
+            font-weight: 500;
+            margin-bottom: 3px;
+        }
+
+        .autocomplete-item-sub {
+            color: #888;
+            font-size: 0.85rem;
+        }
+
+        .autocomplete-loading {
+            padding: 15px;
+            text-align: center;
+            color: #4fc3f7;
+        }
+
+        @media (max-width: 600px) {
+            .autocomplete-results {
+                max-height: 200px;
+            }
+
+            .autocomplete-item {
+                padding: 10px 12px;
+            }
+
+            .autocomplete-item-main {
+                font-size: 0.9rem;
+            }
+
+            .autocomplete-item-sub {
+                font-size: 0.75rem;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>🔍 Colorado Well Lookup Tool</h1>
-            <p>Search well permits and depth data from the Colorado Division of Water Resources</p>
+            <h1>� Colorado Well Finder</h1>
+            <p>Find nearby wells & estimate drilling costs — powered by CO Division of Water Resources data</p>
         </header>
 
         <section class="search-section">
@@ -779,7 +857,10 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Street Address</label>
-                        <input type="text" id="address" placeholder="e.g., 123 Main St, Pueblo, CO" required>
+                        <div class="autocomplete-wrapper">
+                            <input type="text" id="address" placeholder="Start typing an address..." autocomplete="off" required>
+                            <div class="autocomplete-results" id="autocomplete-results"></div>
+                        </div>
                     </div>
                 </div>
                 <div class="form-row">
@@ -885,6 +966,166 @@
         let markers = [];
         let searchLat = null;
         let searchLon = null;
+        let autocompleteTimeout = null;
+        let selectedAutocompleteIndex = -1;
+
+        // Initialize address autocomplete
+        function initAutocomplete() {
+            const input = document.getElementById('address');
+            const resultsDiv = document.getElementById('autocomplete-results');
+
+            input.addEventListener('input', function() {
+                clearTimeout(autocompleteTimeout);
+                const query = this.value.trim();
+                
+                if (query.length < 3) {
+                    resultsDiv.classList.remove('show');
+                    return;
+                }
+
+                // Debounce - wait 300ms after typing stops
+                autocompleteTimeout = setTimeout(() => {
+                    fetchAddressSuggestions(query);
+                }, 300);
+            });
+
+            // Keyboard navigation
+            input.addEventListener('keydown', function(e) {
+                const items = resultsDiv.querySelectorAll('.autocomplete-item');
+                if (!items.length) return;
+
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    selectedAutocompleteIndex = Math.min(selectedAutocompleteIndex + 1, items.length - 1);
+                    updateAutocompleteSelection(items);
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    selectedAutocompleteIndex = Math.max(selectedAutocompleteIndex - 1, 0);
+                    updateAutocompleteSelection(items);
+                } else if (e.key === 'Enter' && selectedAutocompleteIndex >= 0) {
+                    e.preventDefault();
+                    items[selectedAutocompleteIndex].click();
+                } else if (e.key === 'Escape') {
+                    resultsDiv.classList.remove('show');
+                    selectedAutocompleteIndex = -1;
+                }
+            });
+
+            // Close on click outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.autocomplete-wrapper')) {
+                    resultsDiv.classList.remove('show');
+                    selectedAutocompleteIndex = -1;
+                }
+            });
+        }
+
+        function updateAutocompleteSelection(items) {
+            items.forEach((item, index) => {
+                item.classList.toggle('active', index === selectedAutocompleteIndex);
+            });
+            if (selectedAutocompleteIndex >= 0) {
+                items[selectedAutocompleteIndex].scrollIntoView({ block: 'nearest' });
+            }
+        }
+
+        async function fetchAddressSuggestions(query) {
+            const resultsDiv = document.getElementById('autocomplete-results');
+            
+            // Show loading state
+            resultsDiv.innerHTML = '<div class="autocomplete-loading">🔍 Searching...</div>';
+            resultsDiv.classList.add('show');
+
+            try {
+                // Use Photon API (free, based on OpenStreetMap) - bias to Colorado
+                const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query + ', Colorado')}&limit=6&lat=39.0&lon=-105.5&osm_tag=place&osm_tag=highway&osm_tag=building&lang=en`;
+                
+                const response = await fetch(url);
+                const data = await response.json();
+
+                if (data.features && data.features.length > 0) {
+                    // Filter to only Colorado results
+                    const coloradoResults = data.features.filter(f => {
+                        const props = f.properties;
+                        return props.state === 'Colorado' || 
+                               (props.country === 'United States' && 
+                                (props.city || props.name || '').toLowerCase().includes('colorado'));
+                    });
+
+                    const resultsToShow = coloradoResults.length > 0 ? coloradoResults : data.features.slice(0, 5);
+                    
+                    resultsDiv.innerHTML = resultsToShow.map((feature, index) => {
+                        const props = feature.properties;
+                        const coords = feature.geometry.coordinates;
+                        
+                        // Build display strings
+                        let mainText = props.name || props.street || '';
+                        if (props.housenumber && props.street) {
+                            mainText = `${props.housenumber} ${props.street}`;
+                        }
+                        
+                        let subText = [props.city, props.county, props.state, props.postcode]
+                            .filter(Boolean)
+                            .join(', ');
+
+                        return `
+                            <div class="autocomplete-item" 
+                                 data-lat="${coords[1]}" 
+                                 data-lon="${coords[0]}"
+                                 data-address="${mainText}, ${subText}"
+                                 data-county="${props.county || ''}">
+                                <div class="autocomplete-item-main">${mainText}</div>
+                                <div class="autocomplete-item-sub">${subText}</div>
+                            </div>
+                        `;
+                    }).join('');
+
+                    // Add click handlers
+                    resultsDiv.querySelectorAll('.autocomplete-item').forEach(item => {
+                        item.addEventListener('click', function() {
+                            selectAutocompleteItem(this);
+                        });
+                    });
+
+                    selectedAutocompleteIndex = -1;
+                } else {
+                    resultsDiv.innerHTML = '<div class="autocomplete-loading">No addresses found</div>';
+                }
+            } catch (error) {
+                console.error('Autocomplete error:', error);
+                resultsDiv.innerHTML = '<div class="autocomplete-loading">Error searching addresses</div>';
+            }
+        }
+
+        function selectAutocompleteItem(item) {
+            const address = item.dataset.address;
+            const lat = parseFloat(item.dataset.lat);
+            const lon = parseFloat(item.dataset.lon);
+            const county = item.dataset.county;
+
+            // Set the address input
+            document.getElementById('address').value = address;
+
+            // If we got a county, try to match it to our dropdown
+            if (county) {
+                const countySelect = document.getElementById('county');
+                const countyName = county.replace(' County', '');
+                for (let option of countySelect.options) {
+                    if (option.value.toLowerCase() === countyName.toLowerCase()) {
+                        countySelect.value = option.value;
+                        break;
+                    }
+                }
+            }
+
+            // Hide autocomplete
+            document.getElementById('autocomplete-results').classList.remove('show');
+            selectedAutocompleteIndex = -1;
+
+            // Store the pre-geocoded coords for faster search
+            document.getElementById('address').dataset.lat = lat;
+            document.getElementById('address').dataset.lon = lon;
+        }
 
         // Load saved searches from localStorage
         function loadSavedSearches() {
@@ -941,7 +1182,10 @@
         }
 
         // Load saved searches on page load
-        document.addEventListener('DOMContentLoaded', loadSavedSearches);
+        document.addEventListener('DOMContentLoaded', function() {
+            loadSavedSearches();
+            initAutocomplete();
+        });
 
         function switchTab(tab) {
             document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
@@ -994,7 +1238,8 @@
 
         async function searchByAddress(event) {
             event.preventDefault();
-            const address = document.getElementById('address').value;
+            const addressInput = document.getElementById('address');
+            const address = addressInput.value;
             const radius = parseFloat(document.getElementById('radius-address').value);
             let county = document.getElementById('county').value;
             
@@ -1003,10 +1248,26 @@
             
             const btn = document.getElementById('search-btn-address');
             btn.disabled = true;
-            btn.textContent = '⏳ Geocoding address...';
             
             try {
-                const location = await geocodeAddress(address);
+                let location;
+                
+                // Check if we have pre-geocoded coordinates from autocomplete
+                if (addressInput.dataset.lat && addressInput.dataset.lon) {
+                    btn.textContent = '⏳ Searching wells...';
+                    location = {
+                        lat: parseFloat(addressInput.dataset.lat),
+                        lon: parseFloat(addressInput.dataset.lon),
+                        address: address
+                    };
+                    // Clear the cached coords
+                    delete addressInput.dataset.lat;
+                    delete addressInput.dataset.lon;
+                } else {
+                    btn.textContent = '⏳ Geocoding address...';
+                    location = await geocodeAddress(address);
+                }
+                
                 searchLat = location.lat;
                 searchLon = location.lon;
                 
