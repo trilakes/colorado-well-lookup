@@ -762,6 +762,186 @@
             text-decoration: none;
         }
 
+        /* Paywall Styles */
+        .paywall-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(10, 15, 30, 0.97);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .paywall-overlay.hidden {
+            display: none;
+        }
+
+        .paywall-content {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .paywall-title {
+            font-size: 2.5rem;
+            color: #4fc3f7;
+            margin-bottom: 15px;
+            text-shadow: 0 0 30px rgba(79, 195, 247, 0.5);
+        }
+
+        .paywall-subtitle {
+            font-size: 1.2rem;
+            color: #aaa;
+            margin-bottom: 40px;
+        }
+
+        .pricing-cards {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .pricing-card {
+            background: rgba(255,255,255,0.05);
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 40px 30px;
+            width: 320px;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            border-color: #4fc3f7;
+            box-shadow: 0 20px 40px rgba(79, 195, 247, 0.2);
+        }
+
+        .pricing-card.popular {
+            border-color: #00e676;
+            position: relative;
+        }
+
+        .pricing-card.popular::before {
+            content: "BEST VALUE";
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #00e676, #00c853);
+            color: #000;
+            font-weight: 700;
+            font-size: 0.8rem;
+            padding: 5px 20px;
+            border-radius: 20px;
+        }
+
+        .pricing-name {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .pricing-price {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #4fc3f7;
+            margin-bottom: 5px;
+        }
+
+        .pricing-period {
+            color: #888;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .pricing-features {
+            list-style: none;
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .pricing-features li {
+            padding: 8px 0;
+            color: #ccc;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: #00e676;
+            font-weight: bold;
+        }
+
+        .pricing-btn {
+            display: block;
+            width: 100%;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .pricing-btn.primary {
+            background: linear-gradient(135deg, #00e676, #00c853);
+            color: #000;
+        }
+
+        .pricing-btn.secondary {
+            background: linear-gradient(135deg, #4fc3f7, #0288d1);
+            color: #fff;
+        }
+
+        .pricing-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .paywall-footer {
+            margin-top: 40px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        .paywall-footer a {
+            color: #4fc3f7;
+        }
+
+        @media (max-width: 700px) {
+            .paywall-title {
+                font-size: 1.8rem;
+            }
+
+            .paywall-subtitle {
+                font-size: 1rem;
+            }
+
+            .pricing-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pricing-card {
+                width: 100%;
+                max-width: 350px;
+            }
+
+            .pricing-price {
+                font-size: 2.5rem;
+            }
+        }
+
         /* Address Autocomplete Styles */
         .autocomplete-wrapper {
             position: relative;
@@ -841,6 +1021,48 @@
     </style>
 </head>
 <body>
+    <!-- Paywall Overlay -->
+    <div class="paywall-overlay" id="paywall">
+        <div class="paywall-content">
+            <h1 class="paywall-title">💧 Colorado Well Finder</h1>
+            <p class="paywall-subtitle">Find nearby wells & get accurate drilling cost estimates</p>
+            
+            <div class="pricing-cards">
+                <div class="pricing-card popular">
+                    <div class="pricing-name">Lifetime Access</div>
+                    <div class="pricing-price">$5</div>
+                    <div class="pricing-period">one-time payment</div>
+                    <ul class="pricing-features">
+                        <li>Unlimited well searches</li>
+                        <li>Drilling cost estimates</li>
+                        <li>Interactive maps</li>
+                        <li>All 64 Colorado counties</li>
+                        <li>Access forever</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/test_fZu6oHfLN7KU4kofm3f3a00" class="pricing-btn primary">Get Lifetime Access</a>
+                </div>
+                
+                <div class="pricing-card">
+                    <div class="pricing-name">Pro Monthly</div>
+                    <div class="pricing-price">$10</div>
+                    <div class="pricing-period">per month</div>
+                    <ul class="pricing-features">
+                        <li>Unlimited well searches</li>
+                        <li>Drilling cost estimates</li>
+                        <li>Interactive maps</li>
+                        <li>All 64 Colorado counties</li>
+                        <li>Cancel anytime</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/test_14A6oH8jl9T23gk5Ltf3a01" class="pricing-btn secondary">Subscribe Monthly</a>
+                </div>
+            </div>
+            
+            <div class="paywall-footer">
+                <p>🔒 Secure payment via Stripe • Instant access after purchase</p>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
         <header>
             <h1>� Colorado Well Finder</h1>
@@ -968,6 +1190,31 @@
         let searchLon = null;
         let autocompleteTimeout = null;
         let selectedAutocompleteIndex = -1;
+
+        // Check for access on page load
+        function checkAccess() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const hasAccessParam = urlParams.get('access') === 'granted';
+            const hasStoredAccess = localStorage.getItem('wellFinderAccess') === 'granted';
+            
+            if (hasAccessParam) {
+                // Store access for future visits
+                localStorage.setItem('wellFinderAccess', 'granted');
+                // Clean up URL
+                window.history.replaceState({}, '', window.location.pathname);
+            }
+            
+            if (hasAccessParam || hasStoredAccess) {
+                // Hide paywall
+                document.getElementById('paywall').classList.add('hidden');
+                return true;
+            }
+            
+            return false;
+        }
+
+        // Run access check immediately
+        checkAccess();
 
         // Initialize address autocomplete
         function initAutocomplete() {
