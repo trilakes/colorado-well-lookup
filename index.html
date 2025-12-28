@@ -1958,7 +1958,8 @@
             const minLon = (lon - lonRadius).toFixed(4);
             const maxLon = (lon + lonRadius).toFixed(4);
             
-            const url = `https://dwr.state.co.us/Rest/GET/api/v2/wellpermits/wellpermit?format=json&county=${county}&latitude=${minLat}~${maxLat}&longitude=${minLon}~${maxLon}`;
+            const apiKey = 'YMQF3Ty9uW1tX09ydNtPEztmNPlUJWby';
+            const url = `https://dwr.state.co.us/Rest/GET/api/v2/wellpermits/wellpermit?format=json&apiKey=${apiKey}&county=${county}&latitude=${minLat}~${maxLat}&longitude=${minLon}~${maxLon}`;
             
             try {
                 const response = await fetch(url);
