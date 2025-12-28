@@ -291,7 +291,6 @@
     <script>
         const ACCESS_CODE = 'well2025';
         const TRACKER_URL = 'https://well-tracker.onrender.com';
-        let STRIPE_KEY = localStorage.getItem('hq_stripe_key') || '';
         let map = null;
         let markers = [];
 
@@ -317,15 +316,6 @@
             // Initialize map
             setTimeout(initMap, 100);
             
-            // Check for Stripe key
-            if (!STRIPE_KEY) {
-                const key = prompt('Enter your Stripe Secret Key (sk_live_...)\\nThis will be saved locally in your browser.');
-                if (key && key.startsWith('sk_')) {
-                    STRIPE_KEY = key;
-                    localStorage.setItem('hq_stripe_key', key);
-                }
-            }
-            
             refreshAll();
             
             // Auto-refresh every 30 seconds
@@ -341,7 +331,7 @@
 
         function refreshAll() {
             loadVisitorData();
-            if (STRIPE_KEY) loadStripeData();
+            loadStripeData();
         }
 
         async function loadVisitorData() {
@@ -467,48 +457,34 @@
             const container = document.getElementById('paymentsContainer');
             
             try {
-                const response = await fetch('https://api.stripe.com/v1/payment_intents?limit=10', {
-                    headers: { 'Authorization': `Bearer ${STRIPE_KEY}` }
-                });
-
+                // Call backend instead of Stripe directly
+                const response = await fetch(`${TRACKER_URL}/stripe/payments?key=well2025hq`);
                 if (!response.ok) throw new Error('Failed to fetch');
 
                 const data = await response.json();
-                const payments = data.data.filter(p => p.status === 'succeeded');
 
-                // Calculate stats
-                let totalRevenue = 0;
-                let monthRevenue = 0;
-                const now = new Date();
-                const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).getTime() / 1000;
+                document.getElementById('totalRevenue').textContent = '$' + data.totalRevenue.toFixed(0);
+                document.getElementById('totalCustomers').textContent = data.totalCustomers;
+                document.getElementById('monthRevenue').textContent = '$' + data.monthRevenue.toFixed(0);
+                document.getElementById('monthName').textContent = data.monthName;
 
-                payments.forEach(p => {
-                    totalRevenue += p.amount;
-                    if (p.created >= monthStart) monthRevenue += p.amount;
-                });
-
-                document.getElementById('totalRevenue').textContent = '$' + (totalRevenue / 100).toFixed(0);
-                document.getElementById('totalCustomers').textContent = payments.length;
-                document.getElementById('monthRevenue').textContent = '$' + (monthRevenue / 100).toFixed(0);
-                document.getElementById('monthName').textContent = now.toLocaleDateString('en-US', { month: 'long' });
-
-                if (payments.length === 0) {
+                if (data.payments.length === 0) {
                     container.innerHTML = '<div class="loading">No payments yet 🚀</div>';
                     return;
                 }
 
-                container.innerHTML = payments.slice(0, 5).map(p => `
+                container.innerHTML = data.payments.slice(0, 5).map(p => `
                     <div class="payment-row">
                         <div>
-                            <div class="payment-email">${p.receipt_email || 'Customer'}</div>
-                            <div class="payment-date">${new Date(p.created * 1000).toLocaleDateString()}</div>
+                            <div class="payment-email">${p.email}</div>
+                            <div class="payment-date">${p.date}</div>
                         </div>
-                        <div class="payment-amount">$${(p.amount / 100).toFixed(2)}</div>
+                        <div class="payment-amount">$${p.amount.toFixed(2)}</div>
                     </div>
                 `).join('');
 
             } catch (error) {
-                container.innerHTML = '<div class="loading">Configure Stripe key</div>';
+                container.innerHTML = '<div class="loading">Stripe not configured on server</div>';
             }
         }
 

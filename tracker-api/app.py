@@ -3,6 +3,7 @@ from flask_cors import CORS
 from datetime import datetime, timedelta
 import json
 import os
+import urllib.request
 
 app = Flask(__name__)
 CORS(app)  # Allow requests from coloradowell.com
@@ -11,12 +12,56 @@ CORS(app)  # Allow requests from coloradowell.com
 visitors = []
 daily_stats = {}
 
-# Secret key for accessing visitor data
+# Secret keys from environment
 HQ_KEY = os.environ.get('HQ_KEY', 'well2025hq')
+STRIPE_KEY = os.environ.get('STRIPE_KEY', '')
 
 @app.route('/')
 def home():
     return jsonify({"status": "ok", "service": "Colorado Well Tracker"})
+
+@app.route('/stripe/payments', methods=['GET'])
+def get_stripe_payments():
+    """Get payment data from Stripe - called from HQ dashboard"""
+    key = request.args.get('key', '')
+    if key != HQ_KEY:
+        return jsonify({"error": "Unauthorized"}), 401
+    
+    if not STRIPE_KEY:
+        return jsonify({"error": "Stripe not configured"}), 500
+    
+    try:
+        # Fetch payments from Stripe
+        req = urllib.request.Request(
+            'https://api.stripe.com/v1/payment_intents?limit=20',
+            headers={'Authorization': f'Bearer {STRIPE_KEY}'}
+        )
+        with urllib.request.urlopen(req, timeout=10) as response:
+            data = json.loads(response.read().decode())
+        
+        payments = [p for p in data.get('data', []) if p.get('status') == 'succeeded']
+        
+        # Calculate stats
+        total_revenue = sum(p['amount'] for p in payments)
+        now = datetime.now()
+        month_start = datetime(now.year, now.month, 1).timestamp()
+        month_revenue = sum(p['amount'] for p in payments if p['created'] >= month_start)
+        
+        return jsonify({
+            "totalRevenue": total_revenue / 100,
+            "totalCustomers": len(payments),
+            "monthRevenue": month_revenue / 100,
+            "monthName": now.strftime('%B'),
+            "payments": [{
+                "email": p.get('receipt_email') or 'Customer',
+                "amount": p['amount'] / 100,
+                "date": datetime.fromtimestamp(p['created']).strftime('%Y-%m-%d'),
+                "created": p['created']
+            } for p in payments[:10]]
+        })
+    
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
 
 @app.route('/track', methods=['POST', 'OPTIONS'])
 def track():
