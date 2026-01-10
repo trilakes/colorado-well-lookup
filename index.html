@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -977,7 +977,7 @@
         }
 
         .pricing-features li::before {
-            content: "Å“â€œ";
+            content: "œ“";
             color: #00e676;
             font-weight: bold;
         }
@@ -1660,7 +1660,7 @@
                 <div id="map"></div>
             </div>
             <div class="wells-container" id="wells-container">
-                <h2>Nearby Wells <span class="scroll-hint" id="scroll-hint">â€ â€œ Scroll for more</span></h2>
+                <h2>Nearby Wells <span class="scroll-hint" id="scroll-hint">†“ Scroll for more</span></h2>
                 <div id="summary"></div>
                 <div id="wells-list"></div>
             </div>
@@ -2078,7 +2078,7 @@
                 
                 // Check if we have pre-geocoded coordinates from autocomplete
                 if (addressInput.dataset.lat && addressInput.dataset.lon) {
-                    btn.textContent = 'ÂSearching wells...';
+                    btn.textContent = 'Searching wells...';
                     location = {
                         lat: parseFloat(addressInput.dataset.lat),
                         lon: parseFloat(addressInput.dataset.lon),
@@ -2088,7 +2088,7 @@
                     delete addressInput.dataset.lat;
                     delete addressInput.dataset.lon;
                 } else {
-                    btn.textContent = 'ÂGeocoding address...';
+                    btn.textContent = 'Geocoding address...';
                     location = await geocodeAddress(address);
                 }
                 
@@ -2100,7 +2100,7 @@
                     county = detectCounty(location.address);
                 }
                 
-                btn.textContent = 'ÂSearching wells...';
+                btn.textContent = 'Searching wells...';
                 await searchWells(location.lat, location.lon, radius, county);
             } catch (error) {
                 alert('Error: ' + error.message);
@@ -2125,7 +2125,7 @@
             
             const btn = document.getElementById('search-btn-coords');
             btn.disabled = true;
-            btn.textContent = 'ÂSearching wells...';
+            btn.textContent = 'Searching wells...';
             
             try {
                 await searchWells(lat, lon, radius, county);
@@ -2434,12 +2434,11 @@
     <script>
         (function() {
             try {
-                fetch('https://well-tracker.onrender.com/track', {
+                fetch('https://trilakeshq.com/api/track', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
-                        page: window.location.pathname,
-                        referrer: document.referrer
+                        app: 'well-tool', page: window.location.pathname, referrer: document.referrer
                     })
                 }).catch(() => {});
             } catch(e) {}
@@ -2447,6 +2446,7 @@
     </script>
 </body>
 </html>
+
 
 
 
