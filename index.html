@@ -1193,7 +1193,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(12, 18, 32, 0.98);
+            background: linear-gradient(165deg, #0c1220 0%, #0f1d32 40%, #0a1628 100%);
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
             padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px) env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
@@ -1530,99 +1530,223 @@
 
         @media (max-width: 700px) {
             .paywall-overlay {
-                padding-top: max(20px, env(safe-area-inset-top));
-                padding-bottom: max(20px, env(safe-area-inset-bottom));
+                padding: max(12px, env(safe-area-inset-top)) 0 max(20px, env(safe-area-inset-bottom)) 0;
             }
 
             .paywall-content {
-                padding: 15px 10px;
+                padding: 0 16px 24px;
+                max-width: 100%;
             }
 
+            /* Hero */
             .paywall-title {
-                font-size: 1.5rem;
-                margin-top: 10px;
+                font-size: 1.75rem;
+                margin-top: 20px;
+                margin-bottom: 8px;
+                line-height: 1.2;
+                letter-spacing: -0.5px;
             }
 
-            .paywall-footer {
-                margin-top: 25px;
-                margin-bottom: 10px;
-                font-size: 0.8rem;
+            .title-icon {
+                width: 32px;
+                height: 32px;
+                margin-right: 8px;
             }
+
+            .paywall-subtitle {
+                font-size: 1.05rem;
+                margin-bottom: 28px;
+                line-height: 1.5;
+                color: #cbd5e1;
+            }
+
+            /* Features - auto-cycling carousel on mobile */
             .landing-features {
-                flex-direction: column;
-                align-items: center;
+                position: relative;
+                display: block;
+                height: 160px;
+                margin: 24px 0;
+                overflow: hidden;
             }
 
             .landing-feature {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
                 width: 100%;
-                max-width: 300px;
-                padding: 15px;
+                max-width: none;
+                padding: 20px 18px;
+                border-radius: 14px;
+                background: rgba(30, 41, 59, 0.5);
+                border: 1px solid rgba(56, 189, 248, 0.1);
+                opacity: 0;
+                transform: translateX(30px);
+                transition: opacity 0.5s ease, transform 0.5s ease;
+                pointer-events: none;
+                box-sizing: border-box;
+            }
+
+            .landing-feature.feature-active {
+                opacity: 1;
+                transform: translateX(0);
+                pointer-events: auto;
+            }
+
+            .landing-features::-webkit-scrollbar {
+                display: none;
+            }
+
+            .feature-dots {
+                display: flex;
+                justify-content: center;
+                gap: 8px;
+                margin-top: 8px;
+            }
+
+            .feature-dot {
+                width: 8px;
+                height: 8px;
+                border-radius: 50%;
+                background: rgba(148, 163, 184, 0.3);
+                transition: background 0.3s ease, transform 0.3s ease;
+            }
+
+            .feature-dot.active {
+                background: #38bdf8;
+                transform: scale(1.3);
             }
 
             .landing-feature h3 {
                 font-size: 1rem;
+                margin-bottom: 6px;
             }
 
             .landing-feature p {
-                font-size: 0.85rem;
+                font-size: 0.88rem;
+                line-height: 1.5;
             }
 
             .feature-icon {
-                width: 40px;
-                height: 40px;
+                margin-bottom: 12px;
             }
 
+            .feature-icon svg {
+                width: 36px;
+                height: 36px;
+            }
+
+            /* Social proof */
             .landing-proof {
-                padding: 15px;
-                margin: 15px 0;
+                padding: 18px 16px;
+                margin: 20px 0;
+                border-radius: 12px;
+                text-align: left;
             }
 
             .proof-item {
-                font-size: 0.85rem;
-                padding: 6px 0;
+                margin: 8px 0;
+                gap: 10px;
             }
 
+            .proof-item svg {
+                width: 18px;
+                height: 18px;
+                min-width: 18px;
+            }
+
+            .proof-item span {
+                font-size: 0.9rem;
+                line-height: 1.4;
+            }
+
+            /* Problem section */
             .landing-problem {
-                padding: 15px;
+                padding: 0;
+                margin: 24px 0;
+                text-align: left;
             }
 
             .landing-problem h2 {
-                font-size: 1.1rem;
+                font-size: 1.25rem;
+                line-height: 1.3;
+                margin-bottom: 12px;
             }
 
             .landing-problem p {
-                font-size: 0.85rem;
+                font-size: 0.95rem;
+                line-height: 1.6;
             }
 
-            .paywall-subtitle {
-                font-size: 0.9rem;
-                margin-bottom: 25px;
-            }
-
-            .pricing-card {
-                padding: 20px 15px;
-            }
-
+            /* Pricing cards */
             .pricing-cards {
                 flex-direction: column;
-                align-items: center;
+                align-items: stretch;
+                gap: 16px;
+                margin: 0;
             }
 
             .pricing-card {
                 width: 100%;
-                max-width: 320px;
+                max-width: 100%;
+                padding: 24px 20px;
+                border-radius: 16px;
+            }
+
+            .pricing-card.popular {
+                order: -1;
+            }
+
+            .pricing-card.popular::before {
+                font-size: 0.7rem;
+                padding: 4px 14px;
+                top: -10px;
+            }
+
+            .pricing-name {
+                font-size: 1.1rem;
             }
 
             .pricing-price {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
+            }
+
+            .pricing-period {
+                font-size: 0.85rem;
+                margin-bottom: 18px;
             }
 
             .pricing-features {
-                font-size: 0.9rem;
+                margin-bottom: 20px;
             }
 
             .pricing-features li {
                 padding: 6px 0;
+                font-size: 0.92rem;
+            }
+
+            .pricing-btn {
+                padding: 15px 24px;
+                font-size: 1.05rem;
+                border-radius: 12px;
+            }
+
+            /* Footer */
+            .paywall-footer {
+                margin-top: 28px;
+                margin-bottom: 12px;
+                font-size: 0.82rem;
+            }
+
+            /* Already subscribed */
+            .already-subscribed {
+                margin-top: 20px;
+                font-size: 0.88rem;
+            }
+
+            .email-verify-box input {
+                width: 100%;
+                max-width: 100%;
             }
         }
 
@@ -1940,6 +2064,22 @@
             </h1>
             <p class="paywall-subtitle">Know exactly how deep to drill <em>before</em> you spend $20,000+</p>
             
+            <!-- Social Proof - moved up for mobile impact -->
+            <div class="landing-proof">
+                <div class="proof-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg>
+                    <span>Official Colorado Division of Water Resources data</span>
+                </div>
+                <div class="proof-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg>
+                    <span>591,000+ well records — every permitted well in Colorado</span>
+                </div>
+                <div class="proof-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg>
+                    <span>Depths, drillers, aquifers, pump yields &amp; more</span>
+                </div>
+            </div>
+
             <!-- Value Props -->
             <div class="landing-features">
                 <div class="landing-feature">
@@ -1965,7 +2105,7 @@
                         </svg>
                     </div>
                     <h3>Accurate Cost Estimates</h3>
-                    <p>Get real drilling costs based on actual well depths in your area. Colorado averages $50-75 per foot.</p>
+                    <p>Get real drilling costs based on actual well depths in your area. Colorado averages $50–75 per foot.</p>
                 </div>
                 <div class="landing-feature">
                     <div class="feature-icon">
@@ -1975,30 +2115,15 @@
                         </svg>
                     </div>
                     <h3>Search Any Address</h3>
-                    <p>Just type an address and see all permitted wells within miles. Works for all 64 Colorado counties.</p>
+                    <p>Type an address and see every permitted well within miles. All 64 Colorado counties covered.</p>
                 </div>
             </div>
-
-            <!-- Social Proof -->
-            <div class="landing-proof">
-                <div class="proof-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg>
-                    <span>Data from official Colorado Division of Water Resources permits</span>
-                </div>
-                <div class="proof-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg>
-                    <span>Over 300,000+ well records searchable</span>
-                </div>
-                <div class="proof-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg>
-                    <span>Updated with latest permit data</span>
-                </div>
-            </div>
+            <div class="feature-dots" id="featureDots"></div>
 
             <!-- Problem/Solution -->
             <div class="landing-problem">
                 <h2>Drilling a Well is Expensive. Don't Go In Blind.</h2>
-                <p>The average Colorado well costs <strong>$15,000 - $30,000</strong>. Depth is everything. A 200ft well costs half what a 400ft well does. The only way to know how deep you'll need to drill? <strong>Look at what your neighbors already drilled.</strong></p>
+                <p>The average Colorado well costs <strong>$15,000–$30,000</strong>. Depth is everything — a 200ft well costs half what a 400ft well does. The only way to know how deep you'll need to drill? <strong>Look at what your neighbors already drilled.</strong></p>
             </div>
 
             <div class="pricing-cards">
@@ -2030,9 +2155,14 @@
                 </div>
             </div>
             
-            <!-- Already Subscribed Section -->
+            <!-- Email Verify Section -->
             <div class="already-subscribed">
-                <p>Already subscribed? <a href="https://billing.stripe.com/p/login/5kQ14n4H8bLtav53DE6AM00" target="_blank">Manage your subscription</a></p>
+                <p>Already purchased? <a href="#" onclick="showEmailVerify(); return false;">Verify your email</a> &nbsp;|&nbsp; <a href="https://billing.stripe.com/p/login/5kQ14n4H8bLtav53DE6AM00" target="_blank">Manage subscription</a></p>
+            </div>
+            <div class="email-verify-box" id="emailVerifyBox" style="display:none;">
+                <input type="email" id="verifyEmail" placeholder="Enter your purchase email" onkeydown="if(event.key==='Enter') verifySubscription()">
+                <button onclick="verifySubscription()">Verify Access</button>
+                <div class="verify-status" id="verifyStatus"></div>
             </div>
             
             <div class="paywall-footer">
@@ -2549,27 +2679,108 @@
             exploreMarkers = [];
         }
 
+        // ── Feature card auto-carousel (mobile) ──
+        function initFeatureCarousel() {
+            if (window.innerWidth > 700) return;
+            const features = document.querySelectorAll('.landing-feature');
+            const dotsContainer = document.getElementById('featureDots');
+            if (!features.length || !dotsContainer) return;
+
+            // Create dots
+            dotsContainer.innerHTML = '';
+            features.forEach((_, i) => {
+                const dot = document.createElement('div');
+                dot.className = 'feature-dot' + (i === 0 ? ' active' : '');
+                dot.addEventListener('click', () => goToFeature(i));
+                dotsContainer.appendChild(dot);
+            });
+
+            let current = 0;
+            features[0].classList.add('feature-active');
+
+            function goToFeature(index) {
+                features[current].classList.remove('feature-active');
+                dotsContainer.children[current].classList.remove('active');
+                current = index;
+                features[current].classList.add('feature-active');
+                dotsContainer.children[current].classList.add('active');
+            }
+
+            setInterval(() => {
+                goToFeature((current + 1) % features.length);
+            }, 3500);
+        }
+        initFeatureCarousel();
+
         // Check for access on page load
         function checkAccess() {
-            const urlParams = new URLSearchParams(window.location.search);
-            const hasAccessParam = urlParams.get('access') === 'granted';
-            const hasStoredAccess = localStorage.getItem('wellFinderAccess') === 'granted';
             const hasAdminAccess = localStorage.getItem('wellFinderAdmin') === 'true';
-            
-            if (hasAccessParam) {
-                // Store access for future visits
-                localStorage.setItem('wellFinderAccess', 'granted');
-                // Clean up URL
-                window.history.replaceState({}, '', window.location.pathname);
-            }
-            
-            if (hasAccessParam || hasStoredAccess || hasAdminAccess) {
-                // Hide paywall
+            if (hasAdminAccess) {
                 document.getElementById('paywall').classList.add('hidden');
                 return true;
             }
-            
+
+            // Check Stripe redirect — user just paid, prompt for email to verify
+            const urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.get('access') === 'granted') {
+                window.history.replaceState({}, '', window.location.pathname);
+                // Show paywall with email verify pre-opened
+                setTimeout(() => {
+                    showEmailVerify();
+                    document.getElementById('verifyStatus').textContent = 'Payment received! Enter your email to activate access.';
+                    document.getElementById('verifyStatus').className = 'verify-status success';
+                }, 300);
+                return false;
+            }
+
+            // Check cached access
+            const accessType = localStorage.getItem('wellFinderAccessType');
+            const email = localStorage.getItem('wellFinderEmail');
+            const verifiedAt = parseInt(localStorage.getItem('wellFinderVerifiedAt') || '0');
+
+            if (accessType && email) {
+                if (accessType === 'lifetime') {
+                    document.getElementById('paywall').classList.add('hidden');
+                    return true;
+                }
+                if (accessType === 'monthly') {
+                    const hoursSinceVerify = (Date.now() - verifiedAt) / (1000 * 60 * 60);
+                    if (hoursSinceVerify < 24) {
+                        document.getElementById('paywall').classList.add('hidden');
+                        return true;
+                    }
+                    // Monthly expired cache — re-verify silently
+                    reVerifyAccess(email);
+                    return false;
+                }
+            }
+
             return false;
+        }
+
+        // Silent re-verify for monthly users (cached email, expired TTL)
+        async function reVerifyAccess(email) {
+            try {
+                const response = await fetch('https://well-verify.trilakes.workers.dev/verify', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                const data = await response.json();
+                if (data.valid) {
+                    localStorage.setItem('wellFinderAccessType', data.type);
+                    localStorage.setItem('wellFinderVerifiedAt', Date.now().toString());
+                    document.getElementById('paywall').classList.add('hidden');
+                } else {
+                    // Subscription lapsed — clear and show paywall
+                    localStorage.removeItem('wellFinderAccessType');
+                    localStorage.removeItem('wellFinderEmail');
+                    localStorage.removeItem('wellFinderVerifiedAt');
+                }
+            } catch (e) {
+                // Network error — give benefit of the doubt for 1 more hour
+                document.getElementById('paywall').classList.add('hidden');
+            }
         }
 
         // Secret Admin Modal - Ctrl+Alt+T
@@ -2624,6 +2835,9 @@
         function showEmailVerify() {
             const box = document.getElementById('emailVerifyBox');
             box.style.display = box.style.display === 'none' ? 'flex' : 'none';
+            if (box.style.display === 'flex') {
+                document.getElementById('verifyEmail').focus();
+            }
         }
 
         async function verifySubscription() {
@@ -2649,10 +2863,20 @@
                 const data = await response.json();
 
                 if (data.valid) {
-                    statusDiv.textContent = 'Access verified! Redirecting...';
+                    const label = data.type === 'lifetime' ? 'Lifetime access' : 'Monthly subscription';
+                    statusDiv.textContent = label + ' verified! Loading...';
                     statusDiv.className = 'verify-status success';
-                    localStorage.setItem('wellToolAccess', 'granted');
-                    localStorage.setItem('wellToolEmail', email);
+
+                    // Store access with type and timestamp
+                    localStorage.setItem('wellFinderEmail', email);
+                    localStorage.setItem('wellFinderAccessType', data.type);
+                    localStorage.setItem('wellFinderVerifiedAt', Date.now().toString());
+
+                    // Clean up old keys if they exist
+                    localStorage.removeItem('wellToolAccess');
+                    localStorage.removeItem('wellToolEmail');
+                    localStorage.removeItem('wellFinderAccess');
+
                     setTimeout(() => {
                         document.getElementById('paywall').classList.add('hidden');
                     }, 1000);
