@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0c1220"/>
+      <stop offset="50%" style="stop-color:#131b2e"/>
+      <stop offset="100%" style="stop-color:#0a1628"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#22d3ee"/>
+      <stop offset="100%" style="stop-color:#38bdf8"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <!-- Subtle grid lines -->
+  <g opacity="0.04" stroke="#fff" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+  <!-- Water drop icon -->
+  <g transform="translate(540, 100)">
+    <path d="M60 10C60 10 30 55 30 80C30 97 43 115 60 115C77 115 90 97 90 80C90 55 60 10 60 10Z" 
+          fill="none" stroke="url(#accent)" stroke-width="4" opacity="0.9"/>
+    <path d="M60 95C67 95 73 89 73 80C73 68 60 52 60 52" 
+          fill="none" stroke="url(#accent)" stroke-width="3" opacity="0.5"/>
+  </g>
+  <!-- Title -->
+  <text x="600" y="280" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="700" font-size="64" fill="#ffffff" letter-spacing="-1">Colorado Well Finder</text>
+  <!-- Subtitle -->
+  <text x="600" y="340" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="400" font-size="28" fill="#94a3b8">Know how deep to drill before you spend $20,000+</text>
+  <!-- Stats bar -->
+  <g transform="translate(200, 400)">
+    <rect x="0" y="0" width="800" height="70" rx="12" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="130" y="42" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="600" font-size="22" fill="#22d3ee">591K+</text>
+    <text x="130" y="62" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="400" font-size="13" fill="#64748b">Well Records</text>
+    <line x1="267" y1="15" x2="267" y2="55" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="400" y="42" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="600" font-size="22" fill="#22d3ee">64</text>
+    <text x="400" y="62" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="400" font-size="13" fill="#64748b">Colorado Counties</text>
+    <line x1="533" y1="15" x2="533" y2="55" stroke="rgba(255,255,255,0.08)" stroke-width="1"/>
+    <text x="670" y="42" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="600" font-size="22" fill="#22d3ee">$50–75</text>
+    <text x="670" y="62" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="400" font-size="13" fill="#64748b">Per Foot Average</text>
+  </g>
+  <!-- CTA -->
+  <rect x="430" y="510" width="340" height="56" rx="10" fill="#f1f5f9"/>
+  <text x="600" y="545" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="600" font-size="20" fill="#0f172a">Search Any Colorado Address</text>
+  <!-- Domain -->
+  <text x="600" y="610" text-anchor="middle" font-family="system-ui, sans-serif" font-weight="500" font-size="16" fill="#475569">coloradowell.com</text>
+</svg>
