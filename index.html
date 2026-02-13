@@ -2788,6 +2788,14 @@
 
         // Check for access on page load
         function checkAccess() {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            // ?preview — force show landing page (for previewing/marketing)
+            if (urlParams.get('preview') !== null) {
+                window.history.replaceState({}, '', window.location.pathname);
+                return false;
+            }
+
             const hasAdminAccess = localStorage.getItem('wellFinderAdmin') === 'true';
             if (hasAdminAccess) {
                 document.getElementById('paywall').classList.add('hidden');
