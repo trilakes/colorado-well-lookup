@@ -2960,6 +2960,11 @@
                     statusDiv.textContent = label + ' verified! Loading...';
                     statusDiv.className = 'verify-status success';
 
+                    // Track conversion in HQ
+                    if (window.hqTrackConversion) {
+                        window.hqTrackConversion(data.type, email);
+                    }
+
                     // Store access with type and timestamp
                     localStorage.setItem('wellFinderEmail', email);
                     localStorage.setItem('wellFinderAccessType', data.type);
@@ -3774,18 +3779,56 @@
         });
     </script>
     
-    <!-- Visitor Tracking -->
+    <!-- HQ Visitor Tracking -->
     <script>
         (function() {
-            try {
-                fetch('https://trilakeshq.com/api/track', {
+            var HQ = 'https://trilakeshq.com';
+            var APP = 'well-tool';
+
+            // Parse UTM params if present
+            var params = new URLSearchParams(window.location.search);
+            var utm = {};
+            ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k) {
+                if (params.get(k)) utm[k] = params.get(k);
+            });
+            // Store UTMs so we keep them across the session
+            if (Object.keys(utm).length) {
+                sessionStorage.setItem('wf_utm', JSON.stringify(utm));
+            } else {
+                try { utm = JSON.parse(sessionStorage.getItem('wf_utm') || '{}'); } catch(e) { utm = {}; }
+            }
+
+            function track(page, extra) {
+                var data = {
+                    app: APP,
+                    page: page || window.location.pathname,
+                    referrer: document.referrer || 'Direct'
+                };
+                if (Object.keys(utm).length) data.utm = utm;
+                if (extra) Object.assign(data, extra);
+                fetch(HQ + '/api/track', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        app: 'well-tool', page: window.location.pathname, referrer: document.referrer
-                    })
-                }).catch(() => {});
-            } catch(e) {}
+                    body: JSON.stringify(data)
+                }).catch(function() {});
+            }
+
+            // Initial page view
+            track();
+
+            // Heartbeat every 30s so HQ knows visitor is active
+            setInterval(function() {
+                track(null, { heartbeat: true });
+            }, 30000);
+
+            // Expose conversion tracker globally
+            window.hqTrackConversion = function(type, email) {
+                track('/conversion/' + type, {
+                    event: 'conversion',
+                    conversion_type: type,
+                    conversion_email: email
+                });
+            };
         })();
     </script>
 </body>
