@@ -2734,43 +2734,49 @@
             resultsDiv.classList.add('show');
 
             try {
-                // Use Photon API (free, based on OpenStreetMap) - bias to Colorado
-                const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query + ', Colorado')}&limit=6&lat=39.0&lon=-105.5&lang=en`;
+                // Use ArcGIS World Geocoder (free, has house-level addresses)
+                const suggestUrl = `https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?text=${encodeURIComponent(query)}&location=-105.5,39.0&countryCode=USA&maxSuggestions=6&f=json`;
                 
-                const response = await fetch(url);
-                const data = await response.json();
+                const suggestResp = await fetch(suggestUrl);
+                const suggestData = await suggestResp.json();
 
-                if (data.features && data.features.length > 0) {
-                    // Filter to only Colorado results
-                    const coloradoResults = data.features.filter(f => {
-                        const props = f.properties;
-                        return props.state === 'Colorado' || 
-                               (props.country === 'United States' && 
-                                (props.city || props.name || '').toLowerCase().includes('colorado'));
+                if (suggestData.suggestions && suggestData.suggestions.length > 0) {
+                    // Filter to Colorado suggestions
+                    const coSuggestions = suggestData.suggestions.filter(s => 
+                        s.text.includes(', CO,') || s.text.includes('Colorado')
+                    );
+                    const resultsToShow = coSuggestions.length > 0 ? coSuggestions : suggestData.suggestions;
+
+                    // Geocode each suggestion to get coordinates
+                    const geocodePromises = resultsToShow.map(async (suggestion) => {
+                        const findUrl = `https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=${encodeURIComponent(suggestion.text)}&magicKey=${encodeURIComponent(suggestion.magicKey)}&maxLocations=1&outFields=City,Region,Subregion&f=json`;
+                        try {
+                            const resp = await fetch(findUrl);
+                            const data = await resp.json();
+                            if (data.candidates && data.candidates.length > 0) {
+                                return { suggestion, candidate: data.candidates[0] };
+                            }
+                        } catch(e) { /* skip failed geocodes */ }
+                        return { suggestion, candidate: null };
                     });
 
-                    const resultsToShow = coloradoResults.length > 0 ? coloradoResults : data.features.slice(0, 5);
+                    const results = await Promise.all(geocodePromises);
                     
-                    resultsDiv.innerHTML = resultsToShow.map((feature, index) => {
-                        const props = feature.properties;
-                        const coords = feature.geometry.coordinates;
-                        
-                        // Build display strings
-                        let mainText = props.name || props.street || '';
-                        if (props.housenumber && props.street) {
-                            mainText = `${props.housenumber} ${props.street}`;
-                        }
-                        
-                        let subText = [props.city, props.county, props.state, props.postcode]
-                            .filter(Boolean)
-                            .join(', ');
+                    resultsDiv.innerHTML = results.map((r) => {
+                        const parts = r.suggestion.text.split(',').map(s => s.trim());
+                        const mainText = parts[0] || r.suggestion.text;
+                        const subText = parts.slice(1).join(', ');
+                        const lat = r.candidate ? r.candidate.location.y : '';
+                        const lon = r.candidate ? r.candidate.location.x : '';
+                        const county = r.candidate && r.candidate.attributes ? 
+                            (r.candidate.attributes.Subregion || '').replace(' County', '') : '';
 
                         return `
                             <div class="autocomplete-item" 
-                                 data-lat="${coords[1]}" 
-                                 data-lon="${coords[0]}"
-                                 data-address="${mainText}, ${subText}"
-                                 data-county="${props.county || ''}">
+                                 data-lat="${lat}" 
+                                 data-lon="${lon}"
+                                 data-address="${r.suggestion.text}"
+                                 data-county="${county}">
                                 <svg class="autocomplete-item-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
                                 <div class="autocomplete-item-content">
                                     <div class="autocomplete-item-main">${mainText}</div>
