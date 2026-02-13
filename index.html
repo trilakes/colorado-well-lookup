@@ -1624,9 +1624,8 @@
             .landing-features {
                 position: relative;
                 display: block;
-                height: 160px;
+                min-height: 180px;
                 margin: 24px 0;
-                overflow: hidden;
             }
 
             .landing-feature {
@@ -1648,6 +1647,7 @@
             }
 
             .landing-feature.feature-active {
+                position: relative;
                 opacity: 1;
                 transform: translateX(0);
                 pointer-events: auto;
@@ -1755,6 +1755,11 @@
 
             .pricing-card.popular {
                 order: -1;
+            }
+
+            .use-cases-grid {
+                grid-template-columns: 1fr !important;
+                gap: 8px !important;
             }
 
             .pricing-card.popular::before {
@@ -2190,7 +2195,7 @@
             <!-- Use Cases / Who It's For -->
             <div class="landing-problem" style="margin-top: 0; padding-top: 0; border-top: none;">
                 <h2 style="font-size: 1.15rem; margin-bottom: 14px;">Built for Colorado Property Buyers & Landowners</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; text-align: left; max-width: 520px; margin: 0 auto;">
+                <div class="use-cases-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; text-align: left; max-width: 520px; margin: 0 auto;">
                     <span style="color: #cbd5e1; font-size: 0.9rem;">&#10003; Buying vacant land</span>
                     <span style="color: #cbd5e1; font-size: 0.9rem;">&#10003; Real estate due diligence</span>
                     <span style="color: #cbd5e1; font-size: 0.9rem;">&#10003; Replacing an old well</span>
@@ -2756,9 +2761,16 @@
         // ── Feature card auto-carousel (mobile) ──
         function initFeatureCarousel() {
             if (window.innerWidth > 700) return;
+            const container = document.querySelector('.landing-features');
             const features = document.querySelectorAll('.landing-feature');
             const dotsContainer = document.getElementById('featureDots');
-            if (!features.length || !dotsContainer) return;
+            if (!features.length || !dotsContainer || !container) return;
+
+            // Show first card immediately so we can measure it
+            features.forEach((f, i) => {
+                if (i === 0) f.classList.add('feature-active');
+                else f.classList.remove('feature-active');
+            });
 
             // Create dots
             dotsContainer.innerHTML = '';
@@ -2770,7 +2782,6 @@
             });
 
             let current = 0;
-            features[0].classList.add('feature-active');
 
             function goToFeature(index) {
                 features[current].classList.remove('feature-active');
