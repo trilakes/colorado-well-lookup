@@ -2735,7 +2735,7 @@
 
             try {
                 // Use Photon API (free, based on OpenStreetMap) - bias to Colorado
-                const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query + ', Colorado')}&limit=6&lat=39.0&lon=-105.5&osm_tag=place&osm_tag=highway&osm_tag=building&lang=en`;
+                const url = `https://photon.komoot.io/api/?q=${encodeURIComponent(query + ', Colorado')}&limit=6&lat=39.0&lon=-105.5&lang=en`;
                 
                 const response = await fetch(url);
                 const data = await response.json();
