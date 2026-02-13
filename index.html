@@ -101,6 +101,9 @@
     </script>
     
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -109,76 +112,96 @@
         }
 
         html {
-            background-color: #1a1a2e;
+            background-color: #0c1220;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(145deg, #0c1220 0%, #131b2e 50%, #0a1628 100%);
             min-height: 100vh;
             min-height: -webkit-fill-available;
-            color: #fff;
+            color: #e8eaed;
+            line-height: 1.5;
         }
 
         .container {
             max-width: 1400px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 24px;
         }
 
         header {
             text-align: center;
-            padding: 30px 0;
-            border-bottom: 2px solid rgba(255,255,255,0.1);
-            margin-bottom: 30px;
+            padding: 40px 0 32px;
+            margin-bottom: 32px;
         }
 
         header h1 {
-            font-size: 2.5rem;
-            color: #4fc3f7;
-            text-shadow: 0 0 20px rgba(79, 195, 247, 0.5);
-            margin-bottom: 10px;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #fff;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+
+        header h1 svg {
+            width: 36px;
+            height: 36px;
+            color: #38bdf8;
+            filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));
         }
 
         header p {
-            color: #aaa;
-            font-size: 1.1rem;
+            color: #94a3b8;
+            font-size: 1.05rem;
+            font-weight: 400;
         }
 
         .search-section {
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 32px;
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
         }
 
         .search-tabs {
             display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
+            gap: 8px;
+            margin-bottom: 24px;
+            background: rgba(15, 23, 42, 0.5);
+            padding: 4px;
+            border-radius: 12px;
         }
 
         .tab-btn {
             flex: 1;
-            padding: 15px 30px;
+            padding: 12px 24px;
             border: none;
             border-radius: 10px;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
-            background: rgba(255,255,255,0.1);
-            color: #fff;
+            transition: all 0.2s ease;
+            background: transparent;
+            color: #94a3b8;
         }
 
         .tab-btn.active {
-            background: linear-gradient(135deg, #4fc3f7, #0288d1);
-            box-shadow: 0 5px 20px rgba(79, 195, 247, 0.4);
+            background: #38bdf8;
+            color: #0c1220;
+            box-shadow: 0 2px 12px rgba(56, 189, 248, 0.3);
         }
 
         .tab-btn:hover:not(.active) {
-            background: rgba(255,255,255,0.2);
+            color: #e2e8f0;
+            background: rgba(255,255,255,0.05);
         }
 
         .search-form {
@@ -202,54 +225,74 @@
         .form-group label {
             display: block;
             margin-bottom: 8px;
-            color: #4fc3f7;
+            color: #cbd5e1;
             font-weight: 500;
+            font-size: 0.9rem;
         }
 
         .form-group input, .form-group select {
             width: 100%;
-            padding: 15px;
-            border: 2px solid rgba(255,255,255,0.1);
+            padding: 14px 16px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
             border-radius: 10px;
-            background: rgba(0,0,0,0.3);
-            color: #fff;
+            background: rgba(15, 23, 42, 0.8);
+            color: #f1f5f9;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            font-family: inherit;
+            transition: all 0.2s ease;
         }
 
         .form-group input:focus, .form-group select:focus {
             outline: none;
-            border-color: #4fc3f7;
-            box-shadow: 0 0 15px rgba(79, 195, 247, 0.3);
+            border-color: #38bdf8;
+            background: rgba(15, 23, 42, 0.95);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
         }
 
         .form-group input::placeholder {
-            color: #666;
+            color: #64748b;
+        }
+
+        .form-group select {
+            cursor: pointer;
+        }
+
+        .form-group select option {
+            background: #1e293b;
+            color: #f1f5f9;
         }
 
         .search-btn {
             width: 100%;
-            padding: 18px;
+            padding: 16px 24px;
             border: none;
             border-radius: 10px;
-            background: linear-gradient(135deg, #4fc3f7, #0288d1);
-            color: #fff;
-            font-size: 1.2rem;
+            background: #38bdf8;
+            color: #0c1220;
+            font-size: 1.05rem;
             font-weight: 600;
+            font-family: inherit;
             cursor: pointer;
-            transition: all 0.3s ease;
-            margin-top: 10px;
+            transition: all 0.2s ease;
+            margin-top: 16px;
+            letter-spacing: 0.01em;
         }
 
         .search-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(79, 195, 247, 0.4);
+            background: #7dd3fc;
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(56, 189, 248, 0.3);
+        }
+
+        .search-btn:active {
+            transform: translateY(0);
         }
 
         .search-btn:disabled {
-            opacity: 0.6;
+            opacity: 0.5;
             cursor: not-allowed;
             transform: none;
+            box-shadow: none;
         }
 
         .results-section {
@@ -451,6 +494,10 @@
                 margin-top: 8px;
             }
 
+            .detail-rows {
+                grid-template-columns: 1fr;
+            }
+
             .cost-breakdown {
                 margin-top: 12px;
                 padding-top: 12px;
@@ -549,29 +596,33 @@
         }
 
         .map-container {
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
         }
 
         .map-container h2 {
-            color: #4fc3f7;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            color: #f1f5f9;
+            margin-bottom: 16px;
+            font-size: 1.15rem;
+            font-weight: 600;
         }
 
         #map {
             height: 500px;
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
+            border: 1px solid rgba(148, 163, 184, 0.1);
         }
 
         .wells-container {
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            padding: 20px;
-            border: 1px solid rgba(255,255,255,0.1);
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 16px;
+            padding: 24px;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
             max-height: 600px;
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
@@ -580,31 +631,34 @@
         }
 
         .wells-container h2 {
-            color: #4fc3f7;
-            margin-bottom: 15px;
-            font-size: 1.3rem;
+            color: #f1f5f9;
+            margin-bottom: 16px;
+            font-size: 1.15rem;
+            font-weight: 600;
             position: sticky;
-            top: -20px;
+            top: -24px;
             z-index: 10;
-            background: rgba(22, 33, 62, 0.98);
-            padding: 15px 0;
-            margin-top: -20px;
-            margin-left: -20px;
-            margin-right: -20px;
-            padding-left: 20px;
-            backdrop-filter: blur(10px);
+            background: rgba(30, 41, 59, 0.98);
+            padding: 16px 0;
+            margin-top: -24px;
+            margin-left: -24px;
+            margin-right: -24px;
+            padding-left: 24px;
+            backdrop-filter: blur(12px);
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-right: 20px;
+            padding-right: 24px;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
         }
 
         .scroll-hint {
-            font-size: 0.75rem;
-            color: #00e676;
+            font-size: 0.8rem;
+            color: #22c55e;
             animation: bounce 1.5s ease infinite;
             opacity: 1;
             transition: opacity 0.3s ease;
+            font-weight: 500;
         }
 
         .scroll-hint.hidden {
@@ -613,59 +667,64 @@
 
         @keyframes bounce {
             0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(5px); }
+            50% { transform: translateY(4px); }
         }
 
         .well-card {
-            background: rgba(0,0,0,0.3);
-            border-radius: 10px;
+            background: rgba(15, 23, 42, 0.7);
+            border-radius: 12px;
             padding: 20px;
-            margin-bottom: 15px;
-            border-left: 4px solid #4fc3f7;
-            transition: all 0.3s ease;
+            margin-bottom: 12px;
+            border-left: 3px solid #38bdf8;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-left: 3px solid #38bdf8;
         }
 
         .well-card:hover {
-            transform: translateX(5px);
-            border-left-color: #00e676;
+            background: rgba(15, 23, 42, 0.9);
+            transform: translateX(4px);
+            border-left-color: #22c55e;
             cursor: pointer;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
         }
 
         .well-card.expanded {
-            background: rgba(0,0,0,0.5);
+            background: rgba(15, 23, 42, 0.95);
         }
 
         .well-card.shallow {
-            border-left-color: #00e676;
+            border-left-color: #22c55e;
         }
 
         .well-card.medium {
-            border-left-color: #ffeb3b;
+            border-left-color: #eab308;
         }
 
         .well-card.deep {
-            border-left-color: #ff5722;
+            border-left-color: #ef4444;
         }
 
         .well-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         .well-permit {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            color: #fff;
+            color: #f1f5f9;
         }
 
         .well-distance {
-            background: rgba(79, 195, 247, 0.2);
-            padding: 5px 15px;
+            background: rgba(56, 189, 248, 0.15);
+            padding: 6px 14px;
             border-radius: 20px;
-            font-size: 0.9rem;
-            color: #4fc3f7;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #7dd3fc;
         }
 
         .well-stats {
@@ -675,40 +734,44 @@
         }
 
         .well-stat {
-            background: rgba(255,255,255,0.05);
+            background: rgba(30, 41, 59, 0.6);
             padding: 12px;
             border-radius: 8px;
         }
 
         .well-stat-label {
-            font-size: 0.8rem;
-            color: #888;
-            margin-bottom: 5px;
+            font-size: 0.78rem;
+            color: #94a3b8;
+            margin-bottom: 4px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
         }
 
         .well-stat-value {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            color: #fff;
+            color: #f1f5f9;
         }
 
         .well-stat-value.depth {
-            color: #4fc3f7;
-            font-size: 1.4rem;
+            color: #38bdf8;
+            font-size: 1.3rem;
         }
 
         .summary-box {
-            background: linear-gradient(135deg, rgba(79, 195, 247, 0.2), rgba(2, 136, 209, 0.2));
-            border-radius: 15px;
-            padding: 25px;
+            background: rgba(56, 189, 248, 0.08);
+            border-radius: 14px;
+            padding: 24px;
             margin-bottom: 20px;
-            border: 1px solid rgba(79, 195, 247, 0.3);
+            border: 1px solid rgba(56, 189, 248, 0.2);
         }
 
         .summary-title {
-            font-size: 1.2rem;
-            color: #4fc3f7;
-            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: #f1f5f9;
+            margin-bottom: 16px;
+            font-weight: 600;
         }
 
         .summary-grid {
@@ -722,29 +785,30 @@
         }
 
         .summary-value {
-            font-size: 2rem;
+            font-size: 1.9rem;
             font-weight: 700;
-            color: #fff;
+            color: #f1f5f9;
         }
 
         .summary-label {
-            font-size: 0.9rem;
-            color: #aaa;
+            font-size: 0.85rem;
+            color: #94a3b8;
+            font-weight: 500;
         }
 
         .loading {
             text-align: center;
             padding: 50px;
-            color: #4fc3f7;
+            color: #38bdf8;
         }
 
         .loading-spinner {
-            width: 50px;
-            height: 50px;
-            border: 4px solid rgba(79, 195, 247, 0.2);
-            border-top-color: #4fc3f7;
+            width: 48px;
+            height: 48px;
+            border: 3px solid rgba(56, 189, 248, 0.2);
+            border-top-color: #38bdf8;
             border-radius: 50%;
-            animation: spin 1s linear infinite;
+            animation: spin 0.8s linear infinite;
             margin: 0 auto 20px;
         }
 
@@ -753,26 +817,27 @@
         }
 
         .error-message {
-            background: rgba(244, 67, 54, 0.2);
-            border: 1px solid rgba(244, 67, 54, 0.5);
-            border-radius: 10px;
-            padding: 20px;
-            color: #ff8a80;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            border-radius: 12px;
+            padding: 24px;
+            color: #fca5a5;
             text-align: center;
         }
 
         .cost-estimate {
-            background: linear-gradient(135deg, rgba(0, 230, 118, 0.2), rgba(0, 200, 83, 0.2));
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 15px;
-            border: 1px solid rgba(0, 230, 118, 0.3);
+            background: rgba(34, 197, 94, 0.08);
+            border-radius: 12px;
+            padding: 16px;
+            margin-top: 16px;
+            border: 1px solid rgba(34, 197, 94, 0.2);
         }
 
         .cost-title {
             font-size: 0.9rem;
-            color: #00e676;
-            margin-bottom: 10px;
+            color: #4ade80;
+            margin-bottom: 12px;
+            font-weight: 600;
         }
 
         .cost-grid {
@@ -787,19 +852,19 @@
         }
 
         .cost-label {
-            color: #aaa;
+            color: #94a3b8;
         }
 
         .cost-value {
-            color: #fff;
+            color: #f1f5f9;
             font-weight: 600;
         }
 
         .cost-breakdown {
             display: none;
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
         }
 
         .cost-breakdown.show {
@@ -807,7 +872,7 @@
         }
 
         .cost-breakdown-title {
-            color: #00e676;
+            color: #4ade80;
             font-size: 1rem;
             margin-bottom: 12px;
             font-weight: 600;
@@ -816,49 +881,308 @@
         .cost-row {
             display: flex;
             justify-content: space-between;
-            padding: 8px 12px;
-            background: rgba(255,255,255,0.05);
-            border-radius: 6px;
+            padding: 10px 14px;
+            background: rgba(30, 41, 59, 0.5);
+            border-radius: 8px;
             margin-bottom: 6px;
         }
 
         .cost-row.total {
-            background: linear-gradient(135deg, rgba(0, 230, 118, 0.3), rgba(0, 200, 83, 0.3));
+            background: rgba(34, 197, 94, 0.15);
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             margin-top: 10px;
+            border: 1px solid rgba(34, 197, 94, 0.3);
         }
 
         .cost-row-label {
-            color: #aaa;
+            color: #94a3b8;
         }
 
         .cost-row-value {
-            color: #fff;
+            color: #f1f5f9;
         }
 
         .cost-row.total .cost-row-label,
         .cost-row.total .cost-row-value {
-            color: #00e676;
+            color: #4ade80;
         }
 
         .click-hint {
             font-size: 0.8rem;
-            color: #666;
+            color: #64748b;
             text-align: center;
-            margin-top: 10px;
+            margin-top: 12px;
+        }
+
+        /* ── Expandable Details ── */
+        .well-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 14px;
+            padding: 8px 0 2px;
+            color: #64748b;
+            font-size: 0.78rem;
+            font-weight: 500;
+            cursor: pointer;
+            letter-spacing: 0.02em;
+            transition: color 0.2s;
+            user-select: none;
+        }
+        .well-toggle:hover { color: #38bdf8; }
+        .well-toggle svg {
+            width: 14px; height: 14px;
+            transition: transform 0.25s ease;
+        }
+        .well-card.expanded .well-toggle svg {
+            transform: rotate(180deg);
+        }
+        .well-card.expanded .well-toggle { color: #38bdf8; }
+
+        .well-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s ease, opacity 0.25s ease;
+            opacity: 0;
+        }
+        .well-card.expanded .well-details {
+            max-height: 800px;
+            opacity: 1;
+        }
+
+        .well-details-inner {
+            padding-top: 16px;
+            margin-top: 14px;
+            border-top: 1px solid rgba(148,163,184,0.08);
+        }
+
+        .detail-group {
+            margin-bottom: 14px;
+        }
+        .detail-group:last-child { margin-bottom: 0; }
+
+        .detail-group-title {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            color: #475569;
+            margin-bottom: 8px;
+        }
+
+        .detail-rows {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
+        }
+        .detail-rows.single {
+            grid-template-columns: 1fr;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 6px 10px;
+            background: rgba(30,41,59,0.4);
+            border-radius: 6px;
+            font-size: 0.82rem;
+        }
+        .detail-row-label {
+            color: #64748b;
+            font-weight: 500;
+            white-space: nowrap;
+            margin-right: 8px;
+        }
+        .detail-row-value {
+            color: #e2e8f0;
+            font-weight: 600;
+            text-align: right;
+            word-break: break-word;
+        }
+
+        /* ── Explore Map Button ── */
+        .explore-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 14px 24px;
+            margin-top: 16px;
+            background: rgba(56,189,248,0.10);
+            border: 1px solid rgba(56,189,248,0.25);
+            border-radius: 12px;
+            color: #7dd3fc;
+            font-size: 0.95rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.01em;
+        }
+        .explore-btn:hover {
+            background: rgba(56,189,248,0.18);
+            border-color: #38bdf8;
+            color: #fff;
+            transform: translateY(-1px);
+        }
+        .explore-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+        /* ── Explore Map Overlay ── */
+        .explore-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: #0c1220;
+            display: none;
+            flex-direction: column;
+        }
+        .explore-overlay.open { display: flex; }
+
+        .explore-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 16px;
+            background: rgba(15,23,42,0.95);
+            border-bottom: 1px solid rgba(148,163,184,0.1);
+            backdrop-filter: blur(12px);
+            z-index: 2;
+        }
+        .explore-bar-title {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+        .explore-bar-title svg { width: 20px; height: 20px; color: #38bdf8; }
+
+        .explore-close {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: rgba(148,163,184,0.1);
+            border: 1px solid rgba(148,163,184,0.15);
+            border-radius: 8px;
+            color: #94a3b8;
+            font-size: 0.82rem;
+            font-weight: 500;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.15s;
+        }
+        .explore-close:hover { background: rgba(148,163,184,0.2); color: #f1f5f9; }
+        .explore-close svg { width: 16px; height: 16px; }
+
+        #explore-map { flex: 1; width: 100%; }
+
+        .explore-msg {
+            position: absolute;
+            bottom: 24px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background: rgba(15,23,42,0.92);
+            border: 1px solid rgba(56,189,248,0.25);
+            border-radius: 10px;
+            color: #7dd3fc;
+            font-size: 0.85rem;
+            font-weight: 500;
+            pointer-events: none;
+            z-index: 3;
+            backdrop-filter: blur(8px);
+            white-space: nowrap;
+            transition: opacity 0.3s;
+        }
+        .explore-msg.hidden { opacity: 0; }
+
+        .explore-legend {
+            position: absolute;
+            top: 70px;
+            right: 12px;
+            padding: 10px 14px;
+            background: rgba(15,23,42,0.88);
+            border: 1px solid rgba(148,163,184,0.12);
+            border-radius: 10px;
+            z-index: 3;
+            backdrop-filter: blur(8px);
+            font-size: 0.75rem;
+            color: #94a3b8;
+        }
+        .explore-legend-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 4px;
+        }
+        .explore-legend-row:last-child { margin-bottom: 0; }
+        .explore-legend-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255,255,255,0.5);
+            flex-shrink: 0;
+        }
+
+        .explore-counter {
+            position: absolute;
+            top: 70px;
+            left: 12px;
+            padding: 8px 14px;
+            background: rgba(15,23,42,0.88);
+            border: 1px solid rgba(148,163,184,0.12);
+            border-radius: 10px;
+            z-index: 3;
+            backdrop-filter: blur(8px);
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            transition: opacity 0.3s;
+        }
+
+        .explore-loading {
+            position: absolute;
+            top: 70px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 8px 18px;
+            background: rgba(15,23,42,0.92);
+            border: 1px solid rgba(56,189,248,0.2);
+            border-radius: 8px;
+            color: #38bdf8;
+            font-size: 0.82rem;
+            font-weight: 500;
+            z-index: 3;
+            display: none;
+        }
+        .explore-loading.show { display: block; }
+
+        @media (max-width: 600px) {
+            .explore-bar { padding: 10px 12px; }
+            .explore-bar-title { font-size: 0.9rem; }
+            .explore-close { padding: 7px 10px; font-size: 0.78rem; }
+            .explore-legend { top: 62px; right: 8px; padding: 8px 10px; font-size: 0.7rem; }
+            .explore-counter { top: 62px; left: 8px; padding: 6px 10px; font-size: 0.78rem; }
+            .explore-msg { bottom: 16px; font-size: 0.8rem; padding: 8px 16px; }
         }
 
         footer {
             text-align: center;
-            padding: 30px;
-            color: #666;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            margin-top: 40px;
+            padding: 32px;
+            color: #64748b;
+            border-top: 1px solid rgba(148, 163, 184, 0.1);
+            margin-top: 48px;
+            font-size: 0.9rem;
         }
 
         footer a {
-            color: #4fc3f7;
+            color: #38bdf8;
             text-decoration: none;
         }
 
@@ -869,7 +1193,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(10, 15, 30, 0.97);
+            background: rgba(12, 18, 32, 0.98);
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
             padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px) env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
@@ -886,47 +1210,50 @@
             width: 100%;
             text-align: center;
             margin: 0 auto;
-            padding: 30px 20px;
+            padding: 40px 20px;
         }
 
         .paywall-title {
-            font-size: 2.5rem;
-            color: #4fc3f7;
-            margin-bottom: 15px;
-            text-shadow: 0 0 30px rgba(79, 195, 247, 0.5);
+            font-size: 2.3rem;
+            color: #f1f5f9;
+            margin-bottom: 12px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
 
         .paywall-subtitle {
-            font-size: 1.2rem;
-            color: #aaa;
+            font-size: 1.15rem;
+            color: #94a3b8;
             margin-bottom: 40px;
+            line-height: 1.6;
         }
 
         .pricing-cards {
             display: flex;
-            gap: 30px;
+            gap: 24px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
         .pricing-card {
-            background: rgba(255,255,255,0.05);
-            border: 2px solid rgba(255,255,255,0.1);
+            background: rgba(30, 41, 59, 0.7);
+            border: 1px solid rgba(148, 163, 184, 0.15);
             border-radius: 20px;
-            padding: 40px 30px;
+            padding: 36px 28px;
             width: 320px;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
 
         .pricing-card:hover {
-            transform: translateY(-5px);
-            border-color: #4fc3f7;
-            box-shadow: 0 20px 40px rgba(79, 195, 247, 0.2);
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.4);
+            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
         }
 
         .pricing-card.popular {
-            border-color: #00e676;
+            border-color: rgba(34, 197, 94, 0.5);
             position: relative;
+            background: rgba(30, 41, 59, 0.85);
         }
 
         .pricing-card.popular::before {
@@ -935,133 +1262,144 @@
             top: -12px;
             left: 50%;
             transform: translateX(-50%);
-            background: linear-gradient(135deg, #00e676, #00c853);
-            color: #000;
+            background: #22c55e;
+            color: #052e16;
             font-weight: 700;
-            font-size: 0.8rem;
-            padding: 5px 20px;
+            font-size: 0.75rem;
+            padding: 5px 18px;
             border-radius: 20px;
+            letter-spacing: 0.03em;
         }
 
         .pricing-name {
-            font-size: 1.3rem;
-            color: #fff;
-            margin-bottom: 10px;
+            font-size: 1.2rem;
+            color: #f1f5f9;
+            margin-bottom: 8px;
+            font-weight: 600;
         }
 
         .pricing-price {
-            font-size: 3rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            color: #4fc3f7;
-            margin-bottom: 5px;
+            color: #38bdf8;
+            margin-bottom: 4px;
         }
 
         .pricing-period {
-            color: #888;
-            font-size: 0.95rem;
-            margin-bottom: 25px;
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-bottom: 24px;
         }
 
         .pricing-features {
             list-style: none;
             text-align: left;
-            margin-bottom: 30px;
+            margin-bottom: 28px;
         }
 
         .pricing-features li {
             padding: 8px 0;
-            color: #ccc;
+            color: #cbd5e1;
             display: flex;
             align-items: center;
             gap: 10px;
+            font-size: 0.95rem;
         }
 
         .pricing-features li::before {
-            content: "��";
-            color: #00e676;
+            content: "✓";
+            color: #22c55e;
             font-weight: bold;
         }
 
         .pricing-btn {
             display: block;
             width: 100%;
-            padding: 15px 30px;
+            padding: 14px 28px;
             border: none;
             border-radius: 10px;
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 600;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
+            text-align: center;
         }
 
         .pricing-btn.primary {
-            background: linear-gradient(135deg, #00e676, #00c853);
-            color: #000;
+            background: #22c55e;
+            color: #052e16;
         }
 
         .pricing-btn.secondary {
-            background: linear-gradient(135deg, #4fc3f7, #0288d1);
-            color: #fff;
+            background: #38bdf8;
+            color: #0c1220;
         }
 
         .pricing-btn:hover {
             transform: scale(1.02);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+            filter: brightness(1.1);
         }
 
         .paywall-footer {
             margin-top: 40px;
-            color: #666;
+            color: #64748b;
             font-size: 0.9rem;
         }
 
         .paywall-footer a {
-            color: #4fc3f7;
+            color: #38bdf8;
         }
 
         /* Already Subscribed / Email Verify Styles */
         .already-subscribed {
-            margin-top: 30px;
-            color: #888;
+            margin-top: 28px;
+            color: #94a3b8;
             font-size: 0.95rem;
         }
         .already-subscribed a {
-            color: #4fc3f7;
+            color: #38bdf8;
             text-decoration: underline;
+            text-underline-offset: 2px;
         }
         .email-verify-box {
-            margin-top: 15px;
+            margin-top: 16px;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 10px;
         }
         .email-verify-box input {
-            padding: 12px 20px;
-            border: 2px solid rgba(255,255,255,0.2);
-            border-radius: 8px;
-            background: rgba(0,0,0,0.3);
-            color: #fff;
+            padding: 12px 18px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 10px;
+            background: rgba(15, 23, 42, 0.8);
+            color: #f1f5f9;
             font-size: 1rem;
             width: 300px;
             max-width: 90%;
+            font-family: inherit;
         }
         .email-verify-box input:focus {
             outline: none;
-            border-color: #4fc3f7;
+            border-color: #38bdf8;
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.15);
         }
         .email-verify-box button {
-            padding: 12px 30px;
+            padding: 12px 28px;
             border: none;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #4fc3f7, #0288d1);
-            color: #fff;
+            border-radius: 10px;
+            background: #38bdf8;
+            color: #0c1220;
             font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: all 0.2s;
+            font-family: inherit;
         }
         .email-verify-box button:hover {
+            background: #7dd3fc;
             transform: scale(1.02);
         }
         .verify-status {
@@ -1069,47 +1407,47 @@
             font-size: 0.9rem;
         }
         .verify-status.success {
-            color: #00e676;
+            color: #22c55e;
         }
         .verify-status.error {
-            color: #ff5252;
+            color: #ef4444;
         }
         .verify-status.loading {
-            color: #4fc3f7;
+            color: #38bdf8;
         }
 
         /* Landing Page Feature Styles */
         .landing-features {
             display: flex;
-            gap: 30px;
+            gap: 24px;
             justify-content: center;
             flex-wrap: wrap;
             margin: 40px 0;
         }
 
         .landing-feature {
-            background: rgba(255,255,255,0.05);
-            border-radius: 15px;
-            padding: 30px 25px;
+            background: rgba(30, 41, 59, 0.6);
+            border-radius: 16px;
+            padding: 28px 24px;
             width: 280px;
             text-align: center;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(148, 163, 184, 0.1);
         }
 
         .feature-icon {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
 
         .feature-icon svg {
-            width: 48px;
-            height: 48px;
-            stroke: #4fc3f7;
+            width: 44px;
+            height: 44px;
+            stroke: #38bdf8;
         }
 
         .title-icon {
-            width: 42px;
-            height: 42px;
-            stroke: #4fc3f7;
+            width: 40px;
+            height: 40px;
+            stroke: #38bdf8;
             vertical-align: middle;
             margin-right: 10px;
         }
@@ -1117,29 +1455,30 @@
         .lock-icon {
             width: 16px;
             height: 16px;
-            stroke: #00e676;
+            stroke: #22c55e;
             vertical-align: middle;
             margin-right: 5px;
         }
 
         .landing-feature h3 {
-            color: #4fc3f7;
-            font-size: 1.2rem;
+            color: #f1f5f9;
+            font-size: 1.1rem;
             margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .landing-feature p {
-            color: #aaa;
-            font-size: 0.95rem;
-            line-height: 1.5;
+            color: #94a3b8;
+            font-size: 0.92rem;
+            line-height: 1.6;
         }
 
         .landing-proof {
-            background: rgba(0, 230, 118, 0.1);
-            border: 1px solid rgba(0, 230, 118, 0.3);
-            border-radius: 15px;
-            padding: 25px 40px;
-            margin: 30px auto;
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.25);
+            border-radius: 16px;
+            padding: 24px 36px;
+            margin: 32px auto;
             max-width: 550px;
         }
 
@@ -1153,12 +1492,12 @@
         .proof-item svg {
             width: 20px;
             height: 20px;
-            stroke: #00e676;
+            stroke: #22c55e;
             flex-shrink: 0;
         }
 
         .proof-item span {
-            color: #00e676;
+            color: #4ade80;
             font-size: 0.95rem;
         }
 
@@ -1169,19 +1508,19 @@
         }
 
         .landing-problem h2 {
-            color: #fff;
-            font-size: 1.6rem;
-            margin-bottom: 15px;
-        }
+            color: #f1f5f9;
+            font-size: 1.5rem;
+            margin-bottom: 16px;
+            font-weight: 600;\n        }
 
         .landing-problem p {
-            color: #aaa;
-            font-size: 1.05rem;
-            line-height: 1.6;
+            color: #94a3b8;
+            font-size: 1rem;
+            line-height: 1.7;
         }
 
         .landing-problem strong {
-            color: #4fc3f7;
+            color: #38bdf8;
         }
 
         .paywall-content {
@@ -1298,15 +1637,15 @@
             top: 100%;
             left: 0;
             right: 0;
-            background: rgba(20, 30, 50, 0.98);
-            border: 2px solid #4fc3f7;
+            background: rgba(15, 23, 42, 0.98);
+            border: 1px solid rgba(56, 189, 248, 0.4);
             border-top: none;
             border-radius: 0 0 10px 10px;
             max-height: 250px;
             overflow-y: auto;
             z-index: 1000;
             display: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.4);
         }
 
         .autocomplete-results.show {
@@ -1314,10 +1653,13 @@
         }
 
         .autocomplete-item {
-            padding: 12px 15px;
+            padding: 12px 16px;
             cursor: pointer;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            transition: background 0.2s;
+            border-bottom: 1px solid rgba(148, 163, 184, 0.08);
+            transition: background 0.15s;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
         }
 
         .autocomplete-item:last-child {
@@ -1326,24 +1668,49 @@
 
         .autocomplete-item:hover,
         .autocomplete-item.active {
-            background: rgba(79, 195, 247, 0.3);
+            background: rgba(56, 189, 248, 0.12);
+        }
+
+        .autocomplete-item-icon {
+            flex-shrink: 0;
+            width: 18px;
+            height: 18px;
+            color: #38bdf8;
+            margin-top: 2px;
+            opacity: 0.7;
+        }
+
+        .autocomplete-item:hover .autocomplete-item-icon {
+            opacity: 1;
+        }
+
+        .autocomplete-item-content {
+            flex: 1;
+            min-width: 0;
         }
 
         .autocomplete-item-main {
-            color: #fff;
+            color: #f1f5f9;
             font-weight: 500;
-            margin-bottom: 3px;
+            margin-bottom: 2px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .autocomplete-item-sub {
-            color: #888;
-            font-size: 0.85rem;
+            color: #64748b;
+            font-size: 0.82rem;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
         }
 
         .autocomplete-loading {
-            padding: 15px;
+            padding: 16px;
             text-align: center;
-            color: #4fc3f7;
+            color: #64748b;
+            font-size: 0.9rem;
         }
 
         @media (max-width: 600px) {
@@ -1364,6 +1731,122 @@
             }
         }
 
+        /* Enhanced Search Bar */
+        .search-bar-wrapper {
+            position: relative;
+        }
+
+        .search-bar-wrapper .search-icon {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #64748b;
+            pointer-events: none;
+            width: 20px;
+            height: 20px;
+            transition: color 0.2s;
+        }
+
+        .search-bar-wrapper:focus-within .search-icon {
+            color: #38bdf8;
+        }
+
+        .search-bar-wrapper input {
+            padding-left: 44px !important;
+        }
+
+        /* Radius Pills */
+        .radius-pills {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .radius-pill {
+            padding: 8px 18px;
+            border-radius: 20px;
+            border: 1px solid rgba(148, 163, 184, 0.15);
+            background: rgba(15, 23, 42, 0.5);
+            color: #94a3b8;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: inherit;
+            white-space: nowrap;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .radius-pill:hover {
+            border-color: rgba(56, 189, 248, 0.4);
+            color: #e2e8f0;
+            background: rgba(56, 189, 248, 0.06);
+        }
+
+        .radius-pill.active {
+            background: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            border-color: rgba(56, 189, 248, 0.5);
+            font-weight: 600;
+        }
+
+        /* Form Options Row */
+        .form-options {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+            align-items: flex-start;
+        }
+
+        .form-options > .form-group {
+            flex: 1;
+        }
+
+        /* Search Button Icon */
+        .search-btn svg {
+            width: 18px;
+            height: 18px;
+            vertical-align: -3px;
+            margin-right: 6px;
+        }
+
+        .search-btn .btn-spinner {
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 2.5px solid rgba(12, 18, 32, 0.3);
+            border-top-color: #0c1220;
+            border-radius: 50%;
+            animation: btn-spin 0.6s linear infinite;
+            vertical-align: -3px;
+            margin-right: 8px;
+        }
+
+        @keyframes btn-spin {
+            to { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 600px) {
+            .form-options {
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            .radius-pills {
+                gap: 6px;
+            }
+
+            .radius-pill {
+                padding: 9px 14px;
+                font-size: 0.82rem;
+            }
+
+            .search-bar-wrapper input {
+                font-size: 16px !important;
+            }
+        }
+
         /* Secret Admin Modal */
         .admin-modal {
             display: none;
@@ -1372,7 +1855,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.9);
+            background: rgba(12, 18, 32, 0.95);
             z-index: 10000;
             justify-content: center;
             align-items: center;
@@ -1381,55 +1864,62 @@
             display: flex;
         }
         .admin-box {
-            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-            border: 2px solid #ff4444;
-            border-radius: 15px;
-            padding: 30px;
+            background: rgba(30, 41, 59, 0.95);
+            border: 1px solid rgba(239, 68, 68, 0.5);
+            border-radius: 16px;
+            padding: 32px;
             text-align: center;
             max-width: 350px;
-            box-shadow: 0 0 30px rgba(255,68,68,0.3);
+            box-shadow: 0 16px 40px rgba(0,0,0,0.4);
         }
         .admin-box h3 {
-            color: #ff4444;
+            color: #ef4444;
             margin-bottom: 20px;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
+            font-weight: 600;
         }
         .admin-box input {
             width: 100%;
-            padding: 12px;
-            margin-bottom: 15px;
-            border: 1px solid rgba(255,255,255,0.2);
-            border-radius: 8px;
-            background: rgba(0,0,0,0.3);
-            color: #fff;
+            padding: 12px 14px;
+            margin-bottom: 14px;
+            border: 1px solid rgba(148, 163, 184, 0.2);
+            border-radius: 10px;
+            background: rgba(15, 23, 42, 0.8);
+            color: #f1f5f9;
             font-size: 1rem;
+            font-family: inherit;
         }
         .admin-box input:focus {
             outline: none;
-            border-color: #ff4444;
+            border-color: #ef4444;
+            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.15);
         }
         .admin-box button {
             width: 100%;
             padding: 12px;
             border: none;
-            border-radius: 8px;
-            background: linear-gradient(135deg, #ff4444, #cc0000);
+            border-radius: 10px;
+            background: #ef4444;
             color: #fff;
             font-size: 1rem;
+            font-weight: 600;
             cursor: pointer;
             margin-bottom: 10px;
+            font-family: inherit;
+            transition: all 0.2s;
         }
         .admin-box button:hover {
-            background: linear-gradient(135deg, #ff6666, #ff4444);
+            background: #f87171;
         }
         .admin-box .cancel-btn {
-            background: rgba(255,255,255,0.1);
+            background: rgba(148, 163, 184, 0.15);
+            color: #94a3b8;
         }
         .admin-box .cancel-btn:hover {
-            background: rgba(255,255,255,0.2);
+            background: rgba(148, 163, 184, 0.25);
         }
         .admin-error {
-            color: #ff4444;
+            color: #ef4444;
             font-size: 0.9rem;
             margin-bottom: 10px;
             display: none;
@@ -1512,8 +2002,8 @@
             </div>
 
             <div class="pricing-cards">
-                <div class="pricing-card popular">
-                    <div class="pricing-name">Pro Access</div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Monthly</div>
                     <div class="pricing-price">$10</div>
                     <div class="pricing-period">per month</div>
                     <ul class="pricing-features">
@@ -1523,7 +2013,20 @@
                         <li>All 64 Colorado counties</li>
                         <li>Cancel anytime</li>
                     </ul>
-                    <a href="https://buy.stripe.com/5kQ14n4H8bLtav53DE6AM00" class="pricing-btn primary">Get Started</a>
+                    <a href="https://buy.stripe.com/6oUaEXc9A3eX7iT4HI6AM04" class="pricing-btn secondary">Subscribe</a>
+                </div>
+                <div class="pricing-card popular">
+                    <div class="pricing-name">Lifetime Access</div>
+                    <div class="pricing-price">$40</div>
+                    <div class="pricing-period">one-time payment</div>
+                    <ul class="pricing-features">
+                        <li>Unlimited well searches</li>
+                        <li>Drilling cost estimates</li>
+                        <li>Interactive maps</li>
+                        <li>All 64 Colorado counties</li>
+                        <li>Never pay again</li>
+                    </ul>
+                    <a href="https://buy.stripe.com/dRmdR93D402LcDd1vw6AM03" class="pricing-btn primary">Get Lifetime Access</a>
                 </div>
             </div>
             
@@ -1555,7 +2058,7 @@
 
     <div class="container">
         <header>
-            <h1><svg style="width:40px;height:40px;vertical-align:middle;margin-right:10px;color:#4fc3f7;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 6 8.5 6 13C6 16.5 8.5 20 12 20C15.5 20 18 16.5 18 13C18 8.5 12 2 12 2Z"/><path d="M12 16C13.5 16 15 14.5 15 13C15 11 12 8 12 8"/></svg>Colorado Well Finder</h1>
+            <h1><svg style="width:36px;height:36px;vertical-align:middle;margin-right:12px;color:#38bdf8;filter:drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 6 8.5 6 13C6 16.5 8.5 20 12 20C15.5 20 18 16.5 18 13C18 8.5 12 2 12 2Z"/><path d="M12 16C13.5 16 15 14.5 15 13C15 11 12 8 12 8"/></svg>Colorado Well Finder</h1>
             <p>Find nearby wells & estimate drilling costs for any Colorado address</p>
         </header>
 
@@ -1565,92 +2068,209 @@
                 <button class="tab-btn" onclick="switchTab('coords')">Search by Coordinates</button>
             </div>
 
+            <button class="explore-btn" onclick="openExploreMap()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
+                Explore Map &mdash; Browse Wells &amp; Parcels
+            </button>
+
             <form id="address-form" class="search-form active" onsubmit="searchByAddress(event)">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label>Street Address</label>
-                        <div class="autocomplete-wrapper">
-                            <input type="text" id="address" placeholder="Start typing an address..." autocomplete="off" required>
-                            <div class="autocomplete-results" id="autocomplete-results"></div>
+                <div class="form-group">
+                    <label>Enter a Colorado address</label>
+                    <div class="autocomplete-wrapper">
+                        <div class="search-bar-wrapper">
+                            <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                            <input type="text" id="address" placeholder="e.g. 1234 Pine Valley Rd, Monument, CO" autocomplete="off" required>
                         </div>
+                        <div class="autocomplete-results" id="autocomplete-results"></div>
                     </div>
                 </div>
-                <div class="form-row">
+                <div class="form-options">
                     <div class="form-group">
-                        <label>Search Radius (miles)</label>
-                        <select id="radius-address">
-                            <option value="0.5">0.5 miles</option>
-                            <option value="1" selected>1 mile</option>
-                            <option value="2">2 miles</option>
-                            <option value="5">5 miles</option>
-                        </select>
+                        <label>Search Radius</label>
+                        <div class="radius-pills" data-target="radius-address">
+                            <button type="button" class="radius-pill" data-value="0.5">&frac12; mi</button>
+                            <button type="button" class="radius-pill active" data-value="1">1 mi</button>
+                            <button type="button" class="radius-pill" data-value="2">2 mi</button>
+                            <button type="button" class="radius-pill" data-value="5">5 mi</button>
+                            <button type="button" class="radius-pill" data-value="10">10 mi</button>
+                        </div>
+                        <input type="hidden" id="radius-address" value="1">
                     </div>
                     <div class="form-group">
-                        <label>County (optional)</label>
+                        <label>County <span style="color:#64748b;font-weight:400">(auto-detected)</span></label>
                         <select id="county">
-                            <option value="">Auto-detect</option>
-                            <option value="Pueblo">Pueblo</option>
-                            <option value="El Paso">El Paso</option>
-                            <option value="Denver">Denver</option>
-                            <option value="Jefferson">Jefferson</option>
-                            <option value="Arapahoe">Arapahoe</option>
+                            <option value="">Auto-detect from address</option>
                             <option value="Adams">Adams</option>
-                            <option value="Douglas">Douglas</option>
+                            <option value="Alamosa">Alamosa</option>
+                            <option value="Arapahoe">Arapahoe</option>
+                            <option value="Archuleta">Archuleta</option>
+                            <option value="Baca">Baca</option>
+                            <option value="Bent">Bent</option>
                             <option value="Boulder">Boulder</option>
-                            <option value="Larimer">Larimer</option>
-                            <option value="Weld">Weld</option>
-                            <option value="Mesa">Mesa</option>
-                            <option value="Park">Park</option>
-                            <option value="Teller">Teller</option>
+                            <option value="Broomfield">Broomfield</option>
+                            <option value="Chaffee">Chaffee</option>
+                            <option value="Cheyenne">Cheyenne</option>
+                            <option value="Clear Creek">Clear Creek</option>
+                            <option value="Conejos">Conejos</option>
+                            <option value="Costilla">Costilla</option>
+                            <option value="Crowley">Crowley</option>
+                            <option value="Custer">Custer</option>
+                            <option value="Delta">Delta</option>
+                            <option value="Denver">Denver</option>
+                            <option value="Dolores">Dolores</option>
+                            <option value="Douglas">Douglas</option>
+                            <option value="Eagle">Eagle</option>
+                            <option value="El Paso">El Paso</option>
+                            <option value="Elbert">Elbert</option>
                             <option value="Fremont">Fremont</option>
+                            <option value="Garfield">Garfield</option>
+                            <option value="Gilpin">Gilpin</option>
+                            <option value="Grand">Grand</option>
+                            <option value="Gunnison">Gunnison</option>
+                            <option value="Hinsdale">Hinsdale</option>
+                            <option value="Huerfano">Huerfano</option>
+                            <option value="Jackson">Jackson</option>
+                            <option value="Jefferson">Jefferson</option>
+                            <option value="Kiowa">Kiowa</option>
+                            <option value="Kit Carson">Kit Carson</option>
+                            <option value="La Plata">La Plata</option>
+                            <option value="Lake">Lake</option>
+                            <option value="Larimer">Larimer</option>
+                            <option value="Las Animas">Las Animas</option>
+                            <option value="Lincoln">Lincoln</option>
+                            <option value="Logan">Logan</option>
+                            <option value="Mesa">Mesa</option>
+                            <option value="Mineral">Mineral</option>
+                            <option value="Moffat">Moffat</option>
+                            <option value="Montezuma">Montezuma</option>
+                            <option value="Montrose">Montrose</option>
+                            <option value="Morgan">Morgan</option>
+                            <option value="Otero">Otero</option>
+                            <option value="Ouray">Ouray</option>
+                            <option value="Park">Park</option>
+                            <option value="Phillips">Phillips</option>
+                            <option value="Pitkin">Pitkin</option>
+                            <option value="Prowers">Prowers</option>
+                            <option value="Pueblo">Pueblo</option>
+                            <option value="Rio Blanco">Rio Blanco</option>
+                            <option value="Rio Grande">Rio Grande</option>
+                            <option value="Routt">Routt</option>
+                            <option value="Saguache">Saguache</option>
+                            <option value="San Juan">San Juan</option>
+                            <option value="San Miguel">San Miguel</option>
+                            <option value="Sedgwick">Sedgwick</option>
+                            <option value="Summit">Summit</option>
+                            <option value="Teller">Teller</option>
+                            <option value="Washington">Washington</option>
+                            <option value="Weld">Weld</option>
+                            <option value="Yuma">Yuma</option>
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="search-btn" id="search-btn-address">Search Wells</button>
+                <button type="submit" class="search-btn" id="search-btn-address">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    Search Wells
+                </button>
             </form>
 
             <form id="coords-form" class="search-form" onsubmit="searchByCoords(event)">
                 <div class="form-row">
                     <div class="form-group">
-                        <label>Latitude (decimal degrees)</label>
-                        <input type="number" id="lat" step="0.000001" placeholder="e.g., 39.7392" required>
+                        <label>Latitude</label>
+                        <input type="number" id="lat" step="0.000001" placeholder="e.g. 39.7392" required>
                     </div>
                     <div class="form-group">
-                        <label>Longitude (decimal degrees)</label>
-                        <input type="number" id="lon" step="0.000001" placeholder="e.g., -104.9903" required>
+                        <label>Longitude</label>
+                        <input type="number" id="lon" step="0.000001" placeholder="e.g. -104.9903" required>
                     </div>
                 </div>
-                <div class="form-row">
+                <div class="form-options">
                     <div class="form-group">
-                        <label>Search Radius (miles)</label>
-                        <select id="radius-coords">
-                            <option value="0.5">0.5 miles</option>
-                            <option value="1" selected>1 mile</option>
-                            <option value="2">2 miles</option>
-                            <option value="5">5 miles</option>
-                        </select>
+                        <label>Search Radius</label>
+                        <div class="radius-pills" data-target="radius-coords">
+                            <button type="button" class="radius-pill" data-value="0.5">&frac12; mi</button>
+                            <button type="button" class="radius-pill active" data-value="1">1 mi</button>
+                            <button type="button" class="radius-pill" data-value="2">2 mi</button>
+                            <button type="button" class="radius-pill" data-value="5">5 mi</button>
+                            <button type="button" class="radius-pill" data-value="10">10 mi</button>
+                        </div>
+                        <input type="hidden" id="radius-coords" value="1">
                     </div>
                     <div class="form-group">
                         <label>County</label>
                         <select id="county-coords" required>
-                            <option value="Pueblo">Pueblo</option>
-                            <option value="El Paso">El Paso</option>
-                            <option value="Denver">Denver</option>
-                            <option value="Jefferson">Jefferson</option>
-                            <option value="Arapahoe">Arapahoe</option>
+                            <option value="" disabled selected>Select county</option>
                             <option value="Adams">Adams</option>
-                            <option value="Douglas">Douglas</option>
+                            <option value="Alamosa">Alamosa</option>
+                            <option value="Arapahoe">Arapahoe</option>
+                            <option value="Archuleta">Archuleta</option>
+                            <option value="Baca">Baca</option>
+                            <option value="Bent">Bent</option>
                             <option value="Boulder">Boulder</option>
-                            <option value="Larimer">Larimer</option>
-                            <option value="Weld">Weld</option>
-                            <option value="Mesa">Mesa</option>
-                            <option value="Park">Park</option>
-                            <option value="Teller">Teller</option>
+                            <option value="Broomfield">Broomfield</option>
+                            <option value="Chaffee">Chaffee</option>
+                            <option value="Cheyenne">Cheyenne</option>
+                            <option value="Clear Creek">Clear Creek</option>
+                            <option value="Conejos">Conejos</option>
+                            <option value="Costilla">Costilla</option>
+                            <option value="Crowley">Crowley</option>
+                            <option value="Custer">Custer</option>
+                            <option value="Delta">Delta</option>
+                            <option value="Denver">Denver</option>
+                            <option value="Dolores">Dolores</option>
+                            <option value="Douglas">Douglas</option>
+                            <option value="Eagle">Eagle</option>
+                            <option value="El Paso">El Paso</option>
+                            <option value="Elbert">Elbert</option>
                             <option value="Fremont">Fremont</option>
+                            <option value="Garfield">Garfield</option>
+                            <option value="Gilpin">Gilpin</option>
+                            <option value="Grand">Grand</option>
+                            <option value="Gunnison">Gunnison</option>
+                            <option value="Hinsdale">Hinsdale</option>
+                            <option value="Huerfano">Huerfano</option>
+                            <option value="Jackson">Jackson</option>
+                            <option value="Jefferson">Jefferson</option>
+                            <option value="Kiowa">Kiowa</option>
+                            <option value="Kit Carson">Kit Carson</option>
+                            <option value="La Plata">La Plata</option>
+                            <option value="Lake">Lake</option>
+                            <option value="Larimer">Larimer</option>
+                            <option value="Las Animas">Las Animas</option>
+                            <option value="Lincoln">Lincoln</option>
+                            <option value="Logan">Logan</option>
+                            <option value="Mesa">Mesa</option>
+                            <option value="Mineral">Mineral</option>
+                            <option value="Moffat">Moffat</option>
+                            <option value="Montezuma">Montezuma</option>
+                            <option value="Montrose">Montrose</option>
+                            <option value="Morgan">Morgan</option>
+                            <option value="Otero">Otero</option>
+                            <option value="Ouray">Ouray</option>
+                            <option value="Park">Park</option>
+                            <option value="Phillips">Phillips</option>
+                            <option value="Pitkin">Pitkin</option>
+                            <option value="Prowers">Prowers</option>
+                            <option value="Pueblo">Pueblo</option>
+                            <option value="Rio Blanco">Rio Blanco</option>
+                            <option value="Rio Grande">Rio Grande</option>
+                            <option value="Routt">Routt</option>
+                            <option value="Saguache">Saguache</option>
+                            <option value="San Juan">San Juan</option>
+                            <option value="San Miguel">San Miguel</option>
+                            <option value="Sedgwick">Sedgwick</option>
+                            <option value="Summit">Summit</option>
+                            <option value="Teller">Teller</option>
+                            <option value="Washington">Washington</option>
+                            <option value="Weld">Weld</option>
+                            <option value="Yuma">Yuma</option>
                         </select>
                     </div>
                 </div>
-                <button type="submit" class="search-btn" id="search-btn-coords">Search Wells</button>
+                <button type="submit" class="search-btn" id="search-btn-coords">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+                    Search Wells
+                </button>
             </form>
         </section>
 
@@ -1660,11 +2280,35 @@
                 <div id="map"></div>
             </div>
             <div class="wells-container" id="wells-container">
-                <h2>Nearby Wells <span class="scroll-hint" id="scroll-hint">�� Scroll for more</span></h2>
+                <h2>Nearby Wells <span class="scroll-hint" id="scroll-hint">&#8595; Scroll for more</span></h2>
                 <div id="summary"></div>
                 <div id="wells-list"></div>
             </div>
         </section>
+    </div>
+
+    <!-- Explore Map Overlay -->
+    <div class="explore-overlay" id="explore-overlay">
+        <div class="explore-bar">
+            <div class="explore-bar-title">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
+                Explore Colorado Wells
+            </div>
+            <button class="explore-close" onclick="closeExploreMap()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+                Close
+            </button>
+        </div>
+        <div id="explore-map"></div>
+        <div class="explore-legend">
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#00e676"></div> &lt; 200 ft (shallow)</div>
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ffeb3b"></div> 200–500 ft (medium)</div>
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ff5722"></div> &gt; 500 ft (deep)</div>
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#90a4ae"></div> Depth unknown</div>
+        </div>
+        <div class="explore-counter" id="explore-counter"></div>
+        <div class="explore-loading" id="explore-loading">Loading wells…</div>
+        <div class="explore-msg" id="explore-msg">Zoom in to see wells</div>
     </div>
 
     <footer>
@@ -1672,6 +2316,7 @@
     </footer>
 
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet@3.0.12/dist/esri-leaflet.js"></script>
     <script>
         let map = null;
         let markers = [];
@@ -1679,6 +2324,230 @@
         let searchLon = null;
         let autocompleteTimeout = null;
         let selectedAutocompleteIndex = -1;
+
+        /* ══════════ Explore Map ══════════ */
+        let exploreMap = null;
+        let exploreMarkers = [];
+        let exploreLoadTimeout = null;
+        let exploreWellCache = new Map(); // key = "lat,lon,lat,lon" → wells[]
+        let exploreLoading = false;
+
+        function openExploreMap() {
+            const overlay = document.getElementById('explore-overlay');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+
+            if (!exploreMap) {
+                // Default center: Colorado centroid
+                const startLat = searchLat || 39.0;
+                const startLon = searchLon || -105.5;
+                const startZoom = searchLat ? 13 : 8;
+
+                exploreMap = L.map('explore-map', {
+                    zoomControl: false,
+                    attributionControl: false
+                }).setView([startLat, startLon], startZoom);
+
+                // Satellite base
+                L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+                    maxZoom: 19
+                }).addTo(exploreMap);
+
+                // Labels overlay
+                L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}', {
+                    maxZoom: 19,
+                    opacity: 0.9
+                }).addTo(exploreMap);
+
+                // Parcel boundaries (Colorado state GIS - vector outlines)
+                try {
+                    if (L.esri && L.esri.featureLayer) {
+                        L.esri.featureLayer({
+                            url: 'https://gis.colorado.gov/public/rest/services/Address_and_Parcel/Colorado_Public_Parcels/FeatureServer/0',
+                            minZoom: 14,
+                            style: function() {
+                                return {
+                                    color: '#00f0ff',
+                                    weight: 1.5,
+                                    opacity: 0.8,
+                                    fillOpacity: 0
+                                };
+                            },
+                            interactive: false
+                        }).addTo(exploreMap);
+                    }
+                } catch(e) { console.warn('Parcel layer unavailable:', e); }
+
+                // Zoom control (bottom-right for mobile friendliness)
+                L.control.zoom({ position: 'bottomright' }).addTo(exploreMap);
+
+                // Load wells on viewport change
+                exploreMap.on('moveend', onExploreMove);
+                exploreMap.on('zoomend', onExploreMove);
+
+                // Initial load
+                setTimeout(onExploreMove, 300);
+            } else {
+                exploreMap.invalidateSize();
+                if (searchLat && searchLon) {
+                    exploreMap.setView([searchLat, searchLon], 13);
+                }
+            }
+        }
+
+        function closeExploreMap() {
+            document.getElementById('explore-overlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        function onExploreMove() {
+            clearTimeout(exploreLoadTimeout);
+            const zoom = exploreMap.getZoom();
+            const msg = document.getElementById('explore-msg');
+
+            if (zoom < 11) {
+                msg.textContent = 'Zoom in to see wells';
+                msg.classList.remove('hidden');
+                clearExploreMarkers();
+                document.getElementById('explore-counter').textContent = '';
+                return;
+            }
+            msg.classList.add('hidden');
+            exploreLoadTimeout = setTimeout(loadExploreWells, 400);
+        }
+
+        // Colorado has 7 water divisions — the DWR API requires one.
+        // Map a lat/lon to the most likely division(s).
+        function getDivisions(lat, lon) {
+            // Eastern plains split by ~39.22° lat
+            if (lon >= -105.05) return lat >= 39.22 ? [1] : [2];
+            // Front Range / central mountains
+            if (lon >= -106.35) {
+                if (lat >= 40.35) return [6, 1];
+                if (lat >= 39.22) return [1, 5];
+                if (lat >= 38.20) return [2, 3];
+                if (lat >= 37.75) return [3, 2];
+                return [3];
+            }
+            // Western slope
+            if (lon >= -107.50) {
+                if (lat >= 40.20) return [6, 5];
+                if (lat >= 39.10) return [5, 4];
+                if (lat >= 38.20) return [4, 5];
+                if (lat >= 37.40) return [3, 7];
+                return [7];
+            }
+            // Far west
+            if (lat >= 39.80) return [6, 5];
+            if (lat >= 38.40) return [5, 4];
+            if (lat >= 37.50) return [4, 7];
+            return [7];
+        }
+
+        // ── Wells API (your own database on Render) ──
+        const WELLS_API = 'https://colorado-wells-api.onrender.com';
+
+        async function loadExploreWells() {
+            if (exploreLoading) {
+                console.log('Skipping — already loading');
+                return;
+            }
+            const bounds = exploreMap.getBounds();
+            const sw = bounds.getSouthWest();
+            const ne = bounds.getNorthEast();
+
+            // Build cache key (rounded to 3 decimals)
+            const cacheKey = [sw.lat.toFixed(3), sw.lng.toFixed(3), ne.lat.toFixed(3), ne.lng.toFixed(3)].join(',');
+            if (exploreWellCache.has(cacheKey)) {
+                renderExploreWells(exploreWellCache.get(cacheKey));
+                return;
+            }
+
+            exploreLoading = true;
+            document.getElementById('explore-loading').classList.add('show');
+
+            const minLat = Math.min(sw.lat, ne.lat).toFixed(5);
+            const maxLat = Math.max(sw.lat, ne.lat).toFixed(5);
+            const minLng = Math.min(sw.lng, ne.lng).toFixed(5);
+            const maxLng = Math.max(sw.lng, ne.lng).toFixed(5);
+
+            console.log(`Loading wells from own DB — bbox: ${minLat},${minLng} → ${maxLat},${maxLng}`);
+
+            try {
+                const url = `${WELLS_API}/api/wells/bbox?minLat=${minLat}&maxLat=${maxLat}&minLng=${minLng}&maxLng=${maxLng}&limit=15000`;
+                const r = await fetch(url);
+                if (!r.ok) throw new Error(`API returned ${r.status}`);
+                const data = await r.json();
+                const allWells = data.wells || [];
+
+                console.log(`Wells API returned ${allWells.length} wells` + (data.truncated ? ' (truncated)' : ''));
+                exploreWellCache.set(cacheKey, allWells);
+                renderExploreWells(allWells);
+            } catch(e) {
+                console.warn('Explore wells error:', e);
+                document.getElementById('explore-msg').textContent = 'Error loading wells — check console';
+                document.getElementById('explore-msg').classList.remove('hidden');
+            } finally {
+                exploreLoading = false;
+                document.getElementById('explore-loading').classList.remove('show');
+            }
+        }
+
+        function renderExploreWells(wells) {
+            clearExploreMarkers();
+            document.getElementById('explore-counter').textContent = wells.length ? `${wells.length.toLocaleString()} well${wells.length > 1 ? 's' : ''}` : '';
+
+            wells.forEach(w => {
+                const depth = w.depth_total || 0;
+                let color;
+                if (depth <= 0) {
+                    color = '#90a4ae'; // gray for unknown depth
+                } else if (depth < 200) {
+                    color = '#00e676'; // green shallow
+                } else if (depth < 500) {
+                    color = '#ffeb3b'; // yellow medium
+                } else {
+                    color = '#ff5722'; // red deep
+                }
+
+                const m = L.circleMarker([w.latitude, w.longitude], {
+                    radius: 7,
+                    fillColor: color,
+                    color: '#fff',
+                    weight: 1.5,
+                    opacity: 1,
+                    fillOpacity: 0.85
+                }).addTo(exploreMap);
+
+                // Rich popup — field names match our PostgreSQL schema
+                const addr = [w.address, w.city].filter(Boolean).join(', ');
+                const yld = w.pump_yield_gpm ? `<br>Yield: <b>${w.pump_yield_gpm} GPM</b>` : '';
+                const swl = w.static_water_level ? `<br>Water Level: <b>${w.static_water_level} ft</b>` : '';
+                const aq  = w.aquifers ? `<br>Aquifer: <b>${w.aquifers}</b>` : '';
+                const use = w.uses ? `<br>Use: ${w.uses}` : '';
+                const driller = w.driller_name ? `<br>Driller: ${w.driller_name}` : '';
+                const completed = w.date_completed ? `<br>Completed: ${new Date(w.date_completed).toLocaleDateString('en-US',{month:'short',year:'numeric'})}` : '';
+                const stat = w.status ? `<br>Status: ${w.status}` : '';
+
+                m.bindPopup(
+                    `<div style="font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.5;min-width:180px;">`
+                    + `<b style="font-size:14px;">${w.permit ? 'Permit ' + w.permit : 'Receipt ' + w.receipt}</b>`
+                    + (w.depth_total ? `<br>Depth: <b>${w.depth_total} ft</b>` : '<br>Depth: <i>Not recorded</i>')
+                    + swl + yld + aq + use + stat + driller + completed
+                    + (w.county ? `<br>County: ${w.county}` : '')
+                    + (addr ? `<br><span style="color:#888;">${addr}</span>` : '')
+                    + `</div>`,
+                    { maxWidth: 260 }
+                );
+
+                exploreMarkers.push(m);
+            });
+        }
+
+        function clearExploreMarkers() {
+            exploreMarkers.forEach(m => exploreMap.removeLayer(m));
+            exploreMarkers = [];
+        }
 
         // Check for access on page load
         function checkAccess() {
@@ -1712,7 +2581,11 @@
             }
             // Escape to close
             if (e.key === 'Escape') {
-                closeAdminModal();
+                if (document.getElementById('explore-overlay').classList.contains('open')) {
+                    closeExploreMap();
+                } else {
+                    closeAdminModal();
+                }
             }
         });
 
@@ -1807,10 +2680,10 @@
                     return;
                 }
 
-                // Debounce - wait 300ms after typing stops
+                // Debounce - wait 200ms after typing stops
                 autocompleteTimeout = setTimeout(() => {
                     fetchAddressSuggestions(query);
-                }, 300);
+                }, 200);
             });
 
             // Keyboard navigation
@@ -1898,8 +2771,11 @@
                                  data-lon="${coords[0]}"
                                  data-address="${mainText}, ${subText}"
                                  data-county="${props.county || ''}">
-                                <div class="autocomplete-item-main">${mainText}</div>
-                                <div class="autocomplete-item-sub">${subText}</div>
+                                <svg class="autocomplete-item-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                                <div class="autocomplete-item-content">
+                                    <div class="autocomplete-item-main">${mainText}</div>
+                                    <div class="autocomplete-item-sub">${subText}</div>
+                                </div>
                             </div>
                         `;
                     }).join('');
@@ -2005,10 +2881,40 @@
             };
         }
 
+        // Initialize radius pill buttons
+        function initRadiusPills() {
+            document.querySelectorAll('.radius-pills').forEach(pillGroup => {
+                const targetId = pillGroup.dataset.target;
+                const hiddenInput = document.getElementById(targetId);
+                pillGroup.querySelectorAll('.radius-pill').forEach(pill => {
+                    pill.addEventListener('click', function() {
+                        pillGroup.querySelectorAll('.radius-pill').forEach(p => p.classList.remove('active'));
+                        this.classList.add('active');
+                        hiddenInput.value = this.dataset.value;
+                    });
+                });
+            });
+        }
+
+        // Sync radius pill visuals with hidden input values (for saved searches)
+        function syncRadiusPills() {
+            document.querySelectorAll('.radius-pills').forEach(pillGroup => {
+                const targetId = pillGroup.dataset.target;
+                const val = document.getElementById(targetId).value;
+                if (val) {
+                    pillGroup.querySelectorAll('.radius-pill').forEach(p => {
+                        p.classList.toggle('active', p.dataset.value === val);
+                    });
+                }
+            });
+        }
+
         // Load saved searches on page load
         document.addEventListener('DOMContentLoaded', function() {
             loadSavedSearches();
             initAutocomplete();
+            initRadiusPills();
+            syncRadiusPills();
         });
 
         function switchTab(tab) {
@@ -2078,7 +2984,7 @@
                 
                 // Check if we have pre-geocoded coordinates from autocomplete
                 if (addressInput.dataset.lat && addressInput.dataset.lon) {
-                    btn.textContent = '�Searching wells...';
+                    btn.textContent = '�Searching wells...';
                     location = {
                         lat: parseFloat(addressInput.dataset.lat),
                         lon: parseFloat(addressInput.dataset.lon),
@@ -2088,7 +2994,7 @@
                     delete addressInput.dataset.lat;
                     delete addressInput.dataset.lon;
                 } else {
-                    btn.textContent = '�Geocoding address...';
+                    btn.textContent = '�Geocoding address...';
                     location = await geocodeAddress(address);
                 }
                 
@@ -2100,7 +3006,7 @@
                     county = detectCounty(location.address);
                 }
                 
-                btn.textContent = '�Searching wells...';
+                btn.textContent = '�Searching wells...';
                 await searchWells(location.lat, location.lon, radius, county);
             } catch (error) {
                 alert('Error: ' + error.message);
@@ -2125,7 +3031,7 @@
             
             const btn = document.getElementById('search-btn-coords');
             btn.disabled = true;
-            btn.textContent = '�Searching wells...';
+            btn.textContent = '�Searching wells...';
             
             try {
                 await searchWells(lat, lon, radius, county);
@@ -2138,15 +3044,26 @@
         }
 
         function detectCounty(address) {
-            const counties = ['Pueblo', 'El Paso', 'Denver', 'Jefferson', 'Arapahoe', 'Adams', 
-                            'Douglas', 'Boulder', 'Larimer', 'Weld', 'Mesa', 'Park', 'Teller', 'Fremont'];
+            const counties = [
+                'Adams', 'Alamosa', 'Arapahoe', 'Archuleta', 'Baca', 'Bent', 'Boulder', 'Broomfield',
+                'Chaffee', 'Cheyenne', 'Clear Creek', 'Conejos', 'Costilla', 'Crowley', 'Custer',
+                'Delta', 'Denver', 'Dolores', 'Douglas', 'Eagle', 'El Paso', 'Elbert', 'Fremont',
+                'Garfield', 'Gilpin', 'Grand', 'Gunnison', 'Hinsdale', 'Huerfano', 'Jackson',
+                'Jefferson', 'Kiowa', 'Kit Carson', 'La Plata', 'Lake', 'Larimer', 'Las Animas',
+                'Lincoln', 'Logan', 'Mesa', 'Mineral', 'Moffat', 'Montezuma', 'Montrose', 'Morgan',
+                'Otero', 'Ouray', 'Park', 'Phillips', 'Pitkin', 'Prowers', 'Pueblo',
+                'Rio Blanco', 'Rio Grande', 'Routt', 'Saguache', 'San Juan', 'San Miguel',
+                'Sedgwick', 'Summit', 'Teller', 'Washington', 'Weld', 'Yuma'
+            ];
             const addressLower = address.toLowerCase();
-            for (const county of counties) {
+            // Try longest county names first to avoid partial matches
+            const sorted = [...counties].sort((a, b) => b.length - a.length);
+            for (const county of sorted) {
                 if (addressLower.includes(county.toLowerCase())) {
                     return county;
                 }
             }
-            return 'Pueblo'; // Default
+            return 'El Paso'; // Default - most common Colorado county for well searches
         }
 
         async function searchWells(lat, lon, radiusMiles, county) {
@@ -2208,6 +3125,25 @@
                 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
                     attribution: 'ESRI World Imagery'
                 }).addTo(map);
+
+                // Parcel boundaries on results map (vector outlines)
+                try {
+                    if (L.esri && L.esri.featureLayer) {
+                        L.esri.featureLayer({
+                            url: 'https://gis.colorado.gov/public/rest/services/Address_and_Parcel/Colorado_Public_Parcels/FeatureServer/0',
+                            minZoom: 14,
+                            style: function() {
+                                return {
+                                    color: '#00f0ff',
+                                    weight: 1.5,
+                                    opacity: 0.8,
+                                    fillOpacity: 0
+                                };
+                            },
+                            interactive: false
+                        }).addTo(map);
+                    }
+                } catch(e) { console.warn('Parcel layer unavailable:', e); }
             } else {
                 map.setView([centerLat, centerLon], 14);
             }
@@ -2301,14 +3237,38 @@
                     <b>Permit: ${well.permit}</b><br>
                     Depth: ${well.depthTotal} ft<br>
                     Static Water: ${well.staticWaterLevel || 'N/A'} ft<br>
-                    Aquifer: ${well.associatedAquifers || 'Unknown'}
+                    Aquifer: ${well.associatedAquifers || 'Unknown'}<br>
+                    ${well.pumpTestYield ? `Yield: ${well.pumpTestYield} GPM<br>` : ''}
+                    ${well.wellStatus ? `Status: ${well.wellStatus}<br>` : ''}
+                    ${well.associatedUses ? `Use: ${well.associatedUses}` : ''}
                 `);
                 markers.push(marker);
                 
                 const cost = calculateDrillingCost(well.depthTotal);
                 
+                // Helper to format dates from "1/15/2003" or ISO strings
+                const fmtDate = (d) => {
+                    if (!d) return null;
+                    try { return new Date(d).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }); }
+                    catch { return d; }
+                };
+
+                // Build detail rows only for fields that have data
+                const detailRow = (label, val) => val ? `<div class="detail-row"><span class="detail-row-label">${label}</span><span class="detail-row-value">${val}</span></div>` : '';
+
+                // Yield / GPM
+                const yieldVal = well.pumpTestYield ? `${well.pumpTestYield} GPM` : null;
+                // Elevation
+                const elevVal = well.elevation ? `${Number(well.elevation).toLocaleString()} ft` : null;
+                // Casing
+                const casingTop = well.topPerforatedCasing ? `${well.topPerforatedCasing} ft` : null;
+                const casingBot = well.bottomPerforatedCasing ? `${well.bottomPerforatedCasing} ft` : null;
+
+                // Address line
+                const addr = [well.physicalAddress, well.physicalCity, well.physicalZipCode].filter(Boolean).join(', ');
+
                 return `
-                    <div class="well-card ${depthClass}" onclick="toggleCostBreakdown(this, ${well.depthTotal})">
+                    <div class="well-card ${depthClass}">
                         <div class="well-header">
                             <span class="well-permit">Permit: ${well.permit}</span>
                             <span class="well-distance">${well.distance.toFixed(2)} mi</span>
@@ -2331,21 +3291,84 @@
                                 <div class="well-stat-value">$${cost.totalLow.toLocaleString()}-$${cost.totalHigh.toLocaleString()}</div>
                             </div>
                         </div>
-                        ${well.physicalAddress ? `<div style="margin-top: 10px; color: #888; font-size: 0.9rem;">${well.physicalAddress}</div>` : ''}
-                        <div class="click-hint">Click for detailed cost breakdown</div>
-                        <div class="cost-breakdown" id="cost-${well.permit}">
-                            <div class="cost-breakdown-title">Cost Breakdown for ${well.depthTotal} ft Well</div>
-                            <div class="cost-row">
-                                <span class="cost-row-label">Drilling ${well.depthTotal} ft @ $50-75/ft</span>
-                                <span class="cost-row-value">$${cost.drillingLow.toLocaleString()} - $${cost.drillingHigh.toLocaleString()}</span>
-                            </div>
-                            <div class="cost-row">
-                                <span class="cost-row-label">Pump, Tank, Controls & Equipment</span>
-                                <span class="cost-row-value">$${cost.equipmentLow.toLocaleString()} - $${cost.equipmentHigh.toLocaleString()}</span>
-                            </div>
-                            <div class="cost-row total">
-                                <span class="cost-row-label">TOTAL ESTIMATED</span>
-                                <span class="cost-row-value">$${cost.totalLow.toLocaleString()} - $${cost.totalHigh.toLocaleString()}</span>
+
+                        <div class="well-toggle" onclick="toggleWellDetails(this.closest('.well-card'))">
+                            <span>View details</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                        </div>
+
+                        <div class="well-details">
+                            <div class="well-details-inner">
+
+                                <!-- Well Info -->
+                                <div class="detail-group">
+                                    <div class="detail-group-title">Well Info</div>
+                                    <div class="detail-rows">
+                                        ${detailRow('Status', well.wellStatus)}
+                                        ${detailRow('Use', well.associatedUses)}
+                                        ${detailRow('Yield', yieldVal)}
+                                        ${detailRow('Elevation', elevVal)}
+                                        ${detailRow('Casing Top', casingTop)}
+                                        ${detailRow('Casing Bottom', casingBot)}
+                                        ${detailRow('Denver Basin', well.denverBasinAquifer)}
+                                        ${detailRow('Designated Basin', well.designatedBasinName)}
+                                    </div>
+                                </div>
+
+                                <!-- Location -->
+                                ${addr || well.parcelName || well.managementDistrictName ? `
+                                <div class="detail-group">
+                                    <div class="detail-group-title">Location</div>
+                                    <div class="detail-rows single">
+                                        ${detailRow('Address', addr)}
+                                        ${detailRow('Parcel', well.parcelName)}
+                                        ${detailRow('District', well.managementDistrictName)}
+                                        ${detailRow('Division', well.division ? 'Div ' + well.division : null)}
+                                        ${detailRow('Water District', well.waterDistrict)}
+                                    </div>
+                                </div>` : ''}
+
+                                <!-- Dates -->
+                                ${well.datePermitIssued || well.dateWellCompleted || well.datePumpInstalled ? `
+                                <div class="detail-group">
+                                    <div class="detail-group-title">Dates</div>
+                                    <div class="detail-rows">
+                                        ${detailRow('Permit Issued', fmtDate(well.datePermitIssued))}
+                                        ${detailRow('Well Completed', fmtDate(well.dateWellCompleted))}
+                                        ${detailRow('Pump Installed', fmtDate(well.datePumpInstalled))}
+                                        ${detailRow('First Used', fmtDate(well.dateFirstUsed))}
+                                    </div>
+                                </div>` : ''}
+
+                                <!-- Driller / Owner -->
+                                ${well.driller || well.contactName ? `
+                                <div class="detail-group">
+                                    <div class="detail-group-title">Driller & Contact</div>
+                                    <div class="detail-rows single">
+                                        ${detailRow('Driller', well.driller)}
+                                        ${detailRow('Contact', well.contactName)}
+                                    </div>
+                                </div>` : ''}
+
+                                <!-- Cost Breakdown -->
+                                <div class="detail-group">
+                                    <div class="detail-group-title">Cost Estimate</div>
+                                    <div class="detail-rows single">
+                                        <div class="detail-row">
+                                            <span class="detail-row-label">Drilling ${well.depthTotal} ft @ $50-75/ft</span>
+                                            <span class="detail-row-value">$${cost.drillingLow.toLocaleString()} – $${cost.drillingHigh.toLocaleString()}</span>
+                                        </div>
+                                        <div class="detail-row">
+                                            <span class="detail-row-label">Pump, Tank & Equipment</span>
+                                            <span class="detail-row-value">$${cost.equipmentLow.toLocaleString()} – $${cost.equipmentHigh.toLocaleString()}</span>
+                                        </div>
+                                        <div class="detail-row" style="background:rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.2);">
+                                            <span class="detail-row-label" style="color:#4ade80; font-weight:700;">TOTAL</span>
+                                            <span class="detail-row-value" style="color:#4ade80; font-weight:700;">$${cost.totalLow.toLocaleString()} – $${cost.totalHigh.toLocaleString()}</span>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
@@ -2372,23 +3395,19 @@
             document.getElementById('wells-list').innerHTML = '';
         }
 
-        function toggleCostBreakdown(card, depth) {
-            const breakdown = card.querySelector('.cost-breakdown');
-            const hint = card.querySelector('.click-hint');
-            
-            // Close all other breakdowns
-            document.querySelectorAll('.cost-breakdown.show').forEach(el => {
-                if (el !== breakdown) {
-                    el.classList.remove('show');
-                    el.closest('.well-card').classList.remove('expanded');
-                    el.closest('.well-card').querySelector('.click-hint').style.display = 'block';
+        function toggleWellDetails(card) {
+            const wasExpanded = card.classList.contains('expanded');
+            // Close all other expanded cards
+            document.querySelectorAll('.well-card.expanded').forEach(c => {
+                if (c !== card) {
+                    c.classList.remove('expanded');
+                    c.querySelector('.well-toggle span').textContent = 'View details';
                 }
             });
-            
-            // Toggle this one
-            breakdown.classList.toggle('show');
+            // Toggle this card
             card.classList.toggle('expanded');
-            hint.style.display = breakdown.classList.contains('show') ? 'none' : 'block';
+            const label = card.querySelector('.well-toggle span');
+            label.textContent = wasExpanded ? 'View details' : 'Hide details';
         }
 
         // Handle scroll hint visibility
