@@ -3216,6 +3216,7 @@
             saveSearches();
             
             const btn = document.getElementById('search-btn-address');
+            const btnOriginal = btn.innerHTML;
             btn.disabled = true;
             
             try {
@@ -3223,7 +3224,7 @@
                 
                 // Check if we have pre-geocoded coordinates from autocomplete
                 if (addressInput.dataset.lat && addressInput.dataset.lon) {
-                    btn.textContent = '�Searching wells...';
+                    btn.innerHTML = '<span class="btn-spinner"></span>Searching wells...';
                     location = {
                         lat: parseFloat(addressInput.dataset.lat),
                         lon: parseFloat(addressInput.dataset.lon),
@@ -3233,7 +3234,7 @@
                     delete addressInput.dataset.lat;
                     delete addressInput.dataset.lon;
                 } else {
-                    btn.textContent = '�Geocoding address...';
+                    btn.innerHTML = '<span class="btn-spinner"></span>Geocoding address...';
                     location = await geocodeAddress(address);
                 }
                 
@@ -3245,13 +3246,13 @@
                     county = detectCounty(location.address);
                 }
                 
-                btn.textContent = '�Searching wells...';
+                btn.innerHTML = '<span class="btn-spinner"></span>Searching wells...';
                 await searchWells(location.lat, location.lon, radius, county);
             } catch (error) {
                 alert('Error: ' + error.message);
             } finally {
                 btn.disabled = false;
-                btn.textContent = 'Search Wells';
+                btn.innerHTML = btnOriginal;
             }
         }
 
@@ -3269,8 +3270,9 @@
             searchLon = lon;
             
             const btn = document.getElementById('search-btn-coords');
+            const btnOriginal = btn.innerHTML;
             btn.disabled = true;
-            btn.textContent = '�Searching wells...';
+            btn.innerHTML = '<span class="btn-spinner"></span>Searching wells...';
             
             try {
                 await searchWells(lat, lon, radius, county);
@@ -3278,7 +3280,7 @@
                 alert('Error: ' + error.message);
             } finally {
                 btn.disabled = false;
-                btn.textContent = 'Search Wells';
+                btn.innerHTML = btnOriginal;
             }
         }
 
