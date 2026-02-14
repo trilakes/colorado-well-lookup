@@ -338,6 +338,25 @@
             box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
         }
 
+        .search-hook {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .search-hook-headline {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: #e2e8f0;
+            margin: 0 0 4px;
+            line-height: 1.3;
+        }
+
+        .search-hook-proof {
+            font-size: 0.82rem;
+            color: #64748b;
+            margin: 0;
+        }
+
         .search-tabs {
             display: flex;
             gap: 4px;
@@ -510,6 +529,18 @@
                 padding: 12px;
                 margin-bottom: 15px;
                 border-radius: 10px;
+            }
+
+            .search-hook {
+                margin-bottom: 12px;
+            }
+
+            .search-hook-headline {
+                font-size: 0.95rem;
+            }
+
+            .search-hook-proof {
+                font-size: 0.75rem;
             }
 
             .search-tabs {
@@ -2560,6 +2591,10 @@
         </header>
 
         <section class="search-section">
+            <div class="search-hook">
+                <p class="search-hook-headline">See how deep your neighbors drilled &mdash; search free</p>
+                <p class="search-hook-proof">591,000+ verified well records &bull; All 64 Colorado counties &bull; Updated 2026</p>
+            </div>
             <div class="search-tabs">
                 <button class="tab-btn active" onclick="switchTab('address')">Search by Address</button>
                 <button class="tab-btn" onclick="switchTab('coords')">Search by Coordinates</button>
