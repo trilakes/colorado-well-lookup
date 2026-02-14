@@ -3039,10 +3039,10 @@
                 }
 
                 const m = L.circleMarker([w.latitude, w.longitude], {
-                    radius: 7,
+                    radius: 4,
                     fillColor: color,
                     color: '#fff',
-                    weight: 1.5,
+                    weight: 1,
                     opacity: 1,
                     fillOpacity: 0.85
                 }).addTo(exploreMap);
@@ -3989,10 +3989,10 @@
                 const markerColor = depthClass === 'shallow' ? '#00e676' : depthClass === 'medium' ? '#ffeb3b' : '#ff5722';
                 
                 const marker = L.circleMarker([well.latitude, well.longitude], {
-                    radius: 8,
+                    radius: 5,
                     fillColor: markerColor,
                     color: '#fff',
-                    weight: 2,
+                    weight: 1,
                     opacity: 1,
                     fillOpacity: 0.8
                 }).addTo(map).bindPopup(`
@@ -4260,12 +4260,75 @@
                 try { utm = JSON.parse(sessionStorage.getItem('wf_utm') || '{}'); } catch(e) { utm = {}; }
             }
 
+            // ── Activity State Tracking ──
+            // Tracks what the visitor is doing RIGHT NOW so HQ can show live activity
+            window._hqActivity = 'landed';
+            window._hqSearchQuery = '';
+
+            // Detect activity from DOM state
+            function detectActivity() {
+                var paywall = document.getElementById('accessOverlay');
+                if (paywall && paywall.style.display !== 'none' && paywall.style.display !== '') {
+                    return 'on_paywall';
+                }
+                var exploreMap = document.getElementById('exploreContainer');
+                if (exploreMap && exploreMap.style.display !== 'none') {
+                    return 'exploring_map';
+                }
+                var results = document.getElementById('results');
+                if (results && results.innerHTML.trim().length > 100) {
+                    return 'viewing_results';
+                }
+                var searchInput = document.getElementById('addressInput');
+                if (searchInput && document.activeElement === searchInput) {
+                    return 'typing_search';
+                }
+                return window._hqActivity || 'browsing';
+            }
+
+            // Auto-detect activity changes
+            function watchActivity() {
+                // Search button click
+                var searchBtn = document.querySelector('.search-btn, #searchBtn');
+                if (searchBtn) {
+                    searchBtn.addEventListener('click', function() {
+                        var input = document.getElementById('addressInput');
+                        window._hqActivity = 'searching';
+                        window._hqSearchQuery = input ? input.value : '';
+                    });
+                }
+                // Explore map tab
+                document.querySelectorAll('[data-tab]').forEach(function(tab) {
+                    tab.addEventListener('click', function() {
+                        if (tab.dataset.tab === 'explore') {
+                            window._hqActivity = 'exploring_map';
+                        } else {
+                            window._hqActivity = 'browsing';
+                        }
+                    });
+                });
+                // Search input focus
+                var addrInput = document.getElementById('addressInput');
+                if (addrInput) {
+                    addrInput.addEventListener('focus', function() { window._hqActivity = 'typing_search'; });
+                }
+            }
+            // Set up watchers after DOM ready
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', watchActivity);
+            } else {
+                watchActivity();
+            }
+
             function track(page, extra) {
+                var activity = detectActivity();
                 var data = {
                     app: APP,
                     page: page || window.location.pathname,
-                    referrer: document.referrer || 'Direct'
+                    referrer: document.referrer || 'Direct',
+                    activity: activity
                 };
+                if (window._hqSearchQuery) data.search_query = window._hqSearchQuery;
                 if (Object.keys(utm).length) data.utm = utm;
                 if (extra) Object.assign(data, extra);
                 fetch(HQ + '/api/track', {
@@ -4278,13 +4341,16 @@
             // Initial page view
             track();
 
-            // Heartbeat every 30s so HQ knows visitor is active
+            // Heartbeat every 30s — includes current activity state
             setInterval(function() {
                 track(null, { heartbeat: true });
             }, 30000);
 
             // Expose conversion tracker globally
             window.hqTrackConversion = function(type, email) {
+                // Update activity state on conversion events
+                if (type.includes('paywall')) window._hqActivity = 'on_paywall';
+                if (type.includes('search')) window._hqActivity = 'viewing_results';
                 track('/conversion/' + type, {
                     event: 'conversion',
                     conversion_type: type,
