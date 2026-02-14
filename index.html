@@ -57,20 +57,20 @@
             {
                 "@type": "Offer",
                 "name": "Monthly Access",
-                "price": "39.00",
+                "price": "19.00",
                 "priceCurrency": "USD",
                 "priceSpecification": {
                     "@type": "UnitPriceSpecification",
                     "billingDuration": "P1M"
                 },
-                "url": "https://buy.stripe.com/6oU6oHddEaHp1Yz7TU6AM09"
+                "url": "https://buy.stripe.com/00w6oHehIg1J9r12zA6AM0b"
             },
             {
                 "@type": "Offer",
                 "name": "Lifetime Access",
-                "price": "97.00",
+                "price": "47.00",
                 "priceCurrency": "USD",
-                "url": "https://buy.stripe.com/eVqdR90qS16P46H7TU6AM08"
+                "url": "https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a"
             }
         ],
         "aggregateRating": {
@@ -350,25 +350,29 @@
         .tab-btn {
             flex: 1;
             padding: 12px 24px;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.12);
             border-radius: 10px;
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
             cursor: pointer;
             transition: all 0.2s ease;
-            background: transparent;
+            background: rgba(255, 255, 255, 0.04);
             color: #94a3b8;
+            letter-spacing: 0.01em;
         }
 
         .tab-btn.active {
-            background: rgba(255, 255, 255, 0.12);
+            background: linear-gradient(135deg, rgba(56,189,248,0.18), rgba(129,140,248,0.14));
             color: #f1f5f9;
-            box-shadow: none;
+            border-color: rgba(56,189,248,0.4);
+            box-shadow: 0 0 12px rgba(56,189,248,0.15), inset 0 1px 0 rgba(255,255,255,0.06);
         }
 
         .tab-btn:hover:not(.active) {
             color: #e2e8f0;
-            background: rgba(255,255,255,0.05);
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.2);
+            transform: translateY(-1px);
         }
 
         .search-form {
@@ -1187,22 +1191,24 @@
             width: 100%;
             padding: 14px 24px;
             margin-top: 16px;
-            background: transparent;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: linear-gradient(135deg, rgba(56,189,248,0.10), rgba(129,140,248,0.08));
+            border: 1px solid rgba(56,189,248,0.30);
             border-radius: 12px;
-            color: #94a3b8;
+            color: #cbd5e1;
             font-size: 0.95rem;
-            font-weight: 500;
+            font-weight: 600;
             font-family: 'Inter', sans-serif;
             cursor: pointer;
             transition: all 0.2s ease;
             letter-spacing: 0.01em;
+            box-shadow: 0 2px 8px rgba(56,189,248,0.08);
         }
         .explore-btn:hover {
-            background: rgba(255, 255, 255, 0.04);
-            border-color: rgba(255, 255, 255, 0.2);
-            color: #e2e8f0;
-            transform: translateY(-1px);
+            background: linear-gradient(135deg, rgba(56,189,248,0.18), rgba(129,140,248,0.14));
+            border-color: rgba(56,189,248,0.50);
+            color: #f1f5f9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(56,189,248,0.15);
         }
         .explore-btn svg { width: 20px; height: 20px; flex-shrink: 0; }
 
@@ -1357,6 +1363,87 @@
         }
 
         footer a {
+            color: #38bdf8;
+            text-decoration: none;
+        }
+
+        /* Free Preview: locked data placeholders */
+        .locked-value {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: rgba(56,189,248,0.08);
+            border: 1px dashed rgba(56,189,248,0.35);
+            border-radius: 6px;
+            padding: 2px 10px;
+            color: #38bdf8;
+            font-size: 0.85em;
+            cursor: pointer;
+            transition: background 0.15s, border-color 0.15s;
+            white-space: nowrap;
+        }
+        .locked-value:hover {
+            background: rgba(56,189,248,0.15);
+            border-color: rgba(56,189,248,0.55);
+        }
+        .locked-value svg {
+            width: 12px;
+            height: 12px;
+            flex-shrink: 0;
+        }
+        .summary-item .locked-value {
+            font-size: 1rem;
+            padding: 4px 14px;
+        }
+        .cost-value .locked-value,
+        .cost-item .locked-value {
+            font-size: 0.88em;
+        }
+        .detail-row-value .locked-value {
+            font-size: 0.82em;
+        }
+        .upgrade-cta {
+            background: linear-gradient(135deg, rgba(56,189,248,0.12), rgba(126,250,209,0.08));
+            border: 1px solid rgba(56,189,248,0.25);
+            border-radius: 14px;
+            padding: 28px 24px;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .upgrade-cta h3 {
+            color: #f1f5f9;
+            font-size: 1.15rem;
+            margin-bottom: 8px;
+        }
+        .upgrade-cta p {
+            color: #94a3b8;
+            font-size: 0.92rem;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+        .upgrade-cta .unlock-btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: linear-gradient(135deg, #38bdf8, #818cf8);
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            border-radius: 10px;
+            text-decoration: none;
+            transition: transform 0.15s, box-shadow 0.15s;
+            box-shadow: 0 4px 20px rgba(56,189,248,0.3);
+        }
+        .upgrade-cta .unlock-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 28px rgba(56,189,248,0.45);
+        }
+        .upgrade-cta .unlock-or {
+            display: block;
+            color: #64748b;
+            font-size: 0.82rem;
+            margin-top: 10px;
+        }
+        .upgrade-cta .unlock-or a {
             color: #38bdf8;
             text-decoration: none;
         }
@@ -2240,10 +2327,10 @@
                     <path d="M12 2C12 2 6 8.5 6 13C6 16.5 8.5 20 12 20C15.5 20 18 16.5 18 13C18 8.5 12 2 12 2Z"/>
                     <path d="M12 16C13.5 16 15 14.5 15 13C15 11 12 8 12 8"/>
                 </svg>
-                <span style="display:block; font-size:1.1em; letter-spacing:0.02em;">DON'T DRILL BLIND.</span>
-                <span style="display:block; font-size:0.75em; font-weight:500; margin-top:6px; color:#e2e8f0;">See Exactly How Deep Your Neighbors Drilled.</span>
+                <span id="paywall-headline" style="display:block; font-size:1.1em; letter-spacing:0.02em;">DON'T DRILL BLIND.</span>
+                <span id="paywall-subhead" style="display:block; font-size:0.75em; font-weight:500; margin-top:6px; color:#e2e8f0;">See Exactly How Deep Your Neighbors Drilled.</span>
             </h1>
-            <p class="paywall-subtitle">591,000+ verified Colorado well permit records &bull; Updated through 2026</p>
+            <p class="paywall-subtitle" id="paywall-subtitle">591,000+ verified Colorado well permit records &bull; Updated through 2026</p>
             
             <!-- Social Proof - moved up for mobile impact -->
             <div class="landing-proof">
@@ -2307,7 +2394,7 @@
             <div class="pricing-cards">
                 <div class="pricing-card">
                     <div class="pricing-name">Monthly</div>
-                    <div class="pricing-price">$39</div>
+                    <div class="pricing-price">$19</div>
                     <div class="pricing-period">per month</div>
                     <ul class="pricing-features">
                         <li>Unlimited well searches</li>
@@ -2316,11 +2403,11 @@
                         <li>All 64 Colorado counties</li>
                         <li>Cancel anytime</li>
                     </ul>
-                    <a href="https://buy.stripe.com/6oU6oHddEaHp1Yz7TU6AM09" class="pricing-btn secondary" onclick="if(window.hqTrackConversion) window.hqTrackConversion('monthly_click', '')">Subscribe</a>
+                    <a href="https://buy.stripe.com/00w6oHehIg1J9r12zA6AM0b" class="pricing-btn secondary" onclick="if(window.hqTrackConversion) window.hqTrackConversion('monthly_click', '')">Subscribe</a>
                 </div>
                 <div class="pricing-card popular">
                     <div class="pricing-name">Lifetime Access</div>
-                    <div class="pricing-price">$97</div>
+                    <div class="pricing-price">$47</div>
                     <div class="pricing-period">one-time payment</div>
                     <ul class="pricing-features">
                         <li>Unlimited well searches</li>
@@ -2329,7 +2416,7 @@
                         <li>All 64 Colorado counties</li>
                         <li>Never pay again</li>
                     </ul>
-                    <a href="https://buy.stripe.com/eVqdR90qS16P46H7TU6AM08" class="pricing-btn primary" onclick="if(window.hqTrackConversion) window.hqTrackConversion('lifetime_click', '')">Get Lifetime Access</a>
+                    <a href="https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a" class="pricing-btn primary" onclick="if(window.hqTrackConversion) window.hqTrackConversion('lifetime_click', '')">Get Lifetime Access</a>
                 </div>
             </div>
 
@@ -2996,6 +3083,44 @@
         }
         initFeatureCarousel();
 
+        // ============================================
+        // FREE PREVIEW SYSTEM
+        // ============================================
+        const FREE_SEARCH_LIMIT = 1;  // searches before paywall
+        const FREE_VISIBLE_WELLS = 3; // well cards shown unlocked
+
+        function getFreeSearchCount() {
+            return parseInt(sessionStorage.getItem('wf_free_searches') || '0');
+        }
+        function incrementFreeSearch() {
+            const count = getFreeSearchCount() + 1;
+            sessionStorage.setItem('wf_free_searches', count.toString());
+            return count;
+        }
+        function hasPaidAccess() {
+            if (localStorage.getItem('wellFinderAdmin') === 'true') return true;
+            const accessType = localStorage.getItem('wellFinderAccessType');
+            const email = localStorage.getItem('wellFinderEmail');
+            if (accessType && email) return true; // will re-verify below
+            return false;
+        }
+        // Locked placeholder for depth/cost data (free users)
+        const LOCK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
+        function lockedHTML(label) {
+            return `<span class="locked-value" onclick="showPaywallOverlay();if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','')">${LOCK_SVG} ${label || 'Unlock'}</span>`;
+        }
+        const isFreeUser = () => !hasPaidAccess();
+        function showPaywallOverlay() {
+            // Update messaging if they already used a free search
+            if (getFreeSearchCount() > 0) {
+                document.getElementById('paywall-headline').textContent = 'THE WELLS ARE THERE.';
+                document.getElementById('paywall-subhead').textContent = 'Unlock the depths, costs & unlimited searches.';
+                document.getElementById('paywall-subtitle').innerHTML = 'You saw real wells near your property &bull; Upgrade to see how deep they go';
+            }
+            document.getElementById('paywall').classList.remove('hidden');
+            document.getElementById('paywall').scrollTop = 0;
+        }
+
         // Check for access on page load
         function checkAccess() {
             const urlParams = new URLSearchParams(window.location.search);
@@ -3013,7 +3138,6 @@
             }
 
             // Check Stripe redirect — user just paid, prompt for email to verify
-            const urlParams = new URLSearchParams(window.location.search);
             if (urlParams.get('access') === 'granted') {
                 window.history.replaceState({}, '', window.location.pathname);
                 // Show paywall with email verify pre-opened
@@ -3047,6 +3171,8 @@
                 }
             }
 
+            // FREE PREVIEW MODE — hide paywall, let them search
+            document.getElementById('paywall').classList.add('hidden');
             return false;
         }
 
@@ -3495,6 +3621,15 @@
 
         async function searchByAddress(event) {
             event.preventDefault();
+
+            // FREE PREVIEW: check if they've used their free searches
+            if (!hasPaidAccess() && getFreeSearchCount() >= FREE_SEARCH_LIMIT) {
+                showPaywallOverlay();
+                // Track this in HQ
+                if (window.hqTrackConversion) window.hqTrackConversion('paywall_hit_search', '');
+                return;
+            }
+
             const addressInput = document.getElementById('address');
             const address = addressInput.value;
             const radius = parseFloat(document.getElementById('radius-address').value);
@@ -3536,6 +3671,13 @@
                 
                 btn.innerHTML = '<span class="btn-spinner"></span>Searching wells...';
                 await searchWells(location.lat, location.lon, radius, county);
+
+                // Increment free search count AFTER successful search
+                if (!hasPaidAccess()) {
+                    const count = incrementFreeSearch();
+                    // Track free search in HQ
+                    if (window.hqTrackConversion) window.hqTrackConversion('free_search_' + count, '');
+                }
             } catch (error) {
                 alert('Error: ' + error.message);
             } finally {
@@ -3546,6 +3688,14 @@
 
         async function searchByCoords(event) {
             event.preventDefault();
+
+            // FREE PREVIEW: check if they've used their free searches
+            if (!hasPaidAccess() && getFreeSearchCount() >= FREE_SEARCH_LIMIT) {
+                showPaywallOverlay();
+                if (window.hqTrackConversion) window.hqTrackConversion('paywall_hit_search', '');
+                return;
+            }
+
             const lat = parseFloat(document.getElementById('lat').value);
             const lon = parseFloat(document.getElementById('lon').value);
             const radius = parseFloat(document.getElementById('radius-coords').value);
@@ -3564,6 +3714,10 @@
             
             try {
                 await searchWells(lat, lon, radius, county);
+                if (!hasPaidAccess()) {
+                    const count = incrementFreeSearch();
+                    if (window.hqTrackConversion) window.hqTrackConversion('free_search_' + count, '');
+                }
             } catch (error) {
                 alert('Error: ' + error.message);
             } finally {
@@ -3706,43 +3860,80 @@
             const minCost = calculateDrillingCost(minDepth);
             const avgCost = calculateDrillingCost(avgDepth);
             const maxCost = calculateDrillingCost(maxDepth);
+
+            // Free stats: yield, aquifer, dates, active wells
+            const yields = wells.filter(w => w.pumpTestYield > 0).map(w => w.pumpTestYield);
+            const avgYield = yields.length > 0 ? (yields.reduce((a, b) => a + b, 0) / yields.length).toFixed(1) : null;
+            const aquiferCounts = {};
+            wells.forEach(w => { if (w.associatedAquifers) { aquiferCounts[w.associatedAquifers] = (aquiferCounts[w.associatedAquifers] || 0) + 1; } });
+            const topAquifer = Object.entries(aquiferCounts).sort((a, b) => b[1] - a[1])[0];
+            const completionDates = wells.map(w => w.dateWellCompleted || w.datePermitIssued).filter(Boolean).map(d => new Date(d)).filter(d => !isNaN(d));
+            const newestDate = completionDates.length > 0 ? new Date(Math.max(...completionDates)).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : null;
+            const oldestDate = completionDates.length > 0 ? new Date(Math.min(...completionDates)).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : null;
+            const activeCount = wells.filter(w => w.wellStatus && w.wellStatus.toLowerCase().includes('active')).length;
             
             // Display summary
+            const _free = isFreeUser();
             document.getElementById('summary').innerHTML = `
                 <div class="summary-box">
                     <div class="summary-title">Area Well Statistics (${wells.length} wells with depth data)</div>
                     <div class="summary-grid">
                         <div class="summary-item">
-                            <div class="summary-value">${minDepth} ft</div>
-                            <div class="summary-label">Shallowest Well</div>
+                            <div class="summary-value">${wells.length}</div>
+                            <div class="summary-label">Wells Found</div>
                         </div>
                         <div class="summary-item">
-                            <div class="summary-value">${avgDepth} ft</div>
-                            <div class="summary-label">Average Depth</div>
+                            <div class="summary-value">${avgYield ? avgYield + ' GPM' : 'N/A'}</div>
+                            <div class="summary-label">Avg Yield</div>
                         </div>
                         <div class="summary-item">
-                            <div class="summary-value">${maxDepth} ft</div>
-                            <div class="summary-label">Deepest Well</div>
+                            <div class="summary-value">${activeCount}</div>
+                            <div class="summary-label">Active Wells</div>
                         </div>
                     </div>
-                    <div class="cost-estimate">
-                        <div class="cost-title">Estimated Total Well Costs ($50-75/ft + equipment)</div>
+                    <div class="cost-estimate" style="margin-top:10px;">
+                        <div class="cost-title">Area Details</div>
                         <div class="cost-grid">
+                            ${topAquifer ? `<div class="cost-item">
+                                <span class="cost-label">Top Aquifer:</span>
+                                <span class="cost-value">${topAquifer[0]} (${topAquifer[1]} wells)</span>
+                            </div>` : ''}
+                            ${yields.length > 0 ? `<div class="cost-item">
+                                <span class="cost-label">Yield range:</span>
+                                <span class="cost-value">${Math.min(...yields)} – ${Math.max(...yields)} GPM</span>
+                            </div>` : ''}
+                            ${newestDate && oldestDate ? `<div class="cost-item">
+                                <span class="cost-label">Well dates:</span>
+                                <span class="cost-value">${oldestDate} – ${newestDate}</span>
+                            </div>` : ''}
                             <div class="cost-item">
-                                <span class="cost-label">${minDepth} ft well:</span>
-                                <span class="cost-value">$${minCost.totalLow.toLocaleString()} - $${minCost.totalHigh.toLocaleString()}</span>
+                                <span class="cost-label">Avg depth:</span>
+                                <span class="cost-value">${_free ? lockedHTML('Unlock') : avgDepth + ' ft'}</span>
                             </div>
                             <div class="cost-item">
-                                <span class="cost-label">${avgDepth} ft well:</span>
-                                <span class="cost-value">$${avgCost.totalLow.toLocaleString()} - $${avgCost.totalHigh.toLocaleString()}</span>
-                            </div>
-                            <div class="cost-item">
-                                <span class="cost-label">${maxDepth} ft well:</span>
-                                <span class="cost-value">$${maxCost.totalLow.toLocaleString()} - $${maxCost.totalHigh.toLocaleString()}</span>
+                                <span class="cost-label">Depth range:</span>
+                                <span class="cost-value">${_free ? lockedHTML('Unlock') : minDepth + ' – ' + maxDepth + ' ft'}</span>
                             </div>
                             <div class="cost-item">
                                 <span class="cost-label">Avg static water level:</span>
-                                <span class="cost-value">${avgWaterLevel}${avgWaterLevel !== 'N/A' ? ' ft' : ''}</span>
+                                <span class="cost-value">${_free ? lockedHTML('Unlock') : avgWaterLevel + (avgWaterLevel !== 'N/A' ? ' ft' : '')}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="cost-estimate" style="margin-top:10px;">
+                        <div class="cost-title">Estimated Total Well Costs ($50-75/ft + equipment)</div>
+                        <div class="cost-grid">
+                            <div class="cost-item">
+                                <span class="cost-label">Shallowest well:</span>
+                                <span class="cost-value">${_free ? lockedHTML('Unlock') : '$' + minCost.totalLow.toLocaleString() + ' - $' + minCost.totalHigh.toLocaleString()}</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-label">Average well:</span>
+                                <span class="cost-value">${_free ? lockedHTML('Unlock') : '$' + avgCost.totalLow.toLocaleString() + ' - $' + avgCost.totalHigh.toLocaleString()}</span>
+                            </div>
+                            <div class="cost-item">
+                                <span class="cost-label">Deepest well:</span>
+                                <span class="cost-value">${_free ? lockedHTML('Unlock') : '$' + maxCost.totalLow.toLocaleString() + ' - $' + maxCost.totalHigh.toLocaleString()}</span>
                             </div>
                         </div>
                     </div>
@@ -3764,10 +3955,11 @@
                     fillOpacity: 0.8
                 }).addTo(map).bindPopup(`
                     <b>Permit: ${well.permit}</b><br>
-                    Depth: ${well.depthTotal} ft<br>
-                    Static Water: ${well.staticWaterLevel || 'N/A'} ft<br>
+                    Depth: ${_free ? '🔒 Unlock' : well.depthTotal + ' ft'}<br>
+                    Static Water: ${_free ? '🔒 Unlock' : (well.staticWaterLevel || 'N/A') + ' ft'}<br>
                     Aquifer: ${well.associatedAquifers || 'Unknown'}<br>
                     ${well.pumpTestYield ? `Yield: ${well.pumpTestYield} GPM<br>` : ''}
+                    ${well.driller ? `Driller: ${well.driller}<br>` : ''}
                     ${well.wellStatus ? `Status: ${well.wellStatus}<br>` : ''}
                     ${well.associatedUses ? `Use: ${well.associatedUses}` : ''}
                 `);
@@ -3805,11 +3997,11 @@
                         <div class="well-stats">
                             <div class="well-stat">
                                 <div class="well-stat-label">Total Depth</div>
-                                <div class="well-stat-value depth">${well.depthTotal} ft</div>
+                                <div class="well-stat-value depth">${_free ? lockedHTML('Unlock') : well.depthTotal + ' ft'}</div>
                             </div>
                             <div class="well-stat">
-                                <div class="well-stat-label">Static Water Level</div>
-                                <div class="well-stat-value">${well.staticWaterLevel || 'N/A'}${well.staticWaterLevel ? ' ft' : ''}</div>
+                                <div class="well-stat-label">Yield</div>
+                                <div class="well-stat-value">${well.pumpTestYield ? well.pumpTestYield + ' GPM' : 'N/A'}</div>
                             </div>
                             <div class="well-stat">
                                 <div class="well-stat-label">Aquifer</div>
@@ -3817,7 +4009,7 @@
                             </div>
                             <div class="well-stat">
                                 <div class="well-stat-label">Est. Total Cost</div>
-                                <div class="well-stat-value">$${cost.totalLow.toLocaleString()}-$${cost.totalHigh.toLocaleString()}</div>
+                                <div class="well-stat-value">${_free ? lockedHTML('Unlock') : '$' + cost.totalLow.toLocaleString() + '-$' + cost.totalHigh.toLocaleString()}</div>
                             </div>
                         </div>
 
@@ -3837,8 +4029,8 @@
                                         ${detailRow('Use', well.associatedUses)}
                                         ${detailRow('Yield', yieldVal)}
                                         ${detailRow('Elevation', elevVal)}
-                                        ${detailRow('Casing Top', casingTop)}
-                                        ${detailRow('Casing Bottom', casingBot)}
+                                        ${_free ? detailRow('Casing Top', lockedHTML('Unlock')) : detailRow('Casing Top', casingTop)}
+                                        ${_free ? detailRow('Casing Bottom', lockedHTML('Unlock')) : detailRow('Casing Bottom', casingBot)}
                                         ${detailRow('Denver Basin', well.denverBasinAquifer)}
                                         ${detailRow('Designated Basin', well.designatedBasinName)}
                                     </div>
@@ -3880,6 +4072,21 @@
                                 </div>` : ''}
 
                                 <!-- Cost Breakdown -->
+                                ${_free ? `
+                                <div class="detail-group">
+                                    <div class="detail-group-title">Cost Estimate</div>
+                                    <div class="detail-rows single">
+                                        <div class="detail-row">
+                                            <span class="detail-row-label">Drilling & Equipment</span>
+                                            <span class="detail-row-value">${lockedHTML('Unlock costs')}</span>
+                                        </div>
+                                        <div class="detail-row" style="background:rgba(34,197,94,0.12); border: 1px solid rgba(34,197,94,0.2);">
+                                            <span class="detail-row-label" style="color:#4ade80; font-weight:700;">TOTAL</span>
+                                            <span class="detail-row-value" style="color:#4ade80; font-weight:700;">${lockedHTML('Unlock costs')}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                ` : `
                                 <div class="detail-group">
                                     <div class="detail-group-title">Cost Estimate</div>
                                     <div class="detail-rows single">
@@ -3897,6 +4104,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                `}
 
                             </div>
                         </div>
@@ -3905,6 +4113,19 @@
             }).join('');
             
             document.getElementById('wells-list').innerHTML = wellsHtml;
+
+            // FREE PREVIEW: add upgrade CTA for depth-locked data
+            if (_free) {
+                const ctaHtml = `
+                    <div class="upgrade-cta">
+                        <h3>🔒 Well depths & cost estimates are locked</h3>
+                        <p>${wells.length} wells found in your area with real depth data.<br>Unlock depths, water levels, cost estimates & unlimited searches.</p>
+                        <a href="https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a" class="unlock-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('lifetime_click_preview', '')">Unlock All Data — $47 Lifetime</a>
+                        <span class="unlock-or">or <a href="https://buy.stripe.com/00w6oHehIg1J9r12zA6AM0b" onclick="if(window.hqTrackConversion) window.hqTrackConversion('monthly_click_preview', '')">$19/month</a></span>
+                    </div>
+                `;
+                document.getElementById('wells-list').insertAdjacentHTML('afterbegin', ctaHtml);
+            }
             
             // Fit map to show all markers
             if (markers.length > 1) {
