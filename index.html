@@ -2321,6 +2321,8 @@
     <!-- Paywall Overlay -->
     <div class="paywall-overlay" id="paywall">
         <div class="paywall-content">
+            <!-- Back button (only visible after free search) -->
+            <a href="#" id="paywall-back" onclick="document.getElementById('paywall').classList.add('hidden');return false;" style="display:none; position:sticky; top:0; z-index:10; color:#94a3b8; font-size:0.95rem; text-decoration:none; padding:12px 0 8px; text-align:left;">&larr; Continue with free preview</a>
             <!-- Hero Section -->
             <h1 class="paywall-title">
                 <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3114,11 +3116,15 @@
         const isFreeUser = () => !hasPaidAccess();
         function showPaywallOverlay() {
             // Update messaging if they already used a free search
-            if (getFreeSearchCount() > 0) {
+            const usedFreeSearch = getFreeSearchCount() > 0;
+            if (usedFreeSearch) {
                 document.getElementById('paywall-headline').textContent = 'THE WELLS ARE THERE.';
                 document.getElementById('paywall-subhead').textContent = 'Unlock the depths, costs & unlimited searches.';
                 document.getElementById('paywall-subtitle').innerHTML = 'You saw real wells near your property &bull; Upgrade to see how deep they go';
             }
+            // Show back button only if they've done a free search (so they can go back to results)
+            const backBtn = document.getElementById('paywall-back');
+            if (backBtn) backBtn.style.display = usedFreeSearch ? 'block' : 'none';
             document.getElementById('paywall').classList.remove('hidden');
             document.getElementById('paywall').scrollTop = 0;
         }
@@ -3872,7 +3878,10 @@
             const completionDates = wells.map(w => w.dateWellCompleted || w.datePermitIssued).filter(Boolean).map(d => new Date(d)).filter(d => !isNaN(d));
             const newestDate = completionDates.length > 0 ? new Date(Math.max(...completionDates)).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : null;
             const oldestDate = completionDates.length > 0 ? new Date(Math.min(...completionDates)).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) : null;
-            const activeCount = wells.filter(w => w.wellStatus && w.wellStatus.toLowerCase().includes('active')).length;
+            const activeCount = wells.filter(w => {
+                const s = (w.permitCurrentStatusDescr || '').toLowerCase();
+                return s.includes('constructed') || s.includes('active') || s.includes('issued');
+            }).length;
             
             // Display summary
             const _free = isFreeUser();
@@ -3962,7 +3971,7 @@
                     Aquifer: ${well.associatedAquifers || 'Unknown'}<br>
                     ${well.pumpTestYield ? `Yield: ${well.pumpTestYield} GPM<br>` : ''}
                     ${well.driller ? `Driller: ${well.driller}<br>` : ''}
-                    ${well.wellStatus ? `Status: ${well.wellStatus}<br>` : ''}
+                    ${well.permitCurrentStatusDescr ? `Status: ${well.permitCurrentStatusDescr}<br>` : ''}
                     ${well.associatedUses ? `Use: ${well.associatedUses}` : ''}
                 `);
                 markers.push(marker);
@@ -4027,7 +4036,7 @@
                                 <div class="detail-group">
                                     <div class="detail-group-title">Well Info</div>
                                     <div class="detail-rows">
-                                        ${detailRow('Status', well.wellStatus)}
+                                        ${detailRow('Status', well.permitCurrentStatusDescr)}
                                         ${detailRow('Use', well.associatedUses)}
                                         ${detailRow('Yield', yieldVal)}
                                         ${detailRow('Elevation', elevVal)}
