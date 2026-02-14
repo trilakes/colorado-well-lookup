@@ -2796,9 +2796,9 @@
         </div>
         <div id="explore-map"></div>
         <div class="explore-legend">
-            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#00e676"></div> &lt; 200 ft (shallow)</div>
-            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ffeb3b"></div> 200–500 ft (medium)</div>
-            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ff5722"></div> &gt; 500 ft (deep)</div>
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#00e676"></div> Shallow</div>
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ffeb3b"></div> Medium</div>
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ff5722"></div> Deep</div>
             <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#90a4ae"></div> Depth unknown</div>
         </div>
         <div class="explore-counter" id="explore-counter"></div>
@@ -3015,9 +3015,10 @@
                 }).addTo(exploreMap);
 
                 // Rich popup — field names match our PostgreSQL schema
+                const _ef = isFreeUser();
                 const addr = [w.address, w.city].filter(Boolean).join(', ');
                 const yld = w.pump_yield_gpm ? `<br>Yield: <b>${w.pump_yield_gpm} GPM</b>` : '';
-                const swl = w.static_water_level ? `<br>Water Level: <b>${w.static_water_level} ft</b>` : '';
+                const swl = w.static_water_level ? `<br>Water Level: ${_ef ? '<b>🔒 Unlock</b>' : '<b>' + w.static_water_level + ' ft</b>'}` : '';
                 const aq  = w.aquifers ? `<br>Aquifer: <b>${w.aquifers}</b>` : '';
                 const use = w.uses ? `<br>Use: ${w.uses}` : '';
                 const driller = w.driller_name ? `<br>Driller: ${w.driller_name}` : '';
@@ -3027,10 +3028,11 @@
                 m.bindPopup(
                     `<div style="font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.5;min-width:180px;">`
                     + `<b style="font-size:14px;">${w.permit ? 'Permit ' + w.permit : 'Receipt ' + w.receipt}</b>`
-                    + (w.depth_total ? `<br>Depth: <b>${w.depth_total} ft</b>` : '<br>Depth: <i>Not recorded</i>')
+                    + (_ef ? '<br>Depth: <b>🔒 Unlock</b>' : (w.depth_total ? `<br>Depth: <b>${w.depth_total} ft</b>` : '<br>Depth: <i>Not recorded</i>'))
                     + swl + yld + aq + use + stat + driller + completed
                     + (w.county ? `<br>County: ${w.county}` : '')
                     + (addr ? `<br><span style="color:#888;">${addr}</span>` : '')
+                    + (_ef ? `<br><a href="#" onclick="showPaywallOverlay();return false;" style="color:#38bdf8;font-weight:600;">Unlock all data →</a>` : '')
                     + `</div>`,
                     { maxWidth: 260 }
                 );
