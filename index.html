@@ -4247,6 +4247,140 @@
             var HQ = 'https://trilakeshq.com';
             var APP = 'well-tool';
 
+            // ── Event Timeline ──
+            // Records every meaningful user action with timestamps
+            var timeline = [];
+            var lastScrollDepth = 0;
+            var sessionStart = Date.now();
+
+            function logEvent(action, detail) {
+                var entry = {
+                    t: Math.round((Date.now() - sessionStart) / 1000), // seconds since session start
+                    a: action
+                };
+                if (detail) entry.d = detail;
+                timeline.push(entry);
+                // Cap at 200 events to keep payload small
+                if (timeline.length > 200) timeline.shift();
+            }
+
+            logEvent('page_load');
+
+            // Track scroll depth (10% increments)
+            var scrollTimer = null;
+            window.addEventListener('scroll', function() {
+                clearTimeout(scrollTimer);
+                scrollTimer = setTimeout(function() {
+                    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    var docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                    var pct = docHeight > 0 ? Math.round((scrollTop / docHeight) * 100) : 0;
+                    var bucket = Math.floor(pct / 10) * 10;
+                    if (bucket > lastScrollDepth) {
+                        lastScrollDepth = bucket;
+                        logEvent('scroll', bucket + '%');
+                    }
+                }, 300);
+            });
+
+            // Track tab clicks
+            document.addEventListener('click', function(e) {
+                var el = e.target.closest('[data-tab]');
+                if (el) {
+                    logEvent('tab_click', el.dataset.tab);
+                    return;
+                }
+                // Track search button
+                if (e.target.closest('.search-btn, #searchBtn')) {
+                    var input = document.getElementById('addressInput');
+                    logEvent('search_click', input ? input.value : '');
+                    return;
+                }
+                // Track locked data clicks
+                if (e.target.closest('.locked-value')) {
+                    logEvent('locked_click');
+                    return;
+                }
+                // Track pricing/payment button clicks
+                if (e.target.closest('.pricing-btn, .unlock-btn')) {
+                    var link = e.target.closest('a');
+                    var isLifetime = link && link.href && link.href.includes('0rs');
+                    logEvent('payment_btn', isLifetime ? 'lifetime' : 'monthly');
+                    return;
+                }
+                // Track Explore Map button
+                if (e.target.closest('.explore-btn, #exploreMapBtn')) {
+                    logEvent('explore_map_click');
+                    return;
+                }
+                // Track well card clicks in results
+                if (e.target.closest('.well-card')) {
+                    logEvent('well_card_click');
+                    return;
+                }
+            });
+
+            // Track search input focus/blur
+            var addrSetup = false;
+            function setupInputTracking() {
+                var addrInput = document.getElementById('addressInput');
+                if (addrInput && !addrSetup) {
+                    addrSetup = true;
+                    addrInput.addEventListener('focus', function() { logEvent('search_focus'); });
+                    addrInput.addEventListener('blur', function() {
+                        if (addrInput.value.length > 2) logEvent('search_blur', addrInput.value);
+                    });
+                }
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', setupInputTracking);
+            } else {
+                setupInputTracking();
+            }
+
+            // Track paywall overlay shown
+            var paywallObserved = false;
+            function watchPaywall() {
+                var paywall = document.getElementById('accessOverlay');
+                if (!paywall) return;
+                var obs = new MutationObserver(function() {
+                    if (paywall.style.display !== 'none' && paywall.style.display !== '' && !paywallObserved) {
+                        paywallObserved = true;
+                        logEvent('paywall_shown');
+                    }
+                    if (paywall.style.display === 'none') {
+                        paywallObserved = false;
+                    }
+                });
+                obs.observe(paywall, { attributes: true, attributeFilter: ['style'] });
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', watchPaywall);
+            } else {
+                watchPaywall();
+            }
+
+            // Track results appearing
+            var resultsObserved = false;
+            function watchResults() {
+                var results = document.getElementById('results');
+                if (!results) return;
+                var obs = new MutationObserver(function() {
+                    if (results.innerHTML.trim().length > 100 && !resultsObserved) {
+                        resultsObserved = true;
+                        logEvent('results_shown');
+                    }
+                    if (results.innerHTML.trim().length < 50) {
+                        resultsObserved = false;
+                    }
+                });
+                obs.observe(results, { childList: true, subtree: true });
+            }
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', watchResults);
+            } else {
+                watchResults();
+            }
+
             // Parse UTM params if present
             var params = new URLSearchParams(window.location.search);
             var utm = {};
@@ -4326,7 +4460,8 @@
                     app: APP,
                     page: page || window.location.pathname,
                     referrer: document.referrer || 'Direct',
-                    activity: activity
+                    activity: activity,
+                    timeline: timeline
                 };
                 if (window._hqSearchQuery) data.search_query = window._hqSearchQuery;
                 if (Object.keys(utm).length) data.utm = utm;
@@ -4341,13 +4476,15 @@
             // Initial page view
             track();
 
-            // Heartbeat every 30s — includes current activity state
+            // Heartbeat every 30s — includes current activity state + timeline
             setInterval(function() {
                 track(null, { heartbeat: true });
             }, 30000);
 
             // Expose conversion tracker globally
             window.hqTrackConversion = function(type, email) {
+                // Log to timeline
+                logEvent('conversion', type);
                 // Update activity state on conversion events
                 if (type.includes('paywall')) window._hqActivity = 'on_paywall';
                 if (type.includes('search')) window._hqActivity = 'viewing_results';
