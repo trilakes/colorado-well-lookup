@@ -2898,7 +2898,7 @@
                 // Default center: Colorado centroid
                 const startLat = searchLat || 39.0;
                 const startLon = searchLon || -105.5;
-                const startZoom = searchLat ? 13 : 8;
+                const startZoom = searchLat ? 13 : 9;
 
                 exploreMap = L.map('explore-map', {
                     zoomControl: false,
@@ -2962,7 +2962,7 @@
             const zoom = exploreMap.getZoom();
             const msg = document.getElementById('explore-msg');
 
-            if (zoom < 11) {
+            if (zoom < 9) {
                 msg.textContent = 'Zoom in to see wells';
                 msg.classList.remove('hidden');
                 clearExploreMarkers();
@@ -3067,8 +3067,9 @@
                     color = '#ff5722'; // red deep
                 }
 
+                const dotSize = exploreMap.getZoom() < 11 ? 2.5 : 4;
                 const m = L.circleMarker([w.latitude, w.longitude], {
-                    radius: 4,
+                    radius: dotSize,
                     fillColor: color,
                     color: '#fff',
                     weight: 1,
