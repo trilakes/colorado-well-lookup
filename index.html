@@ -504,14 +504,14 @@
             }
 
             header {
-                padding: 16px 8px 6px;
+                padding: 8px 8px 0;
                 margin-bottom: 0;
             }
 
             header h1 {
-                font-size: 1.25rem;
-                line-height: 1.3;
-                gap: 8px;
+                font-size: 1.1rem;
+                line-height: 1.2;
+                gap: 6px;
             }
 
             header h1 svg {
@@ -543,8 +543,7 @@
             }
 
             .search-tabs {
-                flex-direction: row;
-                gap: 4px;
+                display: none;
             }
 
             .tab-btn {
@@ -558,8 +557,7 @@
             }
 
             .form-group label {
-                font-size: 0.85rem;
-                margin-bottom: 5px;
+                display: none;
             }
 
             .form-group input, .form-group select {
@@ -2223,6 +2221,23 @@
             flex: 1;
         }
 
+        .advanced-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: #64748b;
+            font-size: 0.82rem;
+            cursor: pointer;
+            padding: 10px 0 0;
+            font-family: inherit;
+            text-align: center;
+            width: 100%;
+        }
+
+        .advanced-toggle:hover {
+            color: #94a3b8;
+        }
+
         /* Search Button Icon */
         .search-btn svg {
             width: 18px;
@@ -2248,7 +2263,16 @@
         }
 
         @media (max-width: 600px) {
+            .advanced-toggle {
+                display: block;
+            }
+
             .form-options {
+                display: none !important;
+            }
+
+            .form-options.show-advanced {
+                display: flex !important;
                 flex-direction: column;
                 gap: 14px;
             }
@@ -2614,12 +2638,12 @@
                         <label>Search Radius</label>
                         <div class="radius-pills" data-target="radius-address">
                             <button type="button" class="radius-pill" data-value="0.5">&frac12; mi</button>
-                            <button type="button" class="radius-pill active" data-value="1">1 mi</button>
-                            <button type="button" class="radius-pill" data-value="2">2 mi</button>
+                            <button type="button" class="radius-pill" data-value="1">1 mi</button>
+                            <button type="button" class="radius-pill active" data-value="2">2 mi</button>
                             <button type="button" class="radius-pill" data-value="5">5 mi</button>
                             <button type="button" class="radius-pill" data-value="10">10 mi</button>
                         </div>
-                        <input type="hidden" id="radius-address" value="1">
+                        <input type="hidden" id="radius-address" value="2">
                     </div>
                     <div class="form-group">
                         <label>County <span style="color:#64748b;font-weight:400">(auto-detected)</span></label>
@@ -2696,6 +2720,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
                     Search Wells
                 </button>
+                <button type="button" class="advanced-toggle" onclick="toggleAdvanced(this)">&#9881; Advanced options</button>
             </form>
 
             <button class="explore-btn" onclick="openExploreMap()">
@@ -2719,12 +2744,12 @@
                         <label>Search Radius</label>
                         <div class="radius-pills" data-target="radius-coords">
                             <button type="button" class="radius-pill" data-value="0.5">&frac12; mi</button>
-                            <button type="button" class="radius-pill active" data-value="1">1 mi</button>
-                            <button type="button" class="radius-pill" data-value="2">2 mi</button>
+                            <button type="button" class="radius-pill" data-value="1">1 mi</button>
+                            <button type="button" class="radius-pill active" data-value="2">2 mi</button>
                             <button type="button" class="radius-pill" data-value="5">5 mi</button>
                             <button type="button" class="radius-pill" data-value="10">10 mi</button>
                         </div>
-                        <input type="hidden" id="radius-coords" value="1">
+                        <input type="hidden" id="radius-coords" value="2">
                     </div>
                     <div class="form-group">
                         <label>County</label>
@@ -2801,6 +2826,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
                     Search Wells
                 </button>
+                <button type="button" class="advanced-toggle" onclick="toggleAdvanced(this)">&#9881; Advanced options</button>
             </form>
         </section>
 
@@ -3604,6 +3630,13 @@
                 totalLow: drillingLow + equipmentLow,
                 totalHigh: drillingHigh + equipmentHigh
             };
+        }
+
+        // Toggle advanced options (radius, county) on mobile
+        function toggleAdvanced(btn) {
+            var opts = btn.closest('form').querySelector('.form-options');
+            opts.classList.toggle('show-advanced');
+            btn.innerHTML = opts.classList.contains('show-advanced') ? '&#9650; Hide options' : '&#9881; Advanced options';
         }
 
         // Initialize radius pill buttons
