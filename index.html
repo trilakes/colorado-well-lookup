@@ -2459,7 +2459,7 @@
                         <li>All 64 Colorado counties</li>
                         <li>Cancel anytime</li>
                     </ul>
-                    <a href="https://buy.stripe.com/00w6oHehIg1J9r12zA6AM0b" class="pricing-btn secondary" onclick="if(window.hqTrackConversion) window.hqTrackConversion('monthly_click', '')">Subscribe</a>
+                    <a href="https://buy.stripe.com/00w6oHehIg1J9r12zA6AM0b" class="pricing-btn secondary" id="paywall-monthly-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('monthly_click', '')">Subscribe</a>
                 </div>
                 <div class="pricing-card popular">
                     <div class="pricing-name">Lifetime Access</div>
@@ -2472,7 +2472,7 @@
                         <li>All 64 Colorado counties</li>
                         <li>Never pay again</li>
                     </ul>
-                    <a href="https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a" class="pricing-btn primary" onclick="if(window.hqTrackConversion) window.hqTrackConversion('lifetime_click', '')">Get Lifetime Access</a>
+                    <a href="https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a" class="pricing-btn primary" id="paywall-lifetime-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('lifetime_click', '')">Get Lifetime Access</a>
                 </div>
             </div>
 
@@ -3171,9 +3171,28 @@
         }
         // Locked placeholder for depth/cost data (free users) — goes STRAIGHT to Stripe
         const LOCK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
-        const STRIPE_LIFETIME_URL = 'https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a';
+        const STRIPE_LIFETIME_BASE = 'https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a';
+        const STRIPE_MONTHLY_BASE = 'https://buy.stripe.com/00w6oHehIg1J9r12zA6AM0b';
+
+        // Build Stripe Payment Link URL with tracking params
+        function stripeURL(base, source) {
+            const url = new URL(base);
+            // client_reference_id — carries UTM source + trigger point into Stripe
+            const utmData = JSON.parse(sessionStorage.getItem('wf_utm') || '{}');
+            const refParts = [source || 'direct'];
+            if (utmData.utm_source) refParts.push(utmData.utm_source);
+            if (utmData.utm_campaign) refParts.push(utmData.utm_campaign);
+            url.searchParams.set('client_reference_id', refParts.join('_').substring(0, 200));
+            return url.toString();
+        }
+
+        // Convenience getters
+        const STRIPE_LIFETIME_URL = stripeURL(STRIPE_LIFETIME_BASE, 'default');
+        function getLifetimeURL(source) { return stripeURL(STRIPE_LIFETIME_BASE, source); }
+        function getMonthlyURL(source) { return stripeURL(STRIPE_MONTHLY_BASE, source); }
+
         function lockedHTML(label) {
-            return `<a href="${STRIPE_LIFETIME_URL}" target="_blank" class="locked-value" onclick="if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','');if(window.logEvent)window.logEvent('locked_click','')">${LOCK_SVG} ${label || 'Unlock — $47'}</a>`;
+            return `<a href="${getLifetimeURL('locked_data')}" target="_blank" class="locked-value" onclick="if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','');if(window.logEvent)window.logEvent('locked_click','')">${LOCK_SVG} ${label || 'Unlock — $47'}</a>`;
         }
         const isFreeUser = () => !hasPaidAccess();
         function showPaywallOverlay() {
@@ -3204,11 +3223,11 @@
                     <div style="font-size:1.8rem; margin-bottom:8px;">🔒</div>
                     <h3 style="color:#e2e8f0; margin:0 0 8px; font-size:1.15rem;">You've used your free search</h3>
                     <p style="color:#94a3b8; margin:0 0 16px; font-size:0.9rem;">Unlock unlimited searches, well depths & cost estimates</p>
-                    <a href="${STRIPE_LIFETIME_URL}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('lifetime_click_inline','')" style="display:inline-block; background:linear-gradient(135deg,#38bdf8,#7efad1); color:#0f172a; font-weight:700; font-size:1.05rem; padding:14px 36px; border-radius:10px; text-decoration:none; transition:transform 0.15s;">
+                    <a href="${getLifetimeURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('lifetime_click_inline','')" style="display:inline-block; background:linear-gradient(135deg,#38bdf8,#7efad1); color:#0f172a; font-weight:700; font-size:1.05rem; padding:14px 36px; border-radius:10px; text-decoration:none; transition:transform 0.15s;">
                         Unlock All — $47 Lifetime
                     </a>
                     <div style="margin-top:10px;">
-                        <a href="https://buy.stripe.com/00w6oHehIg1J9r12zA6AM0b" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('monthly_click_inline','')" style="color:#64748b; font-size:0.85rem; text-decoration:underline;">or $19/month</a>
+                        <a href="${getMonthlyURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('monthly_click_inline','')" style="color:#64748b; font-size:0.85rem; text-decoration:underline;">or $19/month</a>
                     </div>
                     <p style="color:#475569; font-size:0.78rem; margin:12px 0 0;">🔐 Secure payment via Stripe &bull; Instant access</p>
                 </div>
@@ -3348,6 +3367,14 @@
 
         // Run access check immediately
         checkAccess();
+
+        // Dynamically update paywall payment links with UTM tracking
+        (function updatePaywallLinks() {
+            const lifetimeBtn = document.getElementById('paywall-lifetime-btn');
+            const monthlyBtn = document.getElementById('paywall-monthly-btn');
+            if (lifetimeBtn) lifetimeBtn.href = getLifetimeURL('paywall');
+            if (monthlyBtn) monthlyBtn.href = getMonthlyURL('paywall');
+        })();
 
         // Email verification functions
         function showEmailVerify() {
@@ -4230,8 +4257,8 @@
                     <div class="upgrade-cta">
                         <h3>🔒 Well depths & cost estimates are locked</h3>
                         <p>${wells.length} wells found in your area with real depth data.<br>Unlock depths, water levels, cost estimates & unlimited searches.</p>
-                        <a href="https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a" class="unlock-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('lifetime_click_preview', '')">Unlock All Data — $47 Lifetime</a>
-                        <span class="unlock-or">or <a href="https://buy.stripe.com/00w6oHehIg1J9r12zA6AM0b" onclick="if(window.hqTrackConversion) window.hqTrackConversion('monthly_click_preview', '')">$19/month</a></span>
+                        <a href="${getLifetimeURL('results_preview')}" class="unlock-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('lifetime_click_preview', '')">Unlock All Data — $47 Lifetime</a>
+                        <span class="unlock-or">or <a href="${getMonthlyURL('results_preview')}" onclick="if(window.hqTrackConversion) window.hqTrackConversion('monthly_click_preview', '')">$19/month</a></span>
                     </div>
                 `;
                 document.getElementById('wells-list').insertAdjacentHTML('afterbegin', ctaHtml);
