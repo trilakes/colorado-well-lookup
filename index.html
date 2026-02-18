@@ -3035,10 +3035,9 @@
         </div>
 
         <div class="explore-legend" id="explore-legend">
-            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#00e676"></div> Shallow</div>
-            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ffeb3b"></div> Medium</div>
-            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ff5722"></div> Deep</div>
-            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#90a4ae"></div> Depth unknown</div>
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#00e676"></div> &lt;200 ft</div>
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ffeb3b"></div> 200–500 ft</div>
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ff5722"></div> &gt;500 ft</div>
         </div>
         <div class="explore-counter" id="explore-counter"></div>
         <div class="explore-loading" id="explore-loading">Loading wells…</div>
@@ -3512,10 +3511,11 @@
 
             wells.forEach((w, idx) => {
                 const depth = w.depth_total || 0;
+                // Skip wells with no depth data — they add visual noise
+                if (depth <= 0) return;
+
                 let color;
-                if (depth <= 0) {
-                    color = '#90a4ae';
-                } else if (depth < 200) {
+                if (depth < 200) {
                     color = '#00e676';
                 } else if (depth < 500) {
                     color = '#ffeb3b';
