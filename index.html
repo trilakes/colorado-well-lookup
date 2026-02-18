@@ -1646,8 +1646,8 @@
             background: rgba(30, 41, 59, 0.7);
             border: 1px solid rgba(148, 163, 184, 0.15);
             border-radius: 20px;
-            padding: 36px 28px;
-            width: 320px;
+            padding: 36px 24px;
+            width: 280px;
             transition: all 0.25s ease;
         }
 
@@ -1664,7 +1664,7 @@
         }
 
         .pricing-card.popular::before {
-            content: "BEST VALUE";
+            content: "MOST POPULAR";
             position: absolute;
             top: -12px;
             left: 50%;
@@ -1758,6 +1758,24 @@
         .paywall-footer a {
             color: #38bdf8;
         }
+
+        /* Report download button styles */
+        .report-download-btn:hover {
+            transform: scale(1.03);
+            box-shadow: 0 8px 24px rgba(0,180,216,0.3);
+        }
+        .report-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+            vertical-align: middle;
+            margin-right: 6px;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
 
         /* Already Subscribed / Email Verify Styles */
         .already-subscribed {
@@ -2566,36 +2584,49 @@
 
             <div class="pricing-cards">
                 <div class="pricing-card">
-                    <div class="pricing-name">Monthly</div>
+                    <div class="pricing-name">Single Report</div>
                     <div class="pricing-price">$19</div>
-                    <div class="pricing-period">per month</div>
+                    <div class="pricing-period">one property</div>
                     <ul class="pricing-features">
-                        <li>Unlimited well searches</li>
-                        <li>Drilling cost estimates</li>
-                        <li>Environmental hazard alerts</li>
-                        <li>1.3M+ wells across 4 states</li>
-                        <li>Cancel anytime</li>
+                        <li>1 professional well report</li>
+                        <li>Nearby well depths &amp; data</li>
+                        <li>Drilling cost estimate</li>
+                        <li>Environmental hazard scan</li>
+                        <li>PDF download</li>
                     </ul>
-                    <a href="https://buy.stripe.com/8x24gycJC6EH8X9gn56Na03" class="pricing-btn secondary" id="paywall-monthly-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('monthly_click', '')">Subscribe</a>
+                    <a href="#" class="pricing-btn secondary" id="paywall-single-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('single_click', '')">Get Report — $19</a>
                 </div>
                 <div class="pricing-card popular">
-                    <div class="pricing-name">Lifetime Access</div>
-                    <div class="pricing-price">$47</div>
-                    <div class="pricing-period">one-time payment</div>
+                    <div class="pricing-name">Property Buyer Pack</div>
+                    <div class="pricing-price">$49</div>
+                    <div class="pricing-period">10 reports &bull; $4.90 each</div>
                     <ul class="pricing-features">
-                        <li>Unlimited well searches</li>
+                        <li>10 professional well reports</li>
+                        <li>Compare multiple properties</li>
                         <li>Drilling cost estimates</li>
-                        <li>Environmental hazard alerts</li>
-                        <li>1.3M+ wells across 4 states</li>
-                        <li>Never pay again</li>
+                        <li>Environmental hazard scans</li>
+                        <li>PDF downloads</li>
                     </ul>
-                    <a href="https://buy.stripe.com/aFabJ010U2orflx0o76Na02" class="pricing-btn primary" id="paywall-lifetime-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('lifetime_click', '')">Get Lifetime Access</a>
+                    <a href="#" class="pricing-btn primary" id="paywall-pack-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('pack_click', '')">Best Value — $49</a>
+                </div>
+                <div class="pricing-card">
+                    <div class="pricing-name">Unlimited</div>
+                    <div class="pricing-price">$97</div>
+                    <div class="pricing-period">lifetime access</div>
+                    <ul class="pricing-features">
+                        <li>Unlimited well reports forever</li>
+                        <li>All well data unlocked</li>
+                        <li>Drilling cost estimates</li>
+                        <li>Environmental hazard scans</li>
+                        <li>PDF downloads + future updates</li>
+                    </ul>
+                    <a href="#" class="pricing-btn secondary" id="paywall-unlimited-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('unlimited_click', '')">Go Unlimited — $97</a>
                 </div>
             </div>
 
             <!-- Email Verify Section -->
             <div class="already-subscribed">
-                <p>Already purchased? <a href="#" onclick="showEmailVerify(); return false;">Verify your email</a> &nbsp;|&nbsp; <a href="https://billing.stripe.com/p/login/5kQ14n4H8bLtav53DE6AM00" target="_blank">Manage subscription</a></p>
+                <p>Already purchased? <a href="#" onclick="showEmailVerify(); return false;">Verify your email</a> &nbsp;|&nbsp; <a href="https://billing.stripe.com/p/login/5kQ14n4H8bLtav53DE6AM00" target="_blank">Manage account</a></p>
             </div>
             <div class="email-verify-box" id="emailVerifyBox" style="display:none;">
                 <input type="email" id="verifyEmail" placeholder="Enter your purchase email" onkeydown="if(event.key==='Enter') verifySubscription()">
@@ -3563,7 +3594,7 @@
 
                 let unlockCTA = '';
                 if (free) {
-                    unlockCTA = '<div class="wp-divider"></div><div style="text-align:center;padding:4px 0;"><a href="#" onclick="showPaywallOverlay();return false;" style="color:#38bdf8;font-weight:700;font-size:13px;text-decoration:none;">Unlock all well data — $47 →</a></div>';
+                    unlockCTA = '<div class="wp-divider"></div><div style="text-align:center;padding:4px 0;"><a href="#" onclick="showPaywallOverlay();return false;" style="color:#38bdf8;font-weight:700;font-size:13px;text-decoration:none;">Get a Well Report — from $19 →</a></div>';
                 }
 
                 m.bindPopup(
@@ -3685,10 +3716,107 @@
             if (accessType && email) return true; // will re-verify below
             return false;
         }
+
+        // Report credit tracking
+        function getReportsRemaining() {
+            const tier = localStorage.getItem('wellFinderAccessType');
+            if (!tier) return 0;
+            if (tier === 'unlimited') return 999999;
+            return parseInt(localStorage.getItem('wellFinderReportsRemaining') || '0');
+        }
+
+        function decrementReportCredit() {
+            const tier = localStorage.getItem('wellFinderAccessType');
+            if (tier === 'unlimited') return;
+            const remaining = getReportsRemaining();
+            if (remaining > 0) {
+                localStorage.setItem('wellFinderReportsRemaining', (remaining - 1).toString());
+            }
+        }
+
+        // Generate PDF report
+        async function generateReport(address, lat, lng) {
+            const email = localStorage.getItem('wellFinderEmail');
+            if (!email) {
+                showPaywallOverlay();
+                return;
+            }
+
+            if (getReportsRemaining() <= 0 && localStorage.getItem('wellFinderAccessType') !== 'unlimited') {
+                alert('You\'ve used all your report credits. Upgrade for more reports!');
+                showPaywallOverlay();
+                return;
+            }
+
+            // Show loading state on button
+            const btn = document.querySelector('.report-download-btn');
+            if (btn) {
+                btn.innerHTML = '<span class="report-spinner"></span> Generating Report...';
+                btn.style.pointerEvents = 'none';
+                btn.style.opacity = '0.7';
+            }
+
+            try {
+                const response = await fetch('https://colorado-wells-api.onrender.com/api/report', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, address, lat, lng })
+                });
+
+                if (response.ok) {
+                    const blob = await response.blob();
+                    const url = URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.href = url;
+                    a.download = response.headers.get('content-disposition')?.match(/filename="(.+)"/)?.[1] || 'Well_Report.pdf';
+                    document.body.appendChild(a);
+                    a.click();
+                    document.body.removeChild(a);
+                    URL.revokeObjectURL(url);
+
+                    decrementReportCredit();
+                    updateReportBadge();
+
+                    if (window.hqTrackConversion) window.hqTrackConversion('report_generated', email);
+                } else {
+                    const err = await response.json();
+                    if (err.needsPurchase || err.needsUpgrade) {
+                        showPaywallOverlay();
+                    } else {
+                        alert(err.error || 'Failed to generate report. Please try again.');
+                    }
+                }
+            } catch (e) {
+                alert('Report generation failed. The server may be warming up — try again in 30 seconds.');
+            } finally {
+                if (btn) {
+                    btn.innerHTML = '📋 Download Well Report (PDF)';
+                    btn.style.pointerEvents = '';
+                    btn.style.opacity = '';
+                }
+            }
+        }
+
+        // Show/update report credits badge
+        function updateReportBadge() {
+            const badge = document.getElementById('report-credits-badge');
+            if (!badge) return;
+            const tier = localStorage.getItem('wellFinderAccessType');
+            if (!tier) { badge.style.display = 'none'; return; }
+            if (tier === 'unlimited') {
+                badge.textContent = '∞ Reports';
+                badge.style.display = 'inline-block';
+            } else {
+                const remaining = getReportsRemaining();
+                badge.textContent = remaining + ' Report' + (remaining !== 1 ? 's' : '') + ' Left';
+                badge.style.display = 'inline-block';
+            }
+        }
         // Locked placeholder for depth/cost data (free users) — goes STRAIGHT to Stripe
         const LOCK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
-        const STRIPE_LIFETIME_BASE = 'https://buy.stripe.com/aFabJ010U2orflx0o76Na02';
-        const STRIPE_MONTHLY_BASE = 'https://buy.stripe.com/8x24gycJC6EH8X9gn56Na03';
+        const STRIPE_SINGLE_BASE = 'https://buy.stripe.com/6oU14m6lebZ1eht5Ir6Na04';
+        const STRIPE_PACK_BASE = 'https://buy.stripe.com/dRmcN4392bZ16P1b2L6Na05';
+        const STRIPE_UNLIMITED_BASE = 'https://buy.stripe.com/00weVcgZS6EH7T51sb6Na06';
 
         // Build Stripe Payment Link URL with tracking params
         function stripeURL(base, source) {
@@ -3703,12 +3831,12 @@
         }
 
         // Convenience getters
-        const STRIPE_LIFETIME_URL = stripeURL(STRIPE_LIFETIME_BASE, 'default');
-        function getLifetimeURL(source) { return stripeURL(STRIPE_LIFETIME_BASE, source); }
-        function getMonthlyURL(source) { return stripeURL(STRIPE_MONTHLY_BASE, source); }
+        function getSingleURL(source) { return stripeURL(STRIPE_SINGLE_BASE, source); }
+        function getPackURL(source) { return stripeURL(STRIPE_PACK_BASE, source); }
+        function getUnlimitedURL(source) { return stripeURL(STRIPE_UNLIMITED_BASE, source); }
 
         function lockedHTML(label) {
-            return `<a href="${getLifetimeURL('locked_data')}" target="_blank" class="locked-value" onclick="if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','');if(window.logEvent)window.logEvent('locked_click','')">${LOCK_SVG} ${label || 'Unlock — $47'}</a>`;
+            return `<a href="${getPackURL('locked_data')}" target="_blank" class="locked-value" onclick="if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','');if(window.logEvent)window.logEvent('locked_click','')">${LOCK_SVG} ${label || 'Unlock — from $19'}</a>`;
         }
         const isFreeUser = () => !hasPaidAccess();
         function showPaywallOverlay() {
@@ -3736,14 +3864,15 @@
             prompt.id = 'inline-unlock';
             prompt.innerHTML = `
                 <div style="background:linear-gradient(135deg, rgba(56,189,248,0.15), rgba(126,250,209,0.08)); border:2px solid rgba(56,189,248,0.4); border-radius:16px; padding:24px; text-align:center; margin:20px auto; max-width:500px; animation: fadeInUp 0.3s ease;">
-                    <div style="font-size:1.8rem; margin-bottom:8px;">🔒</div>
-                    <h3 style="color:#e2e8f0; margin:0 0 8px; font-size:1.15rem;">You've used your free search</h3>
-                    <p style="color:#94a3b8; margin:0 0 16px; font-size:0.9rem;">Unlock unlimited searches, well depths & cost estimates</p>
-                    <a href="${getLifetimeURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('lifetime_click_inline','')" style="display:inline-block; background:linear-gradient(135deg,#38bdf8,#7efad1); color:#0f172a; font-weight:700; font-size:1.05rem; padding:14px 36px; border-radius:10px; text-decoration:none; transition:transform 0.15s;">
-                        Unlock All — $47 Lifetime
+                    <div style="font-size:1.8rem; margin-bottom:8px;">�</div>
+                    <h3 style="color:#e2e8f0; margin:0 0 8px; font-size:1.15rem;">Get a Professional Well Report</h3>
+                    <p style="color:#94a3b8; margin:0 0 16px; font-size:0.9rem;">Nearby depths, hazard scan, cost estimates & PDF download</p>
+                    <a href="${getPackURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('pack_click_inline','')" style="display:inline-block; background:linear-gradient(135deg,#38bdf8,#7efad1); color:#0f172a; font-weight:700; font-size:1.05rem; padding:14px 36px; border-radius:10px; text-decoration:none; transition:transform 0.15s;">
+                        10 Reports — $49 (Best Value)
                     </a>
-                    <div style="margin-top:10px;">
-                        <a href="${getMonthlyURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('monthly_click_inline','')" style="color:#64748b; font-size:0.85rem; text-decoration:underline;">or $19/month</a>
+                    <div style="margin-top:10px; display:flex; justify-content:center; gap:16px;">
+                        <a href="${getSingleURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('single_click_inline','')" style="color:#64748b; font-size:0.85rem; text-decoration:underline;">1 report — $19</a>
+                        <a href="${getUnlimitedURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('unlimited_click_inline','')" style="color:#64748b; font-size:0.85rem; text-decoration:underline;">Unlimited — $97</a>
                     </div>
                     <p style="color:#475569; font-size:0.78rem; margin:12px 0 0;">🔐 Secure payment via Stripe &bull; Instant access</p>
                 </div>
@@ -3790,19 +3919,19 @@
             const verifiedAt = parseInt(localStorage.getItem('wellFinderVerifiedAt') || '0');
 
             if (accessType && email) {
-                if (accessType === 'lifetime') {
+                if (['unlimited', 'single', 'pack'].includes(accessType)) {
                     document.getElementById('paywall').classList.add('hidden');
+                    setTimeout(updateReportBadge, 100);
                     return true;
                 }
-                if (accessType === 'monthly') {
-                    const hoursSinceVerify = (Date.now() - verifiedAt) / (1000 * 60 * 60);
-                    if (hoursSinceVerify < 24) {
-                        document.getElementById('paywall').classList.add('hidden');
-                        return true;
-                    }
-                    // Monthly expired cache — re-verify silently
-                    reVerifyAccess(email);
-                    return false;
+                // Legacy monthly — re-verify
+                if (accessType === 'monthly' || accessType === 'lifetime') {
+                    // Treat legacy types as unlimited
+                    localStorage.setItem('wellFinderAccessType', 'unlimited');
+                    localStorage.setItem('wellFinderReportsRemaining', '999999');
+                    document.getElementById('paywall').classList.add('hidden');
+                    setTimeout(updateReportBadge, 100);
+                    return true;
                 }
             }
 
@@ -3886,10 +4015,12 @@
 
         // Dynamically update paywall payment links with UTM tracking
         (function updatePaywallLinks() {
-            const lifetimeBtn = document.getElementById('paywall-lifetime-btn');
-            const monthlyBtn = document.getElementById('paywall-monthly-btn');
-            if (lifetimeBtn) lifetimeBtn.href = getLifetimeURL('paywall');
-            if (monthlyBtn) monthlyBtn.href = getMonthlyURL('paywall');
+            const singleBtn = document.getElementById('paywall-single-btn');
+            const packBtn = document.getElementById('paywall-pack-btn');
+            const unlimitedBtn = document.getElementById('paywall-unlimited-btn');
+            if (singleBtn) singleBtn.href = getSingleURL('paywall');
+            if (packBtn) packBtn.href = getPackURL('paywall');
+            if (unlimitedBtn) unlimitedBtn.href = getUnlimitedURL('paywall');
         })();
 
         // Email verification functions
@@ -3924,19 +4055,26 @@
                 const data = await response.json();
 
                 if (data.valid) {
-                    const label = data.type === 'lifetime' ? 'Lifetime access' : 'Monthly subscription';
+                    const tier = data.tier || data.type || 'unlimited';
+                    const tierLabels = { single: 'Single Report', pack: 'Property Buyer Pack (10 reports)', unlimited: 'Unlimited Access' };
+                    const label = tierLabels[tier] || tier;
                     statusDiv.textContent = label + ' verified! Loading...';
                     statusDiv.className = 'verify-status success';
 
                     // Track conversion in HQ
                     if (window.hqTrackConversion) {
-                        window.hqTrackConversion(data.type, email);
+                        window.hqTrackConversion(tier, email);
                     }
 
-                    // Store access with type and timestamp
+                    // Store access with tier, credits, and timestamp
                     localStorage.setItem('wellFinderEmail', email);
-                    localStorage.setItem('wellFinderAccessType', data.type);
+                    localStorage.setItem('wellFinderAccessType', tier);
                     localStorage.setItem('wellFinderVerifiedAt', Date.now().toString());
+                    if (data.reports_remaining !== undefined) {
+                        localStorage.setItem('wellFinderReportsRemaining', data.reports_remaining.toString());
+                    } else {
+                        localStorage.setItem('wellFinderReportsRemaining', tier === 'unlimited' ? '999999' : tier === 'pack' ? '10' : '1');
+                    }
 
                     // Clean up old keys if they exist
                     localStorage.removeItem('wellToolAccess');
@@ -3945,6 +4083,7 @@
 
                     setTimeout(() => {
                         document.getElementById('paywall').classList.add('hidden');
+                        updateReportBadge();
                     }, 1000);
                 } else {
                     statusDiv.textContent = data.message || 'No active subscription found for this email';
@@ -4767,17 +4906,35 @@
             
             document.getElementById('wells-list').innerHTML = wellsHtml;
 
-            // FREE PREVIEW: add upgrade CTA for depth-locked data
+            // Store search context for report generation
+            window._lastSearchAddress = document.getElementById('address').value;
+            window._lastSearchLat = centerLat;
+            window._lastSearchLng = centerLon;
+
+            // Add report download or upgrade CTA
             if (_free) {
                 const ctaHtml = `
                     <div class="upgrade-cta">
-                        <h3>🔒 Well depths & cost estimates are locked</h3>
-                        <p>${wells.length} wells found in your area with real depth data.<br>Unlock depths, water levels, cost estimates & unlimited searches.</p>
-                        <a href="${getLifetimeURL('results_preview')}" class="unlock-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('lifetime_click_preview', '')">Unlock All Data — $47 Lifetime</a>
-                        <span class="unlock-or">or <a href="${getMonthlyURL('results_preview')}" onclick="if(window.hqTrackConversion) window.hqTrackConversion('monthly_click_preview', '')">$19/month</a></span>
+                        <h3>📋 Get a Professional Well Report</h3>
+                        <p>${wells.length} wells found near your property.<br>Get a PDF report with depths, hazard scan, cost estimates & more.</p>
+                        <a href="${getPackURL('results_preview')}" class="unlock-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('pack_click_preview', '')">10 Reports — $49 (Best Value)</a>
+                        <span class="unlock-or"><a href="${getSingleURL('results_preview')}" onclick="if(window.hqTrackConversion) window.hqTrackConversion('single_click_preview', '')">1 report — $19</a> &nbsp;|&nbsp; <a href="${getUnlimitedURL('results_preview')}" onclick="if(window.hqTrackConversion) window.hqTrackConversion('unlimited_click_preview', '')">Unlimited — $97</a></span>
                     </div>
                 `;
                 document.getElementById('wells-list').insertAdjacentHTML('afterbegin', ctaHtml);
+            } else {
+                // Paid user — show report download button
+                const reportHtml = `
+                    <div class="report-cta" style="background:linear-gradient(135deg, rgba(0,180,216,0.12), rgba(34,197,94,0.08)); border:2px solid rgba(0,180,216,0.3); border-radius:16px; padding:20px; text-align:center; margin-bottom:20px;">
+                        <button class="report-download-btn" onclick="generateReport('${window._lastSearchAddress.replace(/'/g, "\\'")}', ${centerLat}, ${centerLon})" style="background:linear-gradient(135deg,#00b4d8,#22c55e); color:#fff; font-weight:700; font-size:1.05rem; padding:14px 32px; border:none; border-radius:10px; cursor:pointer; transition:all 0.2s;">
+                            📋 Download Well Report (PDF)
+                        </button>
+                        <p style="color:#94a3b8; font-size:0.82rem; margin:8px 0 0;">Includes nearby depths, hazard scan, cost estimates &amp; area statistics</p>
+                        <span id="report-credits-badge" style="display:none; background:rgba(0,180,216,0.2); color:#00b4d8; font-size:0.78rem; font-weight:600; padding:3px 10px; border-radius:12px; margin-top:6px; display:inline-block;"></span>
+                    </div>
+                `;
+                document.getElementById('wells-list').insertAdjacentHTML('afterbegin', reportHtml);
+                updateReportBadge();
             }
             
             // Fit map to show all markers
