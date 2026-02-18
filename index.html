@@ -1302,7 +1302,7 @@
             font-size: 0.85rem;
             font-weight: 500;
             pointer-events: none;
-            z-index: 3;
+            z-index: 1000;
             backdrop-filter: blur(8px);
             white-space: nowrap;
             transition: opacity 0.3s;
@@ -1314,13 +1314,14 @@
             top: 70px;
             right: 12px;
             padding: 10px 14px;
-            background: rgba(15,23,42,0.88);
-            border: 1px solid rgba(148,163,184,0.12);
+            background: rgba(15,23,42,0.92);
+            border: 1px solid rgba(148,163,184,0.2);
             border-radius: 10px;
-            z-index: 3;
+            z-index: 1000;
             backdrop-filter: blur(8px);
-            font-size: 0.75rem;
-            color: #94a3b8;
+            font-size: 0.78rem;
+            color: #cbd5e1;
+            pointer-events: none;
         }
         .explore-legend-row {
             display: flex;
@@ -1342,10 +1343,10 @@
             bottom: 20px;
             left: 12px;
             padding: 8px 14px;
-            background: rgba(15,23,42,0.88);
-            border: 1px solid rgba(148,163,184,0.12);
+            background: rgba(15,23,42,0.92);
+            border: 1px solid rgba(148,163,184,0.2);
             border-radius: 10px;
-            z-index: 3;
+            z-index: 1000;
             backdrop-filter: blur(8px);
             font-size: 0.82rem;
             font-weight: 600;
@@ -1365,7 +1366,7 @@
             color: #38bdf8;
             font-size: 0.82rem;
             font-weight: 500;
-            z-index: 3;
+            z-index: 1000;
             display: none;
         }
         .explore-loading.show { display: block; }
@@ -1384,7 +1385,7 @@
             position: absolute;
             top: 70px;
             left: 12px;
-            z-index: 4;
+            z-index: 1000;
         }
         .layer-panel-toggle {
             display: flex;
@@ -3318,7 +3319,7 @@
 
             const color = OVERLAY_COLORS[layer] || '#fff';
             const zoom = exploreMap.getZoom();
-            const dotSize = zoom < 10 ? 2 : zoom < 13 ? 3 : 4;
+            const dotSize = zoom < 10 ? 3 : zoom < 13 ? 4 : 5;
 
             features.forEach(f => {
                 const lat = f.latitude || f.center_lat;
