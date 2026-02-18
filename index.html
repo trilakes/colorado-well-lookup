@@ -13,7 +13,7 @@
     
     <!-- Primary SEO -->
     <title>Colorado Well Finder - How Deep Is My Well? | Drilling Cost Estimator</title>
-    <meta name="description" content="Search 591,000+ Colorado well records by address. See neighbor well depths, water table data, and get drilling cost estimates ($50-75/ft) before buying property. All 64 counties covered — verified permit records.">
+    <meta name="description" content="Search 1.3M+ well records across CO, AZ, NM & WY by address. See neighbor well depths, water table data, and get drilling cost estimates ($50-75/ft) before buying property. All 64 counties covered — verified permit records.">
     <meta name="keywords" content="Colorado well drilling cost, how deep is my well Colorado, water well depth Colorado, well drilling prices Colorado, domestic well permit Colorado, water table depth Colorado, well drilling estimate, drill a well cost, Colorado water well, residential well drilling, buying land Colorado well, rural property well cost, El Paso County well depth, Park County well depth, Teller County wells">
     <meta name="author" content="Colorado Well Finder">
     <meta name="robots" content="index, follow">
@@ -27,7 +27,7 @@
     <meta property="og:image" content="https://coloradowell.com/og-image.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Colorado Well Finder - Search 591,000+ well records across all 64 Colorado counties">
+    <meta property="og:image:alt" content="Colorado Well Finder - Search 1.3M+ well records across CO, AZ, NM, WY">
     <meta property="og:site_name" content="Colorado Well Finder">
     <meta property="og:locale" content="en_US">
     
@@ -37,7 +37,7 @@
     <meta name="twitter:title" content="Colorado Well Finder - How Deep Is My Well?">
     <meta name="twitter:description" content="Find well depths and drilling costs for any Colorado address. See your neighbors' wells before you drill.">
     <meta name="twitter:image" content="https://coloradowell.com/og-image.png">
-    <meta name="twitter:image:alt" content="Colorado Well Finder - Search 591,000+ well records across all 64 Colorado counties">
+    <meta name="twitter:image:alt" content="Colorado Well Finder - Search 1.3M+ well records across CO, AZ, NM, WY">
     
     <!-- Geo Tags for Local SEO -->
     <meta name="geo.region" content="US-CO">
@@ -1339,7 +1339,7 @@
 
         .explore-counter {
             position: absolute;
-            top: 70px;
+            bottom: 20px;
             left: 12px;
             padding: 8px 14px;
             background: rgba(15,23,42,0.88);
@@ -1377,6 +1377,122 @@
             .explore-legend { top: 62px; right: 8px; padding: 8px 10px; font-size: 0.7rem; }
             .explore-counter { top: 62px; left: 8px; padding: 6px 10px; font-size: 0.78rem; }
             .explore-msg { bottom: 16px; font-size: 0.8rem; padding: 8px 16px; }
+        }
+
+        /* ── Layer Panel ── */
+        .layer-panel {
+            position: absolute;
+            top: 70px;
+            left: 12px;
+            z-index: 4;
+        }
+        .layer-panel-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: rgba(15,23,42,0.92);
+            border: 1px solid rgba(148,163,184,0.18);
+            border-radius: 10px;
+            color: #f1f5f9;
+            font-size: 0.82rem;
+            font-weight: 600;
+            cursor: pointer;
+            backdrop-filter: blur(8px);
+            transition: all 0.2s;
+        }
+        .layer-panel-toggle:hover { background: rgba(30,41,59,0.95); border-color: rgba(56,189,248,0.3); }
+        .layer-panel-toggle svg { color: #38bdf8; }
+        .layer-panel-body {
+            display: none;
+            margin-top: 6px;
+            padding: 10px 12px;
+            background: rgba(15,23,42,0.94);
+            border: 1px solid rgba(148,163,184,0.15);
+            border-radius: 10px;
+            backdrop-filter: blur(12px);
+            min-width: 200px;
+            max-height: 60vh;
+            overflow-y: auto;
+        }
+        .layer-panel.open .layer-panel-body { display: block; }
+        .layer-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 0;
+        }
+        .layer-item label {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #cbd5e1;
+            font-size: 0.78rem;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+        .layer-item label input[type="checkbox"] {
+            accent-color: #38bdf8;
+            width: 14px;
+            height: 14px;
+            cursor: pointer;
+        }
+        .layer-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            border: 1.5px solid rgba(255,255,255,0.4);
+            flex-shrink: 0;
+        }
+        .layer-count {
+            font-size: 0.7rem;
+            color: #64748b;
+            margin-left: 6px;
+        }
+        .layer-divider {
+            height: 1px;
+            background: rgba(148,163,184,0.12);
+            margin: 6px 0;
+        }
+
+        /* ── Enriched Well Popup ── */
+        .wp { font-family: Inter, system-ui, sans-serif; font-size: 13px; line-height: 1.5; min-width: 200px; }
+        .wp-title { font-size: 14px; font-weight: 700; margin-bottom: 2px; }
+        .wp-row { color: #334155; padding: 1px 0; }
+        .wp-row b { color: #0f172a; }
+        .wp-divider { height: 1px; background: #e2e8f0; margin: 6px 0; }
+        .wp-ctx { background: #f1f5f9; border-radius: 8px; padding: 8px 10px; margin-top: 8px; }
+        .wp-ctx-title { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: #64748b; margin-bottom: 4px; }
+        .wp-ctx-row { display: flex; align-items: center; gap: 5px; font-size: 12px; color: #475569; padding: 1px 0; }
+        .wp-contam { background: linear-gradient(135deg, rgba(255,23,68,0.1), rgba(213,0,0,0.06)); border: 1px solid rgba(255,23,68,0.25); border-radius: 8px; padding: 8px 10px; margin-top: 6px; }
+        .wp-contam-title { color: #ff1744; font-weight: 700; font-size: 12px; }
+        .wp-contam-detail { color: #d32f2f; font-size: 11.5px; margin-top: 2px; }
+        .wp-clean { background: rgba(0,230,118,0.06); border: 1px solid rgba(0,230,118,0.15); border-radius: 8px; padding: 6px 10px; margin-top: 6px; }
+        .wp-clean-row { color: #00c853; font-size: 12px; display: flex; align-items: center; gap: 5px; }
+        .wp-blur { filter: blur(5px); user-select: none; pointer-events: none; display: inline-block; min-width: 24px; text-align: center; }
+        .wp-unlock { display: inline-flex; align-items: center; gap: 3px; color: #38bdf8; font-size: 11.5px; font-weight: 600; text-decoration: none; margin-left: 2px; }
+        .wp-unlock:hover { color: #7dd3fc; }
+        .wp-loading { color: #94a3b8; font-size: 11px; font-style: italic; padding: 4px 0; }
+
+        /* Layer Panel Enhancements */
+        .layer-section-label { color: #64748b; font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; padding: 6px 0 2px; }
+        .layer-rec { display: inline-block; background: rgba(255,23,68,0.15); color: #ff5252; font-size: 0.55rem; font-weight: 700; padding: 1px 5px; border-radius: 3px; margin-left: 4px; vertical-align: middle; letter-spacing: 0.02em; }
+        .layer-item.loading .layer-count { display: none; }
+        .layer-item.loading::after { content: ''; display: inline-block; width: 10px; height: 10px; border: 1.5px solid rgba(56,189,248,0.2); border-top-color: #38bdf8; border-radius: 50%; animation: lspin 0.7s linear infinite; margin-left: 6px; flex-shrink: 0; }
+        @keyframes lspin { to { transform: rotate(360deg); } }
+
+        @media (max-width: 600px) {
+            .layer-panel { top: 62px; left: 8px; }
+            .layer-panel-toggle { padding: 8px 12px; font-size: 0.82rem; }
+            .layer-panel-body { min-width: 240px; padding: 10px 14px; }
+            .layer-item { padding: 8px 0; }
+            .layer-item label { font-size: 0.82rem; gap: 8px; }
+            .layer-item label input[type="checkbox"] { width: 18px; height: 18px; }
+            .layer-dot { width: 11px; height: 11px; }
+            .wp { font-size: 14px; min-width: 180px; }
+            .wp-title { font-size: 15px; }
+            .wp-ctx, .wp-contam, .wp-clean { padding: 10px 12px; }
+            .leaflet-popup-content { max-width: 280px !important; }
         }
 
         footer {
@@ -2384,15 +2500,15 @@
                     <path d="M12 16C13.5 16 15 14.5 15 13C15 11 12 8 12 8"/>
                 </svg>
                 <span id="paywall-headline" style="display:block; font-size:1.1em; letter-spacing:0.02em;">DON'T DRILL BLIND.</span>
-                <span id="paywall-subhead" style="display:block; font-size:0.75em; font-weight:500; margin-top:6px; color:#e2e8f0;">See Exactly How Deep Your Neighbors Drilled.</span>
+                <span id="paywall-subhead" style="display:block; font-size:0.75em; font-weight:500; margin-top:6px; color:#e2e8f0;">See Depths, Hazards & What Your Neighbors Drilled.</span>
             </h1>
-            <p class="paywall-subtitle" id="paywall-subtitle">591,000+ verified Colorado well permit records &bull; Updated through 2026</p>
+            <p class="paywall-subtitle" id="paywall-subtitle">1.3M+ verified well permit records across 4 states &bull; Updated through 2026</p>
             
             <!-- Social Proof - moved up for mobile impact -->
             <div class="landing-proof">
                 <div class="proof-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg>
-                    <span>591,000+ verified well records from Colorado DWR permits</span>
+                    <span>1.3M+ verified well records across 4 states</span>
                 </div>
                 <div class="proof-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg>
@@ -2455,8 +2571,8 @@
                     <ul class="pricing-features">
                         <li>Unlimited well searches</li>
                         <li>Drilling cost estimates</li>
-                        <li>Interactive maps</li>
-                        <li>All 64 Colorado counties</li>
+                        <li>Environmental hazard alerts</li>
+                        <li>1.3M+ wells across 4 states</li>
                         <li>Cancel anytime</li>
                     </ul>
                     <a href="https://buy.stripe.com/00w6oHehIg1J9r12zA6AM0b" class="pricing-btn secondary" id="paywall-monthly-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('monthly_click', '')">Subscribe</a>
@@ -2468,8 +2584,8 @@
                     <ul class="pricing-features">
                         <li>Unlimited well searches</li>
                         <li>Drilling cost estimates</li>
-                        <li>Interactive maps</li>
-                        <li>All 64 Colorado counties</li>
+                        <li>Environmental hazard alerts</li>
+                        <li>1.3M+ wells across 4 states</li>
                         <li>Never pay again</li>
                     </ul>
                     <a href="https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a" class="pricing-btn primary" id="paywall-lifetime-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('lifetime_click', '')">Get Lifetime Access</a>
@@ -2616,7 +2732,7 @@
         <section class="search-section">
             <div class="search-hook">
                 <p class="search-hook-headline">See how deep your neighbors drilled &mdash; search free</p>
-                <p class="search-hook-proof">591,000+ verified well records &bull; All 64 Colorado counties &bull; Updated 2026</p>
+                <p class="search-hook-proof">1.3M+ verified well records &bull; CO, AZ, NM & WY &bull; Updated 2026</p>
             </div>
             <div class="search-tabs">
                 <button class="tab-btn active" onclick="switchTab('address')">Search by Address</button>
@@ -2849,7 +2965,7 @@
         <div class="explore-bar">
             <div class="explore-bar-title">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
-                Explore Colorado Wells
+                Explore Wells & Environmental Data
             </div>
             <button class="explore-close" onclick="closeExploreMap()">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
@@ -2857,7 +2973,68 @@
             </button>
         </div>
         <div id="explore-map"></div>
-        <div class="explore-legend">
+
+        <!-- Layer Toggle Panel -->
+        <div class="layer-panel" id="layer-panel">
+            <button class="layer-panel-toggle" id="layer-toggle-btn" onclick="toggleLayerPanel()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polygon points="12 2 22 8.5 12 15 2 8.5"/><polyline points="2 15.5 12 22 22 15.5"/></svg>
+                <span>Layers</span>
+            </button>
+            <div class="layer-panel-body" id="layer-panel-body">
+                <div class="layer-section-label">Wells</div>
+                <div class="layer-item active" data-layer="wells">
+                    <label><input type="checkbox" checked onchange="toggleLayer('wells', this.checked)">
+                    <span class="layer-dot" style="background:#00e676"></span> Water Wells</label>
+                    <span class="layer-count" id="lc-wells"></span>
+                </div>
+                <div class="layer-divider"></div>
+                <div class="layer-section-label">Environmental <span class="layer-rec">REC</span></div>
+                <div class="layer-item" data-layer="contamination">
+                    <label><input type="checkbox" checked onchange="toggleLayer('contamination', this.checked)">
+                    <span class="layer-dot" style="background:#ff1744"></span> EPA Contamination</label>
+                    <span class="layer-count" id="lc-contamination"></span>
+                </div>
+                <div class="layer-item" data-layer="superfund">
+                    <label><input type="checkbox" checked onchange="toggleLayer('superfund', this.checked)">
+                    <span class="layer-dot" style="background:#d50000"></span> Superfund Sites</label>
+                    <span class="layer-count" id="lc-superfund"></span>
+                </div>
+                <div class="layer-item" data-layer="oilgas">
+                    <label><input type="checkbox" onchange="toggleLayer('oilgas', this.checked)">
+                    <span class="layer-dot" style="background:#424242"></span> Oil & Gas Wells</label>
+                    <span class="layer-count" id="lc-oilgas"></span>
+                </div>
+                <div class="layer-divider"></div>
+                <div class="layer-section-label">Hydrology</div>
+                <div class="layer-item" data-layer="dams">
+                    <label><input type="checkbox" onchange="toggleLayer('dams', this.checked)">
+                    <span class="layer-dot" style="background:#2979ff"></span> Dams</label>
+                    <span class="layer-count" id="lc-dams"></span>
+                </div>
+                <div class="layer-item" data-layer="gauges">
+                    <label><input type="checkbox" onchange="toggleLayer('gauges', this.checked)">
+                    <span class="layer-dot" style="background:#00b0ff"></span> Stream Gauges</label>
+                    <span class="layer-count" id="lc-gauges"></span>
+                </div>
+                <div class="layer-item" data-layer="springs">
+                    <label><input type="checkbox" onchange="toggleLayer('springs', this.checked)">
+                    <span class="layer-dot" style="background:#00e5ff"></span> Springs</label>
+                    <span class="layer-count" id="lc-springs"></span>
+                </div>
+                <div class="layer-item" data-layer="waterrights">
+                    <label><input type="checkbox" onchange="toggleLayer('waterrights', this.checked)">
+                    <span class="layer-dot" style="background:#aa00ff"></span> Water Rights</label>
+                    <span class="layer-count" id="lc-waterrights"></span>
+                </div>
+                <div class="layer-item" data-layer="groundwater">
+                    <label><input type="checkbox" onchange="toggleLayer('groundwater', this.checked)">
+                    <span class="layer-dot" style="background:#1de9b6"></span> Groundwater</label>
+                    <span class="layer-count" id="lc-groundwater"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="explore-legend" id="explore-legend">
             <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#00e676"></div> Shallow</div>
             <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ffeb3b"></div> Medium</div>
             <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ff5722"></div> Deep</div>
@@ -2962,15 +3139,300 @@
             const zoom = exploreMap.getZoom();
             const msg = document.getElementById('explore-msg');
 
+            // Reset proximity data on viewport change
+            contamProximityData.ready = false;
+            contamProximityData.features = [];
+
             if (zoom < 9) {
                 msg.textContent = 'Zoom in to see wells';
                 msg.classList.remove('hidden');
                 clearExploreMarkers();
                 document.getElementById('explore-counter').textContent = '';
+                // Still refresh overlays at any zoom (they're sparser)
+                refreshActiveOverlays();
                 return;
             }
             msg.classList.add('hidden');
-            exploreLoadTimeout = setTimeout(loadExploreWells, 400);
+            exploreLoadTimeout = setTimeout(() => {
+                if (overlayState['wells']?.enabled !== false) loadExploreWells();
+                refreshActiveOverlays();
+            }, 400);
+        }
+
+        function refreshActiveOverlays() {
+            for (const layer of Object.keys(overlayState)) {
+                if (layer !== 'wells' && overlayState[layer]?.enabled) {
+                    loadOverlayLayer(layer);
+                }
+            }
+        }
+
+        /* ══════════ Overlay Layers ══════════ */
+        const overlayState = {
+            wells: { enabled: true, markers: [], cache: new Map() },
+            contamination: { enabled: true, markers: [], cache: new Map() },
+            superfund: { enabled: true, markers: [], cache: new Map() }
+        };
+        const OVERLAY_COLORS = {
+            contamination: '#ff1744',
+            superfund: '#d50000',
+            oilgas: '#616161',
+            dams: '#2979ff',
+            gauges: '#00b0ff',
+            springs: '#00e5ff',
+            waterrights: '#aa00ff',
+            groundwater: '#1de9b6',
+        };
+
+        // ── Haversine distance (miles) ──
+        function haversineMi(lat1, lng1, lat2, lng2) {
+            const R = 3959;
+            const dLat = (lat2 - lat1) * Math.PI / 180;
+            const dLng = (lng2 - lng1) * Math.PI / 180;
+            const a = Math.sin(dLat/2)**2 + Math.cos(lat1*Math.PI/180) * Math.cos(lat2*Math.PI/180) * Math.sin(dLng/2)**2;
+            return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+        }
+
+        // ── Contamination proximity data (populated by overlay renders) ──
+        let contamProximityData = { features: [], ready: false };
+
+        function feedContamProximity(layer, features) {
+            const tag = layer === 'superfund' ? 'superfund' : 'epa';
+            // Remove old entries of this type, add new
+            contamProximityData.features = contamProximityData.features.filter(f => f._ctype !== tag);
+            features.forEach(f => {
+                const lat = f.latitude || f.center_lat;
+                const lng = f.longitude || f.center_lng;
+                if (lat && lng) contamProximityData.features.push({ ...f, _ctype: tag });
+            });
+            contamProximityData.ready = true;
+        }
+
+        // Compute nearby context for a well popup (called on popup open)
+        function getWellContext(well, allWells) {
+            const lat = well.latitude, lng = well.longitude;
+
+            // Nearby wells within 0.5 mi (quick bbox pre-filter: ~0.5mi ≈ 0.0072° lat)
+            let nearCount = 0, depthSum = 0, depthCount = 0, yieldSum = 0, yieldCount = 0;
+            for (const w of allWells) {
+                if (w === well) continue;
+                if (Math.abs(w.latitude - lat) > 0.01 || Math.abs(w.longitude - lng) > 0.013) continue;
+                const d = haversineMi(lat, lng, w.latitude, w.longitude);
+                if (d > 0.5) continue;
+                nearCount++;
+                if (w.depth_total > 0) { depthSum += w.depth_total; depthCount++; }
+                if (w.pump_yield_gpm > 0) { yieldSum += w.pump_yield_gpm; yieldCount++; }
+            }
+
+            // Nearby contamination within 2 mi
+            let contamSites = [];
+            if (contamProximityData.ready) {
+                for (const f of contamProximityData.features) {
+                    const fLat = f.latitude || f.center_lat;
+                    const fLng = f.longitude || f.center_lng;
+                    if (!fLat || !fLng) continue;
+                    if (Math.abs(fLat - lat) > 0.04 || Math.abs(fLng - lng) > 0.05) continue;
+                    const d = haversineMi(lat, lng, fLat, fLng);
+                    if (d <= 2) contamSites.push({ name: f.site_name, distance: d, type: f._ctype, superfund: f.superfund || f._ctype === 'superfund' });
+                }
+                contamSites.sort((a, b) => a.distance - b.distance);
+            }
+
+            return {
+                nearCount, depthCount,
+                avgDepth: depthCount ? Math.round(depthSum / depthCount) : 0,
+                avgYield: yieldCount ? Math.round(yieldSum / yieldCount * 10) / 10 : 0,
+                yieldCount,
+                contamSites,
+                contamReady: contamProximityData.ready
+            };
+        }
+
+        function toggleLayerPanel() {
+            document.getElementById('layer-panel').classList.toggle('open');
+        }
+
+        function toggleLayer(layer, enabled) {
+            if (!overlayState[layer]) {
+                overlayState[layer] = { enabled: false, markers: [], cache: new Map() };
+            }
+            overlayState[layer].enabled = enabled;
+
+            if (layer === 'wells') {
+                // Wells are managed by the existing exploreMap logic
+                if (enabled) {
+                    loadExploreWells();
+                } else {
+                    clearExploreMarkers();
+                    document.getElementById('explore-counter').textContent = '';
+                }
+                return;
+            }
+
+            if (enabled) {
+                loadOverlayLayer(layer);
+            } else {
+                clearOverlayMarkers(layer);
+                const el = document.getElementById('lc-' + layer);
+                if (el) el.textContent = '';
+            }
+        }
+
+        async function loadOverlayLayer(layer) {
+            if (!exploreMap || !overlayState[layer]?.enabled) return;
+
+            const bounds = exploreMap.getBounds();
+            const sw = bounds.getSouthWest();
+            const ne = bounds.getNorthEast();
+
+            const minLat = Math.min(sw.lat, ne.lat).toFixed(5);
+            const maxLat = Math.max(sw.lat, ne.lat).toFixed(5);
+            const minLng = Math.min(sw.lng, ne.lng).toFixed(5);
+            const maxLng = Math.max(sw.lng, ne.lng).toFixed(5);
+
+            const cacheKey = [minLat, minLng, maxLat, maxLng].join(',');
+            if (overlayState[layer].cache.has(cacheKey)) {
+                renderOverlayLayer(layer, overlayState[layer].cache.get(cacheKey));
+                return;
+            }
+
+            // Show loading spinner on layer item
+            const layerEl = document.querySelector(`.layer-item[data-layer="${layer}"]`);
+            if (layerEl) layerEl.classList.add('loading');
+
+            try {
+                const url = `${WELLS_API}/api/overlay/${layer}/bbox?minLat=${minLat}&maxLat=${maxLat}&minLng=${minLng}&maxLng=${maxLng}&limit=8000`;
+                const r = await fetch(url);
+                if (!r.ok) throw new Error(`API ${r.status}`);
+                const data = await r.json();
+                const features = data.features || [];
+
+                overlayState[layer].cache.set(cacheKey, features);
+                if (layerEl) layerEl.classList.remove('loading');
+                if (overlayState[layer].enabled) {
+                    renderOverlayLayer(layer, features);
+                }
+            } catch (e) {
+                if (layerEl) layerEl.classList.remove('loading');
+                console.warn(`Overlay ${layer} error:`, e);
+            }
+        }
+
+        function renderOverlayLayer(layer, features) {
+            clearOverlayMarkers(layer);
+
+            // Feed contamination/superfund data to proximity engine
+            if (layer === 'contamination' || layer === 'superfund') {
+                feedContamProximity(layer, features);
+            }
+
+            const color = OVERLAY_COLORS[layer] || '#fff';
+            const zoom = exploreMap.getZoom();
+            const dotSize = zoom < 10 ? 2 : zoom < 13 ? 3 : 4;
+
+            features.forEach(f => {
+                const lat = f.latitude || f.center_lat;
+                const lng = f.longitude || f.center_lng;
+                if (!lat || !lng) return;
+
+                const m = L.circleMarker([lat, lng], {
+                    radius: dotSize,
+                    fillColor: color,
+                    color: '#fff',
+                    weight: 0.8,
+                    opacity: 0.9,
+                    fillOpacity: 0.8
+                }).addTo(exploreMap);
+
+                const popup = buildOverlayPopup(layer, f);
+                if (popup) m.bindPopup(popup, { maxWidth: 280 });
+
+                overlayState[layer].markers.push(m);
+            });
+
+            const el = document.getElementById('lc-' + layer);
+            if (el) el.textContent = features.length ? features.length.toLocaleString() : '';
+        }
+
+        function clearOverlayMarkers(layer) {
+            if (!overlayState[layer]) return;
+            overlayState[layer].markers.forEach(m => exploreMap.removeLayer(m));
+            overlayState[layer].markers = [];
+        }
+
+        function buildOverlayPopup(layer, f) {
+            const s = (label, val) => val ? `<br>${label}: <b>${val}</b>` : '';
+            const wrap = (inner) => `<div style="font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.5;min-width:160px;">${inner}</div>`;
+
+            switch (layer) {
+                case 'contamination':
+                    return wrap(
+                        `<b style="color:#ff1744">⚠ ${f.site_name || 'Unknown Site'}</b>`
+                        + s('Category', f.category)
+                        + s('NPL Status', f.npl_status)
+                        + (f.superfund ? '<br><b style="color:#ff5252">Superfund Site</b>' : '')
+                        + s('State', f.state) + s('County', f.county)
+                        + (f.site_url ? `<br><a href="${f.site_url}" target="_blank" style="color:#38bdf8;">EPA Details →</a>` : '')
+                    );
+                case 'superfund':
+                    return wrap(
+                        `<b style="color:#d50000">☢ ${f.site_name || 'Superfund Site'}</b>`
+                        + s('Status', f.npl_status)
+                        + s('State', f.state) + s('County', f.county)
+                        + (f.site_url ? `<br><a href="${f.site_url}" target="_blank" style="color:#38bdf8;">EPA Details →</a>` : '')
+                    );
+                case 'oilgas':
+                    return wrap(
+                        `<b style="color:#90a4ae">⛽ ${f.well_name || f.api_number || 'Oil/Gas Well'}</b>`
+                        + s('Operator', f.operator)
+                        + s('Type', f.well_type) + s('Status', f.well_status)
+                        + s('Depth', f.depth ? f.depth + ' ft' : null)
+                        + s('State', f.state) + s('County', f.county)
+                    );
+                case 'dams':
+                    return wrap(
+                        `<b style="color:#2979ff">🏗 ${f.dam_name || 'Dam'}</b>`
+                        + s('River', f.river)
+                        + s('Height', f.dam_height_ft ? f.dam_height_ft + ' ft' : null)
+                        + s('Storage', f.max_storage_acre_ft ? Number(f.max_storage_acre_ft).toLocaleString() + ' ac-ft' : null)
+                        + s('Purpose', f.primary_purpose)
+                        + s('Hazard', f.hazard_potential)
+                        + s('Built', f.year_completed)
+                        + s('State', f.state)
+                    );
+                case 'gauges':
+                    return wrap(
+                        `<b style="color:#00b0ff">📊 ${f.name || f.station_id || 'Gauge'}</b>`
+                        + s('Flow', f.flow_cfs ? f.flow_cfs + ' cfs' : null)
+                        + s('Stage', f.stage_ft ? f.stage_ft + ' ft' : null)
+                        + s('Status', f.status)
+                        + (f.url ? `<br><a href="${f.url}" target="_blank" style="color:#38bdf8;">USGS Data →</a>` : '')
+                    );
+                case 'springs':
+                    return wrap(
+                        `<b style="color:#00e5ff">💧 ${f.name || 'Spring'}</b>`
+                        + s('State', f.state) + s('County', f.county)
+                        + s('Source', f.source)
+                    );
+                case 'waterrights':
+                    return wrap(
+                        `<b style="color:#aa00ff">📜 Water Right ${f.record_number || ''}</b>`
+                        + s('Basin', f.basin) + s('Status', f.status)
+                        + s('Use', f.use_type)
+                        + s('Diversion', f.total_diversion ? f.total_diversion + ' ac-ft' : null)
+                        + (f.url ? `<br><a href="${f.url}" target="_blank" style="color:#38bdf8;">Record →</a>` : '')
+                    );
+                case 'groundwater':
+                    return wrap(
+                        `<b style="color:#1de9b6">🔬 ${f.site_id || 'Monitoring Well'}</b>`
+                        + s('Type', f.well_type) + s('Use', f.water_use)
+                        + s('Depth', f.well_depth ? f.well_depth + ' ft' : null)
+                        + s('Water Level', f.water_level_depth ? f.water_level_depth + ' ft' : null)
+                        + s('County', f.county) + s('Basin', f.basin)
+                    );
+                default:
+                    return null;
+            }
         }
 
         // Colorado has 7 water divisions — the DWR API requires one.
@@ -3054,17 +3516,17 @@
             clearExploreMarkers();
             document.getElementById('explore-counter').textContent = wells.length ? `${wells.length.toLocaleString()} well${wells.length > 1 ? 's' : ''}` : '';
 
-            wells.forEach(w => {
+            wells.forEach((w, idx) => {
                 const depth = w.depth_total || 0;
                 let color;
                 if (depth <= 0) {
-                    color = '#90a4ae'; // gray for unknown depth
+                    color = '#90a4ae';
                 } else if (depth < 200) {
-                    color = '#00e676'; // green shallow
+                    color = '#00e676';
                 } else if (depth < 500) {
-                    color = '#ffeb3b'; // yellow medium
+                    color = '#ffeb3b';
                 } else {
-                    color = '#ff5722'; // red deep
+                    color = '#ff5722';
                 }
 
                 const dotSize = exploreMap.getZoom() < 11 ? 2.5 : 4;
@@ -3077,28 +3539,86 @@
                     fillOpacity: 0.85
                 }).addTo(exploreMap);
 
-                // Rich popup — field names match our PostgreSQL schema
-                const _ef = isFreeUser();
+                // ── Enriched popup with lazy context loading ──
+                const free = isFreeUser();
+                const title = w.permit ? 'Permit ' + w.permit : 'Receipt ' + w.receipt;
+
+                // Depth — blurred tease for free users
+                let depthHtml;
+                if (!w.depth_total) depthHtml = '<span style="color:#94a3b8">Not recorded</span>';
+                else if (free) depthHtml = '<span class="wp-blur">' + w.depth_total + '</span> ft <a class="wp-unlock" href="#" onclick="showPaywallOverlay();return false;">unlock</a>';
+                else depthHtml = '<b>' + w.depth_total + ' ft</b>';
+
+                // SWL — blurred tease for free users
+                let swlHtml = '';
+                if (w.static_water_level) {
+                    if (free) swlHtml = '<div class="wp-row">Water Level: <span class="wp-blur">' + w.static_water_level + '</span> ft <a class="wp-unlock" href="#" onclick="showPaywallOverlay();return false;">unlock</a></div>';
+                    else swlHtml = '<div class="wp-row">Water Level: <b>' + w.static_water_level + ' ft</b></div>';
+                }
+
+                const yieldHtml = w.pump_yield_gpm ? '<div class="wp-row">Yield: <b>' + w.pump_yield_gpm + ' GPM</b></div>' : '';
+                const aqHtml = w.aquifers ? '<div class="wp-row">Aquifer: <b>' + w.aquifers + '</b></div>' : '';
+                const useHtml = w.uses ? '<div class="wp-row">Use: ' + w.uses + '</div>' : '';
+                const drillerHtml = w.driller_name ? '<div class="wp-row" style="color:#94a3b8;font-size:12px;">Driller: ' + w.driller_name + '</div>' : '';
+                const dateHtml = w.date_completed ? '<div class="wp-row" style="color:#94a3b8;font-size:12px;">Completed: ' + new Date(w.date_completed).toLocaleDateString('en-US',{month:'short',year:'numeric'}) + '</div>' : '';
+                const countyHtml = w.county ? '<div class="wp-row" style="color:#94a3b8;font-size:12px;">County: ' + w.county + '</div>' : '';
                 const addr = [w.address, w.city].filter(Boolean).join(', ');
-                const yld = w.pump_yield_gpm ? `<br>Yield: <b>${w.pump_yield_gpm} GPM</b>` : '';
-                const swl = w.static_water_level ? `<br>Water Level: ${_ef ? '<b>🔒 Unlock</b>' : '<b>' + w.static_water_level + ' ft</b>'}` : '';
-                const aq  = w.aquifers ? `<br>Aquifer: <b>${w.aquifers}</b>` : '';
-                const use = w.uses ? `<br>Use: ${w.uses}` : '';
-                const driller = w.driller_name ? `<br>Driller: ${w.driller_name}` : '';
-                const completed = w.date_completed ? `<br>Completed: ${new Date(w.date_completed).toLocaleDateString('en-US',{month:'short',year:'numeric'})}` : '';
-                const stat = w.status ? `<br>Status: ${w.status}` : '';
+                const addrHtml = addr ? '<div class="wp-row" style="color:#94a3b8;font-size:12px;">' + addr + '</div>' : '';
+
+                let unlockCTA = '';
+                if (free) {
+                    unlockCTA = '<div class="wp-divider"></div><div style="text-align:center;padding:4px 0;"><a href="#" onclick="showPaywallOverlay();return false;" style="color:#38bdf8;font-weight:700;font-size:13px;text-decoration:none;">Unlock all well data — $47 →</a></div>';
+                }
 
                 m.bindPopup(
-                    `<div style="font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.5;min-width:180px;">`
-                    + `<b style="font-size:14px;">${w.permit ? 'Permit ' + w.permit : 'Receipt ' + w.receipt}</b>`
-                    + (_ef ? '<br>Depth: <b>🔒 Unlock</b>' : (w.depth_total ? `<br>Depth: <b>${w.depth_total} ft</b>` : '<br>Depth: <i>Not recorded</i>'))
-                    + swl + yld + aq + use + stat + driller + completed
-                    + (w.county ? `<br>County: ${w.county}` : '')
-                    + (addr ? `<br><span style="color:#888;">${addr}</span>` : '')
-                    + (_ef ? `<br><a href="#" onclick="showPaywallOverlay();return false;" style="color:#38bdf8;font-weight:600;">Unlock all data →</a>` : '')
-                    + `</div>`,
-                    { maxWidth: 260 }
+                    '<div class="wp">'
+                    + '<div class="wp-title">' + title + '</div>'
+                    + '<div class="wp-row">Depth: ' + depthHtml + '</div>'
+                    + swlHtml + yieldHtml + aqHtml + useHtml
+                    + drillerHtml + dateHtml + countyHtml + addrHtml
+                    + '<div id="wp-ctx-' + idx + '"><div class="wp-loading">Loading context…</div></div>'
+                    + unlockCTA
+                    + '</div>',
+                    { maxWidth: 300, minWidth: 200 }
                 );
+
+                // Enrich popup on open with neighborhood + contamination data
+                m.on('popupopen', function() {
+                    const el = document.getElementById('wp-ctx-' + idx);
+                    if (!el || el.dataset.done) return;
+                    el.dataset.done = '1';
+
+                    const ctx = getWellContext(w, wells);
+                    let html = '';
+
+                    // Neighborhood context
+                    if (ctx.nearCount > 0) {
+                        html += '<div class="wp-ctx"><div class="wp-ctx-title">📍 Neighborhood</div>';
+                        html += '<div class="wp-ctx-row">' + ctx.nearCount + ' well' + (ctx.nearCount > 1 ? 's' : '') + ' within ½ mi</div>';
+                        if (ctx.avgDepth) html += '<div class="wp-ctx-row">Avg depth: <b>' + ctx.avgDepth + ' ft</b></div>';
+                        if (ctx.avgYield) html += '<div class="wp-ctx-row">Avg yield: <b>' + ctx.avgYield + ' GPM</b></div>';
+                        html += '</div>';
+                    }
+
+                    // Contamination proximity
+                    if (ctx.contamSites.length > 0) {
+                        const nearest = ctx.contamSites[0];
+                        html += '<div class="wp-contam">';
+                        html += '<div class="wp-contam-title">⚠️ ' + ctx.contamSites.length + ' contamination site' + (ctx.contamSites.length > 1 ? 's' : '') + ' within 2 mi</div>';
+                        html += '<div class="wp-contam-detail">' + (nearest.name || 'EPA Site') + ' — ' + nearest.distance.toFixed(1) + ' mi away';
+                        if (nearest.superfund) html += ' <b>(Superfund)</b>';
+                        html += '</div></div>';
+                    } else if (ctx.contamReady) {
+                        html += '<div class="wp-clean"><div class="wp-clean-row">✓ No contamination sites within 2 mi</div></div>';
+                    } else {
+                        html += '<div class="wp-loading">Loading environmental data…</div>';
+                    }
+
+                    el.innerHTML = html;
+
+                    // Update popup size to fit new content
+                    m.getPopup().update();
+                });
 
                 exploreMarkers.push(m);
             });
@@ -3200,8 +3720,8 @@
             const usedFreeSearch = getFreeSearchCount() > 0;
             if (usedFreeSearch) {
                 document.getElementById('paywall-headline').textContent = 'THE WELLS ARE THERE.';
-                document.getElementById('paywall-subhead').textContent = 'Unlock the depths, costs & unlimited searches.';
-                document.getElementById('paywall-subtitle').innerHTML = 'You saw real wells near your property &bull; Upgrade to see how deep they go';
+                document.getElementById('paywall-subhead').textContent = 'Unlock depths, environmental alerts & unlimited searches.';
+                document.getElementById('paywall-subtitle').innerHTML = 'You saw real wells near your property &bull; Upgrade for depths & environmental hazards';
             }
             // Show back button only if they've done a free search (so they can go back to results)
             const backBtn = document.getElementById('paywall-back');
