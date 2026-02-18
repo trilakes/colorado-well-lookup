@@ -3760,11 +3760,11 @@
         const FREE_VISIBLE_WELLS = 3; // well cards shown unlocked
 
         function getFreeSearchCount() {
-            return parseInt(sessionStorage.getItem('wf_free_searches') || '0');
+            return parseInt(localStorage.getItem('wf_free_searches') || '0');
         }
         function incrementFreeSearch() {
             const count = getFreeSearchCount() + 1;
-            sessionStorage.setItem('wf_free_searches', count.toString());
+            localStorage.setItem('wf_free_searches', count.toString());
             return count;
         }
         function hasPaidAccess() {
