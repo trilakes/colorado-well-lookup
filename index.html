@@ -3037,7 +3037,7 @@
 
         <div class="explore-legend" id="explore-legend">
             <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#00e676"></div> &lt;200 ft</div>
-            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ffeb3b"></div> 200–500 ft</div>
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ffc107"></div> 200–500 ft</div>
             <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ff5722"></div> &gt;500 ft</div>
         </div>
         <div class="explore-counter" id="explore-counter"></div>
@@ -3519,20 +3519,20 @@
                 if (depth < 200) {
                     color = '#00e676';
                 } else if (depth < 500) {
-                    color = '#ffeb3b';
+                    color = '#ffc107';
                 } else {
                     color = '#ff5722';
                 }
 
                 const z = exploreMap.getZoom();
-                const dotSize = z < 7 ? 1.2 : z < 9 ? 1.8 : z < 11 ? 2.5 : 4;
+                const dotSize = z < 7 ? 2 : z < 9 ? 2.5 : z < 11 ? 3 : 4;
                 const m = L.circleMarker([w.latitude, w.longitude], {
                     radius: dotSize,
                     fillColor: color,
                     color: z < 9 ? color : '#fff',
                     weight: z < 9 ? 0 : 1,
                     opacity: 1,
-                    fillOpacity: z < 8 ? 0.6 : 0.85
+                    fillOpacity: 0.9
                 }).addTo(exploreMap);
 
                 // ── Enriched popup with lazy context loading ──
