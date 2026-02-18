@@ -3487,7 +3487,7 @@
                 // More wells at high zoom, fewer (sampled) at low zoom
                 const zoom = exploreMap.getZoom();
                 const wellLimit = zoom >= 12 ? 15000 : zoom >= 9 ? 8000 : 5000;
-                const url = `${WELLS_API}/api/wells/bbox?minLat=${minLat}&maxLat=${maxLat}&minLng=${minLng}&maxLng=${maxLng}&limit=${wellLimit}`;
+                const url = `${WELLS_API}/api/wells/bbox?minLat=${minLat}&maxLat=${maxLat}&minLng=${minLng}&maxLng=${maxLng}&limit=${wellLimit}&hasDepth=true`;
                 const r = await fetch(url);
                 if (!r.ok) throw new Error(`API returned ${r.status}`);
                 const data = await r.json();
