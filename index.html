@@ -3075,7 +3075,7 @@
                 // Default center: Colorado centroid
                 const startLat = searchLat || 39.0;
                 const startLon = searchLon || -105.5;
-                const startZoom = searchLat ? 13 : 9;
+                const startZoom = searchLat ? 13 : 7;
 
                 exploreMap = L.map('explore-map', {
                     zoomControl: false,
@@ -3143,15 +3143,6 @@
             contamProximityData.ready = false;
             contamProximityData.features = [];
 
-            if (zoom < 9) {
-                msg.textContent = 'Zoom in to see wells';
-                msg.classList.remove('hidden');
-                clearExploreMarkers();
-                document.getElementById('explore-counter').textContent = '';
-                // Still refresh overlays at any zoom (they're sparser)
-                refreshActiveOverlays();
-                return;
-            }
             msg.classList.add('hidden');
             exploreLoadTimeout = setTimeout(() => {
                 if (overlayState['wells']?.enabled !== false) loadExploreWells();
@@ -3493,7 +3484,10 @@
             console.log(`Loading wells from own DB — bbox: ${minLat},${minLng} → ${maxLat},${maxLng}`);
 
             try {
-                const url = `${WELLS_API}/api/wells/bbox?minLat=${minLat}&maxLat=${maxLat}&minLng=${minLng}&maxLng=${maxLng}&limit=15000`;
+                // More wells at high zoom, fewer (sampled) at low zoom
+                const zoom = exploreMap.getZoom();
+                const wellLimit = zoom >= 12 ? 15000 : zoom >= 9 ? 8000 : 5000;
+                const url = `${WELLS_API}/api/wells/bbox?minLat=${minLat}&maxLat=${maxLat}&minLng=${minLng}&maxLng=${maxLng}&limit=${wellLimit}`;
                 const r = await fetch(url);
                 if (!r.ok) throw new Error(`API returned ${r.status}`);
                 const data = await r.json();
@@ -3529,14 +3523,15 @@
                     color = '#ff5722';
                 }
 
-                const dotSize = exploreMap.getZoom() < 11 ? 2.5 : 4;
+                const z = exploreMap.getZoom();
+                const dotSize = z < 7 ? 1.2 : z < 9 ? 1.8 : z < 11 ? 2.5 : 4;
                 const m = L.circleMarker([w.latitude, w.longitude], {
                     radius: dotSize,
                     fillColor: color,
-                    color: '#fff',
-                    weight: 1,
+                    color: z < 9 ? color : '#fff',
+                    weight: z < 9 ? 0 : 1,
                     opacity: 1,
-                    fillOpacity: 0.85
+                    fillOpacity: z < 8 ? 0.6 : 0.85
                 }).addTo(exploreMap);
 
                 // ── Enriched popup with lazy context loading ──
