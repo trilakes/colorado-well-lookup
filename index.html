@@ -1637,9 +1637,10 @@
 
         .pricing-cards {
             display: flex;
-            gap: 24px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
+            align-items: stretch;
         }
 
         .pricing-card {
@@ -1649,6 +1650,8 @@
             padding: 36px 24px;
             width: 280px;
             transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .pricing-card:hover {
@@ -1657,25 +1660,60 @@
             box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
         }
 
-        .pricing-card.popular {
-            border-color: rgba(34, 197, 94, 0.5);
+        /* Hero cards — Single & Unlimited */
+        .pricing-card.hero {
+            border-color: rgba(56, 189, 248, 0.45);
+            background: rgba(30, 41, 59, 0.9);
             position: relative;
-            background: rgba(30, 41, 59, 0.85);
+            width: 300px;
         }
 
-        .pricing-card.popular::before {
-            content: "MOST POPULAR";
+        .pricing-card.hero.best::before {
+            content: "BEST VALUE";
             position: absolute;
-            top: -12px;
+            top: -13px;
             left: 50%;
             transform: translateX(-50%);
-            background: #22c55e;
+            background: linear-gradient(135deg, #22c55e, #10b981);
             color: #052e16;
             font-weight: 700;
             font-size: 0.75rem;
             padding: 5px 18px;
             border-radius: 20px;
             letter-spacing: 0.03em;
+        }
+
+        /* Compact 10-pack row */
+        .pricing-pack-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 14px;
+            margin-top: 16px;
+            padding: 14px 20px;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 12px;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .pricing-pack-row span {
+            color: #94a3b8;
+            font-size: 0.88rem;
+        }
+
+        .pricing-pack-row a {
+            color: #38bdf8;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .pricing-pack-row a:hover {
+            text-decoration: underline;
         }
 
         .pricing-name {
@@ -1692,6 +1730,10 @@
             margin-bottom: 4px;
         }
 
+        .pricing-card.hero .pricing-price {
+            font-size: 3rem;
+        }
+
         .pricing-period {
             color: #64748b;
             font-size: 0.9rem;
@@ -1702,6 +1744,7 @@
             list-style: none;
             text-align: left;
             margin-bottom: 28px;
+            flex: 1;
         }
 
         .pricing-features li {
@@ -1722,31 +1765,39 @@
         .pricing-btn {
             display: block;
             width: 100%;
-            padding: 14px 28px;
+            padding: 18px 28px;
             border: none;
-            border-radius: 10px;
-            font-size: 1.05rem;
-            font-weight: 600;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 700;
             cursor: pointer;
             text-decoration: none;
             transition: all 0.2s ease;
             text-align: center;
+            min-height: 58px;
+            line-height: 1.3;
         }
 
         .pricing-btn.primary {
-            background: #22c55e;
+            background: linear-gradient(135deg, #22c55e, #10b981);
             color: #052e16;
+            box-shadow: 0 4px 16px rgba(34, 197, 94, 0.3);
         }
 
         .pricing-btn.secondary {
-            background: #38bdf8;
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
             color: #0c1220;
+            box-shadow: 0 4px 16px rgba(56, 189, 248, 0.3);
         }
 
         .pricing-btn:hover {
-            transform: scale(1.02);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+            transform: scale(1.03);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.3);
             filter: brightness(1.1);
+        }
+
+        .pricing-btn:active {
+            transform: scale(0.98);
         }
 
         .paywall-footer {
@@ -2114,11 +2165,16 @@
             .pricing-card {
                 width: 100%;
                 max-width: 100%;
-                padding: 24px 20px;
+                padding: 28px 20px;
                 border-radius: 16px;
             }
 
-            .pricing-card.popular {
+            .pricing-card.hero {
+                width: 100%;
+                max-width: 100%;
+            }
+
+            .pricing-card.hero.best {
                 order: -1;
             }
 
@@ -2127,18 +2183,22 @@
                 gap: 8px !important;
             }
 
-            .pricing-card.popular::before {
+            .pricing-card.hero.best::before {
                 font-size: 0.7rem;
                 padding: 4px 14px;
                 top: -10px;
             }
 
             .pricing-name {
-                font-size: 1.1rem;
+                font-size: 1.15rem;
             }
 
             .pricing-price {
-                font-size: 2.5rem;
+                font-size: 2.6rem;
+            }
+
+            .pricing-card.hero .pricing-price {
+                font-size: 2.8rem;
             }
 
             .pricing-period {
@@ -2156,9 +2216,16 @@
             }
 
             .pricing-btn {
-                padding: 15px 24px;
-                font-size: 1.05rem;
+                padding: 18px 24px;
+                font-size: 1.1rem;
                 border-radius: 12px;
+                min-height: 60px;
+            }
+
+            .pricing-pack-row {
+                flex-direction: row;
+                padding: 12px 16px;
+                gap: 10px;
             }
 
             /* Footer */
@@ -2583,7 +2650,7 @@
             <p style="text-align:center; color:#94a3b8; font-size:0.95rem; margin:24px 0 8px; font-style:italic;">If this saves you from drilling 100ft deeper than expected, it pays for itself instantly.</p>
 
             <div class="pricing-cards">
-                <div class="pricing-card">
+                <div class="pricing-card hero">
                     <div class="pricing-name">Single Report</div>
                     <div class="pricing-price">$19</div>
                     <div class="pricing-period">one property</div>
@@ -2596,20 +2663,7 @@
                     </ul>
                     <a href="#" class="pricing-btn secondary" id="paywall-single-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('single_click', '')">Get Report — $19</a>
                 </div>
-                <div class="pricing-card popular">
-                    <div class="pricing-name">Property Buyer Pack</div>
-                    <div class="pricing-price">$49</div>
-                    <div class="pricing-period">10 reports &bull; $4.90 each</div>
-                    <ul class="pricing-features">
-                        <li>10 professional well reports</li>
-                        <li>Compare multiple properties</li>
-                        <li>Drilling cost estimates</li>
-                        <li>Environmental hazard scans</li>
-                        <li>PDF downloads</li>
-                    </ul>
-                    <a href="#" class="pricing-btn primary" id="paywall-pack-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('pack_click', '')">Best Value — $49</a>
-                </div>
-                <div class="pricing-card">
+                <div class="pricing-card hero best">
                     <div class="pricing-name">Unlimited</div>
                     <div class="pricing-price">$97</div>
                     <div class="pricing-period">lifetime access</div>
@@ -2620,8 +2674,12 @@
                         <li>Environmental hazard scans</li>
                         <li>PDF downloads + future updates</li>
                     </ul>
-                    <a href="#" class="pricing-btn secondary" id="paywall-unlimited-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('unlimited_click', '')">Go Unlimited — $97</a>
+                    <a href="#" class="pricing-btn primary" id="paywall-unlimited-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('unlimited_click', '')">Go Unlimited — $97</a>
                 </div>
+            </div>
+            <div class="pricing-pack-row">
+                <span>Need a few? <strong>10 Reports — $49</strong> ($4.90 each)</span>
+                <a href="#" id="paywall-pack-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('pack_click', '')">Get Pack →</a>
             </div>
 
             <!-- Email Verify Section -->
@@ -3836,7 +3894,7 @@
         function getUnlimitedURL(source) { return stripeURL(STRIPE_UNLIMITED_BASE, source); }
 
         function lockedHTML(label) {
-            return `<a href="${getPackURL('locked_data')}" target="_blank" class="locked-value" onclick="if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','');if(window.logEvent)window.logEvent('locked_click','')">${LOCK_SVG} ${label || 'Unlock — from $19'}</a>`;
+            return `<a href="${getSingleURL('locked_data')}" target="_blank" class="locked-value" onclick="if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','');if(window.logEvent)window.logEvent('locked_click','')">${LOCK_SVG} ${label || 'Unlock — from $19'}</a>`;
         }
         const isFreeUser = () => !hasPaidAccess();
         function showPaywallOverlay() {
@@ -3863,16 +3921,20 @@
             const prompt = document.createElement('div');
             prompt.id = 'inline-unlock';
             prompt.innerHTML = `
-                <div style="background:linear-gradient(135deg, rgba(56,189,248,0.15), rgba(126,250,209,0.08)); border:2px solid rgba(56,189,248,0.4); border-radius:16px; padding:24px; text-align:center; margin:20px auto; max-width:500px; animation: fadeInUp 0.3s ease;">
-                    <div style="font-size:1.8rem; margin-bottom:8px;">�</div>
+                <div style="background:linear-gradient(135deg, rgba(56,189,248,0.15), rgba(126,250,209,0.08)); border:2px solid rgba(56,189,248,0.4); border-radius:16px; padding:28px 20px; text-align:center; margin:20px auto; max-width:500px; animation: fadeInUp 0.3s ease;">
+                    <div style="font-size:1.8rem; margin-bottom:8px;">📋</div>
                     <h3 style="color:#e2e8f0; margin:0 0 8px; font-size:1.15rem;">Get a Professional Well Report</h3>
-                    <p style="color:#94a3b8; margin:0 0 16px; font-size:0.9rem;">Nearby depths, hazard scan, cost estimates & PDF download</p>
-                    <a href="${getPackURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('pack_click_inline','')" style="display:inline-block; background:linear-gradient(135deg,#38bdf8,#7efad1); color:#0f172a; font-weight:700; font-size:1.05rem; padding:14px 36px; border-radius:10px; text-decoration:none; transition:transform 0.15s;">
-                        10 Reports — $49 (Best Value)
-                    </a>
-                    <div style="margin-top:10px; display:flex; justify-content:center; gap:16px;">
-                        <a href="${getSingleURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('single_click_inline','')" style="color:#64748b; font-size:0.85rem; text-decoration:underline;">1 report — $19</a>
-                        <a href="${getUnlimitedURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('unlimited_click_inline','')" style="color:#64748b; font-size:0.85rem; text-decoration:underline;">Unlimited — $97</a>
+                    <p style="color:#94a3b8; margin:0 0 18px; font-size:0.9rem;">Nearby depths, hazard scan, cost estimates & PDF download</p>
+                    <div style="display:flex; flex-direction:column; gap:10px; max-width:320px; margin:0 auto;">
+                        <a href="${getSingleURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('single_click_inline','')" style="display:block; background:linear-gradient(135deg,#38bdf8,#0ea5e9); color:#0f172a; font-weight:700; font-size:1.05rem; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center; min-height:52px; line-height:1.3;">
+                            Get 1 Report — $19
+                        </a>
+                        <a href="${getUnlimitedURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('unlimited_click_inline','')" style="display:block; background:linear-gradient(135deg,#22c55e,#10b981); color:#052e16; font-weight:700; font-size:1.05rem; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center; min-height:52px; line-height:1.3;">
+                            Go Unlimited — $97
+                        </a>
+                    </div>
+                    <div style="margin-top:12px;">
+                        <a href="${getPackURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('pack_click_inline','')" style="color:#64748b; font-size:0.82rem; text-decoration:underline;">or get 10 reports for $49</a>
                     </div>
                     <p style="color:#475569; font-size:0.78rem; margin:12px 0 0;">🔐 Secure payment via Stripe &bull; Instant access</p>
                 </div>
@@ -4917,8 +4979,11 @@
                     <div class="upgrade-cta">
                         <h3>📋 Get a Professional Well Report</h3>
                         <p>${wells.length} wells found near your property.<br>Get a PDF report with depths, hazard scan, cost estimates & more.</p>
-                        <a href="${getPackURL('results_preview')}" class="unlock-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('pack_click_preview', '')">10 Reports — $49 (Best Value)</a>
-                        <span class="unlock-or"><a href="${getSingleURL('results_preview')}" onclick="if(window.hqTrackConversion) window.hqTrackConversion('single_click_preview', '')">1 report — $19</a> &nbsp;|&nbsp; <a href="${getUnlimitedURL('results_preview')}" onclick="if(window.hqTrackConversion) window.hqTrackConversion('unlimited_click_preview', '')">Unlimited — $97</a></span>
+                        <div style="display:flex; flex-direction:column; gap:10px; max-width:340px; margin:0 auto;">
+                            <a href="${getSingleURL('results_preview')}" class="unlock-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('single_click_preview', '')" style="display:block; background:linear-gradient(135deg,#38bdf8,#0ea5e9); color:#0f172a; font-weight:700; font-size:1.05rem; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center; min-height:52px;">Get 1 Report — $19</a>
+                            <a href="${getUnlimitedURL('results_preview')}" class="unlock-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('unlimited_click_preview', '')" style="display:block; background:linear-gradient(135deg,#22c55e,#10b981); color:#052e16; font-weight:700; font-size:1.05rem; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center; min-height:52px;">Go Unlimited — $97</a>
+                        </div>
+                        <span class="unlock-or" style="margin-top:8px;"><a href="${getPackURL('results_preview')}" onclick="if(window.hqTrackConversion) window.hqTrackConversion('pack_click_preview', '')">or get 10 reports for $49</a></span>
                     </div>
                 `;
                 document.getElementById('wells-list').insertAdjacentHTML('afterbegin', ctaHtml);
