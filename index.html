@@ -2665,7 +2665,7 @@
                 </div>
                 <div class="pricing-card hero best">
                     <div class="pricing-name">Unlimited</div>
-                    <div class="pricing-price">$97</div>
+                    <div class="pricing-price">$49</div>
                     <div class="pricing-period">lifetime access</div>
                     <ul class="pricing-features">
                         <li>Unlimited well reports forever</li>
@@ -2674,12 +2674,8 @@
                         <li>Environmental hazard scans</li>
                         <li>PDF downloads + future updates</li>
                     </ul>
-                    <a href="#" class="pricing-btn primary" id="paywall-unlimited-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('unlimited_click', '')">Go Unlimited — $97</a>
+                    <a href="#" class="pricing-btn primary" id="paywall-unlimited-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('unlimited_click', '')">Go Unlimited — $49</a>
                 </div>
-            </div>
-            <div class="pricing-pack-row">
-                <span>Need a few? <strong>10 Reports — $49</strong> ($4.90 each)</span>
-                <a href="#" id="paywall-pack-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('pack_click', '')">Get Pack →</a>
             </div>
 
             <!-- Email Verify Section -->
@@ -3930,11 +3926,8 @@
                             Get 1 Report — $19
                         </a>
                         <a href="${getUnlimitedURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('unlimited_click_inline','')" style="display:block; background:linear-gradient(135deg,#22c55e,#10b981); color:#052e16; font-weight:700; font-size:1.05rem; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center; min-height:52px; line-height:1.3;">
-                            Go Unlimited — $97
+                            Go Unlimited — $49
                         </a>
-                    </div>
-                    <div style="margin-top:12px;">
-                        <a href="${getPackURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('pack_click_inline','')" style="color:#64748b; font-size:0.82rem; text-decoration:underline;">or get 10 reports for $49</a>
                     </div>
                     <p style="color:#475569; font-size:0.78rem; margin:12px 0 0;">🔐 Secure payment via Stripe &bull; Instant access</p>
                 </div>
@@ -4078,10 +4071,8 @@
         // Dynamically update paywall payment links with UTM tracking
         (function updatePaywallLinks() {
             const singleBtn = document.getElementById('paywall-single-btn');
-            const packBtn = document.getElementById('paywall-pack-btn');
             const unlimitedBtn = document.getElementById('paywall-unlimited-btn');
             if (singleBtn) singleBtn.href = getSingleURL('paywall');
-            if (packBtn) packBtn.href = getPackURL('paywall');
             if (unlimitedBtn) unlimitedBtn.href = getUnlimitedURL('paywall');
         })();
 
@@ -4118,7 +4109,7 @@
 
                 if (data.valid) {
                     const tier = data.tier || data.type || 'unlimited';
-                    const tierLabels = { single: 'Single Report', pack: 'Property Buyer Pack (10 reports)', unlimited: 'Unlimited Access' };
+                    const tierLabels = { single: 'Single Report', unlimited: 'Unlimited Access' };
                     const label = tierLabels[tier] || tier;
                     statusDiv.textContent = label + ' verified! Loading...';
                     statusDiv.className = 'verify-status success';
@@ -4981,9 +4972,8 @@
                         <p>${wells.length} wells found near your property.<br>See how deep you'll need to dig, what it'll cost & if there are any hazards — before you break ground.</p>
                         <div style="display:flex; flex-direction:column; gap:10px; max-width:340px; margin:0 auto;">
                             <a href="${getSingleURL('results_preview')}" class="unlock-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('single_click_preview', '')" style="display:block; background:linear-gradient(135deg,#38bdf8,#0ea5e9); color:#0f172a; font-weight:700; font-size:1.05rem; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center; min-height:52px;">Get 1 Report — $19</a>
-                            <a href="${getUnlimitedURL('results_preview')}" class="unlock-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('unlimited_click_preview', '')" style="display:block; background:linear-gradient(135deg,#22c55e,#10b981); color:#052e16; font-weight:700; font-size:1.05rem; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center; min-height:52px;">Go Unlimited — $97</a>
+                            <a href="${getUnlimitedURL('results_preview')}" class="unlock-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('unlimited_click_preview', '')" style="display:block; background:linear-gradient(135deg,#22c55e,#10b981); color:#052e16; font-weight:700; font-size:1.05rem; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center; min-height:52px;">Go Unlimited — $49</a>
                         </div>
-                        <span class="unlock-or" style="margin-top:8px;"><a href="${getPackURL('results_preview')}" onclick="if(window.hqTrackConversion) window.hqTrackConversion('pack_click_preview', '')">or get 10 reports for $49</a></span>
                     </div>
                 `;
                 document.getElementById('wells-list').insertAdjacentHTML('afterbegin', ctaHtml);
