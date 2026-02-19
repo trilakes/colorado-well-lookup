@@ -2809,6 +2809,12 @@
         </div>
     </div>
 
+    <!-- Persistent upgrade banner (shown for return visitors who used free search) -->
+    <div id="upgrade-banner" style="display:none; position:sticky; top:0; z-index:9998; background:linear-gradient(90deg,#0f172a 0%,#1e3a5f 50%,#0f172a 100%); border-bottom:2px solid #38bdf8; padding:10px 16px; text-align:center; font-size:14px; color:#e2e8f0; cursor:pointer;" onclick="showPaywallOverlay();">
+        🔒 Your free search is used — <a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="color:#38bdf8; font-weight:700; text-decoration:underline;">Unlock full access from $19</a> to see depths, water levels & environmental alerts
+        <span onclick="event.stopPropagation();document.getElementById('upgrade-banner').style.display='none';" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#64748b;font-size:18px;cursor:pointer;">&times;</span>
+    </div>
+
     <div class="container">
         <header>
             <h1><svg style="width:36px;height:36px;vertical-align:middle;margin-right:12px;color:#38bdf8;filter:drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 6 8.5 6 13C6 16.5 8.5 20 12 20C15.5 20 18 16.5 18 13C18 8.5 12 2 12 2Z"/><path d="M12 16C13.5 16 15 14.5 15 13C15 11 12 8 12 8"/></svg>Colorado Well Finder</h1>
@@ -3659,7 +3665,7 @@
                     + '<div class="wp-row">Depth: ' + depthHtml + '</div>'
                     + swlHtml + yieldHtml + aqHtml + useHtml
                     + drillerHtml + dateHtml + countyHtml + addrHtml
-                    + '<div id="wp-ctx-' + idx + '"><div class="wp-loading">Loading context…</div></div>'
+                    + '<div id="wp-ctx-' + idx + '"></div>'
                     + unlockCTA
                     + '</div>',
                     { maxWidth: 300, minWidth: 200 }
@@ -3668,8 +3674,7 @@
                 // Enrich popup on open with neighborhood + contamination data
                 m.on('popupopen', function() {
                     const el = document.getElementById('wp-ctx-' + idx);
-                    if (!el || el.dataset.done) return;
-                    el.dataset.done = '1';
+                    if (!el) return;
 
                     const ctx = getWellContext(w, wells);
                     let html = '';
@@ -3693,13 +3698,10 @@
                         html += '</div></div>';
                     } else if (ctx.contamReady) {
                         html += '<div class="wp-clean"><div class="wp-clean-row">✓ No contamination sites within 2 mi</div></div>';
-                    } else {
-                        html += '<div class="wp-loading">Loading environmental data…</div>';
                     }
+                    // If contam data not ready yet, just skip it — don't show a spinner
 
                     el.innerHTML = html;
-
-                    // Update popup size to fit new content
                     m.getPopup().update();
                 });
 
@@ -4073,6 +4075,12 @@
 
         // Run access check immediately
         checkAccess();
+
+        // Show persistent upgrade banner if free search used & not paid
+        if (!hasPaidAccess() && getFreeSearchCount() >= FREE_SEARCH_LIMIT) {
+            const banner = document.getElementById('upgrade-banner');
+            if (banner) banner.style.display = 'block';
+        }
 
         // Dynamically update paywall payment links with UTM tracking
         (function updatePaywallLinks() {
