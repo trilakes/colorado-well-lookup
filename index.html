@@ -4308,19 +4308,23 @@
             }
 
             switch (layer) {
-                case 'contamination':
+                case 'contamination': {
+                    const nplBadge = f.npl_status ? `<br><span style="display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;${f.npl_status.toLowerCase().includes('final') ? 'background:#ff1744;color:#fff' : 'background:rgba(255,23,68,0.15);color:#ff8a80'}">${f.npl_status}</span>` : '';
                     return wrap(
                         `<b style="color:#ff1744">⚠ ${f.site_name || 'Unknown Site'}</b>`
                         + s('Category', f.category)
-                        + s('NPL Status', f.npl_status)
-                        + (f.superfund ? '<br><b style="color:#ff5252">Superfund Site</b>' : '')
-                        + s('State', f.state) + s('County', f.county)
+                        + nplBadge
+                        + (f.superfund ? '<br><b style="color:#ff5252">⚠️ Superfund Site — Severe Contamination</b>' : '')
+                        + s('County', f.county) + s('State', f.state)
                     );
+                }
                 case 'superfund':
                     return wrap(
                         `<b style="color:#d50000">☢ ${f.site_name || 'Superfund Site'}</b>`
+                        + `<br><span style="display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;background:#d50000;color:#fff">National Priorities List</span>`
                         + s('Status', f.npl_status)
-                        + s('State', f.state) + s('County', f.county)
+                        + s('County', f.county) + s('State', f.state)
+                        + '<br><span style="font-size:11px;color:#ef9a9a;">⚠️ One of the most contaminated sites in the nation</span>'
                     );
                 case 'oilgas':
                     return wrap(
@@ -4369,14 +4373,37 @@
                         + s('Water Level', f.water_level_depth ? f.water_level_depth + ' ft' : null)
                         + s('County', f.county) + s('Basin', f.basin)
                     );
-                case 'tri':
+                case 'tri': {
+                    let chemLine = '';
+                    if (f.chemicals) {
+                        const chems = f.chemicals.split(', ').slice(0, 6);
+                        const more = f.chemicals.split(', ').length > 6 ? ` <span style="color:#94a3b8">+${f.chemicals.split(', ').length - 6} more</span>` : '';
+                        chemLine = `<br><span style="color:#ffa726;font-size:11.5px;">🧪 ${chems.join(', ')}${more}</span>`;
+                    }
+                    let releaseLine = '';
+                    if (f.total_release_lbs && Number(f.total_release_lbs) > 0) {
+                        const lbs = Number(f.total_release_lbs).toLocaleString();
+                        let breakdown = [];
+                        if (f.total_air_lbs && Number(f.total_air_lbs) > 0) breakdown.push(`Air: ${Number(f.total_air_lbs).toLocaleString()} lbs`);
+                        if (f.total_water_lbs && Number(f.total_water_lbs) > 0) breakdown.push(`Water: ${Number(f.total_water_lbs).toLocaleString()} lbs`);
+                        if (f.total_land_lbs && Number(f.total_land_lbs) > 0) breakdown.push(`Land: ${Number(f.total_land_lbs).toLocaleString()} lbs`);
+                        releaseLine = `<br><div style="background:rgba(255,109,0,0.1);border:1px solid rgba(255,109,0,0.25);border-radius:6px;padding:6px 8px;margin-top:6px;">
+                            <span style="color:#ff6d00;font-weight:700;">⚠️ ${lbs} lbs released</span>
+                            ${breakdown.length ? '<br><span style="color:#ffab40;font-size:11px;">' + breakdown.join(' · ') + '</span>' : ''}
+                        </div>`;
+                    }
+                    let yearsLine = f.active_years ? `<br><span style="color:#94a3b8;font-size:11px;">📅 Reporting: ${f.active_years}${f.total_reports ? ` (${f.total_reports} reports)` : ''}</span>` : '';
                     return wrap(
                         `<b style="color:#ff6d00">☣ ${f.facility_name || 'TRI Facility'}</b>`
                         + s('Parent Co.', f.parent_company)
                         + s('Address', f.address)
                         + s('City', f.city) + s('County', f.county)
                         + (f.closed ? '<br><span style="color:#66bb6a">Facility Closed</span>' : '<br><span style="color:#ff6d00;font-weight:600">Active — Toxic Releases Reported</span>')
+                        + chemLine
+                        + releaseLine
+                        + yearsLine
                     );
+                }
                 case 'radon':
                     return wrap(
                         `<b style="color:#ffab00">☢ Radon Zone ${f.radon_zone || '?'}</b>`
@@ -4393,46 +4420,60 @@
                         + s('Samples', f.result_count ? Number(f.result_count).toLocaleString() : null)
                         + s('County', f.county)
                     );
-                case 'brownfields':
+                case 'brownfields': {
+                    let bfStatus = '';
+                    if (f.cleanup_ind === 'Y') bfStatus = '<br><span style="display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;background:#ff6e40;color:#fff">🔧 Cleanup Underway</span>';
+                    else if (f.assess_ind === 'Y') bfStatus = '<br><span style="display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;background:rgba(255,167,38,0.2);color:#ffa726">📋 Assessment Conducted</span>';
+                    else bfStatus = '<br><span style="color:#ff8a65;font-size:11px;">Contaminated property — status unknown</span>';
                     return wrap(
                         `<b style="color:#ff6e40">⚠ ${f.site_name || 'Brownfield Site'}</b>`
                         + s('City', f.city) + s('County', f.county)
-                        + (f.cleanup_ind === 'Y' ? '<br><span style="color:#ff6e40;font-weight:600">Cleanup Underway</span>' : '')
-                        + (f.assess_ind === 'Y' ? '<br><span style="color:#ffa726">Assessment Conducted</span>' : '')
+                        + bfStatus
+                        + '<br><span style="font-size:11px;color:#bcaaa4;">Industrial pollutants or petroleum products may affect groundwater</span>'
                     );
+                }
                 case 'rcra':
                     return wrap(
                         `<b style="color:#e65100">☣ ${f.handler_name || 'RCRA Facility'}</b>`
                         + s('Handler ID', f.handler_id)
                         + s('City', f.city) + s('County', f.county)
-                        + '<br><span style="color:#e65100;font-weight:600">RCRA Corrective Action Site</span>'
+                        + `<br><span style="display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;background:rgba(230,81,0,0.15);color:#ff9800">⚠️ RCRA Corrective Action Site</span>`
+                        + '<br><span style="font-size:11px;color:#bcaaa4;">Hazardous waste facility under EPA cleanup orders</span>'
                     );
-                case 'fedfac':
+                case 'fedfac': {
+                    let ffBadges = '';
+                    if (f.ff_superfund === 'Y') ffBadges += '<span style="display:inline-block;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;background:#d50000;color:#fff;margin-right:4px;">SUPERFUND</span>';
+                    if (f.ff_rcra === 'Y') ffBadges += '<span style="display:inline-block;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;background:#e65100;color:#fff;margin-right:4px;">RCRA</span>';
+                    if (f.ff_brac === 'Y') ffBadges += '<span style="display:inline-block;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700;background:#ef5350;color:#fff;">BRAC</span>';
                     return wrap(
                         `<b style="color:#b71c1c">🏛 ${f.site_name || 'Federal Facility'}</b>`
                         + s('Agency', f.federal_agency || f.agency_owner)
                         + s('City', f.city) + s('County', f.county)
-                        + (f.ff_superfund === 'Y' ? '<br><span style="color:#d50000;font-weight:600">Superfund — Federal</span>' : '')
-                        + (f.ff_rcra === 'Y' ? '<br><span style="color:#e65100">RCRA Contamination</span>' : '')
-                        + (f.ff_brac === 'Y' ? '<br><span style="color:#ef5350">BRAC (Base Closure)</span>' : '')
+                        + (ffBadges ? '<br>' + ffBadges : '')
+                        + '<br><span style="font-size:11px;color:#ef9a9a;">Federal sites are among the worst sources of PFAS & solvents in groundwater</span>'
                     );
-                case 'eparesponse':
+                }
+                case 'eparesponse': {
+                    const statusColor = f.response_status && f.response_status.toLowerCase().includes('complete') ? '#66bb6a' : '#c62828';
                     return wrap(
                         `<b style="color:#c62828">🚨 ${f.site_name || 'Emergency Response Site'}</b>`
                         + s('Response Type', f.response_type)
-                        + s('Status', f.response_status)
+                        + (f.response_status ? `<br><span style="display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:600;background:rgba(198,40,40,0.15);color:${statusColor}">${f.response_status}</span>` : '')
                         + s('City', f.city) + s('County', f.county)
-                        + '<br><span style="color:#c62828;font-weight:600">EPA Emergency Response</span>'
+                        + '<br><span style="font-size:11px;color:#ef9a9a;">EPA dispatched emergency team due to environmental threat</span>'
                     );
-                case 'pfas':
+                }
+                case 'pfas': {
+                    const pfasChem = f.contaminant ? `<br><span style="color:#ea80fc;font-size:11.5px;">🧪 ${f.contaminant}</span>` : '';
                     return wrap(
                         `<b style="color:#e040fb">☠ ${f.site_name || 'PFAS Site'}</b>`
-                        + s('Type', f.source_type)
+                        + s('Source Type', f.source_type)
                         + s('City', f.city) + s('County', f.county)
-                        + (f.contaminant ? s('Contaminant', f.contaminant) : '')
-                        + '<br><span style="color:#e040fb;font-weight:600">PFAS / Forever Chemical Detected</span>'
-                        + '<br><span style="font-size:11px;color:#ef9a9a;">PFAS chemicals do not break down in the environment</span>'
+                        + pfasChem
+                        + `<br><span style="display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;background:#e040fb;color:#fff">☠️ PFAS / Forever Chemical</span>`
+                        + '<br><span style="font-size:11px;color:#ef9a9a;">PFAS never breaks down — linked to cancer, thyroid disease & immune disorders</span>'
                     );
+                }
                 case 'mines':
                     return wrap(
                         `<b style="color:#8d6e63">⛏ ${f.site_name || f.mine_type || 'Mine Site'}</b>`
