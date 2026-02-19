@@ -3227,9 +3227,9 @@
 
         <!-- Hazard Lock Banner (free users) -->
         <div class="hazard-lock-banner" id="hazard-lock-banner" onclick="showPaywallOverlay()">
-            <div class="hazard-lock-title">🔒 <span id="hazard-lock-count">0</span> more contamination sources hidden</div>
-            <div class="hazard-lock-sub">PFAS, mine runoff, Superfund & EPA cleanup sites — see your full risk</div>
-            <span class="hazard-lock-cta">Unlock Water Risk Score →</span>
+            <div class="hazard-lock-title">⚠️ <span id="hazard-lock-count">0</span> contamination sources found near this property</div>
+            <div class="hazard-lock-sub">Click any marker to preview — unlock to see full site names, distances & risk details</div>
+            <span class="hazard-lock-cta">Unlock Full Hazard Report →</span>
         </div>
 
         <!-- Layer Toggle Panel -->
@@ -3756,14 +3756,14 @@
             }
         }
 
-        // Track total hidden hazard count across all hazard layers
-        let _hiddenHazardCount = 0;
+        // Track total hazard count across all hazard layers (for free user banner)
+        let _totalHazardCount = 0;
         function updateHazardLockBanner() {
             const banner = document.getElementById('hazard-lock-banner');
             const countEl = document.getElementById('hazard-lock-count');
             if (!banner || !countEl) return;
-            if (_hiddenHazardCount > 0 && !hasPaidAccess()) {
-                countEl.textContent = _hiddenHazardCount;
+            if (_totalHazardCount > 0 && !hasPaidAccess()) {
+                countEl.textContent = _totalHazardCount;
                 banner.classList.add('show');
             } else {
                 banner.classList.remove('show');
@@ -3771,7 +3771,6 @@
         }
 
         const HAZARD_LAYERS = new Set(['contamination', 'superfund', 'tri', 'brownfields', 'rcra', 'fedfac', 'eparesponse', 'pfas', 'mines']);
-        const FREE_HAZARD_LIMIT = 3;
 
         function renderOverlayLayer(layer, features) {
             clearOverlayMarkers(layer);
@@ -3786,38 +3785,18 @@
             const dotSize = zoom < 10 ? 3 : zoom < 13 ? 4 : 5;
             const free = !hasPaidAccess();
 
-            // ── Hazard gating: free users see only 3 nearest dots ──
-            let renderFeatures = features;
-            let ghostFeatures = [];
-            if (free && HAZARD_LAYERS.has(layer)) {
-                const center = exploreMap.getCenter();
-                const withDist = features.filter(f => (f.latitude || f.center_lat) && (f.longitude || f.center_lng)).map(f => {
-                    const lat = f.latitude || f.center_lat;
-                    const lng = f.longitude || f.center_lng;
-                    const d = Math.sqrt(Math.pow(lat - center.lat, 2) + Math.pow(lng - center.lng, 2));
-                    return { f, d };
-                });
-                withDist.sort((a, b) => a.d - b.d);
-                renderFeatures = withDist.slice(0, FREE_HAZARD_LIMIT).map(x => x.f);
-                ghostFeatures = withDist.slice(FREE_HAZARD_LIMIT).map(x => x.f);
-                // Track hidden count for this layer
-                overlayState[layer]._hiddenCount = ghostFeatures.length;
-                // Recalculate total hidden across all hazard layers
-                _hiddenHazardCount = 0;
+            // ── Track hazard count for free user banner ──
+            if (HAZARD_LAYERS.has(layer)) {
+                overlayState[layer]._hazardCount = features.length;
+                _totalHazardCount = 0;
                 for (const hl of HAZARD_LAYERS) {
-                    _hiddenHazardCount += (overlayState[hl]?._hiddenCount || 0);
-                }
-                updateHazardLockBanner();
-            } else if (HAZARD_LAYERS.has(layer)) {
-                overlayState[layer]._hiddenCount = 0;
-                _hiddenHazardCount = 0;
-                for (const hl of HAZARD_LAYERS) {
-                    _hiddenHazardCount += (overlayState[hl]?._hiddenCount || 0);
+                    _totalHazardCount += (overlayState[hl]?._hazardCount || 0);
                 }
                 updateHazardLockBanner();
             }
 
-            renderFeatures.forEach(f => {
+            // ── Render ALL features — free users see every marker ──
+            features.forEach(f => {
                 const lat = f.latitude || f.center_lat;
                 const lng = f.longitude || f.center_lng;
                 if (!lat || !lng) return;
@@ -3856,42 +3835,9 @@
                 overlayState[layer].markers.push(m);
             });
 
-            // ── Ghost markers: dim locked dots for free users ──
-            if (ghostFeatures.length > 0) {
-                const ghostSz = zoom < 10 ? 10 : zoom < 13 ? 12 : 14;
-                ghostFeatures.forEach(f => {
-                    const lat = f.latitude || f.center_lat;
-                    const lng = f.longitude || f.center_lng;
-                    if (!lat || !lng) return;
-                    const gm = L.marker([lat, lng], {
-                        icon: L.divIcon({
-                            className: '',
-                            html: '<div style="display:flex;align-items:center;justify-content:center;width:' + ghostSz + 'px;height:' + ghostSz + 'px;border-radius:50%;background:' + color + ';opacity:0.25;filter:blur(1.5px);box-shadow:0 0 6px ' + color + ';"></div>',
-                            iconSize: [ghostSz, ghostSz],
-                            iconAnchor: [ghostSz/2, ghostSz/2]
-                        }),
-                        bubblingMouseEvents: false
-                    }).addTo(exploreMap);
-                    gm.bindPopup(
-                        '<div style="font-family:Inter,system-ui,sans-serif;text-align:center;padding:6px;">'
-                        + '<div style="font-size:20px;margin-bottom:4px;">🔒</div>'
-                        + '<div style="color:#ff1744;font-weight:700;font-size:13px;">Hazard Site Locked</div>'
-                        + '<div style="color:#94a3b8;font-size:11.5px;margin:4px 0 8px;">Upgrade to see contamination details,<br>site names & exact locations</div>'
-                        + '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="display:inline-block;padding:6px 18px;background:linear-gradient(135deg,#ff1744,#d50000);color:#fff;font-size:12px;font-weight:700;border-radius:6px;text-decoration:none;">Unlock All Hazard Data →</a>'
-                        + '</div>',
-                        { maxWidth: 240 }
-                    );
-                    overlayState[layer].markers.push(gm);
-                });
-            }
-
             const el = document.getElementById('lc-' + layer);
             if (el) {
-                if (free && HAZARD_LAYERS.has(layer) && features.length > FREE_HAZARD_LIMIT) {
-                    el.textContent = FREE_HAZARD_LIMIT + ' of ' + features.length;
-                } else {
-                    el.textContent = features.length ? features.length.toLocaleString() : '';
-                }
+                el.textContent = features.length ? features.length.toLocaleString() : '';
             }
         }
 
@@ -3906,10 +3852,10 @@
             }
             // Reset hidden hazard count when clearing a hazard layer
             if (HAZARD_LAYERS.has(layer)) {
-                overlayState[layer]._hiddenCount = 0;
-                _hiddenHazardCount = 0;
+                overlayState[layer]._hazardCount = 0;
+                _totalHazardCount = 0;
                 for (const hl of HAZARD_LAYERS) {
-                    _hiddenHazardCount += (overlayState[hl]?._hiddenCount || 0);
+                    _totalHazardCount += (overlayState[hl]?._hazardCount || 0);
                 }
                 updateHazardLockBanner();
             }
@@ -3957,6 +3903,79 @@
         function buildOverlayPopup(layer, f) {
             const s = (label, val) => val ? `<br>${label}: <b>${val}</b>` : '';
             const wrap = (inner) => `<div style="font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.5;min-width:160px;">${inner}</div>`;
+            const free = !hasPaidAccess();
+
+            // ── Fear-based locked popups for free users on hazard layers ──
+            if (free && HAZARD_LAYERS.has(layer)) {
+                const fearTeasers = {
+                    contamination: {
+                        icon: '⚠️', color: '#ff1744',
+                        title: 'EPA Contamination Site Detected',
+                        hint: f.category ? `Category: <b>${f.category}</b>` : (f.superfund ? '<b style="color:#ff5252">Superfund Site</b>' : 'Registered EPA contamination site'),
+                        fear: 'Known pollutants may have leached into the groundwater feeding wells in this area. Unlock to see the site name, contamination type & how close it is to your property.'
+                    },
+                    superfund: {
+                        icon: '☢️', color: '#d50000',
+                        title: 'Superfund Site — Severe Contamination',
+                        hint: 'NPL-listed toxic cleanup site',
+                        fear: 'This is one of the most contaminated sites in America. Toxic chemicals from this facility may have migrated into the aquifer your well draws from. Unlock to see the full threat assessment.'
+                    },
+                    tri: {
+                        icon: '☣️', color: '#ff6d00',
+                        title: 'Toxic Release Facility Detected',
+                        hint: f.closed ? '<span style="color:#66bb6a">Facility reported as closed</span>' : '<b style="color:#ff6d00">Active — Toxic releases reported</b>',
+                        fear: 'This facility has reported releasing toxic chemicals into the environment. These substances can travel through soil and contaminate groundwater for decades. Unlock to see what was released & the impact radius.'
+                    },
+                    brownfields: {
+                        icon: '⚠️', color: '#ff6e40',
+                        title: 'Brownfield — Contaminated Land',
+                        hint: f.cleanup_ind === 'Y' ? '<span style="color:#ff6e40">Active cleanup underway</span>' : 'Known contaminated property',
+                        fear: 'This property has confirmed environmental contamination. Industrial pollutants, heavy metals, or petroleum products may be seeping into the water table beneath your land. Unlock to see full site details.'
+                    },
+                    rcra: {
+                        icon: '☣️', color: '#e65100',
+                        title: 'Hazardous Waste Site Nearby',
+                        hint: 'RCRA corrective action site',
+                        fear: 'This facility handles hazardous waste and is under EPA cleanup orders. Chemical leachate from these sites is one of the leading causes of well water contamination. Unlock to see how it may be affecting your property.'
+                    },
+                    fedfac: {
+                        icon: '🏛️', color: '#b71c1c',
+                        title: 'Federal Contamination Facility',
+                        hint: (f.ff_superfund === 'Y' ? '<b style="color:#d50000">Superfund — Federal</b>' : f.ff_rcra === 'Y' ? '<b style="color:#e65100">RCRA Contamination</b>' : 'Federal environmental liability site'),
+                        fear: 'Military bases and federal facilities are among the worst sources of PFAS "forever chemicals" and industrial solvents in groundwater. Unlock to see the federal agency responsible & contamination type.'
+                    },
+                    eparesponse: {
+                        icon: '🚨', color: '#c62828',
+                        title: 'EPA Emergency Response Site',
+                        hint: f.response_type ? `Type: <b>${f.response_type}</b>` : 'Active or historical emergency response',
+                        fear: 'The EPA dispatched an emergency response team to this location due to a serious environmental threat. Spills, illegal dumping, or chemical accidents at these sites can devastate local groundwater. Unlock to see what happened & current status.'
+                    },
+                    pfas: {
+                        icon: '☠️', color: '#e040fb',
+                        title: 'PFAS "Forever Chemical" Detected',
+                        hint: f.source_type ? `Source: <b>${f.source_type}</b>` : 'PFAS contamination source identified',
+                        fear: 'PFAS chemicals never break down in the environment or your body. They\'re linked to cancer, thyroid disease, and immune disorders. Even trace amounts in well water are dangerous. Unlock to see the source, chemical type & proximity to your well.'
+                    },
+                    mines: {
+                        icon: '⛏️', color: '#8d6e63',
+                        title: 'Historical Mine — Heavy Metal Risk',
+                        hint: f.mine_type ? `Type: <b>${f.mine_type}</b>` : 'Mine site with potential groundwater impact',
+                        fear: 'Abandoned mines leach arsenic, lead, mercury, and acid drainage into groundwater for centuries after closing. Wells near historical mines frequently test positive for dangerous heavy metal contamination. Unlock to see mine details & risk level.'
+                    }
+                };
+                const t = fearTeasers[layer];
+                if (t) {
+                    return `<div style="font-family:Inter,system-ui,sans-serif;text-align:center;padding:8px 4px;min-width:220px;">
+                        <div style="font-size:24px;margin-bottom:4px;">${t.icon}</div>
+                        <div style="color:${t.color};font-weight:800;font-size:14px;margin-bottom:4px;">${t.title}</div>
+                        <div style="color:#cbd5e1;font-size:12px;margin-bottom:8px;">${t.hint}</div>
+                        <div style="background:rgba(255,23,68,0.08);border:1px solid rgba(255,23,68,0.2);border-radius:8px;padding:8px 10px;margin-bottom:10px;">
+                            <div style="color:#fca5a5;font-size:11.5px;line-height:1.5;text-align:left;">${t.fear}</div>
+                        </div>
+                        <a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="display:inline-block;padding:8px 22px;background:linear-gradient(135deg,#ff1744,#d50000);color:#fff;font-size:12.5px;font-weight:700;border-radius:8px;text-decoration:none;box-shadow:0 2px 12px rgba(255,23,68,0.3);width:90%;box-sizing:border-box;">Unlock Full Site Details →</a>
+                    </div>`;
+                }
+            }
 
             switch (layer) {
                 case 'contamination':
