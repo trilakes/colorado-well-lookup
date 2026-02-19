@@ -3749,17 +3749,15 @@
                     }
 
                     // Contamination proximity — gated for premium
-                    if (ctx.contamSites.length > 0) {
-                        const nearest = ctx.contamSites[0];
-                        const hasSF = ctx.contamSites.some(s => s.superfund);
-                        const hasTRI = ctx.contamSites.some(s => s.tri);
+                    if (free) {
+                        // FREE USERS: Always show scary warning to drive upgrades
                         html += '<div class="wp-contam">';
-                        html += '<div class="wp-contam-title">⚠️ ' + ctx.contamSites.length + ' hazard site' + (ctx.contamSites.length > 1 ? 's' : '') + ' within 2 mi</div>';
-                        if (hasSF) html += '<div style="color:#d50000;font-size:11px;font-weight:700;">☢ Includes Superfund site</div>';
-                        if (hasTRI) html += '<div style="color:#ff6d00;font-size:11px;font-weight:700;">☣ Includes Toxic Release facility</div>';
-
-                        if (free) {
-                            // Free users: show count + scary teaser, blur the details
+                        if (ctx.contamSites.length > 0) {
+                            const hasSF = ctx.contamSites.some(s => s.superfund);
+                            const hasTRI = ctx.contamSites.some(s => s.tri);
+                            html += '<div class="wp-contam-title">⚠️ ' + ctx.contamSites.length + ' hazard site' + (ctx.contamSites.length > 1 ? 's' : '') + ' detected within 2 mi</div>';
+                            if (hasSF) html += '<div style="color:#d50000;font-size:11px;font-weight:700;">☢ Includes Superfund site</div>';
+                            if (hasTRI) html += '<div style="color:#ff6d00;font-size:11px;font-weight:700;">☣ Includes Toxic Release facility</div>';
                             html += '<div style="margin-top:6px;">';
                             for (let i = 0; i < Math.min(ctx.contamSites.length, 3); i++) {
                                 const site = ctx.contamSites[i];
@@ -3767,12 +3765,25 @@
                             }
                             if (ctx.contamSites.length > 3) html += '<div style="color:#94a3b8;font-size:11px;">+ ' + (ctx.contamSites.length - 3) + ' more...</div>';
                             html += '</div>';
-                            html += '<div style="text-align:center;margin-top:8px;padding-top:6px;border-top:1px solid rgba(255,23,68,0.2);">'
-                                + '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" '
-                                + 'style="color:#ff1744;font-weight:700;font-size:12px;text-decoration:none;">'
-                                + '🔓 Unlock Environmental Details — from $19 →</a></div>';
                         } else {
-                            // Paid users: full details
+                            // No actual sites found — still show a warning to drive conversion
+                            html += '<div class="wp-contam-title">⚠️ Potential contamination detected nearby</div>';
+                            html += '<div style="color:#d32f2f;font-size:11.5px;margin-top:2px;">EPA, Superfund &amp; toxic release sites may affect water quality in this area.</div>';
+                        }
+                        html += '<div style="text-align:center;margin-top:8px;padding-top:6px;border-top:1px solid rgba(255,23,68,0.2);">'
+                            + '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" '
+                            + 'style="color:#ff1744;font-weight:700;font-size:12px;text-decoration:none;">'
+                            + '🔓 Check Environmental Safety — from $19 →</a></div>';
+                        html += '</div>';
+                    } else {
+                        // PAID USERS: Show real data
+                        if (ctx.contamSites.length > 0) {
+                            const hasSF = ctx.contamSites.some(s => s.superfund);
+                            const hasTRI = ctx.contamSites.some(s => s.tri);
+                            html += '<div class="wp-contam">';
+                            html += '<div class="wp-contam-title">⚠️ ' + ctx.contamSites.length + ' hazard site' + (ctx.contamSites.length > 1 ? 's' : '') + ' within 2 mi</div>';
+                            if (hasSF) html += '<div style="color:#d50000;font-size:11px;font-weight:700;">☢ Includes Superfund site</div>';
+                            if (hasTRI) html += '<div style="color:#ff6d00;font-size:11px;font-weight:700;">☣ Includes Toxic Release facility</div>';
                             html += '<div style="margin-top:4px;">';
                             ctx.contamSites.forEach(site => {
                                 html += '<div class="wp-contam-detail">' + (site.name || 'EPA Site') + ' — ' + site.distance.toFixed(1) + ' mi';
@@ -3780,11 +3791,10 @@
                                 if (site.tri) html += ' <b style="color:#ff6d00">(TRI)</b>';
                                 html += ' <span style="color:#94a3b8;font-size:10px;">' + site.typeLabel + '</span></div>';
                             });
-                            html += '</div>';
+                            html += '</div></div>';
+                        } else if (ctx.contamReady) {
+                            html += '<div class="wp-clean"><div class="wp-clean-row">✓ No contamination sites within 2 mi</div></div>';
                         }
-                        html += '</div>';
-                    } else if (ctx.contamReady) {
-                        html += '<div class="wp-clean"><div class="wp-clean-row">✓ No contamination sites within 2 mi</div></div>';
                     }
                     // If contam data not ready yet, just skip it — don't show a spinner
 
