@@ -3096,6 +3096,21 @@
                     <span class="layer-dot" style="background:#424242"></span> Oil & Gas Wells</label>
                     <span class="layer-count" id="lc-oilgas"></span>
                 </div>
+                <div class="layer-item" data-layer="tri">
+                    <label><input type="checkbox" checked onchange="toggleLayer('tri', this.checked)">
+                    <span class="layer-dot" style="background:#ff6d00"></span> Toxic Release (TRI)</label>
+                    <span class="layer-count" id="lc-tri"></span>
+                </div>
+                <div class="layer-item" data-layer="radon">
+                    <label><input type="checkbox" onchange="toggleLayer('radon', this.checked)">
+                    <span class="layer-dot" style="background:#ffab00"></span> Radon Zones</label>
+                    <span class="layer-count" id="lc-radon"></span>
+                </div>
+                <div class="layer-item" data-layer="wqstations">
+                    <label><input type="checkbox" onchange="toggleLayer('wqstations', this.checked)">
+                    <span class="layer-dot" style="background:#7c4dff"></span> Water Quality</label>
+                    <span class="layer-count" id="lc-wqstations"></span>
+                </div>
                 <div class="layer-divider"></div>
                 <div class="layer-section-label">Hydrology</div>
                 <div class="layer-item" data-layer="dams">
@@ -3253,7 +3268,8 @@
         const overlayState = {
             wells: { enabled: true, markers: [], cache: new Map() },
             contamination: { enabled: true, markers: [], cache: new Map() },
-            superfund: { enabled: true, markers: [], cache: new Map() }
+            superfund: { enabled: true, markers: [], cache: new Map() },
+            tri: { enabled: true, markers: [], cache: new Map() },
         };
         const OVERLAY_COLORS = {
             contamination: '#ff1744',
@@ -3264,6 +3280,9 @@
             springs: '#00e5ff',
             waterrights: '#aa00ff',
             groundwater: '#1de9b6',
+            tri: '#ff6d00',
+            radon: '#ffab00',
+            wqstations: '#7c4dff',
         };
 
         // ── Haversine distance (miles) ──
@@ -3279,13 +3298,17 @@
         let contamProximityData = { features: [], ready: false };
 
         function feedContamProximity(layer, features) {
-            const tag = layer === 'superfund' ? 'superfund' : 'epa';
+            const tag = layer === 'superfund' ? 'superfund' : layer === 'tri' ? 'tri' : 'epa';
             // Remove old entries of this type, add new
             contamProximityData.features = contamProximityData.features.filter(f => f._ctype !== tag);
             features.forEach(f => {
                 const lat = f.latitude || f.center_lat;
                 const lng = f.longitude || f.center_lng;
-                if (lat && lng) contamProximityData.features.push({ ...f, _ctype: tag });
+                if (lat && lng) contamProximityData.features.push({
+                    ...f,
+                    site_name: f.site_name || f.facility_name || f.name,
+                    _ctype: tag
+                });
             });
             contamProximityData.ready = true;
         }
@@ -3315,7 +3338,14 @@
                     if (!fLat || !fLng) continue;
                     if (Math.abs(fLat - lat) > 0.04 || Math.abs(fLng - lng) > 0.05) continue;
                     const d = haversineMi(lat, lng, fLat, fLng);
-                    if (d <= 2) contamSites.push({ name: f.site_name, distance: d, type: f._ctype, superfund: f.superfund || f._ctype === 'superfund' });
+                    if (d <= 2) contamSites.push({
+                        name: f.site_name || f.facility_name || f.name,
+                        distance: d,
+                        type: f._ctype,
+                        superfund: f.superfund || f._ctype === 'superfund',
+                        tri: f._ctype === 'tri',
+                        typeLabel: f._ctype === 'superfund' ? 'Superfund' : f._ctype === 'tri' ? 'TRI Facility' : 'EPA Site'
+                    });
                 }
                 contamSites.sort((a, b) => a.distance - b.distance);
             }
@@ -3403,8 +3433,8 @@
         function renderOverlayLayer(layer, features) {
             clearOverlayMarkers(layer);
 
-            // Feed contamination/superfund data to proximity engine
-            if (layer === 'contamination' || layer === 'superfund') {
+            // Feed contamination/superfund/TRI data to proximity engine
+            if (layer === 'contamination' || layer === 'superfund' || layer === 'tri') {
                 feedContamProximity(layer, features);
             }
 
@@ -3512,6 +3542,31 @@
                         + s('Depth', f.well_depth ? f.well_depth + ' ft' : null)
                         + s('Water Level', f.water_level_depth ? f.water_level_depth + ' ft' : null)
                         + s('County', f.county) + s('Basin', f.basin)
+                    );
+                case 'tri':
+                    return wrap(
+                        `<b style="color:#ff6d00">☣ ${f.facility_name || 'TRI Facility'}</b>`
+                        + s('Parent Co.', f.parent_company)
+                        + s('Address', f.address)
+                        + s('City', f.city) + s('County', f.county)
+                        + (f.closed ? '<br><span style="color:#66bb6a">Facility Closed</span>' : '<br><span style="color:#ff6d00;font-weight:600">Active — Toxic Releases Reported</span>')
+                    );
+                case 'radon':
+                    return wrap(
+                        `<b style="color:#ffab00">☢ Radon Zone ${f.radon_zone || '?'}</b>`
+                        + `<br>${f.county || 'Unknown'} County`
+                        + s('Risk Level', f.risk_level)
+                        + s('Predicted Level', f.predicted_level)
+                        + '<br><span style="font-size:11px;color:#94a3b8;">EPA recommends radon testing for all homes</span>'
+                    );
+                case 'wqstations':
+                    return wrap(
+                        `<b style="color:#7c4dff">🧪 ${f.name || f.station_id || 'Monitoring Station'}</b>`
+                        + s('Org', f.organization)
+                        + s('Type', f.site_type)
+                        + s('Samples', f.result_count ? Number(f.result_count).toLocaleString() : null)
+                        + s('County', f.county)
+                        + (f.site_url ? `<br><a href="${f.site_url}" target="_blank" style="color:#38bdf8;">View Data →</a>` : '')
                     );
                 default:
                     return null;
@@ -3688,14 +3743,41 @@
                         html += '</div>';
                     }
 
-                    // Contamination proximity
+                    // Contamination proximity — gated for premium
                     if (ctx.contamSites.length > 0) {
                         const nearest = ctx.contamSites[0];
+                        const hasSF = ctx.contamSites.some(s => s.superfund);
+                        const hasTRI = ctx.contamSites.some(s => s.tri);
                         html += '<div class="wp-contam">';
-                        html += '<div class="wp-contam-title">⚠️ ' + ctx.contamSites.length + ' contamination site' + (ctx.contamSites.length > 1 ? 's' : '') + ' within 2 mi</div>';
-                        html += '<div class="wp-contam-detail">' + (nearest.name || 'EPA Site') + ' — ' + nearest.distance.toFixed(1) + ' mi away';
-                        if (nearest.superfund) html += ' <b>(Superfund)</b>';
-                        html += '</div></div>';
+                        html += '<div class="wp-contam-title">⚠️ ' + ctx.contamSites.length + ' hazard site' + (ctx.contamSites.length > 1 ? 's' : '') + ' within 2 mi</div>';
+                        if (hasSF) html += '<div style="color:#d50000;font-size:11px;font-weight:700;">☢ Includes Superfund site</div>';
+                        if (hasTRI) html += '<div style="color:#ff6d00;font-size:11px;font-weight:700;">☣ Includes Toxic Release facility</div>';
+
+                        if (free) {
+                            // Free users: show count + scary teaser, blur the details
+                            html += '<div style="margin-top:6px;">';
+                            for (let i = 0; i < Math.min(ctx.contamSites.length, 3); i++) {
+                                const site = ctx.contamSites[i];
+                                html += '<div class="wp-contam-detail"><span class="wp-blur">' + (site.name || 'Site') + '</span> — <span class="wp-blur">' + site.distance.toFixed(1) + '</span> mi <span style="color:#94a3b8;font-size:10px;">' + site.typeLabel + '</span></div>';
+                            }
+                            if (ctx.contamSites.length > 3) html += '<div style="color:#94a3b8;font-size:11px;">+ ' + (ctx.contamSites.length - 3) + ' more...</div>';
+                            html += '</div>';
+                            html += '<div style="text-align:center;margin-top:8px;padding-top:6px;border-top:1px solid rgba(255,23,68,0.2);">'
+                                + '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" '
+                                + 'style="color:#ff1744;font-weight:700;font-size:12px;text-decoration:none;">'
+                                + '🔓 Unlock Environmental Details — from $19 →</a></div>';
+                        } else {
+                            // Paid users: full details
+                            html += '<div style="margin-top:4px;">';
+                            ctx.contamSites.forEach(site => {
+                                html += '<div class="wp-contam-detail">' + (site.name || 'EPA Site') + ' — ' + site.distance.toFixed(1) + ' mi';
+                                if (site.superfund) html += ' <b style="color:#d50000">(Superfund)</b>';
+                                if (site.tri) html += ' <b style="color:#ff6d00">(TRI)</b>';
+                                html += ' <span style="color:#94a3b8;font-size:10px;">' + site.typeLabel + '</span></div>';
+                            });
+                            html += '</div>';
+                        }
+                        html += '</div>';
                     } else if (ctx.contamReady) {
                         html += '<div class="wp-clean"><div class="wp-clean-row">✓ No contamination sites within 2 mi</div></div>';
                     }
