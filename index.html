@@ -1424,6 +1424,51 @@
         }
         .explore-loading.show { display: block; }
 
+        /* ── Hazard Lock Banner (free users) ── */
+        .hazard-lock-banner {
+            display: none;
+            position: absolute;
+            bottom: 56px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background: rgba(30,20,10,0.94);
+            border: 1.5px solid rgba(255,23,68,0.45);
+            border-radius: 12px;
+            z-index: 1200;
+            backdrop-filter: blur(10px);
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.25s;
+            max-width: 94vw;
+            box-shadow: 0 4px 20px rgba(255,23,68,0.15);
+        }
+        .hazard-lock-banner:hover { border-color: rgba(255,23,68,0.7); transform: translateX(-50%) scale(1.02); }
+        .hazard-lock-banner.show { display: block; }
+        .hazard-lock-title {
+            color: #ff1744;
+            font-size: 0.92rem;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+        .hazard-lock-sub {
+            color: #94a3b8;
+            font-size: 0.78rem;
+            line-height: 1.4;
+        }
+        .hazard-lock-cta {
+            display: inline-block;
+            margin-top: 6px;
+            padding: 5px 16px;
+            background: linear-gradient(135deg, #ff1744, #d50000);
+            color: #fff;
+            font-size: 0.8rem;
+            font-weight: 700;
+            border-radius: 6px;
+            text-decoration: none;
+            letter-spacing: 0.02em;
+        }
+
         @media (max-width: 600px) {
             .explore-bar { padding: 10px 12px; }
             .explore-bar-title { font-size: 0.9rem; }
@@ -3125,6 +3170,13 @@
         </div>
         <div id="explore-map"></div>
 
+        <!-- Hazard Lock Banner (free users) -->
+        <div class="hazard-lock-banner" id="hazard-lock-banner" onclick="showPaywallOverlay()">
+            <div class="hazard-lock-title">🔒 <span id="hazard-lock-count">0</span> more EPA hazard sites in this area</div>
+            <div class="hazard-lock-sub">Contamination, Superfund & toxic release sites hidden</div>
+            <span class="hazard-lock-cta">Unlock All Hazard Data →</span>
+        </div>
+
         <!-- Layer Toggle Panel -->
         <div class="layer-panel" id="layer-panel">
             <button class="layer-panel-toggle" id="layer-toggle-btn" onclick="toggleLayerPanel()">
@@ -3297,6 +3349,9 @@
         function closeExploreMap() {
             document.getElementById('explore-overlay').classList.remove('open');
             document.body.style.overflow = '';
+            // Hide hazard lock banner
+            const hb = document.getElementById('hazard-lock-banner');
+            if (hb) hb.classList.remove('show');
         }
 
         function onExploreMove() {
@@ -3511,25 +3566,73 @@
             }
         }
 
+        // Track total hidden hazard count across all hazard layers
+        let _hiddenHazardCount = 0;
+        function updateHazardLockBanner() {
+            const banner = document.getElementById('hazard-lock-banner');
+            const countEl = document.getElementById('hazard-lock-count');
+            if (!banner || !countEl) return;
+            if (_hiddenHazardCount > 0 && !hasPaidAccess()) {
+                countEl.textContent = _hiddenHazardCount;
+                banner.classList.add('show');
+            } else {
+                banner.classList.remove('show');
+            }
+        }
+
+        const HAZARD_LAYERS = new Set(['contamination', 'superfund', 'tri']);
+        const FREE_HAZARD_LIMIT = 3;
+
         function renderOverlayLayer(layer, features) {
             clearOverlayMarkers(layer);
 
             // Feed contamination/superfund/TRI data to proximity engine
-            if (layer === 'contamination' || layer === 'superfund' || layer === 'tri') {
+            if (HAZARD_LAYERS.has(layer)) {
                 feedContamProximity(layer, features);
             }
 
             const color = OVERLAY_COLORS[layer] || '#fff';
             const zoom = exploreMap.getZoom();
             const dotSize = zoom < 10 ? 3 : zoom < 13 ? 4 : 5;
+            const free = !hasPaidAccess();
 
-            features.forEach(f => {
+            // ── Hazard gating: free users see only 3 nearest dots ──
+            let renderFeatures = features;
+            if (free && HAZARD_LAYERS.has(layer)) {
+                const center = exploreMap.getCenter();
+                const withDist = features.filter(f => (f.latitude || f.center_lat) && (f.longitude || f.center_lng)).map(f => {
+                    const lat = f.latitude || f.center_lat;
+                    const lng = f.longitude || f.center_lng;
+                    const d = Math.sqrt(Math.pow(lat - center.lat, 2) + Math.pow(lng - center.lng, 2));
+                    return { f, d };
+                });
+                withDist.sort((a, b) => a.d - b.d);
+                const shown = withDist.slice(0, FREE_HAZARD_LIMIT).map(x => x.f);
+                // Track hidden count for this layer
+                overlayState[layer]._hiddenCount = Math.max(0, withDist.length - FREE_HAZARD_LIMIT);
+                renderFeatures = shown;
+                // Recalculate total hidden across all hazard layers
+                _hiddenHazardCount = 0;
+                for (const hl of HAZARD_LAYERS) {
+                    _hiddenHazardCount += (overlayState[hl]?._hiddenCount || 0);
+                }
+                updateHazardLockBanner();
+            } else if (HAZARD_LAYERS.has(layer)) {
+                overlayState[layer]._hiddenCount = 0;
+                _hiddenHazardCount = 0;
+                for (const hl of HAZARD_LAYERS) {
+                    _hiddenHazardCount += (overlayState[hl]?._hiddenCount || 0);
+                }
+                updateHazardLockBanner();
+            }
+
+            renderFeatures.forEach(f => {
                 const lat = f.latitude || f.center_lat;
                 const lng = f.longitude || f.center_lng;
                 if (!lat || !lng) return;
 
                 // Use distinct warning icons for hazard layers
-                const isHazard = (layer === 'contamination' || layer === 'superfund' || layer === 'tri');
+                const isHazard = HAZARD_LAYERS.has(layer);
                 let m;
                 if (isHazard) {
                     const sym = layer === 'superfund' ? '☢' : layer === 'tri' ? '☣' : '⚠';
@@ -3563,7 +3666,13 @@
             });
 
             const el = document.getElementById('lc-' + layer);
-            if (el) el.textContent = features.length ? features.length.toLocaleString() : '';
+            if (el) {
+                if (free && HAZARD_LAYERS.has(layer) && features.length > FREE_HAZARD_LIMIT) {
+                    el.textContent = FREE_HAZARD_LIMIT + ' of ' + features.length;
+                } else {
+                    el.textContent = features.length ? features.length.toLocaleString() : '';
+                }
+            }
         }
 
         function clearOverlayMarkers(layer) {
@@ -3574,6 +3683,15 @@
             if (overlayState[layer]._geoLayer) {
                 exploreMap.removeLayer(overlayState[layer]._geoLayer);
                 overlayState[layer]._geoLayer = null;
+            }
+            // Reset hidden hazard count when clearing a hazard layer
+            if (HAZARD_LAYERS.has(layer)) {
+                overlayState[layer]._hiddenCount = 0;
+                _hiddenHazardCount = 0;
+                for (const hl of HAZARD_LAYERS) {
+                    _hiddenHazardCount += (overlayState[hl]?._hiddenCount || 0);
+                }
+                updateHazardLockBanner();
             }
         }
 
