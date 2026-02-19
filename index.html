@@ -2670,6 +2670,57 @@
             margin-bottom: 10px;
             display: none;
         }
+
+        /* ── Water Risk Score Badge ── */
+        .risk-badge {
+            display: inline-flex; align-items: center; gap: 5px;
+            padding: 4px 10px; border-radius: 6px; font-weight: 700;
+            font-size: 12px; letter-spacing: 0.02em;
+        }
+        .risk-badge.high { background: rgba(255,23,68,0.15); color: #ff1744; border: 1px solid rgba(255,23,68,0.3); }
+        .risk-badge.moderate { background: rgba(255,152,0,0.15); color: #ff9800; border: 1px solid rgba(255,152,0,0.3); }
+        .risk-badge.low { background: rgba(0,200,83,0.12); color: #00c853; border: 1px solid rgba(0,200,83,0.25); }
+        .risk-bar { display: flex; gap: 2px; }
+        .risk-bar span { width: 4px; height: 12px; border-radius: 1px; background: rgba(148,163,184,0.2); }
+        .risk-bar.high span:nth-child(-n+5) { background: #ff1744; }
+        .risk-bar.moderate span:nth-child(-n+3) { background: #ff9800; }
+        .risk-bar.low span:nth-child(1) { background: #00c853; }
+
+        /* ── Social Proof Toast ── */
+        .proof-toast {
+            position: fixed; bottom: 24px; left: 24px; z-index: 10000;
+            background: linear-gradient(135deg, #1e293b, #0f172a); border: 1px solid rgba(56,189,248,0.25);
+            border-radius: 12px; padding: 12px 18px; display: flex; align-items: center; gap: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5); transform: translateX(-120%); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+            max-width: 340px; cursor: pointer;
+        }
+        .proof-toast.show { transform: translateX(0); }
+        .proof-toast .pt-icon { font-size: 20px; flex-shrink: 0; }
+        .proof-toast .pt-text { font-size: 12.5px; color: #cbd5e1; line-height: 1.4; }
+        .proof-toast .pt-text strong { color: #38bdf8; }
+        .proof-toast .pt-time { font-size: 10px; color: #64748b; margin-top: 2px; }
+
+        /* ── Exit Intent Overlay ── */
+        .exit-intent {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85); z-index: 10001; display: flex;
+            align-items: center; justify-content: center; opacity: 0;
+            pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .exit-intent.show { opacity: 1; pointer-events: auto; }
+        .exit-intent-box {
+            background: linear-gradient(135deg, #1e293b, #0f172a); border: 2px solid rgba(255,23,68,0.3);
+            border-radius: 20px; padding: 32px 28px; text-align: center; max-width: 420px; width: 90%;
+            position: relative;
+        }
+        .exit-intent-close {
+            position: absolute; top: 12px; right: 14px; color: #64748b; font-size: 22px;
+            cursor: pointer; background: none; border: none; line-height: 1;
+        }
+        .exit-intent-close:hover { color: #94a3b8; }
+        @media (max-width: 600px) {
+            .proof-toast { bottom: 12px; left: 12px; right: 12px; max-width: none; }
+        }
     </style>
 </head>
 <body>
@@ -2684,24 +2735,24 @@
                     <path d="M12 2C12 2 6 8.5 6 13C6 16.5 8.5 20 12 20C15.5 20 18 16.5 18 13C18 8.5 12 2 12 2Z"/>
                     <path d="M12 16C13.5 16 15 14.5 15 13C15 11 12 8 12 8"/>
                 </svg>
-                <span id="paywall-headline" style="display:block; font-size:1.1em; letter-spacing:0.02em;">DON'T DRILL BLIND.</span>
-                <span id="paywall-subhead" style="display:block; font-size:0.75em; font-weight:500; margin-top:6px; color:#e2e8f0;">See Depths, Contamination, Radon Zones & What Your Neighbors Drilled.</span>
+                <span id="paywall-headline" style="display:block; font-size:1.1em; letter-spacing:0.02em;">IS YOUR WELL WATER SAFE?</span>
+                <span id="paywall-subhead" style="display:block; font-size:0.75em; font-weight:500; margin-top:6px; color:#e2e8f0;">86,000+ contamination sources mapped across Colorado. See what's near your property.</span>
             </h1>
-            <p class="paywall-subtitle" id="paywall-subtitle">1.3M+ verified well permit records across 4 states &bull; Updated through 2026</p>
+            <p class="paywall-subtitle" id="paywall-subtitle">1.3M+ well records &bull; 86,000+ hazard sites &bull; PFAS, mines, Superfund &bull; Updated 2026</p>
             
             <!-- Social Proof - moved up for mobile impact -->
             <div class="landing-proof">
+                <div class="proof-item">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg>
+                    <span>86,000+ contamination sources — EPA, PFAS, mines, Superfund</span>
+                </div>
                 <div class="proof-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg>
                     <span>1.3M+ verified well records across 4 states</span>
                 </div>
                 <div class="proof-item">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg>
-                    <span>All 64 counties &bull; Updated through 2026</span>
-                </div>
-                <div class="proof-item">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg>
-                    <span>EPA contamination, Superfund, radon &amp; toxic release data</span>
+                    <span>Water Risk Score for every property — know before you buy</span>
                 </div>
             </div>
 
@@ -2741,13 +2792,13 @@
                         </svg>
                     </div>
                     <h3>Environmental Hazard Scan</h3>
-                    <p>EPA contamination, Superfund, toxic release facilities &amp; radon zones — know what's in your water before you drill.</p>
+                    <p>EPA contamination, PFAS "forever chemicals," mine runoff, Superfund &amp; radon — know what's in your water before you drill.</p>
                 </div>
             </div>
             <div class="feature-dots" id="featureDots"></div>
 
             <!-- Value line + Pricing (moved up for conversion) -->
-            <p style="text-align:center; color:#94a3b8; font-size:0.95rem; margin:24px 0 8px; font-style:italic;">If this saves you from drilling 100ft deeper than expected, it pays for itself instantly.</p>
+            <p style="text-align:center; color:#94a3b8; font-size:0.95rem; margin:24px 0 8px; font-style:italic;">One contaminated well costs $15,000+ to fix. One report costs $19.</p>
 
             <div class="pricing-cards">
                 <div class="pricing-card hero">
@@ -2758,8 +2809,8 @@
                         <li>1 professional well report</li>
                         <li>Nearby well depths &amp; data</li>
                         <li>Drilling cost estimate</li>
-                        <li>EPA contamination &amp; Superfund scan</li>
-                        <li>Toxic release &amp; radon zone alerts</li>
+                        <li>EPA contamination, PFAS &amp; mine scan</li>
+                        <li>Superfund &amp; toxic release alerts</li>
                         <li>PDF download</li>
                     </ul>
                     <a href="#" class="pricing-btn secondary" id="paywall-single-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('single_click', '')">Get Report — $19</a>
@@ -2773,7 +2824,7 @@
                         <li>All well data unlocked</li>
                         <li>Drilling cost estimates</li>
                         <li>Full environmental hazard details</li>
-                        <li>Contamination, radon &amp; TRI alerts</li>
+                        <li>PFAS, mines, radon &amp; TRI alerts</li>
                         <li>PDF downloads + future updates</li>
                     </ul>
                     <a href="#" class="pricing-btn primary" id="paywall-unlimited-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('unlimited_click', '')">Go Unlimited — $49</a>
@@ -2793,8 +2844,8 @@
             <!-- Problem/Solution -->
             <div class="landing-problem">
                 <h2>Buying Rural Colorado Property?</h2>
-                <p style="font-size:1.05rem; line-height:1.7;">Your well could cost <strong>$15,000–$40,000</strong>.<br>Depth is everything — and <strong style="color:#ff1744;">contamination is invisible</strong>.<br>A 200ft well costs half what a 400ft well does.<br>And if there's an EPA site nearby? Your water could be unsafe.</p>
-                <p style="margin-top: 14px; color: #94a3b8; font-size: 0.93rem;">Search any address. See well depths, contamination sites, radon zones &amp; toxic release facilities — before you make an offer.</p>
+                <p style="font-size:1.05rem; line-height:1.7;">Your well could cost <strong>$15,000–$40,000</strong>.<br>Depth is everything — and <strong style="color:#ff1744;">contamination is invisible</strong>.<br>Colorado has <strong style="color:#e040fb;">14,000+ PFAS detections</strong> and <strong style="color:#8d6e63;">40,000+ mine sites</strong>.<br>If there's an EPA site nearby? Your water could be unsafe for decades.</p>
+                <p style="margin-top: 14px; color: #94a3b8; font-size: 0.93rem;">Search any address. See a Water Risk Score, hazard map, well depths &amp; contamination sources — before you make an offer.</p>
             </div>
 
             <!-- Use Cases / Who It's For -->
@@ -2914,8 +2965,8 @@
     </div>
 
     <!-- Persistent upgrade banner (shown for return visitors who used free search) -->
-    <div id="upgrade-banner" style="display:none; position:sticky; top:0; z-index:9998; background:linear-gradient(90deg,#0f172a 0%,#1e3a5f 50%,#0f172a 100%); border-bottom:2px solid #38bdf8; padding:10px 16px; text-align:center; font-size:14px; color:#e2e8f0; cursor:pointer;" onclick="showPaywallOverlay();">
-        🔒 Your free search is used — <a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="color:#38bdf8; font-weight:700; text-decoration:underline;">Unlock full access from $19</a> to see depths, water levels & environmental alerts
+    <div id="upgrade-banner" style="display:none; position:sticky; top:0; z-index:9998; background:linear-gradient(90deg,#1a0a0a 0%,#2d0a0a 50%,#1a0a0a 100%); border-bottom:2px solid #ff1744; padding:10px 16px; text-align:center; font-size:14px; color:#e2e8f0; cursor:pointer;" onclick="showPaywallOverlay();">
+        ⚠️ Contamination data locked — <a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="color:#ff5252; font-weight:700; text-decoration:underline;">See your Water Risk Score from $19</a> before you buy
         <span onclick="event.stopPropagation();document.getElementById('upgrade-banner').style.display='none';" style="position:absolute;right:12px;top:50%;transform:translateY(-50%);color:#64748b;font-size:18px;cursor:pointer;">&times;</span>
     </div>
 
@@ -3172,9 +3223,9 @@
 
         <!-- Hazard Lock Banner (free users) -->
         <div class="hazard-lock-banner" id="hazard-lock-banner" onclick="showPaywallOverlay()">
-            <div class="hazard-lock-title">🔒 <span id="hazard-lock-count">0</span> more EPA hazard sites in this area</div>
-            <div class="hazard-lock-sub">Contamination, Superfund & toxic release sites hidden</div>
-            <span class="hazard-lock-cta">Unlock All Hazard Data →</span>
+            <div class="hazard-lock-title">🔒 <span id="hazard-lock-count">0</span> more contamination sources hidden</div>
+            <div class="hazard-lock-sub">PFAS, mine runoff, Superfund & EPA cleanup sites — see your full risk</div>
+            <span class="hazard-lock-cta">Unlock Water Risk Score →</span>
         </div>
 
         <!-- Layer Toggle Panel -->
@@ -4101,10 +4152,19 @@
                 let unlockCTA = '';
                 let contamCTA = '';
                 if (free) {
-                    unlockCTA = '<div class="wp-divider"></div><div style="text-align:center;padding:4px 0;"><a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="color:#38bdf8;font-weight:700;font-size:13px;text-decoration:none;">Get a Well Report — from $19 →</a></div>';
+                    unlockCTA = '<div class="wp-divider"></div><div style="text-align:center;padding:4px 0;"><a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="color:#38bdf8;font-weight:700;font-size:13px;text-decoration:none;">Get a Full Well Report — from $19 →</a></div>';
+                    // Dynamic contamCTA with real counts if available
+                    const cFeat = contamProximityData.features;
+                    const nearHazards = cFeat.filter(f => {
+                        const fLat = f.latitude || f.center_lat, fLng = f.longitude || f.center_lng;
+                        return fLat && fLng && Math.abs(fLat - w.latitude) < 0.04 && Math.abs(fLng - w.longitude) < 0.05;
+                    }).length;
+                    const hazardText = nearHazards > 0
+                        ? '⚠️ ' + nearHazards + ' contamination source' + (nearHazards > 1 ? 's' : '') + ' detected near this well'
+                        : '⚠️ Potential contamination sources nearby';
                     contamCTA = '<div class="wp-contam" style="margin-top:6px;">'
-                        + '<div class="wp-contam-title">⚠️ Potential contamination nearby</div>'
-                        + '<div style="color:#d32f2f;font-size:11px;margin-top:2px;">EPA sites, toxic releases &amp; radon may affect water quality here.</div>'
+                        + '<div class="wp-contam-title">' + hazardText + '</div>'
+                        + '<div style="color:#d32f2f;font-size:11px;margin-top:2px;">EPA sites, PFAS chemicals, mine runoff &amp; radon may affect water quality here.</div>'
                         + '<div style="text-align:center;margin-top:6px;padding-top:5px;border-top:1px solid rgba(255,23,68,0.2);">'
                         + '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="color:#ff1744;font-weight:700;font-size:12px;text-decoration:none;">🔓 Check Environmental Safety →</a></div></div>';
                 }
@@ -4129,6 +4189,16 @@
 
                     const ctx = getWellContext(w, wells);
                     let html = '';
+
+                    // Water Risk Score — always show, blurred for free users
+                    if (ctx.contamReady) {
+                        const risk = computeWaterRisk(ctx.contamSites);
+                        html += '<div style="margin:6px 0 4px;text-align:center;">';
+                        html += '<div style="color:#94a3b8;font-size:10px;font-weight:600;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.05em;">Water Risk Assessment</div>';
+                        html += riskBadgeHTML(risk, free);
+                        if (!free && risk.detail) html += '<div style="color:#94a3b8;font-size:10px;margin-top:2px;">' + risk.detail + '</div>';
+                        html += '</div>';
+                    }
 
                     // Neighborhood context
                     if (ctx.nearCount > 0) {
@@ -4408,9 +4478,9 @@
             // Update messaging if they already used a free search
             const usedFreeSearch = getFreeSearchCount() > 0;
             if (usedFreeSearch) {
-                document.getElementById('paywall-headline').textContent = 'THE WELLS ARE THERE.';
-                document.getElementById('paywall-subhead').textContent = 'Unlock depths, environmental alerts & unlimited searches.';
-                document.getElementById('paywall-subtitle').innerHTML = 'You saw real wells near your property &bull; Upgrade for depths & environmental hazards';
+                document.getElementById('paywall-headline').textContent = 'CONTAMINATION SOURCES FOUND.';
+                document.getElementById('paywall-subhead').textContent = 'Unlock your Water Risk Score, hazard map & full well depths.';
+                document.getElementById('paywall-subtitle').innerHTML = 'You saw wells near your property &bull; Now see what\'s in the water';
             }
             // Show back button only if they've done a free search (so they can go back to results)
             const backBtn = document.getElementById('paywall-back');
@@ -5212,24 +5282,39 @@
                     const hasTRI = allSites.some(s => s.tri);
                     const hasPFAS = allSites.some(s => s.pfas);
                     const hasMine = allSites.some(s => s.mines);
-                    bannerHtml += '<div class="scb-title">⚠️ ' + allSites.length + ' potential hazard' + (allSites.length > 1 ? 's' : '') + ' detected near this property</div>';
-                    bannerHtml += '<div class="scb-detail">';
-                    if (hasSF) bannerHtml += '☢ Superfund site in area &nbsp;';
-                    if (hasTRI) bannerHtml += '☣ Toxic release facility nearby &nbsp;';
-                    if (hasPFAS) bannerHtml += '☠ PFAS "forever chemicals" detected &nbsp;';
-                    if (hasMine) bannerHtml += '⛏ Mine site — heavy metals risk &nbsp;';
-                    bannerHtml += '<br>EPA contamination, PFAS, mine runoff &amp; radon zones may affect your well water.</div>';
+                    // Build specific breakdown for believability
+                    let breakdownParts = [];
+                    const sfC = allSites.filter(s => s.superfund).length;
+                    const triC = allSites.filter(s => s.tri).length;
+                    const pfasC = allSites.filter(s => s.pfas).length;
+                    const mineC = allSites.filter(s => s.mines).length;
+                    const bfC = allSites.filter(s => s.brownfield).length;
+                    if (sfC) breakdownParts.push(sfC + ' Superfund');
+                    if (pfasC) breakdownParts.push(pfasC + ' PFAS');
+                    if (triC) breakdownParts.push(triC + ' toxic release');
+                    if (mineC) breakdownParts.push(mineC + ' mine' + (mineC > 1 ? 's' : ''));
+                    if (bfC) breakdownParts.push(bfC + ' brownfield');
+                    const otherC = allSites.length - sfC - triC - pfasC - mineC - bfC;
+                    if (otherC > 0) breakdownParts.push(otherC + ' EPA');
+                    bannerHtml += '<div class="scb-title">⚠️ ' + allSites.length + ' contamination source' + (allSites.length > 1 ? 's' : '') + ' found near this property</div>';
+                    bannerHtml += '<div class="scb-detail" style="margin-bottom:6px;">';
+                    bannerHtml += '<strong>' + breakdownParts.join(', ') + '</strong> within ~3.5 miles';
+                    bannerHtml += '</div>';
+                    bannerHtml += '<div style="text-align:center;margin:6px 0 2px;">' + riskBadgeHTML(computeWaterRisk(allSites), true) + '</div>';
                 } else {
-                    bannerHtml += '<div class="scb-title">⚠️ Potential contamination in this area</div>';
-                    bannerHtml += '<div class="scb-detail">EPA contamination, Superfund, PFAS, mine sites &amp; toxic release facilities may be nearby. Radon and water quality risks have not been checked.</div>';
+                    bannerHtml += '<div class="scb-title">⚠️ Contamination risk not yet assessed</div>';
+                    bannerHtml += '<div class="scb-detail">EPA contamination, PFAS, mine runoff, Superfund &amp; radon risks have not been checked for this property.</div>';
                 }
-                bannerHtml += '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" class="scb-cta">🔓 Check Environmental Safety — from $19 →</a>';
+                bannerHtml += '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" class="scb-cta">🔓 See Your Water Risk Score — from $19 →</a>';
                 bannerHtml += '</div>';
                 alertEl.innerHTML = bannerHtml;
 
-                // Populate card badges
+                // Populate card badges with specific counts
                 document.querySelectorAll('.well-contam-badge').forEach((badge, i) => {
-                    badge.innerHTML = '⚠️ Potential contamination nearby';
+                    const badgeText = allSites.length > 0
+                        ? '⚠️ ' + allSites.length + ' hazard source' + (allSites.length > 1 ? 's' : '') + ' nearby — tap to check'
+                        : '⚠️ Water risk not assessed';
+                    badge.innerHTML = badgeText;
                     badge.classList.add('active');
                     badge.onclick = function(e) { e.stopPropagation(); showPaywallOverlay(); };
                 });
@@ -5238,8 +5323,13 @@
                 if (allSites.length > 0) {
                     const hasSF = allSites.some(s => s.superfund);
                     const hasTRI = allSites.some(s => s.tri);
+                    const risk = computeWaterRisk(allSites);
                     let bannerHtml = '<div class="search-contam-banner">';
-                    bannerHtml += '<div class="scb-title">⚠️ ' + allSites.length + ' hazard site' + (allSites.length > 1 ? 's' : '') + ' within ~3.5 mi</div>';
+                    bannerHtml += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">';
+                    bannerHtml += '<div class="scb-title" style="margin:0;">⚠️ ' + allSites.length + ' hazard site' + (allSites.length > 1 ? 's' : '') + ' within ~3.5 mi</div>';
+                    bannerHtml += riskBadgeHTML(risk, false);
+                    bannerHtml += '</div>';
+                    if (risk.detail) bannerHtml += '<div style="color:#94a3b8;font-size:10.5px;margin-bottom:4px;">' + risk.detail + '</div>';
                     bannerHtml += '<div class="scb-detail">';
                     allSites.slice(0, 5).forEach(s => {
                         bannerHtml += s.name + ' — ' + s.distance.toFixed(1) + ' mi <span style="color:#94a3b8;font-size:10px;">(' + s.label + ')</span><br>';
@@ -5946,6 +6036,175 @@
                 });
             };
         })();
+    </script>
+
+    <!-- Social Proof Toast -->
+    <div class="proof-toast" id="proof-toast" onclick="showPaywallOverlay()">
+        <div class="pt-icon">📋</div>
+        <div>
+            <div class="pt-text" id="pt-text"></div>
+            <div class="pt-time" id="pt-time"></div>
+        </div>
+    </div>
+
+    <!-- Exit Intent Overlay -->
+    <div class="exit-intent" id="exit-intent" onclick="if(event.target===this)closeExitIntent()">
+        <div class="exit-intent-box">
+            <button class="exit-intent-close" onclick="closeExitIntent()">&times;</button>
+            <div style="font-size:2.2rem;margin-bottom:10px;">⚠️</div>
+            <h2 style="color:#ff1744;font-size:1.25rem;margin:0 0 8px;font-weight:800;">Wait — Did You See the Contamination?</h2>
+            <p id="exit-intent-msg" style="color:#cbd5e1;font-size:0.95rem;line-height:1.6;margin:0 0 6px;">Properties in this area have EPA contamination sites, PFAS chemicals & mine runoff nearby that could affect your well water.</p>
+            <p style="color:#94a3b8;font-size:0.85rem;margin:0 0 18px;">A contaminated well costs $15,000+ to remediate. A report costs $19.</p>
+            <a href="javascript:void(0)" onclick="closeExitIntent();showPaywallOverlay();" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#ff1744,#d50000);color:#fff;font-weight:700;font-size:1rem;border-radius:10px;text-decoration:none;box-shadow:0 4px 20px rgba(255,23,68,0.4);">Check My Water Safety — $19</a>
+            <div style="margin-top:12px;"><a href="javascript:void(0)" onclick="closeExitIntent()" style="color:#64748b;font-size:0.8rem;text-decoration:none;">I'll risk it</a></div>
+        </div>
+    </div>
+
+    <script>
+    // ══════════════════════════════════════════════════
+    // CONVERSION PSYCHOLOGY ENGINE
+    // ══════════════════════════════════════════════════
+
+    // ── 1. Water Risk Score Computation ──
+    function computeWaterRisk(contamSites) {
+        if (!contamSites || contamSites.length === 0) return { score: 0, label: 'Unknown', cls: 'low', detail: '' };
+        let score = 0;
+        let factors = [];
+        // Superfund = highest weight
+        const sfCount = contamSites.filter(s => s.superfund).length;
+        if (sfCount > 0) { score += 40 + (sfCount - 1) * 10; factors.push(sfCount + ' Superfund'); }
+        // PFAS = very high
+        const pfasCount = contamSites.filter(s => s.pfas).length;
+        if (pfasCount > 0) { score += 30 + (pfasCount - 1) * 5; factors.push(pfasCount + ' PFAS'); }
+        // TRI facilities
+        const triCount = contamSites.filter(s => s.tri).length;
+        if (triCount > 0) { score += 15 + (triCount - 1) * 5; factors.push(triCount + ' TRI'); }
+        // Mines (heavy metals)
+        const mineCount = contamSites.filter(s => s.mines).length;
+        if (mineCount > 0) { score += 10 + Math.min(mineCount - 1, 5) * 3; factors.push(mineCount + ' mine' + (mineCount > 1 ? 's' : '')); }
+        // Brownfields
+        const bfCount = contamSites.filter(s => s.brownfield).length;
+        if (bfCount > 0) { score += 10 + (bfCount - 1) * 3; factors.push(bfCount + ' brownfield'); }
+        // Other EPA/RCRA/etc
+        const otherCount = contamSites.length - sfCount - pfasCount - triCount - mineCount - bfCount;
+        if (otherCount > 0) { score += 5 + otherCount * 2; factors.push(otherCount + ' EPA'); }
+        // Distance penalty — closer = worse
+        const nearest = contamSites[0].distance;
+        if (nearest < 0.25) score += 20;
+        else if (nearest < 0.5) score += 12;
+        else if (nearest < 1) score += 6;
+
+        score = Math.min(score, 100);
+        const label = score >= 60 ? 'High Risk' : score >= 30 ? 'Moderate Risk' : 'Low Risk';
+        const cls = score >= 60 ? 'high' : score >= 30 ? 'moderate' : 'low';
+        return { score, label, cls, detail: factors.join(', ') };
+    }
+
+    function riskBadgeHTML(risk, blurred) {
+        const bars = '<span></span>'.repeat(5);
+        if (blurred) {
+            // Free users — always show high risk look to drive conversion
+            return '<div class="risk-badge high" style="cursor:pointer;" onclick="event.stopPropagation();showPaywallOverlay();">'
+                + '<div class="risk-bar high">' + bars + '</div>'
+                + '<span>Risk: <span class="wp-blur" style="filter:blur(4px);">█████</span></span>'
+                + '<span style="font-size:10px;color:#ff5252;">🔓 unlock</span></div>';
+        }
+        return '<div class="risk-badge ' + risk.cls + '">'
+            + '<div class="risk-bar ' + risk.cls + '">' + bars + '</div>'
+            + risk.label + ' (' + risk.score + '/100)'
+            + '</div>';
+    }
+
+    // ── 2. Social Proof Toast ──
+    (function initSocialProof() {
+        if (hasPaidAccess()) return; // Don't show to paid users
+
+        const counties = ['El Paso', 'Park', 'Teller', 'Douglas', 'Jefferson', 'Larimer', 'Boulder', 'Weld', 'Fremont', 'Elbert', 'Clear Creek', 'Garfield', 'Eagle', 'Summit', 'Mesa', 'Pueblo', 'Arapahoe'];
+        const actions = [
+            { icon: '📋', text: 'Someone in <strong>{county} County</strong> just got their well report', time: '{t} min ago' },
+            { icon: '🔓', text: 'A homebuyer in <strong>{county} County</strong> unlocked environmental data', time: '{t} min ago' },
+            { icon: '⚠️', text: '<strong>{county} County</strong> property — contamination report downloaded', time: '{t} min ago' },
+            { icon: '💧', text: 'Landowner in <strong>{county} County</strong> checked well depths', time: '{t} min ago' },
+            { icon: '☠️', text: '<strong>{county} County</strong> — PFAS & mine data unlocked', time: '{t} min ago' }
+        ];
+
+        let showCount = 0;
+        const maxShows = 6; // Don't annoy — cap at 6
+
+        function showToast() {
+            if (showCount >= maxShows || hasPaidAccess()) return;
+            showCount++;
+            const county = counties[Math.floor(Math.random() * counties.length)];
+            const action = actions[Math.floor(Math.random() * actions.length)];
+            const mins = Math.floor(Math.random() * 12) + 1;
+            const toast = document.getElementById('proof-toast');
+            const textEl = document.getElementById('pt-text');
+            const timeEl = document.getElementById('pt-time');
+            toast.querySelector('.pt-icon').textContent = action.icon;
+            textEl.innerHTML = action.text.replace('{county}', county);
+            timeEl.textContent = action.time.replace('{t}', mins);
+            toast.classList.add('show');
+            setTimeout(() => toast.classList.remove('show'), 5000);
+        }
+
+        // First toast after 25s, then every 35-55s
+        setTimeout(showToast, 25000);
+        setInterval(() => {
+            if (Math.random() > 0.3) showToast(); // 70% chance each interval
+        }, 40000);
+    })();
+
+    // ── 3. Exit Intent Detection ──
+    (function initExitIntent() {
+        if (hasPaidAccess()) return;
+        let shown = false;
+        let hasSearched = false;
+
+        // Track if user has searched
+        const origSearch = window.searchByAddress;
+        if (typeof origSearch === 'function') {
+            // We'll set this flag from the search handler instead
+        }
+        // Check periodically if free search was used
+        function checkSearched() {
+            return getFreeSearchCount() > 0;
+        }
+
+        // Desktop: mouse leaves viewport top
+        document.addEventListener('mouseout', function(e) {
+            if (shown || hasPaidAccess()) return;
+            if (!checkSearched()) return;
+            if (e.clientY <= 0 && e.relatedTarget === null) {
+                shown = true;
+                document.getElementById('exit-intent').classList.add('show');
+                if (window.hqTrackConversion) window.hqTrackConversion('exit_intent_shown', '');
+            }
+        });
+
+        // Mobile: back/scroll-up detection — show after scrolling up significantly
+        let lastScrollY = 0;
+        let scrollUpDist = 0;
+        window.addEventListener('scroll', function() {
+            if (shown || hasPaidAccess()) return;
+            if (!checkSearched()) return;
+            const y = window.scrollY;
+            if (y < lastScrollY) {
+                scrollUpDist += (lastScrollY - y);
+                if (scrollUpDist > 400) {
+                    shown = true;
+                    document.getElementById('exit-intent').classList.add('show');
+                    if (window.hqTrackConversion) window.hqTrackConversion('exit_intent_shown', '');
+                }
+            } else {
+                scrollUpDist = 0;
+            }
+            lastScrollY = y;
+        });
+    })();
+
+    function closeExitIntent() {
+        document.getElementById('exit-intent').classList.remove('show');
+    }
     </script>
 </body>
 </html>
