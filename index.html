@@ -3737,6 +3737,11 @@
                 // Zoom control (bottom-right for mobile friendliness)
                 L.control.zoom({ position: 'bottomright' }).addTo(exploreMap);
 
+                // Create custom pane for state preview dots (BELOW emoji markers)
+                exploreMap.createPane('statePreviewPane');
+                exploreMap.getPane('statePreviewPane').style.zIndex = 250;
+                _canvasRenderer = L.canvas({ padding: 0.5, pane: 'statePreviewPane' });
+
                 // Load wells on viewport change
                 exploreMap.on('moveend', onExploreMove);
                 exploreMap.on('zoomend', onExploreMove);
@@ -3762,10 +3767,8 @@
         const OVERLAY_MIN_ZOOM = 9; // Don't load hazard overlays until zoomed in enough
 
         // ── State-level contamination preview (lightweight canvas dots) ──
-        // Use a custom low-z pane so preview dots render BELOW emoji markers
-        exploreMap.createPane('statePreviewPane');
-        exploreMap.getPane('statePreviewPane').style.zIndex = 250;
-        const _canvasRenderer = L.canvas({ padding: 0.5, pane: 'statePreviewPane' });
+        // Pane + renderer created lazily inside openExploreMap() when map exists
+        let _canvasRenderer = null;
         let _statePreviewGroup = null;
         let _statePreviewLoaded = false;
         const CO_BBOX = { minLat: 36.99, maxLat: 41.01, minLng: -109.06, maxLng: -102.04 };
