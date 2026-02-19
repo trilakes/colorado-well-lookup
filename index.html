@@ -3562,14 +3562,14 @@
                         + s('NPL Status', f.npl_status)
                         + (f.superfund ? '<br><b style="color:#ff5252">Superfund Site</b>' : '')
                         + s('State', f.state) + s('County', f.county)
-                        + (f.site_url ? `<br><a href="${f.site_url}" target="_blank" style="color:#38bdf8;">EPA Details →</a>` : '')
+                        + (f.latitude && f.longitude ? `<br><a href="https://map22.epa.gov/cimc/latLong&params=${f.latitude},${f.longitude}" target="_blank" style="color:#38bdf8;">EPA Cleanup Map →</a>` : '')
                     );
                 case 'superfund':
                     return wrap(
                         `<b style="color:#d50000">☢ ${f.site_name || 'Superfund Site'}</b>`
                         + s('Status', f.npl_status)
                         + s('State', f.state) + s('County', f.county)
-                        + (f.site_url ? `<br><a href="${f.site_url}" target="_blank" style="color:#38bdf8;">EPA Details →</a>` : '')
+                        + (f.latitude && f.longitude ? `<br><a href="https://map22.epa.gov/cimc/latLong&params=${f.latitude},${f.longitude}" target="_blank" style="color:#38bdf8;">EPA Cleanup Map →</a>` : '')
                     );
                 case 'oilgas':
                     return wrap(
@@ -3627,6 +3627,7 @@
                         + s('Address', f.address)
                         + s('City', f.city) + s('County', f.county)
                         + (f.closed ? '<br><span style="color:#66bb6a">Facility Closed</span>' : '<br><span style="color:#ff6d00;font-weight:600">Active — Toxic Releases Reported</span>')
+                        + (f.facility_id ? `<br><a href="https://enviro.epa.gov/triexplorer/release_fac_profile?TRI=${f.facility_id}&TRILIB=TRIQ1&FLD=TRIID&FLD=RESSION&FLD=TSESSION&OFESSION=FACILITY&OTESSION=CHEMICAL&BESSION=FACILITY&REPTYPE=CURRENT" target="_blank" style="color:#38bdf8;">TRI Release Data →</a>` : '')
                     );
                 case 'radon':
                     return wrap(
