@@ -3349,7 +3349,7 @@
         <div class="explore-counter" id="explore-counter"></div>
         <div class="explore-loading" id="explore-loading">Loading wells…</div>
         <div class="explore-msg" id="explore-msg">Zoom in to see wells</div>
-        <div class="explore-msg" id="explore-zoom-hint" style="display:none;background:linear-gradient(135deg,rgba(255,23,68,0.15),rgba(213,0,0,0.08));border:1px solid rgba(255,23,68,0.3);color:#ff5252;font-weight:600;font-size:0.88rem;bottom:56px;max-width:380px;padding:10px 16px;line-height:1.4;">⚠️ 86,000+ contamination sources across Colorado<br><span style="font-weight:400;font-size:0.8rem;color:#cbd5e1;">Zoom in to see PFAS, mines, Superfund &amp; EPA sites near you</span></div>
+        <div class="explore-msg" id="explore-zoom-hint" style="display:none;background:linear-gradient(135deg,rgba(255,23,68,0.15),rgba(213,0,0,0.08));border:1px solid rgba(255,23,68,0.3);color:#ff5252;font-weight:600;font-size:0.88rem;bottom:56px;max-width:380px;padding:10px 16px;line-height:1.4;">⚠️ Each dot is a real contamination site<br><span style="font-weight:400;font-size:0.8rem;color:#cbd5e1;">Zoom in to identify PFAS, mines, Superfund &amp; EPA sites near your property</span></div>
     </div>
 
     <footer>
@@ -3446,6 +3446,57 @@
 
         const OVERLAY_MIN_ZOOM = 9; // Don't load hazard overlays until zoomed in enough
 
+        // ── State-level contamination preview (lightweight canvas dots) ──
+        const _canvasRenderer = L.canvas({ padding: 0.5 });
+        let _statePreviewGroup = null;
+        let _statePreviewLoaded = false;
+        const CO_BBOX = { minLat: 36.99, maxLat: 41.01, minLng: -109.06, maxLng: -102.04 };
+
+        async function loadStatePreview() {
+            if (_statePreviewLoaded && _statePreviewGroup) return;
+            _statePreviewGroup = L.layerGroup().addTo(exploreMap);
+            _statePreviewLoaded = true;
+
+            const previewLayers = ['contamination', 'superfund', 'tri', 'brownfields', 'pfas', 'mines'];
+            for (const layer of previewLayers) {
+                try {
+                    const url = `${WELLS_API}/api/overlay/${layer}/bbox?minLat=${CO_BBOX.minLat}&maxLat=${CO_BBOX.maxLat}&minLng=${CO_BBOX.minLng}&maxLng=${CO_BBOX.maxLng}&limit=300`;
+                    const resp = await fetch(url);
+                    if (!resp.ok) continue;
+                    const data = await resp.json();
+                    const features = data.features || data;
+                    const color = OVERLAY_COLORS[layer] || '#ff1744';
+                    features.forEach(f => {
+                        const lat = f.latitude || f.center_lat;
+                        const lng = f.longitude || f.center_lng;
+                        if (!lat || !lng) return;
+                        L.circleMarker([lat, lng], {
+                            renderer: _canvasRenderer,
+                            radius: 2.5,
+                            fillColor: color,
+                            fillOpacity: 0.7,
+                            stroke: false,
+                            interactive: false
+                        }).addTo(_statePreviewGroup);
+                    });
+                } catch(e) { /* silent */ }
+            }
+        }
+
+        function showStatePreview() {
+            if (_statePreviewGroup) {
+                _statePreviewGroup.addTo(exploreMap);
+            } else {
+                loadStatePreview();
+            }
+        }
+
+        function hideStatePreview() {
+            if (_statePreviewGroup && exploreMap.hasLayer(_statePreviewGroup)) {
+                exploreMap.removeLayer(_statePreviewGroup);
+            }
+        }
+
         function onExploreMove() {
             clearTimeout(exploreLoadTimeout);
             const zoom = exploreMap.getZoom();
@@ -3456,10 +3507,11 @@
             contamProximityData.ready = false;
             contamProximityData.features = [];
 
-            // Show/hide zoom hint for hazard layers
+            // Show/hide zoom hint + state preview for hazard layers
             if (zoom < OVERLAY_MIN_ZOOM) {
                 if (zoomHint) zoomHint.style.display = 'block';
-                // Clear hazard markers when zoomed out
+                showStatePreview();
+                // Clear individual hazard markers when zoomed out
                 for (const layer of Object.keys(overlayState)) {
                     if (layer !== 'wells' && HAZARD_LAYERS.has(layer)) {
                         clearOverlayMarkers(layer);
@@ -3467,6 +3519,7 @@
                 }
             } else {
                 if (zoomHint) zoomHint.style.display = 'none';
+                hideStatePreview();
             }
 
             msg.classList.add('hidden');
