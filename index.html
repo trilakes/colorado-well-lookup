@@ -3982,6 +3982,14 @@
             document.getElementById('layer-panel').classList.toggle('open');
         }
 
+        // Close layer panel when clicking outside it
+        document.addEventListener('click', function(e) {
+            var panel = document.getElementById('layer-panel');
+            if (panel && panel.classList.contains('open') && !panel.contains(e.target)) {
+                panel.classList.remove('open');
+            }
+        });
+
         function toggleLayer(layer, enabled) {
             if (!overlayState[layer]) {
                 overlayState[layer] = { enabled: false, markers: [], cache: new Map() };
