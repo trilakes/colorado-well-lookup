@@ -3222,6 +3222,36 @@
                     <span class="layer-dot" style="background:#7c4dff"></span> Water Quality</label>
                     <span class="layer-count" id="lc-wqstations"></span>
                 </div>
+                <div class="layer-item" data-layer="brownfields">
+                    <label><input type="checkbox" checked onchange="toggleLayer('brownfields', this.checked)">
+                    <span class="layer-dot" style="background:#ff6e40"></span> Brownfields</label>
+                    <span class="layer-count" id="lc-brownfields"></span>
+                </div>
+                <div class="layer-item" data-layer="rcra">
+                    <label><input type="checkbox" onchange="toggleLayer('rcra', this.checked)">
+                    <span class="layer-dot" style="background:#e65100"></span> RCRA Corrective Action</label>
+                    <span class="layer-count" id="lc-rcra"></span>
+                </div>
+                <div class="layer-item" data-layer="fedfac">
+                    <label><input type="checkbox" onchange="toggleLayer('fedfac', this.checked)">
+                    <span class="layer-dot" style="background:#b71c1c"></span> Federal Facilities</label>
+                    <span class="layer-count" id="lc-fedfac"></span>
+                </div>
+                <div class="layer-item" data-layer="eparesponse">
+                    <label><input type="checkbox" onchange="toggleLayer('eparesponse', this.checked)">
+                    <span class="layer-dot" style="background:#c62828"></span> EPA Emergency Response</label>
+                    <span class="layer-count" id="lc-eparesponse"></span>
+                </div>
+                <div class="layer-item" data-layer="pfas">
+                    <label><input type="checkbox" checked onchange="toggleLayer('pfas', this.checked)">
+                    <span class="layer-dot" style="background:#e040fb"></span> PFAS Contamination</label>
+                    <span class="layer-count" id="lc-pfas"></span>
+                </div>
+                <div class="layer-item" data-layer="mines">
+                    <label><input type="checkbox" onchange="toggleLayer('mines', this.checked)">
+                    <span class="layer-dot" style="background:#8d6e63"></span> Mine Sites</label>
+                    <span class="layer-count" id="lc-mines"></span>
+                </div>
                 <div class="layer-divider"></div>
                 <div class="layer-section-label">Hydrology</div>
                 <div class="layer-item" data-layer="dams">
@@ -3384,6 +3414,8 @@
             contamination: { enabled: true, markers: [], cache: new Map() },
             superfund: { enabled: true, markers: [], cache: new Map() },
             tri: { enabled: true, markers: [], cache: new Map() },
+            brownfields: { enabled: true, markers: [], cache: new Map() },
+            pfas: { enabled: true, markers: [], cache: new Map() },
         };
         const OVERLAY_COLORS = {
             contamination: '#ff1744',
@@ -3397,6 +3429,12 @@
             tri: '#ff6d00',
             radon: '#ffab00',
             wqstations: '#7c4dff',
+            brownfields: '#ff6e40',
+            rcra: '#e65100',
+            fedfac: '#b71c1c',
+            eparesponse: '#c62828',
+            pfas: '#e040fb',
+            mines: '#8d6e63',
         };
 
         // ── Haversine distance (miles) ──
@@ -3412,7 +3450,8 @@
         let contamProximityData = { features: [], ready: false };
 
         function feedContamProximity(layer, features) {
-            const tag = layer === 'superfund' ? 'superfund' : layer === 'tri' ? 'tri' : 'epa';
+            const tagMap = { superfund:'superfund', tri:'tri', contamination:'epa', brownfields:'brownfield', rcra:'rcra', fedfac:'fedfac', eparesponse:'eparesponse', pfas:'pfas', mines:'mines' };
+            const tag = tagMap[layer] || 'epa';
             // Remove old entries of this type, add new
             contamProximityData.features = contamProximityData.features.filter(f => f._ctype !== tag);
             features.forEach(f => {
@@ -3452,14 +3491,20 @@
                     if (!fLat || !fLng) continue;
                     if (Math.abs(fLat - lat) > 0.04 || Math.abs(fLng - lng) > 0.05) continue;
                     const d = haversineMi(lat, lng, fLat, fLng);
-                    if (d <= 2) contamSites.push({
-                        name: f.site_name || f.facility_name || f.name,
-                        distance: d,
-                        type: f._ctype,
-                        superfund: f.superfund || f._ctype === 'superfund',
-                        tri: f._ctype === 'tri',
-                        typeLabel: f._ctype === 'superfund' ? 'Superfund' : f._ctype === 'tri' ? 'TRI Facility' : 'EPA Site'
-                    });
+                    if (d <= 2) {
+                        const typeLabelMap = { superfund:'Superfund', tri:'TRI Facility', epa:'EPA Site', brownfield:'Brownfield', rcra:'RCRA Cleanup', fedfac:'Federal Facility', eparesponse:'EPA Response', pfas:'PFAS Contamination', mines:'Mine Site' };
+                        contamSites.push({
+                            name: f.site_name || f.facility_name || f.name,
+                            distance: d,
+                            type: f._ctype,
+                            superfund: f.superfund || f._ctype === 'superfund',
+                            tri: f._ctype === 'tri',
+                            pfas: f._ctype === 'pfas',
+                            brownfield: f._ctype === 'brownfield',
+                            mines: f._ctype === 'mines',
+                            typeLabel: typeLabelMap[f._ctype] || 'Hazard Site'
+                        });
+                    }
                 }
                 contamSites.sort((a, b) => a.distance - b.distance);
             }
@@ -3580,7 +3625,7 @@
             }
         }
 
-        const HAZARD_LAYERS = new Set(['contamination', 'superfund', 'tri']);
+        const HAZARD_LAYERS = new Set(['contamination', 'superfund', 'tri', 'brownfields', 'rcra', 'fedfac', 'eparesponse', 'pfas', 'mines']);
         const FREE_HAZARD_LIMIT = 3;
 
         function renderOverlayLayer(layer, features) {
@@ -3636,7 +3681,7 @@
                 const isHazard = HAZARD_LAYERS.has(layer);
                 let m;
                 if (isHazard) {
-                    const sym = layer === 'superfund' ? '☢' : layer === 'tri' ? '☣' : '⚠';
+                    const sym = layer === 'superfund' ? '☢' : layer === 'tri' ? '☣' : layer === 'pfas' ? '☠' : layer === 'mines' ? '⛏' : layer === 'fedfac' ? '🏛' : layer === 'eparesponse' ? '🚨' : layer === 'rcra' ? '☣' : '⚠';
                     const bg = color;
                     const sz = zoom < 10 ? 16 : zoom < 13 ? 20 : 24;
                     m = L.marker([lat, lng], {
@@ -3860,6 +3905,58 @@
                         + s('County', f.county)
                         + (f.site_url ? `<br><a href="${f.site_url}" target="_blank" style="color:#38bdf8;">View Data →</a>` : '')
                     );
+                case 'brownfields':
+                    return wrap(
+                        `<b style="color:#ff6e40">⚠ ${f.site_name || 'Brownfield Site'}</b>`
+                        + s('City', f.city) + s('County', f.county)
+                        + (f.cleanup_ind === 'Y' ? '<br><span style="color:#ff6e40;font-weight:600">Cleanup Underway</span>' : '')
+                        + (f.assess_ind === 'Y' ? '<br><span style="color:#ffa726">Assessment Conducted</span>' : '')
+                        + (f.latitude && f.longitude ? `<br><a href="https://map22.epa.gov/cimc/latLong&params=${f.latitude},${f.longitude}" target="_blank" style="color:#38bdf8;">EPA Cleanup Map →</a>` : '')
+                    );
+                case 'rcra':
+                    return wrap(
+                        `<b style="color:#e65100">☣ ${f.handler_name || 'RCRA Facility'}</b>`
+                        + s('Handler ID', f.handler_id)
+                        + s('City', f.city) + s('County', f.county)
+                        + '<br><span style="color:#e65100;font-weight:600">RCRA Corrective Action Site</span>'
+                        + (f.latitude && f.longitude ? `<br><a href="https://map22.epa.gov/cimc/latLong&params=${f.latitude},${f.longitude}" target="_blank" style="color:#38bdf8;">EPA Cleanup Map →</a>` : '')
+                    );
+                case 'fedfac':
+                    return wrap(
+                        `<b style="color:#b71c1c">🏛 ${f.site_name || 'Federal Facility'}</b>`
+                        + s('Agency', f.federal_agency || f.agency_owner)
+                        + s('City', f.city) + s('County', f.county)
+                        + (f.ff_superfund === 'Y' ? '<br><span style="color:#d50000;font-weight:600">Superfund — Federal</span>' : '')
+                        + (f.ff_rcra === 'Y' ? '<br><span style="color:#e65100">RCRA Contamination</span>' : '')
+                        + (f.ff_brac === 'Y' ? '<br><span style="color:#ef5350">BRAC (Base Closure)</span>' : '')
+                        + (f.latitude && f.longitude ? `<br><a href="https://map22.epa.gov/cimc/latLong&params=${f.latitude},${f.longitude}" target="_blank" style="color:#38bdf8;">EPA Cleanup Map →</a>` : '')
+                    );
+                case 'eparesponse':
+                    return wrap(
+                        `<b style="color:#c62828">🚨 ${f.site_name || 'Emergency Response Site'}</b>`
+                        + s('Response Type', f.response_type)
+                        + s('Status', f.response_status)
+                        + s('City', f.city) + s('County', f.county)
+                        + '<br><span style="color:#c62828;font-weight:600">EPA Emergency Response</span>'
+                        + (f.latitude && f.longitude ? `<br><a href="https://map22.epa.gov/cimc/latLong&params=${f.latitude},${f.longitude}" target="_blank" style="color:#38bdf8;">EPA Cleanup Map →</a>` : '')
+                    );
+                case 'pfas':
+                    return wrap(
+                        `<b style="color:#e040fb">☠ ${f.site_name || 'PFAS Site'}</b>`
+                        + s('Type', f.source_type)
+                        + s('City', f.city) + s('County', f.county)
+                        + (f.contaminant ? s('Contaminant', f.contaminant) : '')
+                        + '<br><span style="color:#e040fb;font-weight:600">PFAS / Forever Chemical Detected</span>'
+                        + '<br><span style="font-size:11px;color:#ef9a9a;">PFAS chemicals do not break down in the environment</span>'
+                    );
+                case 'mines':
+                    return wrap(
+                        `<b style="color:#8d6e63">⛏ ${f.site_name || f.mine_type || 'Mine Site'}</b>`
+                        + s('Type', f.mine_type)
+                        + s('County', f.county)
+                        + s('Map', f.topo_name)
+                        + '<br><span style="font-size:11px;color:#bcaaa4;">Historical mine — may affect groundwater quality</span>'
+                    );
                 default:
                     return null;
             }
@@ -4049,9 +4146,15 @@
                         if (ctx.contamSites.length > 0) {
                             const hasSF = ctx.contamSites.some(s => s.superfund);
                             const hasTRI = ctx.contamSites.some(s => s.tri);
+                            const hasPFAS = ctx.contamSites.some(s => s.pfas);
+                            const hasBF = ctx.contamSites.some(s => s.brownfield);
+                            const hasMine = ctx.contamSites.some(s => s.mines);
                             html += '<div class="wp-contam-title">⚠️ ' + ctx.contamSites.length + ' hazard site' + (ctx.contamSites.length > 1 ? 's' : '') + ' detected within 2 mi</div>';
                             if (hasSF) html += '<div style="color:#d50000;font-size:11px;font-weight:700;">☢ Includes Superfund site</div>';
                             if (hasTRI) html += '<div style="color:#ff6d00;font-size:11px;font-weight:700;">☣ Includes Toxic Release facility</div>';
+                            if (hasPFAS) html += '<div style="color:#e040fb;font-size:11px;font-weight:700;">☠ PFAS "forever chemicals" detected</div>';
+                            if (hasBF) html += '<div style="color:#ff6e40;font-size:11px;font-weight:700;">⚠ Brownfield / cleanup site</div>';
+                            if (hasMine) html += '<div style="color:#8d6e63;font-size:11px;font-weight:700;">⛏ Mine site nearby — heavy metals risk</div>';
                             html += '<div style="margin-top:6px;">';
                             for (let i = 0; i < Math.min(ctx.contamSites.length, 3); i++) {
                                 const site = ctx.contamSites[i];
@@ -4062,7 +4165,7 @@
                         } else {
                             // No actual sites found — still show a warning to drive conversion
                             html += '<div class="wp-contam-title">⚠️ Potential contamination detected nearby</div>';
-                            html += '<div style="color:#d32f2f;font-size:11.5px;margin-top:2px;">EPA, Superfund &amp; toxic release sites may affect water quality in this area.</div>';
+                            html += '<div style="color:#d32f2f;font-size:11.5px;margin-top:2px;">EPA, Superfund, PFAS &amp; toxic release sites may affect water quality in this area.</div>';
                         }
                         html += '<div style="text-align:center;margin-top:8px;padding-top:6px;border-top:1px solid rgba(255,23,68,0.2);">'
                             + '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" '
@@ -4074,15 +4177,24 @@
                         if (ctx.contamSites.length > 0) {
                             const hasSF = ctx.contamSites.some(s => s.superfund);
                             const hasTRI = ctx.contamSites.some(s => s.tri);
+                            const hasPFAS = ctx.contamSites.some(s => s.pfas);
+                            const hasBF = ctx.contamSites.some(s => s.brownfield);
+                            const hasMine = ctx.contamSites.some(s => s.mines);
                             html += '<div class="wp-contam">';
                             html += '<div class="wp-contam-title">⚠️ ' + ctx.contamSites.length + ' hazard site' + (ctx.contamSites.length > 1 ? 's' : '') + ' within 2 mi</div>';
                             if (hasSF) html += '<div style="color:#d50000;font-size:11px;font-weight:700;">☢ Includes Superfund site</div>';
                             if (hasTRI) html += '<div style="color:#ff6d00;font-size:11px;font-weight:700;">☣ Includes Toxic Release facility</div>';
+                            if (hasPFAS) html += '<div style="color:#e040fb;font-size:11px;font-weight:700;">☠ PFAS "forever chemicals" detected</div>';
+                            if (hasBF) html += '<div style="color:#ff6e40;font-size:11px;font-weight:700;">⚠ Brownfield / cleanup site</div>';
+                            if (hasMine) html += '<div style="color:#8d6e63;font-size:11px;font-weight:700;">⛏ Mine site — heavy metals risk</div>';
                             html += '<div style="margin-top:4px;">';
                             ctx.contamSites.forEach(site => {
                                 html += '<div class="wp-contam-detail">' + (site.name || 'EPA Site') + ' — ' + site.distance.toFixed(1) + ' mi';
                                 if (site.superfund) html += ' <b style="color:#d50000">(Superfund)</b>';
                                 if (site.tri) html += ' <b style="color:#ff6d00">(TRI)</b>';
+                                if (site.pfas) html += ' <b style="color:#e040fb">(PFAS)</b>';
+                                if (site.brownfield) html += ' <b style="color:#ff6e40">(Brownfield)</b>';
+                                if (site.mines) html += ' <b style="color:#8d6e63">(Mine)</b>';
                                 html += ' <span style="color:#94a3b8;font-size:10px;">' + site.typeLabel + '</span></div>';
                             });
                             html += '</div></div>';
@@ -5046,21 +5158,21 @@
             }
         }
 
-        // Fetch contamination/TRI/superfund counts for the search area and populate UI
+        // Fetch contamination/TRI/superfund/PFAS/brownfield/mine counts for the search area and populate UI
         async function fetchSearchContamination(lat, lng, isFree) {
             const radius = 0.05; // ~3.5 miles bbox
             const minLat = lat - radius, maxLat = lat + radius;
             const minLng = lng - radius, maxLng = lng + radius;
 
-            // Fetch all 3 hazard layers in parallel
-            const layers = ['contamination', 'superfund', 'tri'];
+            // Fetch all hazard layers in parallel
+            const layers = ['contamination', 'superfund', 'tri', 'brownfields', 'pfas', 'mines'];
             const results = await Promise.allSettled(layers.map(layer =>
                 fetch(`${WELLS_API}/api/overlay/${layer}/bbox?minLat=${minLat}&maxLat=${maxLat}&minLng=${minLng}&maxLng=${maxLng}&limit=200`)
                     .then(r => r.ok ? r.json() : { features: [] })
             ));
 
             let allSites = [];
-            const layerLabels = { contamination: 'EPA', superfund: 'Superfund', tri: 'TRI' };
+            const layerLabels = { contamination: 'EPA', superfund: 'Superfund', tri: 'TRI', brownfields: 'Brownfield', pfas: 'PFAS', mines: 'Mine' };
             results.forEach((r, i) => {
                 if (r.status === 'fulfilled' && r.value.features) {
                     r.value.features.forEach(f => {
@@ -5074,7 +5186,10 @@
                                 layer: layers[i],
                                 label: layerLabels[layers[i]],
                                 superfund: layers[i] === 'superfund',
-                                tri: layers[i] === 'tri'
+                                tri: layers[i] === 'tri',
+                                pfas: layers[i] === 'pfas',
+                                brownfield: layers[i] === 'brownfields',
+                                mines: layers[i] === 'mines'
                             });
                         }
                     });
@@ -5095,14 +5210,18 @@
                 if (allSites.length > 0) {
                     const hasSF = allSites.some(s => s.superfund);
                     const hasTRI = allSites.some(s => s.tri);
+                    const hasPFAS = allSites.some(s => s.pfas);
+                    const hasMine = allSites.some(s => s.mines);
                     bannerHtml += '<div class="scb-title">⚠️ ' + allSites.length + ' potential hazard' + (allSites.length > 1 ? 's' : '') + ' detected near this property</div>';
                     bannerHtml += '<div class="scb-detail">';
                     if (hasSF) bannerHtml += '☢ Superfund site in area &nbsp;';
                     if (hasTRI) bannerHtml += '☣ Toxic release facility nearby &nbsp;';
-                    bannerHtml += '<br>EPA contamination sites, toxic chemicals &amp; radon zones may affect your well water.</div>';
+                    if (hasPFAS) bannerHtml += '☠ PFAS "forever chemicals" detected &nbsp;';
+                    if (hasMine) bannerHtml += '⛏ Mine site — heavy metals risk &nbsp;';
+                    bannerHtml += '<br>EPA contamination, PFAS, mine runoff &amp; radon zones may affect your well water.</div>';
                 } else {
                     bannerHtml += '<div class="scb-title">⚠️ Potential contamination in this area</div>';
-                    bannerHtml += '<div class="scb-detail">EPA contamination, Superfund sites &amp; toxic release facilities may be nearby. Radon and water quality risks have not been checked.</div>';
+                    bannerHtml += '<div class="scb-detail">EPA contamination, Superfund, PFAS, mine sites &amp; toxic release facilities may be nearby. Radon and water quality risks have not been checked.</div>';
                 }
                 bannerHtml += '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" class="scb-cta">🔓 Check Environmental Safety — from $19 →</a>';
                 bannerHtml += '</div>';
@@ -5139,7 +5258,7 @@
                         }
                     });
                 } else {
-                    alertEl.innerHTML = '<div style="background:rgba(0,230,118,0.06);border:1px solid rgba(0,230,118,0.15);border-radius:10px;padding:10px 14px;margin-top:12px;color:#00c853;font-size:12.5px;">✓ No EPA contamination, Superfund, or toxic release sites found within 3.5 miles</div>';
+                    alertEl.innerHTML = '<div style="background:rgba(0,230,118,0.06);border:1px solid rgba(0,230,118,0.15);border-radius:10px;padding:10px 14px;margin-top:12px;color:#00c853;font-size:12.5px;">✓ No EPA contamination, Superfund, PFAS, or mine sites found within 3.5 miles</div>';
                 }
             }
         }
