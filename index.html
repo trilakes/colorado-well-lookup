@@ -56,21 +56,17 @@
         "offers": [
             {
                 "@type": "Offer",
-                "name": "Monthly Access",
-                "price": "19.00",
+                "name": "Single Report",
+                "price": "39.00",
                 "priceCurrency": "USD",
-                "priceSpecification": {
-                    "@type": "UnitPriceSpecification",
-                    "billingDuration": "P1M"
-                },
-                "url": "https://buy.stripe.com/8x24gycJC6EH8X9gn56Na03"
+                "url": "https://buy.stripe.com/cNi3cva1sdTB32D3DE6AM0c"
             },
             {
                 "@type": "Offer",
-                "name": "Lifetime Access",
-                "price": "47.00",
+                "name": "Unlimited Reports",
+                "price": "49.00",
                 "priceCurrency": "USD",
-                "url": "https://buy.stripe.com/aFabJ010U2orflx0o76Na02"
+                "url": "https://buy.stripe.com/9B69AT5Lc3eX1Yz8XY6AM0d"
             }
         ],
         "aggregateRating": {
@@ -2806,12 +2802,12 @@
             <div class="feature-dots" id="featureDots"></div>
 
             <!-- Value line + Pricing (moved up for conversion) -->
-            <p style="text-align:center; color:#94a3b8; font-size:0.95rem; margin:24px 0 8px; font-style:italic;">One contaminated well costs $15,000+ to fix. One report costs $19.</p>
+            <p style="text-align:center; color:#94a3b8; font-size:0.95rem; margin:24px 0 8px; font-style:italic;">One contaminated well costs $15,000+ to fix. One report costs $39.</p>
 
             <div class="pricing-cards">
                 <div class="pricing-card hero">
                     <div class="pricing-name">Single Report</div>
-                    <div class="pricing-price">$19</div>
+                    <div class="pricing-price">$39</div>
                     <div class="pricing-period">one property</div>
                     <ul class="pricing-features">
                         <li>1 professional well report</li>
@@ -2821,7 +2817,7 @@
                         <li>Superfund &amp; toxic release alerts</li>
                         <li>PDF download</li>
                     </ul>
-                    <a href="#" class="pricing-btn secondary" id="paywall-single-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('single_click', '')">Get Report — $19</a>
+                    <a href="#" class="pricing-btn secondary" id="paywall-single-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('single_click', '')">Get Report — $39</a>
                 </div>
                 <div class="pricing-card hero best">
                     <div class="pricing-name">Unlimited</div>
@@ -4533,8 +4529,8 @@
         }
         // Locked placeholder for depth/cost data (free users) — goes STRAIGHT to Stripe
         const LOCK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
-        const STRIPE_SINGLE_BASE = 'https://buy.stripe.com/6oU14m6lebZ1eht5Ir6Na04';
-        const STRIPE_UNLIMITED_BASE = 'https://buy.stripe.com/dRm8wO3926EH8X9b2L6Na07';
+        const STRIPE_SINGLE_BASE = 'https://buy.stripe.com/cNi3cva1sdTB32D3DE6AM0c';
+        const STRIPE_UNLIMITED_BASE = 'https://buy.stripe.com/9B69AT5Lc3eX1Yz8XY6AM0d';
 
         // Build Stripe Payment Link URL with tracking params
         function stripeURL(base, source) {
@@ -4550,11 +4546,10 @@
 
         // Convenience getters
         function getSingleURL(source) { return stripeURL(STRIPE_SINGLE_BASE, source); }
-        function getPackURL(source) { return stripeURL(STRIPE_PACK_BASE, source); }
         function getUnlimitedURL(source) { return stripeURL(STRIPE_UNLIMITED_BASE, source); }
 
         function lockedHTML(label) {
-            return `<a href="${getSingleURL('locked_data')}" target="_blank" class="locked-value" onclick="if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','');if(window.logEvent)window.logEvent('locked_click','')">${LOCK_SVG} ${label || 'Unlock — from $19'}</a>`;
+            return `<a href="${getSingleURL('locked_data')}" target="_blank" class="locked-value" onclick="if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','');if(window.logEvent)window.logEvent('locked_click','')">${LOCK_SVG} ${label || 'Unlock — from $39'}</a>`;
         }
         const isFreeUser = () => !hasPaidAccess();
         function showPaywallOverlay() {
@@ -4592,7 +4587,7 @@
                     <p style="color:#94a3b8; margin:0 0 18px; font-size:0.9rem;">Get a personalized well report for any property — expected depth, estimated cost & hazard scan before you break ground.</p>
                     <div style="display:flex; flex-direction:column; gap:10px; max-width:320px; margin:0 auto;">
                         <a href="${getSingleURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('single_click_inline','')" style="display:block; background:linear-gradient(135deg,#38bdf8,#0ea5e9); color:#0f172a; font-weight:700; font-size:1.05rem; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center; min-height:52px; line-height:1.3;">
-                            Get 1 Report — $19
+                            Get 1 Report — $39
                         </a>
                         <a href="${getUnlimitedURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('unlimited_click_inline','')" style="display:block; background:linear-gradient(135deg,#22c55e,#10b981); color:#052e16; font-weight:700; font-size:1.05rem; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center; min-height:52px; line-height:1.3;">
                             Go Unlimited — $49
@@ -6142,8 +6137,8 @@
             <div style="font-size:2.2rem;margin-bottom:10px;">⚠️</div>
             <h2 style="color:#ff1744;font-size:1.25rem;margin:0 0 8px;font-weight:800;">Wait — Did You See the Contamination?</h2>
             <p id="exit-intent-msg" style="color:#cbd5e1;font-size:0.95rem;line-height:1.6;margin:0 0 6px;">Properties in this area have EPA contamination sites, PFAS chemicals & mine runoff nearby that could affect your well water.</p>
-            <p style="color:#94a3b8;font-size:0.85rem;margin:0 0 18px;">A contaminated well costs $15,000+ to remediate. A report costs $19.</p>
-            <a href="javascript:void(0)" onclick="closeExitIntent();showPaywallOverlay();" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#ff1744,#d50000);color:#fff;font-weight:700;font-size:1rem;border-radius:10px;text-decoration:none;box-shadow:0 4px 20px rgba(255,23,68,0.4);">Check My Water Safety — $19</a>
+            <p style="color:#94a3b8;font-size:0.85rem;margin:0 0 18px;">A contaminated well costs $15,000+ to remediate. A report costs $39.</p>
+            <a href="javascript:void(0)" onclick="closeExitIntent();showPaywallOverlay();" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#ff1744,#d50000);color:#fff;font-weight:700;font-size:1rem;border-radius:10px;text-decoration:none;box-shadow:0 4px 20px rgba(255,23,68,0.4);">Check My Water Safety — $39</a>
             <div style="margin-top:12px;"><a href="javascript:void(0)" onclick="closeExitIntent()" style="color:#64748b;font-size:0.8rem;text-decoration:none;">I'll risk it</a></div>
         </div>
     </div>
