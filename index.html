@@ -3447,7 +3447,10 @@
         const OVERLAY_MIN_ZOOM = 9; // Don't load hazard overlays until zoomed in enough
 
         // ── State-level contamination preview (lightweight canvas dots) ──
-        const _canvasRenderer = L.canvas({ padding: 0.5 });
+        // Use a custom low-z pane so preview dots render BELOW emoji markers
+        exploreMap.createPane('statePreviewPane');
+        exploreMap.getPane('statePreviewPane').style.zIndex = 250;
+        const _canvasRenderer = L.canvas({ padding: 0.5, pane: 'statePreviewPane' });
         let _statePreviewGroup = null;
         let _statePreviewLoaded = false;
         const CO_BBOX = { minLat: 36.99, maxLat: 41.01, minLng: -109.06, maxLng: -102.04 };
@@ -3472,10 +3475,14 @@
                         if (!lat || !lng) return;
                         L.circleMarker([lat, lng], {
                             renderer: _canvasRenderer,
-                            radius: 2.5,
+                            pane: 'statePreviewPane',
+                            radius: 4.5,
                             fillColor: color,
-                            fillOpacity: 0.7,
-                            stroke: false,
+                            fillOpacity: 0.9,
+                            stroke: true,
+                            color: color,
+                            weight: 1,
+                            opacity: 0.5,
                             interactive: false
                         }).addTo(_statePreviewGroup);
                     });
@@ -3963,14 +3970,12 @@
                         + s('NPL Status', f.npl_status)
                         + (f.superfund ? '<br><b style="color:#ff5252">Superfund Site</b>' : '')
                         + s('State', f.state) + s('County', f.county)
-                        + (f.latitude && f.longitude ? `<br><a href="https://map22.epa.gov/cimc/latLong&params=${f.latitude},${f.longitude}" target="_blank" style="color:#38bdf8;">EPA Cleanup Map →</a>` : '')
                     );
                 case 'superfund':
                     return wrap(
                         `<b style="color:#d50000">☢ ${f.site_name || 'Superfund Site'}</b>`
                         + s('Status', f.npl_status)
                         + s('State', f.state) + s('County', f.county)
-                        + (f.latitude && f.longitude ? `<br><a href="https://map22.epa.gov/cimc/latLong&params=${f.latitude},${f.longitude}" target="_blank" style="color:#38bdf8;">EPA Cleanup Map →</a>` : '')
                     );
                 case 'oilgas':
                     return wrap(
@@ -3997,7 +4002,6 @@
                         + s('Flow', f.flow_cfs ? f.flow_cfs + ' cfs' : null)
                         + s('Stage', f.stage_ft ? f.stage_ft + ' ft' : null)
                         + s('Status', f.status)
-                        + (f.url ? `<br><a href="${f.url}" target="_blank" style="color:#38bdf8;">USGS Data →</a>` : '')
                     );
                 case 'springs':
                     return wrap(
@@ -4011,7 +4015,6 @@
                         + s('Basin', f.basin) + s('Status', f.status)
                         + s('Use', f.use_type)
                         + s('Diversion', f.total_diversion ? f.total_diversion + ' ac-ft' : null)
-                        + (f.url ? `<br><a href="${f.url}" target="_blank" style="color:#38bdf8;">Record →</a>` : '')
                     );
                 case 'groundwater':
                     return wrap(
@@ -4028,7 +4031,6 @@
                         + s('Address', f.address)
                         + s('City', f.city) + s('County', f.county)
                         + (f.closed ? '<br><span style="color:#66bb6a">Facility Closed</span>' : '<br><span style="color:#ff6d00;font-weight:600">Active — Toxic Releases Reported</span>')
-                        + (f.facility_id ? `<br><a href="https://enviro.epa.gov/triexplorer/release_fac_profile?TRI=${f.facility_id}&TRILIB=TRIQ1&FLD=TRIID&FLD=RESSION&FLD=TSESSION&OFESSION=FACILITY&OTESSION=CHEMICAL&BESSION=FACILITY&REPTYPE=CURRENT" target="_blank" style="color:#38bdf8;">TRI Release Data →</a>` : '')
                     );
                 case 'radon':
                     return wrap(
@@ -4045,7 +4047,6 @@
                         + s('Type', f.site_type)
                         + s('Samples', f.result_count ? Number(f.result_count).toLocaleString() : null)
                         + s('County', f.county)
-                        + (f.site_url ? `<br><a href="${f.site_url}" target="_blank" style="color:#38bdf8;">View Data →</a>` : '')
                     );
                 case 'brownfields':
                     return wrap(
@@ -4053,7 +4054,6 @@
                         + s('City', f.city) + s('County', f.county)
                         + (f.cleanup_ind === 'Y' ? '<br><span style="color:#ff6e40;font-weight:600">Cleanup Underway</span>' : '')
                         + (f.assess_ind === 'Y' ? '<br><span style="color:#ffa726">Assessment Conducted</span>' : '')
-                        + (f.latitude && f.longitude ? `<br><a href="https://map22.epa.gov/cimc/latLong&params=${f.latitude},${f.longitude}" target="_blank" style="color:#38bdf8;">EPA Cleanup Map →</a>` : '')
                     );
                 case 'rcra':
                     return wrap(
@@ -4061,7 +4061,6 @@
                         + s('Handler ID', f.handler_id)
                         + s('City', f.city) + s('County', f.county)
                         + '<br><span style="color:#e65100;font-weight:600">RCRA Corrective Action Site</span>'
-                        + (f.latitude && f.longitude ? `<br><a href="https://map22.epa.gov/cimc/latLong&params=${f.latitude},${f.longitude}" target="_blank" style="color:#38bdf8;">EPA Cleanup Map →</a>` : '')
                     );
                 case 'fedfac':
                     return wrap(
@@ -4071,7 +4070,6 @@
                         + (f.ff_superfund === 'Y' ? '<br><span style="color:#d50000;font-weight:600">Superfund — Federal</span>' : '')
                         + (f.ff_rcra === 'Y' ? '<br><span style="color:#e65100">RCRA Contamination</span>' : '')
                         + (f.ff_brac === 'Y' ? '<br><span style="color:#ef5350">BRAC (Base Closure)</span>' : '')
-                        + (f.latitude && f.longitude ? `<br><a href="https://map22.epa.gov/cimc/latLong&params=${f.latitude},${f.longitude}" target="_blank" style="color:#38bdf8;">EPA Cleanup Map →</a>` : '')
                     );
                 case 'eparesponse':
                     return wrap(
@@ -4080,7 +4078,6 @@
                         + s('Status', f.response_status)
                         + s('City', f.city) + s('County', f.county)
                         + '<br><span style="color:#c62828;font-weight:600">EPA Emergency Response</span>'
-                        + (f.latitude && f.longitude ? `<br><a href="https://map22.epa.gov/cimc/latLong&params=${f.latitude},${f.longitude}" target="_blank" style="color:#38bdf8;">EPA Cleanup Map →</a>` : '')
                     );
                 case 'pfas':
                     return wrap(
