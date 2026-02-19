@@ -3449,8 +3449,30 @@
             }
         }
 
+        // Radon zone GeoJSON cache (county polygons — loaded once)
+        let _radonGeoJSON = null;
+
         async function loadOverlayLayer(layer) {
             if (!exploreMap || !overlayState[layer]?.enabled) return;
+
+            // ── Radon: load county polygon GeoJSON (not bbox dots) ──
+            if (layer === 'radon') {
+                const layerEl = document.querySelector(`.layer-item[data-layer="radon"]`);
+                if (layerEl) layerEl.classList.add('loading');
+                try {
+                    if (!_radonGeoJSON) {
+                        const r = await fetch('co_radon_zones.geojson');
+                        if (!r.ok) throw new Error(`Radon GeoJSON ${r.status}`);
+                        _radonGeoJSON = await r.json();
+                    }
+                    if (layerEl) layerEl.classList.remove('loading');
+                    if (overlayState.radon.enabled) renderRadonPolygons(_radonGeoJSON);
+                } catch (e) {
+                    if (layerEl) layerEl.classList.remove('loading');
+                    console.warn('Radon GeoJSON error:', e);
+                }
+                return;
+            }
 
             const bounds = exploreMap.getBounds();
             const sw = bounds.getSouthWest();
@@ -3548,6 +3570,50 @@
             if (!overlayState[layer]) return;
             overlayState[layer].markers.forEach(m => exploreMap.removeLayer(m));
             overlayState[layer].markers = [];
+            // Also remove GeoJSON polygon layer (radon)
+            if (overlayState[layer]._geoLayer) {
+                exploreMap.removeLayer(overlayState[layer]._geoLayer);
+                overlayState[layer]._geoLayer = null;
+            }
+        }
+
+        /* ── Radon: render as shaded county polygons ── */
+        function renderRadonPolygons(geojson) {
+            clearOverlayMarkers('radon');
+            const ZONE_COLORS = { 1: '#d32f2f', 2: '#ff8f00', 3: '#388e3c' };
+            const ZONE_LABELS = { 1: 'High (Zone 1)', 2: 'Moderate (Zone 2)', 3: 'Low (Zone 3)' };
+
+            const geoLayer = L.geoJSON(geojson, {
+                style: function(feature) {
+                    const z = feature.properties.radon_zone || 2;
+                    return {
+                        fillColor: ZONE_COLORS[z] || '#ff8f00',
+                        fillOpacity: 0.22,
+                        color: ZONE_COLORS[z] || '#ff8f00',
+                        weight: 1.2,
+                        opacity: 0.6
+                    };
+                },
+                onEachFeature: function(feature, lyr) {
+                    const p = feature.properties;
+                    const z = p.radon_zone || '?';
+                    const col = ZONE_COLORS[z] || '#ff8f00';
+                    lyr.bindPopup(
+                        `<div style="font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.5;min-width:160px;">`
+                        + `<b style="color:${col}">☢ Radon Zone ${z}</b>`
+                        + `<br>${p.NAME || 'Unknown'} County`
+                        + `<br>Risk: <b>${p.risk_level || 'Unknown'}</b>`
+                        + `<br>Predicted: <b>${p.predicted_level || '?'}</b> pCi/L`
+                        + `<br><span style="font-size:11px;color:#94a3b8;">EPA recommends radon testing for all homes</span>`
+                        + `</div>`,
+                        { maxWidth: 280 }
+                    );
+                }
+            }).addTo(exploreMap);
+
+            overlayState.radon._geoLayer = geoLayer;
+            const el = document.getElementById('lc-radon');
+            if (el) el.textContent = geojson.features ? geojson.features.length + ' counties' : '';
         }
 
         function buildOverlayPopup(layer, f) {
