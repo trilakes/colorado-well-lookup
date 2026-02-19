@@ -3178,7 +3178,7 @@
         </div>
 
         <!-- Layer Toggle Panel -->
-        <div class="layer-panel" id="layer-panel">
+        <div class="layer-panel open" id="layer-panel">
             <button class="layer-panel-toggle" id="layer-toggle-btn" onclick="toggleLayerPanel()">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polygon points="12 2 22 8.5 12 15 2 8.5"/><polyline points="2 15.5 12 22 22 15.5"/></svg>
                 <span>Layers</span>
@@ -3598,6 +3598,7 @@
 
             // ── Hazard gating: free users see only 3 nearest dots ──
             let renderFeatures = features;
+            let ghostFeatures = [];
             if (free && HAZARD_LAYERS.has(layer)) {
                 const center = exploreMap.getCenter();
                 const withDist = features.filter(f => (f.latitude || f.center_lat) && (f.longitude || f.center_lng)).map(f => {
@@ -3607,10 +3608,10 @@
                     return { f, d };
                 });
                 withDist.sort((a, b) => a.d - b.d);
-                const shown = withDist.slice(0, FREE_HAZARD_LIMIT).map(x => x.f);
+                renderFeatures = withDist.slice(0, FREE_HAZARD_LIMIT).map(x => x.f);
+                ghostFeatures = withDist.slice(FREE_HAZARD_LIMIT).map(x => x.f);
                 // Track hidden count for this layer
-                overlayState[layer]._hiddenCount = Math.max(0, withDist.length - FREE_HAZARD_LIMIT);
-                renderFeatures = shown;
+                overlayState[layer]._hiddenCount = ghostFeatures.length;
                 // Recalculate total hidden across all hazard layers
                 _hiddenHazardCount = 0;
                 for (const hl of HAZARD_LAYERS) {
@@ -3664,6 +3665,35 @@
 
                 overlayState[layer].markers.push(m);
             });
+
+            // ── Ghost markers: dim locked dots for free users ──
+            if (ghostFeatures.length > 0) {
+                const ghostSz = zoom < 10 ? 10 : zoom < 13 ? 12 : 14;
+                ghostFeatures.forEach(f => {
+                    const lat = f.latitude || f.center_lat;
+                    const lng = f.longitude || f.center_lng;
+                    if (!lat || !lng) return;
+                    const gm = L.marker([lat, lng], {
+                        icon: L.divIcon({
+                            className: '',
+                            html: '<div style="display:flex;align-items:center;justify-content:center;width:' + ghostSz + 'px;height:' + ghostSz + 'px;border-radius:50%;background:' + color + ';opacity:0.25;filter:blur(1.5px);box-shadow:0 0 6px ' + color + ';"></div>',
+                            iconSize: [ghostSz, ghostSz],
+                            iconAnchor: [ghostSz/2, ghostSz/2]
+                        }),
+                        bubblingMouseEvents: false
+                    }).addTo(exploreMap);
+                    gm.bindPopup(
+                        '<div style="font-family:Inter,system-ui,sans-serif;text-align:center;padding:6px;">'
+                        + '<div style="font-size:20px;margin-bottom:4px;">🔒</div>'
+                        + '<div style="color:#ff1744;font-weight:700;font-size:13px;">Hazard Site Locked</div>'
+                        + '<div style="color:#94a3b8;font-size:11.5px;margin:4px 0 8px;">Upgrade to see contamination details,<br>site names & exact locations</div>'
+                        + '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="display:inline-block;padding:6px 18px;background:linear-gradient(135deg,#ff1744,#d50000);color:#fff;font-size:12px;font-weight:700;border-radius:6px;text-decoration:none;">Unlock All Hazard Data →</a>'
+                        + '</div>',
+                        { maxWidth: 240 }
+                    );
+                    overlayState[layer].markers.push(gm);
+                });
+            }
 
             const el = document.getElementById('lc-' + layer);
             if (el) {
