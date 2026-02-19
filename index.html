@@ -3666,6 +3666,9 @@
             }
             overlayState[layer].enabled = enabled;
 
+            // Track overlay toggle for HQ
+            if (window.logEvent) window.logEvent('overlay_toggle', layer + ':' + (enabled ? 'on' : 'off'));
+
             if (layer === 'wells') {
                 // Wells are managed by the existing exploreMap logic
                 if (enabled) {
@@ -3906,7 +3909,12 @@
             const free = !hasPaidAccess();
 
             // ── Fear-based locked popups for free users on hazard layers ──
+            // Track hazard marker click for HQ analytics
+            if (window.logEvent) window.logEvent('hazard_click', layer + (f.name ? ':' + f.name.substring(0, 40) : ''));
+
             if (free && HAZARD_LAYERS.has(layer)) {
+                // Track fear popup impression
+                if (window.logEvent) window.logEvent('fear_popup', layer);
                 const fearTeasers = {
                     contamination: {
                         icon: '⚠️', color: '#ff1744',
@@ -5165,6 +5173,10 @@
             const address = addressInput.value;
             const radius = parseFloat(document.getElementById('radius-address').value);
             let county = document.getElementById('county').value;
+
+            // Track actual address searched for HQ
+            if (address && window.logEvent) window.logEvent('address_searched', address);
+            if (address) window._hqSearchQuery = address;
             
             // Save to localStorage
             saveSearches();
@@ -5909,6 +5921,14 @@
 
             logEvent('page_load');
 
+            // Expose logEvent globally so inline onclick handlers can use it
+            window.logEvent = logEvent;
+
+            // ── Time Milestones ──
+            [30, 60, 120, 300].forEach(function(sec) {
+                setTimeout(function() { logEvent('time_milestone', sec + 's'); }, sec * 1000);
+            });
+
             // Track scroll depth (10% increments)
             var scrollTimer = null;
             window.addEventListener('scroll', function() {
@@ -5932,10 +5952,12 @@
                     logEvent('tab_click', el.dataset.tab);
                     return;
                 }
-                // Track search button
+                // Track search button — include actual address
                 if (e.target.closest('.search-btn, #searchBtn')) {
-                    var input = document.getElementById('addressInput');
-                    logEvent('search_click', input ? input.value : '');
+                    var input = document.getElementById('addressInput') || document.getElementById('address');
+                    var addr = input ? input.value : '';
+                    logEvent('search_click', addr);
+                    if (addr) window._hqSearchQuery = addr;
                     return;
                 }
                 // Track locked data clicks
@@ -5943,11 +5965,20 @@
                     logEvent('locked_click');
                     return;
                 }
-                // Track pricing/payment button clicks
-                if (e.target.closest('.pricing-btn, .unlock-btn')) {
-                    var link = e.target.closest('a');
-                    var isLifetime = link && link.href && link.href.includes('0rs');
-                    logEvent('payment_btn', isLifetime ? 'lifetime' : 'monthly');
+                // Track pricing/payment button clicks — include location context
+                var payBtn = e.target.closest('.pricing-btn, .unlock-btn');
+                if (payBtn) {
+                    var link = payBtn.closest('a') || payBtn;
+                    var isUnlimited = link.href && (link.href.includes('8XY') || link.textContent.includes('Unlimited'));
+                    var tier = isUnlimited ? 'unlimited' : 'single';
+                    // Detect WHERE the button is
+                    var loc = 'unknown';
+                    if (payBtn.closest('#accessOverlay, #paywall, .paywall-modal')) loc = 'paywall';
+                    else if (payBtn.closest('.inline-unlock, .inline-upsell')) loc = 'inline';
+                    else if (payBtn.closest('.results-preview, #results')) loc = 'results_preview';
+                    else if (payBtn.closest('.exit-intent')) loc = 'exit_intent';
+                    else if (payBtn.closest('.pricing-section, .pricing-card')) loc = 'pricing_section';
+                    logEvent('payment_btn', tier + ':' + loc);
                     return;
                 }
                 // Track Explore Map button
@@ -6306,6 +6337,7 @@
 
     function closeExitIntent() {
         document.getElementById('exit-intent').classList.remove('show');
+        if (window.logEvent) window.logEvent('exit_intent_dismissed');
     }
     </script>
 </body>
