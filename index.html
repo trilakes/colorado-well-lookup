@@ -1712,7 +1712,7 @@
             display: none;
             position: fixed;
             inset: 0;
-            z-index: 10000;
+            z-index: 10002;
             background: rgba(0,0,0,0.7);
             backdrop-filter: blur(4px);
             justify-content: center;
@@ -5111,7 +5111,7 @@
             }).catch(function() {});
 
             // Also send via email using formsubmit.co (free, no backend needed)
-            fetch('https://formsubmit.co/ajax/kyle@trilakescontracting.com', {
+            fetch('https://formsubmit.co/ajax/kyle@trilakes.co', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -6553,6 +6553,29 @@
             setInterval(function() {
                 track(null, { heartbeat: true });
             }, 30000);
+
+            // ── Flush timeline on page exit ──
+            // Critical: without this, users who bounce in < 30s only send page_load
+            function flushBeacon() {
+                var activity = detectActivity();
+                var data = {
+                    app: APP,
+                    page: window.location.pathname,
+                    activity: activity,
+                    timeline: timeline,
+                    heartbeat: true,
+                    beacon: true
+                };
+                if (window._hqSearchQuery) data.search_query = window._hqSearchQuery;
+                if (Object.keys(utm).length) data.utm = utm;
+                try {
+                    navigator.sendBeacon(HQ + '/api/track', new Blob([JSON.stringify(data)], { type: 'application/json' }));
+                } catch(e) {}
+            }
+            window.addEventListener('beforeunload', flushBeacon);
+            document.addEventListener('visibilitychange', function() {
+                if (document.visibilityState === 'hidden') flushBeacon();
+            });
 
             // Expose conversion tracker globally
             window.hqTrackConversion = function(type, email) {
