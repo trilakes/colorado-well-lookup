@@ -3506,15 +3506,33 @@
                 const lng = f.longitude || f.center_lng;
                 if (!lat || !lng) return;
 
-                const m = L.circleMarker([lat, lng], {
-                    radius: dotSize,
-                    fillColor: color,
-                    color: '#fff',
-                    weight: 0.8,
-                    opacity: 0.9,
-                    fillOpacity: 0.8,
-                    bubblingMouseEvents: false
-                }).addTo(exploreMap);
+                // Use distinct warning icons for hazard layers
+                const isHazard = (layer === 'contamination' || layer === 'superfund' || layer === 'tri');
+                let m;
+                if (isHazard) {
+                    const sym = layer === 'superfund' ? '☢' : layer === 'tri' ? '☣' : '⚠';
+                    const bg = color;
+                    const sz = zoom < 10 ? 16 : zoom < 13 ? 20 : 24;
+                    m = L.marker([lat, lng], {
+                        icon: L.divIcon({
+                            className: '',
+                            html: '<div style="display:flex;align-items:center;justify-content:center;width:' + sz + 'px;height:' + sz + 'px;border-radius:' + (layer === 'contamination' ? '3px' : '50%') + ';background:' + bg + ';color:#fff;font-size:' + (sz * 0.65) + 'px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.5);border:1.5px solid rgba(255,255,255,0.7);">' + sym + '</div>',
+                            iconSize: [sz, sz],
+                            iconAnchor: [sz/2, sz/2]
+                        }),
+                        bubblingMouseEvents: false
+                    }).addTo(exploreMap);
+                } else {
+                    m = L.circleMarker([lat, lng], {
+                        radius: dotSize,
+                        fillColor: color,
+                        color: '#fff',
+                        weight: 0.8,
+                        opacity: 0.9,
+                        fillOpacity: 0.8,
+                        bubblingMouseEvents: false
+                    }).addTo(exploreMap);
+                }
 
                 const popup = buildOverlayPopup(layer, f);
                 if (popup) m.bindPopup(popup, { maxWidth: 280 });
@@ -3769,8 +3787,14 @@
                 const addrHtml = addr ? '<div class="wp-row" style="color:#94a3b8;font-size:12px;">' + addr + '</div>' : '';
 
                 let unlockCTA = '';
+                let contamCTA = '';
                 if (free) {
                     unlockCTA = '<div class="wp-divider"></div><div style="text-align:center;padding:4px 0;"><a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="color:#38bdf8;font-weight:700;font-size:13px;text-decoration:none;">Get a Well Report — from $19 →</a></div>';
+                    contamCTA = '<div class="wp-contam" style="margin-top:6px;">'
+                        + '<div class="wp-contam-title">⚠️ Potential contamination nearby</div>'
+                        + '<div style="color:#d32f2f;font-size:11px;margin-top:2px;">EPA sites, toxic releases &amp; radon may affect water quality here.</div>'
+                        + '<div style="text-align:center;margin-top:6px;padding-top:5px;border-top:1px solid rgba(255,23,68,0.2);">'
+                        + '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="color:#ff1744;font-weight:700;font-size:12px;text-decoration:none;">🔓 Check Environmental Safety →</a></div></div>';
                 }
 
                 m.bindPopup(
@@ -3779,6 +3803,7 @@
                     + '<div class="wp-row">Depth: ' + depthHtml + '</div>'
                     + swlHtml + yieldHtml + aqHtml + useHtml
                     + drillerHtml + dateHtml + countyHtml + addrHtml
+                    + contamCTA
                     + '<div id="wp-ctx-' + idx + '"></div>'
                     + unlockCTA
                     + '</div>',
