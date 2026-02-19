@@ -1604,7 +1604,7 @@
             overflow-y: auto;
             -webkit-overflow-scrolling: touch;
             padding: env(safe-area-inset-top, 20px) env(safe-area-inset-right, 20px) env(safe-area-inset-bottom, 20px) env(safe-area-inset-left, 20px);
-            z-index: 9999;
+            z-index: 10001;
             display: block;
         }
 
@@ -3417,7 +3417,8 @@
                     color: '#fff',
                     weight: 0.8,
                     opacity: 0.9,
-                    fillOpacity: 0.8
+                    fillOpacity: 0.8,
+                    bubblingMouseEvents: false
                 }).addTo(exploreMap);
 
                 const popup = buildOverlayPopup(layer, f);
@@ -3617,7 +3618,8 @@
                     color: z < 9 ? color : '#fff',
                     weight: z < 9 ? 0 : 1,
                     opacity: 1,
-                    fillOpacity: 0.9
+                    fillOpacity: 0.9,
+                    bubblingMouseEvents: false
                 }).addTo(exploreMap);
 
                 // ── Enriched popup with lazy context loading ──
@@ -4796,7 +4798,8 @@
                     color: '#fff',
                     weight: 1,
                     opacity: 1,
-                    fillOpacity: 0.8
+                    fillOpacity: 0.8,
+                    bubblingMouseEvents: false
                 }).addTo(map).bindPopup(`
                     <b>Permit: ${well.permit}</b><br>
                     Depth: ${_free ? '🔒 Unlock' : well.depthTotal + ' ft'}<br>
