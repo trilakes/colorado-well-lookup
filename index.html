@@ -4948,27 +4948,16 @@
         function getUnlimitedURL(source) { return stripeURL(STRIPE_UNLIMITED_BASE, source); }
 
         function lockedHTML(label) {
-            return `<a href="${getSingleURL('locked_data')}" target="_blank" class="locked-value" onclick="if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','');if(window.logEvent)window.logEvent('locked_click','')">${LOCK_SVG} ${label || 'Unlock Ã¢â‚¬â€ from $39'}</a>`;
+            return `<a href="${getUnlimitedURL('locked_data')}" target="_blank" class="locked-value" onclick="if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','');if(window.logEvent)window.logEvent('locked_click','')">${LOCK_SVG} ${label || 'Unlock Ã¢â‚¬â€ from $49'}</a>`;
         }
         const isFreeUser = () => !hasPaidAccess();
         function showPaywallOverlay() {
-            // Close explore map if open so paywall is fully visible
-            const exploreEl = document.getElementById('explore-overlay');
-            if (exploreEl && exploreEl.classList.contains('open')) {
-                exploreEl.classList.remove('open');
-            }
-            // Update messaging if they already used a free search
-            const usedFreeSearch = getFreeSearchCount() > 0;
-            if (usedFreeSearch) {
-                document.getElementById('paywall-headline').textContent = 'CONTAMINATION SOURCES FOUND.';
-                document.getElementById('paywall-subhead').textContent = 'Unlock your Water Risk Score, hazard map & full well depths.';
-                document.getElementById('paywall-subtitle').innerHTML = 'You saw wells near your property &bull; Now see what\'s in the water';
-            }
-            // Show back button only if they've done a free search (so they can go back to results)
-            const backBtn = document.getElementById('paywall-back');
-            if (backBtn) backBtn.style.display = usedFreeSearch ? 'block' : 'none';
-            document.getElementById('paywall').classList.remove('hidden');
-            document.getElementById('paywall').scrollTop = 0;
+            // Skip the overlay — go straight to Stripe checkout
+            if (window.hqTrackConversion) window.hqTrackConversion('paywall_to_stripe', '');
+            if (window.logEvent) window.logEvent('paywall_to_stripe', '');
+            const url = getUnlimitedURL('paywall');
+            const win = window.open(url, '_blank');
+            if (!win) window.location.href = url; // fallback if popup blocked
         }
 
         // Compact inline unlock prompt Ã¢â‚¬â€ replaces full paywall for search blocks
