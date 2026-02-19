@@ -911,6 +911,60 @@
             border-left-color: #ef4444;
         }
 
+        .well-contam-badge {
+            display: none;
+        }
+        .well-contam-badge.active {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, rgba(255,23,68,0.12), rgba(213,0,0,0.06));
+            border: 1px solid rgba(255,23,68,0.25);
+            border-radius: 6px;
+            padding: 5px 10px;
+            margin-bottom: 10px;
+            font-size: 11.5px;
+            color: #ff1744;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .well-contam-badge.active:hover {
+            background: linear-gradient(135deg, rgba(255,23,68,0.2), rgba(213,0,0,0.12));
+        }
+
+        .search-contam-banner {
+            background: linear-gradient(135deg, rgba(255,23,68,0.14), rgba(213,0,0,0.08));
+            border: 1px solid rgba(255,23,68,0.3);
+            border-radius: 10px;
+            padding: 12px 14px;
+            margin-top: 12px;
+        }
+        .search-contam-banner .scb-title {
+            color: #ff1744;
+            font-weight: 700;
+            font-size: 13px;
+            margin-bottom: 4px;
+        }
+        .search-contam-banner .scb-detail {
+            color: #d32f2f;
+            font-size: 12px;
+            line-height: 1.5;
+        }
+        .search-contam-banner .scb-cta {
+            display: block;
+            text-align: center;
+            margin-top: 8px;
+            padding-top: 8px;
+            border-top: 1px solid rgba(255,23,68,0.2);
+            color: #ff1744;
+            font-weight: 700;
+            font-size: 12.5px;
+            text-decoration: none;
+        }
+        .search-contam-banner .scb-cta:hover {
+            color: #ff5252;
+        }
+
         .well-header {
             display: flex;
             justify-content: space-between;
@@ -4752,6 +4806,104 @@
             }
         }
 
+        // Fetch contamination/TRI/superfund counts for the search area and populate UI
+        async function fetchSearchContamination(lat, lng, isFree) {
+            const radius = 0.05; // ~3.5 miles bbox
+            const minLat = lat - radius, maxLat = lat + radius;
+            const minLng = lng - radius, maxLng = lng + radius;
+
+            // Fetch all 3 hazard layers in parallel
+            const layers = ['contamination', 'superfund', 'tri'];
+            const results = await Promise.allSettled(layers.map(layer =>
+                fetch(`${WELLS_API}/api/overlay/${layer}/bbox?minLat=${minLat}&maxLat=${maxLat}&minLng=${minLng}&maxLng=${maxLng}&limit=200`)
+                    .then(r => r.ok ? r.json() : { features: [] })
+            ));
+
+            let allSites = [];
+            const layerLabels = { contamination: 'EPA', superfund: 'Superfund', tri: 'TRI' };
+            results.forEach((r, i) => {
+                if (r.status === 'fulfilled' && r.value.features) {
+                    r.value.features.forEach(f => {
+                        const fLat = f.latitude || f.center_lat;
+                        const fLng = f.longitude || f.center_lng;
+                        if (fLat && fLng) {
+                            const d = Math.sqrt(Math.pow((fLat - lat) * 69, 2) + Math.pow((fLng - lng) * 54, 2));
+                            allSites.push({
+                                name: f.site_name || f.facility_name || f.name || 'Unknown',
+                                distance: d,
+                                layer: layers[i],
+                                label: layerLabels[layers[i]],
+                                superfund: layers[i] === 'superfund',
+                                tri: layers[i] === 'tri'
+                            });
+                        }
+                    });
+                }
+            });
+            allSites.sort((a, b) => a.distance - b.distance);
+
+            // Store for card badges
+            window._searchContamSites = allSites;
+
+            // Populate summary banner
+            const alertEl = document.getElementById('search-contam-alert');
+            if (!alertEl) return;
+
+            if (isFree) {
+                // Free users: ALWAYS show scary warning
+                let bannerHtml = '<div class="search-contam-banner">';
+                if (allSites.length > 0) {
+                    const hasSF = allSites.some(s => s.superfund);
+                    const hasTRI = allSites.some(s => s.tri);
+                    bannerHtml += '<div class="scb-title">⚠️ ' + allSites.length + ' potential hazard' + (allSites.length > 1 ? 's' : '') + ' detected near this property</div>';
+                    bannerHtml += '<div class="scb-detail">';
+                    if (hasSF) bannerHtml += '☢ Superfund site in area &nbsp;';
+                    if (hasTRI) bannerHtml += '☣ Toxic release facility nearby &nbsp;';
+                    bannerHtml += '<br>EPA contamination sites, toxic chemicals &amp; radon zones may affect your well water.</div>';
+                } else {
+                    bannerHtml += '<div class="scb-title">⚠️ Potential contamination in this area</div>';
+                    bannerHtml += '<div class="scb-detail">EPA contamination, Superfund sites &amp; toxic release facilities may be nearby. Radon and water quality risks have not been checked.</div>';
+                }
+                bannerHtml += '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" class="scb-cta">🔓 Check Environmental Safety — from $19 →</a>';
+                bannerHtml += '</div>';
+                alertEl.innerHTML = bannerHtml;
+
+                // Populate card badges
+                document.querySelectorAll('.well-contam-badge').forEach((badge, i) => {
+                    badge.innerHTML = '⚠️ Potential contamination nearby';
+                    badge.classList.add('active');
+                    badge.onclick = function(e) { e.stopPropagation(); showPaywallOverlay(); };
+                });
+            } else {
+                // Paid users: show real data
+                if (allSites.length > 0) {
+                    const hasSF = allSites.some(s => s.superfund);
+                    const hasTRI = allSites.some(s => s.tri);
+                    let bannerHtml = '<div class="search-contam-banner">';
+                    bannerHtml += '<div class="scb-title">⚠️ ' + allSites.length + ' hazard site' + (allSites.length > 1 ? 's' : '') + ' within ~3.5 mi</div>';
+                    bannerHtml += '<div class="scb-detail">';
+                    allSites.slice(0, 5).forEach(s => {
+                        bannerHtml += s.name + ' — ' + s.distance.toFixed(1) + ' mi <span style="color:#94a3b8;font-size:10px;">(' + s.label + ')</span><br>';
+                    });
+                    if (allSites.length > 5) bannerHtml += '<span style="color:#94a3b8;">+ ' + (allSites.length - 5) + ' more...</span>';
+                    bannerHtml += '</div></div>';
+                    alertEl.innerHTML = bannerHtml;
+
+                    // Populate card badges with per-well nearest hazard
+                    document.querySelectorAll('.well-contam-badge').forEach((badge, i) => {
+                        if (allSites.length > 0) {
+                            const nearest = allSites[0];
+                            badge.innerHTML = '⚠️ Nearest: ' + nearest.name + ' (' + nearest.distance.toFixed(1) + ' mi)';
+                            badge.classList.add('active');
+                            badge.style.cursor = 'default';
+                        }
+                    });
+                } else {
+                    alertEl.innerHTML = '<div style="background:rgba(0,230,118,0.06);border:1px solid rgba(0,230,118,0.15);border-radius:10px;padding:10px 14px;margin-top:12px;color:#00c853;font-size:12.5px;">✓ No EPA contamination, Superfund, or toxic release sites found within 3.5 miles</div>';
+                }
+            }
+        }
+
         function displayResults(wells, centerLat, centerLon) {
             document.getElementById('results').style.display = 'grid';
             
@@ -4893,9 +5045,13 @@
                             </div>
                         </div>
                     </div>
+                    <div id="search-contam-alert"></div>
                 </div>
             `;
             
+            // Async fetch contamination data for this search area
+            fetchSearchContamination(centerLat, centerLon, _free);
+
             // Display well cards
             const wellsHtml = wells.slice(0, 25).map((well, index) => {
                 // Add marker to map
@@ -4951,6 +5107,7 @@
                             <span class="well-permit">Permit: ${well.permit}</span>
                             <span class="well-distance">${well.distance.toFixed(2)} mi</span>
                         </div>
+                        <div class="well-contam-badge" id="wc-badge-${index}"></div>
                         <div class="well-stats">
                             <div class="well-stat">
                                 <div class="well-stat-label">Total Depth</div>
