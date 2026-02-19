@@ -3629,13 +3629,13 @@
                 // Depth — blurred tease for free users
                 let depthHtml;
                 if (!w.depth_total) depthHtml = '<span style="color:#94a3b8">Not recorded</span>';
-                else if (free) depthHtml = '<span class="wp-blur">' + w.depth_total + '</span> ft <a class="wp-unlock" href="#" onclick="showPaywallOverlay();return false;">unlock</a>';
+                else if (free) depthHtml = '<span class="wp-blur">' + w.depth_total + '</span> ft <a class="wp-unlock" href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();">unlock</a>';
                 else depthHtml = '<b>' + w.depth_total + ' ft</b>';
 
                 // SWL — blurred tease for free users
                 let swlHtml = '';
                 if (w.static_water_level) {
-                    if (free) swlHtml = '<div class="wp-row">Water Level: <span class="wp-blur">' + w.static_water_level + '</span> ft <a class="wp-unlock" href="#" onclick="showPaywallOverlay();return false;">unlock</a></div>';
+                    if (free) swlHtml = '<div class="wp-row">Water Level: <span class="wp-blur">' + w.static_water_level + '</span> ft <a class="wp-unlock" href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();">unlock</a></div>';
                     else swlHtml = '<div class="wp-row">Water Level: <b>' + w.static_water_level + ' ft</b></div>';
                 }
 
@@ -3650,7 +3650,7 @@
 
                 let unlockCTA = '';
                 if (free) {
-                    unlockCTA = '<div class="wp-divider"></div><div style="text-align:center;padding:4px 0;"><a href="#" onclick="showPaywallOverlay();return false;" style="color:#38bdf8;font-weight:700;font-size:13px;text-decoration:none;">Get a Well Report — from $19 →</a></div>';
+                    unlockCTA = '<div class="wp-divider"></div><div style="text-align:center;padding:4px 0;"><a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="color:#38bdf8;font-weight:700;font-size:13px;text-decoration:none;">Get a Well Report — from $19 →</a></div>';
                 }
 
                 m.bindPopup(
@@ -3895,6 +3895,11 @@
         }
         const isFreeUser = () => !hasPaidAccess();
         function showPaywallOverlay() {
+            // Close explore map if open so paywall is fully visible
+            const exploreEl = document.getElementById('explore-overlay');
+            if (exploreEl && exploreEl.classList.contains('open')) {
+                exploreEl.classList.remove('open');
+            }
             // Update messaging if they already used a free search
             const usedFreeSearch = getFreeSearchCount() > 0;
             if (usedFreeSearch) {
