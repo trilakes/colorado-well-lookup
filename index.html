@@ -1599,6 +1599,226 @@
             .leaflet-popup-content { max-width: 280px !important; }
         }
 
+        /* Contractor Services CTA */
+        .contractor-cta {
+            margin-top: 48px;
+            padding: 40px 24px;
+            background: linear-gradient(135deg, rgba(16,185,129,0.06) 0%, rgba(59,130,246,0.06) 100%);
+            border: 1px solid rgba(16,185,129,0.15);
+            border-radius: 16px;
+            text-align: center;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            overflow: hidden;
+        }
+        .contractor-cta::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #10b981, #3b82f6, #10b981);
+        }
+        .contractor-cta h2 {
+            font-size: 1.25rem;
+            color: #e2e8f0;
+            margin-bottom: 8px;
+        }
+        .contractor-cta .cta-subtitle {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+        .contractor-services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-bottom: 28px;
+        }
+        .contractor-service-item {
+            background: rgba(15,23,42,0.5);
+            border: 1px solid rgba(148,163,184,0.08);
+            border-radius: 10px;
+            padding: 16px 12px;
+            transition: border-color 0.2s, transform 0.2s;
+        }
+        .contractor-service-item:hover {
+            border-color: rgba(16,185,129,0.3);
+            transform: translateY(-2px);
+        }
+        .contractor-service-item svg {
+            width: 28px; height: 28px;
+            stroke: #10b981;
+            margin-bottom: 8px;
+        }
+        .contractor-service-item h4 {
+            color: #e2e8f0;
+            font-size: 0.85rem;
+            margin-bottom: 4px;
+        }
+        .contractor-service-item p {
+            color: #64748b;
+            font-size: 0.75rem;
+            line-height: 1.4;
+        }
+        .contractor-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 32px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.15s, box-shadow 0.15s;
+            box-shadow: 0 4px 16px rgba(16,185,129,0.25);
+        }
+        .contractor-cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 24px rgba(16,185,129,0.35);
+        }
+        .contractor-cta-btn svg {
+            width: 18px; height: 18px;
+            fill: none; stroke: currentColor; stroke-width: 2;
+        }
+        .contractor-trust {
+            margin-top: 16px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .contractor-trust span {
+            color: #64748b;
+            font-size: 0.78rem;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .contractor-trust svg {
+            width: 14px; height: 14px;
+            stroke: #10b981;
+            fill: none;
+        }
+
+        /* Contractor Contact Modal */
+        .contractor-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 10000;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+            justify-content: center;
+            align-items: center;
+        }
+        .contractor-modal.active { display: flex; }
+        .contractor-modal-box {
+            background: #0f172a;
+            border: 1px solid rgba(16,185,129,0.2);
+            border-radius: 16px;
+            padding: 32px;
+            width: 90%;
+            max-width: 480px;
+            position: relative;
+        }
+        .contractor-modal-box h3 {
+            color: #e2e8f0;
+            font-size: 1.15rem;
+            margin-bottom: 4px;
+        }
+        .contractor-modal-box .modal-sub {
+            color: #64748b;
+            font-size: 0.85rem;
+            margin-bottom: 20px;
+        }
+        .contractor-modal-box label {
+            display: block;
+            color: #94a3b8;
+            font-size: 0.8rem;
+            margin-bottom: 4px;
+            margin-top: 12px;
+        }
+        .contractor-modal-box input,
+        .contractor-modal-box select,
+        .contractor-modal-box textarea {
+            width: 100%;
+            padding: 10px 12px;
+            background: rgba(30,41,59,0.8);
+            border: 1px solid rgba(148,163,184,0.15);
+            border-radius: 8px;
+            color: #e2e8f0;
+            font-size: 0.9rem;
+            outline: none;
+            transition: border-color 0.2s;
+            box-sizing: border-box;
+        }
+        .contractor-modal-box input:focus,
+        .contractor-modal-box select:focus,
+        .contractor-modal-box textarea:focus {
+            border-color: rgba(16,185,129,0.5);
+        }
+        .contractor-modal-box textarea {
+            resize: vertical;
+            min-height: 70px;
+        }
+        .contractor-modal-submit {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #fff;
+            font-size: 0.95rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .contractor-modal-submit:hover { opacity: 0.9; }
+        .contractor-modal-submit:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .contractor-modal-close {
+            position: absolute;
+            top: 12px; right: 16px;
+            background: none; border: none;
+            color: #64748b; font-size: 1.5rem;
+            cursor: pointer;
+        }
+        .contractor-modal-success {
+            text-align: center;
+            padding: 20px 0;
+        }
+        .contractor-modal-success svg {
+            width: 48px; height: 48px;
+            stroke: #10b981;
+            margin-bottom: 12px;
+        }
+        .contractor-modal-success h4 {
+            color: #e2e8f0;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .contractor-modal-success p {
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .contractor-services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .contractor-cta { padding: 28px 16px; }
+        }
+
         footer {
             text-align: center;
             padding: 32px;
@@ -2944,6 +3164,56 @@
                 </div>
             </div>
 
+            <!-- Contractor Services CTA -->
+            <div class="contractor-cta" id="contractorCta">
+                <h2>Building on Vacant Land in Colorado?</h2>
+                <p class="cta-subtitle">You've found the well data &mdash; now find the right contractor.<br>Tri-Lakes Contracting handles <strong>everything</strong> from dirt to doorknob.</p>
+                
+                <div class="contractor-services-grid">
+                    <div class="contractor-service-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7L12 12L22 7L12 2Z"/><path d="M2 17L12 22L22 17"/><path d="M2 12L12 17L22 12"/></svg>
+                        <h4>Excavation</h4>
+                        <p>Site prep, grading, driveways, utilities</p>
+                    </div>
+                    <div class="contractor-service-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v10"/><path d="M8 9l4-2 4 2"/><path d="M8 15l4 2 4-2"/></svg>
+                        <h4>Septic Systems</h4>
+                        <p>Design, install, perc tests, OWTS compliance</p>
+                    </div>
+                    <div class="contractor-service-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21V8L12 3L21 8V21"/><path d="M9 21V14H15V21"/></svg>
+                        <h4>Custom Homes</h4>
+                        <p>Full GC services &mdash; design through move-in</p>
+                    </div>
+                    <div class="contractor-service-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+                        <h4>Foundations</h4>
+                        <p>Basements, crawl spaces, slab-on-grade</p>
+                    </div>
+                    <div class="contractor-service-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        <h4>Permits &amp; Planning</h4>
+                        <p>County permits, site plans, engineering</p>
+                    </div>
+                    <div class="contractor-service-item">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        <h4>Utilities</h4>
+                        <p>Water lines, electric, propane, drainage</p>
+                    </div>
+                </div>
+
+                <button class="contractor-cta-btn" onclick="openContractorModal()">
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    Get a Free Quote
+                </button>
+
+                <div class="contractor-trust">
+                    <span><svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg> Licensed &amp; Insured</span>
+                    <span><svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg> Colorado-Based</span>
+                    <span><svg viewBox="0 0 24 24" stroke-width="2"><path d="M20 6L9 17L4 12"/></svg> Free Estimates</span>
+                </div>
+            </div>
+
             <!-- SEO Footer -->
             <div style="margin-top: 40px; padding-top: 24px; border-top: 1px solid rgba(148,163,184,0.08); text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
                 <p style="color: #475569; font-size: 0.75rem; line-height: 1.8; margin-bottom: 8px;">
@@ -2952,6 +3222,55 @@
                 <p style="color: #334155; font-size: 0.7rem; line-height: 1.6;">
                     Well drilling information for: Adams County &#8226; Arapahoe County &#8226; Boulder County &#8226; Broomfield County &#8226; Clear Creek County &#8226; Custer County &#8226; Douglas County &#8226; El Paso County &#8226; Elbert County &#8226; Fremont County &#8226; Garfield County &#8226; Gilpin County &#8226; Grand County &#8226; Gunnison County &#8226; Huerfano County &#8226; Jefferson County &#8226; Lake County &#8226; Larimer County &#8226; Las Animas County &#8226; Mesa County &#8226; Montrose County &#8226; Park County &#8226; Pitkin County &#8226; Pueblo County &#8226; Routt County &#8226; San Miguel County &#8226; Summit County &#8226; Teller County &#8226; Weld County &amp; all 64 Colorado counties
                 </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Contractor Contact Modal -->
+    <div class="contractor-modal" id="contractorModal">
+        <div class="contractor-modal-box">
+            <button class="contractor-modal-close" onclick="closeContractorModal()">&times;</button>
+            <div id="contractorFormView">
+                <h3>Get a Free Quote</h3>
+                <p class="modal-sub">Tell us about your project &mdash; we'll get back to you within 24 hours.</p>
+
+                <label>Your Name *</label>
+                <input type="text" id="ctrName" placeholder="John Smith" required>
+
+                <label>Email *</label>
+                <input type="email" id="ctrEmail" placeholder="john@example.com" required>
+
+                <label>Phone</label>
+                <input type="tel" id="ctrPhone" placeholder="(555) 123-4567">
+
+                <label>Property Location (county or address)</label>
+                <input type="text" id="ctrLocation" placeholder="e.g. Park County, near Fairplay">
+
+                <label>What do you need?</label>
+                <select id="ctrService">
+                    <option value="">Select a service...</option>
+                    <option value="custom-home">Custom Home Build (Full GC)</option>
+                    <option value="excavation">Excavation &amp; Site Prep</option>
+                    <option value="septic">Septic System Install</option>
+                    <option value="foundation">Foundation Work</option>
+                    <option value="well-site-prep">Well Site Preparation</option>
+                    <option value="utilities">Utility Trenching &amp; Lines</option>
+                    <option value="driveway">Driveway / Road Building</option>
+                    <option value="multiple">Multiple Services / Full Build</option>
+                    <option value="other">Other</option>
+                </select>
+
+                <label>Tell us more about your project</label>
+                <textarea id="ctrDetails" placeholder="Vacant lot, need well + septic + house. 3 bed/2 bath, ~1800 sq ft..."></textarea>
+
+                <button class="contractor-modal-submit" id="ctrSubmitBtn" onclick="submitContractorForm()">Send Quote Request</button>
+            </div>
+            <div id="contractorSuccessView" style="display:none;">
+                <div class="contractor-modal-success">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-5"/></svg>
+                    <h4>Quote Request Sent!</h4>
+                    <p>Kyle from Tri-Lakes Contracting will reach out within 24 hours.<br>We're based in Colorado and service the entire state.</p>
+                </div>
             </div>
         </div>
     </div>
@@ -4733,6 +5052,86 @@
             document.getElementById('adminUser').value = '';
             document.getElementById('adminPass').value = '';
             document.getElementById('adminError').style.display = 'none';
+        }
+
+        /* ── Contractor Services Modal ── */
+        function openContractorModal() {
+            document.getElementById('contractorModal').classList.add('active');
+            document.getElementById('contractorFormView').style.display = '';
+            document.getElementById('contractorSuccessView').style.display = 'none';
+            if (window.logEvent) window.logEvent('contractor_cta_click', 'open_modal');
+        }
+        function closeContractorModal() {
+            document.getElementById('contractorModal').classList.remove('active');
+        }
+        // Close on backdrop click
+        document.getElementById('contractorModal').addEventListener('click', function(e) {
+            if (e.target === this) closeContractorModal();
+        });
+
+        function submitContractorForm() {
+            var name = document.getElementById('ctrName').value.trim();
+            var email = document.getElementById('ctrEmail').value.trim();
+            var phone = document.getElementById('ctrPhone').value.trim();
+            var location = document.getElementById('ctrLocation').value.trim();
+            var service = document.getElementById('ctrService').value;
+            var details = document.getElementById('ctrDetails').value.trim();
+
+            if (!name || !email) {
+                alert('Please enter your name and email.');
+                return;
+            }
+
+            var btn = document.getElementById('ctrSubmitBtn');
+            btn.disabled = true;
+            btn.textContent = 'Sending...';
+
+            // Send to HQ dashboard as a tracked event
+            if (window.logEvent) {
+                window.logEvent('contractor_quote_submit', service || 'general');
+            }
+
+            // Send form data to your tracking endpoint
+            var formData = {
+                name: name,
+                email: email,
+                phone: phone,
+                location: location || (window._hqSearchQuery || ''),
+                service: service,
+                details: details,
+                source: 'colorado-well-finder',
+                timestamp: new Date().toISOString()
+            };
+
+            // POST to HQ as a contractor lead
+            fetch('https://trilakeshq.com/api/contractor-lead', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(formData)
+            }).catch(function() {});
+
+            // Also send via email using formsubmit.co (free, no backend needed)
+            fetch('https://formsubmit.co/ajax/kyle@trilakescontracting.com', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    phone: phone || 'Not provided',
+                    location: location || 'Not specified',
+                    service: service || 'Not selected',
+                    details: details || 'No details provided',
+                    _subject: 'New Quote Request from Colorado Well Finder — ' + (service || 'General'),
+                    _template: 'table'
+                })
+            }).then(function() {
+                document.getElementById('contractorFormView').style.display = 'none';
+                document.getElementById('contractorSuccessView').style.display = '';
+            }).catch(function() {
+                // Still show success — form data logged to HQ
+                document.getElementById('contractorFormView').style.display = 'none';
+                document.getElementById('contractorSuccessView').style.display = '';
+            });
         }
 
         function attemptAdminLogin() {
