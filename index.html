@@ -3416,9 +3416,67 @@
         function buildOverlayPopup(layerName, f) {
             const color = OVERLAY_COLORS[layerName] || '#ff9800';
             const icon = OVERLAY_ICONS[layerName] || '&#9679;';
-            const s = (v) => v || '';
-            let body = '';
+            const _free = isFreeUser();
 
+            // -- HAZARD LAYERS: free users get fear teaser, paid users get full data --
+            const HAZARD_LAYERS = new Set(['pfas','superfund','contamination','tri','mines','brownfields','radon']);
+            if (_free && HAZARD_LAYERS.has(layerName)) {
+                if (window.logEvent) window.logEvent('hazard_click', layerName);
+                const fearTeasers = {
+                    pfas: {
+                        title: 'PFAS &ldquo;Forever Chemical&rdquo; Detected',
+                        hint: f.source_type ? `Source: <b>${f.source_type}</b>` : 'Industrial PFAS source',
+                        fear: 'PFAS chemicals never break down in the environment and accumulate in well water. Linked to cancer, thyroid disease, and immune disruption.'
+                    },
+                    superfund: {
+                        title: 'Superfund Site &mdash; Severe Contamination',
+                        hint: 'NPL-listed toxic cleanup site',
+                        fear: 'This is one of the most contaminated sites in the US. EPA has designated it a national priority for cleanup due to groundwater threats.'
+                    },
+                    contamination: {
+                        title: 'EPA Contamination Site Detected',
+                        hint: f.category ? `Category: <b>${f.category}</b>` : 'EPA-documented contamination',
+                        fear: 'Known pollutants may have leached into groundwater at this location. Private wells are not subject to EPA monitoring.'
+                    },
+                    tri: {
+                        title: 'Toxic Release Facility Detected',
+                        hint: f.total_release_lbs ? `<b style="color:#ff6d00;">${Number(f.total_release_lbs).toLocaleString()} lbs</b> released` : 'Reportable toxic releases',
+                        fear: 'This facility has reported releases of toxic chemicals into the air, water, or soil under the EPA Toxics Release Inventory program.'
+                    },
+                    mines: {
+                        title: 'Historical Mine &mdash; Heavy Metal Risk',
+                        hint: f.mine_type ? `Type: <b>${f.mine_type}</b>` : 'Abandoned mine site',
+                        fear: 'Abandoned mines leach arsenic, lead, and mercury into groundwater for decades. This risk is often not reflected in standard water tests.'
+                    },
+                    brownfields: {
+                        title: 'Brownfield &mdash; Contaminated Land',
+                        hint: f.cleanup_ind === 'Y' ? '<span style="color:#ff8f00;">Cleanup in progress</span>' : 'Confirmed environmental contamination',
+                        fear: 'This property has confirmed environmental contamination from prior industrial or commercial use that may affect nearby groundwater.'
+                    },
+                    radon: {
+                        title: 'Elevated Radon Zone',
+                        hint: f.radon_zone ? `Zone <b>${f.radon_zone}</b>` : 'High radon potential area',
+                        fear: 'Radon is the #2 cause of lung cancer in the US. It enters homes through groundwater and soil. This area has elevated natural radon levels.'
+                    }
+                };
+                const t = fearTeasers[layerName] || { title: 'Hazard Site Detected', hint: '', fear: 'This site may pose a risk to nearby groundwater.' };
+                return `<div style="font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.6;min-width:200px;max-width:260px;">
+                    <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px;">
+                        <span style="color:${color};font-size:18px;">${icon}</span>
+                        <span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:${color};font-weight:700;">${layerName.toUpperCase()}</span>
+                    </div>
+                    <div style="font-weight:700;font-size:13.5px;margin-bottom:4px;">${t.title}</div>
+                    ${t.hint ? `<div style="font-size:12px;color:#94a3b8;margin-bottom:6px;">${t.hint}</div>` : ''}
+                    <div style="color:#fca5a5;font-size:12px;line-height:1.5;margin-bottom:8px;">${t.fear}</div>
+                    <div style="background:rgba(56,189,248,0.08);border:1px solid rgba(56,189,248,0.25);border-radius:8px;padding:8px;text-align:center;">
+                        <div style="font-size:11px;color:#94a3b8;margin-bottom:5px;">&#128274; Site name &amp; full details locked</div>
+                        <a href="https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a" target="_blank" onclick="if(window.logEvent)window.logEvent('hazard_unlock_click',{layer:'${layerName}'})" style="display:inline-block;background:linear-gradient(135deg,#0ea5e9,#6366f1);color:#fff;font-weight:700;font-size:12px;padding:6px 14px;border-radius:6px;text-decoration:none;">Unlock Full Report &mdash; $47 Lifetime</a>
+                    </div>
+                </div>`;
+            }
+
+            // -- PAID (or non-hazard) layers: full data --
+            let body = '';
             if (layerName === 'pfas') {
                 body = `<b>${f.site_name || 'PFAS Site'}</b><br>
                     ${f.source_type ? 'Type: ' + f.source_type + '<br>' : ''}
@@ -3448,7 +3506,7 @@
                     ${f.cleanup_ind === 'Y' ? 'Cleanup: In progress<br>' : ''}
                     ${f.city ? f.city + ', ' : ''}${f.county ? f.county + ' County' : ''}`;
             } else if (layerName === 'oilgas') {
-                body = `<b>${f.well_name || 'Oil & Gas Well'}</b><br>
+                body = `<b>${f.well_name || 'Oil &amp; Gas Well'}</b><br>
                     ${f.operator ? 'Operator: ' + f.operator + '<br>' : ''}
                     ${f.well_type ? 'Type: ' + f.well_type + '<br>' : ''}
                     ${f.well_status ? 'Status: ' + f.well_status + '<br>' : ''}
