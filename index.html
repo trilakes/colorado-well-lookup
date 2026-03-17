@@ -1370,13 +1370,98 @@
         }
         .explore-loading.show { display: block; }
 
+        /* -- Explore Layers Panel -- */
+        .explore-layers-btn {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 14px;
+            background: rgba(56,189,248,0.1);
+            border: 1px solid rgba(56,189,248,0.3);
+            border-radius: 8px;
+            color: #38bdf8;
+            font-size: 0.82rem;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.15s;
+            margin-right: 8px;
+        }
+        .explore-layers-btn:hover, .explore-layers-btn.active {
+            background: rgba(56,189,248,0.2);
+            border-color: rgba(56,189,248,0.55);
+        }
+        .explore-layers-btn svg { width: 15px; height: 15px; }
+
+        .explore-layers-panel {
+            position: absolute;
+            top: 58px;
+            left: 12px;
+            width: 240px;
+            background: rgba(13,20,36,0.97);
+            border: 1px solid rgba(56,189,248,0.2);
+            border-radius: 12px;
+            z-index: 10;
+            padding: 12px 14px;
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+            display: none;
+        }
+        .explore-layers-panel.open { display: block; }
+        .explore-layers-panel h4 {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: #64748b;
+            margin: 0 0 10px;
+        }
+        .layer-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 7px 8px;
+            border-radius: 7px;
+            cursor: pointer;
+            transition: background 0.15s;
+            margin-bottom: 2px;
+        }
+        .layer-item:hover { background: rgba(56,189,248,0.07); }
+        .layer-item input[type=checkbox] { display: none; }
+        .layer-check {
+            width: 16px; height: 16px;
+            border-radius: 4px;
+            border: 2px solid;
+            flex-shrink: 0;
+            display: flex; align-items: center; justify-content: center;
+            transition: all 0.15s;
+        }
+        .layer-check svg { width: 10px; height: 10px; display: none; }
+        .layer-item.checked .layer-check svg { display: block; }
+        .layer-item.checked .layer-check { background: currentColor; }
+        .layer-dot {
+            width: 10px; height: 10px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .layer-label { font-size: 0.82rem; color: #cbd5e1; line-height: 1.3; }
+        .layers-section-title {
+            font-size: 0.68rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #475569;
+            margin: 10px 0 4px 8px;
+        }
+
         @media (max-width: 600px) {
             .explore-bar { padding: 10px 12px; }
             .explore-bar-title { font-size: 0.9rem; }
             .explore-close { padding: 7px 10px; font-size: 0.78rem; }
+            .explore-layers-btn { padding: 6px 10px; font-size: 0.75rem; }
             .explore-legend { top: 62px; right: 8px; padding: 8px 10px; font-size: 0.7rem; }
             .explore-counter { top: 62px; left: 8px; padding: 6px 10px; font-size: 0.78rem; }
             .explore-msg { bottom: 16px; font-size: 0.8rem; padding: 8px 16px; }
+            .explore-layers-panel { width: 210px; }
         }
 
         footer {
@@ -2861,20 +2946,117 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M3 15h18"/><path d="M9 3v18"/><path d="M15 3v18"/></svg>
                 Explore Colorado Wells
             </div>
-            <button class="explore-close" onclick="closeExploreMap()">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
-                Close
-            </button>
+            <div style="display:flex;align-items:center;gap:6px;">
+                <button class="explore-layers-btn" id="layersPanelBtn" onclick="toggleLayersPanel()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                    Layers
+                </button>
+                <button class="explore-close" onclick="closeExploreMap()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18"/><path d="M6 6l12 12"/></svg>
+                    Close
+                </button>
+            </div>
         </div>
+
+        <!-- Layer toggle panel -->
+        <div class="explore-layers-panel" id="layersPanel">
+            <h4>Map Layers</h4>
+            <div class="layers-section-title">Wells</div>
+            <label class="layer-item checked" id="layer-toggle-wells" onclick="toggleExploreLayer('wells', this)">
+                <input type="checkbox" checked>
+                <div class="layer-check" style="color:#00e676; border-color:#00e676;">
+                    <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="layer-dot" style="background:#00e676;"></div>
+                <span class="layer-label">Water Wells</span>
+            </label>
+
+            <div class="layers-section-title">Contamination</div>
+            <label class="layer-item" id="layer-toggle-pfas" onclick="toggleExploreLayer('pfas', this)">
+                <input type="checkbox">
+                <div class="layer-check" style="color:#ff1744; border-color:#ff1744;">
+                    <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="layer-dot" style="background:#ff1744;"></div>
+                <span class="layer-label">PFAS Sites</span>
+            </label>
+            <label class="layer-item" id="layer-toggle-superfund" onclick="toggleExploreLayer('superfund', this)">
+                <input type="checkbox">
+                <div class="layer-check" style="color:#b71c1c; border-color:#b71c1c;">
+                    <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="layer-dot" style="background:#b71c1c;"></div>
+                <span class="layer-label">Superfund Sites</span>
+            </label>
+            <label class="layer-item" id="layer-toggle-contamination" onclick="toggleExploreLayer('contamination', this)">
+                <input type="checkbox">
+                <div class="layer-check" style="color:#e53935; border-color:#e53935;">
+                    <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="layer-dot" style="background:#e53935;"></div>
+                <span class="layer-label">EPA Contamination</span>
+            </label>
+            <label class="layer-item" id="layer-toggle-tri" onclick="toggleExploreLayer('tri', this)">
+                <input type="checkbox">
+                <div class="layer-check" style="color:#ff6d00; border-color:#ff6d00;">
+                    <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="layer-dot" style="background:#ff6d00;"></div>
+                <span class="layer-label">Toxic Release (TRI)</span>
+            </label>
+            <label class="layer-item" id="layer-toggle-mines" onclick="toggleExploreLayer('mines', this)">
+                <input type="checkbox">
+                <div class="layer-check" style="color:#ff8f00; border-color:#ff8f00;">
+                    <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="layer-dot" style="background:#ff8f00;"></div>
+                <span class="layer-label">Mine Sites</span>
+            </label>
+            <label class="layer-item" id="layer-toggle-brownfields" onclick="toggleExploreLayer('brownfields', this)">
+                <input type="checkbox">
+                <div class="layer-check" style="color:#8d6e63; border-color:#8d6e63;">
+                    <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="layer-dot" style="background:#8d6e63;"></div>
+                <span class="layer-label">Brownfields</span>
+            </label>
+
+            <div class="layers-section-title">Water &amp; Environment</div>
+            <label class="layer-item" id="layer-toggle-oilgas" onclick="toggleExploreLayer('oilgas', this)">
+                <input type="checkbox">
+                <div class="layer-check" style="color:#7e57c2; border-color:#7e57c2;">
+                    <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="layer-dot" style="background:#7e57c2;"></div>
+                <span class="layer-label">Oil &amp; Gas Wells</span>
+            </label>
+            <label class="layer-item" id="layer-toggle-radon" onclick="toggleExploreLayer('radon', this)">
+                <input type="checkbox">
+                <div class="layer-check" style="color:#fdd835; border-color:#fdd835;">
+                    <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="layer-dot" style="background:#fdd835;"></div>
+                <span class="layer-label">Radon Zones</span>
+            </label>
+            <label class="layer-item" id="layer-toggle-dams" onclick="toggleExploreLayer('dams', this)">
+                <input type="checkbox">
+                <div class="layer-check" style="color:#29b6f6; border-color:#29b6f6;">
+                    <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+                </div>
+                <div class="layer-dot" style="background:#29b6f6;"></div>
+                <span class="layer-label">Dams &amp; Reservoirs</span>
+            </label>
+        </div>
+
         <div id="explore-map"></div>
-        <div class="explore-legend">
-            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#00e676"></div> Shallow</div>
-            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ffeb3b"></div> Medium</div>
-            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ff5722"></div> Deep</div>
+        <div class="explore-legend" id="explore-legend">
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#00e676"></div> Shallow well</div>
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ffeb3b"></div> Medium well</div>
+            <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ff5722"></div> Deep well</div>
             <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#90a4ae"></div> Depth unknown</div>
         </div>
         <div class="explore-counter" id="explore-counter"></div>
-        <div class="explore-loading" id="explore-loading">Loading wells&hellip;</div>
+        <div class="explore-loading" id="explore-loading">Loading&hellip;</div>
         <div class="explore-msg" id="explore-msg">Zoom in to see wells</div>
     </div>
 
@@ -2977,10 +3159,14 @@
                 msg.classList.remove('hidden');
                 clearExploreMarkers();
                 document.getElementById('explore-counter').textContent = '';
+                activeOverlayLayers.forEach(lyr => clearOverlayLayer(lyr));
                 return;
             }
             msg.classList.add('hidden');
-            exploreLoadTimeout = setTimeout(loadExploreWells, 400);
+            exploreLoadTimeout = setTimeout(() => {
+                loadExploreWells();
+                reloadActiveOverlays();
+            }, 400);
         }
 
         // Colorado has 7 water divisions -- the DWR API requires one.
@@ -3117,6 +3303,210 @@
         function clearExploreMarkers() {
             exploreMarkers.forEach(m => exploreMap.removeLayer(m));
             exploreMarkers = [];
+        }
+
+        /* ========== Overlay / Environmental Layers ========== */
+        const OVERLAY_COLORS = {
+            pfas:          '#ff1744',
+            superfund:     '#b71c1c',
+            contamination: '#e53935',
+            tri:           '#ff6d00',
+            mines:         '#ff8f00',
+            brownfields:   '#8d6e63',
+            oilgas:        '#7e57c2',
+            radon:         '#fdd835',
+            dams:          '#29b6f6',
+        };
+        const OVERLAY_ICONS = {
+            pfas:          '&#9888;',
+            superfund:     '&#9762;',
+            contamination: '&#9888;',
+            tri:           '&#9762;',
+            mines:         '&#9874;',
+            brownfields:   '&#9940;',
+            oilgas:        '&#128167;',
+            radon:         '&#9762;',
+            dams:          '&#127754;',
+        };
+
+        // active overlay layers state: layerName -> Array of Leaflet markers
+        let overlayMarkers = {};
+        // which layers are currently enabled
+        let activeOverlayLayers = new Set();
+
+        function toggleLayersPanel() {
+            const panel = document.getElementById('layersPanel');
+            const btn = document.getElementById('layersPanelBtn');
+            panel.classList.toggle('open');
+            btn.classList.toggle('active');
+        }
+
+        function toggleExploreLayer(layerName, labelEl) {
+            if (layerName === 'wells') {
+                // Toggle well visibility
+                const isNowChecked = !labelEl.classList.contains('checked');
+                labelEl.classList.toggle('checked', isNowChecked);
+                exploreMarkers.forEach(m => {
+                    if (isNowChecked) exploreMap.addLayer(m);
+                    else exploreMap.removeLayer(m);
+                });
+                return;
+            }
+
+            const isNowChecked = !labelEl.classList.contains('checked');
+            labelEl.classList.toggle('checked', isNowChecked);
+
+            if (isNowChecked) {
+                activeOverlayLayers.add(layerName);
+                loadOverlayLayer(layerName);
+            } else {
+                activeOverlayLayers.delete(layerName);
+                clearOverlayLayer(layerName);
+                updateExploreLegend();
+            }
+        }
+
+        async function loadOverlayLayer(layerName) {
+            if (!exploreMap) return;
+            clearOverlayLayer(layerName); // clear stale markers first
+
+            const bounds = exploreMap.getBounds();
+            const sw = bounds.getSouthWest();
+            const ne = bounds.getNorthEast();
+            const minLat = Math.min(sw.lat, ne.lat).toFixed(5);
+            const maxLat = Math.max(sw.lat, ne.lat).toFixed(5);
+            const minLng = Math.min(sw.lng, ne.lng).toFixed(5);
+            const maxLng = Math.max(sw.lng, ne.lng).toFixed(5);
+
+            try {
+                const url = `${WELLS_API}/api/overlay/${layerName}/bbox?minLat=${minLat}&maxLat=${maxLat}&minLng=${minLng}&maxLng=${maxLng}&limit=2000`;
+                const r = await fetch(url);
+                if (!r.ok) return;
+                const data = await r.json();
+                const features = data.features || [];
+
+                overlayMarkers[layerName] = [];
+                const color = OVERLAY_COLORS[layerName] || '#ff9800';
+                const zoom = exploreMap.getZoom();
+                const radius = zoom < 9 ? 5 : zoom < 12 ? 7 : 9;
+
+                features.forEach(f => {
+                    const lat = parseFloat(f.latitude || f.lat || f.center_lat);
+                    const lng = parseFloat(f.longitude || f.lng || f.lon || f.center_lng);
+                    if (!lat || !lng || isNaN(lat) || isNaN(lng)) return;
+
+                    const m = L.circleMarker([lat, lng], {
+                        radius,
+                        fillColor: color,
+                        color: '#fff',
+                        weight: 1.5,
+                        opacity: 1,
+                        fillOpacity: 0.9
+                    }).addTo(exploreMap);
+
+                    m.bindPopup(buildOverlayPopup(layerName, f), { maxWidth: 280 });
+                    overlayMarkers[layerName].push(m);
+                });
+
+                updateExploreLegend();
+            } catch(e) {
+                console.warn(`Overlay layer ${layerName} error:`, e);
+            }
+        }
+
+        function clearOverlayLayer(layerName) {
+            if (overlayMarkers[layerName]) {
+                overlayMarkers[layerName].forEach(m => exploreMap.removeLayer(m));
+                delete overlayMarkers[layerName];
+            }
+        }
+
+        function buildOverlayPopup(layerName, f) {
+            const color = OVERLAY_COLORS[layerName] || '#ff9800';
+            const icon = OVERLAY_ICONS[layerName] || '&#9679;';
+            const s = (v) => v || '';
+            let body = '';
+
+            if (layerName === 'pfas') {
+                body = `<b>${f.site_name || 'PFAS Site'}</b><br>
+                    ${f.source_type ? 'Type: ' + f.source_type + '<br>' : ''}
+                    ${f.contaminant ? 'Contaminant: ' + f.contaminant + '<br>' : ''}
+                    ${f.city ? f.city + ', ' : ''}${f.county ? f.county + ' County' : ''}`;
+            } else if (layerName === 'superfund') {
+                body = `<b>${f.site_name || 'Superfund Site'}</b><br>
+                    ${f.npl_status ? 'Status: ' + f.npl_status + '<br>' : ''}
+                    ${f.county ? f.county + ' County' : ''}`;
+            } else if (layerName === 'contamination') {
+                body = `<b>${f.site_name || 'EPA Site'}</b><br>
+                    ${f.category ? 'Category: ' + f.category + '<br>' : ''}
+                    ${f.npl_status ? 'NPL Status: ' + f.npl_status + '<br>' : ''}
+                    ${f.county ? f.county + ' County' : ''}`;
+            } else if (layerName === 'tri') {
+                body = `<b>${f.facility_name || 'TRI Facility'}</b><br>
+                    ${f.parent_company ? 'Company: ' + f.parent_company + '<br>' : ''}
+                    ${f.total_release_lbs ? 'Total releases: ' + Number(f.total_release_lbs).toLocaleString() + ' lbs<br>' : ''}
+                    ${f.chemicals ? 'Chemicals: ' + f.chemicals + '<br>' : ''}
+                    ${f.city ? f.city + ', ' : ''}${f.county ? f.county + ' County' : ''}`;
+            } else if (layerName === 'mines') {
+                body = `<b>${f.site_name || 'Mine Site'}</b><br>
+                    ${f.mine_type ? 'Type: ' + f.mine_type + '<br>' : ''}
+                    ${f.county ? f.county + ' County' : ''}`;
+            } else if (layerName === 'brownfields') {
+                body = `<b>${f.site_name || 'Brownfield Site'}</b><br>
+                    ${f.cleanup_ind === 'Y' ? 'Cleanup: In progress<br>' : ''}
+                    ${f.city ? f.city + ', ' : ''}${f.county ? f.county + ' County' : ''}`;
+            } else if (layerName === 'oilgas') {
+                body = `<b>${f.well_name || 'Oil & Gas Well'}</b><br>
+                    ${f.operator ? 'Operator: ' + f.operator + '<br>' : ''}
+                    ${f.well_type ? 'Type: ' + f.well_type + '<br>' : ''}
+                    ${f.well_status ? 'Status: ' + f.well_status + '<br>' : ''}
+                    ${f.depth ? 'Depth: ' + f.depth + ' ft<br>' : ''}
+                    ${f.county ? f.county + ' County' : ''}`;
+            } else if (layerName === 'radon') {
+                body = `<b>${f.county ? f.county + ' County' : 'Radon Zone'}</b><br>
+                    ${f.radon_zone ? 'Zone: ' + f.radon_zone + '<br>' : ''}
+                    ${f.predicted_level ? 'Predicted: ' + f.predicted_level + '<br>' : ''}
+                    ${f.risk_level ? 'Risk: <b style="color:' + (f.risk_level === 'High' ? '#ff1744' : f.risk_level === 'Medium' ? '#ff8f00' : '#4caf50') + ';">' + f.risk_level + '</b>' : ''}`;
+            } else if (layerName === 'dams') {
+                body = `<b>${f.dam_name || 'Dam'}</b><br>
+                    ${f.river ? 'River: ' + f.river + '<br>' : ''}
+                    ${f.dam_height_ft ? 'Height: ' + f.dam_height_ft + ' ft<br>' : ''}
+                    ${f.hazard_potential ? 'Hazard: <b>' + f.hazard_potential + '</b><br>' : ''}
+                    ${f.county ? f.county + ' County' : ''}`;
+            }
+
+            return `<div style="font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.6;min-width:180px;">
+                <div style="display:flex;align-items:center;gap:6px;margin-bottom:4px;">
+                    <span style="color:${color};font-size:16px;">${icon}</span>
+                    <span style="font-size:0.7rem;text-transform:uppercase;letter-spacing:0.06em;color:${color};font-weight:700;">${layerName.toUpperCase()}</span>
+                </div>
+                ${body}
+            </div>`;
+        }
+
+        function updateExploreLegend() {
+            const legend = document.getElementById('explore-legend');
+            let html = `
+                <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#00e676"></div> Shallow well</div>
+                <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ffeb3b"></div> Medium well</div>
+                <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#ff5722"></div> Deep well</div>
+                <div class="explore-legend-row"><div class="explore-legend-dot" style="background:#90a4ae"></div> Depth unknown</div>
+            `;
+            activeOverlayLayers.forEach(lyr => {
+                const color = OVERLAY_COLORS[lyr] || '#ff9800';
+                const label = {
+                    pfas:'PFAS Sites', superfund:'Superfund', contamination:'EPA Contamination',
+                    tri:'Toxic Release', mines:'Mine Sites', brownfields:'Brownfields',
+                    oilgas:'Oil & Gas', radon:'Radon Zones', dams:'Dams'
+                }[lyr] || lyr;
+                html += `<div class="explore-legend-row"><div class="explore-legend-dot" style="background:${color};border-color:rgba(255,255,255,0.6);"></div> ${label}</div>`;
+            });
+            legend.innerHTML = html;
+        }
+
+        // Reload active overlay layers when the viewport moves
+        function reloadActiveOverlays() {
+            activeOverlayLayers.forEach(lyr => loadOverlayLayer(lyr));
         }
 
         // -- Feature card auto-carousel (mobile) --
