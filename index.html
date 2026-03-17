@@ -3774,6 +3774,14 @@
             if (hb) hb.classList.remove('show');
         }
 
+        // Re-open the layer panel every time the map is opened
+        const _origOpenExploreMap = openExploreMap;
+        openExploreMap = function() {
+            _origOpenExploreMap();
+            const panel = document.getElementById('layer-panel');
+            if (panel) panel.classList.add('open');
+        };
+
         const OVERLAY_MIN_ZOOM = 9; // Don't load hazard overlays until zoomed in enough
 
         // ── State-level contamination preview (lightweight canvas dots) ──
