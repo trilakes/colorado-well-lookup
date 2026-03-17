@@ -1401,11 +1401,13 @@
             background: rgba(13,20,36,0.97);
             border: 1px solid rgba(56,189,248,0.2);
             border-radius: 12px;
-            z-index: 10;
+            z-index: 9500;
             padding: 12px 14px;
             backdrop-filter: blur(12px);
             box-shadow: 0 8px 32px rgba(0,0,0,0.5);
             display: none;
+            max-height: calc(100vh - 80px);
+            overflow-y: auto;
         }
         .explore-layers-panel.open { display: block; }
         .explore-layers-panel h4 {
@@ -2962,90 +2964,80 @@
         <div class="explore-layers-panel" id="layersPanel">
             <h4>Map Layers</h4>
             <div class="layers-section-title">Wells</div>
-            <label class="layer-item checked" id="layer-toggle-wells" onclick="toggleExploreLayer('wells', this)">
-                <input type="checkbox" checked>
+            <div class="layer-item checked" id="layer-toggle-wells" onclick="toggleExploreLayer('wells', this)">
                 <div class="layer-check" style="color:#00e676; border-color:#00e676;">
                     <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
                 </div>
                 <div class="layer-dot" style="background:#00e676;"></div>
                 <span class="layer-label">Water Wells</span>
-            </label>
+            </div>
 
             <div class="layers-section-title">Contamination</div>
-            <label class="layer-item" id="layer-toggle-pfas" onclick="toggleExploreLayer('pfas', this)">
-                <input type="checkbox">
+            <div class="layer-item" id="layer-toggle-pfas" onclick="toggleExploreLayer('pfas', this)">
                 <div class="layer-check" style="color:#ff1744; border-color:#ff1744;">
                     <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
                 </div>
                 <div class="layer-dot" style="background:#ff1744;"></div>
                 <span class="layer-label">PFAS Sites</span>
-            </label>
-            <label class="layer-item" id="layer-toggle-superfund" onclick="toggleExploreLayer('superfund', this)">
-                <input type="checkbox">
+            </div>
+            <div class="layer-item" id="layer-toggle-superfund" onclick="toggleExploreLayer('superfund', this)">
                 <div class="layer-check" style="color:#b71c1c; border-color:#b71c1c;">
                     <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
                 </div>
                 <div class="layer-dot" style="background:#b71c1c;"></div>
                 <span class="layer-label">Superfund Sites</span>
-            </label>
-            <label class="layer-item" id="layer-toggle-contamination" onclick="toggleExploreLayer('contamination', this)">
-                <input type="checkbox">
+            </div>
+            <div class="layer-item" id="layer-toggle-contamination" onclick="toggleExploreLayer('contamination', this)">
                 <div class="layer-check" style="color:#e53935; border-color:#e53935;">
                     <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
                 </div>
                 <div class="layer-dot" style="background:#e53935;"></div>
                 <span class="layer-label">EPA Contamination</span>
-            </label>
-            <label class="layer-item" id="layer-toggle-tri" onclick="toggleExploreLayer('tri', this)">
-                <input type="checkbox">
+            </div>
+            <div class="layer-item" id="layer-toggle-tri" onclick="toggleExploreLayer('tri', this)">
                 <div class="layer-check" style="color:#ff6d00; border-color:#ff6d00;">
                     <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
                 </div>
                 <div class="layer-dot" style="background:#ff6d00;"></div>
                 <span class="layer-label">Toxic Release (TRI)</span>
-            </label>
-            <label class="layer-item" id="layer-toggle-mines" onclick="toggleExploreLayer('mines', this)">
-                <input type="checkbox">
+            </div>
+            <div class="layer-item" id="layer-toggle-mines" onclick="toggleExploreLayer('mines', this)">
                 <div class="layer-check" style="color:#ff8f00; border-color:#ff8f00;">
                     <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
                 </div>
                 <div class="layer-dot" style="background:#ff8f00;"></div>
                 <span class="layer-label">Mine Sites</span>
-            </label>
-            <label class="layer-item" id="layer-toggle-brownfields" onclick="toggleExploreLayer('brownfields', this)">
-                <input type="checkbox">
+            </div>
+            <div class="layer-item" id="layer-toggle-brownfields" onclick="toggleExploreLayer('brownfields', this)">
                 <div class="layer-check" style="color:#8d6e63; border-color:#8d6e63;">
                     <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
                 </div>
                 <div class="layer-dot" style="background:#8d6e63;"></div>
                 <span class="layer-label">Brownfields</span>
-            </label>
+            </div>
 
             <div class="layers-section-title">Water &amp; Environment</div>
-            <label class="layer-item" id="layer-toggle-oilgas" onclick="toggleExploreLayer('oilgas', this)">
-                <input type="checkbox">
+            <div class="layer-item" id="layer-toggle-oilgas" onclick="toggleExploreLayer('oilgas', this)">
                 <div class="layer-check" style="color:#7e57c2; border-color:#7e57c2;">
                     <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
                 </div>
                 <div class="layer-dot" style="background:#7e57c2;"></div>
                 <span class="layer-label">Oil &amp; Gas Wells</span>
-            </label>
-            <label class="layer-item" id="layer-toggle-radon" onclick="toggleExploreLayer('radon', this)">
-                <input type="checkbox">
+            </div>
+            <div class="layer-item" id="layer-toggle-radon" onclick="toggleExploreLayer('radon', this)">
                 <div class="layer-check" style="color:#fdd835; border-color:#fdd835;">
                     <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
                 </div>
                 <div class="layer-dot" style="background:#fdd835;"></div>
                 <span class="layer-label">Radon Zones</span>
-            </label>
-            <label class="layer-item" id="layer-toggle-dams" onclick="toggleExploreLayer('dams', this)">
-                <input type="checkbox">
+            </div>
+            <div class="layer-item" id="layer-toggle-dams" onclick="toggleExploreLayer('dams', this)">
                 <div class="layer-check" style="color:#29b6f6; border-color:#29b6f6;">
                     <svg viewBox="0 0 10 10" fill="currentColor"><polyline points="1,5 4,8 9,2" fill="none" stroke="currentColor" stroke-width="2"/></svg>
                 </div>
                 <div class="layer-dot" style="background:#29b6f6;"></div>
                 <span class="layer-label">Dams &amp; Reservoirs</span>
-            </label>
+            </div>
         </div>
 
         <div id="explore-map"></div>
