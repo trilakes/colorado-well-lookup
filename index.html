@@ -1563,6 +1563,50 @@
             text-decoration: none;
         }
 
+        /* Contamination alert banner */
+        .search-contam-banner {
+            background: rgba(239,68,68,0.08);
+            border: 1px solid rgba(239,68,68,0.3);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin-top: 12px;
+            margin-bottom: 4px;
+        }
+        .search-contam-banner .scb-title {
+            font-weight: 700;
+            font-size: 13.5px;
+            color: #fca5a5;
+            margin-bottom: 4px;
+        }
+        .search-contam-banner .scb-detail {
+            font-size: 12px;
+            color: #94a3b8;
+            line-height: 1.6;
+            margin-bottom: 8px;
+        }
+        .search-contam-banner .scb-cta {
+            font-size: 12px;
+            font-weight: 700;
+            color: #f87171;
+            text-decoration: none;
+            letter-spacing: 0.01em;
+        }
+        .search-contam-banner .scb-cta:hover { color: #ff5252; }
+        /* Per-well contamination badge */
+        .well-contam-badge {
+            font-size: 11.5px;
+            color: #94a3b8;
+            margin-top: 4px;
+            min-height: 0;
+            transition: color 0.2s;
+        }
+        .well-contam-badge.active {
+            color: #fca5a5;
+            cursor: pointer;
+            font-weight: 600;
+        }
+        .well-contam-badge.active:hover { color: #ff5252; }
+
         /* Paywall Styles */
         .paywall-overlay {
             position: fixed;
@@ -2936,6 +2980,7 @@
             <div class="wells-container" id="wells-container">
                 <h2>Nearby Wells <span class="scroll-hint" id="scroll-hint">&#8595; Scroll for more</span></h2>
                 <div id="summary"></div>
+                <div id="search-contam-alert"></div>
                 <div id="wells-list"></div>
             </div>
         </section>
@@ -4573,6 +4618,8 @@
                             </div>
                         </div>
 
+                        <div class="well-contam-badge" id="wc-badge-${index}"></div>
+
                         <div class="well-toggle" onclick="toggleWellDetails(this.closest('.well-card'))">
                             <span>View details</span>
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -4687,10 +4734,102 @@
                 document.getElementById('wells-list').insertAdjacentHTML('afterbegin', ctaHtml);
             }
             
+            // Async fetch contamination data for this search area
+            fetchSearchContamination(centerLat, centerLon, _free);
+
             // Fit map to show all markers
             if (markers.length > 1) {
                 const group = L.featureGroup(markers);
                 map.fitBounds(group.getBounds().pad(0.1));
+            }
+        }
+
+        async function fetchSearchContamination(lat, lng, isFree) {
+            const radius = 0.05; // ~3.5 mile bbox
+            const minLat = lat - radius, maxLat = lat + radius;
+            const minLng = lng - radius, maxLng = lng + radius;
+
+            const layers = ['contamination', 'superfund', 'tri', 'pfas', 'mines'];
+            const layerLabels = { contamination: 'EPA', superfund: 'Superfund', tri: 'TRI', pfas: 'PFAS', mines: 'Mine' };
+
+            const results = await Promise.allSettled(layers.map(layer =>
+                fetch(`${WELLS_API}/api/overlay/${layer}/bbox?minLat=${minLat}&maxLat=${maxLat}&minLng=${minLng}&maxLng=${maxLng}&limit=200`)
+                    .then(r => r.ok ? r.json() : { features: [] })
+            ));
+
+            let allSites = [];
+            results.forEach((r, i) => {
+                if (r.status === 'fulfilled' && r.value.features) {
+                    r.value.features.forEach(f => {
+                        const fLat = parseFloat(f.latitude || f.center_lat);
+                        const fLng = parseFloat(f.longitude || f.center_lng);
+                        if (!isNaN(fLat) && !isNaN(fLng)) {
+                            const d = Math.sqrt(Math.pow((fLat - lat) * 69, 2) + Math.pow((fLng - lng) * 54, 2));
+                            allSites.push({
+                                name: f.site_name || f.facility_name || f.name || 'Unknown Site',
+                                distance: d,
+                                layer: layers[i],
+                                label: layerLabels[layers[i]],
+                                superfund: layers[i] === 'superfund',
+                                tri: layers[i] === 'tri',
+                                pfas: layers[i] === 'pfas'
+                            });
+                        }
+                    });
+                }
+            });
+            allSites.sort((a, b) => a.distance - b.distance);
+
+            const alertEl = document.getElementById('search-contam-alert');
+            if (!alertEl) return;
+
+            if (isFree) {
+                // Free: always show scary warning, hide site names
+                let html = '<div class="search-contam-banner">';
+                if (allSites.length > 0) {
+                    const hasSF = allSites.some(s => s.superfund);
+                    const hasTRI = allSites.some(s => s.tri);
+                    const hasPFAS = allSites.some(s => s.pfas);
+                    html += `<div class="scb-title">&#9888;&#65039; ${allSites.length} potential hazard${allSites.length > 1 ? 's' : ''} detected near this property</div>`;
+                    html += '<div class="scb-detail">';
+                    if (hasSF) html += '&#9762; Superfund site in area &nbsp;';
+                    if (hasTRI) html += '&#9888; Toxic release facility nearby &nbsp;';
+                    if (hasPFAS) html += '&#128165; PFAS chemicals detected &nbsp;';
+                    html += '<br>EPA contamination sites, toxic chemicals &amp; radon zones may affect your well water.</div>';
+                } else {
+                    html += '<div class="scb-title">&#9888;&#65039; Environmental hazards may be present</div>';
+                    html += '<div class="scb-detail">EPA contamination, Superfund sites &amp; toxic release facilities may be nearby. Full scan requires unlock.</div>';
+                }
+                html += '<a href="https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a" target="_blank" class="scb-cta" onclick="if(window.logEvent)window.logEvent(\'hazard_banner_click\',\'free\')">&#128274; Check Environmental Safety &mdash; $47 Lifetime &rarr;</a>';
+                html += '</div>';
+                alertEl.innerHTML = html;
+
+                document.querySelectorAll('.well-contam-badge').forEach(badge => {
+                    badge.innerHTML = '&#9888;&#65039; Potential contamination nearby &mdash; <a href="https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a" target="_blank" style="color:#f87171;font-weight:700;">Unlock to identify</a>';
+                    badge.classList.add('active');
+                });
+            } else {
+                // Paid: show real site names and distances
+                if (allSites.length > 0) {
+                    let html = '<div class="search-contam-banner">';
+                    html += `<div class="scb-title">&#9888;&#65039; ${allSites.length} hazard site${allSites.length > 1 ? 's' : ''} within ~3.5 mi</div>`;
+                    html += '<div class="scb-detail">';
+                    allSites.slice(0, 5).forEach(s => {
+                        html += `${s.name} &mdash; ${s.distance.toFixed(1)} mi <span style="color:#94a3b8;font-size:10px;">(${s.label})</span><br>`;
+                    });
+                    if (allSites.length > 5) html += `<span style="color:#94a3b8;">+ ${allSites.length - 5} more...</span>`;
+                    html += '</div></div>';
+                    alertEl.innerHTML = html;
+
+                    const nearest = allSites[0];
+                    document.querySelectorAll('.well-contam-badge').forEach(badge => {
+                        badge.innerHTML = `&#9888;&#65039; Nearest: ${nearest.name} (${nearest.distance.toFixed(1)} mi)`;
+                        badge.classList.add('active');
+                        badge.style.cursor = 'default';
+                    });
+                } else {
+                    alertEl.innerHTML = '<div style="background:rgba(0,230,118,0.06);border:1px solid rgba(0,230,118,0.15);border-radius:10px;padding:10px 14px;margin-top:12px;color:#00c853;font-size:12.5px;">&#10004; No EPA contamination, Superfund, or toxic release sites found within 3.5 miles</div>';
+                }
             }
         }
 
