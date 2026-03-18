@@ -3313,13 +3313,13 @@
         </header>
 
         <!-- Already Purchased Banner — always visible, impossible to miss -->
-        <div id="already-paid-bar" style="background:linear-gradient(135deg,rgba(56,189,248,0.12),rgba(14,165,233,0.08)); border:1.5px solid rgba(56,189,248,0.35); border-radius:14px; padding:14px 18px; margin:0 auto 18px; max-width:680px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-            <span style="color:#94a3b8; font-size:0.92rem;">Already purchased?</span>
-            <div style="display:flex; gap:8px; flex:1; min-width:220px; max-width:400px;">
-                <input type="email" id="quick-verify-email" placeholder="your@email.com" onkeydown="if(event.key==='Enter')quickVerify()" style="flex:1; padding:9px 13px; border-radius:8px; border:1px solid rgba(56,189,248,0.4); background:rgba(15,23,42,0.9); color:#e2e8f0; font-size:0.92rem; outline:none;">
-                <button onclick="quickVerify()" style="padding:9px 18px; border-radius:8px; background:linear-gradient(135deg,#38bdf8,#0ea5e9); color:#0f172a; font-weight:700; font-size:0.92rem; border:none; cursor:pointer; white-space:nowrap;">Unlock &#x2192;</button>
+        <div id="already-paid-bar" style="background:linear-gradient(135deg,rgba(56,189,248,0.12),rgba(14,165,233,0.08)); border:1.5px solid rgba(56,189,248,0.35); border-radius:14px; padding:14px 18px; margin:0 auto 18px; max-width:680px; display:flex; flex-direction:column; gap:8px; box-sizing:border-box;">
+            <span style="color:#94a3b8; font-size:0.92rem;">Already purchased? Enter your email to unlock instantly.</span>
+            <div style="display:flex; gap:8px; width:100%; box-sizing:border-box;">
+                <input type="email" id="quick-verify-email" placeholder="your@email.com" onkeydown="if(event.key==='Enter')quickVerify()" style="flex:1; min-width:0; padding:9px 13px; border-radius:8px; border:1px solid rgba(56,189,248,0.4); background:rgba(15,23,42,0.9); color:#e2e8f0; font-size:0.92rem; outline:none; box-sizing:border-box;">
+                <button onclick="quickVerify()" style="flex-shrink:0; padding:9px 16px; border-radius:8px; background:linear-gradient(135deg,#38bdf8,#0ea5e9); color:#0f172a; font-weight:700; font-size:0.92rem; border:none; cursor:pointer; white-space:nowrap;">Unlock &#x2192;</button>
             </div>
-            <div id="quick-verify-status" style="width:100%; font-size:0.85rem; text-align:center; display:none;"></div>
+            <div id="quick-verify-status" style="font-size:0.85rem; text-align:center; display:none;"></div>
         </div>
 
         <section class="search-section">
