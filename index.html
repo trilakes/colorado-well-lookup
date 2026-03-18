@@ -56,17 +56,17 @@
         "offers": [
             {
                 "@type": "Offer",
-                "name": "Monthly Access",
+                "name": "Single Report",
                 "price": "19.00",
                 "priceCurrency": "USD",
-                "url": "https://buy.stripe.com/00w6oHehIg1J9r12zA6AM0b"
+                "url": "https://buy.stripe.com/6oU14m6lebZ1eht5Ir6Na04"
             },
             {
                 "@type": "Offer",
-                "name": "Lifetime Access",
-                "price": "47.00",
+                "name": "Unlimited Access",
+                "price": "49.00",
                 "priceCurrency": "USD",
-                "url": "https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a"
+                "url": "https://buy.stripe.com/dRm8wO3926EH8X9b2L6Na07"
             }
         ],
         "aggregateRating": {
@@ -2953,6 +2953,15 @@
         <div class="paywall-content">
             <!-- Back button (only visible after free search) -->
             <a href="#" id="paywall-back" onclick="document.getElementById('paywall').classList.add('hidden');return false;" style="display:none; position:sticky; top:0; z-index:10; color:#94a3b8; font-size:0.95rem; text-decoration:none; padding:12px 0 8px; text-align:left;">&larr; Continue with free preview</a>
+            <!-- Already purchased — shown at TOP so returning customers see it immediately -->
+            <div style="border:1px solid rgba(56,189,248,0.3); border-radius:12px; padding:14px 18px; margin-bottom:20px; background:rgba(56,189,248,0.06);">
+                <p style="margin:0 0 8px; color:#94a3b8; font-size:0.9rem; text-align:center;">Already purchased? Enter your email to unlock instantly.</p>
+                <div id="emailVerifyBox" style="display:flex; gap:8px; flex-wrap:wrap; justify-content:center;">
+                    <input type="email" id="verifyEmail" placeholder="your@email.com" onkeydown="if(event.key==='Enter') verifySubscription()" style="flex:1; min-width:200px; max-width:280px; padding:10px 14px; border-radius:8px; border:1px solid rgba(56,189,248,0.4); background:rgba(15,23,42,0.8); color:#e2e8f0; font-size:0.95rem;">
+                    <button onclick="verifySubscription()" style="padding:10px 20px; border-radius:8px; background:linear-gradient(135deg,#38bdf8,#0ea5e9); color:#0f172a; font-weight:700; font-size:0.95rem; border:none; cursor:pointer; white-space:nowrap;">Unlock Access</button>
+                </div>
+                <div class="verify-status" id="verifyStatus" style="margin-top:8px; text-align:center;"></div>
+            </div>
             <!-- Hero Section -->
             <h1 class="paywall-title">
                 <svg class="title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -3031,12 +3040,12 @@
             </div>
 
             <!-- Value line + Pricing (moved up for conversion) -->
-            <p style="text-align:center; color:#94a3b8; font-size:0.95rem; margin:24px 0 8px; font-style:italic;">One contaminated well costs $15,000+ to fix. One report costs $39.</p>
+            <p style="text-align:center; color:#94a3b8; font-size:0.95rem; margin:24px 0 8px; font-style:italic;">One contaminated well costs $15,000+ to fix. One report costs $19.</p>
 
             <div class="pricing-cards">
                 <div class="pricing-card hero">
                     <div class="pricing-name">Single Report</div>
-                    <div class="pricing-price">$39</div>
+                    <div class="pricing-price">$19</div>
                     <div class="pricing-period">one property</div>
                     <ul class="pricing-features">
                         <li>1 professional well report</li>
@@ -3046,7 +3055,7 @@
                         <li>Superfund &amp; toxic release alerts</li>
                         <li>PDF download</li>
                     </ul>
-                    <a href="#" class="pricing-btn secondary" id="paywall-single-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('single_click', '')">Get Report — $39</a>
+                    <a href="#" class="pricing-btn secondary" id="paywall-single-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('single_click', '')">Get Report — $19</a>
                 </div>
                 <div class="pricing-card hero best">
                     <div class="pricing-name">Unlimited</div>
@@ -3064,14 +3073,9 @@
                 </div>
             </div>
 
-            <!-- Email Verify Section -->
+            <!-- Manage account link -->
             <div class="already-subscribed">
-                <p>Already purchased? <a href="#" onclick="showEmailVerify(); return false;">Verify your email</a> &nbsp;|&nbsp; <a href="https://billing.stripe.com/p/login/5kQ14n4H8bLtav53DE6AM00" target="_blank">Manage account</a></p>
-            </div>
-            <div class="email-verify-box" id="emailVerifyBox" style="display:none;">
-                <input type="email" id="verifyEmail" placeholder="Enter your purchase email" onkeydown="if(event.key==='Enter') verifySubscription()">
-                <button onclick="verifySubscription()">Verify Access</button>
-                <div class="verify-status" id="verifyStatus"></div>
+                <p><a href="https://billing.stripe.com/p/login/5kQ14n4H8bLtav53DE6AM00" target="_blank">Manage account</a></p>
             </div>
 
             <!-- Problem/Solution -->
@@ -3307,6 +3311,16 @@
             <h1><svg style="width:36px;height:36px;vertical-align:middle;margin-right:12px;color:#38bdf8;filter:drop-shadow(0 0 8px rgba(56, 189, 248, 0.4));" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 6 8.5 6 13C6 16.5 8.5 20 12 20C15.5 20 18 16.5 18 13C18 8.5 12 2 12 2Z"/><path d="M12 16C13.5 16 15 14.5 15 13C15 11 12 8 12 8"/></svg>Colorado Well Finder</h1>
             <p>Check well depths, drilling costs & water contamination for any property</p>
         </header>
+
+        <!-- Already Purchased Banner — always visible, impossible to miss -->
+        <div id="already-paid-bar" style="background:linear-gradient(135deg,rgba(56,189,248,0.12),rgba(14,165,233,0.08)); border:1.5px solid rgba(56,189,248,0.35); border-radius:14px; padding:14px 18px; margin:0 auto 18px; max-width:680px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+            <span style="color:#94a3b8; font-size:0.92rem;">Already purchased?</span>
+            <div style="display:flex; gap:8px; flex:1; min-width:220px; max-width:400px;">
+                <input type="email" id="quick-verify-email" placeholder="your@email.com" onkeydown="if(event.key==='Enter')quickVerify()" style="flex:1; padding:9px 13px; border-radius:8px; border:1px solid rgba(56,189,248,0.4); background:rgba(15,23,42,0.9); color:#e2e8f0; font-size:0.92rem; outline:none;">
+                <button onclick="quickVerify()" style="padding:9px 18px; border-radius:8px; background:linear-gradient(135deg,#38bdf8,#0ea5e9); color:#0f172a; font-weight:700; font-size:0.92rem; border:none; cursor:pointer; white-space:nowrap;">Unlock &#x2192;</button>
+            </div>
+            <div id="quick-verify-status" style="width:100%; font-size:0.85rem; text-align:center; display:none;"></div>
+        </div>
 
         <section class="search-section">
             <div class="search-hook">
@@ -4945,9 +4959,9 @@
         }
         // Locked placeholder for depth/cost data (free users) — goes STRAIGHT to Stripe
         const LOCK_SVG = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>';
-        const STRIPE_SINGLE_BASE = 'https://buy.stripe.com/00w6oHehIg1J9r12zA6AM0b';
-        const STRIPE_UNLIMITED_BASE = 'https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a';
-        const STRIPE_LIFETIME_URL = 'https://buy.stripe.com/14AdR9ehIdTB0Uv0rs6AM0a';
+        const STRIPE_SINGLE_BASE = 'https://buy.stripe.com/6oU14m6lebZ1eht5Ir6Na04';       // CWF $19 single
+        const STRIPE_UNLIMITED_BASE = 'https://buy.stripe.com/dRm8wO3926EH8X9b2L6Na07'; // CWF $49 unlimited
+        const STRIPE_LIFETIME_URL = 'https://buy.stripe.com/dRm8wO3926EH8X9b2L6Na07';  // CWF $49 unlimited
 
         // Build Stripe Payment Link URL with tracking params
         function stripeURL(base, source) {
@@ -4993,7 +5007,7 @@
                     <p style="color:#94a3b8; margin:0 0 18px; font-size:0.9rem;">Get a personalized well report for any property — expected depth, estimated cost & hazard scan before you break ground.</p>
                     <div style="display:flex; flex-direction:column; gap:10px; max-width:320px; margin:0 auto;">
                         <a href="${getSingleURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('single_click_inline','')" style="display:block; background:linear-gradient(135deg,#38bdf8,#0ea5e9); color:#0f172a; font-weight:700; font-size:1.05rem; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center; min-height:52px; line-height:1.3;">
-                            Get 1 Report — $39
+                            Get 1 Report — $19
                         </a>
                         <a href="${getUnlimitedURL('inline_unlock')}" target="_blank" onclick="if(window.hqTrackConversion)window.hqTrackConversion('unlimited_click_inline','')" style="display:block; background:linear-gradient(135deg,#22c55e,#10b981); color:#052e16; font-weight:700; font-size:1.05rem; padding:16px 24px; border-radius:12px; text-decoration:none; text-align:center; min-height:52px; line-height:1.3;">
                             Go Unlimited — $49
@@ -5026,15 +5040,28 @@
                 return true;
             }
 
-            // Check Stripe redirect — user just paid, prompt for email to verify
+            // Check Stripe redirect — user just paid, auto-verify if email param present
             if (urlParams.get('access') === 'granted') {
                 window.history.replaceState({}, '', window.location.pathname);
-                // Show paywall with email verify pre-opened
-                setTimeout(() => {
-                    showEmailVerify();
-                    document.getElementById('verifyStatus').textContent = 'Payment received! Enter your email to activate access.';
-                    document.getElementById('verifyStatus').className = 'verify-status success';
-                }, 300);
+                const paidEmail = urlParams.get('email');
+                if (paidEmail && paidEmail.includes('@')) {
+                    // Auto-fill and auto-submit — user doesn't need to do anything
+                    setTimeout(async () => {
+                        document.getElementById('paywall').classList.remove('hidden');
+                        showEmailVerify();
+                        document.getElementById('verifyEmail').value = paidEmail;
+                        document.getElementById('verifyStatus').textContent = 'Activating your access...';
+                        document.getElementById('verifyStatus').className = 'verify-status loading';
+                        await verifySubscription();
+                    }, 300);
+                } else {
+                    // No email param — show prompt asking them to enter it
+                    setTimeout(() => {
+                        showEmailVerify();
+                        document.getElementById('verifyStatus').textContent = 'Payment received! Enter your email to activate access.';
+                        document.getElementById('verifyStatus').className = 'verify-status success';
+                    }, 300);
+                }
                 return false;
             }
 
@@ -5218,6 +5245,12 @@
         // Run access check immediately
         checkAccess();
 
+        // Hide the already-paid bar if user is already logged in
+        if (hasPaidAccess()) {
+            const bar = document.getElementById('already-paid-bar');
+            if (bar) bar.style.display = 'none';
+        }
+
         // Show persistent upgrade banner if free search used & not paid
         if (!hasPaidAccess() && getFreeSearchCount() >= FREE_SEARCH_LIMIT) {
             const banner = document.getElementById('upgrade-banner');
@@ -5232,12 +5265,57 @@
             if (unlimitedBtn) unlimitedBtn.href = getUnlimitedURL('paywall');
         })();
 
-        // Email verification functions
+        // Email verification functions — box is always visible now, just focus it
         function showEmailVerify() {
-            const box = document.getElementById('emailVerifyBox');
-            box.style.display = box.style.display === 'none' ? 'flex' : 'none';
-            if (box.style.display === 'flex') {
-                document.getElementById('verifyEmail').focus();
+            const input = document.getElementById('verifyEmail');
+            if (input) {
+                input.focus();
+                input.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+
+        // Quick-verify from the always-visible top bar
+        async function quickVerify() {
+            const emailInput = document.getElementById('quick-verify-email');
+            const statusDiv = document.getElementById('quick-verify-status');
+            const email = emailInput.value.trim();
+            if (!email || !email.includes('@')) {
+                statusDiv.textContent = 'Please enter a valid email.';
+                statusDiv.style.color = '#f87171';
+                statusDiv.style.display = 'block';
+                return;
+            }
+            statusDiv.textContent = 'Checking...';
+            statusDiv.style.color = '#94a3b8';
+            statusDiv.style.display = 'block';
+            // Reuse the same verifySubscription logic by pre-filling the paywall input
+            document.getElementById('verifyEmail').value = email;
+            try {
+                const response = await fetch('https://colorado-wells-api.onrender.com/api/verify', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email })
+                });
+                const data = await response.json();
+                if (data.valid) {
+                    const tier = data.tier || data.type || 'unlimited';
+                    localStorage.setItem('wellFinderEmail', email);
+                    localStorage.setItem('wellFinderAccessType', tier);
+                    localStorage.setItem('wellFinderVerifiedAt', Date.now().toString());
+                    localStorage.setItem('wellFinderReportsRemaining', data.reports_remaining !== undefined ? data.reports_remaining.toString() : tier === 'unlimited' ? '999999' : '1');
+                    if (window.hqTrackConversion) window.hqTrackConversion(tier, email);
+                    statusDiv.textContent = '✓ Access unlocked!';
+                    statusDiv.style.color = '#4ade80';
+                    document.getElementById('already-paid-bar').style.display = 'none';
+                    document.getElementById('paywall').classList.add('hidden');
+                    updateReportBadge();
+                } else {
+                    statusDiv.textContent = data.message || 'No purchase found for that email.';
+                    statusDiv.style.color = '#f87171';
+                }
+            } catch (e) {
+                statusDiv.textContent = 'Could not reach server. Try again.';
+                statusDiv.style.color = '#f87171';
             }
         }
 
@@ -6669,8 +6747,8 @@
             <div style="font-size:2.2rem;margin-bottom:10px;">⚠️</div>
             <h2 style="color:#ff1744;font-size:1.25rem;margin:0 0 8px;font-weight:800;">Wait — Did You See the Contamination?</h2>
             <p id="exit-intent-msg" style="color:#cbd5e1;font-size:0.95rem;line-height:1.6;margin:0 0 6px;">Properties in this area have EPA contamination sites, PFAS chemicals & mine runoff nearby that could affect your well water.</p>
-            <p style="color:#94a3b8;font-size:0.85rem;margin:0 0 18px;">A contaminated well costs $15,000+ to remediate. A report costs $39.</p>
-            <a href="javascript:void(0)" onclick="closeExitIntent();showPaywallOverlay();" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#ff1744,#d50000);color:#fff;font-weight:700;font-size:1rem;border-radius:10px;text-decoration:none;box-shadow:0 4px 20px rgba(255,23,68,0.4);">Check My Water Safety — $39</a>
+            <p style="color:#94a3b8;font-size:0.85rem;margin:0 0 18px;">A contaminated well costs $15,000+ to remediate. A report costs $19.</p>
+            <a href="javascript:void(0)" onclick="closeExitIntent();showPaywallOverlay();" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#ff1744,#d50000);color:#fff;font-weight:700;font-size:1rem;border-radius:10px;text-decoration:none;box-shadow:0 4px 20px rgba(255,23,68,0.4);">Check My Water Safety — $19</a>
             <div style="margin-top:12px;"><a href="javascript:void(0)" onclick="closeExitIntent()" style="color:#64748b;font-size:0.8rem;text-decoration:none;">I'll risk it</a></div>
         </div>
     </div>
