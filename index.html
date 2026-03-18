@@ -3765,6 +3765,7 @@
                 exploreMap.createPane('statePreviewPane');
                 exploreMap.getPane('statePreviewPane').style.zIndex = 250;
                 _canvasRenderer = L.canvas({ padding: 0.5, pane: 'statePreviewPane' });
+                _wellCanvasRenderer = L.canvas({ padding: 0.5, tolerance: 12 });
 
                 // Load wells on viewport change
                 exploreMap.on('moveend', onExploreMove);
@@ -3801,6 +3802,7 @@
         // ── State-level contamination preview (lightweight canvas dots) ──
         // Pane + renderer created lazily inside openExploreMap() when map exists
         let _canvasRenderer = null;
+        let _wellCanvasRenderer = null;
         let _statePreviewGroup = null;
         let _statePreviewLoaded = false;
         const CO_BBOX = { minLat: 36.99, maxLat: 41.01, minLng: -109.06, maxLng: -102.04 };
@@ -4628,6 +4630,7 @@
                 const z = exploreMap.getZoom();
                 const dotSize = z < 7 ? 2 : z < 9 ? 2.5 : z < 11 ? 3 : 4;
                 const m = L.circleMarker([w.latitude, w.longitude], {
+                    renderer: _wellCanvasRenderer,
                     radius: dotSize,
                     fillColor: color,
                     color: z < 9 ? color : '#fff',
@@ -6010,6 +6013,7 @@
             // Initialize or update map
             if (!map) {
                 map = L.map('map').setView([centerLat, centerLon], 14);
+                map._wellCanvas = L.canvas({ padding: 0.5, tolerance: 12 });
                 L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
                     attribution: 'ESRI World Imagery'
                 }).addTo(map);
@@ -6159,6 +6163,7 @@
                 const markerColor = depthClass === 'shallow' ? '#00e676' : depthClass === 'medium' ? '#ffeb3b' : '#ff5722';
                 
                 const marker = L.circleMarker([well.latitude, well.longitude], {
+                    renderer: map._wellCanvas,
                     radius: 5,
                     fillColor: markerColor,
                     color: '#fff',
