@@ -3700,6 +3700,7 @@
     <script>
         let map = null;
         let markers = [];
+        let searchHazardMarkers = []; // hazard markers on search results map
         let searchLat = null;
         let searchLon = null;
         let autocompleteTimeout = null;
@@ -5896,6 +5897,7 @@
             ));
 
             let allSites = [];
+            let allRawFeatures = []; // raw features with lat/lng for map markers
             const layerLabels = { contamination: 'EPA', superfund: 'Superfund', tri: 'TRI', brownfields: 'Brownfield', pfas: 'PFAS', mines: 'Mine' };
             results.forEach((r, i) => {
                 if (r.status === 'fulfilled' && r.value.features) {
@@ -5915,6 +5917,7 @@
                                 brownfield: layers[i] === 'brownfields',
                                 mines: layers[i] === 'mines'
                             });
+                            allRawFeatures.push({ _lat: fLat, _lng: fLng, _layer: layers[i], _distance: d, ...f });
                         }
                     });
                 }
@@ -6005,6 +6008,87 @@
                     alertEl.innerHTML = '<div style="background:rgba(0,230,118,0.06);border:1px solid rgba(0,230,118,0.15);border-radius:10px;padding:10px 14px;margin-top:12px;color:#00c853;font-size:12.5px;">✓ No EPA contamination, Superfund, PFAS, or mine sites found within 3.5 miles</div>';
                 }
             }
+
+            // ── Plot hazard markers on the search results map ──
+            plotSearchHazardMarkers(allRawFeatures, isFree);
+        }
+
+        function plotSearchHazardMarkers(features, isFree) {
+            if (!map || !features.length) return;
+            // Clear previous hazard markers
+            searchHazardMarkers.forEach(m => map.removeLayer(m));
+            searchHazardMarkers = [];
+
+            const hazardColors = {
+                contamination: '#ff1744', superfund: '#d50000', tri: '#ff6d00',
+                brownfields: '#ff6e40', pfas: '#e040fb', mines: '#8d6e63'
+            };
+            const hazardSymbols = {
+                contamination: '⚠', superfund: '☢', tri: '☣',
+                brownfields: '⚠', pfas: '☠', mines: '⛏'
+            };
+            const zoom = map.getZoom();
+            const sz = zoom < 10 ? 16 : zoom < 13 ? 20 : 24;
+
+            features.forEach(f => {
+                const layer = f._layer;
+                const color = hazardColors[layer] || '#ff1744';
+                const sym = hazardSymbols[layer] || '⚠';
+                const m = L.marker([f._lat, f._lng], {
+                    icon: L.divIcon({
+                        className: '',
+                        html: '<div style="display:flex;align-items:center;justify-content:center;width:' + sz + 'px;height:' + sz + 'px;border-radius:' + (layer === 'contamination' ? '3px' : '50%') + ';background:' + color + ';color:#fff;font-size:' + (sz * 0.65) + 'px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.5);border:1.5px solid rgba(255,255,255,0.7);">' + sym + '</div>',
+                        iconSize: [sz, sz],
+                        iconAnchor: [sz / 2, sz / 2]
+                    }),
+                    bubblingMouseEvents: false
+                }).addTo(map);
+
+                const popup = buildSearchHazardPopup(layer, f, isFree);
+                if (popup) m.bindPopup(popup, { maxWidth: 280 });
+                searchHazardMarkers.push(m);
+            });
+        }
+
+        function buildSearchHazardPopup(layer, f, isFree) {
+            const name = f.site_name || f.facility_name || f.name || 'Unknown';
+            const dist = f._distance ? f._distance.toFixed(1) + ' mi away' : '';
+            if (isFree) {
+                // Blurred / locked popup — show the layer type + fear teaser, hide specifics
+                const fearMap = {
+                    contamination: { icon: '⚠️', color: '#ff1744', title: 'EPA Contamination Site Detected', fear: 'Known pollutants may have leached into the groundwater feeding wells in this area.' },
+                    superfund: { icon: '☢️', color: '#d50000', title: 'Superfund Site — Severe Contamination', fear: 'This is one of the most contaminated sites in America. Toxic chemicals may have migrated into your aquifer.' },
+                    tri: { icon: '☣️', color: '#ff6d00', title: 'Toxic Release Facility Detected', fear: 'This facility has reported releasing toxic chemicals that can contaminate groundwater for decades.' },
+                    brownfields: { icon: '⚠️', color: '#ff6e40', title: 'Brownfield — Contaminated Land', fear: 'Industrial pollutants or heavy metals may be seeping into the water table beneath your land.' },
+                    pfas: { icon: '☠️', color: '#e040fb', title: 'PFAS "Forever Chemical" Detected', fear: 'PFAS chemicals never break down. They\'re linked to cancer, thyroid disease & immune disorders.' },
+                    mines: { icon: '⛏️', color: '#8d6e63', title: 'Historical Mine — Heavy Metal Risk', fear: 'Abandoned mines leach arsenic, lead & mercury into groundwater for centuries after closing.' }
+                };
+                const t = fearMap[layer] || fearMap.contamination;
+                // Show blurred name as teaser
+                const blurredName = name.length > 3 ? name.substring(0, 3) + '<span style="filter:blur(4px);user-select:none;">' + name.substring(3) + '</span>' : '<span style="filter:blur(4px);user-select:none;">' + name + '</span>';
+                return '<div style="font-family:Inter,system-ui,sans-serif;text-align:center;padding:8px 4px;min-width:220px;">'
+                    + '<div style="font-size:24px;margin-bottom:4px;">' + t.icon + '</div>'
+                    + '<div style="color:' + t.color + ';font-weight:800;font-size:14px;margin-bottom:4px;">' + t.title + '</div>'
+                    + '<div style="color:#cbd5e1;font-size:12px;margin-bottom:4px;">' + blurredName + (dist ? ' — ' + dist : '') + '</div>'
+                    + '<div style="background:rgba(255,23,68,0.08);border:1px solid rgba(255,23,68,0.2);border-radius:8px;padding:8px 10px;margin-bottom:10px;">'
+                    + '<div style="color:#fca5a5;font-size:11.5px;line-height:1.5;text-align:left;">' + t.fear + '</div>'
+                    + '</div>'
+                    + '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="display:inline-block;padding:8px 22px;background:linear-gradient(135deg,#ff1744,#d50000);color:#fff;font-size:12.5px;font-weight:700;border-radius:8px;text-decoration:none;box-shadow:0 2px 12px rgba(255,23,68,0.3);width:90%;box-sizing:border-box;">Unlock Full Site Details →</a>'
+                    + '</div>';
+            } else {
+                // Paid users — full details
+                const s = (label, val) => val ? '<br>' + label + ': <b>' + val + '</b>' : '';
+                const wrap = (inner) => '<div style="font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.5;min-width:160px;">' + inner + '</div>';
+                switch (layer) {
+                    case 'contamination': return wrap('<b style="color:#ff1744">⚠ ' + name + '</b>' + s('Category', f.category) + (f.superfund ? '<br><b style="color:#ff5252">⚠️ Superfund</b>' : '') + s('County', f.county) + (dist ? '<br><span style="color:#94a3b8;font-size:11px;">' + dist + '</span>' : ''));
+                    case 'superfund': return wrap('<b style="color:#d50000">☢ ' + name + '</b><br><span style="display:inline-block;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;background:#d50000;color:#fff">National Priorities List</span>' + s('Status', f.npl_status) + s('County', f.county) + (dist ? '<br><span style="color:#94a3b8;font-size:11px;">' + dist + '</span>' : ''));
+                    case 'tri': return wrap('<b style="color:#ff6d00">☣ ' + name + '</b>' + (f.closed ? '<br><span style="color:#66bb6a">Facility closed</span>' : '<br><b style="color:#ff6d00">Active</b>') + s('County', f.county) + (dist ? '<br><span style="color:#94a3b8;font-size:11px;">' + dist + '</span>' : ''));
+                    case 'brownfields': return wrap('<b style="color:#ff6e40">⚠ ' + name + '</b>' + (f.cleanup_ind === 'Y' ? '<br><span style="color:#ff6e40">Cleanup underway</span>' : '') + s('County', f.county) + (dist ? '<br><span style="color:#94a3b8;font-size:11px;">' + dist + '</span>' : ''));
+                    case 'pfas': return wrap('<b style="color:#e040fb">☠ ' + name + '</b>' + s('Source', f.source_type) + s('County', f.county) + (dist ? '<br><span style="color:#94a3b8;font-size:11px;">' + dist + '</span>' : ''));
+                    case 'mines': return wrap('<b style="color:#8d6e63">⛏ ' + name + '</b>' + s('Type', f.mine_type) + s('County', f.county) + (dist ? '<br><span style="color:#94a3b8;font-size:11px;">' + dist + '</span>' : ''));
+                    default: return wrap('<b>' + name + '</b>' + (dist ? '<br><span style="color:#94a3b8;font-size:11px;">' + dist + '</span>' : ''));
+                }
+            }
         }
 
         function displayResults(wells, centerLat, centerLon) {
@@ -6043,6 +6127,9 @@
             // Clear existing markers
             markers.forEach(m => map.removeLayer(m));
             markers = [];
+            // Clear hazard markers from previous search
+            searchHazardMarkers.forEach(m => map.removeLayer(m));
+            searchHazardMarkers = [];
             
             // Add search location marker
             const searchMarker = L.marker([centerLat, centerLon], {
