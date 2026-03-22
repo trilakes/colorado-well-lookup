@@ -3055,7 +3055,7 @@
                         <li>Superfund &amp; toxic release alerts</li>
                         <li>PDF download</li>
                     </ul>
-                    <a href="#" class="pricing-btn secondary" id="paywall-single-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('single_click', '')">Get Report — $19</a>
+                    <a href="#" class="pricing-btn secondary" id="paywall-single-btn" onclick="if(window.hqTrackConversion){window.hqTrackConversion('single_click','');window.hqTrackConversion('paywall_to_stripe','single')}">Get Report — $19</a>
                 </div>
                 <div class="pricing-card hero best">
                     <div class="pricing-name">Unlimited</div>
@@ -3069,7 +3069,7 @@
                         <li>PFAS, mines, radon &amp; TRI alerts</li>
                         <li>PDF downloads + future updates</li>
                     </ul>
-                    <a href="#" class="pricing-btn primary" id="paywall-unlimited-btn" onclick="if(window.hqTrackConversion) window.hqTrackConversion('unlimited_click', '')">Go Unlimited — $49</a>
+                    <a href="#" class="pricing-btn primary" id="paywall-unlimited-btn" onclick="if(window.hqTrackConversion){window.hqTrackConversion('unlimited_click','');window.hqTrackConversion('paywall_to_stripe','unlimited')}">Go Unlimited — $49</a>
                 </div>
             </div>
 
@@ -4984,16 +4984,16 @@
         function getUnlimitedURL(source) { return stripeURL(STRIPE_UNLIMITED_BASE, source); }
 
         function lockedHTML(label) {
-            return `<a href="${getUnlimitedURL('locked_data')}" target="_blank" class="locked-value" onclick="if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','');if(window.logEvent)window.logEvent('locked_click','')">${LOCK_SVG} ${label || 'Unlock — from $49'}</a>`;
+            return `<a href="javascript:void(0)" class="locked-value" onclick="event.preventDefault();if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','');if(window.logEvent)window.logEvent('locked_click','');showPaywallOverlay();">${LOCK_SVG} ${label || 'Unlock — from $19'}</a>`;
         }
         const isFreeUser = () => !hasPaidAccess();
         function showPaywallOverlay() {
-            // Skip the overlay — go straight to Stripe checkout
-            if (window.hqTrackConversion) window.hqTrackConversion('paywall_to_stripe', '');
-            if (window.logEvent) window.logEvent('paywall_to_stripe', '');
-            const url = getUnlimitedURL('paywall');
-            const win = window.open(url, '_blank');
-            if (!win) window.location.href = url; // fallback if popup blocked
+            if (window.logEvent) window.logEvent('paywall_impression', '');
+            const pw = document.getElementById('paywall');
+            if (pw) {
+                pw.classList.remove('hidden');
+                pw.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
         }
 
         // Compact inline unlock prompt — replaces full paywall for search blocks
