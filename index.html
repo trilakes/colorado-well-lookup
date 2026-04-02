@@ -6258,7 +6258,11 @@
                     opacity: 1,
                     fillOpacity: 0.8,
                     bubblingMouseEvents: false
-                }).addTo(map).bindPopup(`
+                }).addTo(map);
+                
+                const cost = calculateDrillingCost(well.depthTotal);
+                
+                marker.bindPopup(`
                     <b>Permit: ${well.permit}</b><br>
                     Depth: ${_free ? '🔒 Unlock' : well.depthTotal + ' ft'}<br>
                     Static Water: ${_free ? '🔒 Unlock' : (well.staticWaterLevel || 'N/A') + ' ft'}<br>
@@ -6266,11 +6270,10 @@
                     ${well.pumpTestYield ? `Yield: ${well.pumpTestYield} GPM<br>` : ''}
                     ${well.driller ? `Driller: ${well.driller}<br>` : ''}
                     ${well.permitCurrentStatusDescr ? `Status: ${well.permitCurrentStatusDescr}<br>` : ''}
-                    ${well.associatedUses ? `Use: ${well.associatedUses}` : ''}
+                    ${well.associatedUses ? `Use: ${well.associatedUses}<br>` : ''}
+                    ${_free ? '<b>Drilling Cost: 🔒 Unlock</b>' : `<b>Drilling Cost: $${cost.drillingLow.toLocaleString()}–$${cost.drillingHigh.toLocaleString()}</b> ($${cost.lowRate}–$${cost.highRate}/ft)<br><b>Est. Total: $${cost.totalLow.toLocaleString()}–$${cost.totalHigh.toLocaleString()}</b>`}
                 `);
                 markers.push(marker);
-                
-                const cost = calculateDrillingCost(well.depthTotal);
                 
                 // Helper to format dates from "1/15/2003" or ISO strings
                 const fmtDate = (d) => {
