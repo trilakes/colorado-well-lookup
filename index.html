@@ -5833,6 +5833,30 @@
             return 'El Paso'; // Default - most common Colorado county for well searches
         }
 
+        // Normalize an address string for comparison (strip directionals, punctuation, whitespace)
+        function normalizeAddress(addr) {
+            if (!addr) return '';
+            return addr.toUpperCase().trim()
+                .replace(/[.,#\-]/g, ' ')
+                .replace(/\b(DRIVE|DR|STREET|ST|ROAD|RD|AVENUE|AVE|LANE|LN|COURT|CT|CIRCLE|CIR|BOULEVARD|BLVD|PLACE|PL|WAY|TRAIL|TRL)\b/g, '')
+                .replace(/\s+/g, ' ')
+                .trim();
+        }
+
+        // Check if a well's physical address matches the searched address
+        function isPropertyWell(well, searchedAddress) {
+            if (!well.physicalAddress || !searchedAddress) return false;
+            const wellAddr = normalizeAddress(well.physicalAddress);
+            const searchAddr = normalizeAddress(searchedAddress);
+            if (!wellAddr || !searchAddr) return false;
+            // Extract house number and street name from both
+            const wellMatch = wellAddr.match(/^(\d+)\s+(.+)/);
+            const searchMatch = searchAddr.match(/^(\d+)\s+(.+)/);
+            if (!wellMatch || !searchMatch) return false;
+            // Must match house number exactly and street name must overlap
+            return wellMatch[1] === searchMatch[1] && wellMatch[2] === searchMatch[2];
+        }
+
         async function searchWells(lat, lon, radiusMiles, county) {
             // Convert radius to lat/lon degrees (approximate)
             const latRadius = radiusMiles / 69;
@@ -5858,20 +5882,34 @@
                 const data = JSON.parse(text);
                 
                 if (data.ResultList && data.ResultList.length > 0) {
-                    // Filter wells with depth data and calculate distances
-                    let wells = data.ResultList
-                        .filter(w => w.depthTotal > 0)
-                        .map(w => {
-                            const dist = Math.sqrt(
-                                Math.pow((w.latitude - lat) * 69, 2) + 
-                                Math.pow((w.longitude - lon) * 54, 2)
-                            );
-                            return { ...w, distance: dist };
-                        })
+                    const searchedAddress = document.getElementById('address').value;
+
+                    // Calculate distance for ALL results
+                    let allWells = data.ResultList.map(w => {
+                        const dist = Math.sqrt(
+                            Math.pow((w.latitude - lat) * 69, 2) + 
+                            Math.pow((w.longitude - lon) * 54, 2)
+                        );
+                        return { ...w, distance: dist };
+                    });
+
+                    // Separate property wells (match searched address — any status, even no depth)
+                    let propertyWells = allWells
+                        .filter(w => isPropertyWell(w, searchedAddress))
+                        .sort((a, b) => {
+                            // Show most recent permits first
+                            const da = new Date(a.datePermitIssued || 0);
+                            const db = new Date(b.datePermitIssued || 0);
+                            return db - da;
+                        });
+
+                    // Nearby wells: must have depth, within radius, exclude property matches
+                    let wells = allWells
+                        .filter(w => w.depthTotal > 0 && !isPropertyWell(w, searchedAddress))
                         .filter(w => w.distance <= radiusMiles)
                         .sort((a, b) => a.distance - b.distance);
                     
-                    displayResults(wells, lat, lon);
+                    displayResults(wells, lat, lon, propertyWells);
                 } else {
                     displayNoResults();
                 }
@@ -6091,7 +6129,8 @@
             }
         }
 
-        function displayResults(wells, centerLat, centerLon) {
+        function displayResults(wells, centerLat, centerLon, propertyWells) {
+            propertyWells = propertyWells || [];
             document.getElementById('results').style.display = 'grid';
             
             // Initialize or update map
@@ -6144,9 +6183,9 @@
             
             // Calculate summary stats
             const depths = wells.map(w => w.depthTotal);
-            const minDepth = Math.min(...depths);
-            const maxDepth = Math.max(...depths);
-            const avgDepth = Math.round(depths.reduce((a, b) => a + b, 0) / depths.length);
+            const minDepth = depths.length > 0 ? Math.min(...depths) : 0;
+            const maxDepth = depths.length > 0 ? Math.max(...depths) : 0;
+            const avgDepth = depths.length > 0 ? Math.round(depths.reduce((a, b) => a + b, 0) / depths.length) : 0;
             
             const waterLevels = wells.filter(w => w.staticWaterLevel > 0).map(w => w.staticWaterLevel);
             const avgWaterLevel = waterLevels.length > 0 ? 
@@ -6242,6 +6281,81 @@
             
             // Async fetch contamination data for this search area
             fetchSearchContamination(centerLat, centerLon, _free);
+
+            // ── Property Well Banner ──────────────────────────────────
+            let propertyWellHtml = '';
+            if (propertyWells.length > 0) {
+                const fmtDatePW = (d) => { if (!d) return 'N/A'; try { return new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' }); } catch { return d; } };
+                const pwCards = propertyWells.map(pw => {
+                    const status = pw.permitCurrentStatusDescr || 'Unknown';
+                    const isConstructed = status.toLowerCase().includes('constructed');
+                    const isPermitOnly = status.toLowerCase().includes('issued') || status.toLowerCase().includes('pending');
+                    const isExpired = status.toLowerCase().includes('expired');
+                    const statusColor = isConstructed ? '#22c55e' : isPermitOnly ? '#38bdf8' : isExpired ? '#f59e0b' : '#94a3b8';
+                    const statusIcon = isConstructed ? '✅' : isPermitOnly ? '📋' : isExpired ? '⚠️' : 'ℹ️';
+                    const addr = [pw.physicalAddress, pw.physicalCity, pw.physicalZipCode].filter(Boolean).join(', ');
+                    return `
+                        <div style="background:#0f172a; border:1px solid ${statusColor}44; border-radius:12px; padding:16px; margin-top:10px;">
+                            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                                <span style="color:#e2e8f0; font-weight:700; font-size:1rem;">${statusIcon} Permit ${pw.permit}</span>
+                                <span style="background:${statusColor}22; color:${statusColor}; font-size:0.82rem; font-weight:600; padding:3px 10px; border-radius:8px; border:1px solid ${statusColor}44;">${status}</span>
+                            </div>
+                            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:8px;">
+                                <div style="text-align:center; padding:8px; background:rgba(255,255,255,0.04); border-radius:8px;">
+                                    <div style="color:#94a3b8; font-size:0.72rem; text-transform:uppercase;">Depth</div>
+                                    <div style="color:#e2e8f0; font-weight:700; font-size:1.05rem;">${pw.depthTotal ? pw.depthTotal + ' ft' : 'Not yet drilled'}</div>
+                                </div>
+                                <div style="text-align:center; padding:8px; background:rgba(255,255,255,0.04); border-radius:8px;">
+                                    <div style="color:#94a3b8; font-size:0.72rem; text-transform:uppercase;">Yield</div>
+                                    <div style="color:#e2e8f0; font-weight:700; font-size:1.05rem;">${pw.pumpTestYield ? pw.pumpTestYield + ' GPM' : 'N/A'}</div>
+                                </div>
+                                <div style="text-align:center; padding:8px; background:rgba(255,255,255,0.04); border-radius:8px;">
+                                    <div style="color:#94a3b8; font-size:0.72rem; text-transform:uppercase;">Use</div>
+                                    <div style="color:#e2e8f0; font-weight:700; font-size:1.05rem;">${pw.associatedUses || 'N/A'}</div>
+                                </div>
+                                <div style="text-align:center; padding:8px; background:rgba(255,255,255,0.04); border-radius:8px;">
+                                    <div style="color:#94a3b8; font-size:0.72rem; text-transform:uppercase;">Aquifer</div>
+                                    <div style="color:#e2e8f0; font-weight:700; font-size:1.05rem;">${pw.associatedAquifers || 'N/A'}</div>
+                                </div>
+                            </div>
+                            <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-top:10px; font-size:0.85rem;">
+                                <div style="color:#94a3b8;">Permit Issued:</div><div style="color:#e2e8f0;">${fmtDatePW(pw.datePermitIssued)}</div>
+                                ${pw.dateWellCompleted ? `<div style="color:#94a3b8;">Well Completed:</div><div style="color:#e2e8f0;">${fmtDatePW(pw.dateWellCompleted)}</div>` : ''}
+                                ${pw.datePermitExpires ? `<div style="color:#94a3b8;">Permit Expires:</div><div style="color:#e2e8f0;">${fmtDatePW(pw.datePermitExpires)}</div>` : ''}
+                                ${pw.datePumpInstalled ? `<div style="color:#94a3b8;">Pump Installed:</div><div style="color:#e2e8f0;">${fmtDatePW(pw.datePumpInstalled)}</div>` : ''}
+                                ${pw.staticWaterLevel ? `<div style="color:#94a3b8;">Static Water Level:</div><div style="color:#e2e8f0;">${pw.staticWaterLevel} ft</div>` : ''}
+                                ${pw.driller ? `<div style="color:#94a3b8;">Driller:</div><div style="color:#e2e8f0;">${pw.driller}</div>` : ''}
+                                ${pw.contactName ? `<div style="color:#94a3b8;">Owner/Contact:</div><div style="color:#e2e8f0;">${pw.contactName}</div>` : ''}
+                                ${addr ? `<div style="color:#94a3b8;">Address:</div><div style="color:#e2e8f0;">${addr}</div>` : ''}
+                            </div>
+                        </div>`;
+                }).join('');
+
+                propertyWellHtml = `
+                    <div style="background:linear-gradient(135deg, rgba(0,180,216,0.15), rgba(34,197,94,0.08)); border:2px solid rgba(0,180,216,0.4); border-radius:16px; padding:18px; margin-bottom:18px;">
+                        <div style="display:flex; align-items:center; gap:10px; margin-bottom:4px;">
+                            <span style="font-size:1.3rem;">🏠</span>
+                            <h3 style="margin:0; color:#00b4d8; font-size:1.1rem;">Well Records On This Property</h3>
+                        </div>
+                        <p style="color:#94a3b8; font-size:0.85rem; margin:4px 0 0;">Found ${propertyWells.length} well permit${propertyWells.length > 1 ? 's' : ''} registered at this address.</p>
+                        ${pwCards}
+                    </div>`;
+
+                // Add blue star markers for property wells on the map
+                propertyWells.forEach(pw => {
+                    if (pw.latitude && pw.longitude) {
+                        const pwMarker = L.marker([pw.latitude, pw.longitude], {
+                            icon: L.divIcon({
+                                className: 'property-well-marker',
+                                html: '<div style="background:#00b4d8; width:24px; height:24px; border-radius:50%; border:3px solid #fff; box-shadow:0 2px 12px rgba(0,180,216,0.6); display:flex; align-items:center; justify-content:center;"><span style="color:#fff; font-size:13px; font-weight:bold;">W</span></div>',
+                                iconSize: [24, 24],
+                                iconAnchor: [12, 12]
+                            })
+                        }).addTo(map).bindPopup(`<b>🏠 Property Well</b><br>Permit: ${pw.permit}<br>Status: ${pw.permitCurrentStatusDescr || 'Unknown'}<br>Depth: ${pw.depthTotal ? pw.depthTotal + ' ft' : 'Not yet drilled'}`);
+                        markers.push(pwMarker);
+                    }
+                });
+            }
 
             // Display well cards
             const wellsHtml = wells.slice(0, 25).map((well, index) => {
@@ -6421,7 +6535,7 @@
                 `;
             }).join('');
             
-            document.getElementById('wells-list').innerHTML = wellsHtml;
+            document.getElementById('wells-list').innerHTML = propertyWellHtml + wellsHtml;
 
             // Store search context for report generation
             window._lastSearchAddress = document.getElementById('address').value;
