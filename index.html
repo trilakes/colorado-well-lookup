@@ -935,6 +935,11 @@
             background: linear-gradient(135deg, rgba(255,23,68,0.2), rgba(213,0,0,0.12));
         }
 
+        @keyframes searchPulse {
+            0% { transform: scale(0.55); opacity: 0.95; }
+            100% { transform: scale(1.4); opacity: 0; }
+        }
+
         .search-contam-banner {
             background: linear-gradient(135deg, rgba(255,23,68,0.14), rgba(213,0,0,0.08));
             border: 1px solid rgba(255,23,68,0.3);
@@ -4938,6 +4943,20 @@
                         + '<a href="javascript:void(0)" onclick="event.stopPropagation();showPaywallOverlay();" style="color:#ff1744;font-weight:700;font-size:12px;text-decoration:none;">🔓 Check Environmental Safety →</a></div></div>';
                 }
 
+                // Funnel actions: run the full property analysis here, or jump
+                // straight to the free soil report with this location handed off.
+                const cleanAddr = (addr || '').replace(/['"\\]/g, '');
+                const cleanCounty = (w.county || '').replace(/['"\\]/g, '');
+                const soilAddr = cleanAddr || (w.latitude.toFixed(5) + ', ' + w.longitude.toFixed(5));
+                const soilUrl = 'https://trilakes.co/soil-report?address=' + encodeURIComponent(soilAddr) + '#tool';
+                const actionsHtml = '<div class="wp-divider"></div>'
+                    + '<div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:6px;">'
+                    + '<a href="javascript:void(0)" onclick="event.stopPropagation();exploreSearchHere(' + w.latitude + ',' + w.longitude + ',\'' + cleanCounty + '\',\'' + cleanAddr + '\');"'
+                    + ' style="flex:1 1 45%;text-align:center;padding:7px 10px;border-radius:8px;background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.4);color:#38bdf8;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;">🔍 Analyze This Area</a>'
+                    + '<a href="' + soilUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation();if(window.logEvent)window.logEvent(\'soilreport_from_explore\',\'' + soilAddr.replace(/'/g, '') + '\');"'
+                    + ' style="flex:1 1 45%;text-align:center;padding:7px 10px;border-radius:8px;background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.4);color:#22c55e;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;">🌱 Free Soil Report</a>'
+                    + '</div>';
+
                 m.bindPopup(
                     '<div class="wp">'
                     + '<div class="wp-title">' + title + '</div>'
@@ -4946,6 +4965,7 @@
                     + drillerHtml + dateHtml + countyHtml + addrHtml
                     + contamCTA
                     + '<div id="wp-ctx-' + idx + '"></div>'
+                    + actionsHtml
                     + unlockCTA
                     + '</div>',
                     { maxWidth: 300, minWidth: 200 }
@@ -6172,6 +6192,23 @@
             }
         }
 
+        // Jump from an explore-map well popup into the full property analysis:
+        // close the overlay, seed the search box, and run the results flow here.
+        window.exploreSearchHere = function(lat, lon, county, addrText) {
+            try { closeExploreMap(); } catch (e) {}
+            const label = addrText || (lat.toFixed(5) + ', ' + lon.toFixed(5));
+            const addrInput = document.getElementById('address');
+            if (addrInput) addrInput.value = label;
+            window._lastSearchAddress = label;
+            if (window.logEvent) window.logEvent('explore_search_here', label);
+            searchWells(lat, lon, 2, county || '')
+                .then(function() {
+                    const res = document.getElementById('results');
+                    if (res) res.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                })
+                .catch(function(err) { alert('Could not analyze this area: ' + err.message); });
+        };
+
         // ── Septic Outlook: USDA soil survey → likely OWTS system for the searched point.
         // Free for everyone — no well = no sewer, so every searcher needs this answer too.
         const SEPTICIQ_URL = 'https://trilakes.co/soil-report#tool';
@@ -6477,25 +6514,31 @@
             searchHazardMarkers.forEach(m => map.removeLayer(m));
             searchHazardMarkers = [];
 
-            // Show the searched radius and fit the whole area in view, so a
-            // 5 or 10 mile search doesn't open zoomed into the middle of it.
+            // Draw the searched radius for context, but OPEN zoomed in on the
+            // property itself — the searched location is the star. Zooming out
+            // reveals the dashed circle with every well in the radius plotted.
             const radiusCircle = L.circle([centerLat, centerLon], {
                 radius: radiusMiles * 1609.34,
                 color: '#38bdf8', weight: 1.5, opacity: 0.5, dashArray: '6 6',
                 fillColor: '#38bdf8', fillOpacity: 0.04, interactive: false
             }).addTo(map);
             markers.push(radiusCircle);
-            map.fitBounds(radiusCircle.getBounds(), { padding: [24, 24] });
+            map.setView([centerLat, centerLon], 15);
             
-            // Add search location marker
+            // Add search location marker — big pulsing target so it never gets
+            // lost among the well dots.
             const searchMarker = L.marker([centerLat, centerLon], {
                 icon: L.divIcon({
                     className: 'search-marker',
-                    html: '<div style="background: #ff5722; width: 20px; height: 20px; border-radius: 50%; border: 3px solid white; box-shadow: 0 2px 10px rgba(0,0,0,0.5);"></div>',
-                    iconSize: [20, 20],
-                    iconAnchor: [10, 10]
-                })
-            }).addTo(map).bindPopup('<b>Search Location</b>');
+                    html: '<div style="position:relative;width:44px;height:44px;">'
+                        + '<div style="position:absolute;inset:0;border-radius:50%;border:3px solid #ff5722;animation:searchPulse 1.6s ease-out infinite;"></div>'
+                        + '<div style="position:absolute;left:8px;top:8px;width:28px;height:28px;border-radius:50%;background:#ff5722;border:3px solid #fff;box-shadow:0 2px 14px rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;font-size:15px;">🏠</div>'
+                        + '</div>',
+                    iconSize: [44, 44],
+                    iconAnchor: [22, 22]
+                }),
+                zIndexOffset: 1000
+            }).addTo(map).bindPopup('<b>🏠 Your Searched Property</b>');
             markers.push(searchMarker);
             
             // Calculate summary stats
@@ -6530,7 +6573,6 @@
             // Display summary
             const _free = isFreeUser();
             document.getElementById('summary').innerHTML = `
-                <div id="search-contam-alert" style="margin-bottom:12px;"></div>
                 <div id="septic-outlook" style="margin-bottom:14px;"></div>
                 <div class="summary-box">
                     <div class="summary-title">Area Well Statistics (${wells.length} wells with depth data)</div>
@@ -6595,6 +6637,7 @@
                         </div>
                     </div>
                 </div>
+                <div id="search-contam-alert" style="margin-top:12px;"></div>
             `;
 
             // Async fetch contamination data for this search area
@@ -6914,11 +6957,8 @@
                 updateReportBadge();
             }
             
-            // Fit map to show all markers
-            if (markers.length > 1) {
-                const group = L.featureGroup(markers);
-                map.fitBounds(group.getBounds().pad(0.1));
-            }
+            // View is set above: zoomed in on the searched property, with the
+            // dashed radius circle available as you zoom out.
         }
 
         function displayNoResults() {
