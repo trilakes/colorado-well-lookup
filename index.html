@@ -5040,12 +5040,11 @@
                 const soilAddr = cleanAddr || (w.latitude.toFixed(5) + ', ' + w.longitude.toFixed(5));
                 const soilUrl = 'https://trilakes.co/soil-report?address=' + encodeURIComponent(soilAddr) + '#tool';
                 const actionsHtml = '<div class="wp-divider"></div>'
-                    + '<div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:6px;">'
-                    + '<a href="javascript:void(0)" onclick="event.stopPropagation();exploreSearchHere(' + w.latitude + ',' + w.longitude + ',\'' + cleanCounty + '\',\'' + cleanAddr + '\');"'
-                    + ' style="flex:1 1 45%;text-align:center;padding:7px 10px;border-radius:8px;background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.4);color:#38bdf8;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;">🔍 Analyze This Area</a>'
-                    + '<a href="' + soilUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation();if(window.logEvent)window.logEvent(\'soilreport_from_explore\',\'' + soilAddr.replace(/'/g, '') + '\');"'
-                    + ' style="flex:1 1 45%;text-align:center;padding:7px 10px;border-radius:8px;background:rgba(34,197,94,0.15);border:1px solid rgba(34,197,94,0.4);color:#22c55e;font-size:12px;font-weight:700;text-decoration:none;white-space:nowrap;">🌱 Free Soil Report</a>'
-                    + '</div>';
+                    + '<a href="' + soilUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation();if(window.logEvent)window.logEvent(&quot;soilreport_from_explore&quot;,&quot;&quot;);"'
+                    + ' style="display:block;text-align:center;margin-top:8px;padding:11px 12px;border-radius:9px;background:linear-gradient(135deg,#16a34a,#15803d);color:#fff;font-size:13px;font-weight:800;text-decoration:none;box-shadow:0 2px 12px rgba(22,163,74,0.35);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" style="vertical-align:-2px;margin-right:5px"><path d="M12 20v-8"/><path d="M12 12c0-4 2.8-6 7-6-.7 4.2-2.8 6-7 6z"/><path d="M12 14c0-3.2-2.2-4.8-5.5-4.8.6 3.4 2.3 4.8 5.5 4.8z"/></svg>Get Full FREE Soil Report (PDF) →</a>'
+                    + '<div style="text-align:center;margin-top:3px;color:#94a3b8;font-size:10px;">soil profile · septic sizing · 3D terrain · no cost</div>'
+                    + '<a href="javascript:void(0)" onclick="event.stopPropagation();exploreSearchHere(' + w.latitude + ',' + w.longitude + ',&quot;' + cleanCounty + '&quot;,&quot;' + cleanAddr + '&quot;);"'
+                    + ' style="display:block;text-align:center;margin-top:6px;padding:7px 10px;border-radius:8px;background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.4);color:#38bdf8;font-size:12px;font-weight:700;text-decoration:none;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" style="vertical-align:-2px;margin-right:5px"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Analyze This Area</a>';
 
                 m.bindPopup(
                     '<div class="wp">'
@@ -6622,13 +6621,13 @@
                     className: 'search-marker',
                     html: '<div style="position:relative;width:44px;height:44px;">'
                         + '<div style="position:absolute;inset:0;border-radius:50%;border:3px solid #ff5722;animation:searchPulse 1.6s ease-out infinite;"></div>'
-                        + '<div style="position:absolute;left:8px;top:8px;width:28px;height:28px;border-radius:50%;background:#ff5722;border:3px solid #fff;box-shadow:0 2px 14px rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;font-size:15px;">🏠</div>'
+                        + '<div style="position:absolute;left:8px;top:8px;width:28px;height:28px;border-radius:50%;background:#ff5722;border:3px solid #fff;box-shadow:0 2px 14px rgba(0,0,0,0.6);display:flex;align-items:center;justify-content:center;"><svg width="15" height="15" viewBox="0 0 24 24" fill="#fff" style="display:block"><path d="M12 3l9 8h-3v9h-5v-6h-2v6H6v-9H3z"/></svg></div>'
                         + '</div>',
                     iconSize: [44, 44],
                     iconAnchor: [22, 22]
                 }),
                 zIndexOffset: 1000
-            }).addTo(map).bindPopup('<b>🏠 Your Searched Property</b>');
+            }).addTo(map).bindPopup('<b>Your Searched Property</b>');
             markers.push(searchMarker);
             
             // Calculate summary stats
@@ -7005,7 +7004,7 @@
             const soilCtaUrl = SEPTICIQ_URL.split('#')[0] + (soilCtaAddr ? '?address=' + encodeURIComponent(soilCtaAddr) : '') + '#tool';
             const soilClosingCta = `
                 <div style="margin-top:14px; background:linear-gradient(135deg, rgba(34,197,94,0.12), rgba(22,163,74,0.05)); border:1px solid rgba(34,197,94,0.35); border-radius:14px; padding:18px 20px; text-align:center;">
-                    <div style="font-size:1.5rem; margin-bottom:4px;">🌱</div>
+                    <div style="margin-bottom:6px;color:#22c55e;display:flex;justify-content:center;"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M12 20v-8"/><path d="M12 12c0-4 2.8-6 7-6-.7 4.2-2.8 6-7 6z"/><path d="M12 14c0-3.2-2.2-4.8-5.5-4.8.6 3.4 2.3 4.8 5.5 4.8z"/></svg></div>
                     <div style="color:#e2e8f0; font-weight:800; font-size:1rem; margin-bottom:4px;">No city water out here means no sewer either</div>
                     <div style="color:#94a3b8; font-size:0.85rem; line-height:1.6; margin-bottom:12px;">Get the free soil report for this exact lot — soil profile, septic system type, drainfield &amp; tank sizing, and installed pricing.</div>
                     <a href="${soilCtaUrl}" target="_blank" rel="noopener" onclick="if(window.logEvent)window.logEvent('septiciq_click','wells_list_footer')"
