@@ -6119,24 +6119,26 @@
                 const s = d.soil, sys = d.system, sz = d.sizing;
                 const good = !s.constraint;
                 const accent = good ? '#22c55e' : '#f59e0b';
-                const icon = good ? '🟢' : '🟡';
-                const fmt$ = n => '$' + n.toLocaleString();
                 const slopeStr = s.slope_pct != null ? ` · ~${Math.round(s.slope_pct)}% slope` : '';
+                const addr = window._lastSearchAddress || document.getElementById('address')?.value || '';
+                const reportUrl = SEPTICIQ_URL.split('#')[0] + (addr ? '?address=' + encodeURIComponent(addr) : '') + '#septiciq';
                 el.innerHTML = `
                     <div style="background:rgba(34,197,94,0.05);border:1px solid ${accent}44;border-left:3px solid ${accent};border-radius:12px;padding:16px 18px;">
-                        <div style="font-weight:800;font-size:0.95rem;color:${accent};margin-bottom:8px;">${icon} Septic Outlook for This Property</div>
+                        <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
+                            <span style="font-weight:800;font-size:0.95rem;color:${accent};">🌱 Free Soil Report Available for This Property</span>
+                            <span style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#64748b;">USDA soil survey · CO Reg 43</span>
+                        </div>
                         <div style="font-size:0.85rem;color:#cbd5e1;line-height:1.65;">
-                            No municipal water out here usually means no sewer either — this land will need its own septic system.<br>
-                            <strong style="color:#e2e8f0;">Soil:</strong> ${s.series} — ${s.texture.toLowerCase()}, ${s.drainage.toLowerCase()}${slopeStr} <span style="color:#64748b;">(${s.reg43_type})</span><br>
-                            <strong style="color:#e2e8f0;">Likely system:</strong> ${sys.name} <span style="color:#94a3b8;">— ${sys.detail}</span><br>
-                            <strong style="color:#e2e8f0;">Ballpark for ${sz.bedrooms} BR:</strong> ~${sz.field_sqft.toLocaleString()} sq ft field · ${sz.tank_gal.toLocaleString()}-gal tank · typically ${fmt$(sys.cost_low)}–${fmt$(sys.cost_high)} installed
+                            No city water out here usually means no sewer either — this land will need its own septic system, and the soil decides which kind.<br>
+                            <strong style="color:#e2e8f0;">USDA maps this parcel as:</strong> ${s.series} — ${s.texture.toLowerCase()}, ${s.drainage.toLowerCase()}${slopeStr} <span style="color:#64748b;">(${s.reg43_type})</span><br>
+                            <strong style="color:#e2e8f0;">Likely septic system:</strong> ${sys.name}
                             ${s.note ? `<div style="margin-top:6px;color:#94a3b8;font-size:0.8rem;">${s.note}</div>` : ''}
+                            <div style="margin-top:8px;color:#94a3b8;">Your <strong style="color:#cbd5e1;">free soil report</strong> goes further: full soil profile, drainfield size, tank size, and installed pricing for this exact lot.</div>
                         </div>
                         <div style="margin-top:12px;">
-                            <a href="${SEPTICIQ_URL}" target="_blank" rel="noopener" onclick="if(window.logEvent)window.logEvent('septiciq_click','${(s.series||'').replace(/'/g,'')}')"
-                               style="display:inline-block;padding:9px 18px;background:linear-gradient(135deg,#16a34a,#15803d);color:#fff;font-weight:700;font-size:0.85rem;border-radius:8px;text-decoration:none;">
-                               Size & Price This System Free — SepticIQ →</a>
-                            <span style="display:inline-block;margin-left:10px;color:#64748b;font-size:0.75rem;">USDA soil survey · CO Reg 43 method</span>
+                            <a href="${reportUrl}" target="_blank" rel="noopener" onclick="if(window.logEvent)window.logEvent('septiciq_click','${(s.series||'').replace(/'/g,'')}')"
+                               style="display:inline-block;padding:10px 20px;background:linear-gradient(135deg,#16a34a,#15803d);color:#fff;font-weight:700;font-size:0.88rem;border-radius:8px;text-decoration:none;">
+                               Get My Free Soil Report →</a>
                         </div>
                     </div>`;
                 if (window.logEvent) window.logEvent('septic_outlook_shown', `${s.series}|${sys.name}`);
