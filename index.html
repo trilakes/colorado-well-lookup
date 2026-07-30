@@ -3915,6 +3915,11 @@
                     <span class="layer-dot" style="background:#40c4ff"></span> Streams &amp; Springs</label>
                     <span class="layer-count" id="lc-streams"></span>
                 </div>
+                <div class="layer-item" data-layer="parcels">
+                    <label><input type="checkbox" checked onchange="toggleLayer('parcels', this.checked)">
+                    <span class="layer-dot" style="background:#00f0ff"></span> Parcel Lines</label>
+                    <span class="layer-count" id="lc-parcels"></span>
+                </div>
                 <div class="layer-divider"></div>
                 <div class="layer-section-label">Hydrology</div>
                 <div class="layer-item" data-layer="dams">
@@ -4008,7 +4013,7 @@
                 // Parcel boundaries (Colorado state GIS - vector outlines)
                 try {
                     if (L.esri && L.esri.featureLayer) {
-                        L.esri.featureLayer({
+                        window._exploreParcelLayer = L.esri.featureLayer({
                             url: 'https://gis.colorado.gov/public/rest/services/Address_and_Parcel/Colorado_Public_Parcels/FeatureServer/0',
                             minZoom: 14,
                             style: function() {
@@ -4023,6 +4028,13 @@
                         }).addTo(exploreMap);
                     }
                 } catch(e) { console.warn('Parcel layer unavailable:', e); }
+
+                // Punchy pane for the NHD streams layer so the blue reads
+                // clearly over both satellite and LiDAR hillshade.
+                exploreMap.createPane('nhdPane');
+                exploreMap.getPane('nhdPane').style.zIndex = 320;
+                exploreMap.getPane('nhdPane').style.filter =
+                    'saturate(2.4) brightness(1.25) contrast(1.2) drop-shadow(0 0 2px rgba(0,176,255,0.9))';
 
                 // Zoom control (bottom-right for mobile friendliness)
                 L.control.zoom({ position: 'bottomright' }).addTo(exploreMap);
@@ -4341,6 +4353,14 @@
                 return;
             }
 
+            if (layer === 'parcels') {
+                if (window._exploreParcelLayer) {
+                    if (enabled) window._exploreParcelLayer.addTo(exploreMap);
+                    else exploreMap.removeLayer(window._exploreParcelLayer);
+                }
+                return;
+            }
+
             if (layer === 'streams') {
                 // USGS National Hydrography Dataset — mapped streams (incl.
                 // intermittent drainages), waterbodies, and spring points.
@@ -4352,7 +4372,8 @@
                             // 0 = spring/seep points, 6 = flowlines, 9/12 = areas & waterbodies.
                             // Deliberately excludes layer 3 (flow-direction arrows) — pure noise.
                             layers: [0, 6, 9, 12],
-                            opacity: 0.9
+                            opacity: 1,
+                            pane: 'nhdPane'
                         });
                         window._nhdLayer.on('loading', function() {
                             const el = document.getElementById('explore-loading');
