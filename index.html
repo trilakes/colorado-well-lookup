@@ -3910,6 +3910,11 @@
                     <span class="layer-dot" style="background:#cfd8dc"></span> Bare-Earth LiDAR</label>
                     <span class="layer-count" id="lc-lidar"></span>
                 </div>
+                <div class="layer-item" data-layer="streams">
+                    <label><input type="checkbox" onchange="toggleLayer('streams', this.checked)">
+                    <span class="layer-dot" style="background:#40c4ff"></span> Streams &amp; Springs</label>
+                    <span class="layer-count" id="lc-streams"></span>
+                </div>
                 <div class="layer-divider"></div>
                 <div class="layer-section-label">Hydrology</div>
                 <div class="layer-item" data-layer="dams">
@@ -4318,10 +4323,49 @@
                             renderingRule: { rasterFunction: 'Hillshade Multidirectional' },
                             opacity: 0.85
                         });
+                        window._lidarLayer.on('loading', function() {
+                            const el = document.getElementById('explore-loading');
+                            if (el) el.classList.add('show');
+                        });
+                        window._lidarLayer.on('load', function() {
+                            const el = document.getElementById('explore-loading');
+                            if (el) el.classList.remove('show');
+                        });
                     }
                     if (window._lidarLayer) window._lidarLayer.addTo(exploreMap);
                 } else if (window._lidarLayer) {
                     exploreMap.removeLayer(window._lidarLayer);
+                    const el = document.getElementById('explore-loading');
+                    if (el) el.classList.remove('show');
+                }
+                return;
+            }
+
+            if (layer === 'streams') {
+                // USGS National Hydrography Dataset — mapped streams (incl.
+                // intermittent drainages), waterbodies, and spring points.
+                // Over the LiDAR layer this is the "where water flows" view.
+                if (enabled) {
+                    if (!window._nhdLayer && L.esri && L.esri.dynamicMapLayer) {
+                        window._nhdLayer = L.esri.dynamicMapLayer({
+                            url: 'https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer',
+                            // 0 = spring/seep points, 6 = flowlines, 9/12 = areas & waterbodies.
+                            // Deliberately excludes layer 3 (flow-direction arrows) — pure noise.
+                            layers: [0, 6, 9, 12],
+                            opacity: 0.9
+                        });
+                        window._nhdLayer.on('loading', function() {
+                            const el = document.getElementById('explore-loading');
+                            if (el) el.classList.add('show');
+                        });
+                        window._nhdLayer.on('load', function() {
+                            const el = document.getElementById('explore-loading');
+                            if (el) el.classList.remove('show');
+                        });
+                    }
+                    if (window._nhdLayer) window._nhdLayer.addTo(exploreMap);
+                } else if (window._nhdLayer) {
+                    exploreMap.removeLayer(window._nhdLayer);
                 }
                 return;
             }
