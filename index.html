@@ -484,13 +484,22 @@
 
         .results-section {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+            gap: 22px;
+            align-items: start;
         }
 
         @media (max-width: 1000px) {
             .results-section {
                 grid-template-columns: 1fr;
+            }
+
+            .map-container {
+                position: static;
+            }
+
+            #map {
+                height: 420px;
             }
         }
 
@@ -588,7 +597,7 @@
             }
 
             #map {
-                height: 250px;
+                height: 320px;
                 border-radius: 8px;
             }
 
@@ -800,20 +809,22 @@
         .map-container {
             background: rgba(30, 41, 59, 0.6);
             border-radius: 16px;
-            padding: 24px;
+            padding: 20px;
             border: 1px solid rgba(148, 163, 184, 0.1);
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 16px;
         }
 
         .map-container h2 {
             color: #f1f5f9;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             font-size: 1.15rem;
             font-weight: 600;
         }
 
         #map {
-            height: 500px;
+            height: min(74vh, 700px);
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid rgba(148, 163, 184, 0.1);
@@ -825,11 +836,6 @@
             padding: 24px;
             border: 1px solid rgba(148, 163, 184, 0.1);
             box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
-            max-height: 600px;
-            overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
-            scroll-behavior: smooth;
-            overscroll-behavior: contain;
         }
 
         .wells-container h2 {
@@ -838,7 +844,7 @@
             font-size: 1.15rem;
             font-weight: 600;
             position: sticky;
-            top: -24px;
+            top: 0;
             z-index: 10;
             background: rgba(30, 41, 59, 0.98);
             padding: 16px 0;
@@ -852,6 +858,7 @@
             align-items: center;
             padding-right: 24px;
             border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            border-radius: 16px 16px 0 0;
         }
 
         .scroll-hint {
@@ -959,6 +966,66 @@
         }
         .search-contam-banner .scb-cta:hover {
             color: #ff5252;
+        }
+        .scb-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 6px;
+        }
+        .scb-sites {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            margin-top: 8px;
+        }
+        .scb-site {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(15, 23, 42, 0.45);
+            border-radius: 8px;
+            padding: 7px 10px;
+            font-size: 12px;
+        }
+        .scb-site-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .scb-site-name {
+            color: #e2e8f0;
+            font-weight: 600;
+            flex: 1;
+            min-width: 0;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        .scb-site-type {
+            color: #94a3b8;
+            font-size: 10.5px;
+            flex-shrink: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+        .scb-site-dist {
+            color: #7dd3fc;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .scb-more {
+            color: #94a3b8;
+            font-size: 11.5px;
+            text-align: center;
+            padding-top: 6px;
+            cursor: pointer;
+        }
+        .scb-more:hover {
+            color: #cbd5e1;
         }
 
         .well-header {
@@ -6093,7 +6160,7 @@
                         .filter(w => w.distance <= radiusMiles)
                         .sort((a, b) => a.distance - b.distance);
                     
-                    displayResults(wells, lat, lon, propertyWells);
+                    displayResults(wells, lat, lon, propertyWells, radiusMiles);
                 } else {
                     displayNoResults();
                 }
@@ -6123,23 +6190,31 @@
                 const addr = window._lastSearchAddress || document.getElementById('address')?.value || '';
                 const reportUrl = SEPTICIQ_URL.split('#')[0] + (addr ? '?address=' + encodeURIComponent(addr) : '') + '#septiciq';
                 el.innerHTML = `
-                    <div style="background:rgba(34,197,94,0.05);border:1px solid ${accent}44;border-left:3px solid ${accent};border-radius:12px;padding:16px 18px;">
-                        <div style="display:flex;align-items:baseline;gap:8px;flex-wrap:wrap;margin-bottom:8px;">
-                            <span style="font-weight:800;font-size:0.95rem;color:${accent};">🌱 Free Soil Report Available for This Property</span>
-                            <span style="font-size:0.7rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#64748b;">USDA soil survey · CO Reg 43</span>
+                    <div style="background:linear-gradient(135deg, rgba(34,197,94,0.12), rgba(15,23,42,0.4));border:1px solid ${accent}55;border-radius:14px;padding:18px 20px;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
+                            <span style="font-weight:800;font-size:1rem;color:#e2e8f0;">🌱 What Will Septic Cost on This Lot?</span>
+                            <span style="font-size:0.68rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#64748b;background:rgba(148,163,184,0.1);padding:3px 8px;border-radius:6px;">USDA soil survey · CO Reg 43</span>
                         </div>
-                        <div style="font-size:0.85rem;color:#cbd5e1;line-height:1.65;">
-                            No city water out here usually means no sewer either — this land will need its own septic system, and the soil decides which kind.<br>
-                            <strong style="color:#e2e8f0;">USDA maps this parcel as:</strong> ${s.series} — ${s.texture.toLowerCase()}, ${s.drainage.toLowerCase()}${slopeStr} <span style="color:#64748b;">(${s.reg43_type})</span><br>
-                            <strong style="color:#e2e8f0;">Likely septic system:</strong> ${sys.name}
-                            ${s.note ? `<div style="margin-top:6px;color:#94a3b8;font-size:0.8rem;">${s.note}</div>` : ''}
-                            <div style="margin-top:8px;color:#94a3b8;">Your <strong style="color:#cbd5e1;">free soil report</strong> goes further: full soil profile, drainfield size, tank size, and installed pricing for this exact lot.</div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:10px;">
+                            <div style="background:rgba(15,23,42,0.55);border-radius:10px;padding:10px 12px;">
+                                <div style="color:#64748b;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:3px;">This parcel's soil</div>
+                                <div style="color:#e2e8f0;font-weight:700;font-size:0.88rem;line-height:1.4;">${s.series}</div>
+                                <div style="color:#94a3b8;font-size:0.78rem;">${s.texture.toLowerCase()}, ${s.drainage.toLowerCase()}${slopeStr}</div>
+                            </div>
+                            <div style="background:rgba(15,23,42,0.55);border-radius:10px;padding:10px 12px;">
+                                <div style="color:#64748b;font-size:0.68rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:3px;">Likely septic system</div>
+                                <div style="color:${accent};font-weight:700;font-size:0.88rem;line-height:1.4;">${sys.name}</div>
+                                <div style="color:#94a3b8;font-size:0.78rem;">${s.reg43_type}</div>
+                            </div>
                         </div>
-                        <div style="margin-top:12px;">
-                            <a href="${reportUrl}" target="_blank" rel="noopener" onclick="if(window.logEvent)window.logEvent('septiciq_click','${(s.series||'').replace(/'/g,'')}')"
-                               style="display:inline-block;padding:10px 20px;background:linear-gradient(135deg,#16a34a,#15803d);color:#fff;font-weight:700;font-size:0.88rem;border-radius:8px;text-decoration:none;">
-                               Get My Free Soil Report →</a>
+                        ${s.note ? `<div style="margin-bottom:10px;color:#94a3b8;font-size:0.8rem;line-height:1.5;">${s.note}</div>` : ''}
+                        <div style="color:#cbd5e1;font-size:0.84rem;line-height:1.6;margin-bottom:12px;">
+                            No city water out here usually means no sewer either. Your <strong style="color:#e2e8f0;">free soil report</strong> adds the full soil profile, drainfield &amp; tank sizing, and installed pricing for this exact lot.
                         </div>
+                        <a href="${reportUrl}" target="_blank" rel="noopener" onclick="if(window.logEvent)window.logEvent('septiciq_click','${(s.series||'').replace(/'/g,'')}')"
+                           style="display:block;text-align:center;padding:13px 20px;background:linear-gradient(135deg,#16a34a,#15803d);color:#fff;font-weight:800;font-size:0.95rem;border-radius:10px;text-decoration:none;box-shadow:0 4px 16px rgba(22,163,74,0.35);">
+                           Get My Free Soil Report →</a>
+                        <div style="text-align:center;color:#64748b;font-size:0.72rem;margin-top:6px;">Free · instant · no sign-up required</div>
                     </div>`;
                 if (window.logEvent) window.logEvent('septic_outlook_shown', `${s.series}|${sys.name}`);
             } catch (e) { /* soil lookup is best-effort — never block results */ }
@@ -6240,21 +6315,30 @@
             } else {
                 // Paid users: show real data
                 if (allSites.length > 0) {
-                    const hasSF = allSites.some(s => s.superfund);
-                    const hasTRI = allSites.some(s => s.tri);
                     const risk = computeWaterRisk(allSites);
+                    const dotColors = { contamination: '#ff1744', superfund: '#d50000', tri: '#ff6d00', brownfields: '#ff6e40', pfas: '#e040fb', mines: '#8d6e63' };
+                    const displayName = (n) => (n.length > 4 && n === n.toUpperCase())
+                        ? n.toLowerCase().replace(/\b[a-z]/g, c => c.toUpperCase()) : n;
                     let bannerHtml = '<div class="search-contam-banner">';
-                    bannerHtml += '<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">';
+                    bannerHtml += '<div class="scb-head">';
                     bannerHtml += '<div class="scb-title" style="margin:0;">⚠️ ' + allSites.length + ' hazard site' + (allSites.length > 1 ? 's' : '') + ' within ~3.5 mi</div>';
                     bannerHtml += riskBadgeHTML(risk, false);
                     bannerHtml += '</div>';
-                    if (risk.detail) bannerHtml += '<div style="color:#94a3b8;font-size:10.5px;margin-bottom:4px;">' + risk.detail + '</div>';
-                    bannerHtml += '<div class="scb-detail">';
-                    allSites.slice(0, 5).forEach(s => {
-                        bannerHtml += s.name + ' — ' + s.distance.toFixed(1) + ' mi <span style="color:#94a3b8;font-size:10px;">(' + s.label + ')</span><br>';
+                    if (risk.detail) bannerHtml += '<div style="color:#94a3b8;font-size:11px;">' + risk.detail + '</div>';
+                    bannerHtml += '<div class="scb-sites">';
+                    allSites.forEach((s, i) => {
+                        bannerHtml += '<div class="scb-site"' + (i >= 6 ? ' data-scb-extra="1" style="display:none;"' : '') + '>'
+                            + '<span class="scb-site-dot" style="background:' + (dotColors[s.layer] || '#ff1744') + '"></span>'
+                            + '<span class="scb-site-name">' + displayName(s.name) + '</span>'
+                            + '<span class="scb-site-type">' + s.label + '</span>'
+                            + '<span class="scb-site-dist">' + s.distance.toFixed(1) + ' mi</span>'
+                            + '</div>';
                     });
-                    if (allSites.length > 5) bannerHtml += '<span style="color:#94a3b8;">+ ' + (allSites.length - 5) + ' more...</span>';
-                    bannerHtml += '</div></div>';
+                    bannerHtml += '</div>';
+                    if (allSites.length > 6) {
+                        bannerHtml += '<div class="scb-more" onclick="document.querySelectorAll(\'[data-scb-extra]\').forEach(function(el){el.style.display=\'flex\';});this.style.display=\'none\';">Show all ' + allSites.length + ' sites ↓</div>';
+                    }
+                    bannerHtml += '</div>';
                     alertEl.innerHTML = bannerHtml;
 
                     // Populate card badges with per-well nearest hazard
@@ -6353,8 +6437,9 @@
             }
         }
 
-        function displayResults(wells, centerLat, centerLon, propertyWells) {
+        function displayResults(wells, centerLat, centerLon, propertyWells, radiusMiles) {
             propertyWells = propertyWells || [];
+            radiusMiles = radiusMiles || 2;
             document.getElementById('results').style.display = 'grid';
             
             // Initialize or update map
@@ -6383,16 +6468,24 @@
                         }).addTo(map);
                     }
                 } catch(e) { console.warn('Parcel layer unavailable:', e); }
-            } else {
-                map.setView([centerLat, centerLon], 14);
             }
-            
+
             // Clear existing markers
             markers.forEach(m => map.removeLayer(m));
             markers = [];
             // Clear hazard markers from previous search
             searchHazardMarkers.forEach(m => map.removeLayer(m));
             searchHazardMarkers = [];
+
+            // Show the searched radius and fit the whole area in view, so a
+            // 5 or 10 mile search doesn't open zoomed into the middle of it.
+            const radiusCircle = L.circle([centerLat, centerLon], {
+                radius: radiusMiles * 1609.34,
+                color: '#38bdf8', weight: 1.5, opacity: 0.5, dashArray: '6 6',
+                fillColor: '#38bdf8', fillOpacity: 0.04, interactive: false
+            }).addTo(map);
+            markers.push(radiusCircle);
+            map.fitBounds(radiusCircle.getBounds(), { padding: [24, 24] });
             
             // Add search location marker
             const searchMarker = L.marker([centerLat, centerLon], {
@@ -6438,6 +6531,7 @@
             const _free = isFreeUser();
             document.getElementById('summary').innerHTML = `
                 <div id="search-contam-alert" style="margin-bottom:12px;"></div>
+                <div id="septic-outlook" style="margin-bottom:14px;"></div>
                 <div class="summary-box">
                     <div class="summary-title">Area Well Statistics (${wells.length} wells with depth data)</div>
                     <div class="summary-grid">
@@ -6501,7 +6595,6 @@
                         </div>
                     </div>
                 </div>
-                <div id="septic-outlook" style="margin-top:12px;"></div>
             `;
 
             // Async fetch contamination data for this search area
@@ -6585,12 +6678,13 @@
                 });
             }
 
-            // Display well cards
-            const wellsHtml = wells.slice(0, 25).map((well, index) => {
-                // Add marker to map
+            // Plot EVERY well in the searched radius on the map — the list
+            // below shows the nearest 25, but the map must show them all.
+            wells.forEach(well => {
+                if (!well.latitude || !well.longitude) return;
                 const depthClass = well.depthTotal < 200 ? 'shallow' : well.depthTotal < 500 ? 'medium' : 'deep';
                 const markerColor = depthClass === 'shallow' ? '#00e676' : depthClass === 'medium' ? '#ffeb3b' : '#ff5722';
-                
+
                 const marker = L.circleMarker([well.latitude, well.longitude], {
                     renderer: map._wellCanvas,
                     radius: 5,
@@ -6601,9 +6695,9 @@
                     fillOpacity: 0.8,
                     bubblingMouseEvents: false
                 }).addTo(map);
-                
+
                 const cost = calculateDrillingCost(well.depthTotal);
-                
+
                 marker.bindPopup(`
                     <b>Permit: ${well.permit}</b><br>
                     Depth: ${_free ? '🔒 Unlock' : well.depthTotal + ' ft'}<br>
@@ -6616,7 +6710,13 @@
                     ${_free ? '<b>Drilling Cost: 🔒 Unlock</b>' : `<b>Drilling Cost: $${cost.drillingLow.toLocaleString()}–$${cost.drillingHigh.toLocaleString()}</b> ($${cost.lowRate}–$${cost.highRate}/ft)<br><b>Est. Total: $${cost.totalLow.toLocaleString()}–$${cost.totalHigh.toLocaleString()}</b>`}
                 `);
                 markers.push(marker);
-                
+            });
+
+            // Display well cards
+            const wellsHtml = wells.slice(0, 25).map((well, index) => {
+                const depthClass = well.depthTotal < 200 ? 'shallow' : well.depthTotal < 500 ? 'medium' : 'deep';
+                const cost = calculateDrillingCost(well.depthTotal);
+
                 // Helper to format dates from "1/15/2003" or ISO strings
                 const fmtDate = (d) => {
                     if (!d) return null;
@@ -6763,7 +6863,23 @@
                 `;
             }).join('');
             
-            document.getElementById('wells-list').innerHTML = propertyWellHtml + wellsHtml;
+            const moreOnMapNote = wells.length > 25 ? `
+                <div style="text-align:center; color:#94a3b8; font-size:0.85rem; padding:10px 0 2px;">
+                    Showing the ${Math.min(25, wells.length)} nearest wells — all ${wells.length} are plotted on the map.
+                </div>` : '';
+
+            const soilCtaAddr = document.getElementById('address') ? document.getElementById('address').value : '';
+            const soilCtaUrl = SEPTICIQ_URL.split('#')[0] + (soilCtaAddr ? '?address=' + encodeURIComponent(soilCtaAddr) : '') + '#septiciq';
+            const soilClosingCta = `
+                <div style="margin-top:14px; background:linear-gradient(135deg, rgba(34,197,94,0.12), rgba(22,163,74,0.05)); border:1px solid rgba(34,197,94,0.35); border-radius:14px; padding:18px 20px; text-align:center;">
+                    <div style="font-size:1.5rem; margin-bottom:4px;">🌱</div>
+                    <div style="color:#e2e8f0; font-weight:800; font-size:1rem; margin-bottom:4px;">No city water out here means no sewer either</div>
+                    <div style="color:#94a3b8; font-size:0.85rem; line-height:1.6; margin-bottom:12px;">Get the free soil report for this exact lot — soil profile, septic system type, drainfield &amp; tank sizing, and installed pricing.</div>
+                    <a href="${soilCtaUrl}" target="_blank" rel="noopener" onclick="if(window.logEvent)window.logEvent('septiciq_click','wells_list_footer')"
+                       style="display:inline-block; padding:12px 26px; background:linear-gradient(135deg,#16a34a,#15803d); color:#fff; font-weight:700; font-size:0.92rem; border-radius:10px; text-decoration:none;">Get My Free Soil Report →</a>
+                </div>`;
+
+            document.getElementById('wells-list').innerHTML = propertyWellHtml + wellsHtml + moreOnMapNote + soilClosingCta;
 
             // Store search context for report generation
             window._lastSearchAddress = document.getElementById('address').value;
@@ -6837,13 +6953,14 @@
             const scrollHint = document.getElementById('scroll-hint');
             
             if (container && scrollHint) {
-                container.addEventListener('scroll', function() {
-                    if (container.scrollTop > 50) {
-                        scrollHint.classList.add('hidden');
-                    } else {
-                        scrollHint.classList.remove('hidden');
-                    }
-                });
+                // Results column flows with the page now — hide the hint once
+                // the user scrolls anywhere (page or any leftover inner scroll).
+                const update = function() {
+                    const scrolled = (window.scrollY || 0) > 120 || container.scrollTop > 50;
+                    scrollHint.classList.toggle('hidden', scrolled);
+                };
+                container.addEventListener('scroll', update);
+                window.addEventListener('scroll', update, { passive: true });
             }
         }
 
