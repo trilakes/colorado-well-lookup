@@ -6174,7 +6174,7 @@
 
         // ── Septic Outlook: USDA soil survey → likely OWTS system for the searched point.
         // Free for everyone — no well = no sewer, so every searcher needs this answer too.
-        const SEPTICIQ_URL = 'https://trilakes.co/guides/septic-system-cost-colorado#septiciq';
+        const SEPTICIQ_URL = 'https://trilakes.co/soil-report#tool';
         async function fetchSepticOutlook(lat, lng) {
             const el = document.getElementById('septic-outlook');
             if (!el || !lat || !lng) return;
@@ -6188,7 +6188,7 @@
                 const accent = good ? '#22c55e' : '#f59e0b';
                 const slopeStr = s.slope_pct != null ? ` · ~${Math.round(s.slope_pct)}% slope` : '';
                 const addr = window._lastSearchAddress || document.getElementById('address')?.value || '';
-                const reportUrl = SEPTICIQ_URL.split('#')[0] + (addr ? '?address=' + encodeURIComponent(addr) : '') + '#septiciq';
+                const reportUrl = SEPTICIQ_URL.split('#')[0] + (addr ? '?address=' + encodeURIComponent(addr) : '') + '#tool';
                 el.innerHTML = `
                     <div style="background:linear-gradient(135deg, rgba(34,197,94,0.12), rgba(15,23,42,0.4));border:1px solid ${accent}55;border-radius:14px;padding:18px 20px;">
                         <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:10px;">
@@ -6869,7 +6869,7 @@
                 </div>` : '';
 
             const soilCtaAddr = document.getElementById('address') ? document.getElementById('address').value : '';
-            const soilCtaUrl = SEPTICIQ_URL.split('#')[0] + (soilCtaAddr ? '?address=' + encodeURIComponent(soilCtaAddr) : '') + '#septiciq';
+            const soilCtaUrl = SEPTICIQ_URL.split('#')[0] + (soilCtaAddr ? '?address=' + encodeURIComponent(soilCtaAddr) : '') + '#tool';
             const soilClosingCta = `
                 <div style="margin-top:14px; background:linear-gradient(135deg, rgba(34,197,94,0.12), rgba(22,163,74,0.05)); border:1px solid rgba(34,197,94,0.35); border-radius:14px; padding:18px 20px; text-align:center;">
                     <div style="font-size:1.5rem; margin-bottom:4px;">🌱</div>
