@@ -3591,12 +3591,12 @@
                 <div class="layer-divider"></div>
                 <div class="layer-section-label">Environmental <span class="layer-rec">REC</span></div>
                 <div class="layer-item" data-layer="contamination">
-                    <label><input type="checkbox" checked onchange="toggleLayer('contamination', this.checked)">
+                    <label><input type="checkbox" onchange="toggleLayer('contamination', this.checked)">
                     <span class="layer-dot" style="background:#ff1744"></span> EPA Contamination</label>
                     <span class="layer-count" id="lc-contamination"></span>
                 </div>
                 <div class="layer-item" data-layer="superfund">
-                    <label><input type="checkbox" checked onchange="toggleLayer('superfund', this.checked)">
+                    <label><input type="checkbox" onchange="toggleLayer('superfund', this.checked)">
                     <span class="layer-dot" style="background:#d50000"></span> Superfund Sites</label>
                     <span class="layer-count" id="lc-superfund"></span>
                 </div>
@@ -3606,7 +3606,7 @@
                     <span class="layer-count" id="lc-oilgas"></span>
                 </div>
                 <div class="layer-item" data-layer="tri">
-                    <label><input type="checkbox" checked onchange="toggleLayer('tri', this.checked)">
+                    <label><input type="checkbox" onchange="toggleLayer('tri', this.checked)">
                     <span class="layer-dot" style="background:#ff6d00"></span> Toxic Release (TRI)</label>
                     <span class="layer-count" id="lc-tri"></span>
                 </div>
@@ -3844,6 +3844,9 @@
         }
 
         function showStatePreview() {
+            // Only show the statewide hazard-dot preview if the user has a hazard layer toggled on
+            const anyHazardOn = Object.keys(overlayState).some(l => HAZARD_LAYERS.has(l) && overlayState[l]?.enabled);
+            if (!anyHazardOn) { hideStatePreview(); return; }
             if (_statePreviewGroup) {
                 _statePreviewGroup.addTo(exploreMap);
             } else {
@@ -3905,9 +3908,9 @@
         /* ══════════ Overlay Layers ══════════ */
         const overlayState = {
             wells: { enabled: true, markers: [], cache: new Map() },
-            contamination: { enabled: true, markers: [], cache: new Map() },
-            superfund: { enabled: true, markers: [], cache: new Map() },
-            tri: { enabled: true, markers: [], cache: new Map() },
+            contamination: { enabled: false, markers: [], cache: new Map() },
+            superfund: { enabled: false, markers: [], cache: new Map() },
+            tri: { enabled: false, markers: [], cache: new Map() },
             brownfields: { enabled: false, markers: [], cache: new Map() },
             pfas: { enabled: false, markers: [], cache: new Map() },
         };
@@ -5921,6 +5924,44 @@
             }
         }
 
+        // ── Septic Outlook: USDA soil survey → likely OWTS system for the searched point.
+        // Free for everyone — no well = no sewer, so every searcher needs this answer too.
+        const SEPTICIQ_URL = 'https://trilakes.co/guides/septic-system-cost-colorado#septiciq';
+        async function fetchSepticOutlook(lat, lng) {
+            const el = document.getElementById('septic-outlook');
+            if (!el || !lat || !lng) return;
+            try {
+                const r = await fetch(`${WELLS_API}/api/septic-outlook?lat=${lat}&lng=${lng}`);
+                if (!r.ok) return;
+                const d = await r.json();
+                if (!d.ok) return;
+                const s = d.soil, sys = d.system, sz = d.sizing;
+                const good = !s.constraint;
+                const accent = good ? '#22c55e' : '#f59e0b';
+                const icon = good ? '🟢' : '🟡';
+                const fmt$ = n => '$' + n.toLocaleString();
+                const slopeStr = s.slope_pct != null ? ` · ~${Math.round(s.slope_pct)}% slope` : '';
+                el.innerHTML = `
+                    <div style="background:rgba(34,197,94,0.05);border:1px solid ${accent}44;border-left:3px solid ${accent};border-radius:12px;padding:16px 18px;">
+                        <div style="font-weight:800;font-size:0.95rem;color:${accent};margin-bottom:8px;">${icon} Septic Outlook for This Property</div>
+                        <div style="font-size:0.85rem;color:#cbd5e1;line-height:1.65;">
+                            No municipal water out here usually means no sewer either — this land will need its own septic system.<br>
+                            <strong style="color:#e2e8f0;">Soil:</strong> ${s.series} — ${s.texture.toLowerCase()}, ${s.drainage.toLowerCase()}${slopeStr} <span style="color:#64748b;">(${s.reg43_type})</span><br>
+                            <strong style="color:#e2e8f0;">Likely system:</strong> ${sys.name} <span style="color:#94a3b8;">— ${sys.detail}</span><br>
+                            <strong style="color:#e2e8f0;">Ballpark for ${sz.bedrooms} BR:</strong> ~${sz.field_sqft.toLocaleString()} sq ft field · ${sz.tank_gal.toLocaleString()}-gal tank · typically ${fmt$(sys.cost_low)}–${fmt$(sys.cost_high)} installed
+                            ${s.note ? `<div style="margin-top:6px;color:#94a3b8;font-size:0.8rem;">${s.note}</div>` : ''}
+                        </div>
+                        <div style="margin-top:12px;">
+                            <a href="${SEPTICIQ_URL}" target="_blank" rel="noopener" onclick="if(window.logEvent)window.logEvent('septiciq_click','${(s.series||'').replace(/'/g,'')}')"
+                               style="display:inline-block;padding:9px 18px;background:linear-gradient(135deg,#16a34a,#15803d);color:#fff;font-weight:700;font-size:0.85rem;border-radius:8px;text-decoration:none;">
+                               Size & Price This System Free — SepticIQ →</a>
+                            <span style="display:inline-block;margin-left:10px;color:#64748b;font-size:0.75rem;">USDA soil survey · CO Reg 43 method</span>
+                        </div>
+                    </div>`;
+                if (window.logEvent) window.logEvent('septic_outlook_shown', `${s.series}|${sys.name}`);
+            } catch (e) { /* soil lookup is best-effort — never block results */ }
+        }
+
         // Fetch contamination/TRI/superfund/PFAS/brownfield/mine counts for the search area and populate UI
         async function fetchSearchContamination(lat, lng, isFree) {
             const radius = 0.05; // ~3.5 miles bbox
@@ -6277,10 +6318,14 @@
                         </div>
                     </div>
                 </div>
+                <div id="septic-outlook" style="margin-top:12px;"></div>
             `;
-            
+
             // Async fetch contamination data for this search area
             fetchSearchContamination(centerLat, centerLon, _free);
+
+            // Async fetch soil-based septic outlook for the searched point (free)
+            fetchSepticOutlook(centerLat, centerLon);
 
             // ── Property Well Banner ──────────────────────────────────
             let propertyWellHtml = '';
@@ -6940,28 +6985,6 @@
         })();
     </script>
 
-    <!-- Social Proof Toast -->
-    <div class="proof-toast" id="proof-toast" onclick="showPaywallOverlay()">
-        <div class="pt-icon">📋</div>
-        <div>
-            <div class="pt-text" id="pt-text"></div>
-            <div class="pt-time" id="pt-time"></div>
-        </div>
-    </div>
-
-    <!-- Exit Intent Overlay -->
-    <div class="exit-intent" id="exit-intent" onclick="if(event.target===this)closeExitIntent()">
-        <div class="exit-intent-box">
-            <button class="exit-intent-close" onclick="closeExitIntent()">&times;</button>
-            <div style="font-size:2.2rem;margin-bottom:10px;">⚠️</div>
-            <h2 style="color:#ff1744;font-size:1.25rem;margin:0 0 8px;font-weight:800;">Wait — Did You See the Contamination?</h2>
-            <p id="exit-intent-msg" style="color:#cbd5e1;font-size:0.95rem;line-height:1.6;margin:0 0 6px;">Properties in this area have EPA contamination sites, PFAS chemicals & mine runoff nearby that could affect your well water.</p>
-            <p style="color:#94a3b8;font-size:0.85rem;margin:0 0 18px;">A contaminated well costs $15,000+ to remediate. A report costs $19.</p>
-            <a href="javascript:void(0)" onclick="closeExitIntent();showPaywallOverlay();" style="display:inline-block;padding:14px 32px;background:linear-gradient(135deg,#ff1744,#d50000);color:#fff;font-weight:700;font-size:1rem;border-radius:10px;text-decoration:none;box-shadow:0 4px 20px rgba(255,23,68,0.4);">Check My Water Safety — $19</a>
-            <div style="margin-top:12px;"><a href="javascript:void(0)" onclick="closeExitIntent()" style="color:#64748b;font-size:0.8rem;text-decoration:none;">I'll risk it</a></div>
-        </div>
-    </div>
-
     <script>
     // ══════════════════════════════════════════════════
     // CONVERSION PSYCHOLOGY ENGINE
@@ -7017,97 +7040,6 @@
             + '</div>';
     }
 
-    // ── 2. Social Proof Toast ──
-    (function initSocialProof() {
-        if (hasPaidAccess()) return; // Don't show to paid users
-
-        const counties = ['El Paso', 'Park', 'Teller', 'Douglas', 'Jefferson', 'Larimer', 'Boulder', 'Weld', 'Fremont', 'Elbert', 'Clear Creek', 'Garfield', 'Eagle', 'Summit', 'Mesa', 'Pueblo', 'Arapahoe'];
-        const actions = [
-            { icon: '📋', text: 'Someone in <strong>{county} County</strong> just got their well report', time: '{t} min ago' },
-            { icon: '🔓', text: 'A homebuyer in <strong>{county} County</strong> unlocked environmental data', time: '{t} min ago' },
-            { icon: '⚠️', text: '<strong>{county} County</strong> property — contamination report downloaded', time: '{t} min ago' },
-            { icon: '💧', text: 'Landowner in <strong>{county} County</strong> checked well depths', time: '{t} min ago' },
-            { icon: '☠️', text: '<strong>{county} County</strong> — PFAS & mine data unlocked', time: '{t} min ago' }
-        ];
-
-        let showCount = 0;
-        const maxShows = 6; // Don't annoy — cap at 6
-
-        function showToast() {
-            if (showCount >= maxShows || hasPaidAccess()) return;
-            showCount++;
-            const county = counties[Math.floor(Math.random() * counties.length)];
-            const action = actions[Math.floor(Math.random() * actions.length)];
-            const mins = Math.floor(Math.random() * 12) + 1;
-            const toast = document.getElementById('proof-toast');
-            const textEl = document.getElementById('pt-text');
-            const timeEl = document.getElementById('pt-time');
-            toast.querySelector('.pt-icon').textContent = action.icon;
-            textEl.innerHTML = action.text.replace('{county}', county);
-            timeEl.textContent = action.time.replace('{t}', mins);
-            toast.classList.add('show');
-            setTimeout(() => toast.classList.remove('show'), 12000);
-        }
-
-        // First toast after 25s, then every 35-55s
-        setTimeout(showToast, 25000);
-        setInterval(() => {
-            if (Math.random() > 0.3) showToast(); // 70% chance each interval
-        }, 40000);
-    })();
-
-    // ── 3. Exit Intent Detection ──
-    (function initExitIntent() {
-        if (hasPaidAccess()) return;
-        let shown = false;
-        let hasSearched = false;
-
-        // Track if user has searched
-        const origSearch = window.searchByAddress;
-        if (typeof origSearch === 'function') {
-            // We'll set this flag from the search handler instead
-        }
-        // Check periodically if free search was used
-        function checkSearched() {
-            return getFreeSearchCount() > 0;
-        }
-
-        // Desktop: mouse leaves viewport top
-        document.addEventListener('mouseout', function(e) {
-            if (shown || hasPaidAccess()) return;
-            if (!checkSearched()) return;
-            if (e.clientY <= 0 && e.relatedTarget === null) {
-                shown = true;
-                document.getElementById('exit-intent').classList.add('show');
-                if (window.hqTrackConversion) window.hqTrackConversion('exit_intent_shown', '');
-            }
-        });
-
-        // Mobile: back/scroll-up detection — show after scrolling up significantly
-        let lastScrollY = 0;
-        let scrollUpDist = 0;
-        window.addEventListener('scroll', function() {
-            if (shown || hasPaidAccess()) return;
-            if (!checkSearched()) return;
-            const y = window.scrollY;
-            if (y < lastScrollY) {
-                scrollUpDist += (lastScrollY - y);
-                if (scrollUpDist > 400) {
-                    shown = true;
-                    document.getElementById('exit-intent').classList.add('show');
-                    if (window.hqTrackConversion) window.hqTrackConversion('exit_intent_shown', '');
-                }
-            } else {
-                scrollUpDist = 0;
-            }
-            lastScrollY = y;
-        });
-    })();
-
-    function closeExitIntent() {
-        document.getElementById('exit-intent').classList.remove('show');
-        if (window.logEvent) window.logEvent('exit_intent_dismissed');
-    }
     </script>
 </body>
 </html>
