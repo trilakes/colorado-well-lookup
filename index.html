@@ -3904,6 +3904,13 @@
                     <span class="layer-count" id="lc-mines"></span>
                 </div>
                 <div class="layer-divider"></div>
+                <div class="layer-section-label">Terrain</div>
+                <div class="layer-item" data-layer="lidar">
+                    <label><input type="checkbox" onchange="toggleLayer('lidar', this.checked)">
+                    <span class="layer-dot" style="background:#cfd8dc"></span> Bare-Earth LiDAR</label>
+                    <span class="layer-count" id="lc-lidar"></span>
+                </div>
+                <div class="layer-divider"></div>
                 <div class="layer-section-label">Hydrology</div>
                 <div class="layer-item" data-layer="dams">
                     <label><input type="checkbox" onchange="toggleLayer('dams', this.checked)">
@@ -4297,6 +4304,24 @@
                 } else {
                     clearExploreMarkers();
                     document.getElementById('explore-counter').textContent = '';
+                }
+                return;
+            }
+
+            if (layer === 'lidar') {
+                // USGS 3DEP bare-earth hillshade — trees stripped, exposes the
+                // drainage/fracture lineaments that hint at groundwater paths.
+                if (enabled) {
+                    if (!window._lidarLayer && L.esri && L.esri.imageMapLayer) {
+                        window._lidarLayer = L.esri.imageMapLayer({
+                            url: 'https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer',
+                            renderingRule: { rasterFunction: 'Hillshade Multidirectional' },
+                            opacity: 0.85
+                        });
+                    }
+                    if (window._lidarLayer) window._lidarLayer.addTo(exploreMap);
+                } else if (window._lidarLayer) {
+                    exploreMap.removeLayer(window._lidarLayer);
                 }
                 return;
             }
