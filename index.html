@@ -3922,6 +3922,16 @@
                 </div>
                 <div class="layer-divider"></div>
                 <div class="layer-section-label">Hydrology</div>
+                <div class="layer-item" data-layer="basins">
+                    <label><input type="checkbox" onchange="toggleLayer('basins', this.checked)">
+                    <span class="layer-dot" style="background:#26a69a"></span> Watershed Basins</label>
+                    <span class="layer-count" id="lc-basins"></span>
+                </div>
+                <div class="layer-item" data-layer="drought">
+                    <label><input type="checkbox" onchange="toggleLayer('drought', this.checked)">
+                    <span class="layer-dot" style="background:#e65100"></span> Drought Monitor</label>
+                    <span class="layer-count" id="lc-drought"></span>
+                </div>
                 <div class="layer-item" data-layer="dams">
                     <label><input type="checkbox" onchange="toggleLayer('dams', this.checked)">
                     <span class="layer-dot" style="background:#2979ff"></span> Dams</label>
@@ -4387,6 +4397,54 @@
                     if (window._nhdLayer) window._nhdLayer.addTo(exploreMap);
                 } else if (window._nhdLayer) {
                     exploreMap.removeLayer(window._nhdLayer);
+                }
+                return;
+            }
+
+            if (layer === 'basins') {
+                // USGS Watershed Boundary Dataset — everything inside a HUC drains
+                // to the same outlet, so this is the honest answer to "where does
+                // my water actually come from". Basin (HUC6) and Subbasin (HUC8)
+                // read cleanly at county zoom; the finer HUCs turn to spaghetti.
+                if (enabled) {
+                    if (!window._basinLayer && L.esri && L.esri.dynamicMapLayer) {
+                        window._basinLayer = L.esri.dynamicMapLayer({
+                            url: 'https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer',
+                            layers: [3, 4],
+                            opacity: 0.75,
+                            pane: 'nhdPane'
+                        });
+                        window._basinLayer.on('loading', function() {
+                            const el = document.getElementById('explore-loading');
+                            if (el) el.classList.add('show');
+                        });
+                        window._basinLayer.on('load', function() {
+                            const el = document.getElementById('explore-loading');
+                            if (el) el.classList.remove('show');
+                        });
+                    }
+                    if (window._basinLayer) window._basinLayer.addTo(exploreMap);
+                } else if (window._basinLayer) {
+                    exploreMap.removeLayer(window._basinLayer);
+                }
+                return;
+            }
+
+            if (layer === 'drought') {
+                // U.S. Drought Monitor, refreshed every Thursday. Cached tile
+                // service (TilesOnly), Web Mercator, ArcGIS {z}/{y}/{x} order —
+                // same convention as the World Imagery basemap above.
+                if (enabled) {
+                    if (!window._droughtLayer) {
+                        window._droughtLayer = L.tileLayer(
+                            'https://services5.arcgis.com/0OTVzJS4K09zlixn/arcgis/rest/services/US_Drought_Monitor/MapServer/tile/{z}/{y}/{x}',
+                            { opacity: 0.55, maxZoom: 18, attribution: 'U.S. Drought Monitor (NDMC/USDA/NOAA)' }
+                        );
+                    }
+                    window._droughtLayer.addTo(exploreMap);
+                    if (window._droughtLayer.bringToBack) window._droughtLayer.bringToBack();
+                } else if (window._droughtLayer) {
+                    exploreMap.removeLayer(window._droughtLayer);
                 }
                 return;
             }
@@ -5207,8 +5265,11 @@
         // ============================================
         // FREE PREVIEW SYSTEM
         // ============================================
-        const FREE_SEARCH_LIMIT = 1;  // searches before paywall
-        const FREE_VISIBLE_WELLS = 3; // well cards shown unlocked
+        // Searching and the well data are free — unlimited, no paywall. The paid
+        // products are the PDF report and the cistern funnel, not the lookup.
+        // Set these back to finite numbers to re-enable gating.
+        const FREE_SEARCH_LIMIT = Infinity;  // searches before paywall
+        const FREE_VISIBLE_WELLS = Infinity; // well cards shown unlocked
 
         function getFreeSearchCount() {
             return parseInt(localStorage.getItem('wf_free_searches') || '0');
@@ -6298,6 +6359,210 @@
                 .catch(function(err) { alert('Could not analyze this area: ' + err.message); });
         };
 
+        // ── Results-map layer control ────────────────────────────────────────
+        // The Explore map has a full layer panel; the address-search map had a
+        // hardcoded basemap and nothing else. Same layers, but NEW instances:
+        // a Leaflet layer can only belong to one map at a time, so these cannot
+        // be shared with the Explore map's window._lidarLayer / _nhdLayer / etc.
+        const RESULTS_LAYERS = {
+            parcels: {
+                label: 'Parcel Lines', dot: '#00f0ff', on: true,
+                make: () => L.esri.featureLayer({
+                    url: 'https://gis.colorado.gov/public/rest/services/Address_and_Parcel/Colorado_Public_Parcels/FeatureServer/0',
+                    minZoom: 14, interactive: false,
+                    style: () => ({ color: '#00f0ff', weight: 1.5, opacity: 0.8, fillOpacity: 0 })
+                })
+            },
+            lidar: {
+                label: 'Bare-Earth LiDAR', dot: '#cfd8dc',
+                make: () => L.esri.imageMapLayer({
+                    url: 'https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer',
+                    renderingRule: { rasterFunction: 'Hillshade Multidirectional' }, opacity: 0.85
+                })
+            },
+            streams: {
+                label: 'Streams & Springs', dot: '#40c4ff',
+                make: () => L.esri.dynamicMapLayer({
+                    url: 'https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer',
+                    layers: [0, 6, 9, 12], opacity: 1
+                })
+            },
+            basins: {
+                label: 'Watershed Basins', dot: '#26a69a',
+                make: () => L.esri.dynamicMapLayer({
+                    url: 'https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer',
+                    layers: [3, 4], opacity: 0.75
+                })
+            },
+            drought: {
+                label: 'Drought Monitor', dot: '#e65100',
+                make: () => L.tileLayer(
+                    'https://services5.arcgis.com/0OTVzJS4K09zlixn/arcgis/rest/services/US_Drought_Monitor/MapServer/tile/{z}/{y}/{x}',
+                    { opacity: 0.55, maxZoom: 18, attribution: 'U.S. Drought Monitor (NDMC/USDA/NOAA)' })
+            }
+        };
+
+        function toggleResultsLayer(targetMap, key, enabled) {
+            const def = RESULTS_LAYERS[key];
+            if (!def) return;
+            targetMap._layerCache = targetMap._layerCache || {};
+            try {
+                if (enabled) {
+                    if (!targetMap._layerCache[key]) targetMap._layerCache[key] = def.make();
+                    targetMap._layerCache[key].addTo(targetMap);
+                    // Drought is a wash of colour — keep wells and parcels on top.
+                    if (key === 'drought' && targetMap._layerCache[key].bringToBack) {
+                        targetMap._layerCache[key].bringToBack();
+                    }
+                } else if (targetMap._layerCache[key]) {
+                    targetMap.removeLayer(targetMap._layerCache[key]);
+                }
+            } catch (e) { console.warn('Layer ' + key + ' unavailable:', e); }
+        }
+
+        function addResultsLayerControl(targetMap) {
+            if (!L.esri || targetMap._layerControlAdded) return;
+            targetMap._layerControlAdded = true;
+
+            const ctl = L.control({ position: 'topright' });
+            ctl.onAdd = function() {
+                const div = L.DomUtil.create('div', 'results-layer-ctl');
+                div.style.cssText = 'background:rgba(15,23,42,0.92);border:1px solid rgba(148,163,184,0.28);' +
+                    'border-radius:10px;padding:8px 10px;font-size:0.74rem;color:#cbd5e1;' +
+                    'box-shadow:0 4px 14px rgba(0,0,0,0.4);min-width:150px;';
+                div.innerHTML =
+                    '<div style="font-weight:800;font-size:0.68rem;letter-spacing:0.06em;' +
+                    'text-transform:uppercase;color:#64748b;margin-bottom:6px;">Map Layers</div>' +
+                    Object.keys(RESULTS_LAYERS).map(k => {
+                        const d = RESULTS_LAYERS[k];
+                        return '<label style="display:flex;align-items:center;gap:6px;cursor:pointer;' +
+                            'margin-bottom:4px;white-space:nowrap;">' +
+                            '<input type="checkbox" data-rl="' + k + '"' + (d.on ? ' checked' : '') +
+                            ' style="cursor:pointer;margin:0;">' +
+                            '<span style="width:8px;height:8px;border-radius:50%;background:' + d.dot +
+                            ';display:inline-block;flex:none;"></span>' + d.label + '</label>';
+                    }).join('');
+
+                // Stop clicks/scroll inside the control from panning or zooming.
+                L.DomEvent.disableClickPropagation(div);
+                L.DomEvent.disableScrollPropagation(div);
+                div.addEventListener('change', function(ev) {
+                    const key = ev.target && ev.target.getAttribute('data-rl');
+                    if (key) toggleResultsLayer(targetMap, key, ev.target.checked);
+                });
+                return div;
+            };
+            ctl.addTo(targetMap);
+
+            // Turn on whatever is checked by default, so the control and the map agree.
+            Object.keys(RESULTS_LAYERS).forEach(k => {
+                if (RESULTS_LAYERS[k].on) toggleResultsLayer(targetMap, k, true);
+            });
+        }
+
+        // ── Well Resilience: how THIS well compares to its neighbours.
+        // Leads the panel on an address match — someone who searched their own
+        // address wants their well first, not an upsell for a different product.
+        const CISTERN_URL = 'https://trilakes.co/get-a-quote';
+        const TIER_ACCENT = { low: '#22c55e', moderate: '#f59e0b', elevated: '#f59e0b', high: '#ef4444' };
+
+        async function fetchWellResilience(receipt) {
+            const el = document.getElementById('well-resilience');
+            if (!el || !receipt) return;
+            try {
+                const r = await fetch(`${WELLS_API}/api/well-resilience?receipt=${encodeURIComponent(receipt)}`);
+                if (!r.ok) return;
+                const d = await r.json();
+                if (!d.ok) return;
+
+                const w = d.well, c = d.comparison, risk = d.risk;
+                const accent = TIER_ACCENT[risk.tier] || '#64748b';
+                const atRisk = risk.tier !== 'low';
+                const fmt = (v, s) => (v === null || v === undefined) ? '—' : `${Math.round(v)}${s || ''}`;
+
+                const facts = [
+                    ['Depth', fmt(w.depth_ft, ' ft')],
+                    ['Producing zone', (w.screen_top_ft && w.screen_bottom_ft)
+                        ? `${Math.round(w.screen_top_ft)}–${Math.round(w.screen_bottom_ft)} ft` : '—'],
+                    ['Reserve below screen', w.reserve_below_screen_ft === null ? '—'
+                        : `${Math.round(w.reserve_below_screen_ft)} ft`],
+                    ['Area median depth', fmt(c.peer_depth_median, ' ft')],
+                ].map(([k, v]) => `
+                    <div style="background:rgba(15,23,42,0.55);border-radius:10px;padding:9px 11px;">
+                        <div style="color:#64748b;font-size:0.66rem;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:2px;">${k}</div>
+                        <div style="color:#e2e8f0;font-weight:700;font-size:0.9rem;">${v}</div>
+                    </div>`).join('');
+
+                const findings = risk.findings.map(f =>
+                    `<li style="margin-bottom:6px;">${f}</li>`).join('');
+
+                const addr = window._lastSearchAddress || document.getElementById('address')?.value || '';
+                const cta = CISTERN_URL + '?project=' + encodeURIComponent('Water Storage & Cisterns')
+                    + (addr ? '&address=' + encodeURIComponent(addr) : '');
+
+                el.innerHTML = `
+                    <div style="background:linear-gradient(135deg, ${accent}1f, rgba(15,23,42,0.45));border:1px solid ${accent}55;border-radius:14px;padding:18px 20px;">
+                        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
+                            <span style="font-weight:800;font-size:1rem;color:#e2e8f0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px"><path d="M12 2v6"/><path d="M5 8h14l-1.5 12h-11z"/><path d="M8 14h8"/></svg>Your Well</span>
+                            <span style="font-size:0.68rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:${accent};background:${accent}22;padding:4px 9px;border-radius:6px;">${risk.label}</span>
+                        </div>
+                        <div style="color:#94a3b8;font-size:0.78rem;margin-bottom:10px;">Permit ${w.permit || '—'}${w.year_completed ? ' · drilled ' + w.year_completed : ''}${w.uses ? ' · ' + w.uses : ''}</div>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px;">${facts}</div>
+                        <ul style="color:#cbd5e1;font-size:0.84rem;line-height:1.55;margin:0 0 12px;padding-left:18px;">${findings}</ul>
+                        ${d.drought ? `<div style="color:#94a3b8;font-size:0.78rem;margin-bottom:12px;"><strong style="color:#cbd5e1;">${d.drought.county}:</strong> ${d.drought.label} (${d.drought.category}) — U.S. Drought Monitor, ${d.drought.map_date}</div>` : ''}
+                        ${atRisk ? `
+                        <a href="${cta}" target="_blank" rel="noopener" onclick="if(window.logEvent)window.logEvent('cistern_cta_click','${risk.tier}')"
+                           style="display:block;text-align:center;padding:13px 20px;background:linear-gradient(135deg,#0ea5e9,#0369a1);color:#fff;font-weight:800;font-size:0.95rem;border-radius:10px;text-decoration:none;box-shadow:0 4px 16px rgba(14,165,233,0.35);">
+                           Get a Cistern Quote →</a>
+                        <div style="text-align:center;color:#64748b;font-size:0.72rem;margin-top:6px;">Water storage buffers a weak well — free estimate</div>` : ''}
+                        <details style="margin-top:10px;">
+                            <summary style="color:#64748b;font-size:0.72rem;cursor:pointer;">How this was determined</summary>
+                            <ul style="color:#64748b;font-size:0.72rem;line-height:1.5;margin:6px 0 0;padding-left:18px;">
+                                ${d.caveats.map(c2 => `<li style="margin-bottom:4px;">${c2}</li>`).join('')}
+                            </ul>
+                        </details>
+                    </div>`;
+
+                renderAreaDataDetail(d.area_stats);
+                if (window.logEvent) window.logEvent('well_resilience_shown', risk.tier);
+            } catch (e) { /* best-effort — never block results */ }
+        }
+
+        // Rich distribution rows for Area Well Statistics. Sourced from the same
+        // response as the panel above so the two can never disagree.
+        function renderAreaDataDetail(s) {
+            const el = document.getElementById('area-data-detail');
+            if (!el || !s) return;
+            const row = (label, value) => value ? `
+                <div class="cost-item">
+                    <span class="cost-label">${label}:</span>
+                    <span class="cost-value">${value}</span>
+                </div>` : '';
+
+            const d = s.depth, sc = s.screen, st = s.static, v = s.vintage;
+            const zones = (s.regimes && s.regimes.length > 1)
+                ? s.regimes.map(z => `${Math.round(z.lo)}–${Math.round(z.hi)} ft (${z.count})`).join(' and ')
+                : null;
+            const vintage = (v.pre1995_median_depth && v.post1995_median_depth)
+                ? `${Math.round(v.pre1995_median_depth)} ft before 1995 → ${Math.round(v.post1995_median_depth)} ft after`
+                : null;
+
+            el.innerHTML = `
+                <div class="cost-estimate" style="margin-top:10px;">
+                    <div class="cost-title">Well Data Within ${s.radius} Miles (${s.count} wells)</div>
+                    <div class="cost-grid">
+                        ${row('Depth median', d.median ? `${Math.round(d.median)} ft` : null)}
+                        ${row('Typical range', (d.p25 && d.p75) ? `${Math.round(d.p25)} – ${Math.round(d.p75)} ft` : null)}
+                        ${row('Full range', (d.min && d.max) ? `${Math.round(d.min)} – ${Math.round(d.max)} ft` : null)}
+                        ${row('Producing zones', zones)}
+                        ${row('Typical screen', (sc.top_median && sc.bottom_median) ? `${Math.round(sc.top_median)} – ${Math.round(sc.bottom_median)} ft (${sc.reported} reporting)` : null)}
+                        ${row('Water table', st.median ? `~${Math.round(st.median)} ft down (${st.reported} reporting)` : null)}
+                        ${row('Drilling trend', vintage)}
+                    </div>
+                    ${s.yield && s.yield.cap_dominated ? `<div style="color:#64748b;font-size:0.72rem;margin-top:8px;line-height:1.45;">Note: ${s.yield.at_permit_cap} of ${s.yield.reported} nearby wells report exactly 15 gpm — the permitted ceiling for exempt household wells, not a measured test. Area yield figures are unreliable.</div>` : ''}
+                </div>`;
+        }
+
         // ── Septic Outlook: USDA soil survey → likely OWTS system for the searched point.
         // Free for everyone — no well = no sewer, so every searcher needs this answer too.
         const SEPTICIQ_URL = 'https://trilakes.co/soil-report#tool';
@@ -6576,24 +6841,9 @@
                     attribution: 'ESRI World Imagery'
                 }).addTo(map);
 
-                // Parcel boundaries on results map (vector outlines)
-                try {
-                    if (L.esri && L.esri.featureLayer) {
-                        L.esri.featureLayer({
-                            url: 'https://gis.colorado.gov/public/rest/services/Address_and_Parcel/Colorado_Public_Parcels/FeatureServer/0',
-                            minZoom: 14,
-                            style: function() {
-                                return {
-                                    color: '#00f0ff',
-                                    weight: 1.5,
-                                    opacity: 0.8,
-                                    fillOpacity: 0
-                                };
-                            },
-                            interactive: false
-                        }).addTo(map);
-                    }
-                } catch(e) { console.warn('Parcel layer unavailable:', e); }
+                // Parcel boundaries and every other overlay are owned by the
+                // layer control below — it adds the default-on ones at init.
+                addResultsLayerControl(map);
             }
 
             // Clear existing markers
@@ -6662,70 +6912,79 @@
             // Display summary
             const _free = isFreeUser();
             document.getElementById('summary').innerHTML = `
-                <div id="septic-outlook" style="margin-bottom:14px;"></div>
+                <div id="well-resilience" style="margin-bottom:14px;"></div>
                 <div class="summary-box">
-                    <div class="summary-title">Area Well Statistics (${wells.length} wells with depth data)</div>
+                    <div class="summary-title">Water in This Area (${wells.length} wells on record)</div>
+
                     <div class="summary-grid">
                         <div class="summary-item">
+                            <div class="summary-value">${avgDepth} ft</div>
+                            <div class="summary-label">Typical Depth</div>
+                        </div>
+                        <div class="summary-item">
+                            <div class="summary-value">${avgWaterLevel !== 'N/A' ? avgWaterLevel + ' ft' : '—'}</div>
+                            <div class="summary-label">Water Table</div>
+                        </div>
+                        <div class="summary-item">
                             <div class="summary-value">${wells.length}</div>
-                            <div class="summary-label">Wells Found</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-value">${avgYield ? avgYield + ' GPM' : 'N/A'}</div>
-                            <div class="summary-label">Avg Yield</div>
-                        </div>
-                        <div class="summary-item">
-                            <div class="summary-value">${activeCount}</div>
-                            <div class="summary-label">Active Wells</div>
+                            <div class="summary-label">Wells Nearby</div>
                         </div>
                     </div>
+
+                    <!-- Populated from /api/well-resilience: depth distribution,
+                         producing zones, screen depths, drilling trend. -->
+                    <div id="area-data-detail"></div>
+
                     <div class="cost-estimate" style="margin-top:10px;">
                         <div class="cost-title">Area Details</div>
                         <div class="cost-grid">
                             ${topAquifer ? `<div class="cost-item">
-                                <span class="cost-label">Top Aquifer:</span>
+                                <span class="cost-label">Top aquifer:</span>
                                 <span class="cost-value">${topAquifer[0]} (${topAquifer[1]} wells)</span>
-                            </div>` : ''}
-                            ${yields.length > 0 ? `<div class="cost-item">
-                                <span class="cost-label">Yield range:</span>
-                                <span class="cost-value">${Math.min(...yields)} – ${Math.max(...yields)} GPM</span>
                             </div>` : ''}
                             ${newestDate && oldestDate ? `<div class="cost-item">
                                 <span class="cost-label">Well dates:</span>
                                 <span class="cost-value">${oldestDate} – ${newestDate}</span>
                             </div>` : ''}
                             <div class="cost-item">
-                                <span class="cost-label">Avg depth:</span>
-                                <span class="cost-value">${_free ? lockedHTML('Unlock') : avgDepth + ' ft'}</span>
-                            </div>
-                            <div class="cost-item">
                                 <span class="cost-label">Depth range:</span>
-                                <span class="cost-value">${_free ? lockedHTML('Unlock') : minDepth + ' – ' + maxDepth + ' ft'}</span>
+                                <span class="cost-value">${minDepth} – ${maxDepth} ft</span>
                             </div>
                             <div class="cost-item">
-                                <span class="cost-label">Avg static water level:</span>
-                                <span class="cost-value">${_free ? lockedHTML('Unlock') : avgWaterLevel + (avgWaterLevel !== 'N/A' ? ' ft' : '')}</span>
+                                <span class="cost-label">Wells still active:</span>
+                                <span class="cost-value">${activeCount} of ${wells.length}</span>
                             </div>
                         </div>
                     </div>
-                    <div class="cost-estimate" style="margin-top:10px;">
-                        <div class="cost-title">Estimated Total Well Costs ($50-75/ft + equipment)</div>
+
+                    <!-- Drilling is the minority path and the expensive one, so it
+                         sits collapsed at the bottom rather than framing the panel. -->
+                    <details class="cost-estimate" style="margin-top:10px;">
+                        <summary style="cursor:pointer;font-weight:700;color:#cbd5e1;font-size:0.86rem;">
+                            Thinking about drilling a new well?
+                        </summary>
+                        <div style="color:#94a3b8;font-size:0.8rem;line-height:1.5;margin:8px 0 10px;">
+                            Estimated at $50–75/ft plus equipment, based on the depths actually
+                            drilled around here. Colorado drillers are booked far out — storage is
+                            usually the faster answer when an existing well is struggling.
+                        </div>
                         <div class="cost-grid">
                             <div class="cost-item">
-                                <span class="cost-label">Shallowest well:</span>
-                                <span class="cost-value">${_free ? lockedHTML('Unlock') : '$' + minCost.totalLow.toLocaleString() + ' - $' + minCost.totalHigh.toLocaleString()}</span>
+                                <span class="cost-label">Shallowest well (${minDepth} ft):</span>
+                                <span class="cost-value">$${minCost.totalLow.toLocaleString()} - $${minCost.totalHigh.toLocaleString()}</span>
                             </div>
                             <div class="cost-item">
-                                <span class="cost-label">Average well:</span>
-                                <span class="cost-value">${_free ? lockedHTML('Unlock') : '$' + avgCost.totalLow.toLocaleString() + ' - $' + avgCost.totalHigh.toLocaleString()}</span>
+                                <span class="cost-label">Typical well (${avgDepth} ft):</span>
+                                <span class="cost-value">$${avgCost.totalLow.toLocaleString()} - $${avgCost.totalHigh.toLocaleString()}</span>
                             </div>
                             <div class="cost-item">
-                                <span class="cost-label">Deepest well:</span>
-                                <span class="cost-value">${_free ? lockedHTML('Unlock') : '$' + maxCost.totalLow.toLocaleString() + ' - $' + maxCost.totalHigh.toLocaleString()}</span>
+                                <span class="cost-label">Deepest well (${maxDepth} ft):</span>
+                                <span class="cost-value">$${maxCost.totalLow.toLocaleString()} - $${maxCost.totalHigh.toLocaleString()}</span>
                             </div>
                         </div>
-                    </div>
+                    </details>
                 </div>
+                <div id="septic-outlook" style="margin-top:14px;"></div>
                 <div id="search-contam-alert" style="margin-top:12px;"></div>
             `;
 
@@ -6734,6 +6993,12 @@
 
             // Async fetch soil-based septic outlook for the searched point (free)
             fetchSepticOutlook(centerLat, centerLon);
+
+            // Their OWN well leads the panel when the search matched a permit —
+            // this also fills the richer Area Well Statistics rows.
+            if (propertyWells.length > 0 && propertyWells[0].receipt) {
+                fetchWellResilience(propertyWells[0].receipt);
+            }
 
             // ── Property Well Banner ──────────────────────────────────
             let propertyWellHtml = '';
