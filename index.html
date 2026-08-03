@@ -3924,7 +3924,7 @@
                 </div>
                 <div class="layer-item" data-layer="parcels">
                     <label><input type="checkbox" checked onchange="toggleLayer('parcels', this.checked)">
-                    <span class="layer-dot" style="background:#00f0ff"></span> Parcel Lines</label>
+                    <span class="layer-dot" style="background:#d6d3d1"></span> Parcel Lines</label>
                     <span class="layer-count" id="lc-parcels"></span>
                 </div>
                 <div class="layer-divider"></div>
@@ -4080,11 +4080,14 @@
                         window._exploreParcelLayer = L.esri.featureLayer({
                             url: 'https://gis.colorado.gov/public/rest/services/Address_and_Parcel/Colorado_Public_Parcels/FeatureServer/0',
                             minZoom: 14,
+                            // Faint warm grey, not cyan: parcels are reference
+                            // lines, and the old cyan competed with the blue
+                            // hydrology layers (streams, basins) for attention.
                             style: function() {
                                 return {
-                                    color: '#00f0ff',
-                                    weight: 1.5,
-                                    opacity: 0.8,
+                                    color: '#d6d3d1',
+                                    weight: 1,
+                                    opacity: 0.4,
                                     fillOpacity: 0
                                 };
                             },
@@ -4458,13 +4461,17 @@
             if (layer === 'basins') {
                 // USGS Watershed Boundary Dataset — everything inside a HUC drains
                 // to the same outlet, so this is the honest answer to "where does
-                // my water actually come from". Basin (HUC6) and Subbasin (HUC8)
-                // read cleanly at county zoom; the finer HUCs turn to spaghetti.
+                // my water actually come from".
+                // All four HU levels are requested on purpose: the service
+                // scale-gates each sublayer (HUC6 8M-2M, HUC8 2M-867k,
+                // HUC10 867k-433k, HUC12 433k-0), so asking for only the coarse
+                // ones returns a blank image at property zoom. Handing ArcGIS the
+                // full set lets it draw whichever level is legible.
                 if (enabled) {
                     if (!window._basinLayer && L.esri && L.esri.dynamicMapLayer) {
                         window._basinLayer = L.esri.dynamicMapLayer({
                             url: 'https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer',
-                            layers: [3, 4],
+                            layers: [3, 4, 5, 6],
                             opacity: 0.75,
                             pane: 'nhdPane'
                         });
@@ -4492,11 +4499,15 @@
                     if (!window._droughtLayer) {
                         window._droughtLayer = L.tileLayer(
                             'https://services5.arcgis.com/0OTVzJS4K09zlixn/arcgis/rest/services/US_Drought_Monitor/MapServer/tile/{z}/{y}/{x}',
-                            { opacity: 0.55, maxZoom: 18, attribution: 'U.S. Drought Monitor (NDMC/USDA/NOAA)' }
+                            { opacity: 0.5, maxZoom: 19,
+                              attribution: 'U.S. Drought Monitor (NDMC/USDA/NOAA)' }
                         );
                     }
+                    // Deliberately NOT bringToBack(): the satellite basemap is an
+                    // opaque tile layer, so sending this behind it hides it
+                    // completely. Added normally it sits above the basemap and
+                    // still below every marker, which live in their own pane.
                     window._droughtLayer.addTo(exploreMap);
-                    if (window._droughtLayer.bringToBack) window._droughtLayer.bringToBack();
                 } else if (window._droughtLayer) {
                     exploreMap.removeLayer(window._droughtLayer);
                 }
@@ -6420,11 +6431,11 @@
         // be shared with the Explore map's window._lidarLayer / _nhdLayer / etc.
         const RESULTS_LAYERS = {
             parcels: {
-                label: 'Parcel Lines', dot: '#00f0ff', on: true,
+                label: 'Parcel Lines', dot: '#d6d3d1', on: true,
                 make: () => L.esri.featureLayer({
                     url: 'https://gis.colorado.gov/public/rest/services/Address_and_Parcel/Colorado_Public_Parcels/FeatureServer/0',
                     minZoom: 14, interactive: false,
-                    style: () => ({ color: '#00f0ff', weight: 1.5, opacity: 0.8, fillOpacity: 0 })
+                    style: () => ({ color: '#d6d3d1', weight: 1, opacity: 0.4, fillOpacity: 0 })
                 })
             },
             lidar: {
@@ -6442,17 +6453,20 @@
                 })
             },
             basins: {
+                // All four HU levels: the service scale-gates each sublayer, so
+                // requesting only HUC6/HUC8 draws nothing at address zoom.
                 label: 'Watershed Basins', dot: '#26a69a',
                 make: () => L.esri.dynamicMapLayer({
                     url: 'https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer',
-                    layers: [3, 4], opacity: 0.75
+                    layers: [3, 4, 5, 6], opacity: 0.75
                 })
             },
             drought: {
                 label: 'Drought Monitor', dot: '#e65100',
                 make: () => L.tileLayer(
                     'https://services5.arcgis.com/0OTVzJS4K09zlixn/arcgis/rest/services/US_Drought_Monitor/MapServer/tile/{z}/{y}/{x}',
-                    { opacity: 0.55, maxZoom: 18, attribution: 'U.S. Drought Monitor (NDMC/USDA/NOAA)' })
+                    { opacity: 0.5, maxZoom: 19,
+                      attribution: 'U.S. Drought Monitor (NDMC/USDA/NOAA)' })
             }
         };
 
@@ -6463,11 +6477,10 @@
             try {
                 if (enabled) {
                     if (!targetMap._layerCache[key]) targetMap._layerCache[key] = def.make();
+                    // Added normally, never bringToBack(): the satellite basemap
+                    // is opaque, so sending an overlay behind it hides it. Markers
+                    // sit in their own pane and stay on top regardless.
                     targetMap._layerCache[key].addTo(targetMap);
-                    // Drought is a wash of colour — keep wells and parcels on top.
-                    if (key === 'drought' && targetMap._layerCache[key].bringToBack) {
-                        targetMap._layerCache[key].bringToBack();
-                    }
                 } else if (targetMap._layerCache[key]) {
                     targetMap.removeLayer(targetMap._layerCache[key]);
                 }
