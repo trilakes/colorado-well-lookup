@@ -1558,6 +1558,62 @@
             .rl-summary { padding: 9px 12px; }
         }
 
+        /* ── Landing content ───────────────────────────────────────────── */
+        .seo-content { max-width: 940px; margin: 0 auto; padding: 10px 20px 48px; }
+        .lp-block { margin-bottom: 44px; }
+        .lp-block h2 {
+            font-size: 1.5rem; color: #e2e8f0; margin-bottom: 12px;
+            letter-spacing: -0.01em; line-height: 1.25;
+        }
+        .lp-lead { color: #cbd5e1; font-size: 1.02rem; line-height: 1.65; margin-bottom: 12px; }
+        .lp-block p { color: #94a3b8; font-size: 0.95rem; line-height: 1.7; margin-bottom: 10px; }
+        .lp-note {
+            margin-top: 16px; padding-top: 14px;
+            border-top: 1px solid rgba(148,163,184,0.12);
+            font-size: 0.87rem !important;
+        }
+        .depth-grid {
+            display: grid; gap: 12px; margin-top: 18px;
+            grid-template-columns: repeat(auto-fill, minmax(224px, 1fr));
+        }
+        .depth-card {
+            background: rgba(15,23,42,0.55);
+            border: 1px solid rgba(148,163,184,0.16);
+            border-radius: 12px; padding: 15px 16px;
+        }
+        .depth-card h3 {
+            font-size: 0.74rem; font-weight: 800; letter-spacing: 0.07em;
+            text-transform: uppercase; color: #64748b; margin-bottom: 6px;
+        }
+        .depth-big { font-size: 1.75rem; font-weight: 800; color: #38bdf8; line-height: 1; }
+        .depth-meta { color: #64748b; font-size: 0.72rem; margin: 5px 0 11px; }
+        .depth-rows {
+            display: grid; grid-template-columns: auto auto; gap: 3px 10px;
+            font-size: 0.8rem; justify-content: space-between;
+        }
+        .depth-rows span { color: #64748b; }
+        .depth-rows b { color: #cbd5e1; font-weight: 700; text-align: right; }
+        .depth-towns {
+            margin-top: 11px; padding-top: 9px;
+            border-top: 1px solid rgba(148,163,184,0.1);
+            color: #64748b; font-size: 0.75rem; line-height: 1.45;
+        }
+        .lp-cols { display: grid; gap: 4px 34px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+        .lp-cols ul { list-style: none; padding: 0; margin: 0; }
+        .lp-cols li {
+            color: #94a3b8; font-size: 0.92rem; line-height: 1.5;
+            padding: 6px 0 6px 22px; position: relative;
+        }
+        .lp-cols li::before {
+            content: ""; position: absolute; left: 4px; top: 13px;
+            width: 6px; height: 6px; border-radius: 50%; background: #38bdf8; opacity: 0.65;
+        }
+        @media (max-width: 640px) {
+            .lp-block h2 { font-size: 1.25rem; }
+            .depth-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 10px; }
+            .depth-big { font-size: 1.45rem; }
+        }
+
         .hazard-lock-title {
             color: #ff1744;
             font-size: 0.92rem;
@@ -3528,13 +3584,13 @@
     <div class="container">
         <header>
             <h1><svg class="brand-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C12 2 6 8.5 6 13C6 16.5 8.5 20 12 20C15.5 20 18 16.5 18 13C18 8.5 12 2 12 2Z"/><path d="M12 16C13.5 16 15 14.5 15 13C15 11 12 8 12 8"/></svg>Colorado Well Finder</h1>
-            <p>Check well depths, drilling costs & water contamination for any property</p>
+            <p>Well depths, water levels &amp; drought risk for any Colorado property</p>
         </header>
 
         <div class="hero">
-            <p class="hero-eyebrow">Free search &middot; 1.3M+ Colorado well records</p>
+            <p class="hero-eyebrow">Free &middot; unlimited searches &middot; 1.3M+ state well records</p>
             <h2 class="hero-title">How deep is the water <span>under your land?</span></h2>
-            <p class="hero-sub">Type any Colorado address to see every permitted well around it &mdash; how deep the neighbors drilled, what they hit, what a well likely costs, and what the soil says about septic.</p>
+            <p class="hero-sub">Type any Colorado address to see every permitted well around it &mdash; how deep the neighbors had to drill, where the water sits, and whether a well here is at risk of running dry.</p>
         </div>
 
         <section class="search-section">
@@ -3939,94 +3995,183 @@
         <div class="explore-msg" id="explore-zoom-hint" style="display:none;background:linear-gradient(135deg,rgba(255,23,68,0.15),rgba(213,0,0,0.08));border:1px solid rgba(255,23,68,0.3);color:#ff5252;font-weight:600;font-size:0.88rem;bottom:56px;max-width:380px;padding:10px 16px;line-height:1.4;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:5px;"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4"/><path d="M12 17h.01"/></svg>Red &amp; orange dots = EPA, Superfund &amp; toxic sites<br><span style="font-weight:400;font-size:0.8rem;color:#cbd5e1;">Green/yellow dots are wells. Zoom in to see details &amp; identify hazards near your property</span></div>
     </div>
 
-    <!-- Marketing / SEO content. Lived inside the paywall overlay until that
-         overlay became hidden-by-default; it is real page content now so that
-         visitors and crawlers both actually see it. -->
-    <section class="seo-content" style="max-width:760px;margin:0 auto;padding:8px 20px 40px;">
-            <div class="landing-problem">
-                <h2>Buying Rural Colorado Property?</h2>
-                <p style="font-size:1.05rem; line-height:1.7;">Your well could cost <strong>$15,000–$40,000</strong>.<br>Depth is everything — and <strong style="color:#ff1744;">contamination is invisible</strong>.<br>Colorado has <strong style="color:#e040fb;">14,000+ PFAS detections</strong> and <strong style="color:#8d6e63;">40,000+ mine sites</strong>.<br>If there's an EPA site nearby? Your water could be unsafe for decades.</p>
-                <p style="margin-top: 14px; color: #94a3b8; font-size: 0.93rem;">Search any address. See a Water Risk Score, hazard map, well depths &amp; contamination sources — before you make an offer.</p>
-            </div>
-            <div class="landing-problem" style="margin-top: 0; padding-top: 0; border-top: none;">
-                <h2 style="font-size: 1.15rem; margin-bottom: 14px;">Built for Colorado Property Buyers & Landowners</h2>
-                <div class="use-cases-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; text-align: left; max-width: 520px; margin: 0 auto;">
-                    <span style="color: #cbd5e1; font-size: 0.9rem;">&#10003; Buying vacant land</span>
-                    <span style="color: #cbd5e1; font-size: 0.9rem;">&#10003; Real estate due diligence</span>
-                    <span style="color: #cbd5e1; font-size: 0.9rem;">&#10003; Replacing an old well</span>
-                    <span style="color: #cbd5e1; font-size: 0.9rem;">&#10003; Getting drilling bids</span>
-                    <span style="color: #cbd5e1; font-size: 0.9rem;">&#10003; Checking water table depth</span>
-                    <span style="color: #cbd5e1; font-size: 0.9rem;">&#10003; Checking for contamination</span>
-                </div>
-            </div>
-            <div style="margin-top: 48px; padding-top: 32px; border-top: 1px solid rgba(148,163,184,0.1); text-align: left; max-width: 700px; margin-left: auto; margin-right: auto;">
-                <h2 style="font-size: 1.2rem; color: #e2e8f0; margin-bottom: 16px; text-align: center;">Colorado Well Drilling Costs by Region (2025-2026)</h2>
-                <p style="color: #94a3b8; font-size: 0.9rem; line-height: 1.7; margin-bottom: 14px;">Well drilling costs in Colorado depend heavily on location and geology. Here are typical well depths and estimated costs by region, based on 591,000+ verified well permit records:</p>
-                
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px 24px; margin-bottom: 20px;">
-                    <div style="padding: 12px; background: rgba(56,189,248,0.04); border-radius: 8px; border: 1px solid rgba(56,189,248,0.08);">
-                        <h3 style="font-size: 0.85rem; color: #38bdf8; margin-bottom: 4px;">El Paso County</h3>
-                        <p style="color: #94a3b8; font-size: 0.8rem; line-height: 1.5;">Avg depth: 200-400 ft<br>Cost: $10,000-$30,000<br>Colorado Springs, Monument, Falcon</p>
-                    </div>
-                    <div style="padding: 12px; background: rgba(56,189,248,0.04); border-radius: 8px; border: 1px solid rgba(56,189,248,0.08);">
-                        <h3 style="font-size: 0.85rem; color: #38bdf8; margin-bottom: 4px;">Park County</h3>
-                        <p style="color: #94a3b8; font-size: 0.8rem; line-height: 1.5;">Avg depth: 150-350 ft<br>Cost: $7,500-$26,000<br>Fairplay, Bailey, Hartsel</p>
-                    </div>
-                    <div style="padding: 12px; background: rgba(56,189,248,0.04); border-radius: 8px; border: 1px solid rgba(56,189,248,0.08);">
-                        <h3 style="font-size: 0.85rem; color: #38bdf8; margin-bottom: 4px;">Teller County</h3>
-                        <p style="color: #94a3b8; font-size: 0.8rem; line-height: 1.5;">Avg depth: 200-500 ft<br>Cost: $10,000-$37,500<br>Woodland Park, Divide, Cripple Creek</p>
-                    </div>
-                    <div style="padding: 12px; background: rgba(56,189,248,0.04); border-radius: 8px; border: 1px solid rgba(56,189,248,0.08);">
-                        <h3 style="font-size: 0.85rem; color: #38bdf8; margin-bottom: 4px;">Douglas County</h3>
-                        <p style="color: #94a3b8; font-size: 0.8rem; line-height: 1.5;">Avg depth: 300-600 ft<br>Cost: $15,000-$45,000<br>Castle Rock, Larkspur, Sedalia</p>
-                    </div>
-                    <div style="padding: 12px; background: rgba(56,189,248,0.04); border-radius: 8px; border: 1px solid rgba(56,189,248,0.08);">
-                        <h3 style="font-size: 0.85rem; color: #38bdf8; margin-bottom: 4px;">Jefferson County</h3>
-                        <p style="color: #94a3b8; font-size: 0.8rem; line-height: 1.5;">Avg depth: 200-450 ft<br>Cost: $10,000-$34,000<br>Conifer, Evergreen, Pine</p>
-                    </div>
-                    <div style="padding: 12px; background: rgba(56,189,248,0.04); border-radius: 8px; border: 1px solid rgba(56,189,248,0.08);">
-                        <h3 style="font-size: 0.85rem; color: #38bdf8; margin-bottom: 4px;">Weld County</h3>
-                        <p style="color: #94a3b8; font-size: 0.8rem; line-height: 1.5;">Avg depth: 100-250 ft<br>Cost: $5,000-$18,750<br>Greeley, Windsor, Johnstown</p>
-                    </div>
-                    <div style="padding: 12px; background: rgba(56,189,248,0.04); border-radius: 8px; border: 1px solid rgba(56,189,248,0.08);">
-                        <h3 style="font-size: 0.85rem; color: #38bdf8; margin-bottom: 4px;">Larimer County</h3>
-                        <p style="color: #94a3b8; font-size: 0.8rem; line-height: 1.5;">Avg depth: 150-400 ft<br>Cost: $7,500-$30,000<br>Fort Collins, Loveland, Estes Park</p>
-                    </div>
-                    <div style="padding: 12px; background: rgba(56,189,248,0.04); border-radius: 8px; border: 1px solid rgba(56,189,248,0.08);">
-                        <h3 style="font-size: 0.85rem; color: #38bdf8; margin-bottom: 4px;">Boulder County</h3>
-                        <p style="color: #94a3b8; font-size: 0.8rem; line-height: 1.5;">Avg depth: 100-300 ft<br>Cost: $5,000-$22,500<br>Boulder, Longmont, Lyons</p>
-                    </div>
-                </div>
+    <!-- Landing content. Leads with drought and depth: what the water is doing
+         and how deep people actually had to go. Every depth figure is a live
+         percentile from the wells table, not an estimated range. -->
+    <section class="seo-content">
+        <div class="lp-block">
+            <h2>Your Neighbors Already Paid to Find the Water</h2>
+            <p class="lp-lead">Every well drilled in Colorado is on file with the state &mdash; how deep it went,
+            where the water sat, what it was permitted to produce. That record is the closest thing there is
+            to knowing what is under your own ground before anyone starts drilling.</p>
+            <p>If the wells around you had to reach 300 feet, yours very likely will too. If half the
+            street is screened in a shallow zone that a dry year can pull below the pump, that is worth
+            knowing before it happens rather than after.</p>
+        </div>
 
-                <p style="color: #64748b; font-size: 0.8rem; line-height: 1.6; margin-bottom: 20px;">Costs based on Colorado average drilling rate of $50-75 per foot (2025-2026). Actual costs vary by driller, terrain, rock type, and permit requirements. Use Colorado Well Finder to see exact well depths from official permit records for your specific property location.</p>
-                
-                <h2 style="font-size: 1.1rem; color: #e2e8f0; margin-bottom: 12px; text-align: center;">What Colorado Well Finder Shows You</h2>
-                <ul style="color: #94a3b8; font-size: 0.88rem; line-height: 1.8; list-style: none; padding: 0; columns: 2; column-gap: 24px;">
-                    <li>&#x2022; Well depth (how deep each well was drilled)</li>
-                    <li>&#x2022; Static water level (where the water sits)</li>
-                    <li>&#x2022; Pump yield (gallons per minute)</li>
-                    <li>&#x2022; Aquifer name and type</li>
-                    <li>&#x2022; Driller name and completion date</li>
-                    <li>&#x2022; EPA contamination sites nearby</li>
-                    <li>&#x2022; Superfund &amp; toxic release facilities</li>
-                    <li>&#x2022; Radon zone risk level by county</li>
-                    <li>&#x2022; Water quality monitoring stations</li>
-                    <li>&#x2022; Distance from your search address</li>
+        <div class="lp-block">
+            <h2>Is Your Well Going Dry?</h2>
+            <p class="lp-lead">Colorado is coming off the lowest snowpack in more than forty years, and much
+            of the state is in severe to exceptional drought. Shallow wells feel that first.</p>
+            <p>A well is exposed when two things are true at once: it is shallow compared with the wells
+            around it, and there is little or no reserve below where it takes water in. When the water table
+            drops past the bottom of a well like that, it does not gradually weaken &mdash; it stops. Search
+            your address and the report tells you where your well sits against its neighbors, how much column
+            is left above its intake, and what the drought is doing in your county right now.</p>
+        </div>
+
+        <div class="lp-block">
+            <h2>How Deep Do You Have to Drill in Colorado?</h2>
+            <p class="lp-lead">Measured from state permit records &mdash; median depth, the range most wells
+            fall in, and where the water typically sits. These are real percentiles, not estimates.</p>
+            <div class="depth-grid">
+                    <div class="depth-card">
+                        <h3>El Paso County</h3>
+                        <div class="depth-big">300 ft</div>
+                        <div class="depth-meta">median depth &middot; 28,156 wells on record</div>
+                        <div class="depth-rows">
+                            <span>Most wells</span><b>127&ndash;410 ft</b>
+                            <span>Water table</span><b>~140 ft down</b>
+                        </div>
+                        <div class="depth-towns">Colorado Springs, Monument, Falcon</div>
+                    </div>
+                    <div class="depth-card">
+                        <h3>Jefferson County</h3>
+                        <div class="depth-big">240 ft</div>
+                        <div class="depth-meta">median depth &middot; 25,356 wells on record</div>
+                        <div class="depth-rows">
+                            <span>Most wells</span><b>71&ndash;440 ft</b>
+                            <span>Water table</span><b>~80 ft down</b>
+                        </div>
+                        <div class="depth-towns">Conifer, Evergreen, Pine</div>
+                    </div>
+                    <div class="depth-card">
+                        <h3>Weld County</h3>
+                        <div class="depth-big">67 ft</div>
+                        <div class="depth-meta">median depth &middot; 23,029 wells on record</div>
+                        <div class="depth-rows">
+                            <span>Most wells</span><b>38&ndash;280 ft</b>
+                            <span>Water table</span><b>~45 ft down</b>
+                        </div>
+                        <div class="depth-towns">Greeley, Windsor, Johnstown</div>
+                    </div>
+                    <div class="depth-card">
+                        <h3>Park County</h3>
+                        <div class="depth-big">240 ft</div>
+                        <div class="depth-meta">median depth &middot; 15,913 wells on record</div>
+                        <div class="depth-rows">
+                            <span>Most wells</span><b>143&ndash;380 ft</b>
+                            <span>Water table</span><b>~100 ft down</b>
+                        </div>
+                        <div class="depth-towns">Fairplay, Bailey, Hartsel</div>
+                    </div>
+                    <div class="depth-card">
+                        <h3>Douglas County</h3>
+                        <div class="depth-big">364 ft</div>
+                        <div class="depth-meta">median depth &middot; 13,334 wells on record</div>
+                        <div class="depth-rows">
+                            <span>Most wells</span><b>240&ndash;545 ft</b>
+                            <span>Water table</span><b>~185 ft down</b>
+                        </div>
+                        <div class="depth-towns">Castle Rock, Larkspur, Sedalia</div>
+                    </div>
+                    <div class="depth-card">
+                        <h3>Larimer County</h3>
+                        <div class="depth-big">220 ft</div>
+                        <div class="depth-meta">median depth &middot; 12,619 wells on record</div>
+                        <div class="depth-rows">
+                            <span>Most wells</span><b>54&ndash;440 ft</b>
+                            <span>Water table</span><b>~67 ft down</b>
+                        </div>
+                        <div class="depth-towns">Fort Collins, Loveland, Estes Park</div>
+                    </div>
+                    <div class="depth-card">
+                        <h3>Boulder County</h3>
+                        <div class="depth-big">200 ft</div>
+                        <div class="depth-meta">median depth &middot; 11,654 wells on record</div>
+                        <div class="depth-rows">
+                            <span>Most wells</span><b>50&ndash;360 ft</b>
+                            <span>Water table</span><b>~35 ft down</b>
+                        </div>
+                        <div class="depth-towns">Boulder, Longmont, Lyons</div>
+                    </div>
+                    <div class="depth-card">
+                        <h3>Elbert County</h3>
+                        <div class="depth-big">341 ft</div>
+                        <div class="depth-meta">median depth &middot; 10,471 wells on record</div>
+                        <div class="depth-rows">
+                            <span>Most wells</span><b>227&ndash;450 ft</b>
+                            <span>Water table</span><b>~165 ft down</b>
+                        </div>
+                        <div class="depth-towns">Kiowa, Elizabeth, Simla</div>
+                    </div>
+                    <div class="depth-card">
+                        <h3>Teller County</h3>
+                        <div class="depth-big">270 ft</div>
+                        <div class="depth-meta">median depth &middot; 7,237 wells on record</div>
+                        <div class="depth-rows">
+                            <span>Most wells</span><b>150&ndash;400 ft</b>
+                            <span>Water table</span><b>~95 ft down</b>
+                        </div>
+                        <div class="depth-towns">Woodland Park, Divide, Cripple Creek</div>
+                    </div>
+                    <div class="depth-card">
+                        <h3>Fremont County</h3>
+                        <div class="depth-big">190 ft</div>
+                        <div class="depth-meta">median depth &middot; 6,877 wells on record</div>
+                        <div class="depth-rows">
+                            <span>Most wells</span><b>80&ndash;325 ft</b>
+                            <span>Water table</span><b>~85 ft down</b>
+                        </div>
+                        <div class="depth-towns">Cañon City, Florence, Penrose</div>
+                    </div>
+                    <div class="depth-card">
+                        <h3>Gunnison County</h3>
+                        <div class="depth-big">75 ft</div>
+                        <div class="depth-meta">median depth &middot; 5,209 wells on record</div>
+                        <div class="depth-rows">
+                            <span>Most wells</span><b>39&ndash;185 ft</b>
+                            <span>Water table</span><b>~30 ft down</b>
+                        </div>
+                        <div class="depth-towns">Gunnison, Crested Butte, Almont</div>
+                    </div>
+                    <div class="depth-card">
+                        <h3>Eagle County</h3>
+                        <div class="depth-big">140 ft</div>
+                        <div class="depth-meta">median depth &middot; 2,335 wells on record</div>
+                        <div class="depth-rows">
+                            <span>Most wells</span><b>63&ndash;270 ft</b>
+                            <span>Water table</span><b>~44 ft down</b>
+                        </div>
+                        <div class="depth-towns">Eagle, Gypsum, Edwards</div>
+                    </div>
+            </div>
+            <p class="lp-note">Depth is the single biggest driver of what a well costs, at roughly
+            $50&ndash;75 per foot before pump and equipment. Search your exact address to see the individual
+            wells nearest you rather than a county-wide figure &mdash; depth can change sharply within a mile.</p>
+        </div>
+
+        <div class="lp-block">
+            <h2>What the Records Show You</h2>
+            <div class="lp-cols">
+                <ul>
+                    <li>How deep every nearby well was drilled</li>
+                    <li>Where the water sits &mdash; the static level</li>
+                    <li>The producing zone each well is screened in</li>
+                    <li>How much reserve sits below that zone</li>
+                    <li>Year drilled, and whether newer wells went deeper</li>
+                    <li>Permitted yield and permitted use</li>
+                </ul>
+                <ul>
+                    <li>Current drought status for the county</li>
+                    <li>Watershed the property drains to</li>
+                    <li>Aquifer and driller on record</li>
+                    <li>Whether a shallow and a deep zone both exist locally</li>
+                    <li>Nearby contamination and hazard sites</li>
+                    <li>What the soil says about septic</li>
                 </ul>
             </div>
-            <div style="margin-top: 36px; padding-top: 28px; border-top: 1px solid rgba(148,163,184,0.1); text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
-                <h2 style="font-size: 1.1rem; color: #e2e8f0; margin-bottom: 16px;">Colorado Well &amp; Water Guides</h2>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px 20px; text-align: left;">
-                    <a href="https://trilakes.co/blog/how-much-does-well-cost-colorado" target="_blank" rel="noopener" style="color: #38bdf8; font-size: 0.85rem; text-decoration: none; line-height: 1.6;">&#8594; How Much Does a Well Cost in Colorado?</a>
-                    <a href="https://trilakes.co/blog/colorado-well-permit-requirements" target="_blank" rel="noopener" style="color: #38bdf8; font-size: 0.85rem; text-decoration: none; line-height: 1.6;">&#8594; Colorado Well Permit Requirements</a>
-                    <a href="https://trilakes.co/blog/how-deep-is-water-table-colorado-mountains" target="_blank" rel="noopener" style="color: #38bdf8; font-size: 0.85rem; text-decoration: none; line-height: 1.6;">&#8594; How Deep Is the Water Table?</a>
-                    <a href="https://trilakes.co/blog/cistern-vs-well-colorado" target="_blank" rel="noopener" style="color: #38bdf8; font-size: 0.85rem; text-decoration: none; line-height: 1.6;">&#8594; Cistern vs Well in Colorado</a>
-                    <a href="https://trilakes.co/blog/well-pump-maintenance-colorado" target="_blank" rel="noopener" style="color: #38bdf8; font-size: 0.85rem; text-decoration: none; line-height: 1.6;">&#8594; Well Pump Maintenance Guide</a>
-                    <a href="https://trilakes.co/blog/neighbor-well-is-dry-should-i-worry" target="_blank" rel="noopener" style="color: #38bdf8; font-size: 0.85rem; text-decoration: none; line-height: 1.6;">&#8594; Neighbor's Well Is Dry — Should I Worry?</a>
-                    <a href="https://trilakes.co/blog/buying-land-colorado-guide" target="_blank" rel="noopener" style="color: #38bdf8; font-size: 0.85rem; text-decoration: none; line-height: 1.6;">&#8594; Buying Land in Colorado Guide</a>
-                    <a href="https://trilakes.co/blog/failed-perc-test-options-colorado" target="_blank" rel="noopener" style="color: #38bdf8; font-size: 0.85rem; text-decoration: none; line-height: 1.6;">&#8594; Failed Perc Test? Your Options</a>
-                </div>
-            </div>
+        </div>
     </section>
 
     <footer>
