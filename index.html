@@ -5362,7 +5362,7 @@
                     + '<a href="' + soilUrl + '" target="_blank" rel="noopener" onclick="event.stopPropagation();if(window.logEvent)window.logEvent(&quot;soilreport_from_explore&quot;,&quot;&quot;);"'
                     + ' style="display:block;text-align:center;margin-top:8px;padding:11px 12px;border-radius:9px;background:linear-gradient(135deg,#16a34a,#15803d);color:#fff;font-size:13px;font-weight:800;text-decoration:none;box-shadow:0 2px 12px rgba(22,163,74,0.35);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" style="vertical-align:-2px;margin-right:5px"><path d="M12 20v-8"/><path d="M12 12c0-4 2.8-6 7-6-.7 4.2-2.8 6-7 6z"/><path d="M12 14c0-3.2-2.2-4.8-5.5-4.8.6 3.4 2.3 4.8 5.5 4.8z"/></svg>Get Full FREE Soil Report (PDF) →</a>'
                     + '<div style="text-align:center;margin-top:3px;color:#94a3b8;font-size:10px;">soil profile · septic sizing · 3D terrain · no cost</div>'
-                    + '<a href="javascript:void(0)" onclick="event.stopPropagation();exploreSearchHere(' + w.latitude + ',' + w.longitude + ',&quot;' + cleanCounty + '&quot;,&quot;' + cleanAddr + '&quot;);"'
+                    + '<a href="javascript:void(0)" onclick="event.stopPropagation();exploreSearchHere(' + w.latitude + ',' + w.longitude + ',&quot;' + cleanCounty + '&quot;,&quot;' + cleanAddr + '&quot;,&quot;' + (w.receipt || '') + '&quot;);"'
                     + ' style="display:block;text-align:center;margin-top:6px;padding:7px 10px;border-radius:8px;background:rgba(56,189,248,0.15);border:1px solid rgba(56,189,248,0.4);color:#38bdf8;font-size:12px;font-weight:700;text-decoration:none;"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" style="vertical-align:-2px;margin-right:5px"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>Analyze This Area</a>';
 
                 m.bindPopup(
@@ -6605,12 +6605,18 @@
 
         // Jump from an explore-map well popup into the full property analysis:
         // close the overlay, seed the search box, and run the results flow here.
-        window.exploreSearchHere = function(lat, lon, county, addrText) {
+        window.exploreSearchHere = function(lat, lon, county, addrText, receipt) {
             try { closeExploreMap(); } catch (e) {}
             const label = addrText || (lat.toFixed(5) + ', ' + lon.toFixed(5));
             const addrInput = document.getElementById('address');
             if (addrInput) addrInput.value = label;
             window._lastSearchAddress = label;
+            // When the user clicked a specific well we already know exactly which
+            // one they meant. Without this the results view re-derives it by
+            // matching address strings, which fails on most state records and
+            // wrongly reported "no permit on file for this address" for a well
+            // whose permit was on screen a moment earlier.
+            window._pinnedReceipt = receipt || null;
             if (window.logEvent) window.logEvent('explore_search_here', label);
             searchWells(lat, lon, 2, county || '')
                 .then(function() {
@@ -6728,9 +6734,14 @@
         const CISTERN_URL = 'https://trilakes.co/get-a-quote';
         const TIER_ACCENT = { low: '#22c55e', moderate: '#f59e0b', elevated: '#f59e0b', high: '#ef4444' };
 
-        async function fetchWellResilience(receipt, isNeighbor, distanceMi) {
+        // mode: 'own' (permit matched the searched address) | 'selected' (user
+        // clicked this well on the map) | 'neighbor' (nearest well, no match)
+        async function fetchWellResilience(receipt, mode, distanceMi) {
             const el = document.getElementById('well-resilience');
             if (!el || !receipt) return;
+            const isNeighbor = mode === 'neighbor';
+            const heading = mode === 'selected' ? 'Selected Well'
+                          : isNeighbor ? 'Closest Well on Record' : 'Your Well';
             try {
                 const r = await fetch(`${WELLS_API}/api/well-resilience?receipt=${encodeURIComponent(receipt)}`);
                 if (!r.ok) return;
@@ -6765,7 +6776,7 @@
                 el.innerHTML = `
                     <div style="background:linear-gradient(135deg, ${accent}1f, rgba(15,23,42,0.45));border:1px solid ${accent}55;border-radius:14px;padding:18px 20px;">
                         <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;flex-wrap:wrap;margin-bottom:12px;">
-                            <span style="font-weight:800;font-size:1rem;color:#e2e8f0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px"><path d="M12 2v6"/><path d="M5 8h14l-1.5 12h-11z"/><path d="M8 14h8"/></svg>${isNeighbor ? 'Closest Well on Record' : 'Your Well'}</span>
+                            <span style="font-weight:800;font-size:1rem;color:#e2e8f0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:6px"><path d="M12 2v6"/><path d="M5 8h14l-1.5 12h-11z"/><path d="M8 14h8"/></svg>${heading}</span>
                             <span style="font-size:0.68rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:${accent};background:${accent}22;padding:4px 9px;border-radius:6px;">${risk.label}</span>
                         </div>
                         ${isNeighbor ? `<div style="color:#94a3b8;font-size:0.78rem;margin-bottom:8px;line-height:1.45;">No well permit is on file for this exact address, so this is the nearest well on record${distanceMi ? ' (about ' + distanceMi.toFixed(1) + ' mi away)' : ''} — a guide to what the water does here, not a reading of your own well.</div>` : ''}
@@ -7263,13 +7274,19 @@
             // and say plainly that it is a neighbour, not theirs. Most searches
             // have no exact permit match, so without this the panel would almost
             // never appear.
+            // Priority: a well the user explicitly clicked > a permit matching the
+            // searched address > the nearest well on record.
+            const pinned = window._pinnedReceipt;
             const ownWell = propertyWells.find(w => w.receipt);
-            if (ownWell) {
-                fetchWellResilience(ownWell.receipt, false, null);
+            if (pinned) {
+                fetchWellResilience(pinned, 'selected', null);
+            } else if (ownWell) {
+                fetchWellResilience(ownWell.receipt, 'own', null);
             } else {
                 const nearest = wells.find(w => w.receipt && w.depthTotal > 0);
-                if (nearest) fetchWellResilience(nearest.receipt, true, nearest.distance);
+                if (nearest) fetchWellResilience(nearest.receipt, 'neighbor', nearest.distance);
             }
+            window._pinnedReceipt = null;   // one search only
 
             // ── Property Well Banner ──────────────────────────────────
             let propertyWellHtml = '';
