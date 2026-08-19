@@ -6776,6 +6776,7 @@
 
         // Resolves when we may proceed. Rejects only if the user abandons.
         function requireEmail(address) {
+            return Promise.resolve();  /* free to search: email gate disabled */
             if (hasCapturedEmail() || hasPaidAccess()) return Promise.resolve();
             const gate = document.getElementById('email-gate');
             if (!gate) return Promise.resolve();
