@@ -8053,7 +8053,7 @@
                 else if(change<=-6){headline='Water table has risen';hcolor='#4ade80';}
                 else{headline='Water table has held steady';hcolor='#e2e8f0';}
                 var deltaTxt=(change>0?('down ~'+change+' ft'):(change<0?('up ~'+(-change)+' ft'):'no net change'))+' since the '+series[0].dec+'s';
-                var svg='<svg viewBox="0 0 '+W+' '+H+'" width="100%" style="display:block" role="img" aria-label="Water table depth by decade">'
+                var svg='<svg viewBox="0 0 '+W+' '+H+'" style="display:block;width:100%;height:auto;aspect-ratio:'+W+'/'+H+'" role="img" aria-label="Water table depth by decade">'
                     +'<defs><linearGradient id="wtg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(230,199,107,.32)"/><stop offset="1" stop-color="rgba(230,199,107,0)"/></linearGradient></defs>'
                     +'<path d="'+area+'" fill="url(#wtg)"/>'
                     +'<polyline points="'+linePts+'" fill="none" stroke="#e6c76b" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>'
