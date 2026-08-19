@@ -857,6 +857,35 @@
             #map { height: min(80vh, 900px); }
         }
 
+        /* Phones and tablets, declared last on purpose.
+           .map-container's sticky rule and #map's height both live further up
+           the sheet than the max-width:1000px block that tries to cancel them,
+           and equal specificity means source order decides. So on a phone the
+           map stayed pinned to the top of the viewport and the rest of the
+           results scrolled underneath it, which is what made it look like the
+           map was floating over the page. It has to be un-stuck here, after
+           every rule that sets it. */
+        @media (max-width: 1000px) {
+            .map-container {
+                position: static;
+                top: auto;
+                overflow: hidden;
+            }
+
+            #map {
+                height: 56vh;
+                min-height: 300px;
+                max-height: 440px;
+                width: 100%;
+                max-width: 100%;
+            }
+
+            /* Belt and braces against the sideways scroll: nothing in the
+               results column may set its own width larger than the column. */
+            .results-section, .map-container, .wells-container { min-width: 0; max-width: 100%; }
+            .leaflet-container { max-width: 100%; }
+        }
+
         .wells-container {
             background: rgba(30, 41, 59, 0.6);
             border-radius: 16px;
@@ -1232,18 +1261,31 @@
             gap: 10px;
         }
 
+        /* Label above value, not beside it. Side by side, a value like
+           "360 - 420 ft (60 reporting)" wrapped into its own label and the two
+           columns ran together into an unreadable block. */
         .cost-item {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 3px;
+            min-width: 0;
         }
 
         .cost-label {
             color: #94a3b8;
+            font-size: 0.68rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            line-height: 1.25;
         }
 
         .cost-value {
             color: #f1f5f9;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 0.92rem;
+            line-height: 1.35;
+            overflow-wrap: anywhere;
         }
 
         .cost-breakdown {
@@ -1857,6 +1899,22 @@
         .layer-item.loading .layer-count { display: none; }
         .layer-item.loading::after { content: ''; display: inline-block; width: 10px; height: 10px; border: 1.5px solid rgba(230,199,107,0.2); border-top-color: #e6c76b; border-radius: 50%; animation: lspin 0.7s linear infinite; margin-left: 6px; flex-shrink: 0; }
         @keyframes lspin { to { transform: rotate(360deg); } }
+
+        /* Scrollbars. The page is dark everywhere, but the window scrollbar and
+           every inner scrolling panel drew in the browser default light grey,
+           which read as a white stripe pasted onto the design. Firefox takes
+           scrollbar-color, everything else takes the -webkit pseudo elements. */
+        * { scrollbar-color: rgba(148, 163, 184, 0.45) transparent; scrollbar-width: thin; }
+        ::-webkit-scrollbar { width: 10px; height: 10px; }
+        ::-webkit-scrollbar-track { background: rgba(15, 23, 42, 0.55); }
+        ::-webkit-scrollbar-corner { background: transparent; }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(148, 163, 184, 0.4);
+            border-radius: 6px;
+            border: 2px solid transparent;
+            background-clip: content-box;
+        }
+        ::-webkit-scrollbar-thumb:hover { background: rgba(148, 163, 184, 0.7); background-clip: content-box; }
 
         /* Email gate */
         .eg-overlay { position: fixed; inset: 0; z-index: 10050; background: rgba(8,14,26,0.82); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -4796,7 +4854,12 @@
                             const el = document.getElementById('explore-loading');
                             if (el) el.classList.remove('show');
                         });
+                        bindHydroIdentify(window._nhdLayer, 'nhd');
                     }
+                    enableHydroIdentify(exploreMap, function() {
+                        return [{ layer: window._nhdLayer, kind: 'nhd' },
+                                { layer: window._basinLayer, kind: 'basin' }];
+                    });
                     if (window._nhdLayer) window._nhdLayer.addTo(exploreMap);
                 } else if (window._nhdLayer) {
                     exploreMap.removeLayer(window._nhdLayer);
@@ -4829,7 +4892,12 @@
                             const el = document.getElementById('explore-loading');
                             if (el) el.classList.remove('show');
                         });
+                        bindHydroIdentify(window._basinLayer, 'basin');
                     }
+                    enableHydroIdentify(exploreMap, function() {
+                        return [{ layer: window._nhdLayer, kind: 'nhd' },
+                                { layer: window._basinLayer, kind: 'basin' }];
+                    });
                     if (window._basinLayer) window._basinLayer.addTo(exploreMap);
                 } else if (window._basinLayer) {
                     exploreMap.removeLayer(window._basinLayer);
@@ -6928,21 +6996,87 @@
         // solid when intermittent and ephemeral in fact render dotted. These were
         // read off rendered tiles, so keep them in step with the pane filter.
         const LAYER_HELP = {
+            wells: {
+                why: 'Every well the state has a permit record for. Colour is total drilled depth, which is the biggest single driver of what a well costs at roughly $50-75 a foot.',
+                marks: [
+                    { color: '#00e676', style: 'dot', label: 'Under 200 ft' },
+                    { color: '#ffc107', style: 'dot', label: '200 to 500 ft' },
+                    { color: '#ff5722', style: 'dot', label: 'Over 500 ft' }
+                ],
+                note: 'Click any well for its permit, depth, yield and the year it was drilled.'
+            },
+            contamination: {
+                why: 'EPA-tracked sites where a release has been recorded. Worth knowing what sits upstream of you and inside your watershed.',
+                marks: [{ color: '#ff1744', style: 'fill', label: 'EPA-listed contamination site' }]
+            },
+            superfund: {
+                why: 'National Priorities List sites — the worst contamination the EPA tracks, with federally funded cleanups.',
+                marks: [{ color: '#d50000', style: 'dot', label: 'Superfund site' }]
+            },
+            oilgas: {
+                why: 'Permitted oil and gas wells. Relevant to a water well mainly as a shared-formation and casing-integrity question.',
+                marks: [{ color: '#424242', style: 'dot', label: 'Oil or gas well' }]
+            },
+            tri: {
+                why: 'Facilities that report releasing listed toxic chemicals under the federal Toxics Release Inventory.',
+                marks: [{ color: '#ff6d00', style: 'dot', label: 'Reporting facility' }]
+            },
+            radon: {
+                why: 'EPA radon potential by county. Radon is a soil gas that collects indoors, and much of the Front Range is in the highest zone.',
+                marks: [
+                    { color: '#ffab00', style: 'fill', label: 'Zone 1 — highest potential' },
+                    { color: '#ffd54f', style: 'fill', label: 'Zone 2 — moderate' },
+                    { color: '#fff3c4', style: 'fill', label: 'Zone 3 — lowest' }
+                ]
+            },
+            wqstations: {
+                why: 'Stations where someone has actually sampled and tested water quality. Real measurements rather than estimates.',
+                marks: [{ color: '#7c4dff', style: 'dot', label: 'Water quality sampling station' }]
+            },
+            brownfields: {
+                why: 'Former industrial or commercial sites where redevelopment is complicated by known or suspected contamination.',
+                marks: [{ color: '#ff6e40', style: 'dot', label: 'Brownfield site' }]
+            },
+            rcra: {
+                why: 'Hazardous-waste handlers under a federal corrective-action order — sites required to clean something up.',
+                marks: [{ color: '#e65100', style: 'dot', label: 'RCRA corrective action site' }]
+            },
+            fedfac: {
+                why: 'Federal facilities on the EPA environmental tracking list.',
+                marks: [{ color: '#b71c1c', style: 'dot', label: 'Federal facility' }]
+            },
+            eparesponse: {
+                why: 'Sites with an active or historical EPA emergency response — spills and acute releases.',
+                marks: [{ color: '#c62828', style: 'dot', label: 'Emergency response site' }]
+            },
+            pfas: {
+                why: 'Known PFAS detections. These are the "forever chemicals", they travel in groundwater, and they are the contamination most likely to matter to a domestic well.',
+                marks: [{ color: '#e040fb', style: 'dot', label: 'PFAS detection' }]
+            },
+            mines: {
+                why: 'Mine workings on the national inventory — mostly historic adits, shafts and prospect pits rather than active mines. Old workings can carry metals and acid drainage into shallow groundwater.',
+                marks: [{ color: '#8d6e63', style: 'dot', label: 'Mine, adit, shaft or prospect pit' }],
+                note: 'Off by default. Near a historic district this draws hundreds of pits and hides everything else.'
+            },
             lidar: {
                 why: 'Ground-surface shading with trees and buildings stripped away. It shows the real shape of your land — the swales, benches and old channels the tree canopy hides — which is where water collects and where a rig can and cannot get in.',
                 marks: [{ grad: 'linear-gradient(90deg,#f5f5f5,#3a3a3a)', label: 'Bare-earth relief. Light is a slope facing the light, dark faces away. The shading is not a measurement.' }],
                 note: 'Draws over the satellite image at 85% opacity, so the photo goes grey while it is on.'
             },
             streams: {
-                why: 'Mapped creeks, ditches, ponds and springs from the USGS water survey. It tells you which lines near you carry water all year, which only run in spring, and which are ditches somebody else owns.',
+                why: 'Mapped creeks, ditches, ponds and springs from the USGS water survey. It tells you which lines near you carry water all year, which only run in spring, and which are ditches somebody else owns. A solid line runs year-round; the dash-and-three-dots pattern is the USGS symbol for a channel that does not.',
                 marks: [
                     { color: '#00ffff', style: 'line', label: 'Creek or river that runs year-round' },
-                    { color: '#00ffff', style: 'dashed', label: 'Creek that only runs part of the year' },
-                    { color: '#ff6400', style: 'dashed', label: 'Gully that only runs after storms or snowmelt' },
+                    { color: '#00ffff', style: 'dashed', label: 'Seasonal creek — dry part of the year (dash, three dots)' },
+                    { color: '#ff6400', style: 'dashed', label: 'Storm-only gully — runs after rain or snowmelt, dry otherwise (dash, three dots)' },
                     { color: '#ffd900', style: 'line', label: 'Irrigation ditch or canal (man-made)' },
                     { color: '#ff0000', style: 'line', label: 'Water pipeline or aqueduct' },
                     { color: '#ff00ff', style: 'line', label: 'Connector drawn through a lake to join the stream network — not a real channel' },
                     { color: '#1fffff', style: 'fill', label: 'Lake, pond or a river wide enough to map as an area' },
+                    { color: '#34ff34', style: 'fill', label: 'Swamp or marsh — saturated ground, often a shallow water table' },
+                    { color: '#ffff00', style: 'fill', label: 'Wash — a dry channel that carries water only after a storm' },
+                    { color: '#9cffff', style: 'fill', label: 'Reservoir' },
+                    { color: '#ffffa4', style: 'fill', label: 'Playa — a flat that ponds after rain' },
                     { color: '#1fffff', style: 'dot', label: 'Spring or seep on the USGS survey' }
                 ],
                 note: 'Only draws at closer zooms. Zoomed out to a county view the box stays checked and nothing appears.'
@@ -6970,7 +7104,8 @@
             },
             dams: {
                 why: 'Dams and reservoirs on the national inventory. A dam upstream changes how much water reaches your stretch and when, and the record carries a hazard rating telling you whether you sit below something that matters in a failure.',
-                marks: [{ color: '#2979ff', style: 'dot', label: 'Dam or reservoir' }]
+                marks: [{ color: '#2979ff', style: 'dot', label: 'Dam or reservoir' }],
+                note: 'This blue is close to the Stream Gauges blue and both sit on creeks. Click one to be sure which it is.'
             },
             gauges: {
                 why: 'USGS gauges that measure how much water a stream is carrying. A gauge is the only place near you where flow is actually measured rather than estimated — if one sits on your creek you can see whether it has been running low for years.',
@@ -6992,6 +7127,137 @@
         };
 
         const LAYER_HELP_ICON = '<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 16v-5"/><path d="M12 7.5v.01"/></svg>';
+
+        // ── Click a line, find out what it is ────────────────────────────────
+        // The hydrology layers are drawn server-side as a picture, so nothing on
+        // them is clickable on its own. These bind an identify call: click the
+        // map and the service reports which feature is under the cursor, and we
+        // translate its NHD code into English. Click rather than hover on
+        // purpose — every identify is a round trip to USGS, and firing one on
+        // mousemove would mean hundreds of requests just to cross the map.
+        const NHD_FTYPE = {
+            336: { n: 'Irrigation ditch or canal', d: 'Man-made. The water in it is somebody\'s water right, not yours.' },
+            334: { n: 'Connector', d: 'A drawn link that keeps the stream network joined. Not a real channel.' },
+            361: { n: 'Playa', d: 'A flat that ponds after rain and dries out.' },
+            378: { n: 'Ice mass', d: 'Permanent snow or ice.' },
+            390: { n: 'Lake or pond', d: 'Standing water.' },
+            428: { n: 'Pipeline', d: 'A pipeline or aqueduct, buried or on the surface. Not a natural channel.' },
+            431: { n: 'Sink or rise', d: 'Where a stream disappears underground or comes back up.' },
+            436: { n: 'Reservoir', d: 'Impounded water.' },
+            445: { n: 'Sea or ocean', d: '' },
+            458: { n: 'Spring or seep', d: 'Groundwater reaching the surface on its own. Good evidence a shallow water-bearing layer exists here.' },
+            460: { n: 'Creek or river', d: '' },
+            466: { n: 'Swamp or marsh', d: 'Wet ground, often a sign of a shallow water table.' },
+            484: { n: 'Wash', d: 'A dry sandy channel that carries water only after a storm.' },
+            537: { n: 'Area of complex channels', d: 'Braided or shifting channels.' },
+            558: { n: 'Artificial path', d: 'Drawn through a lake or wide river so the stream network stays connected. Not a real channel.' }
+        };
+        // Flow regime lives in the fcode, and it is the part that actually
+        // matters to somebody deciding whether that line is a water source.
+        const NHD_FCODE = {
+            46006: { n: 'Creek or river — runs year-round', d: 'Perennial. Water in it in a normal year.' },
+            46003: { n: 'Seasonal creek', d: 'Intermittent — runs part of the year and is dry the rest. Drawn as a dash and three dots.' },
+            46007: { n: 'Storm-only gully', d: 'Ephemeral — runs after rain or snowmelt and is dry otherwise. Drawn as a dash and three dots.' },
+            33601: { n: 'Aqueduct', d: 'Man-made channel carrying water somewhere else.' },
+            42801: { n: 'Aqueduct pipeline', d: 'Piped water, not a natural channel.' },
+            42807: { n: 'Pipeline', d: 'Piped water, not a natural channel.' }
+        };
+
+        function _attr(props, names) {
+            if (!props) return null;
+            const keys = Object.keys(props);
+            for (const want of names) {
+                const hit = keys.find(k => k.toLowerCase().replace(/[^a-z0-9]/g, '') === want);
+                if (hit && props[hit] !== null && props[hit] !== '' && props[hit] !== 'Null') return props[hit];
+            }
+            return null;
+        }
+
+        function describeNhdFeature(props) {
+            const fcode = parseInt(_attr(props, ['fcode']), 10);
+            const ftype = parseInt(_attr(props, ['ftype']), 10);
+            const name = _attr(props, ['gnisname', 'name']);
+            const info = NHD_FCODE[fcode] || NHD_FTYPE[ftype];
+            if (!info) return null;
+            return { title: name || info.n, sub: name ? info.n : '', detail: info.d };
+        }
+
+        function hydroPopupHTML(rows) {
+            if (!rows.length) return false;
+            return '<div style="font-size:12.5px;line-height:1.45;color:#e2e8f0;min-width:180px;">' +
+                rows.map(function(r) {
+                    return '<div style="margin-bottom:8px;">' +
+                        '<div style="font-weight:700;color:#f1f5f9;">' + r.title + '</div>' +
+                        (r.sub ? '<div style="color:#38bdf8;font-size:11.5px;font-weight:600;">' + r.sub + '</div>' : '') +
+                        (r.detail ? '<div style="color:#94a3b8;font-size:11.5px;margin-top:2px;">' + r.detail + '</div>' : '') +
+                        '</div>';
+                }).join('') + '</div>';
+        }
+
+        function rowsFromFeatures(features, kind, seen) {
+            const rows = [];
+            (features || []).forEach(function(f) {
+                const props = f.properties || f.attributes;
+                if (kind === 'basin') {
+                    const huc = _attr(props, ['huc12', 'huc10', 'huc8', 'huc6', 'hucode']);
+                    const nm = _attr(props, ['name']);
+                    if (!huc && !nm) return;
+                    const key = 'b' + (huc || nm);
+                    if (seen.has(key)) return;
+                    seen.add(key);
+                    rows.push({
+                        title: nm || ('Subwatershed ' + huc),
+                        sub: 'Watershed boundary' + (huc ? ' — HUC ' + huc : ''),
+                        detail: 'Everything inside this line drains to the same creek. Upstream contamination inside it is the kind that can reach your water.'
+                    });
+                    return;
+                }
+                const d = describeNhdFeature(props);
+                if (!d) return;
+                const key = d.title + '|' + d.sub;
+                if (seen.has(key)) return;
+                seen.add(key);
+                rows.push(d);
+            });
+            return rows;
+        }
+
+        // Registers a layer as identifiable and makes sure the map has a single
+        // click handler. esri-leaflet's own bindPopup on a dynamicMapLayer did
+        // not fire reliably here, so the identify is driven directly: one
+        // request per visible hydrology layer, results merged into one popup.
+        function bindHydroIdentify(layer, kind) {
+            if (!layer) return layer;
+            layer._hydroKind = kind;
+            return layer;
+        }
+
+        function enableHydroIdentify(map, layers) {
+            if (!map || map._hydroIdentifyOn || !L.esri || !L.esri.identifyFeatures) return;
+            map._hydroIdentifyOn = true;
+            map.on('click', function(e) {
+                const active = layers().filter(function(l) {
+                    return l && l.layer && map.hasLayer(l.layer) && l.layer.options && l.layer.options.url;
+                });
+                if (!active.length) return;
+                let pending = active.length;
+                const seen = new Set();
+                let rows = [];
+                active.forEach(function(entry) {
+                    L.esri.identifyFeatures({ url: entry.layer.options.url })
+                        .on(map).at(e.latlng).tolerance(6).returnGeometry(false)
+                        .run(function(err, fc) {
+                            if (!err && fc) rows = rows.concat(rowsFromFeatures(fc.features, entry.kind, seen));
+                            if (--pending) return;
+                            const html = hydroPopupHTML(rows.slice(0, 5));
+                            if (!html) return;
+                            L.popup({ maxWidth: 290, className: 'hydro-popup' })
+                                .setLatLng(e.latlng).setContent(html).openOn(map);
+                            if (window.logEvent) window.logEvent('hydro_identify', rows.length + '');
+                        });
+                });
+            });
+        }
 
         function layerHelpHTML(key) {
             const h = LAYER_HELP[key];
@@ -7028,6 +7294,31 @@
             root.querySelectorAll(selector).forEach(function(row) {
                 const key = row.getAttribute(attr);
                 if (!LAYER_HELP[key] || row.querySelector('.layer-help-btn')) return;
+
+                // A layer that draws six different colours cannot be represented
+                // by one coloured dot. Streams & Springs was showing a single
+                // cyan dot while painting cyan, orange, gold, magenta and red on
+                // the map, so there was no orange anywhere in the panel to
+                // explain the orange lines. Rows with several marks get a
+                // striped swatch instead, which reads as "open this one".
+                const marks = (LAYER_HELP[key].marks || []).filter(function(m) { return m.color; })
+                    // Unique colours only: a solid and a dashed cyan are two
+                    // different marks but one colour, and repeating it in the
+                    // swatch just wastes a stripe.
+                    .filter(function(m, i, a) {
+                        return a.findIndex(function(o) { return o.color === m.color; }) === i;
+                    });
+                if (marks.length > 2) {
+                    const dot = row.querySelector('.layer-dot, .rl-dot');
+                    if (dot) {
+                        const stops = marks.slice(0, 4).map(function(m, i, a) {
+                            const from = Math.round(i * 100 / a.length), to = Math.round((i + 1) * 100 / a.length);
+                            return m.color + ' ' + from + '% ' + to + '%';
+                        }).join(',');
+                        dot.style.background = 'linear-gradient(135deg,' + stops + ')';
+                        dot.style.borderRadius = '2px';
+                    }
+                }
                 const btn = document.createElement('button');
                 btn.type = 'button';
                 btn.className = 'layer-help-btn';
@@ -7041,6 +7332,27 @@
                 });
                 row.appendChild(btn);
                 row.insertAdjacentHTML('afterend', layerHelpHTML(key));
+
+                // Turning on a layer that paints more than one colour opens its
+                // key straight away. Streams & Springs alone draws a year-round
+                // creek, a seasonal one, a storm gully, a ditch, a pipeline and
+                // four kinds of water body, and none of that is guessable from
+                // one dot in a list.
+                if (marks.length > 2) {
+                    const box = row.querySelector('input[type="checkbox"]');
+                    if (box) {
+                        box.addEventListener('change', function() {
+                            const panel = row.parentNode.querySelector('.layer-help[data-help-for="' + key + '"]');
+                            if (!panel) return;
+                            panel.classList.toggle('open', box.checked);
+                            btn.setAttribute('aria-expanded', box.checked ? 'true' : 'false');
+                        });
+                        if (box.checked) {
+                            const panel = row.parentNode.querySelector('.layer-help[data-help-for="' + key + '"]');
+                            if (panel) { panel.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+                        }
+                    }
+                }
             });
         }
 
@@ -7115,10 +7427,10 @@
                 // same pane here the identical layer drew in USGS's muted tones
                 // and the shared legend was wrong on one of the two maps.
                 section: 'Terrain', label: 'Streams &amp; Springs', dot: '#40c4ff', kind: 'tile',
-                make: (map) => L.esri.dynamicMapLayer({
+                make: (map) => bindHydroIdentify(L.esri.dynamicMapLayer({
                     url: 'https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer',
                     layers: [0, 6, 9, 12], opacity: 1, pane: resultsHydroPane(map)
-                })
+                }), 'nhd')
             },
             parcels: {
                 section: 'Terrain', label: 'Parcel Lines', dot: '#d6d3d1', on: true, kind: 'tile',
@@ -7133,10 +7445,10 @@
                 // All four HU levels: the service scale-gates each sublayer, so
                 // requesting only HUC6/HUC8 draws nothing at address zoom.
                 section: 'Hydrology', label: 'Watershed Basins', dot: '#26a69a', kind: 'tile',
-                make: (map) => L.esri.dynamicMapLayer({
+                make: (map) => bindHydroIdentify(L.esri.dynamicMapLayer({
                     url: 'https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer',
                     layers: [3, 4, 5, 6], opacity: 0.75, pane: resultsHydroPane(map)
-                })
+                }), 'basin')
             },
             drought: {
                 section: 'Hydrology', label: 'Drought Monitor', dot: '#e65100', kind: 'tile',
@@ -7456,6 +7768,12 @@
             ctl.addTo(targetMap);
 
             bindResultsOverlayRefresh(targetMap);
+            // Same click-to-identify as the Explore map, reading whichever of
+            // the two hydrology layers this map currently has switched on.
+            enableHydroIdentify(targetMap, function() {
+                const c = targetMap._layerCache || {};
+                return [{ layer: c.streams, kind: 'nhd' }, { layer: c.basins, kind: 'basin' }];
+            });
 
             // Turn on whatever is checked by default, so the control and the map agree.
             Object.keys(RESULTS_LAYERS).forEach(k => {
@@ -7544,7 +7862,7 @@
             if (!el || !s) return;
             const row = (label, value) => value ? `
                 <div class="cost-item">
-                    <span class="cost-label">${label}:</span>
+                    <span class="cost-label">${label}</span>
                     <span class="cost-value">${value}</span>
                 </div>` : '';
 
@@ -7995,19 +8313,19 @@
                         <div class="cost-title">Area Details</div>
                         <div class="cost-grid">
                             ${topAquifer ? `<div class="cost-item">
-                                <span class="cost-label">Top aquifer:</span>
+                                <span class="cost-label">Top aquifer</span>
                                 <span class="cost-value">${topAquifer[0]} (${topAquifer[1]} wells)</span>
                             </div>` : ''}
                             ${newestDate && oldestDate ? `<div class="cost-item">
-                                <span class="cost-label">Well dates:</span>
+                                <span class="cost-label">Well dates</span>
                                 <span class="cost-value">${oldestDate} – ${newestDate}</span>
                             </div>` : ''}
                             <div class="cost-item">
-                                <span class="cost-label">Depth range:</span>
+                                <span class="cost-label">Depth range</span>
                                 <span class="cost-value">${minDepth} – ${maxDepth} ft</span>
                             </div>
                             <div class="cost-item">
-                                <span class="cost-label">Wells still active:</span>
+                                <span class="cost-label">Wells still active</span>
                                 <span class="cost-value">${activeCount} of ${wells.length}</span>
                             </div>
                         </div>
@@ -8026,15 +8344,15 @@
                         </div>
                         <div class="cost-grid">
                             <div class="cost-item">
-                                <span class="cost-label">Shallowest well (${minDepth} ft):</span>
+                                <span class="cost-label">Shallowest well (${minDepth} ft)</span>
                                 <span class="cost-value">$${minCost.totalLow.toLocaleString()} - $${minCost.totalHigh.toLocaleString()}</span>
                             </div>
                             <div class="cost-item">
-                                <span class="cost-label">Typical well (${avgDepth} ft):</span>
+                                <span class="cost-label">Typical well (${avgDepth} ft)</span>
                                 <span class="cost-value">$${avgCost.totalLow.toLocaleString()} - $${avgCost.totalHigh.toLocaleString()}</span>
                             </div>
                             <div class="cost-item">
-                                <span class="cost-label">Deepest well (${maxDepth} ft):</span>
+                                <span class="cost-label">Deepest well (${maxDepth} ft)</span>
                                 <span class="cost-value">$${maxCost.totalLow.toLocaleString()} - $${maxCost.totalHigh.toLocaleString()}</span>
                             </div>
                         </div>
