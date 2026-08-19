@@ -3498,6 +3498,7 @@
             .paid-bar input { width: 170px; }
         }
     </style>
+<style id="cwf-free">.wp-blur{filter:none!important;-webkit-filter:none!important;user-select:text!important;pointer-events:auto!important;}#paywall{display:none!important;}#inline-unlock{display:none!important;}</style>
 </head>
 <body>
     <!-- Paywall Overlay -->
@@ -5898,8 +5899,8 @@
         function lockedHTML(label) {
             return `<a href="javascript:void(0)" class="locked-value" onclick="event.preventDefault();if(window.hqTrackConversion)window.hqTrackConversion('locked_data_click','');if(window.logEvent)window.logEvent('locked_click','');showPaywallOverlay();">${LOCK_SVG} ${label || 'Unlock — from $19'}</a>`;
         }
-        const isFreeUser = () => !hasPaidAccess();
-        function showPaywallOverlay() {
+        const isFreeUser = () => false; /* CWF: 100% free, no paywall */
+        function showPaywallOverlay() { return; /* CWF: paywall removed */
             if (window.logEvent) window.logEvent('paywall_impression', '');
             const pw = document.getElementById('paywall');
             if (pw) {
@@ -8139,7 +8140,7 @@
                     bannerHtml += '<div class="scb-detail" style="margin-bottom:6px;">';
                     bannerHtml += '<strong>' + breakdownParts.join(', ') + '</strong> within ~3.5 miles';
                     bannerHtml += '</div>';
-                    bannerHtml += '<div style="text-align:center;margin:6px 0 2px;">' + riskBadgeHTML(computeWaterRisk(allSites), true) + '</div>';
+                    bannerHtml += '<div style="text-align:center;margin:6px 0 2px;">' + riskBadgeHTML(computeWaterRisk(allSites), false) + '</div>';
                 } else {
                     bannerHtml += '<div class="scb-title">' + ICON_ALERT + ' Contamination risk not yet assessed</div>';
                     bannerHtml += '<div class="scb-detail">EPA contamination, PFAS, mine runoff, Superfund &amp; radon risks have not been checked for this property.</div>';
