@@ -489,9 +489,14 @@
             align-items: start;
         }
 
+
         @media (max-width: 1000px) {
             .results-section {
-                grid-template-columns: 1fr;
+                /* minmax(0, 1fr), not 1fr: a bare 1fr track refuses to shrink
+                   below its content's minimum, and the Leaflet container has
+                   one. That pushed the map 35px past the right edge of a
+                   390px phone and gave the whole page a sideways scroll. */
+                grid-template-columns: minmax(0, 1fr);
             }
 
             .map-container {
@@ -828,6 +833,28 @@
             border-radius: 12px;
             overflow: hidden;
             border: 1px solid rgba(148, 163, 184, 0.1);
+        }
+
+        /* Desktop layout. The page was built narrow and then simply centred on
+           whatever monitor it landed on: at 2560px it left 1160px of empty
+           margin either side while the reading column ran past 3000px tall.
+           On a wide screen the map takes the slack and the text column stops
+           growing, because a 900px-wide line of body copy reads worse, not
+           better. Declared after #map on purpose — the base height above would
+           otherwise win on source order. */
+        @media (min-width: 1280px) {
+            .container { max-width: 1560px; }
+            .results-section {
+                grid-template-columns: minmax(0, 1fr) minmax(400px, 620px);
+                gap: 26px;
+            }
+            #map { height: min(78vh, 820px); }
+        }
+
+        @media (min-width: 1700px) {
+            .container { max-width: 1760px; }
+            .results-section { grid-template-columns: minmax(0, 1fr) minmax(440px, 660px); }
+            #map { height: min(80vh, 900px); }
         }
 
         .wells-container {
@@ -1559,14 +1586,20 @@
         .rl-summary {
             cursor: pointer;
             list-style: none;
-            padding: 7px 11px;
+            padding: 8px 12px;
             font-weight: 800;
             font-size: 0.68rem;
             letter-spacing: 0.06em;
             text-transform: uppercase;
-            color: #94a3b8;
+            color: #cbd5e1;
             white-space: nowrap;
+            display: flex;
+            align-items: center;
+            gap: 7px;
         }
+        .rl-summary svg { flex: none; color: #38bdf8; }
+        .rl-summary:hover { color: #f1f5f9; }
+        .rl-box[open] .rl-summary { border-bottom: 1px solid rgba(148, 163, 184, 0.16); }
         .rl-summary::-webkit-details-marker { display: none; }
         .rl-summary::after { content: "\25BE"; margin-left: 7px; color: #64748b; }
         .rl-box[open] .rl-summary::after { content: "\25B4"; }
@@ -1574,6 +1607,11 @@
            the control instead of running off the bottom of the map. */
         .rl-items {
             padding: 0 11px 9px;
+            /* Fixed width, not shrink-to-fit. The count badges arrive after the
+               bbox fetch ("…" then a number), and an auto-width control jumped
+               wider the moment you ticked a box. */
+            width: 232px;
+            box-sizing: content-box;
             /* Capped in px as well as vh: the results map is a ~660px card, not
                a full-screen map, and a 46vh list ate most of it on a tall
                desktop window. */
@@ -1607,8 +1645,10 @@
         .rl-item.loading .rl-count::after { content: "…"; color: #e6c76b; }
         @media (max-width: 640px) {
             /* Bigger tap targets, and never crowd the zoom buttons. */
-            .rl-box { font-size: 0.8rem; max-width: 58vw; }
-            .rl-items { max-height: 40vh; }
+            .rl-box { font-size: 0.8rem; max-width: 62vw; }
+            /* Narrower than the desktop fixed width so it clears the zoom
+               buttons on a small phone. */
+            .rl-items { max-height: 40vh; width: min(210px, 52vw); }
             .rl-item { margin-bottom: 9px; }
             .rl-item input { width: 17px; height: 17px; }
             .rl-summary { padding: 9px 12px; }
@@ -7283,7 +7323,11 @@
 
             const st = resultsOverlayState(targetMap, key);
             st.enabled = enabled;
-            if (!enabled) { clearResultsOverlay(targetMap, key); return; }
+            if (!enabled) {
+                clearResultsOverlay(targetMap, key);
+                clearSearchHazards(targetMap, key);
+                return;
+            }
 
             // Same gate as the Explore map: hazard layers stay dark until the
             // viewport is tight enough that the bbox is not most of the state.
@@ -7354,9 +7398,14 @@
                 // <details> so it collapses to a single row on a phone. With a
                 // twenty-layer list that matters more than it did with five, and
                 // .rl-items scrolls rather than running off the bottom of the map.
+                // Always starts closed, on every screen size, the same way the
+                // Explore map's panel does. Open, it is a 23-row list sitting on
+                // top of the map the person came here to look at.
                 div.innerHTML =
-                    '<details class="rl-box"' + (window.innerWidth > 640 ? ' open' : '') + '>' +
-                    '<summary class="rl-summary">Map Layers</summary>' +
+                    '<details class="rl-box">' +
+                    '<summary class="rl-summary">' +
+                    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 9 5-9 5-9-5 9-5Z"/><path d="m3 17 9 5 9-5"/><path d="m3 12 9 5 9-5"/></svg>' +
+                    'Layers</summary>' +
                     '<div class="rl-items">' + rows.join('') + '</div></details>';
 
                 // Stop clicks/scroll inside the control from panning or zooming.
@@ -7681,6 +7730,11 @@
             // Clear previous hazard markers
             searchHazardMarkers.forEach(m => map.removeLayer(m));
             searchHazardMarkers = [];
+            // Grouped by layer as well, because the layer panel has a checkbox
+            // for each of these and it has to be able to turn them off. Before
+            // this, a search drew mines and EPA sites unconditionally and the
+            // Mine Sites box sat unchecked next to a map full of prospect pits.
+            map._searchHazardByLayer = {};
 
             const hazardColors = {
                 contamination: '#ff1744', superfund: '#d50000', tri: '#ff6d00',
@@ -7695,6 +7749,13 @@
 
             features.forEach(f => {
                 const layer = f._layer;
+                // Mines are not drawn until asked for. The others are a handful
+                // of regulated sites; this one is a geological inventory that
+                // returns two hundred adits and prospect pits anywhere near a
+                // historic district, which buried the map in markers nobody
+                // chose to see. It still counts toward the contamination
+                // summary, and the layer checkbox still turns it on.
+                if (layer === 'mines') return;
                 const color = hazardColors[layer] || '#ff1744';
                 const sym = hazardSymbols[layer] || '' + ICON_ALERT + '';
                 const m = L.marker([f._lat, f._lng], {
@@ -7710,7 +7771,39 @@
                 const popup = buildSearchHazardPopup(layer, f, isFree);
                 if (popup) m.bindPopup(popup, { maxWidth: 280 });
                 searchHazardMarkers.push(m);
+                (map._searchHazardByLayer[layer] = map._searchHazardByLayer[layer] || []).push(m);
             });
+
+            syncHazardCheckboxes(map);
+        }
+
+        // Tick the boxes for whatever the search just drew. Done without firing
+        // a change event on purpose: the handler would kick off a bbox fetch and
+        // we would end up with two markers per site.
+        function syncHazardCheckboxes(targetMap) {
+            const drawn = targetMap._searchHazardByLayer || {};
+            document.querySelectorAll('.results-layer-ctl input[data-rl]').forEach(function(box) {
+                const key = box.getAttribute('data-rl');
+                if ((drawn[key] || []).length && !box.checked) {
+                    box.checked = true;
+                    const st = resultsOverlayState(targetMap, key);
+                    if (st) st.enabled = true;
+                }
+            });
+        }
+
+        // Unchecking a hazard layer drops whatever the search drew for it. The
+        // markers are not restored on re-check; from then on the layer is fed by
+        // the normal bbox fetch, so the two sources never draw the same site twice.
+        function clearSearchHazards(targetMap, key) {
+            const markers = (targetMap._searchHazardByLayer || {})[key];
+            if (!markers) return;
+            markers.forEach(function(m) {
+                try { targetMap.removeLayer(m); } catch (e) {}
+                const i = searchHazardMarkers.indexOf(m);
+                if (i > -1) searchHazardMarkers.splice(i, 1);
+            });
+            delete targetMap._searchHazardByLayer[key];
         }
 
         function buildSearchHazardPopup(layer, f, isFree) {
