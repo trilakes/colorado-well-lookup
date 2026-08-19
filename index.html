@@ -6614,7 +6614,7 @@
             var ph=(document.getElementById("bfc-phone")||{}).value||"";
             if(!em) return;
             var b=document.getElementById("bfc-btn"); if(b){ b.disabled=true; b.textContent="Sending..."; }
-            try{ await fetch("https://trilakes.co/portal/api/build-feasibility",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:em,phone:ph,address:window._bfAddr||"",services:"Build feasibility interest",notes:"From coloradowell.com well search"})}); }catch(e){}
+            if(window.hqTrackConversion){try{hqTrackConversion("feasibility_lead",em);}catch(_e){}} try{ await fetch("https://trilakes.co/portal/api/build-feasibility",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({email:em,phone:ph,address:window._bfAddr||"",services:"Build feasibility interest",notes:"From coloradowell.com well search"})}); }catch(e){}
             var a=document.getElementById("bfc-addr"); if(a) a.textContent=window._bfAddr||"your property";
             var lf=document.getElementById("bfc-form"); if(lf) lf.style.display="none";
             var dn=document.getElementById("bfc-done"); if(dn) dn.style.display="block";
@@ -9299,6 +9299,8 @@ if(window.HQ){try{HQ.event("terrain3d_shown","")}catch(e){}}
 })();
 window._well3dOpen=function(btn){var w=window._w3d||{};if(w.lat==null)return;btn.disabled=true;btn.textContent="Loading LiDAR terrain…";var box=document.getElementById("well3d");window._sr3dStart(box,w.lat,w.lon).then(function(){btn.style.display="none";}).catch(function(){btn.disabled=false;btn.textContent="3D terrain unavailable — try again";});};window.showWell3D=function(){var b=document.getElementById("well3d-box");if(b)b.style.display="block";var box=document.getElementById("well3d");if(!box)return;var bt=document.getElementById("well3d-btn");if(bt)bt.style.display="none";var w=window._w3d||{};if(w.lat==null)return;box.innerHTML='<div style="padding:2.2rem 1rem;text-align:center;color:#9fb0cc;font-size:.9rem">Loading 3D LiDAR terrain &amp; water flow\u2026</div>';window._sr3dStart(box,w.lat,w.lon).catch(function(){box.innerHTML="";if(bt){bt.style.display="";bt.disabled=false;bt.innerHTML="&#9651; View This Parcel in 3D &mdash; Terrain &amp; Water Flow";}});};
 </script>
+
+<script>document.addEventListener("click",function(e){if(!window.hqTrackConversion||!e.target.closest)return;var a=e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href")||"";if(h.indexOf("build-feasibility")>-1){hqTrackConversion("feasibility_click","");}else if(h.replace(/\/+$/,"")==="https://trilakes.co"){hqTrackConversion("trilakes_click","");}},true);</script>
 </body>
 </html>
 
