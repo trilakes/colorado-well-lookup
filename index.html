@@ -1871,6 +1871,8 @@
         .eg-btn:disabled { opacity: 0.65; cursor: default; }
         .eg-err { color: #f87171; font-size: 0.85rem; margin: 10px 0 0; }
         .eg-err[hidden] { display: none; }
+        .eg-skip { display: block; width: 100%; margin: 14px 0 0; padding: 10px; background: none; border: none; color: #94a3b8; font-size: 0.88rem; text-decoration: underline; text-underline-offset: 3px; cursor: pointer; font-family: inherit; }
+        .eg-skip:hover { color: #cbd5e1; }
         .eg-fine { color: #64748b; font-size: 0.75rem; line-height: 1.45; margin: 14px 0 0; }
 
         /* Per-layer "what am I looking at" help. A checked box that draws a red
@@ -3441,13 +3443,14 @@
          checkAccess() has already written wellFinderEmail. -->
     <div class="eg-overlay" id="email-gate" hidden>
         <div class="eg-card" role="dialog" aria-modal="true" aria-labelledby="eg-title">
-            <h2 class="eg-title" id="eg-title">Where should we send your results?</h2>
-            <p class="eg-sub">Enter your email to see the well records for this address — depth, yield, water level and drilling cost for every well nearby.</p>
+            <h2 class="eg-title" id="eg-title">Want a copy of your results?</h2>
+            <p class="eg-sub">Leave your email and we will send this property's well report — depth, yield, water level and drilling cost for every well nearby.</p>
             <form class="eg-form" onsubmit="return submitEmailGate(event)">
                 <input type="email" id="eg-email" placeholder="you@example.com" required autocomplete="email" inputmode="email">
-                <button type="submit" class="eg-btn" id="eg-submit">Show My Results</button>
+                <button type="submit" class="eg-btn" id="eg-submit">Send It To Me</button>
             </form>
             <p class="eg-err" id="eg-err" hidden></p>
+            <button type="button" class="eg-skip" id="eg-skip" onclick="skipEmailGate()">No thanks, just show the results</button>
             <p class="eg-fine">No spam. We use this to send your report and to follow up if you want a quote.</p>
         </div>
     </div>
@@ -6814,10 +6817,33 @@
             } catch (e) { return true; }  // private mode: never block the search
         }
 
+        // Skipping is remembered for the browser session only. Suppressing it
+        // forever would mean one skip costs the lead permanently, and re-asking
+        // on the next search in the same sitting is nagging. A later visit asks
+        // once more.
+        function gateSkipped() {
+            try { return sessionStorage.getItem('wellFinderGateSkipped') === '1'; }
+            catch (e) { return false; }
+        }
+
+        window.skipEmailGate = function() {
+            try { sessionStorage.setItem('wellFinderGateSkipped', '1'); } catch (e) {}
+            const gate = document.getElementById('email-gate');
+            if (gate) gate.hidden = true;
+            if (window.logEvent) window.logEvent('email_gate_skipped', window._egAddress || '');
+            if (window.hqTrackConversion) window.hqTrackConversion('email_gate_skipped', '');
+            const go = _egResolve;
+            _egResolve = null;
+            if (go) go();
+        };
+
         // Resolves when we may proceed. Rejects only if the user abandons.
         function requireEmail(address) {
             return Promise.resolve();  /* free to search: email gate disabled */
-            if (hasCapturedEmail() || hasPaidAccess()) return Promise.resolve();
+            // Below is only reached if the kill switch above is removed.
+            // The skip check stays so that re-enabling the gate brings back
+            // a dismissible one rather than the trap it was the first time.
+            if (hasCapturedEmail() || hasPaidAccess() || gateSkipped()) return Promise.resolve();
             const gate = document.getElementById('email-gate');
             if (!gate) return Promise.resolve();
             window._egAddress = address || window._lastSearchAddress || '';
@@ -6828,6 +6854,14 @@
                 const f = document.getElementById('eg-email');
                 if (f) f.focus();
             }, 50);
+            // Escape skips too. A dialog you cannot dismiss from the keyboard is
+            // a trap, and this one is optional by design.
+            if (!gate._escBound) {
+                gate._escBound = true;
+                document.addEventListener('keydown', function(ev) {
+                    if (ev.key === 'Escape' && !gate.hidden) window.skipEmailGate();
+                });
+            }
             return new Promise(function(resolve) { _egResolve = resolve; });
         }
 
