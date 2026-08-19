@@ -890,6 +890,37 @@
             border-left: 3px solid #38bdf8;
         }
 
+        /* Collapsed tail of the nearby-well list. [hidden] alone is unreliable
+           here because .well-card children set their own display, so the
+           container is hidden explicitly. */
+        .wells-more[hidden] { display: none; }
+
+        .wells-more-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 12px;
+            padding: 13px 18px;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid rgba(56, 189, 248, 0.28);
+            border-radius: 12px;
+            color: #7dd3fc;
+            font-size: 0.9rem;
+            font-weight: 700;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.2s ease;
+        }
+        .wells-more-toggle:hover,
+        .wells-more-toggle:focus-visible {
+            background: rgba(15, 23, 42, 0.95);
+            border-color: rgba(56, 189, 248, 0.55);
+            color: #bae6fd;
+            outline: none;
+        }
+        .wells-more-chev { display: inline-flex; }
+
         .well-card:hover {
             background: rgba(15, 23, 42, 0.9);
             transform: translateX(4px);
@@ -1539,7 +1570,28 @@
         .rl-summary::-webkit-details-marker { display: none; }
         .rl-summary::after { content: "\25BE"; margin-left: 7px; color: #64748b; }
         .rl-box[open] .rl-summary::after { content: "\25B4"; }
-        .rl-items { padding: 0 11px 9px; }
+        /* Twenty-odd layers will not fit on a phone, so the list scrolls inside
+           the control instead of running off the bottom of the map. */
+        .rl-items {
+            padding: 0 11px 9px;
+            /* Capped in px as well as vh: the results map is a ~660px card, not
+               a full-screen map, and a 46vh list ate most of it on a tall
+               desktop window. */
+            max-height: min(46vh, 320px);
+            overflow-y: auto;
+            overscroll-behavior: contain;
+        }
+        .rl-sec {
+            font-size: 0.62rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #64748b;
+            margin: 8px 0 5px;
+            padding-top: 7px;
+            border-top: 1px solid rgba(148, 163, 184, 0.16);
+        }
+        .rl-items > .rl-sec:first-child { margin-top: 2px; padding-top: 0; border-top: none; }
         .rl-item {
             display: flex;
             align-items: center;
@@ -1550,9 +1602,13 @@
         }
         .rl-item input { cursor: pointer; margin: 0; flex: none; }
         .rl-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; flex: none; }
+        .rl-label { flex: 1 1 auto; }
+        .rl-count { color: #64748b; font-size: 0.62rem; font-variant-numeric: tabular-nums; padding-left: 6px; }
+        .rl-item.loading .rl-count::after { content: "…"; color: #38bdf8; }
         @media (max-width: 640px) {
             /* Bigger tap targets, and never crowd the zoom buttons. */
             .rl-box { font-size: 0.8rem; max-width: 58vw; }
+            .rl-items { max-height: 40vh; }
             .rl-item { margin-bottom: 9px; }
             .rl-item input { width: 17px; height: 17px; }
             .rl-summary { padding: 9px 12px; }
@@ -1689,6 +1745,10 @@
             border-radius: 10px;
             backdrop-filter: blur(12px);
             min-width: 200px;
+            /* max-width matters now that rows can expand a help paragraph:
+               without it the panel stretches to fit the longest sentence and
+               covers half the map. */
+            max-width: 300px;
             max-height: 60vh;
             overflow-y: auto;
         }
@@ -1757,6 +1817,36 @@
         .layer-item.loading .layer-count { display: none; }
         .layer-item.loading::after { content: ''; display: inline-block; width: 10px; height: 10px; border: 1.5px solid rgba(56,189,248,0.2); border-top-color: #38bdf8; border-radius: 50%; animation: lspin 0.7s linear infinite; margin-left: 6px; flex-shrink: 0; }
         @keyframes lspin { to { transform: rotate(360deg); } }
+
+        /* Email gate */
+        .eg-overlay { position: fixed; inset: 0; z-index: 10050; background: rgba(8,14,26,0.82); backdrop-filter: blur(4px); display: flex; align-items: center; justify-content: center; padding: 20px; }
+        .eg-overlay[hidden] { display: none; }
+        .eg-card { background: linear-gradient(165deg,#101c30,#0c1524); border: 1px solid rgba(56,189,248,0.28); border-radius: 16px; padding: 28px 26px; max-width: 440px; width: 100%; box-shadow: 0 24px 60px rgba(0,0,0,0.55); }
+        .eg-title { color: #f1f5f9; font-size: 1.35rem; font-weight: 700; margin: 0 0 8px; letter-spacing: -0.3px; }
+        .eg-sub { color: #94a3b8; font-size: 0.92rem; line-height: 1.5; margin: 0 0 18px; }
+        .eg-form { display: flex; flex-direction: column; gap: 10px; }
+        .eg-form input { width: 100%; padding: 13px 15px; border-radius: 10px; border: 1px solid rgba(148,163,184,0.32); background: rgba(15,23,42,0.85); color: #e2e8f0; font-size: 1rem; }
+        .eg-form input:focus { outline: none; border-color: rgba(56,189,248,0.75); }
+        .eg-btn { width: 100%; padding: 13px 18px; border: none; border-radius: 10px; background: linear-gradient(135deg,#38bdf8,#0ea5e9); color: #0f172a; font-size: 1rem; font-weight: 700; cursor: pointer; min-height: 48px; }
+        .eg-btn:disabled { opacity: 0.65; cursor: default; }
+        .eg-err { color: #f87171; font-size: 0.85rem; margin: 10px 0 0; }
+        .eg-err[hidden] { display: none; }
+        .eg-fine { color: #64748b; font-size: 0.75rem; line-height: 1.45; margin: 14px 0 0; }
+
+        /* Per-layer "what am I looking at" help. A checked box that draws a red
+           line across someone's property is worse than no layer at all if we
+           never say the red line is a pipeline. */
+        .layer-help-btn { background: none; border: 1px solid rgba(148,163,184,0.35); color: #94a3b8; width: 16px; height: 16px; border-radius: 50%; padding: 0; cursor: pointer; flex-shrink: 0; display: inline-flex; align-items: center; justify-content: center; }
+        .layer-help-btn:hover, .layer-help-btn[aria-expanded="true"] { color: #38bdf8; border-color: rgba(56,189,248,0.6); background: rgba(56,189,248,0.1); }
+        .layer-help { display: none; margin: 2px 0 8px 24px; padding: 8px 10px; background: rgba(15,23,42,0.6); border-left: 2px solid rgba(56,189,248,0.4); border-radius: 0 6px 6px 0; max-width: 250px; }
+        .layer-help.open { display: block; }
+        .layer-help-why { color: #cbd5e1; font-size: 0.72rem; line-height: 1.45; margin: 0 0 6px; }
+        .layer-help-note { color: #94a3b8; font-size: 0.68rem; line-height: 1.4; margin: 6px 0 0; font-style: italic; }
+        .lh-mark { display: flex; align-items: center; gap: 7px; margin: 3px 0; color: #cbd5e1; font-size: 0.7rem; line-height: 1.3; }
+        .lh-swatch { flex-shrink: 0; width: 18px; height: 10px; border-radius: 2px; }
+        .lh-swatch.dot { width: 10px; height: 10px; border-radius: 50%; margin: 0 4px; border: 1px solid rgba(255,255,255,0.7); }
+        .lh-swatch.line { height: 0; border-top-width: 3px; border-top-style: solid; border-radius: 0; }
+        .lh-swatch.dashed { height: 0; border-top-width: 3px; border-top-style: dotted; border-radius: 0; }
 
         @media (max-width: 600px) {
             .layer-panel { top: 62px; left: 8px; }
@@ -3306,6 +3396,22 @@
          NOTE: this block also holds the marketing/SEO sections (drilling costs
          by region, guides). Those should be lifted out into real page content —
          while they live in here they are only seen when the overlay opens. -->
+    <!-- Email gate. Shown once per browser before the first search, then never
+         again. Anyone who has already bought a report is never asked, because
+         checkAccess() has already written wellFinderEmail. -->
+    <div class="eg-overlay" id="email-gate" hidden>
+        <div class="eg-card" role="dialog" aria-modal="true" aria-labelledby="eg-title">
+            <h2 class="eg-title" id="eg-title">Where should we send your results?</h2>
+            <p class="eg-sub">Enter your email to see the well records for this address — depth, yield, water level and drilling cost for every well nearby.</p>
+            <form class="eg-form" onsubmit="return submitEmailGate(event)">
+                <input type="email" id="eg-email" placeholder="you@example.com" required autocomplete="email" inputmode="email">
+                <button type="submit" class="eg-btn" id="eg-submit">Show My Results</button>
+            </form>
+            <p class="eg-err" id="eg-err" hidden></p>
+            <p class="eg-fine">No spam. We use this to send your report and to follow up if you want a quote.</p>
+        </div>
+    </div>
+
     <div class="paywall-overlay hidden" id="paywall">
         <div class="paywall-content">
             <!-- Back button (only visible after free search) -->
@@ -6397,6 +6503,9 @@
             const radius = parseFloat(document.getElementById('radius-address').value);
             let county = document.getElementById('county').value;
 
+            // Blocks here until we have an email, on the first search only.
+            await requireEmail(address);
+
             // Track actual address searched for HQ
             if (address && window.logEvent) window.logEvent('address_searched', address);
             if (address) window._hqSearchQuery = address;
@@ -6466,7 +6575,9 @@
             const lon = parseFloat(document.getElementById('lon').value);
             const radius = parseFloat(document.getElementById('radius-coords').value);
             const county = document.getElementById('county-coords').value;
-            
+
+            await requireEmail(lat.toFixed(5) + ', ' + lon.toFixed(5));
+
             // Save to localStorage
             saveSearches();
             
@@ -6618,7 +6729,8 @@
             // whose permit was on screen a moment earlier.
             window._pinnedReceipt = receipt || null;
             if (window.logEvent) window.logEvent('explore_search_here', label);
-            searchWells(lat, lon, 2, county || '')
+            requireEmail(label)
+                .then(function() { return searchWells(lat, lon, 2, county || ''); })
                 .then(function() {
                     const res = document.getElementById('results');
                     if (res) res.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -6626,67 +6738,572 @@
                 .catch(function(err) { alert('Could not analyze this area: ' + err.message); });
         };
 
-        // ── Results-map layer control ────────────────────────────────────────
-        // The Explore map has a full layer panel; the address-search map had a
-        // hardcoded basemap and nothing else. Same layers, but NEW instances:
-        // a Leaflet layer can only belong to one map at a time, so these cannot
-        // be shared with the Explore map's window._lidarLayer / _nhdLayer / etc.
-        const RESULTS_LAYERS = {
-            parcels: {
-                label: 'Parcel Lines', dot: '#d6d3d1', on: true,
-                make: () => L.esri.featureLayer({
-                    url: 'https://gis.colorado.gov/public/rest/services/Address_and_Parcel/Colorado_Public_Parcels/FeatureServer/0',
-                    minZoom: 14, interactive: false,
-                    style: () => ({ color: '#d6d3d1', weight: 1, opacity: 0.4, fillOpacity: 0 })
-                })
-            },
+        // ── Email gate ───────────────────────────────────────────────────────
+        // Asked once per browser, before the first search. Anyone who has bought
+        // a report already has wellFinderEmail set by checkAccess(), so paying
+        // customers are never asked. The searched address rides along with the
+        // email so the lead lands in the portal with the property attached
+        // rather than as a bare address nobody can follow up on.
+        const LEAD_ENDPOINT = 'https://trilakeshq.com/api/lead';
+        let _egResolve = null;
+
+        function hasCapturedEmail() {
+            try {
+                return !!(localStorage.getItem('wellFinderEmail') || localStorage.getItem('wellFinderLeadEmail'));
+            } catch (e) { return true; }  // private mode: never block the search
+        }
+
+        // Resolves when we may proceed. Rejects only if the user abandons.
+        function requireEmail(address) {
+            if (hasCapturedEmail() || hasPaidAccess()) return Promise.resolve();
+            const gate = document.getElementById('email-gate');
+            if (!gate) return Promise.resolve();
+            window._egAddress = address || window._lastSearchAddress || '';
+            gate.hidden = false;
+            if (window.logEvent) window.logEvent('email_gate_shown', window._egAddress);
+            if (window.hqTrackConversion) window.hqTrackConversion('email_gate_shown', '');
+            setTimeout(function() {
+                const f = document.getElementById('eg-email');
+                if (f) f.focus();
+            }, 50);
+            return new Promise(function(resolve) { _egResolve = resolve; });
+        }
+
+        window.submitEmailGate = function(ev) {
+            ev.preventDefault();
+            const input = document.getElementById('eg-email');
+            const err = document.getElementById('eg-err');
+            const btn = document.getElementById('eg-submit');
+            const email = (input.value || '').trim();
+            // Deliberately loose: a wrong-looking address that is real costs us a
+            // lead, and we cannot verify deliverability from here anyway.
+            if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+                err.textContent = 'Please enter a valid email address.';
+                err.hidden = false;
+                return false;
+            }
+            err.hidden = true;
+            btn.disabled = true;
+            btn.textContent = 'Loading your results...';
+            try {
+                localStorage.setItem('wellFinderLeadEmail', email);
+                localStorage.setItem('wellFinderLeadAt', Date.now().toString());
+            } catch (e) {}
+
+            const payload = JSON.stringify({
+                email: email,
+                address: window._egAddress || '',
+                source: 'search_gate',
+                app: 'well-tool',
+                page: window.location.pathname,
+                referrer: document.referrer || 'Direct'
+            });
+            // sendBeacon skips the CORS preflight and survives the navigation
+            // that follows; the fetch is the fallback when it is unavailable.
+            let sent = false;
+            try {
+                sent = navigator.sendBeacon(LEAD_ENDPOINT, new Blob([payload], { type: 'text/plain' }));
+            } catch (e) {}
+            if (!sent) {
+                fetch(LEAD_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: payload
+                }).catch(function() {});
+            }
+            if (window.hqTrackConversion) window.hqTrackConversion('search_gate', email);
+            if (window.logEvent) window.logEvent('email_gate_submit', email);
+
+            document.getElementById('email-gate').hidden = true;
+            btn.disabled = false;
+            btn.textContent = 'Show My Results';
+            const go = _egResolve;
+            _egResolve = null;
+            if (go) go();
+            return false;
+        };
+
+        // ── Per-layer help ───────────────────────────────────────────────────
+        // Turning on Streams & Springs draws cyan, magenta, orange, gold and red
+        // lines and we never said which was which. The colours below are what is
+        // actually on screen, not what the USGS service metadata claims: the
+        // Explore map runs these layers through saturate(2.4) brightness(1.25),
+        // so #4AB6C6 arrives as cyan, and the service reports every flowline as
+        // solid when intermittent and ephemeral in fact render dotted. These were
+        // read off rendered tiles, so keep them in step with the pane filter.
+        const LAYER_HELP = {
             lidar: {
-                label: 'Bare-Earth LiDAR', dot: '#cfd8dc',
+                why: 'Ground-surface shading with trees and buildings stripped away. It shows the real shape of your land — the swales, benches and old channels the tree canopy hides — which is where water collects and where a rig can and cannot get in.',
+                marks: [{ grad: 'linear-gradient(90deg,#f5f5f5,#3a3a3a)', label: 'Bare-earth relief. Light is a slope facing the light, dark faces away. The shading is not a measurement.' }],
+                note: 'Draws over the satellite image at 85% opacity, so the photo goes grey while it is on.'
+            },
+            streams: {
+                why: 'Mapped creeks, ditches, ponds and springs from the USGS water survey. It tells you which lines near you carry water all year, which only run in spring, and which are ditches somebody else owns.',
+                marks: [
+                    { color: '#00ffff', style: 'line', label: 'Creek or river that runs year-round' },
+                    { color: '#00ffff', style: 'dashed', label: 'Creek that only runs part of the year' },
+                    { color: '#ff6400', style: 'dashed', label: 'Gully that only runs after storms or snowmelt' },
+                    { color: '#ffd900', style: 'line', label: 'Irrigation ditch or canal (man-made)' },
+                    { color: '#ff0000', style: 'line', label: 'Water pipeline or aqueduct' },
+                    { color: '#ff00ff', style: 'line', label: 'Connector drawn through a lake to join the stream network — not a real channel' },
+                    { color: '#1fffff', style: 'fill', label: 'Lake, pond or a river wide enough to map as an area' },
+                    { color: '#1fffff', style: 'dot', label: 'Spring or seep on the USGS survey' }
+                ],
+                note: 'Only draws at closer zooms. Zoomed out to a county view the box stays checked and nothing appears.'
+            },
+            parcels: {
+                why: 'Property boundaries from Colorado county assessor records. Lets you see where your line actually falls before judging how close a well, ditch or contamination site really is.',
+                marks: [{ color: '#d6d3d1', style: 'line', label: 'Assessor parcel boundary' }],
+                note: 'A reference, not a survey. Only draws at zoom 14 and closer.'
+            },
+            basins: {
+                why: 'Drainage boundaries — everything inside one drains to the same creek. This is the honest answer to "where does my water come from", and the area where an upstream contamination site actually matters to you.',
+                marks: [{ color: '#c063fe', style: 'line', label: 'Subwatershed boundary (HUC12), with its code' }],
+                note: 'Boundary lines only, no fill, and deliberately faint. Zoomed into a property only the 12-digit subwatershed is ever drawn.'
+            },
+            drought: {
+                why: 'Current drought severity from the U.S. Drought Monitor. Sustained drought is what drags shallow water tables down and makes a marginal well go dry in August.',
+                marks: [
+                    { color: '#ffff00', style: 'fill', label: 'D0 — Abnormally dry' },
+                    { color: '#fcd37f', style: 'fill', label: 'D1 — Moderate drought' },
+                    { color: '#ffaa00', style: 'fill', label: 'D2 — Severe drought' },
+                    { color: '#e60000', style: 'fill', label: 'D3 — Extreme drought' },
+                    { color: '#730000', style: 'fill', label: 'D4 — Exceptional drought' }
+                ],
+                note: 'Redrawn every Thursday. No colour means no drought category. Painted at 50% over the satellite, so on-screen tones are lighter than these.'
+            },
+            dams: {
+                why: 'Dams and reservoirs on the national inventory. A dam upstream changes how much water reaches your stretch and when, and the record carries a hazard rating telling you whether you sit below something that matters in a failure.',
+                marks: [{ color: '#2979ff', style: 'dot', label: 'Dam or reservoir' }]
+            },
+            gauges: {
+                why: 'USGS gauges that measure how much water a stream is carrying. A gauge is the only place near you where flow is actually measured rather than estimated — if one sits on your creek you can see whether it has been running low for years.',
+                marks: [{ color: '#00b0ff', style: 'dot', label: 'USGS stream gauge' }]
+            },
+            springs: {
+                why: 'Recorded springs where groundwater reaches the surface on its own. Springs near you are direct evidence that a shallow water-bearing layer exists, and roughly how deep it sits.',
+                marks: [{ color: '#00e5ff', style: 'dot', label: 'Recorded spring' }],
+                note: 'Streams & Springs draws its own spring dots in a near-identical cyan. With both layers on they are hard to tell apart.'
+            },
+            waterrights: {
+                why: 'Points where somebody holds a legal right to divert or use water. In Colorado water is owned separately from land, so dense water rights near you mean the surface water is already claimed and a new well may be limited to household use only.',
+                marks: [{ color: '#aa00ff', style: 'dot', label: 'Water right record' }]
+            },
+            groundwater: {
+                why: 'Monitoring wells with a measured depth to the water table. These are real measured levels rather than estimates — the closest thing to a direct reading of how far down you would have to drill.',
+                marks: [{ color: '#1de9b6', style: 'dot', label: 'Groundwater monitoring site' }]
+            }
+        };
+
+        const LAYER_HELP_ICON = '<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M12 16v-5"/><path d="M12 7.5v.01"/></svg>';
+
+        function layerHelpHTML(key) {
+            const h = LAYER_HELP[key];
+            if (!h) return '';
+            const marks = (h.marks || []).map(function(m) {
+                const sw = m.grad
+                    ? '<span class="lh-swatch" style="background:' + m.grad + '"></span>'
+                    : m.style === 'dot' ? '<span class="lh-swatch dot" style="background:' + m.color + '"></span>'
+                    : m.style === 'fill' ? '<span class="lh-swatch" style="background:' + m.color + '"></span>'
+                    : '<span class="lh-swatch ' + (m.style === 'dashed' ? 'dashed' : 'line') + '" style="border-top-color:' + m.color + '"></span>';
+                return '<div class="lh-mark">' + sw + '<span>' + m.label + '</span></div>';
+            }).join('');
+            return '<div class="layer-help" data-help-for="' + key + '">' +
+                '<p class="layer-help-why">' + h.why + '</p>' + marks +
+                (h.note ? '<p class="layer-help-note">' + h.note + '</p>' : '') + '</div>';
+        }
+
+        // One toggle for both panels. The help block is a sibling inserted after
+        // the row, so a click never lands on the layer checkbox itself.
+        window.toggleLayerHelp = function(btn, key) {
+            const help = btn.closest('[data-layer], [data-rl-item]');
+            const panel = help && help.parentNode.querySelector('.layer-help[data-help-for="' + key + '"]');
+            if (!panel) return;
+            const open = panel.classList.toggle('open');
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            if (open && window.logEvent) window.logEvent('layer_help_open', key);
+        };
+
+        // Injects the button + help block into whichever panel is passed. Doing
+        // it here rather than in the markup keeps the copy in one place and stops
+        // the two panels drifting apart again.
+        function attachLayerHelp(root, selector, attr) {
+            if (!root) return;
+            root.querySelectorAll(selector).forEach(function(row) {
+                const key = row.getAttribute(attr);
+                if (!LAYER_HELP[key] || row.querySelector('.layer-help-btn')) return;
+                const btn = document.createElement('button');
+                btn.type = 'button';
+                btn.className = 'layer-help-btn';
+                btn.setAttribute('aria-expanded', 'false');
+                btn.setAttribute('aria-label', 'What does this layer show?');
+                btn.innerHTML = LAYER_HELP_ICON;
+                btn.addEventListener('click', function(ev) {
+                    ev.preventDefault();
+                    ev.stopPropagation();
+                    window.toggleLayerHelp(btn, key);
+                });
+                row.appendChild(btn);
+                row.insertAdjacentHTML('afterend', layerHelpHTML(key));
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            attachLayerHelp(document.getElementById('layer-panel-body') || document, '.layer-item[data-layer]', 'data-layer');
+        });
+
+        // ── Results-map layer control ────────────────────────────────────────
+        // The Explore map has a full layer panel; the address-search map used to
+        // offer five layers. It now carries the same catalogue, in the same
+        // sections, with the same colours and the same defaults.
+        //
+        // Every layer here is a NEW instance. A Leaflet layer belongs to exactly
+        // one map at a time, so reusing the Explore map instances
+        // (window._lidarLayer / _nhdLayer / _basinLayer) would tear the layer off
+        // whichever map drew it last. The same reasoning applies to state: the
+        // Explore map keeps overlayState, its #lc- badges, its hazard-lock banner
+        // and its contamination proximity engine, and this map keeps its own
+        // markers and bbox caches on the map object (targetMap._rl*).
+        //
+        // What IS shared is everything with no map inside it — OVERLAY_COLORS,
+        // HAZARD_LAYERS, OVERLAY_MIN_ZOOM, hazardSvg() and buildOverlayPopup() —
+        // so marker colours, the zoom gate and popup copy stay defined once.
+        const RESULTS_LAYER_SECTIONS = ['Wells', 'Environmental', 'Terrain', 'Hydrology'];
+
+        // The Explore map's nhdPane filter, created on demand per results map.
+        // Kept byte-identical to the Explore map's string on purpose: the layer
+        // help legend states the on-screen colours, and those colours are a
+        // product of this filter. Change one and the legend stops being true.
+        const HYDRO_PANE_FILTER = 'saturate(2.4) brightness(1.25) contrast(1.2) drop-shadow(0 0 2px rgba(0,176,255,0.9))';
+        function resultsHydroPane(map) {
+            if (!map) return undefined;
+            if (!map.getPane('rlHydroPane')) {
+                map.createPane('rlHydroPane');
+                map.getPane('rlHydroPane').style.zIndex = 320;
+                map.getPane('rlHydroPane').style.filter = HYDRO_PANE_FILTER;
+            }
+            return 'rlHydroPane';
+        }
+
+        // kind tells toggleResultsLayer how to build the thing:
+        //   'wells'   — the search well markers, hidden and re-shown in place
+        //   'tile'    — an Esri/tile overlay from make()
+        //   'geojson' — radon county polygons, loaded once as data
+        //   'points'  — bbox fetch against the wells API, same as the Explore map
+        const RESULTS_LAYERS = {
+            wells: { section: 'Wells', label: 'Water Wells', dot: '#00e676', on: true, kind: 'wells' },
+
+            contamination: { section: 'Environmental', label: 'EPA Contamination', dot: '#ff1744', kind: 'points' },
+            superfund:     { section: 'Environmental', label: 'Superfund Sites', dot: '#d50000', kind: 'points' },
+            oilgas:        { section: 'Environmental', label: 'Oil &amp; Gas Wells', dot: '#424242', kind: 'points' },
+            tri:           { section: 'Environmental', label: 'Toxic Release (TRI)', dot: '#ff6d00', kind: 'points' },
+            radon:         { section: 'Environmental', label: 'Radon Zones', dot: '#ffab00', kind: 'geojson' },
+            wqstations:    { section: 'Environmental', label: 'Water Quality', dot: '#7c4dff', kind: 'points' },
+            brownfields:   { section: 'Environmental', label: 'Brownfields', dot: '#ff6e40', kind: 'points' },
+            rcra:          { section: 'Environmental', label: 'RCRA Corrective Action', dot: '#e65100', kind: 'points' },
+            fedfac:        { section: 'Environmental', label: 'Federal Facilities', dot: '#b71c1c', kind: 'points' },
+            eparesponse:   { section: 'Environmental', label: 'EPA Emergency Response', dot: '#c62828', kind: 'points' },
+            pfas:          { section: 'Environmental', label: 'PFAS Contamination', dot: '#e040fb', kind: 'points' },
+            mines:         { section: 'Environmental', label: 'Mine Sites', dot: '#8d6e63', kind: 'points' },
+
+            lidar: {
+                section: 'Terrain', label: 'Bare-Earth LiDAR', dot: '#cfd8dc', kind: 'tile',
                 make: () => L.esri.imageMapLayer({
                     url: 'https://elevation.nationalmap.gov/arcgis/rest/services/3DEPElevation/ImageServer',
                     renderingRule: { rasterFunction: 'Hillshade Multidirectional' }, opacity: 0.85
                 })
             },
             streams: {
-                label: 'Streams & Springs', dot: '#40c4ff',
-                make: () => L.esri.dynamicMapLayer({
+                // pane: the Explore map pushes NHD and WBD through a saturation
+                // filter, which is why a creek reads as cyan there. Without the
+                // same pane here the identical layer drew in USGS's muted tones
+                // and the shared legend was wrong on one of the two maps.
+                section: 'Terrain', label: 'Streams &amp; Springs', dot: '#40c4ff', kind: 'tile',
+                make: (map) => L.esri.dynamicMapLayer({
                     url: 'https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer',
-                    layers: [0, 6, 9, 12], opacity: 1
+                    layers: [0, 6, 9, 12], opacity: 1, pane: resultsHydroPane(map)
                 })
             },
+            parcels: {
+                section: 'Terrain', label: 'Parcel Lines', dot: '#d6d3d1', on: true, kind: 'tile',
+                make: () => L.esri.featureLayer({
+                    url: 'https://gis.colorado.gov/public/rest/services/Address_and_Parcel/Colorado_Public_Parcels/FeatureServer/0',
+                    minZoom: 14, interactive: false,
+                    style: () => ({ color: '#d6d3d1', weight: 1, opacity: 0.4, fillOpacity: 0 })
+                })
+            },
+
             basins: {
                 // All four HU levels: the service scale-gates each sublayer, so
                 // requesting only HUC6/HUC8 draws nothing at address zoom.
-                label: 'Watershed Basins', dot: '#26a69a',
-                make: () => L.esri.dynamicMapLayer({
+                section: 'Hydrology', label: 'Watershed Basins', dot: '#26a69a', kind: 'tile',
+                make: (map) => L.esri.dynamicMapLayer({
                     url: 'https://hydro.nationalmap.gov/arcgis/rest/services/wbd/MapServer',
-                    layers: [3, 4, 5, 6], opacity: 0.75
+                    layers: [3, 4, 5, 6], opacity: 0.75, pane: resultsHydroPane(map)
                 })
             },
             drought: {
-                label: 'Drought Monitor', dot: '#e65100',
+                section: 'Hydrology', label: 'Drought Monitor', dot: '#e65100', kind: 'tile',
                 make: () => L.tileLayer(
                     'https://services5.arcgis.com/0OTVzJS4K09zlixn/arcgis/rest/services/US_Drought_Monitor/MapServer/tile/{z}/{y}/{x}',
                     { opacity: 0.5, maxZoom: 19,
                       attribution: 'U.S. Drought Monitor (NDMC/USDA/NOAA)' })
-            }
+            },
+            dams:        { section: 'Hydrology', label: 'Dams', dot: '#2979ff', kind: 'points' },
+            gauges:      { section: 'Hydrology', label: 'Stream Gauges', dot: '#00b0ff', kind: 'points' },
+            springs:     { section: 'Hydrology', label: 'Springs', dot: '#00e5ff', kind: 'points' },
+            waterrights: { section: 'Hydrology', label: 'Water Rights', dot: '#aa00ff', kind: 'points' },
+            groundwater: { section: 'Hydrology', label: 'Groundwater', dot: '#1de9b6', kind: 'points' }
         };
+
+        // Per-map overlay state. Hung off the map instance rather than a module
+        // global so the results map and the Explore map can never share a marker
+        // array or a bbox cache.
+        function resultsOverlayState(targetMap, key) {
+            targetMap._rlOverlay = targetMap._rlOverlay || {};
+            if (!targetMap._rlOverlay[key]) {
+                targetMap._rlOverlay[key] = { enabled: false, markers: [], geoLayer: null, cache: new Map() };
+            }
+            return targetMap._rlOverlay[key];
+        }
+
+        // There is only ever one results map, so a plain id is enough here; the
+        // rl- prefix keeps these badges clear of the Explore panel #lc- ones.
+        function rlCountEl(key) { return document.getElementById('rl-lc-' + key); }
+        function rlItemEl(key) { return document.querySelector('.rl-item[data-rl-item="' + key + '"]'); }
+
+        function clearResultsOverlay(targetMap, key) {
+            const st = resultsOverlayState(targetMap, key);
+            st.markers.forEach(m => { try { targetMap.removeLayer(m); } catch (e) {} });
+            st.markers = [];
+            if (st.geoLayer) {
+                try { targetMap.removeLayer(st.geoLayer); } catch (e) {}
+                st.geoLayer = null;
+            }
+            const el = rlCountEl(key);
+            if (el) el.textContent = '';
+        }
+
+        function renderResultsOverlay(targetMap, key, features) {
+            clearResultsOverlay(targetMap, key);
+            // Deliberately does NOT call feedContamProximity(): that engine backs
+            // the Explore map hazard banner and the contamination summary for the
+            // searched property, which is computed from the search radius. Letting
+            // a panned viewport feed it would rewrite that summary.
+            const st = resultsOverlayState(targetMap, key);
+            const color = OVERLAY_COLORS[key] || '#fff';
+            const zoom = targetMap.getZoom();
+            const dotSize = zoom < 10 ? 3 : zoom < 13 ? 4 : 5;
+            const isHazard = HAZARD_LAYERS.has(key);
+            const sz = zoom < 10 ? 16 : zoom < 13 ? 20 : 24;
+
+            features.forEach(f => {
+                const lat = f.latitude || f.center_lat;
+                const lng = f.longitude || f.center_lng;
+                if (!lat || !lng) return;
+
+                let m;
+                if (isHazard) {
+                    const sym = hazardSvg(key, Math.round(sz * 0.62));
+                    m = L.marker([lat, lng], {
+                        icon: L.divIcon({
+                            className: '',
+                            html: '<div style="display:flex;align-items:center;justify-content:center;width:' + sz + 'px;height:' + sz + 'px;border-radius:' + (key === 'contamination' ? '3px' : '50%') + ';background:' + color + ';color:#fff;font-size:' + (sz * 0.65) + 'px;line-height:1;box-shadow:0 1px 4px rgba(0,0,0,0.5);border:1.5px solid rgba(255,255,255,0.7);">' + sym + '</div>',
+                            iconSize: [sz, sz],
+                            iconAnchor: [sz / 2, sz / 2]
+                        }),
+                        bubblingMouseEvents: false
+                    }).addTo(targetMap);
+                } else {
+                    m = L.circleMarker([lat, lng], {
+                        radius: dotSize,
+                        fillColor: color,
+                        color: '#fff',
+                        weight: 0.8,
+                        opacity: 0.9,
+                        fillOpacity: 0.8,
+                        bubblingMouseEvents: false
+                    }).addTo(targetMap);
+                }
+
+                // buildOverlayPopup() only reads the feature and the paywall
+                // state, never exploreMap, so both maps can share it.
+                const popup = buildOverlayPopup(key, f);
+                if (popup) m.bindPopup(popup, { maxWidth: 280 });
+                st.markers.push(m);
+            });
+
+            const el = rlCountEl(key);
+            if (el) el.textContent = features.length ? features.length.toLocaleString() : '';
+        }
+
+        function renderResultsRadon(targetMap, geojson) {
+            clearResultsOverlay(targetMap, 'radon');
+            const st = resultsOverlayState(targetMap, 'radon');
+            const ZONE_COLORS = { 1: '#d32f2f', 2: '#ff8f00', 3: '#388e3c' };
+            st.geoLayer = L.geoJSON(geojson, {
+                style: function(feature) {
+                    const z = feature.properties.radon_zone || 2;
+                    return {
+                        fillColor: ZONE_COLORS[z] || '#ff8f00', fillOpacity: 0.22,
+                        color: ZONE_COLORS[z] || '#ff8f00', weight: 1.2, opacity: 0.6
+                    };
+                },
+                onEachFeature: function(feature, lyr) {
+                    const p = feature.properties;
+                    const z = p.radon_zone || '?';
+                    const col = ZONE_COLORS[z] || '#ff8f00';
+                    lyr.bindPopup(
+                        '<div style="font-family:Inter,system-ui,sans-serif;font-size:13px;line-height:1.5;min-width:160px;">'
+                        + '<b style="color:' + col + '">' + ICON_RADIATION + ' Radon Zone ' + z + '</b>'
+                        + '<br>' + (p.NAME || 'Unknown') + ' County'
+                        + '<br>Risk: <b>' + (p.risk_level || 'Unknown') + '</b>'
+                        + '<br>Predicted: <b>' + (p.predicted_level || '?') + '</b> pCi/L'
+                        + '<br><span style="font-size:11px;color:#94a3b8;">EPA recommends radon testing for all homes</span>'
+                        + '</div>',
+                        { maxWidth: 280 }
+                    );
+                }
+            }).addTo(targetMap);
+            const el = rlCountEl('radon');
+            if (el) el.textContent = geojson.features ? geojson.features.length + ' counties' : '';
+        }
+
+        async function loadResultsOverlay(targetMap, key) {
+            const st = resultsOverlayState(targetMap, key);
+            if (!st.enabled) return;
+            const item = rlItemEl(key);
+
+            if (RESULTS_LAYERS[key].kind === 'geojson') {
+                // _radonGeoJSON is parsed data, not a Leaflet layer, so both maps
+                // may share the fetch; only the L.geoJSON wrapper is per-map.
+                if (item) item.classList.add('loading');
+                try {
+                    if (!_radonGeoJSON) {
+                        const r = await fetch('co_radon_zones.geojson');
+                        if (!r.ok) throw new Error('Radon GeoJSON ' + r.status);
+                        _radonGeoJSON = await r.json();
+                    }
+                    if (item) item.classList.remove('loading');
+                    if (st.enabled) renderResultsRadon(targetMap, _radonGeoJSON);
+                } catch (e) {
+                    if (item) item.classList.remove('loading');
+                    console.warn('Radon GeoJSON error:', e);
+                }
+                return;
+            }
+
+            const bounds = targetMap.getBounds();
+            const sw = bounds.getSouthWest();
+            const ne = bounds.getNorthEast();
+            const minLat = Math.min(sw.lat, ne.lat).toFixed(5);
+            const maxLat = Math.max(sw.lat, ne.lat).toFixed(5);
+            const minLng = Math.min(sw.lng, ne.lng).toFixed(5);
+            const maxLng = Math.max(sw.lng, ne.lng).toFixed(5);
+
+            const cacheKey = [minLat, minLng, maxLat, maxLng].join(',');
+            if (st.cache.has(cacheKey)) {
+                renderResultsOverlay(targetMap, key, st.cache.get(cacheKey));
+                return;
+            }
+
+            if (item) item.classList.add('loading');
+            try {
+                const url = WELLS_API + '/api/overlay/' + key + '/bbox?minLat=' + minLat
+                    + '&maxLat=' + maxLat + '&minLng=' + minLng + '&maxLng=' + maxLng + '&limit=500';
+                const r = await fetch(url);
+                if (!r.ok) throw new Error('API ' + r.status);
+                const data = await r.json();
+                const features = data.features || [];
+                st.cache.set(cacheKey, features);
+                if (item) item.classList.remove('loading');
+                if (st.enabled) renderResultsOverlay(targetMap, key, features);
+            } catch (e) {
+                if (item) item.classList.remove('loading');
+                console.warn('Overlay ' + key + ' error:', e);
+            }
+        }
 
         function toggleResultsLayer(targetMap, key, enabled) {
             const def = RESULTS_LAYERS[key];
             if (!def) return;
-            targetMap._layerCache = targetMap._layerCache || {};
-            try {
-                if (enabled) {
-                    if (!targetMap._layerCache[key]) targetMap._layerCache[key] = def.make();
-                    // Added normally, never bringToBack(): the satellite basemap
-                    // is opaque, so sending an overlay behind it hides it. Markers
-                    // sit in their own pane and stay on top regardless.
-                    targetMap._layerCache[key].addTo(targetMap);
-                } else if (targetMap._layerCache[key]) {
-                    targetMap.removeLayer(targetMap._layerCache[key]);
-                }
-            } catch (e) { console.warn('Layer ' + key + ' unavailable:', e); }
+            if (window.logEvent) window.logEvent('overlay_toggle', 'results:' + key + ':' + (enabled ? 'on' : 'off'));
+
+            if (def.kind === 'wells') {
+                // The search already plotted every well in the radius, so this
+                // hides and re-shows those markers instead of fetching a second
+                // copy that would sit exactly on top of them.
+                targetMap._rlWellsOff = !enabled;
+                (targetMap._wellMarkers || []).forEach(m => {
+                    try {
+                        if (enabled) m.addTo(targetMap);
+                        else targetMap.removeLayer(m);
+                    } catch (e) {}
+                });
+                return;
+            }
+
+            if (def.kind === 'tile') {
+                targetMap._layerCache = targetMap._layerCache || {};
+                try {
+                    if (enabled) {
+                        if (!targetMap._layerCache[key]) targetMap._layerCache[key] = def.make(targetMap);
+                        // Added normally, never bringToBack(): the satellite basemap
+                        // is opaque, so sending an overlay behind it hides it. Markers
+                        // sit in their own pane and stay on top regardless.
+                        targetMap._layerCache[key].addTo(targetMap);
+                    } else if (targetMap._layerCache[key]) {
+                        targetMap.removeLayer(targetMap._layerCache[key]);
+                    }
+                } catch (e) { console.warn('Layer ' + key + ' unavailable:', e); }
+                return;
+            }
+
+            const st = resultsOverlayState(targetMap, key);
+            st.enabled = enabled;
+            if (!enabled) { clearResultsOverlay(targetMap, key); return; }
+
+            // Same gate as the Explore map: hazard layers stay dark until the
+            // viewport is tight enough that the bbox is not most of the state.
+            if (HAZARD_LAYERS.has(key) && targetMap.getZoom() < OVERLAY_MIN_ZOOM) {
+                const el = rlCountEl(key);
+                if (el) el.textContent = 'zoom in';
+                return;
+            }
+            loadResultsOverlay(targetMap, key);
+        }
+
+        // Point overlays are bbox queries, so they have to be refetched when the
+        // viewport moves — the same moveend/zoomend contract the Explore map uses,
+        // but bound to this map only.
+        function bindResultsOverlayRefresh(targetMap) {
+            if (targetMap._rlRefreshBound) return;
+            targetMap._rlRefreshBound = true;
+            let timer = null;
+            const refresh = function() {
+                clearTimeout(timer);
+                timer = setTimeout(function() {
+                    const zoom = targetMap.getZoom();
+                    let delay = 0;
+                    Object.keys(RESULTS_LAYERS).forEach(function(k) {
+                        if (RESULTS_LAYERS[k].kind !== 'points') return;
+                        const st = (targetMap._rlOverlay || {})[k];
+                        if (!st || !st.enabled) return;
+                        if (HAZARD_LAYERS.has(k) && zoom < OVERLAY_MIN_ZOOM) {
+                            clearResultsOverlay(targetMap, k);
+                            const el = rlCountEl(k);
+                            if (el) el.textContent = 'zoom in';
+                            return;
+                        }
+                        // Staggered so twenty enabled layers do not fire twenty
+                        // simultaneous requests at the wells API on every pan.
+                        setTimeout(function() { loadResultsOverlay(targetMap, k); }, delay);
+                        delay += 150;
+                    });
+                }, 250);
+            };
+            targetMap.on('moveend', refresh);
+            targetMap.on('zoomend', refresh);
         }
 
         function addResultsLayerControl(targetMap) {
@@ -6696,20 +7313,29 @@
             const ctl = L.control({ position: 'topright' });
             ctl.onAdd = function() {
                 const div = L.DomUtil.create('div', 'results-layer-ctl');
-                // <details> so it collapses to a single row on a phone, where an
-                // always-open 5-row panel covered a third of the map.
+                const rows = [];
+                RESULTS_LAYER_SECTIONS.forEach(function(sec) {
+                    const keys = Object.keys(RESULTS_LAYERS).filter(function(k) {
+                        return RESULTS_LAYERS[k].section === sec;
+                    });
+                    if (!keys.length) return;
+                    rows.push('<div class="rl-sec">' + sec + '</div>');
+                    keys.forEach(function(k) {
+                        const d = RESULTS_LAYERS[k];
+                        rows.push('<label class="rl-item" data-rl-item="' + k + '">' +
+                            '<input type="checkbox" data-rl="' + k + '"' + (d.on ? ' checked' : '') + '>' +
+                            '<span class="rl-dot" style="background:' + d.dot + '"></span>' +
+                            '<span class="rl-label">' + d.label + '</span>' +
+                            '<span class="rl-count" id="rl-lc-' + k + '"></span></label>');
+                    });
+                });
+                // <details> so it collapses to a single row on a phone. With a
+                // twenty-layer list that matters more than it did with five, and
+                // .rl-items scrolls rather than running off the bottom of the map.
                 div.innerHTML =
                     '<details class="rl-box"' + (window.innerWidth > 640 ? ' open' : '') + '>' +
                     '<summary class="rl-summary">Map Layers</summary>' +
-                    '<div class="rl-items">' +
-                    Object.keys(RESULTS_LAYERS).map(k => {
-                        const d = RESULTS_LAYERS[k];
-                        return '<label class="rl-item">' +
-                            '<input type="checkbox" data-rl="' + k + '"' + (d.on ? ' checked' : '') + '>' +
-                            '<span class="rl-dot" style="background:' + d.dot + '"></span>' +
-                            d.label + '</label>';
-                    }).join('') +
-                    '</div></details>';
+                    '<div class="rl-items">' + rows.join('') + '</div></details>';
 
                 // Stop clicks/scroll inside the control from panning or zooming.
                 L.DomEvent.disableClickPropagation(div);
@@ -6718,9 +7344,13 @@
                     const key = ev.target && ev.target.getAttribute('data-rl');
                     if (key) toggleResultsLayer(targetMap, key, ev.target.checked);
                 });
+                // Same help copy as the Explore panel, from the same registry.
+                attachLayerHelp(div, '.rl-item[data-rl-item]', 'data-rl-item');
                 return div;
             };
             ctl.addTo(targetMap);
+
+            bindResultsOverlayRefresh(targetMap);
 
             // Turn on whatever is checked by default, so the control and the map agree.
             Object.keys(RESULTS_LAYERS).forEach(k => {
@@ -7123,6 +7753,9 @@
             // Clear existing markers
             markers.forEach(m => map.removeLayer(m));
             markers = [];
+            // The layer control needs the well dots on their own, apart from the
+            // radius circle and the search pin, so it can hide just those.
+            map._wellMarkers = [];
             // Clear hazard markers from previous search
             searchHazardMarkers.forEach(m => map.removeLayer(m));
             searchHazardMarkers = [];
@@ -7395,10 +8028,17 @@
                     ${_free ? '<b>Drilling Cost: ' + ICON_LOCK + ' Unlock</b>' : `<b>Drilling Cost: $${cost.drillingLow.toLocaleString()}–$${cost.drillingHigh.toLocaleString()}</b> ($${cost.lowRate}–$${cost.highRate}/ft)<br><b>Est. Total: $${cost.totalLow.toLocaleString()}–$${cost.totalHigh.toLocaleString()}</b>`}
                 `);
                 markers.push(marker);
+                map._wellMarkers.push(marker);
             });
 
+            // A new search re-adds every well dot, so re-apply the Water Wells
+            // toggle if the user had switched it off before searching again.
+            if (map._rlWellsOff) {
+                map._wellMarkers.forEach(m => { try { map.removeLayer(m); } catch (e) {} });
+            }
+
             // Display well cards
-            const wellsHtml = wells.slice(0, 25).map((well, index) => {
+            const wellCards = wells.slice(0, 25).map((well, index) => {
                 const depthClass = well.depthTotal < 200 ? 'shallow' : well.depthTotal < 500 ? 'medium' : 'deep';
                 const cost = calculateDrillingCost(well.depthTotal);
 
@@ -7546,8 +8186,25 @@
                         </div>
                     </div>
                 `;
-            }).join('');
-            
+            });
+
+            // Twenty-five full cards stood between the reader and the soil-report
+            // CTA below, so only the three closest open by default. The rest are
+            // rendered but hidden, which keeps the per-card contamination badges
+            // (looked up later by querySelectorAll) addressable.
+            const VISIBLE_WELL_CARDS = 3;
+            const hiddenWellCount = Math.max(0, wellCards.length - VISIBLE_WELL_CARDS);
+            const chevronSvg = (dir) => '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="' + (dir === 'up' ? '18 15 12 9 6 15' : '6 9 12 15 18 9') + '"/></svg>';
+            const wellsHtml = wellCards.slice(0, VISIBLE_WELL_CARDS).join('')
+                + (hiddenWellCount ? '<div id="wells-more" class="wells-more" hidden>' + wellCards.slice(VISIBLE_WELL_CARDS).join('') + '</div>'
+                    + '<div class="wells-more-toggle" id="wells-more-toggle" role="button" tabindex="0"'
+                    + ' data-hidden-count="' + hiddenWellCount + '"'
+                    + ' onclick="toggleMoreWells(this)" onkeydown="if(event.key===&#39;Enter&#39;||event.key===&#39; &#39;){event.preventDefault();toggleMoreWells(this);}">'
+                    + '<span class="wells-more-label">Show ' + hiddenWellCount + ' more nearby well' + (hiddenWellCount === 1 ? '' : 's') + '</span>'
+                    + '<span class="wells-more-chev">' + chevronSvg('down') + '</span>'
+                    + '</div>'
+                    : '');
+
             const moreOnMapNote = wells.length > 25 ? `
                 <div style="text-align:center; color:#94a3b8; font-size:0.85rem; padding:10px 0 2px;">
                     Showing the ${Math.min(25, wells.length)} nearest wells — all ${wells.length} are plotted on the map.
@@ -7612,6 +8269,33 @@
                 </div>
             `;
             document.getElementById('wells-list').innerHTML = '';
+        }
+
+        // Expand/collapse the nearby-well cards below the first three. The
+        // "N more" and "Show fewer" labels are rebuilt from data-hidden-count so
+        // they always report the real number of wells, not a fixed 22.
+        function toggleMoreWells(btn) {
+            const box = document.getElementById('wells-more');
+            if (!box || !btn) return;
+            const n = parseInt(btn.getAttribute('data-hidden-count'), 10) || 0;
+            const opening = box.hasAttribute('hidden');
+            const chev = (dir) => '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="' + (dir === 'up' ? '18 15 12 9 6 15' : '6 9 12 15 18 9') + '"/></svg>';
+            if (opening) {
+                box.removeAttribute('hidden');
+                btn.classList.add('open');
+                btn.querySelector('.wells-more-label').textContent = 'Show fewer';
+                btn.querySelector('.wells-more-chev').innerHTML = chev('up');
+                if (window.logEvent) window.logEvent('wells_list_expand', String(n));
+            } else {
+                box.setAttribute('hidden', '');
+                btn.classList.remove('open');
+                btn.querySelector('.wells-more-label').textContent =
+                    'Show ' + n + ' more nearby well' + (n === 1 ? '' : 's');
+                btn.querySelector('.wells-more-chev').innerHTML = chev('down');
+                // Collapsing can leave the reader far below the list, so put the
+                // toggle row back under the thumb where they clicked it.
+                btn.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
         }
 
         function toggleWellDetails(card) {
