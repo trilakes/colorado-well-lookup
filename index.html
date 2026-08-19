@@ -6319,6 +6319,24 @@
                 }, 200);
             });
 
+            // Show recent searches when the box is focused and empty
+            input.addEventListener('focus', function() {
+                if (this.value.trim().length >= 3) return;
+                var h = cwfHistory();
+                if (!h.length) return;
+                resultsDiv.innerHTML = '<div class="autocomplete-loading" style="opacity:.7;text-transform:uppercase;letter-spacing:.05em;font-size:.7rem;">Recent searches</div>' +
+                    h.map(function(x){
+                        return '<div class="autocomplete-item" data-recent="1" data-lat="' + (x.lat || '') + '" data-lon="' + (x.lon || '') +
+                            '" data-address="' + String(x.address || '').replace(/"/g,'&quot;') + '" data-county="' + (x.county || '') + '">' +
+                            '<svg class="autocomplete-item-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M13 3a9 9 0 100 18 9 9 0 000-18zm0 4a1 1 0 011 1v3.6l2.7 1.6a1 1 0 11-1 1.7l-3.2-1.9V8a1 1 0 011-1z"/></svg>' +
+                            '<div class="autocomplete-item-content"><div class="autocomplete-item-main">' + String(x.address || '') + '</div><div class="autocomplete-item-sub">Recent search</div></div></div>';
+                    }).join('');
+                resultsDiv.classList.add('show');
+                resultsDiv.querySelectorAll('.autocomplete-item').forEach(function(item){
+                    item.addEventListener('click', function(){ selectAutocompleteItem(this); });
+                });
+            });
+
             // Keyboard navigation
             input.addEventListener('keydown', function(e) {
                 const items = resultsDiv.querySelectorAll('.autocomplete-item');
@@ -6361,109 +6379,83 @@
 
         async function fetchAddressSuggestions(query) {
             const resultsDiv = document.getElementById('autocomplete-results');
-            
-            // Show loading state
             resultsDiv.innerHTML = '<div class="autocomplete-loading">Searching...</div>';
             resultsDiv.classList.add('show');
-
             try {
-                // Use ArcGIS World Geocoder (free, has house-level addresses)
-                const suggestUrl = `https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?text=${encodeURIComponent(query)}&location=-105.5,39.0&countryCode=USA&maxSuggestions=6&f=json`;
-                
-                const suggestResp = await fetch(suggestUrl);
-                const suggestData = await suggestResp.json();
-
-                if (suggestData.suggestions && suggestData.suggestions.length > 0) {
-                    // Filter to Colorado suggestions
-                    const coSuggestions = suggestData.suggestions.filter(s => 
-                        s.text.includes(', CO,') || s.text.includes('Colorado')
-                    );
-                    const resultsToShow = coSuggestions.length > 0 ? coSuggestions : suggestData.suggestions;
-
-                    // Geocode each suggestion to get coordinates
-                    const geocodePromises = resultsToShow.map(async (suggestion) => {
-                        const findUrl = `https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?SingleLine=${encodeURIComponent(suggestion.text)}&magicKey=${encodeURIComponent(suggestion.magicKey)}&maxLocations=1&outFields=City,Region,Subregion&f=json`;
-                        try {
-                            const resp = await fetch(findUrl);
-                            const data = await resp.json();
-                            if (data.candidates && data.candidates.length > 0) {
-                                return { suggestion, candidate: data.candidates[0] };
-                            }
-                        } catch(e) { /* skip failed geocodes */ }
-                        return { suggestion, candidate: null };
-                    });
-
-                    const results = await Promise.all(geocodePromises);
-                    
-                    resultsDiv.innerHTML = results.map((r) => {
-                        const parts = r.suggestion.text.split(',').map(s => s.trim());
-                        const mainText = parts[0] || r.suggestion.text;
-                        const subText = parts.slice(1).join(', ');
-                        const lat = r.candidate ? r.candidate.location.y : '';
-                        const lon = r.candidate ? r.candidate.location.x : '';
-                        const county = r.candidate && r.candidate.attributes ? 
-                            (r.candidate.attributes.Subregion || '').replace(' County', '') : '';
-
-                        return `
-                            <div class="autocomplete-item" 
-                                 data-lat="${lat}" 
-                                 data-lon="${lon}"
-                                 data-address="${r.suggestion.text}"
-                                 data-county="${county}">
-                                <svg class="autocomplete-item-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
-                                <div class="autocomplete-item-content">
-                                    <div class="autocomplete-item-main">${mainText}</div>
-                                    <div class="autocomplete-item-sub">${subText}</div>
-                                </div>
-                            </div>
-                        `;
-                    }).join('');
-
-                    // Add click handlers
-                    resultsDiv.querySelectorAll('.autocomplete-item').forEach(item => {
-                        item.addEventListener('click', function() {
-                            selectAutocompleteItem(this);
-                        });
-                    });
-
-                    selectedAutocompleteIndex = -1;
-                } else {
+                // ArcGIS suggest, biased hard to Colorado + street addresses so house
+                // numbers resolve. Suggestions render instantly; we geocode only the
+                // one the user picks (in selectAutocompleteItem) via its magicKey.
+                const suggestUrl = `https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/suggest?text=${encodeURIComponent(query)}&location=-105.55,39.0&searchExtent=-109.1,36.9,-102.0,41.05&category=${encodeURIComponent('Address,Postal,Populated Place')}&countryCode=USA&maxSuggestions=8&f=json`;
+                const resp = await fetch(suggestUrl);
+                const data = await resp.json();
+                let list = (data.suggestions || []).filter(s => !s.isCollection);
+                const co = list.filter(s => /,\s*CO(,|)/.test(s.text) || /Colorado/.test(s.text));
+                if (co.length) list = co;
+                if (!list.length) {
                     resultsDiv.innerHTML = '<div class="autocomplete-loading">No addresses found</div>';
+                    return;
                 }
+                resultsDiv.innerHTML = list.map(s => {
+                    const parts = s.text.split(',').map(x => x.trim());
+                    const mainText = parts[0] || s.text;
+                    const subText = parts.slice(1).join(', ');
+                    return `
+                        <div class="autocomplete-item"
+                             data-address="${s.text.replace(/"/g, '&quot;')}"
+                             data-magickey="${(s.magicKey || '').replace(/"/g, '&quot;')}">
+                            <svg class="autocomplete-item-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1112 6.5a2.5 2.5 0 010 5z"/></svg>
+                            <div class="autocomplete-item-content">
+                                <div class="autocomplete-item-main">${mainText}</div>
+                                <div class="autocomplete-item-sub">${subText}</div>
+                            </div>
+                        </div>`;
+                }).join('');
+                resultsDiv.querySelectorAll('.autocomplete-item').forEach(item => {
+                    item.addEventListener('click', function() { selectAutocompleteItem(this); });
+                });
+                selectedAutocompleteIndex = -1;
             } catch (error) {
                 console.error('Autocomplete error:', error);
                 resultsDiv.innerHTML = '<div class="autocomplete-loading">Error searching addresses</div>';
             }
         }
 
-        function selectAutocompleteItem(item) {
+        async function selectAutocompleteItem(item) {
             const address = item.dataset.address;
-            const lat = parseFloat(item.dataset.lat);
-            const lon = parseFloat(item.dataset.lon);
-            const county = item.dataset.county;
-
-            // Set the address input
-            document.getElementById('address').value = address;
-
-            // If we got a county, try to match it to our dropdown
-            if (county) {
-                const countySelect = document.getElementById('county');
-                const countyName = county.replace(' County', '');
-                for (let option of countySelect.options) {
-                    if (option.value.toLowerCase() === countyName.toLowerCase()) {
-                        countySelect.value = option.value;
-                        break;
-                    }
-                }
-            }
-
-            // Hide autocomplete
+            let lat = parseFloat(item.dataset.lat);
+            let lon = parseFloat(item.dataset.lon);
+            let county = item.dataset.county || '';
+            const addrEl = document.getElementById('address');
+            addrEl.value = address;
             document.getElementById('autocomplete-results').classList.remove('show');
             selectedAutocompleteIndex = -1;
 
-            // Store the pre-geocoded coords for faster search
-            document.getElementById('address').dataset.lat = lat;
-            document.getElementById('address').dataset.lon = lon;
+            // Fresh suggestions carry a magicKey, not coordinates -- geocode it now.
+            if (!(lat && lon) && item.dataset.magickey) {
+                try {
+                    const u = `https://geocode.arcgis.com/arcgis/rest/services/World/GeocodeServer/findAddressCandidates?magicKey=${encodeURIComponent(item.dataset.magickey)}&SingleLine=${encodeURIComponent(address)}&maxLocations=1&outFields=City,Region,Subregion&f=json`;
+                    const data = await (await fetch(u)).json();
+                    if (data.candidates && data.candidates[0]) {
+                        lat = data.candidates[0].location.y;
+                        lon = data.candidates[0].location.x;
+                        const at = data.candidates[0].attributes || {};
+                        if (at.Subregion) county = String(at.Subregion).replace(' County', '');
+                    }
+                } catch (e) { /* fall through -- searchByAddress will re-geocode */ }
+            }
+            if (county) {
+                const cs = document.getElementById('county');
+                if (cs) for (const opt of cs.options) {
+                    if (opt.value.toLowerCase() === county.toLowerCase()) { cs.value = opt.value; break; }
+                }
+            }
+            if (lat && lon) { addrEl.dataset.lat = lat; addrEl.dataset.lon = lon; }
+            // Picking a recent search re-runs it straight away.
+            if (item.dataset.recent && lat && lon) {
+                const r = parseFloat(document.getElementById('radius-address').value) || 2;
+                window._lastSearchAddress = address;
+                try { searchWells(lat, lon, r, county); } catch (e) {}
+            }
         }
 
         // Load saved searches from localStorage
@@ -6493,6 +6485,40 @@
                 countyCoords: document.getElementById('county-coords').value
             };
             localStorage.setItem('wellLookupSearches', JSON.stringify(data));
+        }
+
+        function cwfHistory(){ try { return JSON.parse(localStorage.getItem('wellLookupHistory') || '[]'); } catch (e) { return []; } }
+        function cwfRememberSearch(entry){
+            if (!entry || !(entry.lat && entry.lon)) return;
+            try { localStorage.setItem('wellLookupLast', JSON.stringify(entry)); } catch (e) {}
+            if (entry.address) {
+                var h = cwfHistory().filter(function(x){ return x.address !== entry.address; });
+                h.unshift(entry); h = h.slice(0, 8);
+                try { localStorage.setItem('wellLookupHistory', JSON.stringify(h)); } catch (e) {}
+            }
+            try {
+                var p = new URLSearchParams();
+                p.set('lat', (+entry.lat).toFixed(6)); p.set('lon', (+entry.lon).toFixed(6));
+                if (entry.radius) p.set('r', entry.radius);
+                if (entry.county) p.set('county', entry.county);
+                if (entry.address) p.set('q', entry.address);
+                history.replaceState({}, '', window.location.pathname + '?' + p.toString());
+            } catch (e) {}
+        }
+        function cwfRestoreLastSearch(){
+            var p = new URLSearchParams(window.location.search);
+            var lat = parseFloat(p.get('lat')), lon = parseFloat(p.get('lon'));
+            var q = p.get('q') || '', r = parseFloat(p.get('r')) || 2, county = p.get('county') || '';
+            if (!(lat && lon)) {
+                try { var last = JSON.parse(localStorage.getItem('wellLookupLast') || 'null');
+                    if (last && last.lat && last.lon) { lat = +last.lat; lon = +last.lon; q = last.address || ''; r = last.radius || 2; county = last.county || ''; } } catch (e) {}
+            }
+            if (!(lat && lon)) return;
+            var a = document.getElementById('address'); if (a) { if (q) a.value = q; a.dataset.lat = lat; a.dataset.lon = lon; }
+            var ra = document.getElementById('radius-address'); if (ra && r) ra.value = r;
+            if (county) { var cs = document.getElementById('county'); if (cs) for (var i=0;i<cs.options.length;i++){ if (cs.options[i].value.toLowerCase()===county.toLowerCase()){ cs.value=cs.options[i].value; break; } } }
+            window._lastSearchAddress = q;
+            setTimeout(function(){ try { searchWells(lat, lon, r, county); } catch (e) {} }, 350);
         }
 
         // Calculate drilling cost based on depth
@@ -6559,6 +6585,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             loadSavedSearches();
             initAutocomplete();
+            cwfRestoreLastSearch();
             initRadiusPills();
             syncRadiusPills();
         });
@@ -6794,6 +6821,7 @@
         }
 
         async function searchWells(lat, lon, radiusMiles, county) {
+            try { cwfRememberSearch({ address: (document.getElementById('address').value || '').trim() || (Number(lat).toFixed(5) + ', ' + Number(lon).toFixed(5)), lat: lat, lon: lon, radius: radiusMiles, county: county || '' }); } catch (e) {}
             // Convert radius to lat/lon degrees (approximate)
             const latRadius = radiusMiles / 69;
             const lonRadius = radiusMiles / 54;
