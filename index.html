@@ -3935,6 +3935,7 @@
                 <div id="wells-list"></div>
             </div>
         </section>
+        <div id="build-cta" style="display:none;margin:22px auto 0;max-width:1120px"><div style="background:linear-gradient(135deg,#0a1120,#101a2e 60%,#1a2440);border:1px solid rgba(230,199,107,.5);border-radius:18px;padding:22px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:18px;box-shadow:0 12px 40px rgba(10,17,32,.4)"><div style="flex:1 1 320px;min-width:260px"><h3 style="margin:0 0 6px;color:#fff;font-size:1.3rem;font-weight:800">Thinking about building on this lot?</h3><p style="margin:0;color:#cdd8ec;font-size:.98rem;line-height:1.5">This parcel isn't on city water &mdash; so it'll also need a septic system, a driveway, and site work. Tri-Lakes will tell you <b style="color:#f0d894">what it costs to build here, before you buy</b>. Licensed builder, excavator &amp; septic installer.</p></div><a id="build-cta-link" href="https://trilakes.co/build-feasibility?ref=coloradowell" target="_blank" rel="noopener" style="flex:0 0 auto;background:linear-gradient(135deg,#f3dd9a,#e6c76b 55%,#caa63e);color:#111722;font-weight:800;text-decoration:none;padding:15px 26px;border-radius:12px;box-shadow:0 8px 26px rgba(230,199,107,.35);white-space:nowrap">Get a build-feasibility report &rarr;</a></div></div>
     </div>
 
     <!-- Explore Map Overlay -->
@@ -6487,6 +6488,16 @@
             throw new Error('Address not found');
         }
 
+        function updateBuildCTA(){
+            var el=document.getElementById("build-cta"); if(!el) return;
+            var ai=document.getElementById("address"); var addr=(ai&&ai.value)||"";
+            var link=document.getElementById("build-cta-link");
+            var url="https://trilakes.co/build-feasibility?ref=coloradowell";
+            if(addr) url+="&address="+encodeURIComponent(addr);
+            if(link) link.href=url;
+            el.style.display="block";
+        }
+
         async function searchByAddress(event) {
             event.preventDefault();
 
@@ -7735,7 +7746,7 @@
         function displayResults(wells, centerLat, centerLon, propertyWells, radiusMiles) {
             propertyWells = propertyWells || [];
             radiusMiles = radiusMiles || 2;
-            document.getElementById('results').style.display = 'grid';
+            document.getElementById('results').style.display = 'grid'; updateBuildCTA();
             
             // Initialize or update map
             if (!map) {
@@ -8261,7 +8272,7 @@
         }
 
         function displayNoResults() {
-            document.getElementById('results').style.display = 'grid';
+            document.getElementById('results').style.display = 'grid'; updateBuildCTA();
             document.getElementById('summary').innerHTML = `
                 <div class="error-message">
                     <h3>No wells found</h3>
