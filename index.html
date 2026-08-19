@@ -9524,6 +9524,7 @@ window._well3dOpen=function(btn){var w=window._w3d||{};if(w.lat==null)return;btn
 </script>
 
 <script>document.addEventListener("click",function(e){if(!window.hqTrackConversion||!e.target.closest)return;var a=e.target.closest("a[href]");if(!a)return;var h=a.getAttribute("href")||"";if(h.indexOf("build-feasibility")>-1){hqTrackConversion("feasibility_click","");}else if(h.replace(/\/+$/,"")==="https://trilakes.co"){hqTrackConversion("trilakes_click","");}},true);</script>
+<script>if("serviceWorker" in navigator){navigator.serviceWorker.register("/sw.js",{updateViaCache:"none"}).catch(function(){});}</script>
 </body>
 </html>
 
