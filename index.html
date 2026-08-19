@@ -1940,6 +1940,12 @@
         .layer-help-btn:hover, .layer-help-btn[aria-expanded="true"] { color: #e6c76b; border-color: rgba(230,199,107,0.6); background: rgba(230,199,107,0.1); }
         .layer-help { display: none; margin: 2px 0 8px 24px; padding: 8px 10px; background: rgba(15,23,42,0.6); border-left: 2px solid rgba(230,199,107,0.4); border-radius: 0 6px 6px 0; max-width: 250px; }
         .layer-help.open { display: block; }
+        .wide-wells-ctl { display: none; }
+        .wide-wells-btn { background: rgba(15,23,42,0.94); color: #e6c76b; border: 1px solid rgba(230,199,107,0.45);
+            border-radius: 8px; padding: 8px 13px; font-size: 0.76rem; font-weight: 700; cursor: pointer;
+            font-family: inherit; letter-spacing: 0.02em; box-shadow: 0 4px 14px rgba(0,0,0,0.4); }
+        .wide-wells-btn:hover { background: rgba(230,199,107,0.14); }
+        .wide-wells-ctl.on .wide-wells-btn { background: rgba(230,199,107,0.18); color: #f5e7bd; }
         .layer-unavailable { opacity: 0.55; }
         .layer-unavailable label { cursor: default; }
         .layer-nodata { font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
@@ -7741,6 +7747,105 @@
             targetMap.on('zoomend', refresh);
         }
 
+        // ── Wells beyond the search radius ───────────────────────────────
+        // A search plots only the wells inside the radius you asked for, so
+        // zooming out left a wide empty map with a cluster in the middle. This
+        // is the same viewport fetch the Explore map runs, offered as a button
+        // once you zoom out past the search area rather than loaded for
+        // everyone: at low zoom it is thousands of markers.
+        const WIDE_WELLS_ZOOM = 11;
+
+        function wideWellColor(depth) {
+            const d = Number(depth) || 0;
+            return d < 200 ? '#00e676' : d <= 500 ? '#ffc107' : '#ff5722';
+        }
+
+        async function loadWideWells(map) {
+            if (!map._wideOn || map._wideBusy) return;
+            const b = map.getBounds(), z = map.getZoom();
+            const key = [b.getSouth().toFixed(2), b.getWest().toFixed(2),
+                         b.getNorth().toFixed(2), b.getEast().toFixed(2), z].join(',');
+            if (key === map._wideKey) return;
+            map._wideBusy = true;
+            const btn = map._wideBtn;
+            if (btn) btn.textContent = 'Loading wells...';
+            try {
+                const limit = z >= 12 ? 6000 : z >= 9 ? 4000 : 2500;
+                const url = WELLS_API + '/api/wells/bbox?minLat=' + b.getSouth().toFixed(5) +
+                    '&maxLat=' + b.getNorth().toFixed(5) + '&minLng=' + b.getWest().toFixed(5) +
+                    '&maxLng=' + b.getEast().toFixed(5) + '&limit=' + limit + '&hasDepth=true';
+                const r = await fetch(url);
+                if (!r.ok) throw new Error('HTTP ' + r.status);
+                const wells = (await r.json()).wells || [];
+                map._wideKey = key;
+                map._wideGroup.clearLayers();
+                wells.forEach(function(w) {
+                    if (!w.latitude || !w.longitude) return;
+                    L.circleMarker([w.latitude, w.longitude], {
+                        radius: z >= 12 ? 4 : 3, color: '#0b1220', weight: 0.8,
+                        fillColor: wideWellColor(w.depth_total), fillOpacity: 0.85
+                    }).bindPopup('<div style="font-size:12.5px;line-height:1.45;">' +
+                        '<strong>Permit ' + (w.permit || w.receipt || 'unknown') + '</strong><br>' +
+                        (w.depth_total ? Math.round(w.depth_total) + ' ft deep' : 'depth not on record') +
+                        (w.pump_yield_gpm ? '<br>' + w.pump_yield_gpm + ' GPM' : '') +
+                        (w.county ? '<br>' + w.county + ' County' : '') + '</div>')
+                     .addTo(map._wideGroup);
+                });
+                if (btn) btn.textContent = wells.length
+                    ? 'Hide the ' + wells.length.toLocaleString() + ' wells in view'
+                    : 'No wells in this view';
+            } catch (e) {
+                if (btn) btn.textContent = 'Could not load wells - retry';
+                map._wideKey = null;
+            } finally {
+                map._wideBusy = false;
+            }
+        }
+
+        function addWideWellsControl(targetMap) {
+            if (targetMap._wideCtlAdded) return;
+            targetMap._wideCtlAdded = true;
+            targetMap._wideGroup = L.layerGroup().addTo(targetMap);
+
+            const ctl = L.control({ position: 'bottomleft' });
+            ctl.onAdd = function() {
+                const div = L.DomUtil.create('div', 'wide-wells-ctl');
+                const btn = L.DomUtil.create('button', 'wide-wells-btn', div);
+                btn.type = 'button';
+                btn.textContent = 'Show every well in this view';
+                targetMap._wideBtn = btn;
+                L.DomEvent.disableClickPropagation(div);
+                btn.addEventListener('click', function() {
+                    targetMap._wideOn = !targetMap._wideOn;
+                    if (targetMap._wideOn) {
+                        div.classList.add('on');
+                        targetMap._wideKey = null;
+                        loadWideWells(targetMap);
+                        if (window.logEvent) window.logEvent('wide_wells_on', String(targetMap.getZoom()));
+                    } else {
+                        div.classList.remove('on');
+                        targetMap._wideGroup.clearLayers();
+                        targetMap._wideKey = null;
+                        btn.textContent = 'Show every well in this view';
+                    }
+                });
+                return div;
+            };
+            ctl.addTo(targetMap);
+
+            // The button only appears once you have zoomed out past the search
+            // area, which is the moment the map starts looking empty.
+            const sync = function() {
+                const el = targetMap._wideBtn && targetMap._wideBtn.parentNode;
+                if (!el) return;
+                const show = targetMap._wideOn || targetMap.getZoom() <= WIDE_WELLS_ZOOM;
+                el.style.display = show ? 'block' : 'none';
+                if (targetMap._wideOn) loadWideWells(targetMap);
+            };
+            targetMap.on('zoomend moveend', sync);
+            sync();
+        }
+
         function addResultsLayerControl(targetMap) {
             if (!L.esri || targetMap._layerControlAdded) return;
             targetMap._layerControlAdded = true;
@@ -7791,6 +7896,7 @@
             ctl.addTo(targetMap);
 
             bindResultsOverlayRefresh(targetMap);
+            addWideWellsControl(targetMap);
             // Same click-to-identify as the Explore map, reading whichever of
             // the two hydrology layers this map currently has switched on.
             enableHydroIdentify(targetMap, function() {
@@ -8096,8 +8202,15 @@
                 }
             }
 
-            // ── Plot hazard markers on the search results map ──
-            plotSearchHazardMarkers(allRawFeatures, isFree);
+            // Hazard markers are NOT drawn on load. A fresh search shows the
+            // wells and nothing else; EPA, PFAS, TRI and the rest wait until
+            // somebody ticks them in the layer panel. Turning them on for
+            // people meant a map covered in markers they never asked for, and
+            // a panel whose boxes disagreed with what was on screen. The
+            // counts above still report every site within 3.5 miles, so
+            // nothing is hidden - it just is not painted unprompted.
+            window._searchHazardFeatures = allRawFeatures;
+            window._searchHazardIsFree = isFree;
         }
 
         function plotSearchHazardMarkers(features, isFree) {
