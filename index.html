@@ -4026,6 +4026,7 @@
         </div>
 
         <section class="results-section" id="results" style="display: none;">
+            <div id="well3d-box" style="display:none;grid-column:1/-1;margin:0 0 6px"><button id="well3d-btn" type="button" onclick="_well3dOpen(this)" style="width:100%;padding:1rem;font-size:1rem;font-weight:700;background:linear-gradient(135deg,#f3dd9a,#e6c76b 55%,#caa63e);color:#171205;border:0;border-radius:12px;cursor:pointer;box-shadow:0 8px 26px rgba(230,199,107,.3)">&#9651; View This Parcel in 3D &mdash; Terrain &amp; Water Flow</button><div id="well3d" style="margin-top:12px"></div></div>
             <div class="map-container">
                 <h2>Well Locations</h2>
                 <div id="map"></div>
@@ -8202,7 +8203,7 @@
         function displayResults(wells, centerLat, centerLon, propertyWells, radiusMiles) {
             propertyWells = propertyWells || [];
             radiusMiles = radiusMiles || 2;
-            document.getElementById('results').style.display = 'grid'; updateBuildCTA();
+            document.getElementById('results').style.display = 'grid'; window._w3d={lat:searchLat,lon:searchLon}; updateBuildCTA(); showWell3D();
             
             // Initialize or update map
             if (!map) {
@@ -8728,7 +8729,7 @@
         }
 
         function displayNoResults() {
-            document.getElementById('results').style.display = 'grid'; updateBuildCTA();
+            document.getElementById('results').style.display = 'grid'; window._w3d={lat:searchLat,lon:searchLon}; updateBuildCTA(); showWell3D();
             document.getElementById('summary').innerHTML = `
                 <div class="error-message">
                     <h3>No wells found</h3>
@@ -9174,6 +9175,130 @@
     }
 
     </script>
+
+<script>
+(function(){
+"use strict";
+var API="https://colorado-site-planner.onrender.com";
+function loadScript(src){return new Promise(function(res,rej){var s=document.createElement("script");s.src=src;s.onload=res;s.onerror=function(){rej(new Error("script load failed"))};document.head.appendChild(s)})}
+var threeReady=null;
+function ensureThree(){
+if(window.THREE&&window.THREE.OrbitControls)return Promise.resolve();
+if(!threeReady)threeReady=loadScript("https://unpkg.com/three@0.147.0/build/three.min.js").then(function(){return loadScript("https://unpkg.com/three@0.147.0/examples/js/controls/OrbitControls.js")});
+return threeReady}
+
+window._sr3dStart=function(container,lat,lon){
+return Promise.all([ensureThree(),
+fetch(API+"/api/terrain3d?lat="+lat+"&lng="+lon+"&size=900&grid=160").then(function(r){return r.json()})])
+.then(function(rr){
+var t=rr[1];
+if(!t.ok)throw new Error(t.error||"no terrain data");
+var G=t.grid,elev=t.elev,flow=t.flow,minz=t.min_elev;
+var bbox=t.bbox; // [w,s,e,n]
+
+/* satellite drape + flow channels + property dot baked into one texture */
+return new Promise(function(resolve,reject){
+var img=new Image();img.crossOrigin="anonymous";
+img.onload=function(){resolve(img)};
+img.onerror=function(){resolve(null)};
+img.src="https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/export?bbox="+bbox[0]+","+bbox[1]+","+bbox[2]+","+bbox[3]+"&bboxSR=4326&imageSR=4326&size=640,640&format=jpg&f=image";
+}).then(function(img){return {t:t,img:img,G:G,elev:elev,flow:flow,minz:minz}});
+})
+.then(function(ctx){
+var t=ctx.t,G=ctx.G,elev=ctx.elev,flow=ctx.flow,minz=ctx.minz;
+var cv=document.createElement("canvas");cv.width=640;cv.height=640;
+var c2=cv.getContext("2d");
+if(ctx.img){c2.drawImage(ctx.img,0,0,640,640)}else{c2.fillStyle="#33413a";c2.fillRect(0,0,640,640)}
+var cell=640/G;
+for(var i=0;i<flow.length;i++){var f=flow[i];if(f>0.5){
+var y=Math.floor(i/G),x=i%G;
+c2.fillStyle="rgba(30,170,255,"+Math.min(0.85,(f-0.5)*1.9)+")";
+c2.fillRect(x*cell-0.5,y*cell-0.5,cell+1,cell+1)}}
+c2.beginPath();c2.arc(320,320,9,0,7);c2.fillStyle="#ff5722";c2.fill();
+c2.lineWidth=3;c2.strokeStyle="#fff";c2.stroke();
+
+/* scene */
+var W=container.clientWidth||800,H=460;
+container.innerHTML="";
+var wrap=document.createElement("div");
+wrap.style.cssText="position:relative;border-radius:14px;overflow:hidden;border:1px solid rgba(230,199,107,.45)";
+container.appendChild(wrap);
+var renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setSize(W,H);renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+wrap.appendChild(renderer.domElement);
+var cap=document.createElement("div");
+cap.style.cssText="position:absolute;left:0;right:0;bottom:0;padding:.5rem .8rem;background:rgba(10,17,32,.72);color:#cbd5e1;font-size:.75rem;text-align:center";
+cap.innerHTML="Drag to orbit &middot; scroll to zoom &middot; <span style=\"color:#40c4ff;font-weight:700\">blue</span> = where water collects &amp; flows (USGS 1m LiDAR + flow model) &middot; <span style=\"color:#ff5722;font-weight:700\">&#9679;</span> your property";
+wrap.appendChild(cap);
+
+var scene=new THREE.Scene();
+scene.background=new THREE.Color(0x0a1120);
+scene.fog=new THREE.Fog(0x0a1120,220,420);
+var sizeU=100,exag=1.6,zScale=sizeU/t.size_m*exag;
+var geo=new THREE.PlaneGeometry(sizeU,sizeU,G-1,G-1);
+geo.rotateX(-Math.PI/2);
+var pos=geo.attributes.position;
+function zAt(ix,iy){return (elev[iy*G+ix]-minz)*zScale}
+for(var vi=0;vi<pos.count;vi++){
+var ix=vi%G,iy=Math.floor(vi/G);
+pos.setY(vi,zAt(ix,iy))}
+geo.computeVertexNormals();
+var tex=new THREE.CanvasTexture(cv);
+var mesh=new THREE.Mesh(geo,new THREE.MeshLambertMaterial({map:tex}));
+scene.add(mesh);
+/* skirt so edges don't look paper-thin */
+var edge=new THREE.Mesh(new THREE.BoxGeometry(sizeU,0.6,sizeU),new THREE.MeshBasicMaterial({color:0x131c30}));
+edge.position.y=-0.31;scene.add(edge);
+
+scene.add(new THREE.AmbientLight(0xffffff,0.75));
+var sun=new THREE.DirectionalLight(0xfff3d8,0.9);
+sun.position.set(-60,80,40);scene.add(sun);
+
+/* water particles riding the DEM downhill */
+var N=650;
+var parts=new Float32Array(N*3),cells=new Float32Array(N*2);
+function respawn(k){var i=Math.floor(Math.random()*flow.length);cells[k*2]=i%G;cells[k*2+1]=Math.floor(i/G)}
+for(var k=0;k<N;k++)respawn(k);
+var pgeo=new THREE.BufferGeometry();
+pgeo.setAttribute("position",new THREE.BufferAttribute(parts,3));
+var pts=new THREE.Points(pgeo,new THREE.PointsMaterial({color:0x40c4ff,size:1.1,transparent:true,opacity:0.9,blending:THREE.AdditiveBlending,depthWrite:false}));
+scene.add(pts);
+function elevAt(fx,fy){
+var x0=Math.max(0,Math.min(G-2,Math.floor(fx))),y0=Math.max(0,Math.min(G-2,Math.floor(fy)));
+var dx=fx-x0,dy=fy-y0;
+var a=elev[y0*G+x0],b=elev[y0*G+x0+1],c=elev[(y0+1)*G+x0],d=elev[(y0+1)*G+x0+1];
+return a*(1-dx)*(1-dy)+b*dx*(1-dy)+c*(1-dx)*dy+d*dx*dy}
+function step(){
+for(var k=0;k<N;k++){
+var fx=cells[k*2],fy=cells[k*2+1];
+var e0=elevAt(fx,fy);
+var gx=elevAt(fx+0.7,fy)-elevAt(fx-0.7,fy);
+var gy=elevAt(fx,fy+0.7)-elevAt(fx,fy-0.7);
+var mag=Math.sqrt(gx*gx+gy*gy);
+if(mag<0.05||fx<1||fy<1||fx>G-2||fy>G-2||Math.random()<0.004){respawn(k);fx=cells[k*2];fy=cells[k*2+1];e0=elevAt(fx,fy)}
+else{fx-=gx/mag*0.35;fy-=gy/mag*0.35;cells[k*2]=fx;cells[k*2+1]=fy}
+parts[k*3]=(fx/(G-1)-0.5)*sizeU;
+parts[k*3+1]=(elevAt(fx,fy)-minz)*zScale+0.35;
+parts[k*3+2]=(fy/(G-1)-0.5)*sizeU}
+pgeo.attributes.position.needsUpdate=true}
+
+var maxH=(t.max_elev-minz)*zScale;
+var cam=new THREE.PerspectiveCamera(48,W/H,0.1,1000);
+cam.position.set(sizeU*0.62,maxH+sizeU*0.5,sizeU*0.72);
+var ctl=new THREE.OrbitControls(cam,renderer.domElement);
+ctl.target.set(0,maxH*0.35,0);
+ctl.enableDamping=true;ctl.dampingFactor=0.06;
+ctl.autoRotate=true;ctl.autoRotateSpeed=0.55;
+ctl.maxPolarAngle=Math.PI*0.49;ctl.minDistance=25;ctl.maxDistance=300;
+renderer.domElement.addEventListener("pointerdown",function(){ctl.autoRotate=false});
+
+(function anim(){requestAnimationFrame(anim);step();ctl.update();renderer.render(scene,cam)})();
+window.addEventListener("resize",function(){var w=container.clientWidth;if(w&&w!==W){W=w;renderer.setSize(W,H);cam.aspect=W/H;cam.updateProjectionMatrix()}});
+if(window.HQ){try{HQ.event("terrain3d_shown","")}catch(e){}}
+})}
+})();
+window._well3dOpen=function(btn){var w=window._w3d||{};if(w.lat==null)return;btn.disabled=true;btn.textContent="Loading LiDAR terrain…";var box=document.getElementById("well3d");window._sr3dStart(box,w.lat,w.lon).then(function(){btn.style.display="none";}).catch(function(){btn.disabled=false;btn.textContent="3D terrain unavailable — try again";});};window.showWell3D=function(){var b=document.getElementById("well3d-box");if(b)b.style.display="block";var box=document.getElementById("well3d");if(box)box.innerHTML="";var bt=document.getElementById("well3d-btn");if(bt){bt.style.display="";bt.disabled=false;bt.innerHTML="&#9651; View This Parcel in 3D &mdash; Terrain &amp; Water Flow";}};
+</script>
 </body>
 </html>
 
