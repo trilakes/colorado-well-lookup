@@ -1940,6 +1940,10 @@
         .layer-help-btn:hover, .layer-help-btn[aria-expanded="true"] { color: #e6c76b; border-color: rgba(230,199,107,0.6); background: rgba(230,199,107,0.1); }
         .layer-help { display: none; margin: 2px 0 8px 24px; padding: 8px 10px; background: rgba(15,23,42,0.6); border-left: 2px solid rgba(230,199,107,0.4); border-radius: 0 6px 6px 0; max-width: 250px; }
         .layer-help.open { display: block; }
+        .layer-unavailable { opacity: 0.55; }
+        .layer-unavailable label { cursor: default; }
+        .layer-nodata { font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.04em;
+            color: #94a3b8; background: rgba(148,163,184,0.14); border-radius: 3px; padding: 1px 5px; margin-left: auto; margin-right: 6px; flex: none; }
         .layer-help-why { color: #cbd5e1; font-size: 0.72rem; line-height: 1.45; margin: 0 0 6px; }
         .layer-help-note { color: #94a3b8; font-size: 0.68rem; line-height: 1.4; margin: 6px 0 0; font-style: italic; }
         .lh-mark { display: flex; align-items: center; gap: 7px; margin: 3px 0; color: #cbd5e1; font-size: 0.7rem; line-height: 1.3; }
@@ -4068,11 +4072,66 @@
                 <span>Layers</span>
             </button>
             <div class="layer-panel-body" id="layer-panel-body">
+                <div class="layer-item" data-layer="parcels">
+                    <label><input type="checkbox" checked onchange="toggleLayer('parcels', this.checked)">
+                    <span class="layer-dot" style="background:#d6d3d1"></span> Parcel Lines</label>
+                    <span class="layer-count" id="lc-parcels"></span>
+                </div>
+                <div class="layer-divider"></div>
                 <div class="layer-section-label">Wells</div>
                 <div class="layer-item active" data-layer="wells">
                     <label><input type="checkbox" checked onchange="toggleLayer('wells', this.checked)">
                     <span class="layer-dot" style="background:#00e676"></span> Water Wells</label>
                     <span class="layer-count" id="lc-wells"></span>
+                </div>
+                <div class="layer-divider"></div>
+                <div class="layer-section-label">Hydrology</div>
+                <div class="layer-item" data-layer="streams">
+                    <label><input type="checkbox" onchange="toggleLayer('streams', this.checked)">
+                    <span class="layer-dot" style="background:#40c4ff"></span> Streams &amp; Springs</label>
+                    <span class="layer-count" id="lc-streams"></span>
+                </div>
+                <div class="layer-item" data-layer="basins">
+                    <label><input type="checkbox" onchange="toggleLayer('basins', this.checked)">
+                    <span class="layer-dot" style="background:#26a69a"></span> Watershed Basins</label>
+                    <span class="layer-count" id="lc-basins"></span>
+                </div>
+                <div class="layer-item" data-layer="springs">
+                    <label><input type="checkbox" onchange="toggleLayer('springs', this.checked)">
+                    <span class="layer-dot" style="background:#00e5ff"></span> Springs</label>
+                    <span class="layer-count" id="lc-springs"></span>
+                </div>
+                <div class="layer-item" data-layer="gauges">
+                    <label><input type="checkbox" onchange="toggleLayer('gauges', this.checked)">
+                    <span class="layer-dot" style="background:#00b0ff"></span> Stream Gauges</label>
+                    <span class="layer-count" id="lc-gauges"></span>
+                </div>
+                <div class="layer-item" data-layer="dams">
+                    <label><input type="checkbox" onchange="toggleLayer('dams', this.checked)">
+                    <span class="layer-dot" style="background:#2979ff"></span> Dams</label>
+                    <span class="layer-count" id="lc-dams"></span>
+                </div>
+                <div class="layer-item" data-layer="drought">
+                    <label><input type="checkbox" onchange="toggleLayer('drought', this.checked)">
+                    <span class="layer-dot" style="background:#e65100"></span> Drought Monitor</label>
+                    <span class="layer-count" id="lc-drought"></span>
+                </div>
+                <div class="layer-item" data-layer="waterrights">
+                    <label><input type="checkbox" onchange="toggleLayer('waterrights', this.checked)">
+                    <span class="layer-dot" style="background:#aa00ff"></span> Water Rights</label>
+                    <span class="layer-count" id="lc-waterrights"></span>
+                </div>
+                <div class="layer-item" data-layer="groundwater">
+                    <label><input type="checkbox" onchange="toggleLayer('groundwater', this.checked)">
+                    <span class="layer-dot" style="background:#1de9b6"></span> Groundwater</label>
+                    <span class="layer-count" id="lc-groundwater"></span>
+                </div>
+                <div class="layer-divider"></div>
+                <div class="layer-section-label">Terrain</div>
+                <div class="layer-item" data-layer="lidar">
+                    <label><input type="checkbox" onchange="toggleLayer('lidar', this.checked)">
+                    <span class="layer-dot" style="background:#cfd8dc"></span> Bare-Earth LiDAR</label>
+                    <span class="layer-count" id="lc-lidar"></span>
                 </div>
                 <div class="layer-divider"></div>
                 <div class="layer-section-label">Environmental <span class="layer-rec">REC</span></div>
@@ -4086,15 +4145,25 @@
                     <span class="layer-dot" style="background:#d50000"></span> Superfund Sites</label>
                     <span class="layer-count" id="lc-superfund"></span>
                 </div>
-                <div class="layer-item" data-layer="oilgas">
-                    <label><input type="checkbox" onchange="toggleLayer('oilgas', this.checked)">
-                    <span class="layer-dot" style="background:#424242"></span> Oil & Gas Wells</label>
-                    <span class="layer-count" id="lc-oilgas"></span>
+                <div class="layer-item" data-layer="pfas">
+                    <label><input type="checkbox" onchange="toggleLayer('pfas', this.checked)">
+                    <span class="layer-dot" style="background:#e040fb"></span> PFAS Contamination</label>
+                    <span class="layer-count" id="lc-pfas"></span>
                 </div>
                 <div class="layer-item" data-layer="tri">
                     <label><input type="checkbox" onchange="toggleLayer('tri', this.checked)">
                     <span class="layer-dot" style="background:#ff6d00"></span> Toxic Release (TRI)</label>
                     <span class="layer-count" id="lc-tri"></span>
+                </div>
+                <div class="layer-item" data-layer="mines">
+                    <label><input type="checkbox" onchange="toggleLayer('mines', this.checked)">
+                    <span class="layer-dot" style="background:#8d6e63"></span> Mine Sites</label>
+                    <span class="layer-count" id="lc-mines"></span>
+                </div>
+                <div class="layer-item" data-layer="oilgas">
+                    <label><input type="checkbox" onchange="toggleLayer('oilgas', this.checked)">
+                    <span class="layer-dot" style="background:#424242"></span> Oil & Gas Wells</label>
+                    <span class="layer-count" id="lc-oilgas"></span>
                 </div>
                 <div class="layer-item" data-layer="radon">
                     <label><input type="checkbox" onchange="toggleLayer('radon', this.checked)">
@@ -4125,70 +4194,6 @@
                     <label><input type="checkbox" onchange="toggleLayer('eparesponse', this.checked)">
                     <span class="layer-dot" style="background:#c62828"></span> EPA Emergency Response</label>
                     <span class="layer-count" id="lc-eparesponse"></span>
-                </div>
-                <div class="layer-item" data-layer="pfas">
-                    <label><input type="checkbox" onchange="toggleLayer('pfas', this.checked)">
-                    <span class="layer-dot" style="background:#e040fb"></span> PFAS Contamination</label>
-                    <span class="layer-count" id="lc-pfas"></span>
-                </div>
-                <div class="layer-item" data-layer="mines">
-                    <label><input type="checkbox" onchange="toggleLayer('mines', this.checked)">
-                    <span class="layer-dot" style="background:#8d6e63"></span> Mine Sites</label>
-                    <span class="layer-count" id="lc-mines"></span>
-                </div>
-                <div class="layer-divider"></div>
-                <div class="layer-section-label">Terrain</div>
-                <div class="layer-item" data-layer="lidar">
-                    <label><input type="checkbox" onchange="toggleLayer('lidar', this.checked)">
-                    <span class="layer-dot" style="background:#cfd8dc"></span> Bare-Earth LiDAR</label>
-                    <span class="layer-count" id="lc-lidar"></span>
-                </div>
-                <div class="layer-item" data-layer="streams">
-                    <label><input type="checkbox" onchange="toggleLayer('streams', this.checked)">
-                    <span class="layer-dot" style="background:#40c4ff"></span> Streams &amp; Springs</label>
-                    <span class="layer-count" id="lc-streams"></span>
-                </div>
-                <div class="layer-item" data-layer="parcels">
-                    <label><input type="checkbox" checked onchange="toggleLayer('parcels', this.checked)">
-                    <span class="layer-dot" style="background:#d6d3d1"></span> Parcel Lines</label>
-                    <span class="layer-count" id="lc-parcels"></span>
-                </div>
-                <div class="layer-divider"></div>
-                <div class="layer-section-label">Hydrology</div>
-                <div class="layer-item" data-layer="basins">
-                    <label><input type="checkbox" onchange="toggleLayer('basins', this.checked)">
-                    <span class="layer-dot" style="background:#26a69a"></span> Watershed Basins</label>
-                    <span class="layer-count" id="lc-basins"></span>
-                </div>
-                <div class="layer-item" data-layer="drought">
-                    <label><input type="checkbox" onchange="toggleLayer('drought', this.checked)">
-                    <span class="layer-dot" style="background:#e65100"></span> Drought Monitor</label>
-                    <span class="layer-count" id="lc-drought"></span>
-                </div>
-                <div class="layer-item" data-layer="dams">
-                    <label><input type="checkbox" onchange="toggleLayer('dams', this.checked)">
-                    <span class="layer-dot" style="background:#2979ff"></span> Dams</label>
-                    <span class="layer-count" id="lc-dams"></span>
-                </div>
-                <div class="layer-item" data-layer="gauges">
-                    <label><input type="checkbox" onchange="toggleLayer('gauges', this.checked)">
-                    <span class="layer-dot" style="background:#00b0ff"></span> Stream Gauges</label>
-                    <span class="layer-count" id="lc-gauges"></span>
-                </div>
-                <div class="layer-item" data-layer="springs">
-                    <label><input type="checkbox" onchange="toggleLayer('springs', this.checked)">
-                    <span class="layer-dot" style="background:#00e5ff"></span> Springs</label>
-                    <span class="layer-count" id="lc-springs"></span>
-                </div>
-                <div class="layer-item" data-layer="waterrights">
-                    <label><input type="checkbox" onchange="toggleLayer('waterrights', this.checked)">
-                    <span class="layer-dot" style="background:#aa00ff"></span> Water Rights</label>
-                    <span class="layer-count" id="lc-waterrights"></span>
-                </div>
-                <div class="layer-item" data-layer="groundwater">
-                    <label><input type="checkbox" onchange="toggleLayer('groundwater', this.checked)">
-                    <span class="layer-dot" style="background:#1de9b6"></span> Groundwater</label>
-                    <span class="layer-count" id="lc-groundwater"></span>
                 </div>
             </div>
         </div>
@@ -7115,15 +7120,17 @@
             springs: {
                 why: 'Recorded springs where groundwater reaches the surface on its own. Springs near you are direct evidence that a shallow water-bearing layer exists, and roughly how deep it sits.',
                 marks: [{ color: '#00e5ff', style: 'dot', label: 'Recorded spring' }],
-                note: 'Streams & Springs draws its own spring dots in a near-identical cyan. With both layers on they are hard to tell apart.'
+                note: 'Coverage is patchy: there are recorded springs in the mountains and the south-west and genuinely none mapped across much of the Front Range, so an empty map here is usually the truth rather than a fault. Streams & Springs also draws its own spring dots in a near-identical cyan. With both layers on they are hard to tell apart.'
             },
             waterrights: {
                 why: 'Points where somebody holds a legal right to divert or use water. In Colorado water is owned separately from land, so dense water rights near you mean the surface water is already claimed and a new well may be limited to household use only.',
-                marks: [{ color: '#aa00ff', style: 'dot', label: 'Water right record' }]
+                marks: [{ color: '#aa00ff', style: 'dot', label: 'Water right record' }],
+                unavailable: 'The 373,411 water right records we hold carry no map coordinates, so nothing can be drawn yet. The records need geocoding before this layer can work.'
             },
             groundwater: {
                 why: 'Monitoring wells with a measured depth to the water table. These are real measured levels rather than estimates — the closest thing to a direct reading of how far down you would have to drill.',
-                marks: [{ color: '#1de9b6', style: 'dot', label: 'Groundwater monitoring site' }]
+                marks: [{ color: '#1de9b6', style: 'dot', label: 'Groundwater monitoring site' }],
+                unavailable: 'The 45,984 monitoring sites we hold are all outside Colorado, so there is nothing to draw here yet.'
             }
         };
 
@@ -7334,6 +7341,21 @@
                 row.appendChild(btn);
                 row.insertAdjacentHTML('afterend', layerHelpHTML(key));
 
+                // A layer with no data behind it is switched off rather than
+                // left as a checkbox that silently does nothing. Ticking Water
+                // Rights and watching an empty map is worse than being told
+                // the records carry no coordinates yet.
+                if (LAYER_HELP[key].unavailable) {
+                    const dead = row.querySelector('input[type="checkbox"]');
+                    if (dead) { dead.checked = false; dead.disabled = true; }
+                    row.classList.add('layer-unavailable');
+                    row.setAttribute('title', LAYER_HELP[key].unavailable);
+                    const tag = document.createElement('span');
+                    tag.className = 'layer-nodata';
+                    tag.textContent = 'no data';
+                    row.insertBefore(tag, btn);
+                }
+
                 // Turning on a layer that paints more than one colour opens its
                 // key straight away. Streams & Springs alone draws a year-round
                 // creek, a seasonal one, a storm gully, a ditch, a pipeline and
@@ -7377,7 +7399,7 @@
         // What IS shared is everything with no map inside it — OVERLAY_COLORS,
         // HAZARD_LAYERS, OVERLAY_MIN_ZOOM, hazardSvg() and buildOverlayPopup() —
         // so marker colours, the zoom gate and popup copy stay defined once.
-        const RESULTS_LAYER_SECTIONS = ['Wells', 'Environmental', 'Terrain', 'Hydrology'];
+        const RESULTS_LAYER_SECTIONS = ['Map', 'Wells', 'Hydrology', 'Terrain', 'Environmental'];
 
         // The Explore map's nhdPane filter, created on demand per results map.
         // Kept byte-identical to the Explore map's string on purpose: the layer
@@ -7427,14 +7449,14 @@
                 // filter, which is why a creek reads as cyan there. Without the
                 // same pane here the identical layer drew in USGS's muted tones
                 // and the shared legend was wrong on one of the two maps.
-                section: 'Terrain', label: 'Streams &amp; Springs', dot: '#40c4ff', kind: 'tile',
+                section: 'Hydrology', label: 'Streams &amp; Springs', dot: '#40c4ff', kind: 'tile',
                 make: (map) => bindHydroIdentify(L.esri.dynamicMapLayer({
                     url: 'https://hydro.nationalmap.gov/arcgis/rest/services/nhd/MapServer',
                     layers: [0, 6, 9, 12], opacity: 1, pane: resultsHydroPane(map)
                 }), 'nhd')
             },
             parcels: {
-                section: 'Terrain', label: 'Parcel Lines', dot: '#d6d3d1', on: true, kind: 'tile',
+                section: 'Map', label: 'Parcel Lines', dot: '#d6d3d1', on: true, kind: 'tile',
                 make: () => L.esri.featureLayer({
                     url: 'https://gis.colorado.gov/public/rest/services/Address_and_Parcel/Colorado_Public_Parcels/FeatureServer/0',
                     minZoom: 14, interactive: false,
