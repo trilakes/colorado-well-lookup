@@ -3501,6 +3501,110 @@
 <style id="cwf-free">.wp-blur{filter:none!important;-webkit-filter:none!important;user-select:text!important;pointer-events:auto!important;}#paywall{display:none!important;}#inline-unlock{display:none!important;}</style>
 </head>
 <body>
+    <!-- ===== Tri-Lakes scrolling ticker banner (thin, non-blocking) ===== -->
+    <style>
+      :root { --tlw-h: 30px; }
+      @media (max-width: 640px) { :root { --tlw-h: 27px; } }
+      body { padding-top: calc(env(safe-area-inset-top) + var(--tlw-h)) !important; }
+      .map-container { top: calc(16px + var(--tlw-h)) !important; }
+      #tlw-ticker {
+        position: fixed; top: env(safe-area-inset-top); left: 0; right: 0; z-index: 10060;
+        height: var(--tlw-h); display: flex; align-items: center; overflow: hidden; cursor: pointer;
+        background: linear-gradient(90deg, #0a1120, #101a2e 55%, #16233f);
+        border-bottom: 1px solid rgba(230,199,107,.45);
+        box-shadow: 0 2px 12px rgba(10,17,32,.35);
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      }
+      #tlw-track {
+        flex: 1; overflow: hidden; white-space: nowrap;
+        -webkit-mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+        mask-image: linear-gradient(90deg, transparent, #000 4%, #000 96%, transparent);
+      }
+      #tlw-move { display: inline-block; white-space: nowrap; padding-left: 100%; animation: tlw-scroll 30s linear infinite; }
+      #tlw-ticker:hover #tlw-move { animation-play-state: paused; }
+      .tlw-seg { color: #e9eefb; font-size: 13px; font-weight: 600; letter-spacing: .2px; }
+      .tlw-seg b { color: #f0d894; font-weight: 800; }
+      .tlw-cta { color: #0b1020; background: linear-gradient(135deg,#f3dd9a,#e6c76b 55%,#caa63e); font-weight: 800; border-radius: 20px; padding: 2px 11px; font-size: 12px; margin-left: 4px; white-space: nowrap; }
+      .tlw-dot { color: #e6c76b; opacity: .55; padding: 0 2.6rem; font-weight: 700; }
+      #tlw-x { flex: 0 0 auto; z-index: 2; background: transparent; border: 0; color: #8ea0c0; font-size: 18px; line-height: 1; padding: 0 12px; height: 100%; cursor: pointer; }
+      #tlw-x:hover { color: #f0d894; }
+      @keyframes tlw-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
+      @media (max-width: 640px) { .tlw-seg { font-size: 12px; } .tlw-cta { font-size: 11px; padding: 2px 9px; } #tlw-move { animation-duration: 22s; } .tlw-dot { padding: 0 1.8rem; } }
+      @media (prefers-reduced-motion: reduce) { #tlw-move { animation: none; padding-left: 12px; } }
+    </style>
+    <div id="tlw-ticker" role="button" tabindex="0" aria-label="Tri-Lakes — get the real cost to build on this lot">
+      <div id="tlw-track"><div id="tlw-move"></div></div>
+      <button id="tlw-x" type="button" aria-label="Dismiss banner">&times;</button>
+    </div>
+    <script>
+    (function () {
+      var bar = document.getElementById('tlw-ticker'),
+          move = document.getElementById('tlw-move'),
+          x = document.getElementById('tlw-x');
+      if (!bar) return;
+      try { if (localStorage.getItem('tlw_ticker_off') === '1') { bar.remove(); document.documentElement.style.setProperty('--tlw-h', '0px'); return; } } catch (_e) {}
+
+      var DEFAULT = [
+        '🏗️ <b>Building on a well lot?</b> It needs septic, a driveway &amp; site work — know the real cost before you buy.',
+        'Tri-Lakes is a <b>licensed builder, excavator &amp; septic installer</b> — get a free site-feasibility check.'
+      ];
+      function seg(html) {
+        return '<span class="tlw-seg">' + html + ' <span class="tlw-cta">Get my build cost &rarr;</span></span><span class="tlw-dot">///</span>';
+      }
+      function render(list) { var h = list.map(seg).join(''); move.innerHTML = h + h; }
+      render(DEFAULT);
+
+      window.tlwSetAddress = function (addr) {
+        if (!addr) { render(DEFAULT); return; }
+        var safe = String(addr).replace(/[<>]/g, '').slice(0, 64);
+        render(['📍 <b>' + safe + '</b> is on a well — building here means <b>septic + site work</b>. See what it’ll really cost.']);
+      };
+
+      function go() {
+        var cta = document.getElementById('build-cta');
+        if (cta) {
+          if (!cta.style.display || cta.style.display === 'none') {
+            if (typeof updateBuildCTA === 'function') { try { updateBuildCTA(); } catch (_e) {} }
+            cta.style.display = 'block';
+          }
+          cta.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          var em = document.getElementById('bfc-email');
+          if (em) setTimeout(function () { try { em.focus(); } catch (_e) {} }, 450);
+        } else {
+          window.open('https://trilakes.co/build-feasibility?ref=coloradowell', '_blank');
+        }
+        if (window.hqTrackConversion) { try { hqTrackConversion('ticker_click', ''); } catch (_e) {} }
+      }
+
+      bar.addEventListener('click', function (e) { if (e.target === x) return; go(); });
+      bar.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); go(); } });
+      x.addEventListener('click', function (e) {
+        e.stopPropagation();
+        bar.remove();
+        document.documentElement.style.setProperty('--tlw-h', '0px');
+        try { localStorage.setItem('tlw_ticker_off', '1'); } catch (_e) {}
+      });
+
+      function hook() {
+        if (typeof window.updateBuildCTA === 'function' && !window.updateBuildCTA.__tlw) {
+          var orig = window.updateBuildCTA;
+          window.updateBuildCTA = function () {
+            var r = orig.apply(this, arguments);
+            try { window.tlwSetAddress(window._bfAddr); } catch (_e) {}
+            return r;
+          };
+          window.updateBuildCTA.__tlw = 1;
+          return true;
+        }
+        return false;
+      }
+      if (!hook()) {
+        var t = setInterval(function () { if (hook()) clearInterval(t); }, 400);
+        setTimeout(function () { clearInterval(t); }, 10000);
+      }
+    })();
+    </script>
+
     <!-- Paywall Overlay -->
     <!-- Hidden by default: visitors land on the search tool, not a pricing wall.
          checkAccess() and the various unlock CTAs still open it on demand.
