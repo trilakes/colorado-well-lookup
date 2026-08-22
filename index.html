@@ -3545,7 +3545,7 @@
       try { if (localStorage.getItem('tlw_ticker_off') === '1') { bar.remove(); document.documentElement.style.setProperty('--tlw-h', '0px'); return; } } catch (_e) {}
 
       var DEFAULT = [
-        '🏗️ <b>Building on a well lot?</b> It needs septic, a driveway &amp; site work — know the real cost before you buy.',
+        '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="#f0d894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:5px"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1z"/><path d="M10 10V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5"/><path d="M4 15v-3a6 6 0 0 1 6-6"/><path d="M14 6a6 6 0 0 1 6 6v3"/></svg><b>Building on a well lot?</b> It needs septic, a driveway &amp; site work — know the real cost before you buy.',
         'Tri-Lakes is a <b>licensed builder, excavator &amp; septic installer</b> — get a free site-feasibility check.'
       ];
       function seg(html) {
@@ -3557,7 +3557,7 @@
       window.tlwSetAddress = function (addr) {
         if (!addr) { render(DEFAULT); return; }
         var safe = String(addr).replace(/[<>]/g, '').slice(0, 64);
-        render(['📍 <b>' + safe + '</b> is on a well — building here means <b>septic + site work</b>. See what it’ll really cost.']);
+        render(['<svg viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="#f0d894" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px;margin-right:5px"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg><b>' + safe + '</b> is on a well — building here means <b>septic + site work</b>. See what it’ll really cost.']);
       };
 
       function go() {
@@ -4317,7 +4317,7 @@
         <div class="explore-counter" id="explore-counter"></div>
         <div class="explore-loading" id="explore-loading">Loading wells…</div>
         <div class="explore-msg" id="explore-msg">Zoom in to see wells</div><div id="explore-cta-toast" style="display:none;position:absolute;left:50%;transform:translateX(-50%);bottom:20px;z-index:30;width:min(92vw,560px);background:linear-gradient(135deg,#0a1120,#101a2e 70%);border:1px solid rgba(230,199,107,.55);border-radius:14px;padding:15px 40px 15px 16px;box-shadow:0 12px 40px rgba(10,17,32,.55)"><button onclick="window._exploreCtaDismissed=true;this.parentNode.style.display='none'" style="position:absolute;top:8px;right:11px;background:none;border:0;color:#9fb0cc;font-size:1.25rem;cursor:pointer;line-height:1">&times;</button><div style="color:#fff;font-weight:700;font-size:.98rem;margin-bottom:3px">Shopping land to build on?</div><div style="color:#cdd8ec;font-size:.86rem;line-height:1.45">Before you buy, get a <b style="color:#f0d894">Site Feasibility Report</b> from Tri-Lakes &mdash; a licensed builder tells you what it'll actually cost to build on a lot before you spend a dollar. <a href="https://trilakes.co/build-feasibility?ref=coloradowell" target="_blank" rel="noopener" style="color:#e6c76b;font-weight:700;white-space:nowrap">Get a feasibility report &rarr;</a></div></div>
-        <div class="explore-msg" id="explore-zoom-hint" style="display:none;pointer-events:auto;cursor:pointer;white-space:normal;text-align:left;bottom:20px;max-width:min(92vw,560px);background:linear-gradient(135deg,#0a1120,#101a2e 70%);border:1px solid rgba(230,199,107,.55);border-radius:14px;padding:13px 40px 13px 16px;line-height:1.42;box-shadow:0 12px 40px rgba(10,17,32,.55);color:#cdd8ec;font-weight:400;" onclick="if(typeof closeExploreMap==='function')closeExploreMap();var c=document.getElementById('build-cta');if(c){c.style.display='block';c.scrollIntoView({behavior:'smooth',block:'center'});var e=document.getElementById('bfc-email');if(e)setTimeout(function(){try{e.focus();}catch(_e){}},500);}if(window.hqTrackConversion){try{hqTrackConversion('explore_ad_click','');}catch(_e){}}"><button type="button" aria-label="Dismiss" onclick="event.stopPropagation();window._tlwAdDismissed=true;this.parentNode.style.display='none';" style="position:absolute;top:6px;right:10px;background:none;border:0;color:#8ea0c0;font-size:1.2rem;line-height:1;cursor:pointer">&times;</button><div style="color:#fff;font-weight:800;font-size:.98rem;margin-bottom:3px">🏗️ Building on a lot out here?</div><div style="font-size:.86rem;color:#cdd8ec">It'll need <b style="color:#f0d894">septic, a driveway &amp; site work</b> &mdash; Tri-Lakes is a licensed builder, excavator &amp; septic installer who tells you the real cost before you buy. <span style="color:#e6c76b;font-weight:700;white-space:nowrap">Get your free build-cost check &rarr;</span></div></div>
+        <div class="explore-msg" id="explore-zoom-hint" style="display:none;pointer-events:auto;cursor:pointer;white-space:normal;text-align:left;flex-direction:row;align-items:center;gap:11px;bottom:16px;width:min(96vw,760px);max-width:96vw;background:linear-gradient(135deg,#0a1120,#101a2e 70%);border:1px solid rgba(230,199,107,.55);border-radius:11px;padding:8px 38px 8px 14px;line-height:1.3;box-shadow:0 10px 30px rgba(10,17,32,.5);color:#cdd8ec;font-weight:400;" onclick="if(typeof closeExploreMap==='function')closeExploreMap();var c=document.getElementById('build-cta');if(c){c.style.display='block';c.scrollIntoView({behavior:'smooth',block:'center'});var e=document.getElementById('bfc-email');if(e)setTimeout(function(){try{e.focus();}catch(_e){}},500);}if(window.hqTrackConversion){try{hqTrackConversion('explore_ad_click','');}catch(_e){}}"><svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="#e6c76b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex:0 0 auto"><path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1z"/><path d="M10 10V5a2 2 0 0 1 2-2 2 2 0 0 1 2 2v5"/><path d="M4 15v-3a6 6 0 0 1 6-6"/><path d="M14 6a6 6 0 0 1 6 6v3"/></svg><span style="flex:1 1 auto;font-size:.85rem;color:#cdd8ec"><b style="color:#fff">Building on a lot out here?</b> It'll need <b style="color:#f0d894">septic, a driveway &amp; site work</b> &mdash; Tri-Lakes tells you the real cost before you buy.</span><span style="flex:0 0 auto;color:#0b1020;background:linear-gradient(135deg,#f3dd9a,#e6c76b 55%,#caa63e);font-weight:800;border-radius:20px;padding:5px 13px;font-size:.8rem;white-space:nowrap">Free build-cost check &rarr;</span><button type="button" aria-label="Dismiss" onclick="event.stopPropagation();window._tlwAdDismissed=true;this.parentNode.style.display='none';" style="position:absolute;top:50%;right:9px;transform:translateY(-50%);background:none;border:0;color:#8ea0c0;font-size:1.15rem;line-height:1;cursor:pointer">&times;</button></div>
     </div>
 
     <!-- Landing content. Leads with drought and depth: what the water is doing
@@ -4570,7 +4570,7 @@
 
         function openExploreMap() {
             const overlay = document.getElementById('explore-overlay');
-            overlay.classList.add('open'); setTimeout(function(){var _t=document.getElementById('explore-zoom-hint');if(_t&&!window._tlwAdDismissed)_t.style.display='block';},1200);
+            overlay.classList.add('open'); setTimeout(function(){var _t=document.getElementById('explore-zoom-hint');if(_t&&!window._tlwAdDismissed)_t.style.display='flex';},1200);
             document.body.style.overflow = 'hidden';
 
             if (!exploreMap) {
@@ -4737,7 +4737,7 @@
 
             // Show/hide zoom hint + state preview for hazard layers
             if (zoom < OVERLAY_MIN_ZOOM) {
-                if (zoomHint && !window._tlwAdDismissed) zoomHint.style.display = 'block';
+                if (zoomHint && !window._tlwAdDismissed) zoomHint.style.display = 'flex';
                 showStatePreview();
                 // Clear individual hazard markers when zoomed out
                 for (const layer of Object.keys(overlayState)) {
@@ -4746,7 +4746,7 @@
                     }
                 }
             } else {
-                if (zoomHint && !window._tlwAdDismissed) zoomHint.style.display = 'block';
+                if (zoomHint && !window._tlwAdDismissed) zoomHint.style.display = 'flex';
                 hideStatePreview();
             }
 
