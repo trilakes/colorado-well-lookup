@@ -1,0 +1,73 @@
+{
+ "title": "Henderson Well Depth and Drilling Cost",
+ "meta_description": "Henderson wells have a 52 ft median depth, but local records range to 1,410 ft. See yield, water levels, risks and drilling costs.",
+ "h1": "Henderson, Colorado Well Depth, Yield and Cost Guide",
+ "eyebrow": "Henderson well buyer guide",
+ "intro_html": "<p>Buying land near Henderson means looking beyond the listing’s claim that a property has a well. Colorado DWR records show a wide range of well conditions within five miles of Henderson in Adams County. The median reported depth is 52 feet, but the middle half runs from 35 to 396 feet, and the deepest recorded well reaches 1,410 feet.</p><p>That spread matters when you price a new well, evaluate an existing pump, or compare rural property near Commerce City, Thornton, Derby, and Welby. The records also show strong reported yields overall, but only a portion of wells report yield or static water level. Treat the local data as a planning guide, then verify the individual permit, well construction report, pump, water quality, and legal use before closing.</p>",
+ "sections": [
+  {
+   "heading": "Henderson well depths vary sharply across the plains",
+   "html": "<p>Henderson’s recorded wells have a 52-foot median depth. The middle half falls between 35 and 396 feet, while the 90th percentile is 550 feet and the deepest record is 1,410 feet. That is a wide bidding range for a driller. A nearby shallow well does not guarantee the same result on your lot.</p><p>The depth mix gives useful context: 63% of wells are under 100 feet, 6% are from 100 to 300 feet, 23% are from 300 to 600 feet, and 8% are deeper than 600 feet. Permits identify Denver Basin aquifer wells throughout the dataset, including unnamed or fractured-bedrock aquifer records, Lower Arapahoe wells, and Arapahoe wells. Review neighboring construction reports rather than relying only on the median.</p>"
+  },
+  {
+   "heading": "Reported well yields are generally strong near Henderson",
+   "html": "<p>Among the Henderson-area records that report a pump yield, the median is 14.0 gallons per minute, with the middle half from 10.0 to 15.0 gallons per minute. The distribution is also favorable for planning: 52% report yields from 5 to 15 gallons per minute, and 47% report more than 15 gallons per minute. No reported wells are under 1 gallon per minute, and 1% fall from 1 to 5 gallons per minute.</p><p>These figures describe reported well yields, not a guarantee for an untested property. Only 729 wells report a pump yield out of 5,023 permits. Ask for the pumping test, permit conditions, storage capacity, and well construction report. A household’s practical supply also depends on the pump, pressure tank, electrical service, and permitted use.</p>"
+  },
+  {
+   "heading": "Water levels are shallow in the recent Henderson records",
+   "html": "<p>The median static water level is 15 feet below the surface, with the middle half from 9 to 35 feet. That is useful for estimating pump settings and trench work, but it is not the same as well depth or guaranteed pumping water level. A static measurement can change with season, nearby pumping, and the time since the well was last used.</p><p>The decade series does not show a simple continuing decline. Median depth to water was 63 feet in the 1960s, 59 feet in the 1980s, 24 feet in the 2000s, 11 feet in the 2010s, and 13 feet in the 2020s. The more recent reported measurements are therefore shallower than the older ones. Because only 211 wells report static water level, use the trend as context, not as a site-specific prediction.</p>"
+  },
+  {
+   "heading": "Permit history reaches from older wells to current work",
+   "html": "<p>Colorado DWR records include 5,023 permitted wells within five miles of Henderson, with 2,944 recorded as constructed. The permit history is spread across the area: 245 permits were issued in the 1950s, 338 in the 1960s, 397 in the 1970s, 604 in the 1980s, 792 in the 1990s, 744 in the 2000s, 442 in the 2010s, and 255 in the 2020s. The newest permit year is 2025.</p><p>Most active driller names in the records are Authorized (Pe, Pg), Roger Schocke Well Drlg. Inc., and John'S Drilling Inc. Those names help identify local permit history, but they do not substitute for checking the contractor and the specific well report. Confirm the permit status, allowed household or irrigation use, and any required augmentation plan before construction or a real-estate purchase.</p>"
+  },
+  {
+   "heading": "A new Henderson well can cost more than the median hole",
+   "html": "<p>For Denver Basin sedimentary bedrock, the local drilling model uses a typical rate of $50 to $70 per foot. At the 52-foot median depth, the drilled hole is estimated at about $2,600 to $3,600. That is only the drilling portion. A finished well with pump, tank, trenching, and electrical is estimated at about $8,600 to $15,600.</p><p>The depth spread makes the median a starting point, not a firm quote. A site near the deeper end of the local range can change drilling cost substantially before equipment and connections are added. Get a written bid that separates drilling, casing and grout, pump equipment, water testing, trenching, electrical work, permits, and any difficult access or site preparation. Confirm what happens if the hole is dry or produces less than expected.</p>"
+  },
+  {
+   "heading": "Check contamination, septic separation, and building limits",
+   "html": "<p>Environmental records deserve attention before buying. Within about ten miles, the mapped data includes 616 PFAS sampling or contamination sites, 48 EPA Superfund or cleanup sites, and 1 historic mine feature. A mapped site is a reason to investigate, not proof that a particular well is contaminated. Test the well water and review nearby land uses, prior industrial activity, and available environmental records.</p><p>Low yield is not the main pattern in the reported Henderson sample, but dry holes and poor production remain possible on an individual lot. Confirm the well location, casing and grout details, pump test, and static level. Before building, lay out the well, septic system, reserve area, driveway, and house together. DWR permit conditions, septic setbacks, access for drilling equipment, and legal water use can limit a plan even when the well itself looks adequate.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Henderson, Colorado?",
+   "a": "The median reported well depth near Henderson is 52 feet. The middle half of recorded depths runs from 35 to 396 feet, while the 90th percentile is 550 feet and the deepest record is 1,410 feet. Most wells are under 100 feet, but neighboring records can still vary enough to affect a new-well bid."
+  },
+  {
+   "q": "What does it cost to drill a well in Henderson?",
+   "a": "The local model uses $50 to $70 per foot for drilling in Denver Basin sedimentary bedrock. At the 52-foot median depth, the drilled hole is about $2,600 to $3,600. A finished well with pump, tank, trenching, and electrical is estimated at about $8,600 to $15,600."
+  },
+  {
+   "q": "How much water do Henderson wells produce?",
+   "a": "Reported yields have a 14.0-gallon-per-minute median, with the middle half from 10.0 to 15.0 gallons per minute. The records show 52% from 5 to 15 gallons per minute and 47% above 15 gallons per minute. Only 729 wells report yield, so request the specific well’s pumping test."
+  },
+  {
+   "q": "Is well water safe in Henderson, Colorado?",
+   "a": "Safety cannot be determined from depth or yield alone. Within about ten miles, records show 616 PFAS sampling or contamination sites and 48 EPA Superfund or cleanup sites. Test the individual well, review nearby environmental history, and inspect the well construction. A mapped site does not by itself prove contamination at your property."
+  },
+  {
+   "q": "Are water levels dropping near Henderson?",
+   "a": "The reported decade medians do not show a continuing drop. Depth to water was 63 feet in the 1960s, 59 feet in the 1980s, 24 feet in the 2000s, 11 feet in the 2010s, and 13 feet in the 2020s. Only 211 wells report static water level, so check the specific well rather than treating the series as a guarantee."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Henderson and nearby Adams County communities with access driveways, site development, new-build septic systems, and custom homes. Bring the well, septic, access, and building layout together before construction starts.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1447,
+  "completion_tokens": 2057,
+  "total_tokens": 3504,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1444,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 87,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

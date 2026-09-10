@@ -1,0 +1,76 @@
+{
+ "title": "Pueblo County well depth and drilling cost",
+ "meta_description": "In Pueblo County, the median well depth is 46 ft with a 10.7 gpm median yield. See what that means for drilling cost and water reliability.",
+ "h1": "Understanding water wells in Pueblo County, Colorado",
+ "eyebrow": "Local well basics",
+ "intro_html": "<p>Pueblo County wells are a mix of shallow plains wells and some very deep holes into sedimentary rock and fractured bedrock. Before you buy land or plan a new house outside places like Pueblo, Boone, or Colorado City, it helps to understand how deep wells actually go here, how much water they tend to make, and what they cost.</p><p>These numbers come from 12,231 permitted wells across the county, with thousands reporting real construction, depth, yield, and water-level data. Use them as a reality check when you talk with a driller or price a property.</p>",
+ "sections": [
+  {
+   "heading": "How deep Pueblo County wells usually go",
+   "html": "<p>Across Pueblo County, the median reported well depth is 46 feet, with the middle half between 32 and 184 feet. About 68% of wells are under 100 feet, but there is a long tail: 12% run 100–300 feet, 15% are 300–600 feet, and 5% go deeper than 600 feet, with the deepest on record at 2,630 feet.</p><p>For a driller’s bid, that 32–184 foot middle range is what you should use for planning in many plains and alluvial settings. But the presence of fractured-bedrock aquifers and the occasional very deep well means you need a contingency budget if you are in a drier, higher part of the county or away from alluvial deposits near the Arkansas.</p>"
+  },
+  {
+   "heading": "Water table depth and recent trend in Pueblo County",
+   "html": "<p>Static water level (the depth to water) has a countywide median of about 50 feet, with the middle half between 21 and 191 feet. That’s the vertical lift your pump works against, and it matters for pump sizing and power costs.</p><p>Looking at time trends, median static levels by decade bounced between roughly 20 and 33 feet from the 1960s through the 2010s. In the 1960s it was about 25 feet, 1970s around 32, 1980s around 20, 2000s about 28, and 2010s about 33. In the 2020s the reported median jumps to 99 feet. That suggests some areas where the water table is now substantially deeper than historic measurements, so pay attention to recent nearby wells, not just older ones.</p>"
+  },
+  {
+   "heading": "Well yield and how much water you can expect",
+   "html": "<p>Out of 1,657 Pueblo County wells that report a tested pump yield, the median is 10.7 gallons per minute, with the middle half between 7.5 and 15 gpm. About 60% of wells fall in the 5–15 gpm range, which is usually fine for a typical exempt household well if storage is sized correctly.</p><p>Only about 1% of reported wells make under 1 gpm, and 8% are between 1 and 5 gpm. Those low-yield wells can still work with storage and conservative use, but they are a different lifestyle. On the upside, 31% of wells report more than 15 gpm, which can support irrigation or stock uses if your permit allows it.</p>"
+  },
+  {
+   "heading": "Who’s drilling here and what the permit history shows",
+   "html": "<p>Pueblo County has a long history of well drilling. Permits start showing up in the 1950s, with 408 that decade and 515 in the 1960s. Activity increased to 1,010 permits in the 1970s and 635 in the 1980s. The big growth came later: 1,893 permits in the 1990s and 2,389 in the 2000s.</p><p>Since then, there were 1,358 permits in the 2010s and 699 so far in the 2020s, with the newest permit on record in 2025. Most wells are in unnamed or fractured-bedrock aquifers (11,416 wells), with smaller numbers in the Dakota (275) and Alluvial (171) aquifers. The busiest drillers on record are Authorized (Pe, Pg) with 1,486 wells, Don Stewart &amp; Son Drilling with 501, and Arkansas Valley Drilling with 490.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost in Pueblo County",
+   "html": "<p>Here the usual drilling conditions are alluvium and plains sedimentary rock. Typical drilling rates run about $35–$55 per foot. At the countywide median depth of 46 feet, just the drilled hole pencils out around $1,600–$2,500.</p><p>When you add casing, grout, pump, pressure tank, trenching, and electrical, a finished domestic well at that median depth tends to land in roughly the $7,600–$14,500 range. If you’re in an area where nearby wells run closer to the upper half of the 32–184 foot band, or into the 300–600 foot group, adjust your budget up accordingly. Always base your planning on the depths of the nearest recent wells, not the county median alone.</p>"
+  },
+  {
+   "heading": "Key risks to check: low yield, deep water, and contamination",
+   "html": "<p>Even though only about 1% of reported wells are under 1 gpm, that risk is real on fractured-bedrock sites, especially away from alluvium. The 2020s median static level of 99 feet also shows that in some parts of Pueblo County, water is now significantly deeper than it used to be, which means higher pumping lift and cost.</p><p>There are mapped environmental concerns as well: 56 PFAS sampling or contamination sites, 5 historic mine features, and 34 EPA Superfund or cleanup sites within roughly 10 miles of the county. Before you buy, line up water quality testing that includes PFAS, and confirm well and septic separation distances to keep your own system from becoming a contamination source.</p>"
+  },
+  {
+   "heading": "Buying or building on a well lot in Pueblo County",
+   "html": "<p>Countywide numbers give a baseline: most wells are under 100 feet, the median yield is 10.7 gpm, and the median water level is about 50 feet deep. But your specific parcel might tap a shallow alluvial aquifer near the Arkansas River, or a much deeper fractured-bedrock source out toward the county edges or above Pueblo West and Colorado City.</p><p>Before closing, pull the Colorado DWR well logs for the closest wells and compare their depths, yields, and completion dates. Pay attention to recent 2020s water-level data, not just older logs. Make your contract contingent on a satisfactory new pump test and lab-quality water testing, and get a driller’s written estimate based on nearby real wells, not a generic “average.”</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Pueblo County, Colorado?",
+   "a": "In Pueblo County, the median reported well depth is 46 feet, with the middle half between 32 and 184 feet. About 68% of wells are under 100 feet, but some go much deeper: 12% are 100–300 feet, 15% are 300–600 feet, and around 5% exceed 600 feet, with the deepest on record reaching 2,630 feet."
+  },
+  {
+   "q": "How much water do Pueblo County wells usually produce?",
+   "a": "Among 1,657 wells with yield data, the median production is 10.7 gallons per minute, and the middle half fall between 7.5 and 15 gpm. Roughly 60% of wells are in the 5–15 gpm range, 31% exceed 15 gpm, and only about 1% report under 1 gpm. That’s typically enough for a household well, assuming proper storage and pump sizing."
+  },
+  {
+   "q": "What does it cost to drill a well in Pueblo County?",
+   "a": "Typical drilling rates in Pueblo County alluvium and plains sedimentary rock run about $35–$55 per foot. At the county’s 46-foot median depth, the drilled hole alone is roughly $1,600–$2,500. When you include casing, pump, pressure tank, trenching, and electrical, a finished domestic well at that depth often totals about $7,600–$14,500, with deeper wells costing proportionally more."
+  },
+  {
+   "q": "Is the water table dropping in Pueblo County?",
+   "a": "Median static water levels bounced between about 20 and 33 feet from the 1960s through the 2010s, but the 2020s median jumps to 99 feet. That suggests some areas now have significantly deeper water than older measurements indicate. It’s important to look at the most recent nearby well logs to see if your specific area is seeing a deeper water table or stable conditions."
+  },
+  {
+   "q": "Is well water safe to drink in Pueblo County, Colorado?",
+   "a": "Safety depends on your exact location and testing. Pueblo County has 56 mapped PFAS sampling or contamination sites, 5 historic mine features, and 34 EPA Superfund or cleanup sites within about 10 miles. Many private wells produce good water, but you should budget for a full lab test, including PFAS, before relying on any well for drinking water."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that can handle access driveways, site development, new-build septic systems, and custom homes in Pueblo County. They understand rural well and septic constraints and can coordinate site work around your water supply and building plans.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1497,
+  "completion_tokens": 2376,
+  "total_tokens": 3873,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 256,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

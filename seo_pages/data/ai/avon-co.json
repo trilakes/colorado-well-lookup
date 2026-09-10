@@ -1,0 +1,73 @@
+{
+ "title": "Avon Well Depth and Drilling Cost",
+ "meta_description": "Avon wells have a 67 ft median depth, but fractured bedrock makes yield and drilling cost vary by lot.",
+ "h1": "Private Well Guide for Avon, Colorado",
+ "eyebrow": "Avon mountain well records",
+ "intro_html": "<p>Buying land near Avon means evaluating a mountain well, not just checking whether a permit exists. Records within 5 miles show 242 permitted wells, with 94 recorded as constructed. Only 115 report total depth, 17 report pump yield, and 15 report static water level, so the database is useful for local patterns but cannot replace a site-specific well and septic review.</p><p>Most permits identify an unnamed or fractured-bedrock aquifer. That fits the granite and gneiss ground common around Avon, Edwards, Vail, Wolcott, Minturn, Fulford, and Red Cliff. Fractured rock can produce excellent water in one location and disappointing water a short distance away.</p>",
+ "sections": [
+  {
+   "heading": "Avon well depths are usually shallow, but the range is wide",
+   "html": "<p>The median reported well depth near Avon is 67 feet. The middle half runs from 34 to 104 feet, meaning many drilling bids may cluster in that range, but it is not a guarantee for a new lot. The 90th percentile is 243 feet, and the deepest recorded well is 403 feet.</p><p>About 74% of wells are under 100 feet, while 17% fall between 100 and 300 feet and 9% fall between 300 and 600 feet. No recorded wells are 600 feet or deeper. In fractured granite and gneiss, depth is controlled by where water-bearing fractures occur, local slope and geology, and the actual drill site. A contractor should price the expected footage and explain the conditions that could push the hole deeper.</p>"
+  },
+  {
+   "heading": "Recorded yields are strong, but the sample is small",
+   "html": "<p>The reported yield numbers look favorable: the median is 200.0 gallons per minute, with a middle half from 30.0 to 400.0 gallons per minute. Every one of the 17 wells reporting a pump yield is listed above 15 gallons per minute. That suggests strong production in the reported records, but it does not mean a buyer should assume a new well will make 200.0 gallons per minute.</p><p>Yield reporting is sparse compared with the 242 permitted wells. Ask for the completion report, pump test, and current production history for any existing well. A household usually needs dependable supply and storage more than an unusually high test result. An exempt household-use well also has a 35 gallon-per-minute pumping limit, even when the aquifer could produce more.</p>"
+  },
+  {
+   "heading": "Water levels are shallow, but the records do not show a trend",
+   "html": "<p>Only 15 wells report a static water level. Those records have a median depth to water of 22 feet, with the middle half from 16 to 36 feet. For an existing well, that can help a driller estimate pumping conditions and help a buyer understand how much lift the pump may need.</p><p>The permit history runs from the 1950s through the newest permit in 2025, but permit counts by decade are not water-level measurements. They cannot establish that the water table is rising or dropping. Treat the 22-foot median as a limited local snapshot, not a guaranteed seasonal level. Ask for static levels, pumping levels, and dates from the specific well, especially if the property will need irrigation or more than ordinary household use.</p>"
+  },
+  {
+   "heading": "Permit history shows steady drilling around Avon",
+   "html": "<p>Avon’s permit records include 1 permit from the 1950s, 4 from the 1960s, 28 from the 1970s, 34 from the 1980s, 16 from the 1990s, 42 from the 2000s, 31 from the 2010s, and 14 from the 2020s. The newest permit year is 2025. This is a long record of water development, not proof that every parcel can support a new well.</p><p>The most active drillers named in the records are Authorized (Pe, Pg), with 38 wells; Golden Eagle Drilling Corporation (Shelton, Joe Wayne), with 19; and Crandall, H A, with 12. Use neighboring completion reports as local evidence, but confirm the current contractor’s license, scope, casing and grout plan, pump test method, and permit requirements with Colorado DWR.</p>"
+  },
+  {
+   "heading": "Avon well drilling cost depends on fractured rock",
+   "html": "<p>The cost model for Avon assumes fractured mountain bedrock, including granite and gneiss. The typical drilling rate is $65-$100 per foot. At the local median depth of 67 feet, the drilled hole is estimated at about $4,400-$6,700.</p><p>A finished well is a larger project. Including the pump, pressure tank, trenching, and electrical work, the estimate at that median depth is about $10,400-$18,700. Those figures are planning numbers, not a guaranteed bid. A deeper hole, difficult access, casing or grout requirements, water testing, or site work can change the total. Get a written proposal that separates drilling footage from completion equipment and identifies what happens if the hole produces too little water.</p>"
+  },
+  {
+   "heading": "Check water quality, dry-hole risk, and the building site",
+   "html": "<p>Fractured-bedrock wells can vary sharply from one lot to the next. Before closing, review the well permit, construction report, pump test, maintenance history, and recent lab results. The mapped area around Avon includes 12 PFAS sampling or contamination sites, 12 historic mine features, and 8 EPA Superfund or cleanup sites. These records do not prove contamination at a particular property, but they justify testing based on the site’s location and history.</p><p>Low yield and dry holes remain practical risks even where nearby wells perform well. Septic setbacks, driveway access, slope, winter conditions, trenching, and electrical routing can affect where the well and septic system can be installed. If the basin is over-appropriated, confirm whether an augmentation plan or other water-rights requirement applies to the proposed use.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Avon, Colorado?",
+   "a": "The median reported depth near Avon is 67 feet, and the middle half runs from 34 to 104 feet. About 74% of recorded wells are under 100 feet. Depth still varies substantially in fractured granite and gneiss: the 90th percentile is 243 feet, and the deepest recorded well is 403 feet."
+  },
+  {
+   "q": "How much does it cost to drill a well in Avon?",
+   "a": "The typical drilling rate used for Avon’s fractured mountain bedrock is $65-$100 per foot. At the 67-foot median depth, the drilled hole is estimated at $4,400-$6,700. A finished well with pump, tank, trenching, and electrical work is estimated at $10,400-$18,700."
+  },
+  {
+   "q": "How much water do Avon wells produce?",
+   "a": "Only 17 wells in the records report a pump yield. Their median reported yield is 200.0 gallons per minute, with the middle half from 30.0 to 400.0 gallons per minute, and all reported yields are above 15 gallons per minute. That small sample does not guarantee a new well’s production."
+  },
+  {
+   "q": "Is well water safe to drink in Avon?",
+   "a": "Safety depends on the individual well and test results. The mapped area includes 12 PFAS sampling or contamination sites, 12 historic mine features, and 8 EPA Superfund or cleanup sites. These are reasons to test, not proof of contamination at your property. Review recent lab results and test a well before relying on it for drinking water."
+  },
+  {
+   "q": "Are Avon wells running out of water?",
+   "a": "The available records do not establish a declining water table. Only 15 wells report static water levels, with a median depth to water of 22 feet and a middle half from 16 to 36 feet. Permit counts by decade are not water-level measurements. For a purchase, request pumping and static-level records from the specific well."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Avon and the surrounding Eagle County mountain communities with access driveways, site development, new-build septic systems, and custom homes. Bring the well plan into the broader site-work budget before construction begins.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1368,
+  "completion_tokens": 1957,
+  "total_tokens": 3325,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1365,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 125,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

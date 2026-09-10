@@ -1,0 +1,77 @@
+{
+ "title": "St. Mary's Well Depth and Drilling Cost",
+ "meta_description": "St. Mary's wells have a 124 ft median depth; see local yields, water levels, drilling costs, and risks before buying.",
+ "h1": "St. Mary's, Colorado Well Depth, Yield, and Cost",
+ "eyebrow": "Local well data explained",
+ "intro_html": "<p>Buying mountain property in St. Mary's means understanding the ground below the lot, not just the view. Records within 5 miles show 900 permitted wells, with 541 recorded as constructed. Of those, 540 report total depth, 215 report pump yield, and 58 report a static water level.</p><p>Most permits are for domestic or household use, and the local geology is mainly unnamed fractured bedrock, including granite and gneiss. Neighboring wells provide useful planning evidence, but they do not guarantee the same result on your parcel. A driller still needs to evaluate access, siting, casing, grout, pump equipment, and the specific bedrock under the proposed well.</p>",
+ "sections": [
+  {
+   "heading": "What St. Mary's well depths look like",
+   "html": "<p>The median well depth near St. Mary's is 124 feet. The middle half runs from 60 to 305 feet, so a bid based only on the median can be misleading. A driller working on a lot with similar nearby wells may still need to price substantially more footage.</p><p>Depths vary widely in this fractured mountain bedrock. About 44% of recorded wells are under 100 feet, while 27% fall between 100 and 300 feet and 23% between 300 and 600 feet. The 90th-percentile depth is 482 feet, and the deepest recorded well is 1,204 feet. Nearby Downieville-Lawson-Dumont, Empire, Central, Georgetown, Black Hawk, and Winter Park can help with regional context, but the closest comparable wells matter most.</p>"
+  },
+  {
+   "heading": "Expected well yield in the St. Mary's area",
+   "html": "<p>Among the 215 wells reporting pump yield, the median is 8.2 gallons per minute. The middle half produces 5.0 to 11.3 gallons per minute. That is generally a workable range for a household when the well, pressure tank, and storage system are designed together.</p><p>The yield records are concentrated in the middle: 73% report 5 to 15 gallons per minute, and 12% report more than 15 gallons per minute. Another 14% report 1 to 5 gallons per minute. No recorded well in this dataset is listed under 1 gallon per minute, but the sample is much smaller than the full permit set. Ask for the well construction report and pump test rather than relying on a neighborhood average.</p>"
+  },
+  {
+   "heading": "Water levels and what the local record suggests",
+   "html": "<p>The median static water level is 42 feet below the surface, with the middle half between 25 and 80 feet. Static level is not the same as pumping level: water can fall while the pump is running, especially in fractured rock. Tank sizing and pump placement should account for that difference.</p><p>The decade series deserves attention. The median measured water level was 30 feet below the surface in the 1970s and also 30 feet in the 2010s, then 60 feet in the 2020s. That recent shift suggests deeper measured water levels, but only 58 wells report static water levels, and the measurements may come from different locations and conditions. Treat it as a reason to investigate, not proof of a basin-wide declining water table.</p>"
+  },
+  {
+   "heading": "Permit history and drillers recorded near St. Mary's",
+   "html": "<p>Well development around St. Mary's has a long record. Permits were issued in the 1970s, 1980s, 1990s, 2000s, 2010s, and 2020s, with the newest permit year being 2025. The records include 155 permits from the 1970s, 149 from the 1980s, 166 from the 1990s, 149 from the 2000s, 56 from the 2010s, and 51 from the 2020s. Older permits may describe different construction standards or uses than a new household well.</p><p>The most active drillers in these records are Mcpherson Drilling Company, associated with Benny Don Mcpherson, with 85 wells; Living Water Systems Inc., associated with Robert Goble, with 60; and Aspen Drilling Company Inc., associated with Leroy J. Beery, with 54. These counts show permit history, not current availability or a guarantee of performance.</p>"
+  },
+  {
+   "heading": "What a new well can cost in St. Mary's",
+   "html": "<p>Local drilling is priced around fractured mountain bedrock, mainly granite and gneiss. The drilling rate model is $65 to $100 per foot. At the 124-foot median depth, the drilled hole works out to about $8,000 to $12,400.</p><p>A usable water system costs more than the hole. The model puts a finished well, including pump, pressure tank, trenching, and electrical, at about $14,000 to $24,400 at that median depth. A deeper hole, difficult access, more casing or grout, and long utility trenching can move the final price higher. Have bids state the included footage, casing and grout assumptions, pump equipment, electrical work, trenching, testing, and what happens if the hole must be deepened.</p>"
+  },
+  {
+   "heading": "Risks to investigate before you commit",
+   "html": "<p>Fractured bedrock can produce strong water at one location and disappointing water a short distance away. A dry hole or low-yield result remains possible even when nearby records look good. Review construction reports, pump tests, static levels, and the aquifer description for surrounding wells. Most permits name unnamed or fractured-bedrock aquifers; 866 wells fall in that category, while 12 name Fractured Crystalline and 3 name Fractured Granite.</p><p>Environmental history also deserves a site-specific review. Within about 10 miles, the map includes 18 PFAS sampling or contamination sites, 3,754 historic mine features, and 20 EPA Superfund or cleanup sites. Test existing water before closing and plan septic and well locations with required separation and drainage in mind. Confirm access for a large drilling rig, building envelopes on steep ground, and the DWR permit requirements for the intended household use.</p>"
+  },
+  {
+   "heading": "A practical plan for buying or building here",
+   "html": "<p>Start with the parcel's nearest permitted wells, not a countywide average. Compare their depths, yields, static levels, construction dates, and stated aquifers. Then ask a licensed driller to inspect rig access and propose a target location that works with the house, septic system, driveway, and power route.</p><p>For an existing home, obtain the well permit, construction report, pump information, water-quality results, and any recent flow or pressure observations. For a vacant lot, make the well and septic investigation part of due diligence before removing contingencies. Colorado DWR permits control what a well may legally serve. An exempt household-use well has the 35-gallon-per-minute pumping limit, but the permit's actual restrictions still matter. In an over-appropriated basin, an augmentation plan may be required.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in St. Mary's, Colorado?",
+   "a": "The median recorded well depth within 5 miles of St. Mary's is 124 feet. The middle half runs from 60 to 305 feet. About 44% are under 100 feet, but the 90th-percentile depth is 482 feet and the deepest record is 1,204 feet. Fractured granite and gneiss make the nearby well pattern useful but not definitive for a specific lot."
+  },
+  {
+   "q": "How much does it cost to drill a well in St. Mary's?",
+   "a": "The local cost model is $65 to $100 per foot in fractured mountain bedrock. At the 124-foot median depth, drilling alone is estimated at $8,000 to $12,400. A finished system with pump, tank, trenching, and electrical is estimated at $14,000 to $24,400. Access, extra depth, casing, grout, and trench length can change the bid."
+  },
+  {
+   "q": "How much water do wells produce in St. Mary's?",
+   "a": "Among 215 wells reporting pump yield, the median is 8.2 gallons per minute and the middle half is 5.0 to 11.3 gallons per minute. About 73% produce 5 to 15 gallons per minute, while 14% produce 1 to 5. No recorded well is listed under 1 gallon per minute, though many permitted wells do not report yield."
+  },
+  {
+   "q": "Is well water safe to drink in St. Mary's?",
+   "a": "A well is not automatically safe because it produces water. The area within about 10 miles includes 18 PFAS sampling or contamination sites, 3,754 historic mine features, and 20 EPA Superfund or cleanup sites. Test the property's water for relevant contaminants before closing, and retest after ownership or construction changes. Mine history and local site conditions should guide the testing plan."
+  },
+  {
+   "q": "Is the water table dropping in St. Mary's?",
+   "a": "The available measurements show a median static level of 30 feet below the surface in the 1970s, 30 feet in the 2010s, and 60 feet in the 2020s. That recent reading is deeper, but only 58 wells report static levels and the wells and conditions differ. The series warrants investigation, but it does not prove a regional decline by itself."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving St. Mary's and the surrounding mountain communities with access driveways, site development, new-build septic systems, and custom homes. Their planning can help coordinate difficult access, utilities, septic, and construction around a new well.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1441,
+  "completion_tokens": 2280,
+  "total_tokens": 3721,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1438,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 136,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

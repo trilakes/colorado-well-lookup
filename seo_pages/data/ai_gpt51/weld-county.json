@@ -1,0 +1,76 @@
+{
+ "title": "Weld County well depth and drilling cost",
+ "meta_description": "In Weld County, the median well depth is 59 ft with a median yield of 14 gpm. Learn what that means for drilling cost, water table and buying land.",
+ "h1": "Understanding Water Wells in Weld County, Colorado",
+ "eyebrow": "Local well basics",
+ "intro_html": "<p>Weld County sits on the plains over the Denver Basin, with a mix of shallow alluvial water and deeper bedrock wells. The state has records for 41,527 permitted wells here, so there is a lot of local history to learn from before you buy or drill.</p><p>I’ll walk through how deep wells usually go, how much water they make, what the water table has been doing, what drilling tends to cost, and the main risks to check on a specific parcel.</p>",
+ "sections": [
+  {
+   "heading": "How deep Weld County wells usually go",
+   "html": "<p>Across Weld County, the median total well depth is 59 feet, but the spread is wide. The middle half of wells run from 30 to 227 feet, and the 90th percentile reaches 555 feet. The deepest well on record is 3,340 feet. So you see everything from very shallow domestic and stock wells along alluvial areas to very deep Denver Basin bedrock completions.</p><p>About 65% of wells are under 100 feet, 14% are 100–300 feet, 12% are 300–600 feet, and 9% are deeper than 600 feet. A driller’s bid on a rural homesite here will usually include a base price plus a per-foot rate, with a contingency if you end up in that deeper 300–600+ foot category.</p>"
+  },
+  {
+   "heading": "What to expect for well yield in Weld County",
+   "html": "<p>Yield is generally strong here. For the 7,501 wells that report pump tests, the median yield is 14.0 gpm, and the middle half fall between 10.0 and 15.0 gpm. Nearly half of tested wells, 49%, are in the 5–15 gpm range, and another 48% report 15+ gpm. Only 3% are between 1–5 gpm, and none in the records are under 1 gpm.</p><p>For a typical household-use exempt well, anything over about 3–5 gpm is workable with proper storage. In Weld County, most tested wells are well above that, which is encouraging for both domestic and stock uses, as well as some small-scale irrigation where legally allowed.</p>"
+  },
+  {
+   "heading": "Water levels and long-term trend",
+   "html": "<p>Static water levels, where reported, are generally shallow. The median depth to water is 26 feet, and the middle half of measurements run from 10 to 109 feet below ground surface. That means many wells hit water relatively close to the surface, but there are also plenty where the water level is down around 100 feet or more.</p><p>By decade, median static levels have moved around. They were 46 feet in the 1950s, 21 in the 1960s, 52 in the 1970s, and 40 in the 1980s. Levels deepened to 88 feet in the 1990s and 98 in the 2000s, then came up to 65 in the 2010s and 17 in the 2020s. Overall, it has not been a straight drop; conditions vary a lot by location and aquifer.</p>"
+  },
+  {
+   "heading": "Who is drilling here and permit history",
+   "html": "<p>Weld County has a long record of well construction. Permits per decade grew from 1,543 in the 1950s and 2,032 in the 1960s up to 2,527 in the 1970s and 2,250 in the 1980s. Growth took off in the 1990s with 5,159 permits, then 6,867 in the 2000s, 5,689 in the 2010s, and 6,054 already in the 2020s. The newest permit year in the records is 2026.</p><p>The most active drillers on record are Authorized (Pe, Pg) with 7,232 wells, Lesh Drilling Inc. (Lesh Jr., Ed) with 1,662, and Clement, Glenn A. with 1,265. That tells you there are contractors who know the local geology well, from the Denver Basin bedrock to the alluvial areas around places like Evans, La Salle, or Platteville.</p>"
+  },
+  {
+   "heading": "Aquifers and local geology under Weld County",
+   "html": "<p>Most Weld County wells are in unnamed or fractured-bedrock aquifers, with 25,640 wells listed that way. There are also 4,508 alluvial wells and 3,487 completed in the Laramie-Fox Hills aquifer. Overall, 61% of wells are categorized as Denver Basin aquifer wells, reflecting the sedimentary bedrock under much of the county.</p><p>On the plains, that means one parcel may get by with a shallow alluvial domestic well, while another, only a few miles away, may need several hundred feet into bedrock. Before you buy, look up nearby well logs on similar ground to see whether the area tends to tap alluvium or deeper Denver Basin units.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost in Weld County",
+   "html": "<p>The drilling cost model for Weld County assumes Denver Basin sedimentary bedrock, with a typical drilling rate of $50–$70 per foot. At the county’s median depth of 59 feet, the drilled hole itself pencils out around $3,000–$4,100. When you add pump, pressure tank, trenching, and electrical, a finished domestic well commonly lands in the $9,000–$16,100 range.</p><p>If your area tends to run closer to the upper half of depths (for example, 227 feet or more), just scale those per-foot drilling costs accordingly. Deep Laramie-Fox Hills completions or other 300–600+ foot wells will be significantly more than the countywide median example.</p>"
+  },
+  {
+   "heading": "Risks to check before you buy or drill",
+   "html": "<p>Permitted uses here are mixed: about 39% domestic/household, 16% stock, 17% irrigation, and 25% monitoring. That monitoring share reflects a lot of oil and gas and environmental work. Within about 10 miles countywide, there are 4,834 PFAS sampling or contamination sites, 14 historic mine features, and 6 EPA Superfund or cleanup sites.</p><p>That does not mean your specific well is unsafe, but it does mean water quality due diligence is important. On a parcel, check distances to old industrial or oilfield sites, review nearby monitoring-well data, and plan a full lab test of a new or existing well. Also confirm well and septic separation and allowable household-only uses under your DWR permit.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Weld County, Colorado?",
+   "a": "In Weld County, the median total well depth is 59 feet. The middle half of wells range from 30 to 227 feet, while the 90th percentile reaches 555 feet. About 65% of wells are under 100 feet, but 21% are 300 feet or deeper, so some areas will require significantly deeper drilling, especially where you need to tap the Denver Basin or Laramie-Fox Hills aquifers."
+  },
+  {
+   "q": "How much water do Weld County wells usually produce?",
+   "a": "Reported yields are generally strong. For 7,501 wells with pump tests, the median yield is 14.0 gpm and the middle half are between 10.0 and 15.0 gpm. About 49% fall in the 5–15 gpm range, and 48% report 15+ gpm. Only 3% of tested wells are between 1–5 gpm, and none are under 1 gpm in the records, which is favorable for domestic and stock use."
+  },
+  {
+   "q": "What does it cost to drill a well in Weld County?",
+   "a": "The cost model here uses a drilling rate of $50–$70 per foot in Denver Basin sedimentary bedrock. At the county median depth of 59 feet, drilling alone runs about $3,000–$4,100. A complete domestic setup with pump, pressure tank, trenching, and electrical typically totals around $9,000–$16,100. Deeper wells, such as 300–600+ feet, will scale up from that per-foot rate."
+  },
+  {
+   "q": "Is the water table dropping in Weld County?",
+   "a": "Static water level data show ups and downs rather than a simple long-term decline. Median depths to water were 46 feet in the 1950s, 21 in the 1960s, 52 in the 1970s, and 40 in the 1980s. They deepened to 88 feet in the 1990s and 98 in the 2000s, then came up to 65 in the 2010s and 17 in the 2020s. Conditions vary widely by location and aquifer, so check nearby wells."
+  },
+  {
+   "q": "Is Weld County well water safe to drink?",
+   "a": "The records show 4,834 PFAS sampling or contamination sites, 14 historic mine features, and 6 EPA Superfund or cleanup sites within about 10 miles in the county. That indicates active monitoring and some areas of concern. Safety depends on your specific location and aquifer. Before relying on a well for drinking, have a certified lab test it and review nearby monitoring data and land-use history."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that handles access driveways, site development, new-build septic systems and custom homes across Weld County and nearby areas.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1537,
+  "completion_tokens": 2259,
+  "total_tokens": 3796,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 108,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

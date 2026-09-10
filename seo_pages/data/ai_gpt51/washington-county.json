@@ -1,0 +1,76 @@
+{
+ "title": "Washington County CO well depth and cost",
+ "meta_description": "Washington County wells have a 100 ft median depth and 15 gpm median yield. See what that means for drilling cost and water supply on your land.",
+ "h1": "Water wells in Washington County, Colorado",
+ "eyebrow": "Local well buyer guide",
+ "intro_html": "<p>Washington County sits on the plains with a mix of shallow alluvial and bedrock wells, plus Ogallala aquifer production. The state has records for 5,672 permits here, so we have a pretty solid picture of how deep drillers usually go and how much water they’re finding.</p><p>If you’re looking at land outside Akron, Cope, or Otis, the county-wide numbers below are the best starting point for planning a new well or judging an existing one. Depth and yield still vary from spot to spot, but these ranges are what drillers are bidding against.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells typically run in Washington County",
+   "html": "<p>Across Washington County, the median well depth is about 100 feet. The middle half of wells land between 60 and 210 feet, and 90 percent are shallower than 300 feet. Only a small number push deeper, with the deepest record at 4,977 feet, which is an outlier for special uses.</p><p>About 48 percent of wells are under 100 feet and another 41 percent are between 100 and 300 feet. For a new domestic or stock well on the plains, most drillers will plan in that 60–210 foot band unless they know of local challenges. Depth depends on whether you’re in alluvium, shallower Ogallala sections, or unnamed fractured bedrock, and on your elevation and distance from drainages.</p>"
+  },
+  {
+   "heading": "Well yield here: how much water is normal",
+   "html": "<p>Yields in Washington County are generally strong compared with many other Colorado areas. The median reported pump yield is 15.0 gallons per minute, with the middle half of wells producing between 10.0 and 20.0 gpm.</p><p>About 64 percent of tested wells report 15+ gpm, 28 percent fall between 5 and 15 gpm, and only 7 percent are down in the 1–5 gpm range. None of the reported wells show under 1 gpm. For a standard exempt household well, 10–15 gpm is more than adequate if the system is designed correctly, so most Washington County wells that were tested are comfortably above the minimums people look for in a single home plus some stock.</p>"
+  },
+  {
+   "heading": "Water levels and long-term trend in Washington County",
+   "html": "<p>Static water levels (depth from ground surface to water) have a median of 90 feet here, with the middle half between about 31 and 176 feet. That tells you many wells don’t have to lift water extremely far, which helps pump sizing and power costs.</p><p>Looking at measurements by decade, the median depth to water was about 105 feet in the 1960s, dropped deeper to 171 feet in the 1970s, then improved to 85 feet in the 1980s. More recent readings show about 89 feet in the 2010s and 64 feet in the 2020s. That history doesn’t look like a steady decline; if anything, median levels in the 2010s–2020s are shallower than those 1960s–1970s numbers.</p>"
+  },
+  {
+   "heading": "Who’s drilling here and permit history",
+   "html": "<p>Washington County has a long well-drilling history, with permits on record going back to the 1950s and a newest permit year of 2025. The busiest decades were the 2000s with 649 permits and the 1990s with 633, followed by 603 in the 1970s and 486 in the 1980s. Even in the 2010s and 2020s, activity stayed solid with 488 and 248 permits so far.</p><p>On the contractor side, <strong>Wellstone Industries Dba Twiss &amp; Wilson Drilling Inc</strong> shows 336 wells in the records, <strong>Schaal Drilling Co.</strong> has 224, and <strong>Stewart Drilling Co.</strong> has 209. Most permits list use as stock (about 55 percent) or domestic/household (about 37 percent), with some irrigation and monitoring work mixed in. That gives you a good base of local experience to ask about conditions around your specific parcel.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost in Washington County",
+   "html": "<p>The subsurface here is mostly alluvium and plains sedimentary rock. Typical drilling rates run about $35–$55 per foot. At the county’s 100 foot median depth, that puts the drilled hole itself in the ballpark of $3,500–$5,500.</p><p>By the time you add casing, grout, pump, pressure tank, trenching, and electrical, a finished domestic or stock well at that median depth often comes out around $9,500–$17,500 based on recent models. If your area needs something closer to the upper part of the 60–210 foot middle range, you’d scale that per-foot cost up accordingly. A deep outlier like the 4,977 foot record is a very different kind of project than a typical household well.</p>"
+  },
+  {
+   "heading": "Risks to check: low yield, contamination, and septic layout",
+   "html": "<p>While reported yields look good overall, only 874 Washington County wells have test data in the records, so not every well here has been pump-tested or reported. It’s still possible to hit a lower-yield zone in the unnamed fractured-bedrock aquifer or in tighter parts of the Ogallala. Always review nearby well permits and reported yields before you buy.</p><p>Within about 10 miles, there are 14 PFAS sampling or contamination sites and 1 EPA Superfund/cleanup site mapped. That doesn’t mean your particular well is unsafe, but it does mean you should plan on a full water-quality test panel, especially for PFAS, before relying on the water. When laying out a new home, keep well and septic separation distances in mind and confirm your lot has a workable septic area away from the well site.</p>"
+  },
+  {
+   "heading": "Buying or building on land in Washington County",
+   "html": "<p>If you’re under contract on a Washington County parcel, start by pulling the state well permits around it. With 3,678 wells reporting a total depth and 874 reporting yield, you can usually see what depths and flows neighbors actually have. Pay attention to which aquifer is listed: over 4,200 wells are in unnamed or fractured-bedrock zones, and about 1,176 tap the Ogallala, with 80 in Quaternary Alluvium.</p><p>For lots without an existing well, use the 60–210 foot middle depth range and the $35–$55 per foot drilling rate to budget. On improved properties, verify the permit type, current pump setup, and static water level, and get recent water-quality testing if there’s any concern about PFAS or the nearby Superfund site.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Washington County, Colorado?",
+   "a": "Based on state records for Washington County, the median well depth is about 100 feet. The middle half of wells run between 60 and 210 feet, and 90 percent are shallower than 300 feet. About 48 percent of wells are under 100 feet and 41 percent are between 100 and 300 feet, so most domestic or stock wells fall in that range unless there’s a special water-supply requirement."
+  },
+  {
+   "q": "How much water do Washington County wells usually produce?",
+   "a": "Reported yields in Washington County are generally strong. The median pump yield is 15.0 gallons per minute, with the middle half of wells between 10.0 and 20.0 gpm. Around 64 percent of tested wells make 15+ gpm and 28 percent are in the 5–15 gpm range. Only 7 percent fall between 1 and 5 gpm, and none of the reported wells are under 1 gpm in the state records."
+  },
+  {
+   "q": "What does it cost to drill a water well in Washington County, CO?",
+   "a": "In Washington County’s alluvium and plains sedimentary rock, recent drilling runs about $35–$55 per foot. At the county’s 100 foot median depth, that puts the bare hole in the $3,500–$5,500 range. A complete domestic well system with casing, pump, pressure tank, trenching, and electrical typically totals around $9,500–$17,500 at that depth, with higher costs if your site ends up closer to the deeper end of the 60–210 foot range."
+  },
+  {
+   "q": "Is well water in Washington County safe to drink?",
+   "a": "The permit data doesn’t include full chemistry, but there are 14 PFAS sampling or contamination sites and 1 EPA Superfund/cleanup site mapped within about 10 miles. That makes testing important. Before drinking from any existing well, have a certified lab check for bacteria, nitrates, basic minerals, and PFAS. Construction here typically uses modern casing and grout, which helps protect against surface contamination when the well is properly sited and maintained."
+  },
+  {
+   "q": "Which aquifers do Washington County wells use?",
+   "a": "Most Washington County wells are completed in an unnamed or fractured-bedrock aquifer, with 4,249 wells recorded there. Another 1,176 wells are in the Ogallala aquifer, and 80 are in Quaternary Alluvium. There are no Denver Basin aquifer wells in the records for this county. Knowing which aquifer your well taps helps you interpret nearby well depths and yields and understand how your supply might behave over time."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that can handle access driveways, full site development, new-build septic systems, and custom homes in areas like Washington County. They understand rural well and septic constraints and can plan your build around them.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1462,
+  "completion_tokens": 2383,
+  "total_tokens": 3845,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 188,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

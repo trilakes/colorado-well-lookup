@@ -1,0 +1,77 @@
+{
+ "title": "Stonegate Well Depth and Drilling Cost",
+ "meta_description": "Stonegate wells have a 338 ft median depth, with typical finished-well costs of $22,900-$35,600.",
+ "h1": "Stonegate, Colorado Well Depth, Yield, and Cost",
+ "eyebrow": "Stonegate well records",
+ "intro_html": "<p>Buying land in Stonegate means looking beyond whether a permit exists. The useful questions are how deep nearby wells go, how much water they produce, where the water level sits, and what a new installation may cost. Records within five miles show a strong Denver Basin pattern, with wells in sedimentary and fractured-bedrock settings. Nearby Sierra Ridge, Grand View Estates, Meridian Village, Stepping Stone, Parker, and Meridian can help provide local comparison points, but the well on a particular lot still needs its own site review.</p>",
+ "sections": [
+  {
+   "heading": "Stonegate wells commonly reach the Denver Basin",
+   "html": "<p>The median reported well depth near Stonegate is 338 feet. The middle half runs from 210 to 490 feet, so a driller bidding a typical site should be prepared for a substantial spread rather than treating the median as a guaranteed depth. Forty-five percent of reported wells are between 300 and 600 feet, while 13% reach 600 feet or more. Sixteen percent are under 100 feet and 26% fall from 100 to 300 feet.</p><p>The deepest record is 2,681 feet. That is an outlier, not a normal target, but it shows why a fixed-price assumption can be risky. Permits name unnamed or fractured-bedrock aquifers, Lower Dawson, and Denver. Denver Basin aquifer wells account for 100% of the records.</p>"
+  },
+  {
+   "heading": "Yield is generally workable, but the well still matters",
+   "html": "<p>Among wells reporting pump yield, the median is 14.0 gallons per minute, with the middle half from 12.0 to 15.0 gallons per minute. Fifty-six percent report yields from 5 to 15 gallons per minute, and 44% report more than 15 gallons per minute. No recorded wells fall under 1 gallon per minute or between 1 and 5 gallons per minute in this dataset.</p><p>Those results are encouraging for a household buyer, but a nearby yield is not a guarantee for your parcel. Yield testing, pump sizing, storage, and the permitted use all matter. A household well is also subject to its permit terms; the general exempt-well pumping limit is 35 gallons per minute, not a promise that the aquifer will deliver that rate.</p>"
+  },
+  {
+   "heading": "Water levels vary widely across Stonegate records",
+   "html": "<p>The median static water level is 170 feet below ground surface. The middle half spans 95 to 368 feet, a wide range that affects drilling, pump setting, electrical requirements, and the cost of getting water to the pressure tank. A bid should identify what water level it assumes and how the contractor handles a deeper-than-expected pump setting.</p><p>The decade series does not show a simple, continuous drop in the water table. Median depth to water was 114 feet in the 1970s, 230 feet in the 1980s, 662 feet in the 2000s, 315 feet in the 2010s, and 160 feet in the 2020s. Because only 199 records report static water level, treat the series as useful context rather than a parcel-specific trend.</p>"
+  },
+  {
+   "heading": "Stonegate has a long permit and drilling history",
+   "html": "<p>Colorado DWR records contain 5,712 permitted wells in the Stonegate search area, with 2,924 recorded as constructed. The newest permit year is 2025. Permit activity was highest in the 1970s and 1980s, with 1,096 and 1,067 permits respectively, then declined to 833 in the 1990s, 599 in the 2000s, 439 in the 2010s, and 239 in the 2020s. Older records may be incomplete, so permit age alone does not establish current well condition.</p><p>Hier Drilling Co Inc, listed with Bruce A. Hier, appears on 850 records. Hier Drilling Co., listed with Peter J. Hier, appears on 602, and Authorized (Pe, Pg) appears on 401. These records show who has worked locally, not who is available or who will be the right fit for a new well.</p>"
+  },
+  {
+   "heading": "A Stonegate well budget depends on depth and completion",
+   "html": "<p>The local drilling model uses a typical rate of $50 to $70 per foot in Denver Basin sedimentary bedrock. At the 338-foot median depth, the drilled hole works out to about $16,900 to $23,600. That is only the drilling portion. A finished well including pump, tank, trenching, and electrical is modeled at $22,900 to $35,600.</p><p>Use the middle-half depth range of 210 to 490 feet when comparing bids. A contractor who gives one narrow total without stating depth, casing, grout, pump, trenching, electrical, testing, and difficult-ground allowances is not giving you a useful comparison. Confirm what happens if the hole is dry, produces less than expected, or requires additional completion work.</p>"
+  },
+  {
+   "heading": "Check water quality, septic space, and dry-hole risk",
+   "html": "<p>Mapped environmental information deserves attention before closing. Within about ten miles are 100 PFAS sampling or contamination sites, 8 historic mine features, and 7 EPA Superfund or cleanup sites. These mapped sites do not prove contamination at a particular parcel, but they are a reason to review site history, obtain a baseline water test, and understand groundwater flow before relying on an existing well.</p><p>Low yield and dry holes remain site risks even with strong area statistics. Verify the permit, construction report, casing and grout, pump test, static level, and recent laboratory results. Also confirm adequate separation and usable ground for septic, wells, driveways, and the planned building. An augmentation plan may be needed for new use in an over-appropriated basin.</p>"
+  },
+  {
+   "heading": "What to do before buying or building in Stonegate",
+   "html": "<p>Start with the exact parcel, not just the neighborhood name. Pull nearby DWR permits and construction reports, then compare depth, yield, aquifer name, water level, and permitted use. Domestic or household use makes up 62% of the records, while stock accounts for 10%, irrigation 5%, and monitoring 10%; an existing permit may not authorize the use you want.</p><p>For a new build, have a licensed driller review access, geology, target depth, casing, grout, pump, storage, and power before you finalize a budget. Ask for a written dry-hole and low-yield policy. Test an existing well independently, inspect the pressure system, and make the purchase contingent on acceptable quantity, quality, and legal use.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Stonegate, Colorado?",
+   "a": "The median reported well depth near Stonegate is 338 feet. The middle half runs from 210 to 490 feet, while 45% are between 300 and 600 feet. Thirteen percent reach 600 feet or more. These figures help set a drilling expectation, but the exact depth depends on the parcel’s Denver Basin geology and the driller’s site evaluation."
+  },
+  {
+   "q": "How much does it cost to drill a well in Stonegate?",
+   "a": "The local drilling model uses $50 to $70 per foot. At the 338-foot median depth, the drilled hole is estimated at $16,900 to $23,600. A finished well with pump, tank, trenching, and electrical is estimated at $22,900 to $35,600. Confirm the included work and assumptions before comparing bids."
+  },
+  {
+   "q": "How much water do Stonegate wells produce?",
+   "a": "Reported pump yields have a 14.0-gallon-per-minute median, with the middle half from 12.0 to 15.0 gallons per minute. Fifty-six percent produce 5 to 15 gallons per minute and 44% produce more than 15. No recorded wells are under 1 gallon per minute, but nearby results cannot guarantee a new well’s yield."
+  },
+  {
+   "q": "Is well water safe in Stonegate, Colorado?",
+   "a": "Safety cannot be determined from depth or yield alone. The area has 100 mapped PFAS sampling or contamination sites, 8 historic mine features, and 7 EPA Superfund or cleanup sites within about ten miles. Test an existing or new well through a qualified laboratory, review site history, and retest when conditions or ownership change."
+  },
+  {
+   "q": "Should I buy a property with a well in Stonegate?",
+   "a": "A well property can work, but review the DWR permit, construction report, permitted use, pump test, static water level, water quality, and septic layout first. The area’s median static water level is 170 feet below ground surface, with a middle half from 95 to 368 feet. Make the purchase contingent on acceptable legal, quantity, and quality findings."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Stonegate with access driveways, site development, new-build septic systems, and custom homes. Their local construction perspective can help coordinate the well, septic, driveway, and building plan before work begins.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1444,
+  "completion_tokens": 2116,
+  "total_tokens": 3560,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1441,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 103,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

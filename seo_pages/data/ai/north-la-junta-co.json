@@ -1,0 +1,77 @@
+{
+ "title": "North La Junta Well Depth and Drilling Cost",
+ "meta_description": "North La Junta wells have a 40-foot median depth, but deeper wells and site risks still affect drilling cost and water planning.",
+ "h1": "North La Junta Colorado Well Guide",
+ "eyebrow": "Local well facts for buyers",
+ "intro_html": "<p>North La Junta sits on plains terrain where many permitted wells are shallow, but the local record also includes wells reaching far deeper. Within 5 miles, Colorado DWR records show 928 permitted wells, with 654 reporting total depth. The median depth is 40 feet, and the middle half runs from 32 to 79 feet.</p><p>That shallow pattern does not guarantee a shallow or productive well on a particular lot. Water-bearing material, the intended use, well location, access, and construction requirements all affect the result. Before buying land near La Junta Gardens, La Junta, or Swink, review nearby permits and get a driller's opinion based on the actual parcel.</p>",
+ "sections": [
+  {
+   "heading": "North La Junta Well Depths Depend on the Local Formation",
+   "html": "<p>The typical North La Junta well is shallow: the median reported depth is 40 feet, and half of the wells with reported depths fall between 32 and 79 feet. Seventy-six percent are under 100 feet. That gives a driller a useful starting point for a bid, especially on accessible ground with similar nearby records.</p><p>The outliers matter. Fourteen percent of wells are between 300 and 600 feet, 9% are deeper than 600 feet, and the deepest record reaches 800 feet. Local permits name an unnamed or fractured-bedrock aquifer most often, along with the Dakota and Cheyenne aquifers. In plains sediment and alluvium, conditions can change across a short distance, so a shallow neighboring well is not a guarantee for your lot.</p>"
+  },
+  {
+   "heading": "What North La Junta Wells Produce",
+   "html": "<p>Only 72 wells in the records report a pump yield, so the yield statistics are useful but not a guarantee for every property. Among those reported wells, the median yield is 18.0 gallons per minute, with the middle half ranging from 12.0 to 425.0 gallons per minute. Sixty-nine percent report 15 or more gallons per minute, while 31% report between 5 and 15 gallons per minute.</p><p>No reported wells fall below 5 gallons per minute in this dataset. Even so, buyers should not treat the median as a promised production rate. Ask for the completion report, pump test information, and permitted use. A domestic well, stock well, irrigation well, or monitoring well may have very different construction and pumping objectives.</p>"
+  },
+  {
+   "heading": "Water Levels Around North La Junta",
+   "html": "<p>Only 21 wells report a static water level, so the water-level sample is limited. In that group, the median depth to water is 15 feet, and the middle half ranges from 4 to 26 feet. Those measurements suggest that water can be relatively shallow in parts of the area, but they do not establish the water level on every parcel.</p><p>The permit counts by decade do not provide a water-level trend. They show permitting activity, not a measured rise or decline in the water table. A buyer planning a home should have the driller check current conditions and should not size a pump solely from the static-water-level median. Seasonal conditions, pumping nearby, and the specific aquifer can all affect the measurement.</p>"
+  },
+  {
+   "heading": "North La Junta’s Well Permit History and Drillers",
+   "html": "<p>North La Junta has a long well record, with permits issued from the 1950s through the 2020s and the newest permit year listed as 2025. The records include 67 permits from the 1950s, 63 from the 1960s, 52 from the 1970s, 44 from the 1980s, 186 from the 1990s, 167 from the 2000s, 59 from the 2010s, and 34 from the 2020s.</p><p>The most active drillers named in the records are Authorized (Pe, Pg), Hoffman (Hoffman, Earl), and Crandall, H A. Those names can help you compare construction history near a parcel, but older records may not reflect present equipment, pricing, or availability. Confirm current licensing, insurance, scope, and references before hiring anyone.</p>"
+  },
+  {
+   "heading": "What a New Well Costs Near North La Junta",
+   "html": "<p>The local cost model uses a drilling rate of $35 to $55 per foot for alluvium and plains sedimentary rock. At the 40-foot median depth, the drilled hole works out to about $1,400 to $2,200. That is only the drilling portion, not a ready-to-use water system.</p><p>A finished well with pump, pressure tank, trenching, and electrical is estimated at $7,400 to $14,200 at the median depth. A deeper hole can move the total above that range, and difficult access, casing, grout, water testing, or unexpected formation changes can add work. Get a written bid that separates drilling, casing and grout, pump equipment, electrical, trenching, permits, and testing.</p>"
+  },
+  {
+   "heading": "Risks to Check Before Building in North La Junta",
+   "html": "<p>Low yield is not the main warning shown by the reported yield sample, but the sample covers only 72 wells. Dry holes and poor production remain parcel-specific risks, particularly where nearby records are sparse or depths vary sharply. Ask for neighboring completion reports rather than relying on a countywide average.</p><p>Water quality also deserves attention. The mapped area within about 10 miles includes 15 PFAS sampling or contamination sites, 7 historic mine features, and 7 EPA Superfund or cleanup sites. Those locations do not prove contamination at your property, but they support testing before purchase and after construction. Plan the well, septic system, driveway, and house together. Maintain separation between septic components and the well, confirm legal access, and check that the intended use matches the DWR permit.</p>"
+  },
+  {
+   "heading": "Buying or Building a Lot Near La Junta",
+   "html": "<p>Start with the parcel’s Colorado DWR permit history and compare wells in North La Junta, La Junta Gardens, La Junta, and nearby Swink. Look for reported depth, aquifer, construction details, static water level, and pump yield. A permit record is more useful when the neighboring lot has similar ground and the same intended use.</p><p>For an undeveloped lot, make the well and septic layout part of the feasibility review before closing. Confirm water rights and the allowed use; an exempt household-use well still has regulatory limits, including the 35-gpm pumping limit. In an over-appropriated basin, an augmentation plan may be required. Have a licensed driller price the likely depth, then budget separately for the complete water system and required site work.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in North La Junta?",
+   "a": "The median reported well depth near North La Junta is 40 feet, with the middle half between 32 and 79 feet. Seventy-six percent are under 100 feet. Depths vary substantially, though: 14% are between 300 and 600 feet, 9% exceed 600 feet, and the deepest recorded well is 800 feet."
+  },
+  {
+   "q": "How much does it cost to drill a well in North La Junta?",
+   "a": "The local drilling rate is estimated at $35 to $55 per foot. At the 40-foot median depth, the drilled hole is about $1,400 to $2,200. A finished system with pump, tank, trenching, and electrical is estimated at $7,400 to $14,200. Deeper drilling or difficult site conditions can increase the bid."
+  },
+  {
+   "q": "How much water do wells produce in North La Junta?",
+   "a": "Among the 72 wells reporting pump yield, the median is 18.0 gallons per minute. The middle half ranges from 12.0 to 425.0 gallons per minute, and 69% report at least 15 gallons per minute. These figures are not a guarantee for a new lot, so request nearby pump-test and completion records."
+  },
+  {
+   "q": "Is well water safe to drink in North La Junta?",
+   "a": "Safety cannot be determined from well depth or yield alone. The mapped area includes 15 PFAS sampling or contamination sites, 7 historic mine features, and 7 EPA Superfund or cleanup sites. Those sites do not establish contamination at a particular home, but buyers should test existing or new well water for site-appropriate contaminants before drinking it."
+  },
+  {
+   "q": "Should I test a well before buying land near North La Junta?",
+   "a": "Yes. Only 21 wells report static water level and 72 report pump yield, so the available records do not answer every parcel question. Review nearby DWR permits, confirm the intended use, and test water quality. Also have a driller evaluate likely depth, production, pump requirements, and the relationship between the well, septic system, and proposed building site."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving North La Junta and surrounding Otero County communities with access driveways, site development, new-build septic systems, and custom homes. Their site planning can help coordinate the well, septic, utilities, and building pad.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1374,
+  "completion_tokens": 2075,
+  "total_tokens": 3449,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1371,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 70,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

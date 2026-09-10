@@ -1,0 +1,76 @@
+{
+ "title": "Kiowa County CO well depth and drilling cost",
+ "meta_description": "In Kiowa County, Colorado, median well depth is about 64 ft and typical yields are 10–50 gpm. See what that means for drilling cost and water supply.",
+ "h1": "Water wells in Kiowa County, Colorado",
+ "eyebrow": "Local well and water guide",
+ "intro_html": "<p>Kiowa County is plains country, and the well records here reflect that. Most of the 1,411 permitted wells are fairly shallow compared to a lot of Colorado, and many make solid stock and domestic water. Still, you see a few very deep holes and a mix of aquifers, so it helps to understand the local patterns before you buy land or bid a new well.</p><p>These numbers come from Colorado Division of Water Resources permits for Kiowa County, not guesses. They give you a good feel for what depth, production and cost tend to look like around places like Sheridan Lake, Brandon and Eads.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells go in Kiowa County",
+   "html": "<p>Across Kiowa County, reported total depths are modest: the median well is about 64 ft, and the middle half fall between 46 and 92 ft. Around 77% of wells are under 100 ft, and another 19% run 100–300 ft, so most drilling stays relatively shallow. There are outliers, though, with a 90th percentile depth of 180 ft and a deepest well on record at 2,456 ft.</p><p>On a bid, a driller will look at nearby permits and usually plan for something in that 46–92 ft band, but with a contingency if you hit tighter formations or have to case deeper. The county mostly taps unnamed fractured-bedrock and plains aquifers, plus some Ogallala and Dakota, so depth can jump in spots even on flat ground.</p>"
+  },
+  {
+   "heading": "Water levels and what they’re doing over time",
+   "html": "<p>Static water levels—the depth down to water in the hole—look favorable here. The overall median is about 46 ft, with the middle half between 25 and 80 ft. That means in many Kiowa County wells, water is intercepted not too far below the surface, which helps with pumping costs and drawdown.</p><p>The long-term records suggest the water level has actually been shallower in recent decades. Median depth to water was about 101 ft in the 1970s, around 56 ft in the 2010s, and about 35 ft in the 2020s. That’s water standing closer to the surface than it used to, at least in the wells that have been measured.</p>"
+  },
+  {
+   "heading": "Well yield and how much water to expect",
+   "html": "<p>Of the wells that report a pump test in Kiowa County, the median yield is about 15 gpm, and the middle half fall between 10 and 50 gpm. That’s plenty for a typical exempt household well and usually adequate for stock and light irrigation when managed properly.</p><p>The yield distribution is encouraging: none of the reported wells fall under 1 gpm, about 13% produce 1–5 gpm, 31% are in the 5–15 gpm range, and roughly 57% make 15 gpm or more. You still need to design for the legal 35 gpm pumping limit on exempt wells, but in this county the geology is generally giving enough water for normal domestic and stock uses.</p>"
+  },
+  {
+   "heading": "Who’s been drilling here and permit patterns",
+   "html": "<p>Kiowa County’s records go back several decades and show steady drilling over time. Permits picked up from 23 in the 1950s to 71 in the 1960s, and then up again to 155 in the 1970s and 118 in the 1980s. Activity stayed strong with 239 permits in the 1990s, then eased to 136 in the 2000s, 92 in the 2010s, and 47 so far in the 2020s. The newest permit on file is from 2025.</p><p>The use mix is typical for plains ranch and farm country: about 52% of wells are for stock, 26% for domestic or household, 19% for irrigation, and 9% for monitoring. The most active drillers in the records are Hoffman (Hoffman, Earl), Kemp’s Well Service (Kemp, George), and Eastwood Drilling (Eastwood, Francis), so you’ll see their names on a lot of older logs.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost here",
+   "html": "<p>Ground conditions in Kiowa County are mostly alluvium and plains sedimentary rock, so drilling is usually straightforward by Colorado standards. The modeled drilling rate runs about $35–$55 per foot. At the county’s median depth of 64 ft, that puts the borehole itself roughly in the $2,200–$3,500 range.</p><p>Once you add casing, grout, pump, pressure tank, trenching to the house or stock system, and electrical work, a typical finished well at that depth pencils out around $8,200–$15,500. If you end up closer to the deeper side of the local range—into the 100–180 ft band—you should expect that total to move up in proportion to the added footage and materials.</p>"
+  },
+  {
+   "heading": "Risks to check: water quality, low yield and siting",
+   "html": "<p>While the yield statistics look good—no reported wells under 1 gpm and many over 15 gpm—you still need to confirm the specific well on your parcel. Ask for pump-test data on existing wells and pay attention if nearby logs show deeper or tighter zones, especially in fractured bedrock areas.</p><p>On water quality, there are 22 mapped PFAS sampling or contamination sites and one EPA Superfund or cleanup site within about 10 miles in this county. That doesn’t mean every well is impacted, but it does mean you should do a lab test, not just a quick taste test. When you plan a new build, keep proper separation from septic systems and outbuildings, and confirm your well location and use with the DWR permit conditions.</p>"
+  },
+  {
+   "heading": "Buying or building on a lot in Kiowa County",
+   "html": "<p>If you’re looking at land around Sheridan Lake, Brandon, Eads, or the outlying ranch country, start by pulling nearby well permits and looking at depths and yields. With a median total depth of 64 ft and many wells making 10–50 gpm, most parcels with legal access to groundwater can support a standard household-use exempt well or stock well, assuming you follow state rules.</p><p>For vacant land, budget based on the local depth range rather than the best-case number, and confirm that your planned use (domestic, stock, or irrigation) matches the aquifer and water rights situation. In over-appropriated basins you sometimes need augmentation, but Kiowa County’s records are more about plains aquifers than Denver Basin systems, so you’re usually working with shallower, local groundwater.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Kiowa County, Colorado?",
+   "a": "Based on Colorado DWR records for Kiowa County, the median well depth is about 64 ft, and the middle half of wells are between 46 and 92 ft deep. Around 77% of wells are under 100 ft, while about 19% run 100–300 ft. A small share go deeper, with the 90th percentile at 180 ft and an extreme outlier at 2,456 ft."
+  },
+  {
+   "q": "How much water do Kiowa County wells produce?",
+   "a": "Reported pump tests in Kiowa County show a median yield of about 15 gpm, with the middle half between 10 and 50 gpm. About 13% of wells make 1–5 gpm, 31% produce 5–15 gpm, and roughly 57% are at 15 gpm or higher. None of the reported wells are under 1 gpm, which is favorable for domestic and stock uses."
+  },
+  {
+   "q": "Is the water table dropping in Kiowa County?",
+   "a": "In the wells that have been measured, depth to water has actually become shallower over time. Median static water level was about 101 ft below ground in the 1970s, around 56 ft in the 2010s, and roughly 35 ft in the 2020s. That indicates water standing closer to the surface in recent measurements, though conditions can vary by location and aquifer."
+  },
+  {
+   "q": "What does it cost to drill a well in Kiowa County, CO?",
+   "a": "With local conditions of alluvium and plains sedimentary rock, typical drilling rates run about $35–$55 per foot. At the county’s median depth of 64 ft, that puts the borehole at roughly $2,200–$3,500. A complete well system with pump, tank, trenching and electrical typically totals about $8,200–$15,500 at that depth, with costs rising if you need to drill deeper."
+  },
+  {
+   "q": "Is Kiowa County well water safe to drink?",
+   "a": "Many households here use well water, but safety depends on site-specific quality. Records show 22 mapped PFAS sampling or contamination sites and one EPA Superfund or cleanup site within about 10 miles, so testing is important. Before drinking from any Kiowa County well, have a certified lab test for basic potability and, where appropriate, PFAS and other contaminants."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that understands Kiowa County’s plains soils and access challenges. We handle access driveways, full site development, new-build septic systems and custom homes from raw ground to move-in ready.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1423,
+  "completion_tokens": 2298,
+  "total_tokens": 3721,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 182,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "title": "Denver County Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Denver County well records show a 28-foot median depth, but 73% are monitoring wells. Review yields, water levels, drilling costs and buyer risks.",
+ "h1": "Denver County well records: what buyers should know",
+ "eyebrow": "Read the records carefully",
+ "intro_html": "<p>Denver County's well numbers need context before you use them to price a project. Colorado DWR records contain <strong>12,599 permitted wells</strong>, but monitoring accounts for <strong>73%</strong> of the use mix. Domestic and household wells account for just <strong>3%</strong>. This is not a countywide sample of backyard drinking-water wells.</p><p>The recorded median depth is <strong>28 feet</strong>. That helps describe the inventory, but it is not a reliable target depth for a new household supply. For property near Glendale, Holly Hills or Four Square Mile, start with nearby records that match the intended use and aquifer—not simply the closest dots on the map.</p>",
+ "sections": [
+  {
+   "heading": "Why Denver County's 28-foot median needs context",
+   "html": "<p>Of the county's records, <strong>6,488 report total depth</strong>. The middle half run <strong>20–43 feet</strong>, and <strong>94%</strong> are under <strong>100 feet</strong>. The <strong>90th-percentile depth is 64 feet</strong>, yet the deepest recorded well reaches <strong>2,092 feet</strong>. Those are very different drilling jobs within the same permit inventory.</p><p>Monitoring dominates these records, so the shallow middle range should not become the depth allowance in a household-well bid. Permits name Alluvial and Denver aquifers, while many use an unnamed or fractured-bedrock label. Ask the driller to identify the target formation and comparable supply wells. The relevant depth depends on that target, the site's geology and the permitted water source—not the county median alone.</p>"
+  },
+  {
+   "heading": "A 45 gpm median is not a household supply promise",
+   "html": "<p>Only <strong>116 wells report a pump yield</strong>, making this a limited subset of Denver County's permit inventory. Their median is <strong>45.0 gpm</strong>, with the middle half spanning <strong>8.0–200.0 gpm</strong>. That wide spread is another reason not to treat the county summary as a residential design standard.</p><p>At the low end, <strong>5%</strong> report under <strong>1 gpm</strong>, and <strong>16%</strong> fall in the <strong>1–5 gpm</strong> category. A buyer looking at a low-yield well needs a current pumping and recovery test, plus an assessment of storage and household demand. Reported pump output does not establish sustainable production or legal pumping authority. Check both the well's performance and its DWR permit conditions.</p>"
+  },
+  {
+   "heading": "Shallow recorded water levels, but no proven countywide decline",
+   "html": "<p>Static water level is the depth to standing water before pumping, not the bottom of the well. Denver County has <strong>228 records</strong> reporting this measurement. The median is <strong>15 feet below ground</strong>, and the middle half fall between <strong>11 and 21 feet</strong>.</p><p>The decade medians move from <strong>13 feet in the 2010s</strong> to <strong>16 feet in the 2020s</strong>. The later records therefore show deeper standing water, but this summary does not establish repeated measurements at the same wells. It is not enough to prove a countywide falling water table. For a purchase, compare dated measurements from the subject well and nearby wells in the same aquifer. Shallow standing water also does not mean a household supply well can stop at that depth.</p>"
+  },
+  {
+   "heading": "Denver's permit history is largely a monitoring story",
+   "html": "<p>The largest listed permit decade is the <strong>1990s, with 3,552 permits</strong>, followed by <strong>3,018 in the 2000s</strong>. Records list <strong>1,963 in the 2010s</strong> and <strong>923 in the 2020s</strong>, with the newest permit dated <strong>2025</strong>. The latest decade is incomplete, so those totals are not a clean measure of changing drilling demand.</p><p>The leading driller-field entry is <strong>Authorized (Pe, Pg), with 5,882 records</strong>; that label is not a conventional contractor name. Other leading entries are Ground Exploration Llc (Bender, Joseph T.), with <strong>361</strong>, and Layne, Christensen Co. (Tormoehlen, David A.), with <strong>245</strong>. These are historical record counts, not recommendations or confirmation of current services. Only <strong>4,643 wells</strong> are recorded as constructed; a permit alone does not establish an operating well.</p>"
+  },
+  {
+   "heading": "Budgeting a Denver County well beyond the drilled hole",
+   "html": "<p>The supplied cost model uses <strong>Denver Basin sedimentary bedrock</strong> and a drilling rate of <strong>$50–$70 per foot</strong>. At the recorded median depth, it puts the drilled hole at about <strong>$1,400–$2,000</strong> and a finished well with pump, tank, trenching and electrical at about <strong>$7,400–$14,000</strong>.</p><p><strong>Treat that as a model, not a household-well quote.</strong> Its depth assumption comes from an inventory dominated by monitoring wells. A permitted supply well targeting a different formation may require a different budget. Ask for an itemized proposal covering target depth, casing, grout, well development, testing and equipment. Confirm access requirements and which permit, site-restoration and water-treatment expenses are outside the quoted scope before comparing bids.</p>"
+  },
+  {
+   "heading": "Environmental checks matter around Denver well sites",
+   "html": "<p>The mapped environmental inventory within about <strong>10 miles</strong> includes <strong>947 PFAS sampling/contamination sites</strong>, <strong>211 EPA Superfund/cleanup sites</strong> and <strong>75 historic mine features</strong>. These are screening flags, not proof that a particular well is contaminated. A sampling location is not automatically a confirmed contamination source.</p><p>Review nearby site files and have the well water tested for drinking-water suitability, with additional testing guided by local conditions. Inspect the wellhead, casing and sanitary seal. Low yield and an unsuccessful hole remain project risks that a neighboring permit cannot rule out. Where onsite wastewater is proposed and allowed, coordinate septic placement, required well separation, drainage and building excavation before fixing the site plan. Shallow groundwater can complicate that layout.</p>"
+  },
+  {
+   "heading": "Before buying a Denver lot, verify the water path",
+   "html": "<p>Start with the parcel's actual jurisdiction and available utility service. A nearby Denver County permit does not establish a right to drill on your lot, and a monitoring permit does not authorize household use. Have DWR confirm the applicable permit path and allowed uses before treating a well as the planned water supply.</p><p>For an existing well, obtain its permit, construction report, pump information, water-quality results and current performance test. Near Englewood, Cherry Hills Village or Sheridan, verify county boundaries rather than assuming every nearby record belongs to Denver County. Neighboring Arapahoe County and Jefferson County can provide useful comparisons, but only where geology and well use match. Make satisfactory water documentation and site feasibility part of the purchase decision, not a task left until excavation.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Denver County?",
+   "a": "The recorded median is 28 feet, and the middle half of reported depths are 20–43 feet. However, monitoring represents 73% of the county's well-use mix. Those shallow records are not a dependable depth estimate for a new household well. Compare nearby supply wells with the same target aquifer before requesting a drilling bid."
+  },
+  {
+   "q": "How much does it cost to drill a well in Denver County?",
+   "a": "The supplied model uses $50–$70 per foot, putting the drilled hole at about $1,400–$2,000 at the county's median depth. A finished well with pump, tank, trenching and electrical is modeled at $7,400–$14,000. Because monitoring wells dominate the inventory, a household supply project needs a site-specific depth assumption and itemized quote."
+  },
+  {
+   "q": "How much water do Denver County wells produce?",
+   "a": "Among the 116 records reporting pump yield, the median is 45.0 gpm and the middle half span 8.0–200.0 gpm. These are not household-only results. The reported share under 1 gpm is 5%, so weak production is a real concern in some records. Test the specific well's pumping performance and recovery rather than relying on the median."
+  },
+  {
+   "q": "Is well water safe to drink in Denver County?",
+   "a": "County permit statistics cannot establish drinking-water safety. The nearby mapped inventory includes 947 PFAS sampling/contamination sites and 211 EPA Superfund/cleanup sites within about 10 miles, but proximity alone does not prove contamination. Obtain current water testing, review relevant environmental files and inspect the well's sanitary condition before using an existing well as a household supply."
+  },
+  {
+   "q": "Is the water table dropping in Denver County?",
+   "a": "The reported static-water-level median is 13 feet below ground for the 2010s and 16 feet for the 2020s. That shows deeper water in the later group of measurements, but it does not prove a countywide decline. The summary does not establish that the same wells were measured repeatedly. Check the subject well's history and comparable aquifer records."
+  }
+ ],
+ "tri_lakes_blurb": "For a Denver County lot, Tri-Lakes Contracting is a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes. Coordinate the water supply, applicable septic requirements and building layout before setting the excavation plan.",
+ "_model": "gpt-6-astra",
+ "_usage": {
+  "prompt_tokens": 1442,
+  "completion_tokens": 2376,
+  "total_tokens": 3818,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1439,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 93,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

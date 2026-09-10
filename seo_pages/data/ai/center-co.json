@@ -1,0 +1,73 @@
+{
+ "title": "Center Colorado Well Depth and Drilling Cost",
+ "meta_description": "Center wells have a 100-foot median depth, with finished well costs modeled at $11,000-$19,500.",
+ "h1": "What Center, Colorado Wells Are Really Like",
+ "eyebrow": "Center well records explained",
+ "intro_html": "<p>Buying land near Center means looking closely at the well record, not just assuming that shallow valley ground guarantees a good household supply. Records within 5 miles show a median well depth of 100 feet, but the range is wide. Reported yields are also unusually strong in this dataset, although only 388 wells report a pump yield.</p><p>This page uses Colorado DWR permit records for Saguache County, including wells near Monte Vista, Hooper and Del Norte. Use the local numbers to screen a property, then have a licensed driller review the parcel, permit history, aquifer information and neighboring wells before you commit to a purchase or building plan.</p>",
+ "sections": [
+  {
+   "heading": "Center well depths: shallow for the valley, but not guaranteed",
+   "html": "<p>The median permitted well near Center is 100 feet deep. The middle half runs from 82 to 116 feet, which gives a driller a reasonable starting range for a bid on ordinary alluvial or sedimentary ground. Still, 53% of recorded wells fall between 100 and 300 feet, and the deepest record reaches 1,280 feet.</p><p>That spread matters when comparing a drilling estimate. A bid based only on the median may not cover an unexpectedly deep hole, difficult material, casing, grout or changes needed to protect the well. The local aquifer names include the Unconfined San Luis Valley Aquifer and unnamed or fractured-bedrock aquifers. Fractured ground can be less predictable than the typical shallow valley setting.</p>"
+  },
+  {
+   "heading": "Reported well yields near Center are high, but verify the record",
+   "html": "<p>Among the 388 wells reporting a pump yield, the median is listed as 900 gallons per minute, with a middle-half range of 20 to 1,000 gallons per minute. The record also shows 93% at 15 gallons per minute or more, 6% between 5 and 15 gallons per minute, and 1% under 1 gallon per minute. Those figures are much more favorable than a buyer should assume for an individual domestic well.</p><p>Yield records may represent different well uses and testing methods. Irrigation accounts for 54% of the use mix, while domestic or household wells account for 29%. Ask for the actual well construction report, pump test and permit conditions. A household well must be evaluated for sustained supply, pressure, storage and legal use, not just the highest reported pumping number.</p>"
+  },
+  {
+   "heading": "Water levels show deeper measurements in newer decades",
+   "html": "<p>The median static water level is 34 feet below ground surface, with the middle half from 15 to 41 feet. By measurement decade, the median was 12 feet below surface in the 1970s, 36 feet in the 2010s and 39 feet in the 2020s.</p><p>That series points to deeper measured water levels in the newer records, although it is not a controlled trend study. Different locations, seasons, well uses and measurement methods can change the comparison. A buyer should ask for the current static water level on the specific well and compare it with nearby records. Water level affects pump selection, operating cost and the amount of usable drawdown available during pumping.</p>"
+  },
+  {
+   "heading": "Center has a long permit history and several repeat drillers",
+   "html": "<p>Colorado DWR records show 2,253 permitted wells within the mapped area, with 1,749 recorded as constructed. Permits span from the 1950s through the newest permit year of 2025. The largest permit periods were the 1970s, with 410 permits, and the 1950s, with 231.</p><p>The most active drillers in these records are Mcaninch, Homer A, with 184 wells; Cooper Drilling Inc., James G, with 82; and Beiriger &amp; Sons Irrigation, Robert, with 72. These names are useful for locating local construction history, but an old permit does not prove present-day performance. Confirm casing, grout, pump condition, water quality and the legal status of any existing well before relying on it.</p>"
+  },
+  {
+   "heading": "A typical Center well budget starts near the median depth",
+   "html": "<p>The local cost model uses mixed sedimentary and alluvial ground at $50 to $75 per foot. At the 100-foot median depth, the drilled hole is modeled at about $5,000 to $7,500. A finished well, including pump, tank, trenching and electrical, is modeled at about $11,000 to $19,500.</p><p>That is a planning range, not a fixed quote. A deeper hole, difficult drilling, additional casing or changes to the pump system can move the total. Ask the driller what is included, especially development, testing, permits, electrical service, pressure equipment and trenching. If a property has no existing well, price the complete water system rather than comparing per-foot drilling rates alone.</p>"
+  },
+  {
+   "heading": "Check water quality, low-yield risk and the building site",
+   "html": "<p>Mapped environmental information within about 10 miles includes 5 PFAS sampling or contamination sites. That does not establish contamination at a particular parcel, but it is a reason to test the well water before closing and to ask what the sampling sites represent. Colorado DWR records show 0 historic mine features and 0 EPA Superfund or cleanup sites in the mapped information.</p><p>Low-yield wells are uncommon in the reported yield subset, but dry holes and poor household performance remain possible at an untested location. Keep the well, septic system and proposed home layout compatible. Confirm setbacks, access for a drill rig, electrical routing, septic soils and the permit's allowed use. Domestic, stock and irrigation permits do not automatically provide the same rights or capacity.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Center, Colorado?",
+   "a": "The median permitted well within 5 miles of Center is 100 feet deep. The middle half is 82 to 116 feet, but 53% of wells are between 100 and 300 feet. The deepest record is 1,280 feet, so a nearby shallow well does not guarantee the same depth on a new lot."
+  },
+  {
+   "q": "How much does it cost to drill a well in Center, Colorado?",
+   "a": "The local model uses $50 to $75 per foot. At the 100-foot median depth, the drilled hole is estimated at $5,000 to $7,500. A finished system with pump, tank, trenching and electrical is modeled at $11,000 to $19,500. Soil, depth and equipment requirements can change the final quote."
+  },
+  {
+   "q": "How much water do Center wells produce?",
+   "a": "Of the 388 wells reporting a pump yield, the median is listed as 900 gallons per minute, and 93% report 15 gallons per minute or more. Because 54% of the area’s wells are irrigation wells, these figures should not be treated as a household guarantee. Review the individual well test and permit before buying."
+  },
+  {
+   "q": "Is well water safe to drink in Center, Colorado?",
+   "a": "The well records do not prove that water is safe for drinking. There are 5 mapped PFAS sampling or contamination sites within about 10 miles, so a buyer should test the specific well before closing. Request a current laboratory test and discuss the results with a qualified water professional, especially if the well serves a home."
+  },
+  {
+   "q": "Are water levels dropping near Center, Colorado?",
+   "a": "The recorded median static water level was 12 feet below surface in the 1970s, 36 feet in the 2010s and 39 feet in the 2020s. That shows deeper measurements in newer decades, but locations, seasons and measurement methods differ. Use the specific property's current water level and nearby well records before drawing a firm conclusion."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Center and the surrounding San Luis Valley. The company handles access driveways, site development, new-build septic systems and custom homes.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1446,
+  "completion_tokens": 1846,
+  "total_tokens": 3292,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1443,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 76,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "title": "Washington County Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Washington County wells have a 100 ft median depth and 15 gpm median yield. See drilling costs, water levels and checks before buying rural property.",
+ "h1": "Wells and Well Costs in Washington County, Colorado",
+ "eyebrow": "Plains Wells and Land",
+ "intro_html": "<p>A well budget in Washington County starts with the records closest to the property, not just a county average. The recorded median depth is <strong>100 feet</strong>, but the middle half runs from <strong>60 to 210 feet</strong>—enough variation to change a drilling bid substantially.</p><p>Colorado DWR records contain 5,672 permitted wells countywide, with 3,285 recorded as constructed. Those records are useful starting points for land around Akron, Otis and Cope, but a permit alone does not establish that a working well exists or that its allowed uses fit your plans.</p>",
+ "sections": [
+  {
+   "heading": "A 100-Foot Median, but Different Ground Across the County",
+   "html": "<p>Among the 3,678 wells reporting depth, the median is <strong>100 feet</strong> and the middle half falls between <strong>60 and 210 feet</strong>. The 90th-percentile depth is 300 feet. For a buyer, that means a bid built around the median needs room for additional footage; it is not a promised stopping depth.</p><p>Washington County drilling passes through alluvium and plains sedimentary rock. Permits name the Ogallala for 1,176 wells and Quaternary Alluvium for 80. Another 4,249 carry an unnamed / fractured-bedrock aquifer label, which is too broad to identify the ground beneath a particular lot. Compare nearby completion logs around Akron, Otis or Cope before choosing a target depth.</p>"
+  },
+  {
+   "heading": "Reported Yields Favor Usable Supply, Not a Guarantee",
+   "html": "<p>The <strong>874 reported pump yields</strong> have a median of <strong>15 gpm</strong>, with the middle half between 10 and 20 gpm. That is encouraging for household planning, but a recorded pump yield is not necessarily a sustained production test under today's conditions.</p><p>The reported share below 1 gpm is 0%, while 7% falls in the 1–5 gpm band. Do not read that as proof that low-yield wells or dry holes cannot occur: most permit records do not report a yield. On an existing property, have the well's sustained output and recovery evaluated. On vacant land, compare neighboring yields alongside depth, aquifer and permitted use rather than shopping by yield alone.</p>"
+  },
+  {
+   "heading": "Water-Level Records Do Not Show a Steady Countywide Decline",
+   "html": "<p>Static water level is the depth to standing water, not the finished depth of the well. Washington County's 238 reported measurements have a <strong>90-foot median</strong>, with the middle half from 31 to 176 feet below ground. These are a different reporting subset from the depth records, so subtracting the county medians would not tell you how much water a particular well holds.</p><p>Decade medians were 105 feet in the 1960s, 171 in the 1970s, 85 in the 1980s, 89 in the 2010s and 64 in the 2020s. This uneven series does <strong>not</strong> establish a steadily dropping countywide water table—or prove recovery. Trend assessment needs repeated measurements from the same wells.</p>"
+  },
+  {
+   "heading": "Washington County's Permit History and Recorded Drillers",
+   "html": "<p>Permits continued through <strong>2025</strong>. The records show 633 issued in the 1990s, 649 in the 2000s, 488 in the 2010s and 248 in the 2020s. The latest decade is incomplete, so its smaller count is not a fair measure of a full-decade slowdown.</p><p>The most active drillers in the records are <strong>Wellstone Industries Dba Twiss &amp; Wilson Drilling Inc</strong> with 336, <strong>Schaal Drilling Co.</strong> with 224 and <strong>Stewart Drilling Co.</strong> with 209. These are historical record counts, not confirmation of current availability. When requesting a bid, ask about experience with the aquifer and completion conditions near your parcel, and confirm current licensing and scheduling directly.</p>"
+  },
+  {
+   "heading": "Budgeting a New Well Near Akron, Otis or Cope",
+   "html": "<p>The local cost model uses <strong>$35–$55 per foot</strong> for alluvium and plains sedimentary rock. At the 100-foot median depth, the drilled hole is about <strong>$3,500–$5,500</strong>. A finished well with pump, tank, trenching and electrical is modeled at <strong>$9,500–$17,500</strong>.</p><p>Treat those as planning figures, not a parcel-specific quote. The 60–210-foot middle depth range leaves meaningful uncertainty in footage, and completion requirements also affect the bill. Ask the driller to spell out casing, grout, development, testing and added-footage charges. Coordinate the well location with the house and utility route before pricing trenching; a hole-only price is not the cost of water delivered to the home.</p>"
+  },
+  {
+   "heading": "Water Quality, Dry-Hole Risk and Septic Layout",
+   "html": "<p>The environmental mapping lists <strong>14 PFAS sampling/contamination sites</strong> and <strong>1 EPA Superfund/cleanup site</strong> within about 10 miles. These are screening flags, not evidence that a particular Washington County well is contaminated. Check each site's location and status, then choose laboratory testing appropriate to the property and nearby concerns.</p><p>Mechanical performance and drinking-water quality need separate checks. Inspect casing and surface sealing, review available water tests, and arrange current testing before relying on an existing supply. The reported 0% share below 1 gpm does not establish a dry-hole rate. For new construction, confirm required separation between the well and septic components, and preserve access for drilling and future service.</p>"
+  },
+  {
+   "heading": "Before Closing on a Washington County Lot",
+   "html": "<p>Start with the actual DWR permit, completion report and location. County records identify domestic/household use on <strong>37%</strong> of permits, stock on <strong>55%</strong> and irrigation on <strong>20%</strong>; those categories can overlap. A nearby irrigation or stock well does not establish that your parcel qualifies for the same use or supply.</p><p>Confirm that the proposed household, livestock and outdoor uses are authorized. An exempt household-use permit does not automatically authorize lawn irrigation, and some projects in over-appropriated basins may need an augmentation plan. Before buying, compare nearby completed wells, obtain a written drilling proposal, and fit the well, septic system, driveway and building footprint together on a workable site plan.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Washington County, Colorado?",
+   "a": "The median recorded depth is 100 feet, and the middle half of wells is 60–210 feet deep. The 90th-percentile depth is 300 feet. These figures come from 3,678 depth reports across Washington County. For a specific property near Akron, Otis or Cope, nearby completion logs are more useful than the county median alone."
+  },
+  {
+   "q": "How much does it cost to drill a well in Washington County?",
+   "a": "The planning rate is $35–$55 per foot. At the county's 100-foot median depth, the drilled hole is about $3,500–$5,500, while a finished well with pump, tank, trenching and electrical is about $9,500–$17,500. Ask for an itemized bid that addresses actual depth, casing, grout, testing and the utility route to the house."
+  },
+  {
+   "q": "How much water do Washington County wells produce?",
+   "a": "Reported pump yields have a 15 gpm median, with the middle half between 10 and 20 gpm. Those figures cover 874 yield reports, not every permitted well. Although the reported share below 1 gpm is 0%, that does not guarantee production on a new lot. Test sustained output and recovery before relying on an existing well."
+  },
+  {
+   "q": "Is well water safe to drink in Washington County, Colorado?",
+   "a": "Safety cannot be determined from a permit or countywide yield records. The environmental mapping lists 14 PFAS sampling/contamination sites and 1 EPA Superfund/cleanup site within about 10 miles, but proximity does not prove contamination. Review nearby site details, inspect the well's condition and obtain current laboratory testing tailored to the property before drinking the water."
+  },
+  {
+   "q": "Is the water table dropping in Washington County?",
+   "a": "The supplied records do not demonstrate a steady countywide decline. Median depths to water were 105 feet in the 1960s, 171 in the 1970s, 85 in the 1980s, 89 in the 2010s and 64 in the 2020s. These are grouped measurements, not a continuous history of the same wells. Check repeated local measurements when evaluating a property."
+  }
+ ],
+ "tri_lakes_blurb": "For a Washington County build near Akron, Otis or Cope, Tri-Lakes Contracting is a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes. Plan those improvements around the well location, utility route and service access.",
+ "_model": "gpt-6-astra",
+ "_usage": {
+  "prompt_tokens": 1462,
+  "completion_tokens": 2277,
+  "total_tokens": 3739,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1459,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 102,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

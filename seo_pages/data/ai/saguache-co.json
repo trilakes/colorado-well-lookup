@@ -1,0 +1,73 @@
+{
+ "title": "Saguache Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Saguache wells have a 140 ft median depth, 30 gpm median reported yield, and typical finished costs of $13,000-$22,500.",
+ "h1": "What Saguache Well Records Mean for a Rural Property",
+ "eyebrow": "Saguache well records explained",
+ "intro_html": "<p>Buying land near Saguache means looking closely at the well, not just the house or views. Colorado DWR permit records within 5 miles show 405 wells, with 281 recorded as constructed. Of those, 269 report total depth, 62 report pump yield, and 35 report static water level.</p><p>The records include domestic, stock, irrigation and monitoring wells, so they are not a guarantee for a particular homesite. They are still useful for setting expectations. Around Saguache, the typical permitted well is relatively shallow, reported yields are often strong, and water levels are commonly close to the surface. Site geology, well location and the intended use still control the final result.</p>",
+ "sections": [
+  {
+   "heading": "Saguache well depths and the ground below",
+   "html": "<p>The median reported well depth near Saguache is 140 feet. The middle half runs from 80 to 200 feet, while 61% of wells fall between 100 and 300 feet. Another 33% are under 100 feet. That gives a driller a reasonable starting range for a bid, but not a firm promise about a new lot.</p><p>Depth varies because the records include unnamed or fractured-bedrock aquifer wells as well as wells in the Unconfined San Luis Valley and Confined San Luis Valley aquifers. The deepest recorded well is 828 feet, although only 5% are between 300 and 600 feet and 1% exceed 600 feet. A fractured-bedrock setting can change abruptly over a short distance.</p>"
+  },
+  {
+   "heading": "How much water Saguache wells produce",
+   "html": "<p>Reported pump yields are strong overall: the median is 30.0 gallons per minute, and the middle half spans 14.2 to 950.0 gallons per minute. Seventy-four percent of wells with a reported yield produce 15 or more gallons per minute. Three percent report between 1 and 5 gallons per minute, while none of the reported wells are under 1 gallon per minute.</p><p>Use those figures carefully. Only 62 wells report a pump yield, and the records combine domestic, stock and irrigation uses. A household buyer should ask for the well permit, completion report and any pumping or recovery information. A high reported yield from an irrigation well does not automatically describe the dependable supply available to a new household well.</p>"
+  },
+  {
+   "heading": "Water levels near Saguache and the measured trend",
+   "html": "<p>Among the 35 wells reporting static water level, the median depth to water is 26 feet. The middle half is 12 to 32 feet below the surface. That can reduce the lift required for a pump, but static water level is not the same as the water available while pumping.</p><p>The decade figures do not show a simple dropping pattern in this record set. The median measured level was 32 feet below ground in the 2010s and 18 feet in the 2020s, meaning the more recent reported water levels were closer to the surface. The sample is limited, and measurements may come from different wells and conditions. Have a driller check the actual lot rather than treating the series as a guarantee.</p>"
+  },
+  {
+   "heading": "Saguache drilling history and local permit records",
+   "html": "<p>Permits have been issued around Saguache from the 1950s through the 2020s, with 40 in the 1950s, 10 in the 1960s, 51 in the 1970s, 35 in the 1980s, 39 in the 1990s, 43 in the 2000s, 37 in the 2010s and 36 in the 2020s. The newest permit year in the records is 2025.</p><p>The most active names listed are Garner, M A with 18 records, M &amp; G Drilling &amp; Supply (Merrifield, C E) with 17, and Valley Pump Company (Self, Clinton L.) with 16. Those names show local record history, not an endorsement or proof of current availability. Check permits near the parcel, including areas toward Moffat, Center and Crestone, before choosing a contractor.</p>"
+  },
+  {
+   "heading": "What a new Saguache well may cost",
+   "html": "<p>The cost model for Saguache assumes mixed sedimentary and alluvial ground. A typical drilling rate is $50 to $75 per foot. At the 140-foot median depth, the drilled hole works out to about $7,000 to $10,500.</p><p>A finished system is more than the borehole. Including the pump, pressure tank, trenching and electrical, the estimated total is $13,000 to $22,500 at that median depth. A deeper hole, difficult access, casing or grout requirements, and unexpected ground conditions can move the price outside that range. Ask for a written bid that separates drilling from completion and identifies what happens if the hole does not produce an adequate supply.</p>"
+  },
+  {
+   "heading": "Checks for contamination, septic and a dry hole",
+   "html": "<p>There are three PFAS sampling or contamination sites, 36 historic mine features and three EPA Superfund or cleanup sites mapped within about 10 miles. These locations do not establish contamination at a particular property, but they are a reason to review the parcel, nearby land uses and available water-quality information. Test a private well rather than relying only on regional records.</p><p>Low yield is not the only concern. Confirm the well can support the planned home, livestock or irrigation use, and review Colorado DWR permit requirements. An exempt household-use well has a 35-gpm pumping limit. In an over-appropriated basin, an augmentation plan may be needed. Septic setbacks, building access, trench routes and the possibility of a dry hole should be evaluated before construction begins.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells near Saguache, Colorado?",
+   "a": "The median reported depth is 140 feet. The middle half of recorded depths is 80 to 200 feet, and 61% fall between 100 and 300 feet. About 33% are under 100 feet. The deepest record is 828 feet, so local examples provide a planning range, not a guarantee for a specific parcel."
+  },
+  {
+   "q": "How much does it cost to drill a well in Saguache?",
+   "a": "The local cost model uses $50 to $75 per foot. At the 140-foot median depth, drilling the hole is estimated at $7,000 to $10,500. A completed system with pump, tank, trenching and electrical is estimated at $13,000 to $22,500. Greater depth, access problems and ground conditions can change the bid."
+  },
+  {
+   "q": "How much water do Saguache wells produce?",
+   "a": "Among 62 wells with a reported pump yield, the median is 30.0 gallons per minute. The middle half ranges from 14.2 to 950.0 gallons per minute, and 74% report 15 or more gallons per minute. These records mix domestic, stock and irrigation wells, so a household buyer should verify the specific well."
+  },
+  {
+   "q": "Is well water safe to drink in Saguache?",
+   "a": "The records identify three PFAS sampling or contamination sites, 36 historic mine features and three EPA Superfund or cleanup sites within about 10 miles. That does not prove a parcel's water is unsafe. Test the well for relevant contaminants, review nearby land uses and retest after construction or changes to the system."
+  },
+  {
+   "q": "Are water levels getting lower near Saguache?",
+   "a": "The reported decade medians do not show a simple decline. Median depth to water was 32 feet below ground in the 2010s and 18 feet in the 2020s. Only 35 wells report static water level, and the measurements may represent different wells and conditions. A site-specific water-level check is more useful for a purchase decision."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Saguache-area projects, including access driveways, site development, new-build septic systems and custom homes. Bring the well, septic and site-work questions together before construction starts.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1423,
+  "completion_tokens": 1896,
+  "total_tokens": 3319,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1420,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 70,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

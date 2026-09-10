@@ -1,0 +1,76 @@
+{
+ "title": "Berkley CO well depth and drilling cost",
+ "meta_description": "In Berkley, Colorado, the median well depth is 28 ft with a 13 gpm median yield. See what that means for drilling cost and water supply on your property.",
+ "h1": "Water wells in Berkley, Colorado",
+ "eyebrow": "Local well details",
+ "intro_html": "<p>In the Berkley area on the Adams County plains, most wells are shallow but still tapping the Denver Basin system. Records within about 5 miles show a median total depth of 28 feet, with most wells staying under 100 feet. Yields are generally strong, but there is a wide spread. If you are looking at land around Twin Lakes, Lakeside, or Sherrelwood, it helps to understand how variable depths, pumping rates, and water quality risks are here before you commit to a lot or a drilling contract.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells run around Berkley",
+   "html": "<p>Within about 5 miles of Berkley, the median well depth is 28 feet, and the middle half of wells fall between 20 and 40 feet. About 90% of wells are under 100 feet, and only 4% go 100–300 feet, with a small tail reaching much deeper, including a local maximum of 1,751 feet. All permitted wells in the dataset are classified as Denver Basin aquifer wells, but many closer to Berkley are in alluvial and shallow bedrock conditions, which explains the short hole depth for most domestic and monitoring wells.</p><p>From a driller’s perspective, those numbers mean most bids will be based on a relatively shallow target, but you still see a few wells that had to chase deeper water. When you price a project, you want a per-foot contract that clearly states what happens if your well ends up on the deeper side of that range.</p>"
+  },
+  {
+   "heading": "How much water Berkley wells produce",
+   "html": "<p>Out of the wells that report a pump test, the median yield is 13.0 gallons per minute, with the middle half between 8.0 and 40.0 gpm. About 40% of tested wells fall in the 5–15 gpm range, and another 47% are 15+ gpm, which is plenty for a typical exempt household well and some outside use where allowed. The low end matters too: 6% of wells report under 1 gpm, and 8% are 1–5 gpm.</p><p>Those under‑5 gpm wells will support a home if managed carefully, but they usually need storage and conservative water use. When you review a property near North Washington or Shaw Heights, look at neighboring well yields on the permits, not just depth, so you know if you’re in one of the stronger or weaker pockets.</p>"
+  },
+  {
+   "heading": "Water levels and long-term trend near Berkley",
+   "html": "<p>Static water levels are generally shallow here. The median depth to water is 10 feet, with the middle half between 7 and 16 feet below the surface. Looking at measurements by decade, the median depth to water was about 32 feet in the 1960s, 12 feet in the 2010s, and 8 feet in the 2020s.</p><p>That pattern shows water standing closer to the surface today than in the 1960s in this dataset. For a buyer, a median water level around 8–12 feet means less lift for your pump and lower power use. It also means you need to plan your septic and foundation elevations carefully so you stay well above groundwater and avoid saturated leach fields or basement moisture issues.</p>"
+  },
+  {
+   "heading": "Who is drilling here and permit patterns",
+   "html": "<p>There are 11,991 wells in the state records within about 5 miles of Berkley, with 5,934 recorded as constructed and 6,721 reporting a total depth. Monitoring wells are a big share of the activity here, with about 64% of permits listed for monitoring use, compared with 16% for domestic or household and 3% for irrigation.</p><p>Permits picked up in the 1980s with 508 issued, then jumped in the 1990s to 2,234 and stayed high through the 2000s with 1,927 and 2010s with 2,934 permits. There are already 1,081 permits in the 2020s, with the newest in 2025. The most active drillers in the records include Authorized (Pe, Pg), Layne, Christensen Co. (Tormoehlen, David A.), and Ground Exploration Llc (Bender, Joseph T.), so you will see their names on many nearby well logs.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost in Berkley",
+   "html": "<p>The ground here is Denver Basin sedimentary bedrock with local alluvial cover, and typical drilling rates run about $50–$70 per foot. At the local median depth of 28 feet, the drilled hole itself pencils out around $1,400–$2,000. Once you add casing, grout, pump, pressure tank, trenching, and electrical work, a finished domestic well commonly lands in the $7,400–$14,000 range at that depth.</p><p>If your driller recommends going deeper than the local median—say to match a neighbor’s 80–90 foot well—costs scale pretty directly with footage at the same $50–$70 per foot. Make sure your contract spells out per‑foot charges, materials, and what happens if the first hole comes up dry or low‑yield.</p>"
+  },
+  {
+   "heading": "Risks to watch: contamination, low yield, and site layout",
+   "html": "<p>This area has a lot of environmental work going on. Within about 10 miles there are 703 PFAS sampling or contamination sites and 191 EPA Superfund or cleanup sites, plus 6 historic mine features. That lines up with the high share of monitoring wells in the records. For a private well owner, it means water quality testing is not optional—include PFAS and a good VOC/metal panel along with the basic potability tests.</p><p>On the quantity side, a minority of wells do come in under 1 gpm or in the 1–5 gpm band. Those can work with storage but are more stressful for a new house. With shallow static levels around 10 feet, also pay attention to septic separation distances and avoid placing leach fields downgradient and too close to your well.</p>"
+  },
+  {
+   "heading": "Buying or building on a Berkley-area lot",
+   "html": "<p>For a property around Berkley, Twin Lakes, or Mountain View, you are in an area with mostly shallow wells, generally strong yields, and a lot of nearby monitoring and cleanup activity. Start by pulling DWR well permits within at least a half‑mile to check typical depths, yields, and static levels. That will tell you if your lot fits the 20–40 foot pattern or sits near one of the deeper outliers.</p><p>If the lot does not yet have a well, budget using the local median depth and current $50–$70 per‑foot rates, but be prepared for more footage. If there is an existing well, get the completion report and a current pumping test plus lab water quality. Coordinate the well, septic, and house locations so they work with the shallow groundwater and meet county and state spacing rules.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Berkley, Colorado?",
+   "a": "In the Berkley area of Adams County, the median well depth on record is 28 feet, and the middle half of wells fall between 20 and 40 feet. About 90% of wells are under 100 feet. There are a few much deeper wells, including one at 1,751 feet, but those are outliers. When planning a new well, most owners use the 20–100 foot range as a realistic starting point and allow for the possibility of going deeper."
+  },
+  {
+   "q": "How much water do Berkley, CO wells produce?",
+   "a": "Among wells that report a pump test near Berkley, the median yield is 13.0 gallons per minute, with the middle half between 8.0 and 40.0 gpm. Around 40% of wells test between 5 and 15 gpm, and 47% are 15+ gpm, which is more than enough for a typical household well. A smaller share, about 6%, are under 1 gpm and another 8% are 1–5 gpm, which may require storage and careful use."
+  },
+  {
+   "q": "Is well water safe to drink in Berkley, Colorado?",
+   "a": "Safety depends on the specific well. The Berkley area has 703 PFAS sampling or contamination sites and 191 EPA Superfund or cleanup sites within about 10 miles, plus many monitoring wells. That history makes water testing critical. Before relying on a well for drinking, have a state‑certified lab test for bacteria, nitrates, basic minerals, and, given local conditions, PFAS and other contaminants. Retest regularly, especially near industrial or cleanup areas."
+  },
+  {
+   "q": "What does it cost to drill a water well in Berkley, CO?",
+   "a": "In the Berkley area, drilling in Denver Basin sedimentary bedrock typically runs about $50–$70 per foot. At the local median depth of 28 feet, the borehole alone would be roughly $1,400–$2,000. Once you factor in casing, grout, pump, pressure tank, trenching, and electrical, a complete domestic well in that depth range usually comes out around $7,400–$14,000. Deeper wells will cost proportionally more based on the same per‑foot rate."
+  },
+  {
+   "q": "Do I need to worry about low-yield or dry wells in Berkley?",
+   "a": "Most tested wells near Berkley have solid production, with a 13.0 gpm median yield and nearly half of wells at 15+ gpm. However, about 6% of wells report under 1 gpm and 8% fall in the 1–5 gpm range. Those can still work with storage and careful water management but are less forgiving. Before buying, review neighboring permits for yields and have any existing well pump‑tested to confirm output over several hours rather than relying on old data."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that can handle access driveways, full site development, and new-build septic systems around Berkley. We also build custom homes and coordinate the groundwork so your well, utilities, and structures fit the site from day one.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1442,
+  "completion_tokens": 2393,
+  "total_tokens": 3835,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 114,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

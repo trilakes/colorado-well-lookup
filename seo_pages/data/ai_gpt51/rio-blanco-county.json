@@ -1,0 +1,76 @@
+{
+ "title": "Rio Blanco County CO well depth and cost",
+ "meta_description": "Rio Blanco County wells have a median depth of 80 ft and median yield of 12.5 gpm. See what that means for drilling cost and reliability.",
+ "h1": "Water wells in Rio Blanco County, Colorado",
+ "eyebrow": "Local well reference",
+ "intro_html": "<p>Rio Blanco County has a long mix of shallow alluvial wells and much deeper fractured-bedrock wells. Depths and yields jump around by location, so using county data helps set realistic expectations before you buy land or price a new well.</p><p>These numbers come from Colorado Division of Water Resources permits across the county, outside of the separate pages for Meeker and Rangely. They give a decent picture of how deep most wells go, how much water they make, and what people are spending to get reliable supply.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells run in Rio Blanco County",
+   "html": "<p>Across all of Rio Blanco County, the median reported well depth is 80 feet, with the middle half of wells between 34 and 230 feet. Just over half of wells are under 100 feet, and another 27% land between 100 and 300 feet. That’s a lot of relatively shallow completions for rural Colorado.</p><p>The deeper outliers are worth noting: 8% of wells run 300–600 feet, 11% go past 600 feet, and the deepest on record reaches 4,835 feet. Most wells are completed in unnamed fractured-bedrock aquifers, with a smaller group in alluvial deposits. Practically, a driller’s bid here usually needs to allow for that broad range, especially outside the river bottoms or proven spots near places like Meeker and Rangely.</p>"
+  },
+  {
+   "heading": "Well yield: how much water to expect",
+   "html": "<p>Pump tests in the county show a median yield of 12.5 gpm, with the middle half of wells coming in between 7.0 and 15.0 gpm. That’s more than enough for a single home on an exempt permit and generally comfortable for small stock or lawn use if the permit allows.</p><p>The distribution is encouraging: only 2% of tested wells report under 1 gpm, and 10% fall between 1 and 5 gpm. About 43% produce 5–15 gpm, and 45% are 15+ gpm. So dry or marginal wells are possible but not common in the records. In fractured bedrock, yields can vary a lot over short distances, so looking at neighboring well logs is still important before committing to a build site.</p>"
+  },
+  {
+   "heading": "Water levels and long-term trend",
+   "html": "<p>Static water levels are generally shallow. The median depth to water is 20 feet, with the middle half between about 6 and 58 feet below ground. That means many wells only need modest pumping lift, which helps with pump sizing and power costs.</p><p>Looking at medians by decade, water levels move up and down: about 40 feet in the 1960s, 10 feet in the 1970s, 28 feet in the 1990s, 13 feet in the 2000s, 24 feet in the 2010s, and 18 feet so far in the 2020s. That pattern looks more like natural variability than a steady decline. Still, each site is different. Alluvial wells near drainages can respond more quickly to drought than deeper fractured-bedrock wells.</p>"
+  },
+  {
+   "heading": "Who’s drilling here and permit activity",
+   "html": "<p>Rio Blanco County has 3,450 wells in the state permit records, with 1,690 shown as constructed and 1,413 listing a total depth. Permits picked up after the 1970s: 203 in the 1970s, 235 in the 1980s, 323 in the 1990s, then 624 in the 2000s and 810 in the 2010s. There are already 438 permits in the 2020s, with activity recorded through 2025.</p><p>Most wells are permitted for domestic or household use (about 37%), with stock (18%), irrigation (13%), and monitoring (17%) also common. The dominant aquifer listing is “unnamed / fractured-bedrock,” with a smaller number in Alluvial and a handful in the Uinta. Frequent drillers in the records include Authorized (Pe, Pg), and Water Pump Supply &amp; Service under both Travis Day and Winfred C. Day.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost",
+   "html": "<p>In Rio Blanco County’s mixed sedimentary and alluvial ground, typical drilling runs around $50–$75 per foot. At the county’s 80-foot median depth, that makes the drilled hole roughly a $4,000–$6,000 item before any hardware. A complete system with casing, pump, pressure tank, trenching, and electrical commonly lands in the $10,000–$18,000 range at that depth.</p><p>If you end up in an area where neighboring wells run 300 feet or more, costs rise accordingly with footage. When you ask for bids, use the deeper part of the local depth range around your property, not just the county median, so you are covered if the driller has to chase water in the fractured bedrock.</p>"
+  },
+  {
+   "heading": "Risks to keep in mind: low yield and contamination",
+   "html": "<p>Even though most wells here test at 7.0–15.0 gpm or better, there is still a small share (about 2%) under 1 gpm and another 10% at 1–5 gpm. In fractured bedrock, those slow producers can sit surprisingly close to strong wells. Plan for the possibility of a lower-yield completion and discuss storage options with your driller.</p><p>On the water-quality side, there are mapped environmental features in the broader area, including 224 PFAS sampling or contamination sites, 12 historic mine features, and 2 EPA Superfund or cleanup sites within about 10 miles. That doesn’t mean your specific parcel is affected, but it does mean you should budget for a good lab test panel before relying on a new or existing well.</p>"
+  },
+  {
+   "heading": "Buying or building on a lot in Rio Blanco County",
+   "html": "<p>Before you close on land, pull the nearby well logs from the state database and look at depths, yields, and static levels within a mile or so. In parts of the county outside Meeker and Rangely, you may see a mix of shallow alluvial wells and much deeper bedrock wells; that pattern tells you how conservative to be with your drilling allowance.</p><p>Check what type of well permit fits your plan: exempt household use versus any irrigation or stock water. Coordinate well and septic layout so they meet separation distances and avoid low spots that flood. With a median 20-foot static water level and many wells under 100 feet, you can often design a simple, efficient system, but the deeper outliers in the records are the reason to keep a healthy contingency in your budget.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Rio Blanco County, Colorado?",
+   "a": "Based on state records, the median well depth in Rio Blanco County is about 80 feet, with the middle half of wells between 34 and 230 feet. Just over half of wells are under 100 feet, and about 27% fall between 100 and 300 feet. A smaller share extend beyond 300 feet, with some rare wells drilled several hundred to a few thousand feet deep in fractured bedrock."
+  },
+  {
+   "q": "How much water do Rio Blanco County wells usually produce?",
+   "a": "Reported pump tests show a median yield of 12.5 gpm in Rio Blanco County, with most wells between 7.0 and 15.0 gpm. Only about 2% of wells come in under 1 gpm, and 10% are between 1 and 5 gpm, so truly marginal wells are not common in the data. Roughly 43% of tested wells produce 5–15 gpm and 45% exceed 15 gpm, which is strong for domestic use."
+  },
+  {
+   "q": "What does it cost to drill a water well in Rio Blanco County?",
+   "a": "In the county’s mixed sedimentary and alluvial ground, drilling typically runs about $50–$75 per foot. At the 80-foot median depth, that puts the bare hole in the $4,000–$6,000 range. By the time you add casing, pump, pressure tank, trenching, and electrical, a complete domestic well system at that depth often totals around $10,000–$18,000, with deeper wells scaling up from there."
+  },
+  {
+   "q": "Is the water table dropping in Rio Blanco County?",
+   "a": "The available static water level records do not show a simple, steady drop. Median depth to water by decade has bounced between about 10 and 40 feet below ground, with recent medians around 24 feet in the 2010s and 18 feet in the 2020s. Overall, the county-wide pattern looks like natural variation between aquifers and measurement periods rather than a clear long-term decline, though individual areas can differ."
+  },
+  {
+   "q": "Is well water safe to drink in Rio Blanco County?",
+   "a": "Safety depends on the specific well. The county does have mapped environmental features nearby, including 224 PFAS sampling or contamination sites, 12 historic mine features, and 2 EPA Superfund or cleanup sites within about 10 miles. Many domestic wells still provide good water, but every well should be tested for bacteria, basic chemistry, and any contaminants of concern before you rely on it for drinking."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that can handle access driveways, full site development, and new-build septic systems in Rio Blanco County. They also build custom homes, coordinating the utility layout around your existing or planned well.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1444,
+  "completion_tokens": 2262,
+  "total_tokens": 3706,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 121,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

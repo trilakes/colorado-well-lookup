@@ -1,0 +1,77 @@
+{
+ "title": "Divide Well Depth and Drilling Cost",
+ "meta_description": "Divide wells have a 200 ft median depth, 6.7 gpm median yield, and completed costs of about $19,000-$32,000.",
+ "h1": "Wells and drilling costs around Divide, Colorado",
+ "eyebrow": "Divide well records explained",
+ "intro_html": "<p>If you are buying land or planning a home near Divide, the local well records point to fractured mountain bedrock rather than a predictable sedimentary aquifer. Among permitted wells within 5 miles, the median reported depth is <strong>200 feet</strong>, and the middle half runs from <strong>120 to 360 feet</strong>. Reported yields have a <strong>6.7 gpm</strong> median, but results vary substantially from lot to lot.</p><p>This page uses Colorado DWR permit records and local cost modeling to explain what those numbers mean. A nearby well is useful evidence, not a guarantee. In mountain terrain, granite and gneiss fractures can change quickly across a property.</p>",
+ "sections": [
+  {
+   "heading": "How deep are wells around Divide?",
+   "html": "<p>Divide wells are commonly drilled into fractured crystalline mountain bedrock. The local median depth is <strong>200 feet</strong>, with the middle half between <strong>120 and 360 feet</strong>. About <strong>47%</strong> of reported wells fall between 100 and 300 feet, while <strong>33%</strong> are between 300 and 600 feet. The deepest recorded well reaches <strong>1,200 feet</strong>.</p><p>For a drilling bid, the middle-half range is more useful than the median alone. A site near 120 feet and one near 360 feet can have very different drilling costs, casing needs, and pump requirements. The 90th-percentile depth is <strong>500 feet</strong>, so a bid should explain what happens if drilling passes the expected depth without finding enough water.</p>"
+  },
+  {
+   "heading": "What yield can a Divide well produce?",
+   "html": "<p>Reported pump yields have a local median of <strong>6.7 gallons per minute</strong>, with the middle half from <strong>2.0 to 9.8 gpm</strong>. The largest group, <strong>55%</strong>, reports between 5 and 15 gpm. Another <strong>31%</strong> reports between 1 and 5 gpm, while <strong>9%</strong> reports under 1 gpm and <strong>6%</strong> reports 15 gpm or more.</p><p>That spread matters for a buyer. A well making 2 gpm may serve a normal household when storage is designed correctly, but it gives less margin for heavy use than a 10 gpm well. Pump yield is not the same as a guaranteed long-term supply. Ask for the well construction report, pumping test information, and storage capacity before relying on a neighboring yield.</p>"
+  },
+  {
+   "heading": "What does the water table show near Divide?",
+   "html": "<p>Only <strong>163</strong> wells in the records report a static water level, so the water-level sample is much smaller than the depth sample. The median depth to water is <strong>85 feet</strong>, with the middle half from <strong>56 to 115 feet</strong> below the surface.</p><p>The decade medians do not establish a simple, continuous trend. Reported levels were <strong>73 feet</strong> in the 1970s, <strong>44 feet</strong> in the 1980s, <strong>80 feet</strong> in the 2010s, and <strong>98 feet</strong> in the 2020s. Measurement conditions, location, and well construction can affect comparisons. Treat the recent figure as a reason to check nearby logs and current pumping conditions, not as proof that every Divide well is declining.</p>"
+  },
+  {
+   "heading": "Who has drilled wells around Divide?",
+   "html": "<p>Permit history shows long-standing development in the area. Records list <strong>14</strong> permits from the 1950s, <strong>64</strong> from the 1960s, <strong>550</strong> from the 1970s, <strong>620</strong> from the 1980s, <strong>716</strong> from the 1990s, <strong>431</strong> from the 2000s, <strong>203</strong> from the 2010s, and <strong>148</strong> from the 2020s. The newest permit year is <strong>2025</strong>.</p><p>The most active names in these records are Woods Drilling Inc. under Woods, William D., with <strong>525</strong> wells; Mountain Well Improvement LLC under Wiley, David D., with <strong>417</strong>; and Woods Drilling Inc. under Woods, William L., with <strong>395</strong>. These counts describe recorded permit activity, not a recommendation or a guarantee of current availability.</p>"
+  },
+  {
+   "heading": "What does a new well cost near Divide?",
+   "html": "<p>Local drilling is modeled at <strong>$65 to $100 per foot</strong> in fractured granite and gneiss. At the <strong>200-foot</strong> median depth, that puts the drilled hole at roughly <strong>$13,000 to $20,000</strong>. A finished well, including pump, pressure tank, trenching, and electrical work, is modeled at about <strong>$19,000 to $32,000</strong>.</p><p>That is a planning range, not a fixed quote. A deeper hole, difficult access, extra casing or grout, electrical distance, and site conditions can move the final number. When comparing bids, confirm what is included and what happens if the hole is dry or the yield is inadequate. A low per-foot price may not represent the complete water system.</p>"
+  },
+  {
+   "heading": "Risks to check before building in Divide",
+   "html": "<p>Most permits in this area are for domestic or household use, accounting for <strong>89%</strong> of the use mix. Stock wells account for <strong>6%</strong>, monitoring for <strong>3%</strong>, and irrigation for <strong>1%</strong>. The aquifer description is overwhelmingly unnamed or fractured bedrock, with <strong>3,117</strong> wells in that category. There are no recorded Denver Basin aquifer wells in this dataset.</p><p>Before closing, check water quality, septic setbacks, and the proposed building footprint. The mapped area includes <strong>6</strong> PFAS sampling or contamination sites, <strong>19</strong> historic mine features, and <strong>11</strong> EPA Superfund or cleanup sites within about 10 miles. Those listings do not automatically mean a parcel is contaminated, but they justify site-specific testing. Low-yield and dry-hole risk also deserve a written drilling plan.</p>"
+  },
+  {
+   "heading": "Buying or building on a lot near Divide",
+   "html": "<p>Start with the DWR permit and construction records for the parcel and nearby wells. Compare depth, reported yield, static water level, casing, grout, pump, and the aquifer description. Nearby records from Woodland Park, Midland, Florissant, Green Mountain Falls, and Cascade-Chipita Park can provide broader context, but conditions can still change between valleys and ridges.</p><p>Confirm the permitted use before assuming the well supports a house, livestock, irrigation, or additional structures. An exempt household-use well is subject to its permit terms and the applicable Colorado rules; over-appropriated basins may require an augmentation plan. Have a driller evaluate access and a septic professional evaluate soils, setbacks, and reserve areas before purchasing a remote lot.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Divide, Colorado?",
+   "a": "The median reported well depth within 5 miles of Divide is 200 feet. The middle half runs from 120 to 360 feet, and the 90th percentile is 500 feet. About 47% are between 100 and 300 feet, but fractured mountain bedrock can produce very different depths on nearby parcels."
+  },
+  {
+   "q": "How much does it cost to drill a well in Divide?",
+   "a": "The local model uses $65 to $100 per foot. At the 200-foot median depth, the drilled hole is about $13,000 to $20,000. A completed system with pump, tank, trenching, and electrical work is estimated at $19,000 to $32,000. Access, depth, casing, and site conditions can change the quote."
+  },
+  {
+   "q": "How much water does a well produce in Divide?",
+   "a": "Reported yields have a median of 6.7 gpm, with the middle half from 2.0 to 9.8 gpm. About 9% of reported wells produce under 1 gpm, while 55% produce 5 to 15 gpm. Ask for the pumping test and storage design rather than relying only on a listing's estimate."
+  },
+  {
+   "q": "Is well water safe to drink in Divide, Colorado?",
+   "a": "The permit records do not establish that every well is safe to drink. Mapped within about 10 miles are 6 PFAS sampling or contamination sites, 19 historic mine features, and 11 EPA Superfund or cleanup sites. Test the specific well for appropriate contaminants, especially before buying, and retest after construction or changes in water quality."
+  },
+  {
+   "q": "Are there dry wells around Divide, Colorado?",
+   "a": "The records show substantial variability: 15% of reported wells are under 100 feet, 33% are 300 to 600 feet, and the deepest reaches 1,200 feet. Yield also ranges widely, with 9% under 1 gpm. These figures do not count or prove every dry hole, so a buyer should review nearby logs and get a driller's site-specific risk assessment."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Divide and nearby mountain communities with access driveways, site development, new-build septic systems, and custom homes. Bring the well, septic, and building-site decisions together before construction starts.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1452,
+  "completion_tokens": 2266,
+  "total_tokens": 3718,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1449,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 92,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

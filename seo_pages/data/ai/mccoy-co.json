@@ -1,0 +1,77 @@
+{
+ "title": "McCoy Well Depth and Drilling Cost",
+ "meta_description": "McCoy wells have a 205-foot median depth, with drilling and a finished system estimated at $19,300-$32,500.",
+ "h1": "McCoy, Colorado Well Depth, Yield and Cost Guide",
+ "eyebrow": "McCoy well planning guide",
+ "intro_html": "<p>Buying land or planning a home near McCoy means treating the well as a site-specific construction question. Records within 5 miles show 191 permitted wells, but only 102 are recorded as constructed, 111 report total depth, 32 report pump yield, and 11 report static water level. Those gaps matter: nearby permit history is useful for estimating conditions, but it is not a guarantee for a particular lot.</p><p>McCoy is mountain terrain dominated by fractured-bedrock wells. The records show a median depth of 205 feet and a median reported yield of 10.3 gallons per minute. A driller still needs to evaluate access, geology, casing and grout requirements, and the intended household use before pricing a new well.</p>",
+ "sections": [
+  {
+   "heading": "How deep are wells around McCoy?",
+   "html": "<p>The median reported well depth near McCoy is 205 feet. The middle half runs from 81 to 378 feet, so a normal-looking local bid can vary considerably. The 90th percentile is 495 feet, and the deepest record reaches 980 feet. In the depth mix, 30% are under 100 feet, 38% are 100-300 feet, 26% are 300-600 feet, and 6% exceed 600 feet.</p><p>That spread reflects mountain bedrock rather than a uniform shallow aquifer. Permits identify an unnamed or fractured-bedrock aquifer for 188 wells, while 3 identify alluvial water. For a buyer, the median is a planning point, not a promised stopping depth. Ask for a bid that explains the per-foot rate and how casing, grout, drilling conditions, and an unsuccessful hole are handled.</p>"
+  },
+  {
+   "heading": "What can a McCoy well produce?",
+   "html": "<p>Among the 32 McCoy-area records that report pump yield, the median is 10.3 gallons per minute. The middle half is 5.0-15.0 gallons per minute. The distribution is 3% under 1 gallon per minute, 19% at 1-5, 38% at 5-15, and 41% above 15 gallons per minute.</p><p>Most reported wells therefore produce enough for ordinary household planning, but the lower-yield records deserve attention. A 3% share under 1 gallon per minute is a real low-production risk for a buyer, especially if the home has heavy water demand. Confirm the permitted use, storage-tank design, pump test results, and any water-system requirements rather than relying only on the countywide-looking median.</p>"
+  },
+  {
+   "heading": "Water levels in McCoy: what the records show",
+   "html": "<p>The 11 records with static water-level measurements show a median depth to water of 28 feet, with the middle half from 24 to 50 feet. That is useful for thinking about pump setting and well construction, but it does not mean every lot will encounter water at 28 feet. Fractured bedrock can produce uneven results over short distances.</p><p>The permit counts by decade do not establish a falling water table. They show 4 permits in the 1960s, 23 in the 1970s, 25 in the 1980s, 44 in the 1990s, 37 in the 2000s, 15 in the 2010s, and 14 in the 2020s, with the newest permit year being 2025. Ask for a measured static level on the subject well or nearby wells before drawing conclusions about long-term water-level change.</p>"
+  },
+  {
+   "heading": "McCoy permit history and local drillers",
+   "html": "<p>McCoy has a long permit record, with permits dating back to the 1960s and the newest record from 2025. Domestic or household use accounts for 72% of the permits, followed by stock at 11%, monitoring at 15%, and irrigation at 3%. Denver Basin aquifer wells account for 0%; the local records are overwhelmingly tied to unnamed or fractured-bedrock conditions.</p><p>The most active driller in these records is Golden Eagle Drilling Corporation, Shelton, Joe Wayne, with 54 wells. Shelton Drilling Corporation, Shelton, Wayne, appears on 11, and L &amp; L Drilling, Haggerty Sr., Larry A., appears on 7. This history can help identify local experience, but it is not an endorsement. Verify current licensing, scope, insurance, and the exact terms of any proposal.</p>"
+  },
+  {
+   "heading": "What does a new well cost near McCoy?",
+   "html": "<p>McCoy’s fractured granite and gneiss make drilling costs sensitive to depth and ground conditions. The stated drilling rate is $65-$100 per foot. At the 205-foot median depth, the drilled hole works out to about $13,300-$20,500. A finished system, including the pump, tank, trenching, and electrical, is estimated at $19,300-$32,500.</p><p>Use those figures as a budgeting range, not a fixed quote. A well that reaches 378 feet, 495 feet, or more will require a different allowance than the median. Before buying land, ask whether the estimate includes mobilization, casing, grout, testing, permits, power trenching, and site access. Also ask what happens financially if drilling must continue or a hole produces too little water.</p>"
+  },
+  {
+   "heading": "McCoy risks to check before building",
+   "html": "<p>The main water-supply risk is variability. Three percent of reported yields are under 1 gallon per minute, and 19% fall between 1 and 5 gallons per minute. In fractured mountain rock, a nearby successful well does not guarantee the same result, and a dry or marginal hole remains possible. Confirm the well construction record, production test, water quality results, and pump equipment for any property under contract.</p><p>Mapped environmental information is comparatively limited within about 10 miles: there are 0 PFAS sampling or contamination sites and 0 EPA Superfund or cleanup sites, but 7 historic mine features. Those features still justify a site-specific water test. Check septic setbacks, drainfield soil, access for a rig, power routing, and building location together. A well permit alone does not solve the septic, driveway, or building-site layout.</p>"
+  },
+  {
+   "heading": "Buying or building on a McCoy lot",
+   "html": "<p>Start with the DWR permit file and distinguish a permitted well from a completed, tested well. Of the 191 records within 5 miles, 102 are recorded as constructed, so the file may not answer every question about an undeveloped parcel. Get the well construction report, yield information, static water level, water-quality testing, and permitted use before removing inspection conditions.</p><p>For a new build, have a driller walk the access route and proposed well location before finalizing the site plan. Budget from the $19,300-$32,500 finished-system range at the median depth, then add room for deeper fractured rock and difficult access. Confirm household-use rights and any water-law requirements; an exempt household-use well has a 35-gallon-per-minute pumping limit. Coordinate the well, septic system, driveway, trenching, and house location as one plan.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in McCoy, Colorado?",
+   "a": "The median reported well depth within 5 miles of McCoy is 205 feet. The middle half runs from 81 to 378 feet, while the 90th percentile is 495 feet and the deepest record is 980 feet. Fractured granite and gneiss make the actual depth highly site-specific, so nearby records guide a bid but do not guarantee a stopping depth."
+  },
+  {
+   "q": "How much does it cost to drill a well in McCoy?",
+   "a": "The modeled drilling rate near McCoy is $65-$100 per foot. At the 205-foot median depth, the drilled hole is estimated at $13,300-$20,500. A finished system with pump, tank, trenching, and electrical is estimated at $19,300-$32,500. A deeper hole, difficult access, or additional construction requirements can move the final quote higher."
+  },
+  {
+   "q": "How much water do wells produce in McCoy?",
+   "a": "Among 32 local records reporting pump yield, the median is 10.3 gallons per minute, with a middle half of 5.0-15.0 gallons per minute. Three percent report under 1 gallon per minute, while 19% report 1-5. Because fractured-bedrock results vary, review the property’s own pump test and storage setup before relying on the median."
+  },
+  {
+   "q": "Is well water safe to drink in McCoy?",
+   "a": "The local permit map does not establish that a particular well is safe to drink. Within about 10 miles, there are 0 PFAS sampling or contamination sites and 0 EPA Superfund or cleanup sites, but 7 historic mine features. Test the property’s water for the risks relevant to its location, and retest after ownership or well-system changes."
+  },
+  {
+   "q": "Are wells in McCoy running out of water?",
+   "a": "The available records do not show a reliable falling water-table trend. Only 11 wells report static water levels; their median depth to water is 28 feet, with a middle half of 24-50 feet. Permit counts by decade are not water-level measurements. Ask for current static-level and production information from the subject well or nearby completed wells."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving projects around McCoy, including access driveways, site development, new-build septic systems, and custom homes. Coordinate those pieces early so the well, septic system, utilities, and building site work together.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1374,
+  "completion_tokens": 2244,
+  "total_tokens": 3618,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1371,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 105,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "title": "Federal Heights Well Depth and Drilling Cost",
+ "meta_description": "Federal Heights wells have a 28 ft median depth, but local records range to 1,751 ft. See yields, water levels, risks and costs.",
+ "h1": "Federal Heights, Colorado Well and Water Guide",
+ "eyebrow": "Federal Heights well records",
+ "intro_html": "<p>Federal Heights sits on the plains in Adams County, where nearby well records show unusually shallow typical depths but a wide range of conditions. Within 5 miles, the median well depth is 28 feet, and the middle half runs from 20 to 50 feet. The deepest recorded well reaches 1,751 feet.</p><p>That shallow median does not guarantee a shallow or inexpensive well on a particular lot. The records include fractured-bedrock and Denver Basin aquifer wells, and local construction, casing, pump equipment, trenching and electrical work all affect the final price. Use nearby permits as a starting point, then have a driller evaluate the specific parcel.</p>",
+ "sections": [
+  {
+   "heading": "Federal Heights well depth: shallow records, wide range",
+   "html": "<p>Most recorded wells near Federal Heights are shallow: 82% are under 100 feet. The median is 28 feet, with the middle half between 20 and 50 feet. That range is useful when asking for a drilling bid because a contractor can compare your lot with nearby permits instead of assuming every well needs to reach the same formation.</p><p>The outliers matter. Seven percent of wells fall from 100 to 300 feet, 6% from 300 to 600 feet, and 5% exceed 600 feet. The deepest record is 1,751 feet. Local geology includes Denver Basin sedimentary bedrock and permits naming unnamed or fractured-bedrock aquifers, so depth can change sharply from one property to the next.</p>"
+  },
+  {
+   "heading": "How much water Federal Heights wells produce",
+   "html": "<p>Among the 166 wells that report a pump yield, the median is 15.0 gallons per minute. The middle half runs from 10.0 to 72.5 gallons per minute. Reported results are strong overall: 55% produce more than 15 gallons per minute, while 35% fall between 5 and 15 gallons per minute.</p><p>Low-yield wells are still part of the local picture. Seven percent report under 1 gallon per minute and another 4% report between 1 and 5 gallons per minute. A buyer should not treat the median as a guarantee. Ask for the well test, storage capacity and permitted use. An exempt household-use well also has a 35 gallon-per-minute pumping limit, even if the aquifer could produce more.</p>"
+  },
+  {
+   "heading": "The Federal Heights water table and its recorded trend",
+   "html": "<p>Static water level means the distance from the ground surface down to the water when the well is not being pumped. The local median is 16 feet, with the middle half between 11 and 36 feet. That generally indicates relatively shallow groundwater in the records, but the measurement can vary with location, season, well construction and nearby pumping.</p><p>The decade medians do not show a dropping water table in this dataset. Recorded depth to water was 20 feet in the 1960s, 16 feet in the 2010s and 14 feet in the 2020s. Those figures come from only 82 reported static-water-level measurements, so use them as local context rather than a parcel-specific prediction.</p>"
+  },
+  {
+   "heading": "Who has drilled near Federal Heights, and when",
+   "html": "<p>The permit history is substantial, with 6,071 wells in Colorado Division of Water Resources records and 2,826 recorded as constructed. The busiest period was the 2000s, with 1,298 permits, followed by the 1990s with 1,153 and the 2010s with 1,012. The newest permit year in the records is 2025.</p><p>The most active names in this local record are Authorized (Pe, Pg), with 2,067 entries, Layne, Christensen Co. (Tormoehlen, David A.), with 109, and Ground Exploration LLC (Bender, Joseph T.), with 105. Many permits are monitoring wells: 61% of the use mix. Domestic or household wells account for 18%, so monitoring records should not be used as direct proof of household water performance.</p>"
+  },
+  {
+   "heading": "What a new Federal Heights well may cost",
+   "html": "<p>The local drilling cost model uses roughly $50 to $70 per foot in Denver Basin sedimentary bedrock. At the 28-foot median depth, the drilled hole alone models to about $1,400 to $2,000. That is the drilling portion, not the price of a functioning water system.</p><p>A finished well with pump, pressure tank, trenching and electrical work models to about $7,400 to $14,000 at the median depth. A deeper hole, difficult access, extra casing or unusual site work can move the bid higher. Get the contractor to separate drilling, casing and grout, pump equipment, electrical service, trenching and testing so competing bids are actually comparable.</p>"
+  },
+  {
+   "heading": "Federal Heights risks to check before construction",
+   "html": "<p>Water quality deserves its own investigation. Within about 10 miles, the mapped records include 687 PFAS sampling or contamination sites and 166 EPA Superfund or cleanup sites. There are also 13 historic mine features. These locations do not prove that a specific well is contaminated, but they are a reason to review environmental records and test existing or newly drilled water before relying on it.</p><p>Low yield and dry-hole risk remain possible despite the 15.0-gallon-per-minute median because only 166 wells report yield. Check the well permit, completion report, water test and pumping history. Confirm that the well permit allows the intended household use, and coordinate septic, building setbacks, access and utility trenching before finalizing a site plan. In an over-appropriated basin, an augmentation plan may be required for some uses.</p>"
+  },
+  {
+   "heading": "Buying or building near Shaw Heights and Westminster",
+   "html": "<p>Start with the closest comparable permits, not the countywide average. Shaw Heights is about 1 mile away, Sherrelwood about 2 miles, and Westminster, Twin Lakes and Welby about 3 miles. Northglenn is about 4 miles away. Compare depth, aquifer description, yield and static water level, while remembering that monitoring wells and household wells serve different purposes.</p><p>For a purchase, make the existing well records and a current water test part of due diligence. For a new build, have a licensed driller review the parcel before designing the house, driveway and septic system. Confirm the DWR permit path, expected well location, pump power, storage and service access. The shallow local median can simplify drilling, but the deeper records show why a site-specific bid still matters.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Federal Heights?",
+   "a": "The median recorded depth within 5 miles of Federal Heights is 28 feet, and the middle half runs from 20 to 50 feet. About 82% are under 100 feet. Depth is not uniform: the records include wells over 600 feet and a deepest recorded well at 1,751 feet, so nearby permits are useful but do not guarantee a depth for your lot."
+  },
+  {
+   "q": "How much does it cost to drill a well in Federal Heights?",
+   "a": "The local model uses $50 to $70 per foot. At the 28-foot median depth, drilling the hole models to about $1,400 to $2,000. A finished system with pump, tank, trenching and electrical is modeled at about $7,400 to $14,000. A deeper well, difficult access, casing, grout or site-specific electrical work can change the bid."
+  },
+  {
+   "q": "How much water does a well produce in Federal Heights?",
+   "a": "Among 166 wells reporting a pump yield, the median is 15.0 gallons per minute and the middle half is 10.0 to 72.5 gallons per minute. Seven percent report under 1 gallon per minute, while 55% report more than 15 gallons per minute. Treat these as area records, not a guarantee for an untested property."
+  },
+  {
+   "q": "Is well water safe in Federal Heights?",
+   "a": "Safety cannot be determined from depth or yield alone. Within about 10 miles, mapped records include 687 PFAS sampling or contamination sites and 166 EPA Superfund or cleanup sites. Those records do not prove contamination at your well. Test the existing or new well through a qualified laboratory and review nearby environmental records before drinking the water."
+  },
+  {
+   "q": "Is the water table dropping in Federal Heights?",
+   "a": "The reported decade medians do not indicate a dropping water table: median depth to water was 20 feet in the 1960s, 16 feet in the 2010s and 14 feet in the 2020s. Only 82 wells report static water level, so this is regional context rather than a prediction for one property. Seasonal conditions and pumping can affect an individual measurement."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Federal Heights and the surrounding Adams County area. The company handles access driveways, site development, new-build septic systems and custom homes.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1438,
+  "completion_tokens": 2070,
+  "total_tokens": 3508,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1435,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 79,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

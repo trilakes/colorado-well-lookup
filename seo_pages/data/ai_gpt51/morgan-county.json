@@ -1,0 +1,76 @@
+{
+ "title": "Morgan County CO well depth and drilling cost",
+ "meta_description": "In Morgan County the median well depth is 91 ft and the median yield is 20 gpm. Here’s what that means for drilling cost and water reliability.",
+ "h1": "Water wells in Morgan County, Colorado",
+ "eyebrow": "Local well data guide",
+ "intro_html": "<p>Morgan County sits on plains sediments and fractured bedrock, with pockets of alluvial groundwater along the South Platte and its tributaries. That geology gives most landowners decent water at modest depths, but there are pockets that need more drilling and more planning.</p><p>Here’s how the well records for Morgan County break down, and what they mean if you’re looking at land around Fort Morgan, Brush, Wiggins, Snyder, Weldona, or the smaller subdivisions like Morgan Heights and Blue Sky.</p>",
+ "sections": [
+  {
+   "heading": "How deep are wells in Morgan County",
+   "html": "<p>Across Morgan County, the median total well depth is <strong>91 feet</strong>, with the middle half between <strong>62 and 126 feet</strong>. Only about <strong>10 percent</strong> go deeper than <strong>170 feet</strong>, and the deepest on record reaches <strong>1,625 feet</strong>. About <strong>55%</strong> of wells are under <strong>100 feet</strong> and another <strong>42%</strong> fall in the <strong>100–300 foot</strong> range, so extremely deep domestic wells are the exception here.</p><p>For a driller’s bid, most home wells in places like Fort Morgan, Brush, and Wiggins will be estimated in that 70–140 foot band unless there’s a known deeper zone or a Denver Basin target. A small share, especially in the Denver Basin portion of the county, tap deeper confined sandstone and can run several hundred feet or more.</p>"
+  },
+  {
+   "heading": "Well yield in Morgan County: how much water you get",
+   "html": "<p>Reported pump tests show a <strong>median yield of 20.0 gpm</strong>, with the middle half of wells between <strong>15.0 and 900.0 gpm</strong>. Only <strong>2%</strong> of wells are between <strong>1–5 gpm</strong>, <strong>10%</strong> fall in the <strong>5–15 gpm</strong> range, and a strong <strong>88%</strong> are <strong>15+ gpm</strong>. No wells in the records are listed under <strong>1 gpm</strong>.</p><p>That’s a very favorable picture for domestic and stock use. A typical exempt household permit in Morgan Heights, Blue Sky, or along the county roads outside Brush will be limited more by legal pumping rules than by aquifer capacity. Irrigation and stock wells make up a big share of the high-yield numbers, especially in the alluvial zones near the South Platte.</p>"
+  },
+  {
+   "heading": "Water table depth and long-term trend",
+   "html": "<p>Static water level measurements (depth to water) show a <strong>median of 33 feet</strong> below ground, with the middle half between <strong>17 and 60 feet</strong>. That means water often stands well above the bottom of the well, which helps with pumping efficiency and keeps lift costs reasonable.</p><p>By decade, median water levels were about <strong>35 feet</strong> in the 1950s, deepened to around <strong>50 feet</strong> in the 1970s, then became shallower, reaching <strong>23 feet</strong> in the 1990s and around <strong>20–21 feet</strong> in the 2000s and 2010s. In the 2020s, the median has moved deeper again to about <strong>37 feet</strong>. That record shows ups and downs rather than a straight decline, but the recent deepening is something to keep in mind if you’re planning marginal irrigation or stock wells.</p>"
+  },
+  {
+   "heading": "Who is drilling here and how active it is",
+   "html": "<p>Morgan County has <strong>9,706</strong> wells in the state records, with <strong>6,454</strong> listed as constructed and <strong>6,990</strong> reporting a total depth. Permitting has been steady for decades: the 1950s show <strong>1,064</strong> permits, the 1970s <strong>1,069</strong>, the 1990s <strong>1,007</strong>, and the 2000s <strong>1,044</strong>. The 2010s still had <strong>723</strong> permits, and the 2020s already show <strong>440</strong>, with the newest permit dated <strong>2025</strong>.</p><p>The most active drillers on record are <strong>Canfield Drilling Company (Canfield, Harold E)</strong> with <strong>1,242</strong> wells, <strong>Canfield, Leslie George</strong> with <strong>934</strong>, and <strong>Authorized (Pe, Pg)</strong> with <strong>563</strong>. About <strong>38%</strong> of wells are domestic or household, <strong>25%</strong> stock, <strong>27%</strong> irrigation, and <strong>11%</strong> monitoring, showing how heavily the local economy leans on groundwater.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost here",
+   "html": "<p>The local drilling cost model for Morgan County assumes alluvium and plains sedimentary rock at roughly <strong>$35–$55 per foot</strong>. At the county’s <strong>91 foot</strong> median depth, the drilled hole alone pencils out to about <strong>$3,200–$5,000</strong>.</p><p>Once you add casing, grout, pump, pressure tank, trenching, and basic electrical, a finished domestic well typically lands in the <strong>$9,200–$17,000</strong> range at that same depth. If your site in places like Saddle Ridge or near Orchard ends up closer to the 170-foot end of the local range, you scale that cost up proportionally. Deep Denver Basin completions will run higher still, simply because of the extra footage and heavier pumping equipment.</p>"
+  },
+  {
+   "heading": "Geology, aquifers, and key risks to check",
+   "html": "<p>Most Morgan County wells (<strong>8,366</strong>) are in an unnamed fractured-bedrock aquifer, with <strong>571</strong> in Quaternary Alluvium and <strong>438</strong> labeled Alluvial. About <strong>23%</strong> of wells are completed in Denver Basin aquifers. Fractured rock can be locally variable, so it’s smart to look at nearby well logs before you buy.</p><p>On the risk side, there are <strong>35</strong> mapped PFAS sampling/contamination sites and <strong>3</strong> EPA Superfund/cleanup sites within about 10 miles. That doesn’t mean your well is contaminated, but it does mean water testing should be routine, especially closer to Fort Morgan, Log Lane Village, and industrial corridors. There are no historic mine features in the mapped set, which reduces some of the typical metal-contamination concerns.</p>"
+  },
+  {
+   "heading": "Buying or building on a lot in Morgan County",
+   "html": "<p>Out in the county, a well is often your main water source, so it pays to study the records. With <strong>6,990</strong> wells reporting depth and <strong>1,910</strong> reporting yield, you can usually find a few good comparison wells around Wiggins, Snyder, Hillrose, or Weldona before committing to a parcel.</p><p>Look for depths in that local 62–126 foot band and yields above 5 gpm for comfortable domestic use; here, most wells exceed that easily. Confirm your well permit type and any augmentation needs if you are in an over-appropriated basin or drilling for irrigation. Lay out your home, drive, and septic so setbacks to the well are met and future access for pump service is simple, not an afterthought.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Morgan County, Colorado?",
+   "a": "State records for Morgan County show a median well depth of 91 feet, with the middle half between 62 and 126 feet. About 55% of wells are under 100 feet, and another 42% are between 100 and 300 feet. Only around 10% exceed 170 feet, and a very small fraction run several hundred to over a thousand feet, usually targeting deeper confined aquifers."
+  },
+  {
+   "q": "How much does it cost to drill a well in Morgan County, CO?",
+   "a": "Using the local cost model of about $35–$55 per drilled foot in Morgan County, a typical 91-foot well (the county median) runs roughly $3,200–$5,000 for drilling alone. When you include casing, pump, pressure tank, trenching, and basic electrical work, a finished domestic well at that depth generally totals about $9,200–$17,000, with deeper wells costing proportionally more."
+  },
+  {
+   "q": "What is a good well yield in Morgan County, Colorado?",
+   "a": "Morgan County wells report a median yield of 20.0 gpm, and 88% of tested wells produce 15 gpm or more. Only 2% fall in the 1–5 gpm range, and none are listed under 1 gpm. For a typical household or stock well around Fort Morgan, Brush, or Wiggins, anything in the 5–15 gpm range is workable, and the records suggest most wells do substantially better than that."
+  },
+  {
+   "q": "Is the groundwater level dropping in Morgan County, CO?",
+   "a": "Static water levels in Morgan County have moved up and down over the decades. Median depths to water were about 35–50 feet in the 1950s–1970s, then became shallower, around 23 feet in the 1990s and about 20–21 feet in the 2000s and 2010s. In the 2020s, the median has deepened again to roughly 37 feet. That points to variability rather than a simple long-term drop, but recent deepening is worth watching."
+  },
+  {
+   "q": "Is well water safe to drink in Morgan County, Colorado?",
+   "a": "The records don’t rate water quality, but they do show 35 PFAS sampling or contamination sites and 3 EPA Superfund or cleanup sites within about 10 miles. That makes testing important, especially near industrial or urban areas like Fort Morgan and Log Lane Village. A standard lab panel for bacteria, nitrate, and major minerals, plus PFAS where relevant, is a smart step before relying on any private well for drinking."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting works across Morgan County as a licensed Colorado contractor for access driveways, site development, new-build septic systems, and custom homes.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1517,
+  "completion_tokens": 2748,
+  "total_tokens": 4265,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 375,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

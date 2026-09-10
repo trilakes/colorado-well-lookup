@@ -1,0 +1,73 @@
+{
+ "title": "Pueblo Well Depth and Drilling Cost",
+ "meta_description": "Pueblo wells have a 31 ft median depth, but permits range to 1,795 ft. See yields, water levels, costs and risks before buying.",
+ "h1": "What Pueblo Well Records Show About Depth, Water and Cost",
+ "eyebrow": "Pueblo County well guide",
+ "intro_html": "<p>For land near Pueblo, the local well records point to generally shallow wells, but the spread is wide enough that a neighbor's well should not be treated as a guarantee. Among 3,083 permitted wells within 5 miles of Pueblo, the median reported depth is 31 feet. Most wells are under 100 feet, and the median reported yield is 15 gallons per minute.</p><p>That picture comes from Colorado DWR permit records, not a promise about any individual lot. Ground conditions, well spacing, intended use, casing, pump equipment and water-rights requirements still need to be checked before you buy or build.</p>",
+ "sections": [
+  {
+   "heading": "Pueblo wells are usually shallow, but the range is broad",
+   "html": "<p>The reported median well depth near Pueblo is 31 feet, with the middle half falling between 25 and 40 feet. The 90th percentile is 52 feet, and 95% of the recorded wells are under 100 feet. For a driller's bid, that supports starting with a shallow-well assumption in the plains setting, while carrying an allowance for conditions that do not match the neighborhood norm.</p><p>The records also include wells from 100 to 300 feet, 300 to 600 feet, and more than 600 feet. The deepest reported well is 1,795 feet. That extreme range is a reminder that a median is a planning reference, not a guaranteed refusal depth. The local aquifer names are dominated by unnamed or fractured-bedrock records, with some alluvial wells.</p>"
+  },
+  {
+   "heading": "Reported yields near Pueblo are generally useful, but verify the test",
+   "html": "<p>Only 127 wells report a pump yield, so the yield statistics are useful context rather than a complete picture of every permit. Among those reports, the median is 15.0 gallons per minute and the middle half runs from 11.0 to 26.5 gallons per minute.</p><p>Fifty-five percent report more than 15 gallons per minute, while 38% fall from 5 to 15 gallons per minute. Six percent report 1 to 5 gallons per minute, and 1% report less than 1 gallon per minute. A buyer should ask for the actual well test, pump size and storage setup. A good reported rate does not by itself establish water quality, legal availability or dependable performance during prolonged use.</p>"
+  },
+  {
+   "heading": "Pueblo water levels look stable in the reported decades",
+   "html": "<p>The median reported static water level is 19 feet below the surface, with the middle half between 12 and 25 feet. That is the depth to water when the well is not being pumped, not the total depth of the well and not the pressure available at a fixture.</p><p>The decade comparison does not show a dropping trend in these records. The median was 19 feet below surface in the 2010s and 16 feet in the 2020s. That difference should not be read as a guarantee that groundwater is rising across every parcel. Only 110 wells report a static water level, and measurements can reflect different locations, seasons and well conditions. Ask for a recent measurement on the property when possible.</p>"
+  },
+  {
+   "heading": "Permit history shows long activity and current drilling",
+   "html": "<p>Pueblo has a long permit record, with permits issued in every decade from the 1950s through the 2020s. The largest decade totals in the supplied records are 463 in the 2010s, 427 in the 2000s and 372 in the 1990s. The newest permit year is 2025, so this is not only an old well area.</p><p>The most active names in the records are Authorized (Pe, Pg), with 631 permits, Don Stewart &amp; Son Drilling with 187, and Hoffman with 36. Those counts describe appearances in the permit records, not current availability, workmanship or an endorsement. Confirm licensing, insurance, references, the proposed casing and grout program, and what happens if the hole does not produce enough water.</p>"
+  },
+  {
+   "heading": "A median-depth Pueblo well starts near $1,100, not finished",
+   "html": "<p>For the local alluvium and plains sedimentary rock, the supplied drilling model uses $35 to $55 per foot. At the 31-foot median depth, the drilled hole works out to about $1,100 to $1,700. That is the hole only, not the system needed to deliver water to a house.</p><p>A finished well with pump, tank, trenching and electrical is modeled at about $7,100 to $13,700 at that median depth. Your written bid should separate drilling from casing, grout, development, pump equipment, pressure tank, trenching, electrical work, testing and permit-related tasks. A deeper-than-typical hole, difficult access or a low-yield completion can move the total outside that range.</p>"
+  },
+  {
+   "heading": "Check water quality, septic separation and the right to use water",
+   "html": "<p>Mapped environmental information deserves a closer look before closing. Within about 10 miles are 50 PFAS sampling or contamination sites, 32 EPA Superfund or cleanup sites and 2 historic mine features. Those mapped sites do not prove contamination at a particular well. They do mean the buyer should obtain a current laboratory water test and review nearby site history, especially for a domestic supply.</p><p>Low yield and dry holes remain possible even in an area with a 15.0-gallon-per-minute median. Confirm the well location, septic reserve area, building envelope, access for a rig and utility routes before finalizing a site plan. Also check the DWR permit and water-rights conditions. Domestic or exempt household-use wells have limits, and an augmentation plan may be needed in an over-appropriated basin.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Pueblo, Colorado?",
+   "a": "The median reported depth is 31 feet, and the middle half of wells are 25 to 40 feet. Ninety-five percent are under 100 feet. The records still range widely, including wells deeper than 600 feet and a deepest reported well of 1,795 feet, so nearby well logs are more useful than the median alone for a specific parcel."
+  },
+  {
+   "q": "How much does it cost to drill a well in Pueblo?",
+   "a": "The local model uses $35 to $55 per foot in alluvium and plains sedimentary rock. At the 31-foot median depth, the drilled hole is about $1,100 to $1,700. A finished system with pump, tank, trenching and electrical is estimated at $7,100 to $13,700. Deeper drilling, access and completion conditions can change the bid."
+  },
+  {
+   "q": "How much water do Pueblo wells produce?",
+   "a": "Of the 127 wells that report a pump yield, the median is 15.0 gallons per minute and the middle half is 11.0 to 26.5 gallons per minute. Fifty-five percent report more than 15 gallons per minute. Only a small portion of all permits report yield, so request the property's well test rather than relying only on area statistics."
+  },
+  {
+   "q": "Is well water safe to drink in Pueblo?",
+   "a": "The permit records do not establish drinking-water safety. Within about 10 miles, mapped records include 50 PFAS sampling or contamination sites, 32 EPA Superfund or cleanup sites and 2 historic mine features. Those locations do not prove a property's well is contaminated, but they support getting a current laboratory test and reviewing local environmental history before occupancy."
+  },
+  {
+   "q": "Is the water table dropping near Pueblo?",
+   "a": "The reported medians do not show a dropping trend: static water level was 19 feet below surface in the 2010s and 16 feet in the 2020s. Only 110 wells report a static water level, and measurements may differ by season, location and well condition. Treat the series as limited context, then obtain a recent measurement for the property."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Pueblo and nearby areas including Salt Creek, Blende and Vineland. The company handles access driveways, site development, new-build septic systems and custom homes.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1419,
+  "completion_tokens": 2025,
+  "total_tokens": 3444,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1416,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 99,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

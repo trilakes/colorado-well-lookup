@@ -1,0 +1,76 @@
+{
+ "title": "Adams County CO well depth and drilling cost",
+ "meta_description": "In Adams County the median well depth is 55 ft, with most yields around 12 gpm. Learn how that affects drilling cost and water reliability.",
+ "h1": "Water wells in Adams County, Colorado",
+ "eyebrow": "Local well conditions",
+ "intro_html": "<p>Adams County is mostly plains over the Denver Basin, so you see a big spread in well depths and water levels. The state has records on 25,850 permits here, which gives a good picture of what you’re likely to hit and what it may cost to drill.</p><p>Below is what those records say about depth, production, and risk in Adams County as a whole. For a specific property near places like Brighton, Derby, or Federal Heights, it’s worth comparing your parcel to nearby permits on the map.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells run in Adams County",
+   "html": "<p>Across Adams County, the median reported well depth is 55 feet, but the middle half run from about 30 to 352 feet. On top of that, 21% of wells are 300–600 feet and 9% are deeper than 600 feet, with the deepest reaching 2,040 feet. That tells you depth is highly location-dependent.</p><p>About 60% of wells are under 100 feet, often in shallower alluvial or upper bedrock zones. Once you move into Denver Basin bedrock, depths can jump fast. For a driller’s bid, I’d plan around a broad range rather than one number, then tighten it up after checking nearby permits around places like Todd Creek or Henderson.</p>"
+  },
+  {
+   "heading": "Well yield: how much water you usually get",
+   "html": "<p>Production in Adams County is generally solid. The median reported pump yield is 12 gpm, with the middle half between 10 and 15 gpm. There are no wells on record under 1 gpm, only about 2% fall in the 1–5 gpm range, 61% are 5–15 gpm, and 37% report more than 15 gpm.</p><p>For a normal exempt household well, 10–15 gpm is more than enough for typical indoor use and reasonable outdoor watering within permit limits. With this kind of yield profile, the bigger concern is depth and water level rather than long-term flow for a single house. Still, I’d look closely at nearby irrigation and stock wells, since those uses (about 18% combined) can stress local zones more than domestic-only wells.</p>"
+  },
+  {
+   "heading": "Water levels and long-term trend",
+   "html": "<p>Static water levels in Adams County show a median depth to water of 36 feet, with the middle half between 12 and 120 feet below ground. That’s a wide spread, reflecting the mix of alluvial and Denver Basin bedrock aquifers.</p><p>By decade, the median water level has bounced around: about 30 feet in the 1950s–60s, 85 feet in the 1970s, 32 feet in the 1980s, 170 feet in the 1990s, 33 feet in the 2000s, 70 feet in the 2010s, and 33 feet again in the 2020s. That up‑and‑down pattern doesn’t read as one simple falling water table, more like shifting measurement locations and pumping patterns. On a specific parcel, you want to look at static levels from the last decade in a tight radius before assuming anything.</p>"
+  },
+  {
+   "heading": "Who’s drilling here and how activity has changed",
+   "html": "<p>Wells have been going in steadily in Adams County since at least the 1950s. The state shows 1,001 permits from the 1950s, 1,053 in the 1960s, 1,702 in the 1970s, and 1,968 in the 1980s. Activity jumped in the 1990s with 4,049 permits and peaked in the 2000s at 4,860, then stayed high with 3,924 in the 2010s and 2,038 in the 2020s so far. The newest permit on record is from 2026.</p><p>Most wells tap unnamed or fractured-bedrock aquifers (15,572 wells), with smaller numbers in alluvial deposits (1,823) and the Upper Arapahoe (1,442). Denver Basin aquifer wells make up 99% overall. The busiest drillers on record include Authorized (Pe, Pg), Crandall Drilling & Pump Service, and John'S Drilling Inc.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost in Adams County",
+   "html": "<p>Adams County sits over Denver Basin sedimentary bedrock, so drilling prices here tend to be driven by footage. A typical rate in the area runs about $50–$70 per foot. At the county’s median depth of 55 feet, the drilled hole alone pencils out around $2,800–$3,800.</p><p>By the time you add pump, pressure tank, trenching, and electrical, a finished domestic well at that depth usually falls in the $8,800–$15,800 range. Deeper wells scale straight up at the same per‑foot rate, so those 300–600 foot jobs (21% of wells) get expensive quickly. When you price land, assume the high end of the depth range until you’ve checked nearby completions.</p>"
+  },
+  {
+   "heading": "Water quality, contamination, and other risks to watch",
+   "html": "<p>Adams County has a lot of industrial and environmental activity around it. Within about 10 miles there are 1,344 PFAS sampling or contamination sites and 194 EPA Superfund/cleanup sites, plus 13 historic mine features. That doesn’t mean your well is bad, but it does mean you should test, not guess.</p><p>Domestic and household wells make up about 39% of permits, stock and irrigation another 18%, and monitoring wells about 35%. That monitoring presence reflects real concern about groundwater. Before you buy, budget for lab testing for PFAS and common metals, and pay attention to septic locations and setbacks so you’re not creating your own contamination source near a shallow alluvial well.</p>"
+  },
+  {
+   "heading": "Buying or building on a well lot in Adams County",
+   "html": "<p>Heading into a deal here, your first homework is well records around the property. With depths ranging from under 100 feet for 60% of wells to 600+ feet for 9%, a few nearby permits around places like Brighton, Welby, or Shaw Heights will tell you if you’re in a shallow or deep pocket.</p><p>Confirm what aquifer your permit will target, and whether you’re looking at an exempt household well or something that might need augmentation in an over‑appropriated basin. With median yields around 12 gpm and a median static level near 36 feet, most single‑family setups work fine, but you still want a yield test and a water‑quality panel before closing. On vacant land, factor a full well and septic system into your construction budget from day one.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Adams County, Colorado?",
+   "a": "State records for Adams County show a median well depth of about 55 feet, but the spread is big. The middle half of wells fall between roughly 30 and 352 feet, 21% are 300–600 feet, and 9% go deeper than 600 feet. The deepest well on record reaches 2,040 feet. Local permit records near your parcel are the best guide to what you’ll actually hit."
+  },
+  {
+   "q": "How much water do Adams County wells usually produce?",
+   "a": "Reported yields in Adams County are generally strong. The median pump rate is around 12 gpm, and the middle half of wells fall between 10 and 15 gpm. No wells in the records show yields under 1 gpm. About 61% produce 5–15 gpm and 37% report more than 15 gpm. For a typical household well, that’s ample capacity if the system is designed correctly."
+  },
+  {
+   "q": "What does it cost to drill a well in Adams County, CO?",
+   "a": "In Adams County’s Denver Basin bedrock, typical drilling rates run about $50–$70 per foot. At the county’s median depth of 55 feet, the hole alone comes in around $2,800–$3,800. Once you add pump, pressure tank, trenching, and electrical, a finished domestic well at that depth usually totals roughly $8,800–$15,800. Deeper wells scale up directly with footage at the same per‑foot rate."
+  },
+  {
+   "q": "Is well water safe to drink in Adams County, Colorado?",
+   "a": "Safety depends on the specific well. The county has 1,344 PFAS sampling or contamination sites and 194 EPA Superfund or cleanup sites within about 10 miles, plus 13 historic mine features, so there is real potential for local impacts. Many homes use wells safely, but you should test for PFAS, metals, and basic potability on any existing or new well and review results before relying on it for drinking water."
+  },
+  {
+   "q": "Are water levels dropping in Adams County wells?",
+   "a": "The long‑term data don’t show one simple downward trend. Median static water levels were about 30 feet in the 1950s–60s, 85 feet in the 1970s, 32 feet in the 1980s, 170 feet in the 1990s, 33 feet in the 2000s, 70 feet in the 2010s, and 33 feet again in the 2020s. That up‑and‑down pattern suggests location and pumping patterns matter more than a uniform decline, so check recent measurements near your property."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that can handle access driveways, site development, new-build septic systems and full custom homes in the Adams County area.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1542,
+  "completion_tokens": 2508,
+  "total_tokens": 4050,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 342,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "title": "Alamosa County CO well depth and drilling cost",
+ "meta_description": "Alamosa County well depths center around 100 ft, with a 23.5 gpm median yield. Learn what that means for drilling cost and water reliability here.",
+ "h1": "Water wells in Alamosa County, Colorado",
+ "eyebrow": "Local well details",
+ "intro_html": "<p>Alamosa County is heavy on private wells for homes, stock, and irrigation. The state has records on 9,982 permits here, so we have a good picture of how deep drillers have to go, how much water they usually hit, and what that tends to cost in this part of the San Luis Valley.</p><p>Below is a plain-language summary of the depth, yield, and cost numbers for Alamosa County as a whole, along with a few cautions to look at before you buy land or plan a new well.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells run in Alamosa County",
+   "html": "<p>Across Alamosa County, the median reported well depth is about 100 feet. Half of the wells with depth data fall between 60 and 250 feet, so most domestic and stock wells won’t be extremely deep, but there are some much deeper holes around.</p><p>About 48% of wells are under 100 feet, another 28% land between 100 and 300 feet, and only 12% are in the 300–600 foot range. Another 12% go deeper than 600 feet, with the deepest on record at 3,080 feet. That upper tail is mostly irrigation and higher-capacity wells, not typical house wells, but it tells you that in some parts of the county, drillers do have to chase water fairly deep.</p><p>Local aquifers include a mix of unnamed/fractured bedrock and the Unconfined San Luis Valley aquifer, which is why depths vary so much across short distances.</p>"
+  },
+  {
+   "heading": "Well yield: how much water you usually get",
+   "html": "<p>Among the 1,816 wells that report a pump test, the median yield is 23.5 gallons per minute. That’s very strong by Colorado rural standards. The middle half of reported yields ranges from 15.0 to 400.0 gpm, which tells you irrigation and high‑capacity stock wells are pushing the upper end of that range.</p><p>Only 1% of reported wells land in the 1–5 gpm bracket, and there are 0% recorded under 1 gpm. About 21% fall in the 5–15 gpm band, and a big 78% report 15 gpm or more. For a typical exempt household well, anything above about 5 gpm is generally workable; in Alamosa County, most reported wells are well above that.</p><p>Still, yields are only reported on part of the well population, so treat these numbers as a good sign, not a guarantee for a specific parcel.</p>"
+  },
+  {
+   "heading": "Water levels and long-term trend",
+   "html": "<p>Static water levels in Alamosa County are generally shallow. The median depth to water is about 12 feet below ground, and the middle half of reported measurements falls between 8 and 18 feet. That’s consistent with an unconfined valley aquifer setting.</p><p>Looking at medians by decade, water was around 5 feet down in the 1970s, then about 12 feet in the 1980s and 15 feet in the 1990s. It came back up to around 12 feet in the 2000s and 10 feet in the 2010s, then around 13 feet in the 2020s.</p><p>That history shows some fluctuation over time rather than a steady, sharp decline. Locally, though, drawdown near irrigation clusters can still matter, so checking nearby well logs on your specific side of the valley is important.</p>"
+  },
+  {
+   "heading": "Who’s drilling here and permit history",
+   "html": "<p>The permit history in Alamosa County shows several waves of drilling. The state lists 182 permits from the 1950s, 331 from the 1960s, then a surge to 1,723 in the 1970s. Activity eased to 731 permits in the 1980s, then climbed again to 1,645 in the 1990s.</p><p>In the 2000s there were 1,261 permits, then 900 in the 2010s and 753 so far in the 2020s, with the newest permit dated 2026. That steady stream tells you the well field here is a mix of older and more recent construction.</p><p>On the drilling side, the most active outfits in the records are Rocky Mountain Waterworks LLC (Phythian, Donald L.) with 420 wells, Heersink Drilling (Heersink, Scott) with 409, and Valley Pump Company (Self, Clinton L.) with 381. That’s a lot of local experience in these specific aquifers.</p>"
+  },
+  {
+   "heading": "What a new well typically costs in Alamosa County",
+   "html": "<p>Ground conditions in Alamosa County are mainly mixed sedimentary and alluvial material. The drilling model here runs around $50–$75 per foot. At the county’s 100‑foot median depth, you’re looking at roughly $5,000–$7,500 for the drilled hole itself.</p><p>By the time you add casing, grout, pump, pressure tank, trenching, and electrical, the all‑in price for a complete domestic well system typically falls around $11,000–$19,500 at that median depth. Deeper wells, particularly those in the 300–600+ foot range, scale up from there at the same per‑foot rate plus a larger pump and possibly bigger storage.</p><p>For a bid, I’d plan off the 60–250 foot “middle half” depth range, since that’s where most wells actually land in this county.</p>"
+  },
+  {
+   "heading": "Key risks to check: water quality, low yield, and siting",
+   "html": "<p>Alamosa County has mapped environmental concerns near some areas. Within about 10 miles, there are 21 PFAS sampling or contamination sites and 2 EPA Superfund or cleanup sites. That doesn’t mean your well is contaminated, but it does mean you should budget for a good lab test panel before you rely on the water.</p><p>On the quantity side, the overall yield statistics are favorable, with 0% of reported wells under 1 gpm. Still, individual holes can underperform, so your driller should plan to test yield before you size pumps and storage.</p><p>On undeveloped lots, think ahead about septic: keep enough separation between your proposed well and leach field, and make sure there’s access for a rig to reach a good drilling spot that also works with your house and driveway layout.</p>"
+  },
+  {
+   "heading": "Buying or building on a well in Alamosa County",
+   "html": "<p>With 48% of wells under 100 feet and a strong 23.5 gpm median yield, most Alamosa County properties have workable groundwater. For a new build, your first step is checking neighboring well logs in your part of the county, not just relying on countywide averages.</p><p>The use mix in the records is about 48% domestic/household, 21% stock, 33% irrigation, and 8% monitoring. That means many wells are designed for higher demands than a typical single home, which helps explain the high reported yields.</p><p>Before closing, confirm there is a valid DWR permit, get copies of any completion reports, and have the water tested. If you’re under subdivision or augmentation rules, make sure the well’s use type (domestic vs irrigation vs stock) matches what you plan to do on the property.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Alamosa County, Colorado?",
+   "a": "In Alamosa County, the median reported well depth is about 100 feet. Half of the wells with depth data fall between 60 and 250 feet. About 48% of wells are under 100 feet, 28% are between 100 and 300 feet, 12% land between 300 and 600 feet, and another 12% are deeper than 600 feet, with the deepest reaching 3,080 feet."
+  },
+  {
+   "q": "How much water do wells in Alamosa County usually produce?",
+   "a": "Among the 1,816 wells that report a pump test, the median yield is 23.5 gpm. The middle half of wells fall between 15.0 and 400.0 gpm. Only 1% of reported wells are in the 1–5 gpm range, none are under 1 gpm, about 21% are 5–15 gpm, and 78% show 15 gpm or more, which is strong for domestic use."
+  },
+  {
+   "q": "What does it cost to drill a well in Alamosa County?",
+   "a": "The drilling cost model for Alamosa County, in mixed sedimentary and alluvial ground, runs about $50–$75 per foot. At the 100‑foot median depth, that’s roughly $5,000–$7,500 for drilling. A complete domestic well with pump, pressure tank, trenching, and electrical typically totals around $11,000–$19,500 at that depth, with deeper wells costing more."
+  },
+  {
+   "q": "Is the water table dropping in Alamosa County?",
+   "a": "Static water level data show some ups and downs rather than a simple downward slide. Median depth to water was about 5 feet in the 1970s, 12 feet in the 1980s, 15 feet in the 1990s, 12 feet in the 2000s, 10 feet in the 2010s, and 13 feet in the 2020s. Overall, levels fluctuate, so it’s smart to review nearby well logs for your specific area."
+  },
+  {
+   "q": "Is well water safe to drink in Alamosa County?",
+   "a": "The records show 21 PFAS sampling or contamination sites and 2 EPA Superfund or cleanup sites within about 10 miles, so water quality can vary by location. Many homes rely on wells here, but safety depends on your specific well. Before drinking it, have a certified lab test for bacteria, nitrate, and any contaminants of concern for your part of the county."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Alamosa County for access driveways, full site development, new-build septic systems, and custom homes. We know how to coordinate with your well driller so the house, utilities, and driveway all work together from day one.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1491,
+  "completion_tokens": 2364,
+  "total_tokens": 3855,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 36,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

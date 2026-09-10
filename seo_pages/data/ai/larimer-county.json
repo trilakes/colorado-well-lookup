@@ -1,0 +1,77 @@
+{
+ "title": "Larimer County Wells: Depth, Yield and Cost",
+ "meta_description": "Larimer County wells have a 190 ft median depth and 6.0 gpm median yield. Review drilling costs, water levels and checks before buying land.",
+ "h1": "What to Expect From a Well in Larimer County",
+ "eyebrow": "Mountain Wells and Land",
+ "intro_html": "<p>A well near Red Feather Lakes can be a very different job from one outside Fort Collins. Larimer County’s permit records cover mountain bedrock and alluvial settings, so the county median is a starting point—not a prediction for your lot.</p><p>Colorado DWR records list <strong>20,592 permitted wells</strong>, with 12,847 recorded as constructed. Reported depths center on 190 ft and pump yields on 6.0 gpm. For a buyer, the important question is how nearby completed wells compare with the property being considered.</p>",
+ "sections": [
+  {
+   "heading": "Why Larimer County Depths Spread From Shallow to Mountain-Deep",
+   "html": "<p>The 13,679 wells reporting depth have a <strong>190 ft median</strong>, but the middle half spans 40-400 ft. That is a wide estimating range: a bid based only on the median can miss the amount of drilling your parcel needs. The 90th-percentile depth is 600 ft, showing that deeper work is a meaningful part of the local record.</p><p>Permits place 18,611 wells in the unnamed / fractured-bedrock category. Alluvial and Quaternary Alluvium also appear. Around Estes Park, Glen Haven and Red Feather Lakes, productive fractures can be unpredictable. Ask a driller to compare wells in the same terrain and geologic setting, not simply the nearest addresses.</p>"
+  },
+  {
+   "heading": "A 6.0 gpm Median Does Not Guarantee Household Supply",
+   "html": "<p>Reported pump yields in Larimer County have a <strong>6.0 gpm median</strong>, with the middle half at 4.0-10.0 gpm. These figures come from 5,407 records, not every permitted well. A reported drilling-time yield is useful evidence, but it does not establish how a well will perform through sustained household use or changing conditions.</p><p>The buyer’s caution flag is the <strong>7% reporting under 1 gpm</strong>. A low-producing well may require storage and careful demand management; installing a larger pump does not make the aquifer replenish faster. Before closing on a home near Livermore or Bellvue, obtain a current pumping and recovery evaluation rather than relying on the original yield entry.</p>"
+  },
+  {
+   "heading": "Recorded Water Levels Are Deeper in Recent Decades",
+   "html": "<p>Among 1,058 static-water-level reports, the median depth to water is <strong>50 ft below ground</strong>, and the middle half is 15-100 ft. Static level describes resting water in the well. It is not total drilled depth, and it does not tell you how far the level falls while pumping.</p><p>Decade medians deepen from 13 ft in the 1950s to 35 ft in the 1990s, 49 ft in the 2000s, 76 ft in the 2010s and 80 ft in the 2020s. That pattern suggests deeper recorded water levels over time. It does not prove a uniform countywide decline because the records may represent different wells and locations. Check repeat measurements on the actual well where available.</p>"
+  },
+  {
+   "heading": "Larimer’s Permit History and Names in the Drilling Records",
+   "html": "<p>Permit issuance reached 4,089 in the 1990s, followed by 3,010 in the 2000s and 2,163 in the 2010s. The 2020s contain 1,316 permits, with the newest permit year listed as 2025. Treat that latest decade as incomplete, and remember that a permit is not evidence that a well was finished.</p><p>Prominent names include Ingram Drilling Inc. (Ingram, Stephen E.), with 3,264 records, and Hersh &amp; Son Well Drilling Inc (Hersh, Harry), with 1,631. The dataset also lists “Authorized (Pe, Pg)” on 1,703 records; that label is not a clearly identified drilling business. These are historical record counts, not confirmation of current availability. Domestic/household use accounts for 68% of permits.</p>"
+  },
+  {
+   "heading": "Budgeting a Bedrock Well Near Estes Park or Red Feather Lakes",
+   "html": "<p>The supplied Larimer County cost model assumes fractured mountain bedrock—granite or gneiss—at <strong>$65-$100 per foot</strong>. At the 190 ft median depth, the drilled hole alone is about $12,400-$19,000. A finished well with pump, tank, trenching and electrical is modeled at <strong>$18,400-$31,000</strong>.</p><p>Use that as a planning allowance, not a parcel-specific quote. With the middle half of reported depths spanning 40-400 ft, drilling footage can change the budget substantially. Ask the bid to identify casing and grout, pump sizing, testing, rig access and the route to the house. On a mountain lot, driveway access and difficult trenching deserve attention before you commit to a building location.</p>"
+  },
+  {
+   "heading": "Water Quality, Dry-Hole Risk and Septic Placement",
+   "html": "<p>The supplied environmental mapping lists 90 PFAS sampling/contamination sites, 70 historic mine features and 40 EPA Superfund/cleanup sites within about 10 miles. Those are screening flags, <strong>not evidence that a particular well is contaminated</strong>. A sampling site may not represent a confirmed problem. Review the mapped locations and choose laboratory testing suited to the property’s surroundings.</p><p>Fractured bedrock also carries low-yield and dry-hole risk; neighboring success cannot guarantee a productive fracture on your lot. Inspect wellhead protection and review casing and grout records. Before building near Drake or Glen Haven, coordinate the well, septic system, house and access layout so required separations and construction access remain workable.</p>"
+  },
+  {
+   "heading": "Before Buying a Larimer County Well or Building Lot",
+   "html": "<p>Start with the parcel’s DWR permit, construction report and pump records. Confirm that the permit belongs to the property and that its allowed uses match your plans. <strong>A household-use permit does not automatically authorize lawn irrigation, livestock watering or other outdoor uses.</strong> Expanded uses may require a different water-right arrangement, including augmentation where applicable.</p><p>Next, compare completed wells around the parcel using the Fort Collins, Laporte, Wellington or other relevant local page. Separate nearby valley records from mountain-bedrock examples. Make water-quality testing, pumping performance and a written site-specific estimate part of due diligence. For vacant land, resolve well access and septic feasibility before treating the lot as ready to build.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Larimer County, Colorado?",
+   "a": "The median reported depth is 190 ft, and the middle half runs from 40-400 ft across 13,679 depth records. The 90th-percentile depth is 600 ft. That broad spread makes county averages a rough starting point. For a mountain parcel, compare nearby completed wells in similar bedrock and terrain before setting a drilling budget."
+  },
+  {
+   "q": "How much does it cost to drill a well in Larimer County?",
+   "a": "The mountain-bedrock cost model uses $65-$100 per foot. At the county’s 190 ft median depth, drilling the hole is about $12,400-$19,000; a finished well with pump, tank, trenching and electrical is about $18,400-$31,000. Get a parcel-specific bid that addresses depth uncertainty, casing, rig access and the utility route to the house."
+  },
+  {
+   "q": "Will a Larimer County well produce enough water for a house?",
+   "a": "Reported yields have a 6.0 gpm median, with the middle half at 4.0-10.0 gpm. However, 7% report under 1 gpm. Household suitability depends on sustained production, recovery and demand, not just the original yield entry. Have an existing well evaluated before purchase, and discuss storage if production is limited."
+  },
+  {
+   "q": "Is well water safe to drink in Larimer County?",
+   "a": "Permit depth and yield cannot establish drinking-water safety. The supplied mapping lists 90 PFAS sampling/contamination sites, 70 historic mine features and 40 EPA Superfund/cleanup sites within about 10 miles, but proximity does not prove contamination. Obtain laboratory testing for the actual well and review nearby environmental records to decide whether additional targeted testing is warranted."
+  },
+  {
+   "q": "Is the water table dropping in Larimer County?",
+   "a": "Recorded decade medians suggest deeper water levels over time: 13 ft below ground in the 1950s compared with 80 ft in the 2020s. However, these countywide groups may contain different wells and locations, so they do not establish a uniform decline. Repeat measurements and pumping evaluations on the property’s well are more useful for purchase decisions."
+  }
+ ],
+ "tri_lakes_blurb": "For a Larimer County mountain lot, Tri-Lakes Contracting is a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes. Coordinate those improvements with the well location and drilling access before settling the site layout.",
+ "_model": "gpt-6-astra",
+ "_usage": {
+  "prompt_tokens": 1546,
+  "completion_tokens": 2232,
+  "total_tokens": 3778,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1543,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 101,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

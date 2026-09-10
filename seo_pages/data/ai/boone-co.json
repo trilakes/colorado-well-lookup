@@ -1,0 +1,77 @@
+{
+ "title": "Boone Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Boone wells have a 40 ft median depth, 15 gpm median reported yield, and estimated finished costs of $7,400-$14,200.",
+ "h1": "Boone, Colorado Well Depth, Yield and Cost Guide",
+ "eyebrow": "Boone well records explained",
+ "intro_html": "<p>Buying land near Boone means dealing with a very different well profile than many Colorado mountain or foothill areas. Permitted wells within 5 miles show a <strong>40-foot median depth</strong>, a <strong>15.0 gallons-per-minute median reported yield</strong>, and generally shallow water levels. Most records are domestic, irrigation, stock, or monitoring wells, so the permit history needs to be read in context before you assume a residential result.</p><p>These records are useful for planning, but they are not a guarantee for a specific lot. A driller still needs to evaluate the ground, access, casing and grout requirements, pump setting, electrical work, septic layout, and the intended use of the property.</p>",
+ "sections": [
+  {
+   "heading": "Boone wells are usually shallow, but the ground still matters",
+   "html": "<p>Boone’s nearby records show a <strong>40-foot median total depth</strong>, with the middle half between <strong>33 and 50 feet</strong>. The 90th-percentile depth is 60 feet, and 98% of recorded wells are under 100 feet. That is a strong starting point for a drilling estimate on the plains, where the cost model assumes alluvium and plains sedimentary rock.</p><p>The range is not uniform. The deepest recorded well reaches 2,150 feet, and the aquifer field identifies 951 wells as unnamed or fractured-bedrock aquifer wells, alongside 70 alluvial wells. A 40-foot planning number may fit many sites, but a driller should still price casing, grout, mobilization, and difficult ground rather than quoting from depth alone.</p>"
+  },
+  {
+   "heading": "Reported Boone yields are generally strong, with limited testing data",
+   "html": "<p>Only 57 wells in the records report a pump yield, so the yield statistics are useful but not a complete survey of every permitted well. Among those reports, the median is <strong>15.0 gallons per minute</strong>, and the middle half runs from 14.0 to 104.0 gallons per minute. Seventy-four percent report more than 15 gallons per minute.</p><p>No reported wells are under 1 gallon per minute, while 2% fall between 1 and 5 gallons per minute and 25% fall between 5 and 15. That is encouraging for household planning, but a pump test and well-construction report matter more than a nearby average. An exempt household-use well is subject to Colorado’s 35 gpm pumping limit, regardless of a higher reported well yield.</p>"
+  },
+  {
+   "heading": "Water levels in Boone appear shallower in newer measurements",
+   "html": "<p>The overall median static water level is <strong>28 feet below the surface</strong>, with the middle half between 18 and 33 feet. The decade comparison does not suggest a dropping table in this record set. Median depth to water was 32 feet in measurements from the 2010s and 14 feet in measurements from the 2020s.</p><p>That change should not be treated as proof that every lot has more water now. Static levels can vary with location, season, measurement conditions, pumping, and the type of well being measured. Before buying, compare nearby well construction reports and ask the driller how the proposed pump setting and pressure system fit the expected water level.</p>"
+  },
+  {
+   "heading": "A long permit history gives Boone useful local comparisons",
+   "html": "<p>Boone has a substantial permit history: 1,064 wells appear in Colorado Division of Water Resources records, 655 are recorded as constructed, and 668 report a total depth. Permits were issued as far back as the 1950s, with the largest decade being the 1990s at 305 permits. The newest permit year in the records is 2025.</p><p>The listed drillers with the most records are Authorized (Pe, Pg), with 167, Layne Western Company Inc. (Larson, Carl), with 87, and High Plains Drilling (Jecminek, Charles L.), with 43. These names are historical permit records, not a recommendation or proof of current availability. Confirm licensing, insurance, scope, and current references before hiring anyone.</p>"
+  },
+  {
+   "heading": "Boone drilling estimates start low because typical depths are shallow",
+   "html": "<p>The local cost model uses a drilling rate of <strong>$35 to $55 per foot</strong> for alluvium and plains sedimentary rock. At Boone’s 40-foot median depth, the drilled hole is estimated at about <strong>$1,400 to $2,200</strong>. That is only the drilling portion, not the complete water system.</p><p>A finished well with pump, pressure tank, trenching, and electrical is modeled at <strong>$7,400 to $14,200</strong>. A bid can move outside that range if the site needs more depth, difficult access, extra casing or grout, a longer utility trench, or specialized treatment. Ask for separate line items so you can compare drilling, pump installation, electrical, and site work instead of comparing one combined number.</p>"
+  },
+  {
+   "heading": "Low yield, contamination, septic, and building layout still need review",
+   "html": "<p>The records show no reported wells under 1 gpm, but only 57 wells report a pump yield. A dry hole or low-producing well remains a site-specific risk, especially where the aquifer is described as unnamed or fractured bedrock. Require a written drilling agreement that explains what happens if the hole does not produce enough water.</p><p>Environmental screening also matters. Within about 10 miles are 3 PFAS sampling or contamination sites and 3 EPA Superfund or cleanup sites. That does not establish contamination at your lot, but it supports testing before occupancy and periodic testing as appropriate. Keep the well, septic system, house, driveway, and repair access coordinated. The permit conditions and county requirements control the final layout.</p>"
+  },
+  {
+   "heading": "Check the well record before you commit to a Boone lot",
+   "html": "<p>Start with the exact parcel, then review nearby permits rather than relying on a regional average. Compare total depth, construction details, static water level, reported yield, use type, and aquifer description. Domestic records are more relevant to a residence than monitoring or irrigation records, and the local use mix includes 29% domestic or household, 13% stock, 18% irrigation, and 31% monitoring wells.</p><p>Ask the county and Colorado DWR what permit is available for the proposed use. In an over-appropriated basin, an augmentation plan may be required, and water rights are separate from the physical ability to drill. For a buildable lot, confirm well access, septic setbacks, electrical routing, winter access, and a realistic construction budget before closing.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Boone, Colorado?",
+   "a": "Nearby permitted wells have a 40-foot median depth, with the middle half from 33 to 50 feet. The 90th-percentile depth is 60 feet, and 98% are under 100 feet. However, the deepest record is 2,150 feet, so shallow nearby wells do not guarantee the same result on every parcel."
+  },
+  {
+   "q": "How much does it cost to drill a well in Boone, Colorado?",
+   "a": "The local model uses $35-$55 per foot. At the 40-foot median depth, the drilled hole is estimated at $1,400-$2,200. A finished system with pump, tank, trenching, and electrical is estimated at $7,400-$14,200. Access, extra depth, casing, grout, trench length, and electrical conditions can change the bid."
+  },
+  {
+   "q": "How much water do wells produce near Boone?",
+   "a": "Among 57 wells reporting a pump yield, the median is 15.0 gallons per minute and the middle half is 14.0-104.0 gpm. Seventy-four percent report more than 15 gpm, while 2% report 1-5 gpm. The sample is limited, so require a pump test or documented production result for the specific well."
+  },
+  {
+   "q": "Is well water safe to drink in Boone, Colorado?",
+   "a": "Nearby records identify 3 PFAS sampling or contamination sites and 3 EPA Superfund or cleanup sites within about 10 miles. Those sites do not prove a problem at your property. Test the actual well before drinking, use a qualified laboratory, and follow up with treatment or repeated testing if results show a concern."
+  },
+  {
+   "q": "Do I need to check water rights before building near Boone?",
+   "a": "Yes. A well permit and physical water supply are not the same as a legal water right. Colorado may require an augmentation plan in an over-appropriated basin, and an exempt household-use well has a 35 gpm pumping limit. Confirm the proposed use, permit availability, and water-right requirements with Colorado DWR before buying or building."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Boone and the surrounding Pueblo County area. The company handles access driveways, site development, new-build septic systems, and custom homes, helping coordinate the ground work that follows well planning.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1418,
+  "completion_tokens": 2069,
+  "total_tokens": 3487,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1415,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 50,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

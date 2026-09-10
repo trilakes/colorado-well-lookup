@@ -1,0 +1,76 @@
+{
+ "title": "Summit County well depth and drilling cost",
+ "meta_description": "Summit County wells have a median depth of 120 ft and a typical yield around 10 gpm. See what that means for drilling cost and water supply.",
+ "h1": "Summit County, CO water wells and drilling costs",
+ "eyebrow": "Planning a mountain well",
+ "intro_html": "<p>Summit County wells are almost all in fractured mountain bedrock, so they don’t behave like big flat aquifers on the plains. The state has records on 8,488 permits here, with 5,304 reporting total depth and 2,464 reporting a tested pump yield. That’s enough data to get a realistic feel for how deep you’ll likely drill, how much water you can expect, and what a new well is liable to cost in this part of the high country.</p>",
+ "sections": [
+  {
+   "heading": "How much water Summit County wells really make",
+   "html": "<p>Across Summit County, reported well yields are solid for mountain rock. The median tested pump yield is 10.0 gpm, and the middle half of wells fall between 7.0 and 13.3 gpm. That’s plenty for a typical exempt household well, even with some irrigation of trees or a small garden.</p><p>Low producers are not common in the data: 0% of tested wells are under 1 gpm, and only 10% fall between 1 and 5 gpm. Most wells, 66%, land between 5 and 15 gpm, and 24% are 15+ gpm. In fractured bedrock, that’s a favorable spread, but individual wells can still surprise you, especially on ridges or isolated benches above towns like Breckenridge, Silverthorne, or Montezuma.</p>"
+  },
+  {
+   "heading": "Typical well depth in Summit County and what drives it",
+   "html": "<p>Summit County wells are not especially deep for a mountain county. The median total depth is 120 ft, and the middle half run from 65 to 200 ft. Only about 1% go deeper than 600 ft, and the deepest well on record reaches 1,202 ft. Most homeowners end up in the 100–300 ft range, which accounts for 51% of wells; another 40% finish shallower than 100 ft.</p><p>Depth is driven by local geology and topography. Almost all wells – 8,282 of them – are completed in unnamed fractured-bedrock aquifers (granite and gneiss), with only small pockets of alluvial or other aquifers. Higher, rocky sites above places like Keystone or Copper Mountain often need more footage than valley bottoms and older subdivisions.</p>"
+  },
+  {
+   "heading": "Water levels and long-term trend in the county",
+   "html": "<p>Summit’s static water levels are moderate. Among the 646 wells reporting measurements, the median depth to water is 60 ft, with the middle half between 29 and 100 ft below ground. That means you often drill deeper than that to get good production, but pumps don’t usually sit extremely deep compared with some other mountain counties.</p><p>By decade, median static levels have moved from 38–40 ft in the 1960s–1970s, to 50 ft in the 1980s, and about 70 ft in the 1990s. Since 2000, medians have generally been around 55–60 ft. That pattern suggests some fluctuation over time rather than a steady long-term drop, but individual wells can still be sensitive to local fractures, nearby pumping, and drought cycles.</p>"
+  },
+  {
+   "heading": "Who’s been drilling here and how busy it is",
+   "html": "<p>Summit County has a long drilling history. The state shows permits starting in the 1950s, with only 14 that decade, then 370 in the 1960s and 854 in the 1970s. Activity peaked in the 1990s with 2,131 permits, followed by 1,673 in the 2000s. The 2010s saw 828 permits, and there are already 653 in the 2020s, with records running through a newest permit in 2026.</p><p>A few outfits have done a lot of the work here: Golden Eagle Drilling Corporation (Shelton, Joe Wayne) appears on 1,450 wells, Buena Vista Drilling (Shelton, William L) on 1,043, and Arrow Drilling Co. (Berglund, Paul R.) on 662. That long track record in fractured bedrock is helpful when you’re asking a driller to estimate depth and odds of hitting a strong fracture on your specific lot.</p>"
+  },
+  {
+   "heading": "What a new well typically costs in Summit County",
+   "html": "<p>In Summit County’s fractured granite and gneiss, typical drilling runs about $65–$100 per foot. At the county’s 120 ft median depth, you’re looking at roughly $7,800–$12,000 for the drilled hole alone. By the time you add casing, grout, pump, pressure tank, trenching, and electrical, a finished, producing well at that depth often totals around $13,800–$24,000.</p><p>If your site ends up closer to the upper end of the local depth range, those numbers scale pretty quickly. A 200 ft well is roughly two-thirds more footage than the median. Before you buy a lot outside towns like Dillon, Frisco, or Heeney, use nearby well records to sanity-check the drilling allowance in your budget.</p>"
+  },
+  {
+   "heading": "Local risks: low yield, dry holes, and contamination",
+   "html": "<p>Summit’s yield statistics are good, but fractured-bedrock geology is unpredictable. Even in an area where 0% of reported wells tested under 1 gpm, a single hole on a ridge or spur can still come in weak or dry. Planning for the possibility of deepening, fracking, or twinning a well is smart when you’re pushing higher terrain.</p><p>On the contamination side, the county isn’t pristine. Within about 10 miles, there are 16 mapped PFAS sampling or contamination sites, 2,178 historic mine features, and 22 EPA Superfund or cleanup sites. Before finalizing a purchase, budget a full water-quality lab test on any existing well and pay attention to well and septic separation on tight lots in older subdivisions.</p>"
+  },
+  {
+   "heading": "Buying or building on a Summit County well lot",
+   "html": "<p>Most Summit County wells (about 80% of permits) are domestic or household use, with small shares for stock, irrigation, and about 12% for monitoring. If you’re on a standard exempt household permit, expect the usual 35 gpm pumping limit and use restrictions rather than unlimited irrigation or commercial use.</p><p>When you’re evaluating a vacant parcel, pull nearby state well records for depth, yield, and static level. Compare that with your elevation relative to nearby producing wells in places like Blue River, Silverthorne, or Keystone. Check access for a drill rig, room for a code-compliant septic system, and realistic power-trenching runs from the house to the well and tank. All of that affects cost more than people think.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Summit County, Colorado?",
+   "a": "Based on 5,304 wells that report a total depth, the median well in Summit County is about 120 ft deep, with the middle half of wells between 65 and 200 ft. Roughly 40% of wells are shallower than 100 ft, 51% fall between 100 and 300 ft, and only about 1% go deeper than 600 ft. Local topography and fractured bedrock can still push individual wells deeper."
+  },
+  {
+   "q": "What is a good well yield in Summit County, CO?",
+   "a": "Summit County’s reported well yields are generally strong for mountain bedrock. The median tested pump yield is 10.0 gpm, and the middle half of wells fall between 7.0 and 13.3 gpm. Only about 10% of wells are between 1 and 5 gpm, and none of the tested wells are under 1 gpm in the records. Most homeowners here have enough flow for normal indoor use and modest outside watering."
+  },
+  {
+   "q": "Is the groundwater level dropping in Summit County?",
+   "a": "Static water level data from 646 wells show some ups and downs rather than a clear long-term decline. Median depth to water was about 38–40 ft in the 1960s–1970s, around 50 ft in the 1980s, and about 70 ft in the 1990s. Since the 2000s, medians have generally been near 55–60 ft. That suggests fluctuation over time, with local conditions still varying a lot well to well."
+  },
+  {
+   "q": "How much does it cost to drill a well in Summit County, Colorado?",
+   "a": "In Summit County’s fractured granite and gneiss, drilling typically runs about $65–$100 per foot. At the county’s median depth of 120 ft, that works out to around $7,800–$12,000 for drilling alone. When you include casing, pump, pressure tank, trenching, and electrical, a complete working well at that depth often totals in the neighborhood of $13,800–$24,000, with deeper sites costing more."
+  },
+  {
+   "q": "Is well water safe to drink in Summit County, CO?",
+   "a": "Water quality varies by location. Records show 16 PFAS sampling or contamination sites, 2,178 historic mine features, and 22 EPA Superfund or cleanup sites within about 10 miles, so it’s wise to test. Many homes use wells safely, but you should run a full lab analysis on any existing well before buying, and test a new well at completion, especially for metals, bacteria, and PFAS where relevant."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting works throughout Summit County as a licensed Colorado contractor handling access driveways, site development, new-build septic systems, and custom homes so your well project fits into a workable overall plan.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1512,
+  "completion_tokens": 2380,
+  "total_tokens": 3892,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 215,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

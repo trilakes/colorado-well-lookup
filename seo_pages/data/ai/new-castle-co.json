@@ -1,0 +1,77 @@
+{
+ "title": "New Castle Well Depth and Drilling Cost",
+ "meta_description": "New Castle wells have a 94-foot median depth and typical finished-well costs of $10,700-$19,100.",
+ "h1": "New Castle Colorado Well and Drilling Guide",
+ "eyebrow": "Local well facts for buyers",
+ "intro_html": "<p>Buying land near New Castle means looking closely at the well record, not just the listing description. Permits within 5 miles show relatively shallow wells overall, strong reported production, and a water source commonly identified as unnamed or fractured bedrock. The records also include alluvial and Mancos wells.</p><p>These figures are useful for planning, but they are not a guarantee for one parcel. A driller still needs to evaluate access, geology, casing and grout requirements, pump equipment, power, septic layout, and the well permits on neighboring properties.</p>",
+ "sections": [
+  {
+   "heading": "New Castle well depths reflect shallow local drilling",
+   "html": "<p>The median reported well depth near New Castle is 94 feet. The middle half runs from 60 to 154 feet, so many ordinary drilling bids should be based on a relatively shallow hole. Still, the range is wide: the 90th percentile is 240 feet, and the deepest record reaches 2,203 feet.</p><p>Depth mix helps put that spread in context. Fifty-two percent of wells are under 100 feet, while 42% fall between 100 and 300 feet. Another 6% are 300 to 600 feet, with no recorded wells in the 600-plus-foot category. A contractor should price the expected depth separately from casing, grout, pump, trenching, and electrical work.</p>"
+  },
+  {
+   "heading": "Reported well yield is generally strong around New Castle",
+   "html": "<p>Among the records that report pump yield, the median is 15.0 gallons per minute, with the middle half from 10.0 to 15.0 gallons per minute. Sixty-five percent report more than 15 gallons per minute. Another 27% fall between 5 and 15 gallons per minute, and 8% are between 1 and 5 gallons per minute.</p><p>No recorded well in this dataset reports less than 1 gallon per minute. That is encouraging for a buyer, but yield is not the same as usable storage or a guaranteed household supply. Ask for the well test, permitted use, pump setting, and any production limits. Exempt household-use wells also have a 35-gpm pumping limit under Colorado rules.</p>"
+  },
+  {
+   "heading": "Water levels vary, without a clear long-term drop",
+   "html": "<p>Reported static water levels have a median depth of 42 feet below the surface. The middle half is 20 to 79 feet below ground, which gives a reasonable planning range for pump installation and trench work, but not a promise for a new well.</p><p>The decade pattern does not show a steady decline. Median depth to water was 50 feet in the 2000s, 41 feet in the 2010s, and 54 feet in the 2020s. Those measurements come from only 72 records, so treat them as local evidence rather than a basin-wide trend. Confirm current conditions with nearby well owners and the Colorado Division of Water Resources record.</p>"
+  },
+  {
+   "heading": "New Castle permit history shows long-term drilling activity",
+   "html": "<p>The permit record includes 932 wells within the study area, although only 470 are recorded as constructed. Six hundred four report a total depth, 215 report a pump yield, and 72 report a static water level. That uneven reporting is why a buyer should not treat every mapped point as a complete operating-well file.</p><p>Permitting has continued across decades, with the largest recorded period in the 1990s at 257 permits. The newest permit year is 2025. The most active drillers listed in these records are Shelton Drilling Corporation, Collins Drilling Co, and Mountain Drilling Co. Older contractor records can help identify local patterns, but a current driller must inspect the specific lot and confirm present permitting requirements.</p>"
+  },
+  {
+   "heading": "What a New Castle well may cost to drill",
+   "html": "<p>For mixed sedimentary and alluvial ground, the local drilling model uses a typical rate of $50 to $75 per foot. At the 94-foot median depth, the drilled hole is estimated at about $4,700 to $7,100.</p><p>A finished system is more than the borehole. Including the pump, pressure tank, trenching, and electrical work, the modeled total is about $10,700 to $19,100 at the median depth. A deeper-than-typical hole, difficult access, extra casing or grout, long utility runs, and rock or unstable formations can change the bid. Get a written scope that separates drilling from completion and site work.</p>"
+  },
+  {
+   "heading": "Check contamination, septic layout, and dry-hole risk",
+   "html": "<p>The mapped area within about 10 miles includes 183 PFAS sampling or contamination sites, 38 historic mine features, and 1 EPA Superfund or cleanup site. Those mapped locations do not prove that a particular well is contaminated, but they justify reviewing environmental records and testing existing or new well water.</p><p>Most permits identify an unnamed or fractured-bedrock aquifer: 921 wells use that description. Fractured rock can be unpredictable even where nearby wells perform well. Before building, confirm the well location, septic setbacks, replacement area, driveway access, and house layout. Ask whether the permit allows the intended household, stock, or irrigation use and whether an augmentation plan is needed in an over-appropriated basin.</p>"
+  },
+  {
+   "heading": "Due diligence for a New Castle lot",
+   "html": "<p>Start with the neighboring wells in Chacra and the surrounding New Castle area, then compare depth, yield, static level, construction date, and permitted use. The local records are dominated by domestic and household wells at 74%, followed by stock at 9%, irrigation at 6%, and monitoring at 11%. That mix helps explain what nearby permits may have been built to do.</p><p>Before closing, obtain the DWR permit and completion documents, a current well test, and water-quality results when available. Have a driller walk the parcel to price access and a realistic drilling range. If you are building, coordinate the well, septic system, electrical route, and grading before excavation. In New Castle, the shallow median is helpful, but the fractured-bedrock records and incomplete reporting make parcel-specific verification essential.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in New Castle, Colorado?",
+   "a": "The median reported well depth within 5 miles of New Castle is 94 feet. The middle half runs from 60 to 154 feet. Fifty-two percent are under 100 feet, while 42% are between 100 and 300 feet. The 90th percentile is 240 feet, so a buyer should still budget for a deeper-than-median outcome."
+  },
+  {
+   "q": "What does it cost to drill a well in New Castle?",
+   "a": "The local cost model uses $50 to $75 per foot in mixed sedimentary and alluvial ground. At the 94-foot median depth, the drilled hole is about $4,700 to $7,100. A finished well with pump, tank, trenching, and electrical is modeled at about $10,700 to $19,100. Access and construction conditions can change the bid."
+  },
+  {
+   "q": "How much water do wells produce in New Castle?",
+   "a": "Reported yields have a 15.0-gpm median, with the middle half between 10.0 and 15.0 gpm. Sixty-five percent report more than 15 gpm, 27% report 5 to 15 gpm, and 8% report 1 to 5 gpm. No recorded well reports under 1 gpm, but the records do not cover every well feature completely."
+  },
+  {
+   "q": "Is well water safe in New Castle, Colorado?",
+   "a": "Safety cannot be determined from depth or yield alone. Within about 10 miles, the mapped records include 183 PFAS sampling or contamination sites, 38 historic mine features, and 1 EPA Superfund or cleanup site. Have the property’s water tested and review nearby environmental records before relying on the well for drinking water."
+  },
+  {
+   "q": "Is the water table dropping near New Castle?",
+   "a": "The available measurements do not show a steady decline. Median static water depth was 50 feet in the 2000s, 41 feet in the 2010s, and 54 feet in the 2020s. Only 72 records report a static water level, so these figures are local indicators rather than proof of a broad groundwater trend."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving New Castle and the surrounding Garfield County area with access driveways, site development, new-build septic systems, and custom homes. Coordinate the well, septic, utilities, and building site with one local construction plan.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1426,
+  "completion_tokens": 2026,
+  "total_tokens": 3452,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1423,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 114,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

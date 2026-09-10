@@ -1,0 +1,77 @@
+{
+ "title": "Platteville Well Depth and Drilling Cost",
+ "meta_description": "Platteville wells have a 46-foot median depth, but some reach 1,000 feet. See yields, water levels, permits, and local drilling costs.",
+ "h1": "What Platteville Well Records Tell Buyers",
+ "eyebrow": "Platteville well field guide",
+ "intro_html": "<p>Platteville sits on the Weld County plains, where well records show a wide range of drilling conditions despite a very shallow typical well. Within 5 miles, Colorado DWR records include 2,490 permitted wells, with 1,587 recorded as constructed. The median reported depth is 46 feet, but the records also include wells reaching 1,000 feet.</p><p>That spread matters when you are pricing a rural lot. A nearby well is useful evidence, but it is not a guarantee of the same depth, yield, water quality, or permitting outcome. The aquifer listed on most permits is Denver Basin, and local records also include alluvial and unnamed or fractured-bedrock descriptions.</p>",
+ "sections": [
+  {
+   "heading": "Platteville well depth depends on the local formation",
+   "html": "<p>The median completed well near Platteville is 46 feet deep, and the middle half runs from 22 to 66 feet. That is a shallow drilling profile compared with many Colorado locations. Still, the 90th-percentile depth is 280 feet, and the deepest record reaches 1,000 feet.</p><p>Most reported wells, 84%, are under 100 feet. Another 6% fall between 100 and 300 feet, while 9% are between 300 and 600 feet. For a driller’s bid, the median is a useful starting point, not a promise. Soil, gravel, the producing interval, casing and grout requirements, and the specific Denver Basin or alluvial setting can move the final depth substantially.</p>"
+  },
+  {
+   "heading": "How much water a Platteville well can produce",
+   "html": "<p>Reported yields are generally strong, but the yield data cover only 348 wells, not every permitted well. The median reported pump yield is 15.0 gallons per minute, with the middle half from 11.0 to 162.5 gallons per minute. That wide middle range shows why a single nearby result should not be treated as a guarantee.</p><p>Among the wells with yield records, 65% report more than 15 gallons per minute. Another 31% report between 5 and 15 gallons per minute, and 4% report between 1 and 5 gallons per minute. No recorded well is listed under 1 gallon per minute. Ask for the completion report and pump test, then match the expected supply to the house, livestock, irrigation, and any applicable permit conditions.</p>"
+  },
+  {
+   "heading": "Water levels around Platteville and the recent record",
+   "html": "<p>The median static water level is 11 feet below ground, with the middle half between 6 and 18 feet. That means water may be relatively shallow in this plains setting, but a shallow water level does not by itself prove that a well will produce enough water or that the water is suitable to drink.</p><p>The decade figures show a modest change in the reported median: 8 feet below surface in the 2010s and 10 feet in the 2020s. That points to water being measured slightly deeper in the newer decade, but it is not enough by itself to establish a long-term declining water table. Only 191 wells report a static water level, so treat the trend as a local signal rather than a basin-wide conclusion.</p>"
+  },
+  {
+   "heading": "Who has been drilling near Platteville",
+   "html": "<p>Permit activity is spread across many decades. Records show 81 permits from the 1950s, 183 from the 1960s, 116 from the 1970s, 109 from the 1980s, 336 from the 1990s, 295 from the 2000s, 251 from the 2010s, and 498 from the 2020s. The newest permit year in the records is 2025.</p><p>The most frequently listed drillers are Authorized (Pe, Pg), with 584 records, Clement, Glenn A., with 178, and A. E. Crandall &amp; Sons (Williams, G C), with 77. These names describe permit history, not a recommendation or proof that a contractor is currently available. Before buying, pull the closest completion reports and confirm the current DWR permit path for the intended use.</p>"
+  },
+  {
+   "heading": "What a Platteville well may cost to drill",
+   "html": "<p>The cost model for Platteville assumes Denver Basin sedimentary bedrock and a drilling rate of $50 to $70 per foot. At the 46-foot median depth, the drilled hole works out to about $2,300 to $3,200. That is only the bore and does not represent the complete water system.</p><p>A finished well including the pump, pressure tank, trenching, and electrical is modeled at about $8,300 to $15,200 at the median depth. A deeper site can exceed that range because drilling adds footage and may change casing, construction, access, or equipment requirements. Get a written bid that separates drilling, casing and grout, pump equipment, trenching, electrical, testing, and permit-related work.</p>"
+  },
+  {
+   "heading": "Platteville risks to check before you close or build",
+   "html": "<p>Water quality deserves specific attention. Mapped environmental data within about 10 miles include 2,235 PFAS sampling or contamination sites, 2 historic mine features, and 3 EPA Superfund or cleanup sites. Those mapped sites do not prove that a particular well is contaminated, but they are a strong reason to test the existing well and review nearby environmental records before relying on the water.</p><p>Also check for low-yield or dry-hole history, even though no reported well is under 1 gallon per minute. Confirm casing, grout, pump condition, and the date of the last water-quality test. Septic setbacks, soil, access for a drill rig, drainage, and the proposed building location can affect the project. A DWR permit is not the same as a guarantee of water quality or a building approval.</p>"
+  },
+  {
+   "heading": "A practical plan for a Platteville lot",
+   "html": "<p>Start with the closest permitted wells, not an average taken from the entire five-mile area. Compare depth, aquifer description, yield, static level, use, and completion date. Nearby Gilcrest, Milliken, Johnstown, Firestone, Berthoud, and Mead can provide broader context, but conditions can change across short distances on the plains.</p><p>For an existing home, inspect the wellhead, pressure system, electrical supply, storage, and septic system, then obtain independent water testing. For vacant land, confirm the well permit and intended household use before designing the home. Denver Basin wells make up 99% of the listed aquifer records, but the exact permit rights and augmentation requirements still matter, particularly for irrigation or other uses in an over-appropriated basin.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Platteville, Colorado?",
+   "a": "The median reported well depth within 5 miles of Platteville is 46 feet, with the middle half between 22 and 66 feet. Most wells, 84%, are under 100 feet. The range is still broad: the 90th-percentile depth is 280 feet, and the deepest record reaches 1,000 feet."
+  },
+  {
+   "q": "How much does it cost to drill a well in Platteville?",
+   "a": "The local cost model uses $50 to $70 per foot in Denver Basin sedimentary bedrock. At the 46-foot median depth, the drilled hole is about $2,300 to $3,200. A finished system with pump, tank, trenching, and electrical is modeled at about $8,300 to $15,200."
+  },
+  {
+   "q": "How much water does a Platteville well produce?",
+   "a": "Among 348 wells with reported pump yields, the median is 15.0 gallons per minute. The middle half ranges from 11.0 to 162.5 gallons per minute. Records show 65% above 15 gallons per minute, 31% between 5 and 15, and 4% between 1 and 5."
+  },
+  {
+   "q": "Is well water safe to drink in Platteville?",
+   "a": "The permit records do not establish that any particular well is safe to drink. Within about 10 miles, mapped data include 2,235 PFAS sampling or contamination sites, 2 historic mine features, and 3 EPA Superfund or cleanup sites. Test the well water and review nearby environmental information before relying on it."
+  },
+  {
+   "q": "Is the water table dropping in Platteville?",
+   "a": "The reported median static water level was 8 feet below surface in the 2010s and 10 feet in the 2020s, suggesting a modestly deeper recent measurement. Only 191 wells report static levels, so this does not prove a long-term decline across Platteville. Check nearby measurements and the specific well’s history."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Platteville and the surrounding Weld County area. Their work includes access driveways, site development, new-build septic systems, and custom homes.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1416,
+  "completion_tokens": 2105,
+  "total_tokens": 3521,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1413,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 113,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

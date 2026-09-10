@@ -1,0 +1,77 @@
+{
+ "title": "Timnath Well Depth and Drilling Cost",
+ "meta_description": "Timnath wells have a 28 ft median depth, but fractured bedrock, yield, and finishing work shape the final drilling cost.",
+ "h1": "Wells and Drilling Costs in Timnath, Colorado",
+ "eyebrow": "Timnath well reference",
+ "intro_html": "<p>Timnath sits in a part of Larimer County where the well records look shallow on paper but still need careful review. Within five miles, the median reported well depth is 28 feet, and the middle half runs from 20 to 39 feet. Most wells are under 100 feet, although the records include much deeper holes.</p><p>Reported production is generally strong: the median pump yield is 18.0 gallons per minute, and 75% of wells reporting yield make at least 15 gallons per minute. Those figures are useful for early planning, but they are not a guarantee for a specific parcel. A buyer still needs the neighboring well records, permit conditions, water-quality information, and a contractor's site-specific opinion.</p>",
+ "sections": [
+  {
+   "heading": "Timnath well depths: shallow records, fractured ground",
+   "html": "<p>Timnath's reported median depth is 28 feet. The middle half of wells falls between 20 and 39 feet, 93% are under 100 feet, and the 90th-percentile depth is 60 feet. That gives a driller a useful starting point for a bid, but not a fixed target. The records also include wells from 100 to 300 feet, 300 to 600 feet, and more than 600 feet, with the deepest record reaching 1,160 feet.</p><p>Permits mainly identify an unnamed or fractured-bedrock aquifer: 1,688 wells use that description. Alluvial and Quaternary Alluvium entries are much less common. In fractured granite or gneiss, water can move through localized fractures, so two nearby lots can require different drilling decisions even when the surface elevation looks similar.</p>"
+  },
+  {
+   "heading": "What Timnath wells produce",
+   "html": "<p>The reported median yield is 18.0 gallons per minute. The middle half of reported yields spans 14.6 to 85.2 gallons per minute, while 75% of wells with a yield report are at 15 gallons per minute or more. Only 1% report under 1 gallon per minute, and 2% fall between 1 and 5 gallons per minute. Those are encouraging records for household planning, but yield tests are not the same as a guarantee of long-term supply.</p><p>Only 202 wells report a pump yield, so the yield sample is smaller than the total permit history. Ask for the actual well test, pump setting, storage arrangement, and intended use. Domestic and household permits make up 39% of the use mix; irrigation accounts for 16%, and stock use accounts for 6%.</p>"
+  },
+  {
+   "heading": "Timnath water levels and the recorded trend",
+   "html": "<p>The median static water level is 9 feet below the surface, with the middle half between 7 and 13 feet. A shallow static level can simplify pumping, but it also means the wellhead, casing, and surface drainage deserve close attention. Water should be directed away from the well, and the finished casing and grout need to meet the permit and construction requirements.</p><p>The decade comparison does not show a falling table in these records. Median depth to water was 11 feet in the 2010s and 8 feet in the 2020s. That is a shallower recorded level in the newer decade, not evidence of decline. Only 141 wells report a static water level, so treat the series as a local record summary rather than a forecast for one property.</p>"
+  },
+  {
+   "heading": "Who has drilled around Timnath, and when",
+   "html": "<p>The permit history reaches back to the 1950s and includes 2,020 wells in the five-mile search area. The newest permit year is 2025. Permits were issued across each decade, with the largest recorded period being the 1990s at 323 permits. The 2000s show 254, the 2010s show 228, and the 2020s show 201.</p><p>The most active drillers named in these records are Authorized (Pe, Pg), with 371 entries; Lesh Drilling Inc. (Lesh Jr., Ed), with 200; and Schott Bros. Drilling (Schott, Carl), with 72. These names can help when comparing nearby completion reports, but an old permit is not a current performance guarantee. Verify licensing, insurance, references, and the proposed construction details before hiring anyone.</p>"
+  },
+  {
+   "heading": "Timnath well drilling cost at these depths",
+   "html": "<p>The cost model for Timnath assumes fractured mountain bedrock, including granite and gneiss, at a drilling rate of $65 to $100 per foot. At the 28-foot median depth, the drilled hole is modeled at about $1,800 to $2,800. That is only the hole. A finished system with pump, pressure tank, trenching, and electrical is modeled at about $7,800 to $14,800.</p><p>A bid should state what happens if the first hole has poor production, needs additional casing, or encounters difficult ground. It should also separate drilling from pump equipment, electrical service, trenching, water testing, permits, and connection to the house. The shallow median lowers the initial drilling estimate, but fractured-bedrock variability is the reason not to budget from depth alone.</p>"
+  },
+  {
+   "heading": "Timnath risks: water quality, septic, and building plans",
+   "html": "<p>Mapped environmental information deserves a parcel-specific review. The area within about 10 miles contains 316 PFAS sampling or contamination sites and 21 EPA Superfund or cleanup sites. There are no historic mine features in the mapped data. These counts do not prove a problem at a particular well, so obtain a current water-quality test and check the well's location against known sites, drainage, and nearby land uses.</p><p>Low yield and dry holes remain possible in fractured bedrock even where nearby wells perform well. Before building, confirm the well permit allows the planned household use and check setbacks between the well, septic system, drainfield, fuel storage, and structures. A shallow water level also makes surface protection and grading important. Review construction records before assuming an existing well is ready for a new home.</p>"
+  },
+  {
+   "heading": "Buying or building on a Timnath lot",
+   "html": "<p>Start with the Colorado DWR permit and completion records, then compare several nearby wells in Timnath, Windsor, Fort Collins, Severance, and Loveland. Look for depth, aquifer description, yield test, static level, pump details, and permitted use rather than relying on a seller's statement that the well is good. The local records are useful because they show both shallow typical wells and much deeper exceptions.</p><p>For a vacant lot, make the well location, septic layout, driveway access, electrical route, and house footprint part of the same feasibility review. For an existing home, test the water, inspect the pressure system, verify the permit, and ask how the well performs during dry periods. If the property is in an over-appropriated basin, confirm whether an augmentation plan or other water-right condition applies before committing to construction.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Timnath, Colorado?",
+   "a": "The median reported depth within five miles of Timnath is 28 feet. The middle half runs from 20 to 39 feet, and 93% of reported wells are under 100 feet. Depth is not uniform: the records include wells over 600 feet and a deepest recorded well of 1,160 feet, so nearby completion reports matter for a specific lot."
+  },
+  {
+   "q": "How much does it cost to drill a well in Timnath?",
+   "a": "The local cost model uses $65 to $100 per foot in fractured granite or gneiss. At the 28-foot median depth, the drilled hole is estimated at $1,800 to $2,800. A finished system including pump, tank, trenching, and electrical is estimated at $7,800 to $14,800. A difficult or deeper hole can change the bid."
+  },
+  {
+   "q": "How much water do Timnath wells produce?",
+   "a": "The median reported pump yield is 18.0 gallons per minute, and the middle half of reported yields is 14.6 to 85.2 gallons per minute. Records show 75% producing at least 15 gallons per minute. Only 202 wells report a pump yield, however, so use the actual test for the property rather than treating the area median as a promise."
+  },
+  {
+   "q": "Is well water safe to drink in Timnath?",
+   "a": "The permit records do not establish that a particular Timnath well is safe to drink. Mapped data within about 10 miles includes 316 PFAS sampling or contamination sites and 21 EPA Superfund or cleanup sites. Test the well water before purchase or occupancy, review the location against environmental records, and retest when conditions or ownership change."
+  },
+  {
+   "q": "Are Timnath well water levels going down?",
+   "a": "The recorded decade medians do not show a dropping water table. Median static depth was 11 feet below surface in the 2010s and 8 feet in the 2020s, meaning the newer median was shallower. Only 141 wells report static levels, so this is a limited local comparison, not a guarantee for an individual well."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Timnath and nearby Larimer County communities with access driveways, site development, new-build septic systems, and custom homes. Bring the well, septic, driveway, and building layout together early so the site can be planned as one system.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1427,
+  "completion_tokens": 2260,
+  "total_tokens": 3687,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1424,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 145,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

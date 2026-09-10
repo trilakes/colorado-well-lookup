@@ -1,0 +1,73 @@
+{
+ "title": "Todd Creek Well Depth and Drilling Cost",
+ "meta_description": "Todd Creek wells have a 47 ft median depth, but records range to 1,270 ft. See yields, water levels, costs and risks before buying.",
+ "h1": "Todd Creek Colorado Well Depth, Water and Drilling Costs",
+ "eyebrow": "Todd Creek well reference",
+ "intro_html": "<p>Todd Creek is on the plains in Adams County, where nearby well records show a wide spread in depth and construction conditions. The median reported well depth is 47 feet, but the middle half runs from 31 to 400 feet, and the deepest record reaches 1,270 feet.</p><p>That range matters when you are pricing a lot or reviewing an existing home. A shallow well may be inexpensive to drill, while a deeper Denver Basin well can require a very different bid. The records also show a median reported yield of 13 gallons per minute and a median static water level 17 feet below the surface. These are useful local benchmarks, not guarantees for one parcel.</p>",
+ "sections": [
+  {
+   "heading": "Todd Creek well depth depends on the water-bearing formation",
+   "html": "<p>Depth records around Todd Creek are not uniform. About 61% of reported wells are under 100 feet, while 6% fall between 100 and 300 feet, 20% between 300 and 600 feet, and 13% are deeper than 600 feet. The 90th-percentile depth is 750 feet, with a deepest recorded well at 1,270 feet.</p><p>For a driller's bid, the 47-foot median is only a starting point. The middle-half range of 31 to 400 feet shows why a quote based on the local median can miss the actual geology on a specific lot. Permits identify Denver Basin aquifer wells throughout this dataset, including unnamed or fractured-bedrock, Alluvial, and Laramie Fox Hills aquifers. Casing and grout requirements, final aquifer choice, and the water-rights situation should be confirmed before work begins.</p>"
+  },
+  {
+   "heading": "Most Todd Creek wells report useful yield, but records are limited",
+   "html": "<p>The median reported pump yield is 13.0 gallons per minute, and the middle half is 10.0 to 15.0 gallons per minute. Among wells with yield records, 54% produce between 5 and 15 gallons per minute, while 44% report more than 15 gallons per minute. Only 2% report 1 to 5 gallons per minute, and 0% report under 1 gallon per minute.</p><p>Those results are encouraging for a household buyer, but only 1,032 wells report a pump yield, compared with 3,199 recorded as constructed. A yield test and the permitted use matter more than a nearby average. Household wells still need proper storage and pressure equipment, and an exempt household-use well remains subject to its permit conditions and the 35-gpm exempt-well pumping limit.</p>"
+  },
+  {
+   "heading": "Water levels in Todd Creek are shallow in recent records",
+   "html": "<p>The median static water level is 17 feet below the surface, with the middle half from 10 to 114 feet. That suggests many wells encounter water relatively close to the ground surface, but the broad range means a buyer should not assume the same level on every parcel.</p><p>The decade series does not show a simple steady decline. Median depth to water was 42 feet in the 1960s, 220 feet in the 1970s, 30 feet in the 1980s, 31 feet in the 2000s, and 15 feet in both the 2010s and 2020s. The uneven series may reflect changing locations, aquifers, and measurement practices, so it should not be treated as a continuous water-table trend. Ask for the actual static level and pumping history of the subject well.</p>"
+  },
+  {
+   "heading": "Todd Creek permit history shows long-running drilling activity",
+   "html": "<p>Well permitting has continued in this area for decades. Records show 204 permits in the 1950s, 267 in the 1960s, 463 in the 1970s, 464 in the 1980s, 849 in the 1990s, 955 in the 2000s, 731 in the 2010s, and 552 in the 2020s. The newest permit year in the dataset is 2026.</p><p>The most active driller names in these records are Authorized (Pe, Pg), John'S Drilling Inc. (John, Lloyd), and Roger Schocke Well Drlg. Inc. (Schocke, Roger). Permit history does not prove current availability, workmanship, or warranty service. Use the Colorado Division of Water Resources record to check the permit number, permitted use, construction report, plugging status, and any late changes before relying on an existing well.</p>"
+  },
+  {
+   "heading": "Todd Creek well drilling cost starts with depth, not the sale price",
+   "html": "<p>The local cost model uses a typical drilling rate of $50 to $70 per foot for Denver Basin sedimentary bedrock. At the 47-foot median depth, the drilled hole is modeled at about $2,400 to $3,300. A finished well, including pump, tank, trenching, and electrical, is modeled at about $8,400 to $15,300.</p><p>These figures are planning ranges rather than bids. The depth mix shows why costs can move sharply: 13% of reported wells are deeper than 600 feet, and the deepest record is 1,270 feet. Ask contractors to separate drilling, casing, grout, pump equipment, trenching, electrical work, testing, permits, and unexpected formation conditions. A shallow local record does not guarantee a shallow or inexpensive well on your lot.</p>"
+  },
+  {
+   "heading": "Check water quality, low yield, septic space and building limits",
+   "html": "<p>Mapped environmental information deserves review before closing. Within about 10 miles, the records show 782 PFAS sampling or contamination sites, 24 historic mine features, and 13 EPA Superfund or cleanup sites. A mapped site is a reason to investigate, not proof that a particular well is contaminated. Test existing well water for the conditions relevant to the property and review nearby regulatory records.</p><p>Also check for low-yield history, dry holes, abandoned wells, and the distance between the well, septic system, replacement area, and proposed building. Confirm that the permit allows the intended household, stock, or irrigation use. In an over-appropriated basin, an augmentation plan may be required. A septic designer and well contractor should review the lot together before you commit to a house plan.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Todd Creek?",
+   "a": "The median reported well depth near Todd Creek is 47 feet. The middle half of records runs from 31 to 400 feet, while 61% are under 100 feet. Depths vary substantially: 13% are deeper than 600 feet, the 90th-percentile depth is 750 feet, and the deepest record reaches 1,270 feet."
+  },
+  {
+   "q": "How much does it cost to drill a well in Todd Creek?",
+   "a": "The local model uses $50 to $70 per foot for drilling in Denver Basin sedimentary bedrock. At the 47-foot median depth, the drilled hole is estimated at $2,400 to $3,300. A finished well with pump, tank, trenching and electrical is estimated at $8,400 to $15,300, though deeper drilling and site conditions can change the bid."
+  },
+  {
+   "q": "How much water do Todd Creek wells produce?",
+   "a": "The median reported yield is 13.0 gallons per minute, with the middle half between 10.0 and 15.0 gallons per minute. Among the 1,032 wells reporting yield, 54% produce 5 to 15 gallons per minute and 44% produce more than 15 gallons per minute. A test on the actual well is more useful than the area median."
+  },
+  {
+   "q": "Is well water safe to drink in Todd Creek?",
+   "a": "The records do not establish that every Todd Creek well is safe to drink. Within about 10 miles are 782 PFAS sampling or contamination sites, 24 historic mine features and 13 EPA Superfund or cleanup sites. Test the individual well, review nearby environmental records, and use treatment recommended for the results before relying on the water."
+  },
+  {
+   "q": "Is the water table dropping in Todd Creek?",
+   "a": "The available decade medians do not show a steady decline. Static water depth was 42 feet in the 1960s, 220 feet in the 1970s, 30 feet in the 1980s, 31 feet in the 2000s, and 15 feet in both the 2010s and 2020s. Because measurements come from different wells and aquifers, inspect the subject well's own history."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Todd Creek and nearby Adams County communities with access driveways, site development, new-build septic systems and custom homes. Bring the well, septic and building layout together before excavation starts.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1458,
+  "completion_tokens": 2037,
+  "total_tokens": 3495,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1455,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 78,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

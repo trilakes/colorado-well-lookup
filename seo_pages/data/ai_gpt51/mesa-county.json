@@ -1,0 +1,76 @@
+{
+ "title": "Mesa County well depth and drilling cost",
+ "meta_description": "Mesa County wells have a median depth of 79 ft and median yield of 8 gpm. Here’s what that means for drilling cost, water levels, and buying land.",
+ "h1": "Understanding water wells in Mesa County, Colorado",
+ "eyebrow": "Local well data guide",
+ "intro_html": "<p>Mesa County covers a lot of different ground conditions, from Grand Junction and Fruita out to Collbran, De Beque, and Glade Park. Well records show everything from very shallow alluvial wells to deep fractured-bedrock holes. Before you buy or build, it helps to know how deep most wells go here, how much water they actually make, and what a new well is likely to cost on your specific piece of ground.</p><p>The numbers below come from thousands of Colorado Division of Water Resources well permits in Mesa County. They don’t replace a site-specific bid, but they give you a realistic range so you can budget and negotiate with your eyes open.</p>",
+ "sections": [
+  {
+   "heading": "How deep are wells in Mesa County, really?",
+   "html": "<p>Countywide, the median well depth is 79 feet, but the spread is wide. The middle half of wells run from 23 to 262 feet, and the 90th percentile reaches 490 feet, with one recorded down to 4,629 feet. About 55% of wells are under 100 feet, 23% run 100–300 feet, 18% are 300–600 feet, and 5% are deeper than 600 feet.</p><p>That tells you Mesa County has a lot of easy, shallow completions along the river corridors and alluvial areas, plus some very deep fractured-bedrock wells in the uplands. A driller looking at a raw parcel near places like Collbran or Glade Park will usually bid a wider depth range than in the valley bottoms around Fruita, Palisade, or Orchard Mesa.</p>"
+  },
+  {
+   "heading": "Well yield: how much water you can expect",
+   "html": "<p>Out of the wells with pump tests, the median yield is 8 gallons per minute. The middle half fall between 5 and 15 gpm. Only 3% report under 1 gpm, 20% are in the 1–5 gpm range, 50% are 5–15 gpm, and 27% exceed 15 gpm.</p><p>For a typical exempt household well, 5–8 gpm is usually workable if you size storage correctly. The low share of sub‑1 gpm wells is encouraging, but that 20% in the 1–5 gpm range is a reminder that some locations are marginal without good planning. In the fractured‑bedrock areas, small moves can change yield a lot, so checking nearby well records around your specific lot, not just the county averages, is important.</p>"
+  },
+  {
+   "heading": "Water levels and what they say about the water table",
+   "html": "<p>Static water levels in Mesa County have a median of 40 feet below ground, with the middle half between 15 and 162 feet. That’s the depth to water, not the total well depth. Some alluvial wells along river corridors will see water much shallower than many of the bedrock wells on higher benches or mesas.</p><p>Looking over time, median measured water levels bounced around: about 25 feet in the 1970s, 100 feet in the 1990s, 17 feet in the 2000s, 30 feet in the 2010s, and 73 feet in the 2020s. That pattern doesn’t show a simple, steady decline or rise. It tells you conditions are very local, and that you shouldn’t assume your new well will match an older neighbor without checking dates and depths carefully.</p>"
+  },
+  {
+   "heading": "Who has been drilling here, and for what uses",
+   "html": "<p>Mesa County has 6,388 wells in the state records, with 3,149 listed as constructed and 3,670 reporting a total depth. Permitting really picked up from the 1970s on: 264 wells were permitted in the 1970s, 501 in the 1980s, 1,295 in the 1990s, and 1,530 in the 2000s. There were 1,134 permits in the 2010s and 726 already in the 2020s, with the newest permit in 2025.</p><p>About 45% of wells are for domestic or household use, 9% for stock, 2% for irrigation, and a big 39% are monitoring wells. Most are in unnamed or fractured‑bedrock aquifers (6,002 wells), with 119 in alluvial deposits and 17 in the Entrada. The busiest drillers in the county records are Authorized (Pe, Pg) with 1,232 wells, Rocky Mtn Drilling And Pump Services LLC (Logue, James M.) with 329, and Rocky Mountain Drlg./Pump Svcs (Wisener, A. L.) with 283.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost in Mesa County",
+   "html": "<p>The drilling cost model for Mesa County assumes mixed sedimentary and alluvial ground, with typical drilling rates around $50–$75 per foot. At the county’s 79‑foot median depth, the drilled hole alone pencils out around $4,000–$5,900. Once you add casing, grout, pump, pressure tank, trenching, and electrical, a finished domestic well at that depth often lands in the $10,000–$17,900 range.</p><p>Because the middle half of wells here run from 23 to 262 feet, smart buyers budget beyond the median. If your parcel is in an area where neighboring wells are in the 200‑plus‑foot range, ask drillers for a quote based on that kind of depth, not the countywide median, so you’re not surprised during construction.</p>"
+  },
+  {
+   "heading": "Contamination, low-yield risk, and other things to check",
+   "html": "<p>Mesa County has some real environmental baggage. Within about 10 miles of many properties are mapped 82 PFAS sampling or contamination sites, 23 historic mine features, and 38 EPA Superfund or cleanup sites. That doesn’t mean your well is polluted, but it does mean water testing should be routine, not optional, especially around Grand Junction, Clifton, Redlands, or older industrial and mining areas.</p><p>Most wells are in fractured bedrock, which can be unpredictable for both yield and water quality. While only 3% of tested wells report under 1 gpm, that’s still enough to justify carefully reviewing nearby well logs and talking to drillers about dry‑hole or low‑yield scenarios. On small lots, make sure there is enough room for proper septic setbacks from the well and from property lines before you close.</p>"
+  },
+  {
+   "heading": "Practical advice for buying or building on a well here",
+   "html": "<p>Before you commit to a property in places like Fruita, Palisade, Loma, Mesa, or De Beque, pull the DWR well records for the closest five to ten wells. Look at their depths, yields, and static water levels, not just the county averages. A neighborhood of 200‑plus‑foot wells is a different budget conversation than 60‑foot alluvial wells.</p><p>On existing homes, verify the permit matches the actual well, confirm it’s approved for domestic or household use, and ask for recent water‑quality tests. For vacant land, make your offer contingent on obtaining a well permit and, if possible, a successful test well. Talk with a local driller about the specific aquifer they expect to hit and how often they see low‑yield or problem water in that immediate area.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Mesa County, Colorado?",
+   "a": "Based on thousands of permits, the median well depth in Mesa County is 79 feet. The middle half of wells range from 23 to 262 feet deep, but some go much farther, with the 90th percentile at 490 feet and one recorded to 4,629 feet. About 55% of wells are under 100 feet, while 5% extend deeper than 600 feet."
+  },
+  {
+   "q": "What is a typical well yield in Mesa County?",
+   "a": "For wells with pump tests, the median yield in Mesa County is 8 gallons per minute. The middle half fall between 5 and 15 gpm. About 3% of wells report less than 1 gpm, 20% are in the 1–5 gpm range, 50% produce 5–15 gpm, and 27% exceed 15 gpm. Many domestic wells operate comfortably in the 5–10 gpm range when paired with proper storage."
+  },
+  {
+   "q": "How much does it cost to drill a well in Mesa County?",
+   "a": "The cost model for Mesa County uses a drilling rate of roughly $50–$75 per foot in mixed sedimentary and alluvial ground. At the county’s 79‑foot median depth, that’s around $4,000–$5,900 for the hole itself. A complete domestic well with pump, pressure tank, trenching, and electrical commonly totals about $10,000–$17,900 at that depth, with deeper wells costing more."
+  },
+  {
+   "q": "Is well water safe to drink in Mesa County?",
+   "a": "Water quality is site‑specific. Mesa County has 82 mapped PFAS sampling or contamination sites, 23 historic mine features, and 38 EPA Superfund or cleanup sites within about 10 miles of many properties. Those numbers mean you should not skip testing. Have any existing or new well checked for bacteria, basic chemistry, and area‑specific contaminants before relying on it for drinking water."
+  },
+  {
+   "q": "Are water levels dropping in Mesa County wells?",
+   "a": "Static water level data show variability rather than a simple trend. Median depth to water was about 25 feet in the 1970s, 100 feet in the 1990s, 17 feet in the 2000s, 30 feet in the 2010s, and 73 feet in the 2020s. That mix suggests local conditions and measurement locations matter a lot. To assess risk on a specific parcel, compare recent nearby well records by decade, depth, and aquifer."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that can handle access driveways, site development, and new-build septic systems in Mesa County. They also build custom homes, coordinating your well, septic, and foundation work into one practical plan.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1505,
+  "completion_tokens": 2419,
+  "total_tokens": 3924,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 136,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "title": "Rock Creek Park Well Depth and Drilling Cost",
+ "meta_description": "Rock Creek Park wells have a 36 ft median depth, but records range to 2,150 ft. See yields, water levels, costs and local risks.",
+ "h1": "Rock Creek Park, Colorado Well Depth, Yield and Cost",
+ "eyebrow": "Local well records explained",
+ "intro_html": "<p>Buying land in Rock Creek Park means looking past the presence of a well permit. The records within five miles show a wide range of ground conditions, well depths and reported construction details. The median well is shallow, but a small group extends much deeper. Most named aquifers are described as unnamed or fractured bedrock, which can make a nearby result useful but not conclusive for your lot.</p><p>This page uses Colorado Division of Water Resources permit records for the area, along with local drilling-cost estimates. Use it to frame a contractor’s bid and your inspection questions. A permit record does not guarantee that a well still works, produces the same amount of water, or supplies a proposed home.</p>",
+ "sections": [
+  {
+   "heading": "Rock Creek Park well depths vary sharply by lot",
+   "html": "<p>The reported median depth is <strong>36 feet</strong>, and the middle half of recorded wells falls between <strong>21 and 64 feet</strong>. That points to many shallow wells in the local record. Still, depth is not uniform: <strong>79%</strong> are under <strong>100 feet</strong>, while <strong>10%</strong> fall between <strong>300 and 600 feet</strong>. The deepest recorded well is <strong>2,150 feet</strong>, and the <strong>90th percentile is 324 feet</strong>.</p><p>For a driller’s bid, the median is a useful starting point, not a promise. Mixed sedimentary and alluvial ground can change quickly across a short distance. Fractured-bedrock wells are especially unpredictable because water may depend on where fractures occur. Review nearby well logs and have a driller price the likely casing, grout and borehole depth for the specific parcel.</p>"
+  },
+  {
+   "heading": "What Rock Creek Park wells produce",
+   "html": "<p>Only <strong>69</strong> wells report a pump yield, so the production data is much thinner than the depth data. Among those reports, the median yield is <strong>10.0 gallons per minute</strong>, with the middle half between <strong>5.0 and 12.0 gallons per minute</strong>. The records show <strong>59%</strong> producing between <strong>5 and 15 gallons per minute</strong> and <strong>20%</strong> reporting more than <strong>15 gallons per minute</strong>.</p><p>Low-producing wells are present but not dominant: <strong>3%</strong> report under <strong>1 gallon per minute</strong>, and <strong>17%</strong> fall between <strong>1 and 5 gallons per minute</strong>. For a buyer, that is a reason to ask for the original yield test, storage-tank details and recent pump performance. A permit’s intended use also matters; most records are monitoring wells rather than household wells.</p>"
+  },
+  {
+   "heading": "The water-level record is too limited to show a trend",
+   "html": "<p>Only <strong>8</strong> wells report a static water level. Those records show a median depth to water of <strong>138 feet</strong>, with the middle half between <strong>69 and 336 feet</strong>. That spread is wide enough that one water-level measurement should not be treated as the expected level for every lot in Rock Creek Park.</p><p>The available facts do not provide a usable water-level series by decade, so they do not establish that the local water table is dropping or rising. Static level also differs from a pumping level. Before relying on a well for a home, confirm how and when the measurement was taken, ask for a current test, and have the pump contractor check whether the well can recover after sustained use.</p>"
+  },
+  {
+   "heading": "Rock Creek Park permit history and drilling records",
+   "html": "<p>There are <strong>1,038</strong> wells in the Colorado DWR records for the area, with <strong>679</strong> recorded as constructed and <strong>705</strong> reporting a total depth. Permit activity increased substantially in the <strong>2000s</strong>, when <strong>479</strong> permits were issued. The records show <strong>125</strong> permits in the <strong>2010s</strong> and <strong>20</strong> in the <strong>2020s</strong>; the newest permit year is <strong>2025</strong>.</p><p>The most active driller name in the records is <strong>Authorized (Pe, Pg)</strong> with <strong>517</strong> entries. Can America Drilling, Inc. has <strong>37</strong>, and W. V. Harding &amp; Sons has <strong>36</strong>. These counts describe permit records, not current availability, quality ratings or endorsements. Confirm licensing, insurance and present-day service area before selecting a contractor.</p>"
+  },
+  {
+   "heading": "What a new well may cost near Rock Creek Park",
+   "html": "<p>The local cost model uses a typical drilling rate of <strong>$50–$75 per foot</strong> for mixed sedimentary and alluvial ground. At the recorded median depth of <strong>36 feet</strong>, the drilled hole works out to about <strong>$1,800–$2,700</strong>. A usable installation with pump, pressure tank, trenching and electrical is estimated at <strong>$7,800–$14,700</strong>.</p><p>That finished-well range is more useful for budgeting than the borehole price alone. A deeper-than-typical hole, difficult access, extra casing, fractured rock, longer utility runs or a weak yield can change the bid. Ask for a written scope that separates drilling, casing and grout, pump equipment, pressure tank, trenching, electrical work, testing and permit-related work. The shallow median should not be used to cap a bid on an untested parcel.</p>"
+  },
+  {
+   "heading": "Risks to check before building or buying",
+   "html": "<p>Most permits name an <strong>unnamed or fractured-bedrock aquifer</strong>: <strong>1,009 wells</strong> carry that description. The records include <strong>4</strong> Dakota wells and <strong>4</strong> Dawson wells, with no Denver Basin aquifer wells reported. That geology can produce a good well in one location and a poor or dry hole nearby. Test both quantity and recovery, not just whether water was encountered.</p><p>Environmental review also deserves attention. Within about ten miles are <strong>81</strong> PFAS sampling or contamination sites, <strong>67</strong> historic mine features and <strong>9</strong> EPA Superfund or cleanup sites. Those mapped sites do not prove contamination on a particular property, but they support professional water testing and a records review. Check septic setbacks, available building area, drainage, access for a rig, and the legal water use allowed by the DWR permit.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Rock Creek Park?",
+   "a": "The median reported depth is 36 feet, and the middle half runs from 21 to 64 feet. Most recorded wells are under 100 feet, but the area also includes much deeper construction: the 90th percentile is 324 feet and the deepest record is 2,150 feet. A nearby well is a guide, not a guarantee for another lot."
+  },
+  {
+   "q": "How much does it cost to drill a well in Rock Creek Park?",
+   "a": "The local model uses $50–$75 per foot. At the 36-foot median depth, the drilled hole is estimated at $1,800–$2,700. A finished well with pump, tank, trenching and electrical is estimated at $7,800–$14,700. Difficult access, deeper drilling, casing, fractured rock and low yield can change the final bid."
+  },
+  {
+   "q": "How much water do wells produce in Rock Creek Park?",
+   "a": "Among the 69 wells reporting pump yield, the median is 10.0 gallons per minute and the middle half is 5.0–12.0 gallons per minute. The records include 3% under 1 gallon per minute and 17% between 1 and 5 gallons per minute. Request the property’s actual yield test rather than relying only on area statistics."
+  },
+  {
+   "q": "Is well water safe in Rock Creek Park?",
+   "a": "A permit record does not establish that water is safe to drink. The area has 81 PFAS sampling or contamination sites, 67 historic mine features and 9 EPA Superfund or cleanup sites mapped within about ten miles. Those locations are not proof of a problem on your parcel, but a laboratory water test and environmental records review are appropriate before purchase."
+  },
+  {
+   "q": "Can I build a home on a well in Rock Creek Park?",
+   "a": "Building depends on more than finding groundwater. Confirm the DWR permit’s allowed use, test the well’s production and recovery, and verify space for the septic system, replacement area, driveway and utilities. The records are dominated by monitoring permits, with domestic or household use listed for 27%. Have the county and qualified professionals review the lot before committing to construction."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Rock Creek Park and nearby El Paso County communities with access driveways, site development, new-build septic systems and custom homes. Bring the well, septic and site-access questions together before construction starts.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1391,
+  "completion_tokens": 2196,
+  "total_tokens": 3587,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1388,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 139,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

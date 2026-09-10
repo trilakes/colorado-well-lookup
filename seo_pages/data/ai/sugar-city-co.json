@@ -1,0 +1,73 @@
+{
+ "title": "Sugar City Well Depth and Drilling Cost",
+ "meta_description": "Sugar City wells have a 28 ft median depth; see local yields, drilling costs, permits, and water-quality risks.",
+ "h1": "Sugar City, Colorado Well Guide",
+ "eyebrow": "Local well facts for buyers",
+ "intro_html": "<p>Buying land around Sugar City means dealing with a shallow plains well area, not a typical mountain or fractured-granite setting. Colorado DWR records show 166 permitted wells within 5 miles of town, although only 94 are recorded as constructed and 112 report a total depth.</p><p>The records point to shallow drilling and generally strong reported yields, but the database has important gaps. Only 9 wells report a pump yield, and none report a static water level. Use this page to set expectations, then have a driller review nearby well logs, permits, water rights, septic limitations, and the proposed building site.</p>",
+ "sections": [
+  {
+   "heading": "Sugar City well depth is usually shallow",
+   "html": "<p>The median reported well depth near Sugar City is 28 feet. The middle half runs from 15 to 33 feet, and 90% of reported wells are no deeper than 44 feet. The depth mix tells the same story: 97% are under 100 feet, while 2% fall between 100 and 300 feet. No wells are recorded between 300 and 600 feet, and 1% are 600 feet or deeper.</p><p>For a drilling bid, that median is a useful starting point, not a guarantee. Local ground is described as alluvium and plains sedimentary rock, and conditions can change across a parcel. The deepest record is 1,736 feet, showing that an unusual site can depart sharply from the local pattern. Ask for neighboring logs before accepting a fixed depth assumption.</p>"
+  },
+  {
+   "heading": "Reported Sugar City yields are strong, but the sample is small",
+   "html": "<p>Only 9 wells in the records report a pump yield, so the yield statistics deserve caution. Among those reports, the median is 45.0 gallons per minute, with the middle half from 15.0 to 50.0 gallons per minute. The records show 78% producing at least 15 gallons per minute and 22% between 5 and 15 gallons per minute. None are reported below 5 gallons per minute.</p><p>That is encouraging for a buyer, but it does not promise the same result on an unbuilt lot. Yield testing, well construction, storage, and the permitted use all matter. Domestic, stock, and irrigation permits make up different parts of this record, so do not compare an irrigation result directly with household demand without checking the permit.</p>"
+  },
+  {
+   "heading": "There is no local water-level trend to read",
+   "html": "<p>No well in the supplied records reports a static water level. That means the available permit data cannot show whether the water table near Sugar City is stable, rising, or dropping over time. A shallow median depth does not substitute for a measured static level, especially when planning a new household well or evaluating an existing one.</p><p>Ask for the current static water level, pumping level, recovery observations, and any recent production test from the seller or driller. Compare those details with nearby permits in Sugar City and the surrounding plains communities, including Ordway and Crowley. Water-level information should be collected under documented conditions rather than inferred from the well’s total depth.</p>"
+  },
+  {
+   "heading": "Permit activity is concentrated in the 2000s",
+   "html": "<p>The permit history is uneven. Records show 8 permits from the 1950s, 4 from the 1960s, 12 from the 1970s, 3 from the 1980s, 17 from the 1990s, 71 from the 2000s, 4 from the 2010s, and 2 from the 2020s. The newest permit year is 2024.</p><p>The most active driller listed is Authorized (Pe, Pg), associated with 55 records. Eastwood Drilling, listed as Eastwood, Francis, appears on 11 records, and Crandall, H A appears on 7. These names help when tracing local construction patterns, but an older permit may not describe the current condition of a well. Confirm casing, grout, pump equipment, test results, and the actual permitted use through Colorado DWR.</p>"
+  },
+  {
+   "heading": "A typical Sugar City well costs more than the drilled hole",
+   "html": "<p>The local cost model uses a drilling rate of $35-$55 per foot for alluvium and plains sedimentary rock. At the 28-foot median depth, the drilled hole works out to about $1,000-$1,500. That is not the complete project price.</p><p>A finished well with pump, tank, trenching, and electrical is modeled at about $7,000-$13,500. A buyer should have the driller separate drilling, casing and grout, pump equipment, pressure tank, trenching, electrical work, testing, and any difficult access or site work. A shallow hole can still require substantial finishing work, and a deeper-than-typical result can change the bid materially.</p>"
+  },
+  {
+   "heading": "Check water quality, low yield, and septic layout before closing",
+   "html": "<p>Mapped environmental information deserves review. Within about 10 miles, the records show 4 PFAS sampling or contamination sites and 2 EPA Superfund or cleanup sites. There are 0 historic mine features. Those facts do not prove a problem on a particular parcel, but they are enough reason to test an existing well for ordinary potability concerns and any site-specific contaminants identified by the records.</p><p>Low-yield and dry-hole risk cannot be dismissed simply because reported yields are strong; only 9 records include a pump yield. For a new home, confirm the well location, septic replacement area, setbacks, access for drilling equipment, and electrical route before construction. A permitted household well may have use limits, and over-appropriated basins can require an augmentation plan.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Sugar City, Colorado?",
+   "a": "The median reported well depth within 5 miles of Sugar City is 28 feet. The middle half runs from 15 to 33 feet, and 97% of wells are under 100 feet. Conditions are not uniform: the deepest record is 1,736 feet. Have a driller review nearby logs before relying on the median for a specific parcel."
+  },
+  {
+   "q": "What does it cost to drill a well in Sugar City?",
+   "a": "The local model uses $35-$55 per foot. At the 28-foot median depth, the drilled hole is estimated at about $1,000-$1,500. A finished system with pump, tank, trenching, and electrical is about $7,000-$13,500. The final bid can change with access, depth, casing, site layout, and electrical requirements."
+  },
+  {
+   "q": "How much water do Sugar City wells produce?",
+   "a": "Only 9 wells report a pump yield, so the sample is limited. The reported median is 45.0 gallons per minute, with the middle half from 15.0 to 50.0 gallons per minute. The records show 78% at 15 gallons per minute or more. A site-specific production test is still needed before relying on that result."
+  },
+  {
+   "q": "Is well water safe to drink in Sugar City?",
+   "a": "Permit records do not establish that a particular well is safe to drink. Within about 10 miles, there are 4 PFAS sampling or contamination sites and 2 EPA Superfund or cleanup sites. Test an existing or new household well, review the results with a qualified professional, and investigate any nearby environmental records before relying on the water."
+  },
+  {
+   "q": "Do Sugar City wells have a falling water table?",
+   "a": "The supplied records cannot show a trend because 0 wells report a static water level. Total depth is not the same as water level. Before buying or building, request a current static level, pumping level, recovery information, and production test. Compare those measurements with nearby wells around Sugar City and Ordway."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Sugar City and the surrounding plains for access driveways, site development, new-build septic systems, and custom homes. Their work can be coordinated around the well location, utility route, and building plan.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1348,
+  "completion_tokens": 1939,
+  "total_tokens": 3287,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1345,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 150,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

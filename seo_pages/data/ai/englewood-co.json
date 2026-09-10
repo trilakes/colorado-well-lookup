@@ -1,0 +1,77 @@
+{
+ "title": "Englewood Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Englewood-area wells have a 31 ft median depth, but monitoring wells dominate the records. Compare yields, drilling costs and buyer risks.",
+ "h1": "What Englewood Well Records Mean for Your Property",
+ "eyebrow": "Englewood Area Well Guide",
+ "intro_html": "<p>A shallow well record near Englewood does not necessarily tell you what a household water supply will require. Monitoring accounts for <strong>60% of permitted uses</strong> in this dataset, while domestic and household uses account for 17%. That distinction matters when comparing depths or pricing a new well.</p><p>This Denver County reference covers DWR permit records within 5 miles of Englewood, including nearby Sheridan, Cherry Hills Village and Littleton. Of 7,552 permit records, 3,567 are recorded as constructed. Use the map to find comparable supply wells, not simply the closest permit pins.</p>",
+ "sections": [
+  {
+   "heading": "Why Englewood’s 31 ft Median Is Not a Drilling Target",
+   "html": "<p>Among 4,329 records reporting depth, the median is <strong>31 ft</strong>, and the middle half runs 21-57 ft. Overall, 82% are under 100 ft. Those figures describe a heavily monitoring-oriented inventory, not a dependable depth allowance for a new domestic well.</p><p>The deeper end tells a different story: the 90th percentile is 490 ft, and the deepest record reaches 2,200 ft. Permits name Alluvial and Denver aquifers, while many aquifer entries are unnamed or grouped as fractured bedrock. Shallow alluvial groundwater and deeper Denver Basin sedimentary formations call for different construction. Have a driller identify the intended water-bearing formation before using neighborhood depths to set a bid.</p>"
+  },
+  {
+   "heading": "Reported Yields Near Englewood Need a Supply-Well Comparison",
+   "html": "<p>Only <strong>250 records report a pump yield</strong>, so the yield figures describe a much smaller sample than the depth figures. The median is 13.8 gpm, with the middle half at 9.0-16.8 gpm. Those reported rates can be encouraging for household supply, but a recorded pump yield is not a guarantee of sustained production.</p><p>The low end deserves attention: 3% report under 1 gpm, and 11% report 1-5 gpm. A low-producing well may need storage and careful demand management. Before buying, ask for a current pumping and recovery test. Compare wells with the same use and aquifer around Sheridan or Cherry Hills Village rather than treating every nearby monitoring well as a household example.</p>"
+  },
+  {
+   "heading": "Shallow Water Readings Do Not Show a Falling Table",
+   "html": "<p>Static water level is the depth to resting water, not the depth of the drilled hole. The 122 reporting records have a median water level of <strong>15 ft below ground</strong>, with the middle half at 11-26 ft. That does not mean a usable supply can be completed at those depths.</p><p>The decade medians are 30 ft in the 1950s, 45 ft in the 1960s, 16 ft in the 2010s and 13 ft in the 2020s. These readings do <em>not</em> demonstrate a dropping water table; the more recent medians are shallower. They also are not repeated measurements from an identical set of wells. Different locations, aquifers and monitoring purposes prevent treating this series as a property-level groundwater forecast.</p>"
+  },
+  {
+   "heading": "Englewood’s Permit Activity Reflects More Than Homebuilding",
+   "html": "<p>Permit issuance was busiest in the 2000s, with <strong>2,080 records</strong>, following 1,832 in the 1990s. The dataset shows 814 in the 2010s and 452 in the 2020s, with the newest permit dated 2025. Because monitoring uses dominate, these totals should not be read as a count of new homes supplied by wells.</p><p>The largest driller-field entry is “Authorized (Pe, Pg)” at 3,091 records; treat that as a database label rather than an identifiable drilling company. Named entries include Hier Drilling Co Inc (Hier, Bruce A.) with 236 and Ground Exploration Llc (Bender, Joseph T.) with 113. Historical record volume does not establish current availability or experience with your proposed supply well.</p>"
+  },
+  {
+   "heading": "Budgeting an Englewood Well Beyond the Drilled Hole",
+   "html": "<p>The supplied Denver Basin sedimentary-bedrock cost model uses <strong>$50-$70 per foot</strong>. At the recorded median depth, that puts the drilled hole at about $1,600-$2,200. A finished well with pump, tank, trenching and electrical is modeled at about $7,600-$14,200.</p><p>Those are median-depth scenarios, not a reliable quote for a domestic well. The shallow, monitoring-heavy records can make that allowance look more representative than it is. Ask for a written scope covering the intended formation, casing, grout, pump equipment and site access. Clarify how additional depth, difficult construction or an unsuccessful hole would be billed. A supply well requiring deeper bedrock drilling needs its own estimate rather than the shallow median plugged into a budget.</p>"
+  },
+  {
+   "heading": "Environmental Flags Around Englewood Warrant Testing",
+   "html": "<p>Within about 10 miles, the map identifies <strong>492 PFAS sampling or contamination sites</strong>, 153 EPA Superfund or cleanup sites and 27 historic mine features. These are screening flags, not proof that a particular well is contaminated. A PFAS sampling location also does not automatically represent a confirmed contamination source.</p><p>Review nearby site records and obtain water testing suited to the property’s setting. Inspect the wellhead, casing and surface drainage, and coordinate any septic proposal with required well separation and local approval. The reported low-yield share supports checking production, but this dataset does not establish a dry-hole rate. Do not accept a clean-looking sample or a neighboring productive well as a substitute for testing the actual supply.</p>"
+  },
+  {
+   "heading": "Before Closing on a Lot Near Bow Mar or Littleton",
+   "html": "<p>Start with the property’s legal water supply, then work outward to comparable wells. For lots near Bow Mar, Columbine Valley, Holly Hills or Littleton, confirm whether public water service is available or required and whether DWR can authorize the proposed well. An existing permit does not automatically allow every household, irrigation or construction-related use.</p><p>Match the permit to the actual well and obtain the completion report, pump information, water-quality results and current production testing. For a new build, coordinate the well location with drilling access, the driveway, utilities, foundation and any septic system. Make water feasibility part of purchase due diligence, before committing to a site plan that leaves no practical room for construction or maintenance.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Englewood, Colorado?",
+   "a": "The recorded median depth is 31 ft, and the middle half is 21-57 ft among 4,329 depth-reporting records within 5 miles. However, monitoring represents 60% of permitted uses. A new household well may need a different formation and substantially greater depth, so compare nearby domestic wells before setting a drilling budget."
+  },
+  {
+   "q": "How much does it cost to drill a well in Englewood?",
+   "a": "The supplied cost model uses $50-$70 per foot for Denver Basin sedimentary bedrock. At the 31 ft median depth, the hole is about $1,600-$2,200, or $7,600-$14,200 finished with pump, tank, trenching and electrical. Monitoring wells heavily influence that shallow median, so a domestic supply needs a site-specific quote."
+  },
+  {
+   "q": "How much water do wells in Englewood produce?",
+   "a": "The 250 records reporting pump yield have a median of 13.8 gpm, with the middle half at 9.0-16.8 gpm. At the low end, 3% report under 1 gpm and 11% report 1-5 gpm. Ask for current pumping and recovery testing because a historical yield does not guarantee dependable household supply."
+  },
+  {
+   "q": "Is well water safe to drink in Englewood?",
+   "a": "The records cannot establish drinking-water safety for an individual property. Within about 10 miles are 492 PFAS sampling or contamination sites and 153 EPA Superfund or cleanup sites. Their presence does not prove your well is affected. Review relevant site records and arrange laboratory testing, including contaminants appropriate to the location."
+  },
+  {
+   "q": "Is the water table dropping around Englewood?",
+   "a": "The supplied decade medians do not show a dropping table: recorded depths to water are 30 ft in the 1950s, 45 ft in the 1960s, 16 ft in the 2010s and 13 ft in the 2020s. These are different groups of measurements, not a continuous record proving conditions at your property."
+  }
+ ],
+ "tri_lakes_blurb": "For an Englewood-area lot, Tri-Lakes Contracting is a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes. Coordinate that site work with the property’s water-supply plan and local utility requirements.",
+ "_model": "gpt-6-astra",
+ "_usage": {
+  "prompt_tokens": 1436,
+  "completion_tokens": 2227,
+  "total_tokens": 3663,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1433,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 107,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "title": "Fort Collins Well Depth and Drilling Cost",
+ "meta_description": "Fort Collins wells have a 28 ft median depth, but fractured bedrock, yield and site conditions drive the final drilling cost.",
+ "h1": "Fort Collins Colorado Well Depth, Yield and Cost",
+ "eyebrow": "Fort Collins well records",
+ "intro_html": "<p>Well records within five miles of Fort Collins show a wide range of conditions. The median reported depth is 28 feet, but the deepest recorded well reaches 901 feet. Reported yields also vary, and most permits are tied to unnamed or fractured-bedrock aquifers.</p><p>These records are useful for screening a property, not for guaranteeing a new well. Only 1,913 wells report a total depth, 197 report a pump yield, and 116 report a static water level. A site-specific driller’s review, permit check and inspection still matter before you buy or build.</p>",
+ "sections": [
+  {
+   "heading": "Fort Collins well depths are usually shallow, but the spread is wide",
+   "html": "<p>Among wells with reported depths, the median is 28 feet. The middle half runs from 20 to 45 feet, and 92% are under 100 feet. That is the pattern a buyer is most likely to encounter near Fort Collins, but it does not eliminate difficult sites.</p><p>The records include wells from 100 to 300 feet, 300 to 600 feet, and more than 600 feet. The deepest record is 901 feet. Most permits name an unnamed or fractured-bedrock aquifer, with 2,686 wells in that category. In fractured granite or gneiss, water-bearing fractures can change quickly across a parcel. A driller should not price or promise a new well from the area median alone.</p>"
+  },
+  {
+   "heading": "What Fort Collins wells produce for household water",
+   "html": "<p>Reported pump yields have a median of 15.0 gallons per minute, with the middle half between 10.0 and 40.0 gallons per minute. The yield mix is favorable on paper: 58% report more than 15 gallons per minute, while 38% fall between 5 and 15 gallons per minute.</p><p>Low-yield wells still occur. One percent report less than 1 gallon per minute, and 3% report between 1 and 5 gallons per minute. Those wells may require careful storage and demand planning. A buyer should ask for the well construction report, pump test information and any production limitations. A Colorado exempt household-use well is generally limited to 35 gallons per minute, and a permit controls the allowed use.</p>"
+  },
+  {
+   "heading": "The water table near Fort Collins looks fairly consistent",
+   "html": "<p>Reported static water levels are shallow. The median depth to water is 12 feet, and the middle half is 8 to 15 feet below the surface. That can reduce pumping lift, but it also means groundwater is close enough to be affected by surface conditions, drainage and septic placement.</p><p>The decade comparison does not show a dropping water table in these records. The median static level was 12 feet below the surface in the 2010s and 10 feet in the 2020s. The dataset includes only 116 static-water-level reports, so treat the comparison as a local record signal rather than a guarantee for an individual lot. Water levels can differ substantially in fractured rock.</p>"
+  },
+  {
+   "heading": "Permit history shows long use around Fort Collins",
+   "html": "<p>Permitted well activity extends from the 1950s through the newest permit year, 2025. The largest decade in the records is the 1990s, with 518 permits. The 2000s account for 394, the 2010s for 414, and the 2020s for 264. These figures describe permit issuance, not necessarily active wells today.</p><p>Domestic and household wells make up 37% of the use mix. Monitoring wells account for 34%, irrigation for 9%, and stock use for 4%. The most active drillers named in the records are Authorized (Pe, Pg), Schott Bros. Drilling (Schott, Carl), and Lesh Drilling Inc. (Lesh Jr., Ed). Check the actual permit and construction report for the property rather than relying only on a driller’s name.</p>"
+  },
+  {
+   "heading": "Fort Collins well drilling cost depends on depth and rock",
+   "html": "<p>The cost model for this area assumes fractured mountain bedrock, including granite and gneiss. The modeled drilling rate is $65-$100 per foot. At the 28-foot median depth, the drilled hole is estimated at about $1,800-$2,800.</p><p>A finished well is a larger project than the drilled hole. Including the pump, pressure tank, trenching and electrical, the modeled total is about $7,800-$14,800 at the median depth. A deeper hole, difficult access, casing, grout, water testing or changes to the electrical and trench layout can move the bid. Ask for a written scope that separates drilling from completion and site work.</p>"
+  },
+  {
+   "heading": "PFAS, old mines and septic layout deserve a close check",
+   "html": "<p>Environmental screening matters around Fort Collins. The mapped area within about ten miles includes 93 PFAS sampling or contamination sites, 22 historic mine features and 19 EPA Superfund or cleanup sites. These mapped locations do not prove contamination at a particular parcel, but they are a reason to review the property’s history and test the well water.</p><p>Low yield and dry holes remain possible in fractured bedrock even where nearby wells are productive. Confirm casing and grout details, well construction, pump performance and water quality. Septic setbacks, replacement-area requirements, drainage and the proposed building location should be reviewed before excavation. An existing well does not automatically make a lot suitable for every home plan.</p>"
+  },
+  {
+   "heading": "Before buying or building near Fort Collins",
+   "html": "<p>Start with the Colorado Division of Water Resources permit and construction records for the parcel. Compare nearby wells in Timnath, Laporte, Loveland, Windsor and Wellington, but use those records as context rather than proof of the result on your lot. The local data includes both shallow wells and much deeper exceptions.</p><p>For a purchase, make the well inspection, production information, water-quality testing and permit review part of due diligence. For a new build, have a licensed driller evaluate access, geology, casing, grout, pump sizing and storage before you finalize the house site. Also confirm whether the intended use requires an augmentation plan, particularly in an over-appropriated basin, and coordinate the well with septic and driveway construction.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Fort Collins?",
+   "a": "The median reported well depth within five miles of Fort Collins is 28 feet. The middle half runs from 20 to 45 feet, and 92% are under 100 feet. The records also include wells as deep as 901 feet, so fractured-bedrock conditions can produce a very different result on a particular parcel."
+  },
+  {
+   "q": "What does it cost to drill a well in Fort Collins?",
+   "a": "The local cost model uses $65-$100 per foot for fractured granite or gneiss. At the 28-foot median depth, the drilled hole is estimated at $1,800-$2,800. A finished well including pump, tank, trenching and electrical is modeled at $7,800-$14,800. Greater depth and difficult access can increase the bid."
+  },
+  {
+   "q": "How much water does a Fort Collins well produce?",
+   "a": "Reported yields have a median of 15.0 gallons per minute, with the middle half from 10.0 to 40.0 gallons per minute. Fifty-eight percent report more than 15 gallons per minute, but 1% report under 1 gallon per minute. A pump test and the well’s permit are more useful than the area median alone."
+  },
+  {
+   "q": "Is well water safe to drink in Fort Collins?",
+   "a": "The well records do not establish that water is safe to drink. Within about ten miles, mapped environmental information includes 93 PFAS sampling or contamination sites, 22 historic mine features and 19 EPA Superfund or cleanup sites. Test the individual well for relevant contaminants, and review its location and property history before relying on it."
+  },
+  {
+   "q": "Should I check a well permit before buying near Fort Collins?",
+   "a": "Yes. The records include 3,265 permitted wells, but only 1,695 are recorded as constructed, and reports vary in the information they contain. Review the permit, construction report, use restrictions, static level, pump information and water testing. A Colorado exempt household-use well also has a 35 gallon-per-minute pumping limit, and some uses may require additional water-rights review."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Fort Collins and nearby Larimer County communities with access driveways, site development, new-build septic systems and custom homes. Their work can be coordinated with well access, utility trenching and the building site.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1425,
+  "completion_tokens": 2019,
+  "total_tokens": 3444,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1422,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 101,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

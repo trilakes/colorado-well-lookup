@@ -1,0 +1,76 @@
+{
+ "title": "Otero County CO well depth and costs",
+ "meta_description": "In Otero County, median well depth is 40 ft with a 25 gpm median yield. Most wells are under 100 ft, keeping drilling costs moderate.",
+ "h1": "Water wells in Otero County, Colorado",
+ "eyebrow": "Local well facts",
+ "intro_html": "<p>Otero County sits on the plains with a long history of domestic, stock, and irrigation wells. Depths here are usually modest, but there are some very deep outliers. Yields tend to be strong enough for a household or small operation, and the water table has stayed relatively stable in the records. If you’re buying land around La Junta, Rocky Ford, Fowler, Manzanola, or the smaller communities, it helps to understand how wells typically behave in this county.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells usually run in Otero County",
+   "html": "<p>Across Otero County, the median total well depth is 40 feet, with the middle half of wells between 31 and 62 feet. That’s quite shallow by Colorado standards and reflects the alluvium and plains sedimentary geology here. Most wells (78%) are under 100 feet, so a lot of domestic and stock wells don’t have to chase water very far.</p><p>There is a long tail, though. About 9% are 300–600 feet and 10% are deeper than 600 feet, with the deepest on record at 1,990 feet and a 90th percentile depth of 590 feet. Those deeper completions are often irrigation, stock, or higher-capacity uses in tighter formations. For a driller’s bid on a new domestic well, the county median is a good starting point, but you have to allow for the possibility of hitting one of those deeper conditions.</p>"
+  },
+  {
+   "heading": "What kind of well yield to expect here",
+   "html": "<p>In the county data, reported pump yields look favorable. The median yield is 25.0 gallons per minute, and the middle half of tested wells comes in between 12.0 and 240.0 gpm. That range easily covers normal household demand and a fair amount of outdoor use, assuming your water right and well permit allow it.</p><p>Low producers are not common in the records: 0% of tested wells report under 1 gpm, and only 1% fall in the 1–5 gpm range. About 29% sit between 5–15 gpm, and 70% report 15+ gpm. Keep in mind only 272 wells report a yield, so you’re seeing a sample, not every well. Still, compared with many Colorado counties, Otero’s reported yields suggest decent odds of a practical domestic well if the aquifer and geology on your parcel match nearby completions.</p>"
+  },
+  {
+   "heading": "Water table depth and long-term trend",
+   "html": "<p>Static water levels in Otero County are generally shallow. Among wells that report it, the median depth to water is 20 feet, with the middle half between 12 and 35 feet below ground surface. That’s consistent with the relatively short total depths for many domestic and stock wells in the area.</p><p>The limited decade data does not show a clear long-term decline. Median depth to water was 28 feet in the 1950s, 25 feet in the 2010s, and 18 feet in the 2020s. That suggests, in the wells measured, the water table has stayed roughly stable or even a bit shallower over time. Still, only 84 wells report static level, so you should treat this as a general indicator, not a guarantee. Checking nearby well logs around La Junta, Rocky Ford, Swink, or Fowler is the best way to fine-tune expectations for a specific property.</p>"
+  },
+  {
+   "heading": "Who’s been drilling and permit patterns",
+   "html": "<p>Otero County has a long record of well development, with 3,335 wells in the state permit system and 2,318 recorded as constructed. Of those, 2,271 report a total depth. The use mix is broad: about 38% domestic or household wells, 25% stock, 25% irrigation, and 12% monitoring wells.</p><p>Permitting shows activity in every decade. The 1950s saw 314 permits, then 225 in the 1960s, 168 in the 1970s, and 136 in the 1980s. Things picked up again with 460 permits in the 1990s and 480 in the 2000s. There are 262 permits from the 2010s and 130 so far in the 2020s, with the newest permit showing up in 2025. Drill records list Crandall, H A (211 wells), Authorized (Pe, Pg) (189 wells), and Broce Drilling (Broce, Frank R.) (140 wells) as some of the most active drillers historically.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost here",
+   "html": "<p>Drilling in Otero County generally goes through alluvium and plains sedimentary rock. The drilling cost model for this area runs about $35–$55 per foot. At the county’s 40-foot median depth, the drilled hole alone pencils out around $1,400–$2,200.</p><p>Once you add casing, grout, pump, pressure tank, trenching, and electrical, a typical finished domestic well at that depth lands in roughly the $7,400–$14,200 range. If you end up in one of the deeper scenarios seen in the county records, every extra foot adds at that same $35–$55 range, so budgets can climb quickly. Before you close on land in places like North La Junta, Cheraw, or Manzanola, it’s smart to price a worst‑case depth based on nearby well logs, not just the county median.</p>"
+  },
+  {
+   "heading": "Local risks: low yield, contamination, and siting",
+   "html": "<p>Even though the data shows strong yields overall, there’s always a chance of hitting a tighter zone, especially in fractured bedrock. Most wells here are in unnamed or fractured-bedrock aquifers (3,098 wells), with smaller numbers tapping the Dakota (92 wells) and alluvial aquifers (40 wells). Performance can vary over short distances in that kind of geology.</p><p>On the water quality side, there are 22 mapped PFAS sampling or contamination sites, 10 historic mine features, and 16 EPA Superfund or cleanup sites within about 10 miles in the broader area. That doesn’t mean your well is contaminated, but it does mean you should plan on lab testing a new or existing well for typical minerals plus PFAS and any site-specific concerns. Also factor in septic setbacks and building layout so your leach field and well stay properly separated on smaller lots.</p>"
+  },
+  {
+   "heading": "Buying or building on a lot in Otero County",
+   "html": "<p>If you’re evaluating a parcel in Otero County, start by pulling the nearby DWR well logs for La Junta, La Junta Gardens, Rocky Ford, Fowler, Swink, Cheraw, or Manzanola, depending on your area. Compare their depths, yields, and static levels to the county medians: 40-foot depth, 25.0 gpm median yield, and 20-foot median static water level.</p><p>Make your offer and build budget assuming you might need to drill deeper than the neighbors, since 19% of wells go beyond 300 feet and some reach 600+ feet or more. Confirm what kind of permit you can get (domestic, stock, or irrigation) and understand the 35 gpm exempt household limit. Before you build, plan for proper access, power routing to the well, and septic layout so you’re not regrading later to meet code clearances.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Otero County, Colorado?",
+   "a": "County records show a median well depth of 40 feet, with the middle half of wells between 31 and 62 feet. Most completions are shallow: 78% of wells are under 100 feet. There is a smaller group of deeper wells, with 9% in the 300–600 foot range and 10% over 600 feet, and the deepest recorded well reaches 1,990 feet. Always check nearby logs for your specific parcel."
+  },
+  {
+   "q": "How much water do Otero County wells typically produce?",
+   "a": "Among the 272 wells that report a pump test, the median yield is 25.0 gallons per minute, and the middle half falls between 12.0 and 240.0 gpm. Only 1% of reported wells are in the 1–5 gpm range and none report under 1 gpm, while 29% fall in the 5–15 gpm band and 70% show 15+ gpm. That’s generally plenty for a household and some outdoor use, assuming your permit allows it."
+  },
+  {
+   "q": "What does it cost to drill a water well in Otero County?",
+   "a": "The drilling cost model for Otero County uses a typical rate of $35–$55 per foot in local alluvium and plains sedimentary rock. At the county’s 40-foot median depth, the drilled hole runs about $1,400–$2,200. A complete domestic setup at that depth, including pump, tank, trenching, and electrical work, is estimated around $7,400–$14,200. Deeper wells cost more at the same per‑foot range, so budget with a safety margin."
+  },
+  {
+   "q": "Is well water safe to drink in Otero County, Colorado?",
+   "a": "Safety depends on the specific well. In the broader area there are 22 mapped PFAS sampling or contamination sites, 10 historic mine features, and 16 EPA Superfund or cleanup sites within about 10 miles. Many private wells produce good water, but you should not assume potability. Any existing or new well should be lab tested for basic chemistry, bacteria, and PFAS, especially if you’re near known industrial or agricultural activity."
+  },
+  {
+   "q": "Are water levels dropping in Otero County wells?",
+   "a": "Based on limited static water level data, there is no clear sign of a long-term decline. The median depth to water was 28 feet in the 1950s, 25 feet in the 2010s, and 18 feet in the 2020s for the wells measured. Overall, the median static level across reporting wells is 20 feet, with the middle half between 12 and 35 feet. Still, only 84 wells report static level, so check local logs for your exact area."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that can handle access driveways, full site development, new-build septic systems, and custom homes in and around Otero County.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1448,
+  "completion_tokens": 2777,
+  "total_tokens": 4225,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 445,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

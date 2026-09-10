@@ -1,0 +1,77 @@
+{
+ "title": "Rangely Well Depth and Drilling Cost",
+ "meta_description": "Rangely wells are typically 20 feet deep, but local records include much deeper wells. See yields, costs, risks and permit history.",
+ "h1": "Rangely, Colorado Well Depth, Yield, and Cost Guide",
+ "eyebrow": "Rangely well records explained",
+ "intro_html": "<p>Buying land near Rangely means looking closely at the well record, not just assuming that every parcel has the same groundwater conditions. Within 5 miles of Rangely, Colorado DWR records include 119 permitted wells. Of those, 53 are recorded as constructed, 69 report a total depth, and only 2 report a pump yield.</p><p>The local record is unusual in one important way: the median reported well depth is 20 feet, while the deepest recorded well reaches 4,760 feet. Most wells are shallow, but that does not eliminate the need to verify the specific parcel, aquifer, intended use, and construction requirements.</p>",
+ "sections": [
+  {
+   "heading": "Rangely well depths are usually shallow, with exceptions",
+   "html": "<p>The median reported well depth near Rangely is 20 feet. The middle half of reported wells falls between 17 and 33 feet, and the 90th percentile is 47 feet. That gives a driller a reasonable starting point for a preliminary bid, especially in the local mixed sedimentary and alluvial ground.</p><p>Depth records still have a wide outlier range. Ninety-one percent of the reported wells are under 100 feet, while 3% are between 300 and 600 feet and 6% are deeper than 600 feet. No wells appear in the 100-to-300-foot range in this dataset. The deepest record is 4,760 feet, so a shallow median is not a guarantee for an individual lot.</p>"
+  },
+  {
+   "heading": "What Rangely wells produce",
+   "html": "<p>The reported yield data looks strong, but it is based on only 2 wells with a pump yield in the records. Both reported yields fall in the 15-plus-gallons-per-minute category, producing a median of 15.0 gallons per minute. No recorded wells are listed under 1 gallon per minute, between 1 and 5, or between 5 and 15 gallons per minute.</p><p>That result should not be treated as a guarantee for a new domestic well. Most permits identify an unnamed or fractured-bedrock aquifer, with 112 wells in that category and 6 in an alluvial aquifer. Fractured ground can vary sharply over short distances. Ask for a pump test, well construction report, and actual recovery information before relying on the local yield figure.</p>"
+  },
+  {
+   "heading": "The limited water-level record near Rangely",
+   "html": "<p>Only 6 wells report a static water level, so the local water-table picture is limited. Among those records, the median depth to water is 4 feet, and the middle half ranges from 3 to 4 feet. That suggests shallow water in the wells that were measured, but it does not establish the water level beneath every parcel.</p><p>The permit-by-decade series shows activity rather than a water-table trend: 7 permits in the 1970s, 1 in the 1980s, 11 in the 1990s, 18 in the 2000s, 40 in the 2010s, and 15 in the 2020s. Because static levels are sparse and not presented as a consistent time series, these facts do not show that the water table is dropping or rising.</p>"
+  },
+  {
+   "heading": "Who has drilled around Rangely, and when",
+   "html": "<p>Permit activity is spread across several decades, with the largest recorded group in the 2010s. The newest permit year in this area is 2025. Monitoring is the dominant listed use at 58% of permits, while domestic or household wells account for 15%, stock for 8%, and irrigation for 2%. That mix matters when comparing a monitoring well with a proposed household well.</p><p>The most active driller name in the records is Authorized (Pe, Pg), associated with 37 wells. Pennell Drilling, listed with Pennell Jr., Clifford A., appears on 4 records, and Owner appears on 3. Confirm the driller, permit status, and construction report with Colorado DWR before using an old record as a model for your property.</p>"
+  },
+  {
+   "heading": "Rangely well drilling cost at local depths",
+   "html": "<p>For the local mixed sedimentary and alluvial ground, the drilling rate model is $50 to $75 per foot. At the 20-foot median depth, the drilled hole alone models to about $1,000 to $1,500. That is only the borehole, not the complete water system.</p><p>A finished well with pump, pressure tank, trenching, and electrical work is modeled at about $7,000 to $13,500 at the median depth. A deeper-than-typical hole, difficult access, casing and grout requirements, or additional treatment can move the final price higher. Get a written bid that separates drilling, casing, grout, pump equipment, trenching, electrical work, testing, and permit-related items.</p>"
+  },
+  {
+   "heading": "Risks to check before buying a Rangely lot",
+   "html": "<p>The area has 41 mapped PFAS sampling or contamination sites within about 10 miles, 4 historic mine features, and 1 EPA Superfund or cleanup site. A nearby mapped site does not prove that a particular well is contaminated, but it is a reason to review available sampling, well location, groundwater flow information, and the history of the parcel.</p><p>Low yield and dry holes remain possible even where recorded yields look good, because only 2 permits report pump yield and much of the aquifer labeling is unnamed or fractured bedrock. Check septic setbacks, soil suitability, access for a drill rig, casing and grout requirements, and the legal water use allowed by the permit. Household-use wells are commonly exempt wells, but Colorado DWR permit conditions still control the use.</p>"
+  },
+  {
+   "heading": "A practical plan for building near Rangely",
+   "html": "<p>Before closing, pull the Colorado DWR records for the parcel and compare nearby wells by depth, aquifer description, construction, yield, and static water level. The records near Rangely include shallow wells, but the 4,760-foot outlier shows why a single median should not be used as a promise. Have a driller inspect access and ground conditions before you accept a fixed construction budget.</p><p>For a new home, coordinate the well, septic system, driveway, trenching, and electrical layout early. Confirm whether the proposed use is domestic, stock, irrigation, or another permitted use. If the property is near Dinosaur, Meeker, Maybell, Parachute, Battlement Mesa, or Loma, do not substitute those areas for a parcel-specific review; local geology and permit conditions can change quickly.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Rangely, Colorado?",
+   "a": "The median reported well depth within 5 miles of Rangely is 20 feet, with the middle half between 17 and 33 feet. Ninety-one percent of reported wells are under 100 feet. The record also includes a 4,760-foot well, so the local median is a starting point, not a guarantee for a particular property."
+  },
+  {
+   "q": "How much does it cost to drill a well in Rangely?",
+   "a": "The local drilling model is $50 to $75 per foot. At the 20-foot median depth, the drilled hole is estimated at about $1,000 to $1,500. A finished system with pump, tank, trenching, and electrical work is modeled at about $7,000 to $13,500. Access and unusual depth can change the bid."
+  },
+  {
+   "q": "How much water do Rangely wells produce?",
+   "a": "Only 2 wells in the records report a pump yield. Both are in the 15-plus-gallons-per-minute category, and the reported median is 15.0 gallons per minute. No recorded wells are listed below 15 gallons per minute. Because the sample is very small, request a pump test and recovery information for the property."
+  },
+  {
+   "q": "Is well water safe in Rangely, Colorado?",
+   "a": "Safety depends on the individual well and its location. The mapped area includes 41 PFAS sampling or contamination sites, 4 historic mine features, and 1 EPA Superfund or cleanup site within about 10 miles. Those findings do not prove contamination at your parcel. Test the well for relevant contaminants and review local environmental records before drinking the water."
+  },
+  {
+   "q": "Is the water table dropping near Rangely?",
+   "a": "The available facts do not establish a rising or dropping water table. Only 6 wells report static water levels, with a median depth to water of 4 feet and a middle half from 3 to 4 feet. Permit counts vary by decade, but permit activity is not a substitute for a consistent long-term water-level record."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Rangely-area projects with access driveways, site development, new-build septic systems, and custom homes. Bring the well, septic, access, and building layout together before construction starts.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1349,
+  "completion_tokens": 2062,
+  "total_tokens": 3411,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1346,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 79,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

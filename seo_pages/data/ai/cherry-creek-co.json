@@ -1,0 +1,77 @@
+{
+ "title": "Cherry Creek Well Depth and Drilling Cost",
+ "meta_description": "Cherry Creek wells have a 176-foot median depth; typical finished-well costs run $14,800-$24,300.",
+ "h1": "What Cherry Creek Wells Cost, Produce, and Require",
+ "eyebrow": "Cherry Creek well guide",
+ "intro_html": "<p>Buying land near Cherry Creek means looking closely at the well record, not just the house or acreage. Within 5 miles, Colorado DWR records show 4,385 permitted wells, with 2,331 reporting a total depth and 654 reporting a pump yield. The records cover Cherry Creek and nearby areas including Centennial, Inverness, Greenwood Village, Dove Valley, Acres Green, and Foxfield.</p><p>The local numbers show a wide range. The median well is 176 feet deep, but the middle half runs from 27 to 448 feet. That spread matters when you compare a driller's estimate, evaluate water risk, or decide whether a lot is practical for new construction.</p>",
+ "sections": [
+  {
+   "heading": "Cherry Creek well depth depends on the local formation",
+   "html": "<p>Cherry Creek wells have a median reported depth of 176 feet. The middle half falls between 27 and 448 feet, while the deepest record reaches 2,485 feet. Depths are not evenly distributed: 46% are under 100 feet, 14% are 100 to 300 feet, 20% are 300 to 600 feet, and 20% are deeper than 600 feet.</p><p>The ground here is Denver Basin sedimentary bedrock, and permits identify Denver Basin aquifers on 100% of the wells with an aquifer designation. The records also include unnamed or fractured-bedrock wells, Denver aquifer wells, and Arapahoe aquifer wells. For a bid, use nearby completed wells rather than the median alone. A 176-foot estimate may be reasonable in one pocket and badly low in another.</p>"
+  },
+  {
+   "heading": "Most Cherry Creek wells report useful production",
+   "html": "<p>Among the 654 wells with a reported pump yield, the median is 15.0 gallons per minute. The middle half produces 12.0 to 17.8 gallons per minute. Reported production is concentrated at the stronger end: 53% make more than 15 gallons per minute, while 46% fall between 5 and 15 gallons per minute.</p><p>No recorded wells in this data set are listed under 1 gallon per minute or between 1 and 5 gallons per minute. That is encouraging, but it is not a promise for an unbuilt well or a particular parcel. Yield records represent only part of the permitted-well set, and pumping capacity is not the same as storage in the well or a guarantee that the water is suitable for drinking.</p>"
+  },
+  {
+   "heading": "Cherry Creek water levels vary, with older readings deeper",
+   "html": "<p>The median static water level is 145 feet below the surface, with the middle half ranging from 35 to 469 feet. That range is important for pump selection, casing work, and estimating how much standing water a well may store. A shallow static level does not automatically mean a shallow drilling target.</p><p>The decade series shows median measured water levels of 413 feet in the 1980s, 138 feet in the 2010s, and 130 feet in the 2020s. In these records, later measurements are shallower than the older measurements, rather than showing a simple downward water-table trend. Only 73 wells report a static water level, and measurements may come from different wells and locations, so treat the series as context, not a parcel-specific forecast.</p>"
+  },
+  {
+   "heading": "Permit history shows long activity around Cherry Creek",
+   "html": "<p>Permitting has continued across the area, with the newest permit year recorded as 2025. The largest decade totals are 844 permits in the 1990s and 758 in the 2000s. The records also show 414 permits in the 2010s and 242 in the 2020s, along with earlier activity beginning in the 1950s.</p><p>The most active driller names in the records are Authorized (Pe, Pg), Hier Drilling Co Inc (Hier, Bruce A.), and Hier Drilling Co. (Hier, Peter J). These names describe permit-record activity, not a recommendation or proof that a company is available for your project. Before closing, pull the actual permit and construction documents for the subject well, including the approved use, casing and grout information, pump details, and any testing.</p>"
+  },
+  {
+   "heading": "A Cherry Creek well can cost more than the hole itself",
+   "html": "<p>For Denver Basin sedimentary bedrock, the local drilling model uses $50 to $70 per foot. At the 176-foot median depth, the drilled hole works out to about $8,800 to $12,300. That is only the drilling portion of the job.</p><p>A finished well, including the pump, tank, trenching, and electrical work, is modeled at about $14,800 to $24,300 at the median depth. A property with a deeper target can exceed that range, and a difficult access route or unusual site conditions can affect the final bid. Ask each driller to separate footage, casing and grout, pump equipment, trenching, electrical, testing, and permit-related work so competing estimates describe the same scope.</p>"
+  },
+  {
+   "heading": "Check water quality, yield, septic, and building limits",
+   "html": "<p>Mapped environmental information deserves a closer look before you buy. Within about 10 miles are 289 PFAS sampling or contamination sites, 40 EPA Superfund or cleanup sites, and 5 historic mine features. A mapped site does not establish contamination at your parcel, but it is a reason to review state and county information and test the well water before relying on it for household use.</p><p>Low yield, a dry hole, poor construction, or a pump set incorrectly can change the project. Septic setbacks, well access, reserve areas, driveways, and the proposed building footprint also need to work together. Confirm the DWR permit and allowed use; exempt household-use wells have specific limits, including a 35-gpm pumping limit, and some over-appropriated basins require an augmentation plan.</p>"
+  },
+  {
+   "heading": "What to verify before buying a Cherry Creek lot",
+   "html": "<p>Start with the exact parcel, then review nearby completed wells rather than relying on area-wide averages. The records show 1,967 wells marked constructed, but only 2,331 report a depth and 654 report a yield. Missing fields are a practical warning: the absence of a reported result is not evidence that the well is shallow or productive.</p><p>For an existing home, obtain the well permit, construction report, pump information, recent water test, and service history. For vacant land, have a licensed driller assess access, likely depth, casing and grout, pump placement, and the cost of connecting the well to the building. Also confirm septic feasibility and the legal household or irrigation use before making the purchase contingent on water.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Cherry Creek, Colorado?",
+   "a": "The median reported well depth near Cherry Creek is 176 feet. The middle half runs from 27 to 448 feet, so nearby wells can differ substantially. About 46% are under 100 feet, while 20% are deeper than 600 feet. Use wells close to the parcel to estimate drilling depth rather than treating the median as a guarantee."
+  },
+  {
+   "q": "How much does it cost to drill a well in Cherry Creek?",
+   "a": "The drilling model uses $50 to $70 per foot in Cherry Creek's Denver Basin sedimentary bedrock. At the 176-foot median depth, the hole is about $8,800 to $12,300. A finished well with pump, tank, trenching, and electrical is modeled at about $14,800 to $24,300. Deeper drilling or difficult site access can increase the bid."
+  },
+  {
+   "q": "How much water do Cherry Creek wells produce?",
+   "a": "The median reported pump yield is 15.0 gallons per minute, and the middle half runs from 12.0 to 17.8 gallons per minute. In the records with yield data, 53% produce more than 15 gallons per minute and 46% produce 5 to 15 gallons per minute. Only 654 wells report a pump yield, so confirm production for the specific well."
+  },
+  {
+   "q": "Is well water safe to drink in Cherry Creek?",
+   "a": "The area has 289 mapped PFAS sampling or contamination sites, 40 EPA Superfund or cleanup sites, and 5 historic mine features within about 10 miles. Those maps do not prove contamination at a particular home. Have the well tested before drinking it, review nearby environmental information, and check the well construction and permit records."
+  },
+  {
+   "q": "Are Cherry Creek well water levels going down?",
+   "a": "Reported median static water levels were 413 feet below the surface in the 1980s, 138 feet in the 2010s, and 130 feet in the 2020s. That series shows later measurements were shallower, not a simple decline. Only 73 wells report static water levels, and locations and conditions differ, so the data cannot predict the water level on one Cherry Creek parcel."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Cherry Creek and the surrounding Arapahoe County area with access driveways, site development, new-build septic systems, and custom homes. Their team can help coordinate the ground work that has to fit around a well and septic layout.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1428,
+  "completion_tokens": 2289,
+  "total_tokens": 3717,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1425,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 124,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

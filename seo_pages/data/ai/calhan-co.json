@@ -1,0 +1,73 @@
+{
+ "title": "Calhan Well Depth and Drilling Cost",
+ "meta_description": "Calhan wells have a 320-foot median depth, with typical finished-well costs modeled at $22,000-$34,400.",
+ "h1": "Buying or Building on a Well Near Calhan",
+ "eyebrow": "Calhan well records explained",
+ "intro_html": "<p>Colorado DWR records show 1,073 permitted wells within 5 miles of Calhan. Of those, 618 are recorded as constructed, 684 report a total depth, 392 report a pump yield, and 75 report a static water level. That means the local record is useful, but not every permit tells the full story.</p><p>Most permits are for domestic or household use, with stock use also common. The numbers below describe recorded wells around Calhan, not a guarantee for a particular parcel. A neighboring well search, permit review, and site-specific drilling estimate are important before you buy land or set a building location.</p>",
+ "sections": [
+  {
+   "heading": "Calhan well depths vary widely across the Denver Basin",
+   "html": "<p>The median reported well depth near Calhan is 320 feet. The middle half runs from 107 to 500 feet, so a driller's bid based only on the median can miss the conditions on a specific lot. The 90th-percentile depth is 701 feet, and the deepest recorded well reaches 1,578 feet.</p><p>Depth mix gives a clearer picture: 23% of wells are under 100 feet, 23% are 100 to 300 feet, 37% are 300 to 600 feet, and 17% are deeper than 600 feet. Permits name Denver, Arapahoe, or unnamed fractured-bedrock aquifers. Denver Basin aquifer wells account for 100% of the listed aquifer records.</p>"
+  },
+  {
+   "heading": "Most Calhan wells report useful production, but test the lot",
+   "html": "<p>Among wells with a reported pump yield, the median is 8.0 gallons per minute. The middle half produces 5.0 to 11.0 gallons per minute. That is a more useful planning range than assuming every nearby well makes the same amount.</p><p>The recorded yield mix is relatively favorable for household planning: 72% fall between 5 and 15 gallons per minute, 11% report more than 15 gallons per minute, and 16% fall between 1 and 5 gallons per minute. Only 1% report under 1 gallon per minute. These are reported well yields, not a promise of continuous supply. Ask for the well construction report and pumping information before relying on the number for a house, stock use, or irrigation.</p>"
+  },
+  {
+   "heading": "Water levels near Calhan deserve a closer look",
+   "html": "<p>Reported static water levels have a median depth of 160 feet below the surface, with the middle half between 80 and 235 feet. A buyer should use that range when discussing pump setting, trenching, and electrical work, while recognizing that water level depends on the well, season, and measurement conditions.</p><p>The decade series shows a higher median measured depth to water in the 2020s than in the 2010s: 182 feet below surface compared with 152 feet. That points to a possible local decline in the available measurements, but only 75 wells report static water levels, so it is not enough by itself to establish a basin-wide trend. Have a qualified professional review nearby, comparable wells.</p>"
+  },
+  {
+   "heading": "Permit history shows long-running drilling around Calhan",
+   "html": "<p>Well permitting around Calhan spans several generations. The records show 15 permits from the 1950s, 8 from the 1960s, 93 from the 1970s, 129 from the 1980s, 258 from the 1990s, 216 from the 2000s, 104 from the 2010s, and 74 from the 2020s. The newest permit year is 2025.</p><p>The most active drillers in the records are Hamacher Well Works Inc, also listed with Alan Ray Hamacher, with 253 wells; Kunau Drilling LLC, also listed with Timothy R. Kunau, with 170; and Can America Drilling, Inc., also listed with Wayne A. Arde, with 94. These names help with local permit research, but a current bid still needs a site visit and access review.</p>"
+  },
+  {
+   "heading": "A Calhan well budget starts with depth",
+   "html": "<p>The local cost model assumes Denver Basin sedimentary bedrock and a drilling rate of $50 to $70 per foot. At the 320-foot median depth, the drilled hole models at about $16,000 to $22,400. A finished well, including the pump, tank, trenching, and electrical, models at about $22,000 to $34,400.</p><p>That range is a planning figure, not a fixed quote. The wide recorded depth range—from 107 to 500 feet for the middle half of wells—shows why depth can move the bid substantially. Ask what is included, how extra footage is priced, and whether pump equipment, casing, grout, water testing, trenching, and electrical are separate. Confirm the permit requirements before construction.</p>"
+  },
+  {
+   "heading": "Check contamination, low yield, and the building site",
+   "html": "<p>There are 5 mapped PFAS sampling or contamination sites within about 10 miles of Calhan. The records show 0 historic mine features and 0 EPA Superfund or cleanup sites in that area. Those mapped results do not certify water quality at a property. Test an existing well, and plan for laboratory testing of a new well after construction.</p><p>Low yield, a dry hole, fractured-bedrock variability, and deeper-than-expected drilling remain site risks. Septic placement and the well location also need to work with the proposed house, driveway, slopes, and future repairs. A Colorado well permit controls the allowed use. Exempt household-use wells have a 35-gpm pumping limit, and an augmentation plan may be required in an over-appropriated basin.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells near Calhan?",
+   "a": "The median reported depth near Calhan is 320 feet. The middle half of reported wells runs from 107 to 500 feet, while the 90th-percentile depth is 701 feet. The deepest record is 1,578 feet. For a purchase, compare wells near the actual parcel rather than using the median as a guaranteed drilling depth."
+  },
+  {
+   "q": "How much does it cost to drill a well in Calhan?",
+   "a": "The local cost model uses $50 to $70 per foot for Denver Basin sedimentary bedrock. At the 320-foot median depth, drilling alone models at $16,000 to $22,400. A finished well with pump, tank, trenching, and electrical models at $22,000 to $34,400. A driller should confirm inclusions and site conditions before quoting."
+  },
+  {
+   "q": "How much water do wells near Calhan produce?",
+   "a": "The median reported pump yield is 8.0 gallons per minute, with the middle half between 5.0 and 11.0 gallons per minute. Records show 72% producing between 5 and 15 gallons per minute, while 1% report under 1 gallon per minute. Actual production must be confirmed from the individual well report and test."
+  },
+  {
+   "q": "Is well water near Calhan safe to drink?",
+   "a": "The well records do not certify drinking-water safety. There are 5 mapped PFAS sampling or contamination sites within about 10 miles, although the area shows 0 EPA Superfund or cleanup sites. Test an existing well before purchase and test a new well after construction for contaminants appropriate to the property and permit history."
+  },
+  {
+   "q": "Is the water table dropping near Calhan?",
+   "a": "Reported static water levels were deeper in the 2020s than in the 2010s: the median was 182 feet below surface in the 2020s and 152 feet in the 2010s. That may indicate a local decline, but only 75 wells report static water levels. Treat it as a reason to investigate, not proof of a basin-wide trend."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Calhan and nearby rural areas with access driveways, site development, new-build septic systems, and custom homes. Bring the well, septic, driveway, and house locations together early so the site plan works as a whole.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1420,
+  "completion_tokens": 2052,
+  "total_tokens": 3472,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1417,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 117,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

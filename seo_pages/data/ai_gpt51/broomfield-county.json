@@ -1,0 +1,76 @@
+{
+ "title": "Broomfield County well depth and drilling cost",
+ "meta_description": "Broomfield County wells have a 35 ft median depth and a 10 gpm median yield. Learn what that means for drilling cost, risk and water supply.",
+ "h1": "Water wells in Broomfield County, Colorado",
+ "eyebrow": "Local well facts",
+ "intro_html": "<p>Broomfield County’s wells are a mix of shallow alluvial holes and deep Denver Basin bedrock wells. Records from 1,102 permits give a decent picture of what you’re likely to run into if you’re buying or building here.</p><p>I’ll walk through how deep wells tend to be, how much water they usually make, what the drilling cost model suggests, and a few risks that matter in a county with a lot of monitoring wells and mapped contamination sites.</p>",
+ "sections": [
+  {
+   "heading": "How deep are Broomfield County wells",
+   "html": "<p>Countywide, the reported median well depth is only about 35 feet, but the spread is big. The middle half of wells run from 20 to 200 feet, and about 17% go deeper than 600 feet, with some outliers reaching 880 to 1,202 feet. About 69% of wells are under 100 feet, so there are a lot of shallow completions, especially in alluvial settings.</p><p>Permits list 753 wells in unnamed or fractured bedrock aquifers, 94 in alluvial deposits, and 66 in the Laramie Fox Hills. Everything here is considered part of the Denver Basin system. When you price a new well, you need a bid that clearly distinguishes a shallow alluvial target from a possible several-hundred-foot bedrock hole.</p>"
+  },
+  {
+   "heading": "Well yield and how much water you can expect",
+   "html": "<p>Of the 76 wells with reported pump tests, the median yield is 10.0 gallons per minute, and the middle half fall between 5.0 and 12.9 gpm. That’s plenty for a typical exempt household well, which is limited to 15 gpm on paper and 35 gpm pumping capacity overall in Colorado.</p><p>The shape of the data matters. About 59% of tested wells fall between 5 and 15 gpm, 17% test at 15+ gpm, but 13% come in under 1 gpm and another 11% between 1 and 5 gpm. That low end is your risk zone: under about 1–2 gpm, you’re into storage tanks, careful water management, and possibly re‑drilling if the driller and your contract allow it.</p>"
+  },
+  {
+   "heading": "Water level and what it says about the water table",
+   "html": "<p>Static water levels are surprisingly shallow in the wells that report them. The median depth to water is about 11 feet, and the middle half of measurements run 10 to 19 feet below ground. That suggests most producing zones sit close to the surface in the wells where measurements were taken.</p><p>Only 49 wells in the county have recorded static levels, and the data aren’t broken out by decade, so we can’t say from these numbers alone if the water table is trending up or down over time. Treat this as a snapshot, not a prediction. On a specific parcel in Broomfield, ask your driller to look at neighboring completion and water-level data before they bid the job.</p>"
+  },
+  {
+   "heading": "Who’s drilling here and permit history",
+   "html": "<p>Broomfield County has permits going back at least to the 1950s, with 28 in that decade and 25 in the 1960s. Activity ramps up later: 56 in the 1970s, 70 in the 1980s, 244 in the 1990s, and 199 in the 2000s. More recently there are 120 permits in the 2010s and 136 already in the 2020s, with the newest permit issued in 2025.</p><p>Among named drillers, Authorized (Pe, Pg) shows up on 392 wells, Waneka &amp; Son Drilling (Waneka, Don) on 54, and High Plains Drilling (Jecminek, Charles L.) on 43. About 508 wells are recorded as constructed, and 605 have a reported total depth. That mix tells you some of the older permits may never have been drilled or never had completion details reported.</p>"
+  },
+  {
+   "heading": "Drilling costs in Denver Basin bedrock here",
+   "html": "<p>The county sits on Denver Basin sedimentary bedrock, and the cost model for this area runs about $50–$70 per drilled foot. Using the county’s 35-foot median depth, that puts the drilled hole itself roughly in the $1,800–$2,400 range.</p><p>Once you add pump, pressure tank, trenching, and electrical, the model suggests a finished domestic well around $7,800–$14,400 at that median depth. If your specific spot ends up needing a few hundred feet into fractured bedrock instead of a shallow completion, you scale that per‑foot cost up accordingly. When you get bids, insist on a clear per‑foot rate schedule and how they treat lost circulation, steel casing, and mobilization.</p>"
+  },
+  {
+   "heading": "Contamination, low-yield risk, and septic siting",
+   "html": "<p>Broomfield County has a high count of mapped environmental concerns: about 1,390 PFAS sampling or contamination sites, 209 historic mine features, and 188 EPA Superfund or cleanup sites within roughly 10 miles. That’s why many of the permits here, about 52%, are for monitoring wells rather than domestic use.</p><p>Before closing on a property, I’d budget for a good lab panel on PFAS and common metals and compare your location to those mapped sites. On the water‑supply side, remember that 13% of tested wells produce under 1 gpm and another 11% are 1–5 gpm, so specify minimum acceptable yield and a test in your drilling contract. For septic, keep your leach field and any future expansion areas uphill and well away from the wellhead per local setback rules.</p>"
+  },
+  {
+   "heading": "Buying or building on a lot in Broomfield County",
+   "html": "<p>Use mix here is skewed toward non-domestic: about 27% of wells are domestic or household, 3% stock, 2% irrigation, and 52% monitoring. That means your specific neighborhood might have few nearby domestic wells to compare, especially close to more urbanized parts of Broomfield or near Adams and Boulder county lines.</p><p>Before you commit to a lot, pull up the well records for that immediate area and look at depth, yield, aquifer, and static water level. In a county with both shallow alluvium and deep Denver Basin targets, you want your driller pricing the right scenario. On new builds, coordinate well location early with house placement, driveway, and septic so you don’t box yourself into long, expensive utility runs or setback conflicts.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Broomfield County, Colorado?",
+   "a": "Reported wells in Broomfield County have a median total depth of about 35 feet, but the range is wide. The middle half of wells are between 20 and 200 feet deep. Around 69% are under 100 feet, while about 17% go deeper than 600 feet, with some extreme cases down to 880–1,202 feet. Your depth will depend on whether you’re in shallow alluvium or targeting Denver Basin bedrock."
+  },
+  {
+   "q": "What is a typical well yield in Broomfield County?",
+   "a": "Among the 76 wells with pump-test data, the median yield is 10.0 gallons per minute, and the middle half fall between 5.0 and 12.9 gpm. About 59% of tested wells are in the 5–15 gpm range, 17% are 15+ gpm, but 13% produce under 1 gpm and 11% are 1–5 gpm. That low-yield tail is the main risk to watch when drilling a new well here."
+  },
+  {
+   "q": "What does it cost to drill a water well in Broomfield County?",
+   "a": "In Broomfield County’s Denver Basin bedrock, a typical drilling rate is about $50–$70 per foot. At the county’s 35-foot median depth, that puts the drilled hole around $1,800–$2,400. A complete domestic setup with pump, tank, trenching, and electrical typically runs about $7,800–$14,400 at that depth. Deeper fractured-bedrock wells will scale up from the same per-foot model."
+  },
+  {
+   "q": "How deep is the water table in Broomfield County?",
+   "a": "Static water level data from 49 wells show a median depth to water of about 11 feet below ground, with the middle half between 10 and 19 feet. That suggests relatively shallow water levels in the wells that were measured. The dataset is limited and not broken out by decade, so it doesn’t clearly show long-term trends, but it does indicate that many wells encounter water fairly near the surface."
+  },
+  {
+   "q": "Is well water safe to drink in Broomfield County?",
+   "a": "Safety is site-specific. The county has roughly 1,390 mapped PFAS sampling or contamination sites, 209 historic mine features, and 188 EPA Superfund or cleanup sites within about 10 miles, and about 52% of permits are for monitoring wells. Those facts tell you to test, not guess. Before using a well for drinking, have a certified lab check for PFAS and common contaminants and compare your property against the mapped environmental sites."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that can handle access driveways, full site development, new-build septic systems, and custom homes in and around Broomfield County.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1379,
+  "completion_tokens": 2256,
+  "total_tokens": 3635,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 118,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

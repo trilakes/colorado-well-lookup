@@ -1,0 +1,77 @@
+{
+ "title": "Cheyenne County Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Cheyenne County wells have a 76 ft median depth. Compare reported yields, water levels and estimated finished-well costs of $8,700-$16,200.",
+ "h1": "What to Expect From a Well in Cheyenne County",
+ "eyebrow": "Plains Wells and Land",
+ "intro_html": "<p>A shallow countywide median does not mean every Cheyenne County lot gets a shallow well. Reported depths center on <strong>76 ft</strong>, but the middle half spans <strong>34-256 ft</strong>. That spread matters when you price rural land or ask a driller for a bid.</p><p>Colorado DWR records contain 2,092 permitted wells across the county, with 916 recorded as constructed. Use the county figures as a starting point, then look closely at nearby completed wells around Cheyenne Wells, Arapahoe or Kit Carson.</p>",
+ "sections": [
+  {
+   "heading": "Why a 76 ft Median Is Only a Starting Point",
+   "html": "<p>Of the 1,243 wells reporting depth, the median is <strong>76 ft</strong> and the middle half runs from <strong>34-256 ft</strong>. The 90th percentile is 340 ft, and the deepest reported well reaches 630 ft. A bid based only on the median leaves substantial room for added footage.</p><p>Cheyenne County is plains country, with alluvium and sedimentary rock rather than a uniform aquifer beneath every parcel. Permits name the Ogallala for 404 wells and Alluvial for 13; 1,530 fall under an unnamed / fractured-bedrock label. That broad record category is not proof of granite beneath your lot. Nearby completion logs are more useful for identifying the actual water-bearing material.</p>"
+  },
+  {
+   "heading": "Reported Yields Look Useful, but Test the Property",
+   "html": "<p>The 446 reported pump yields have a <strong>15.0 gpm median</strong>, with the middle half between 10.0 and 27.8 gpm. Those are useful starting figures for household planning, but the county dataset includes more than residential wells: stock use appears on 50% of permits and irrigation on 23%.</p><p>No reported yields fall below 1 gpm, while 10% fall in the 1-5 gpm band. That does not establish that every parcel will produce enough water. A recorded pump yield is not a guarantee of sustained supply. For an existing home, ask for a current pumping and recovery test and compare the results with household demand and the permit's allowed uses.</p>"
+  },
+  {
+   "heading": "Cheyenne County Water Levels Do Not Show a Simple Trend",
+   "html": "<p>Only <strong>114 wells</strong> report a static water level. Their median depth to water is 89 ft, with the middle half at 26-182 ft below ground. Static level measures where water stands at rest, not the bottom of the well. These records are a different sample from the depth records, so the water-level median should not be paired with the 76 ft depth median as though they describe the same well.</p><p>Decade medians are 132 ft in the 1960s, 164 ft in the 1970s, 40 ft in the 2010s and 93 ft in the 2020s. That uneven series does not establish a countywide falling water table. Look for repeated measurements from the same well before drawing a trend conclusion.</p>"
+  },
+  {
+   "heading": "A Long Permit History, Led by Stock-Water Use",
+   "html": "<p>Cheyenne County's records extend from 49 permits issued in the 1950s through a newest permit year of <strong>2025</strong>. The 2000s account for 249 permits, followed by 156 in the 2010s and 89 in the 2020s. The current decade is incomplete, so its smaller count should not be read as a direct measure of declining drilling activity.</p><p>The most active names in the records are Kemp'S Well Service (Kemp, George), with 367; Schaal Drilling Co. (Schaal, Ruben T.), with 87; and Eastwood Drilling (Eastwood, Francis), with 79. These are historical record counts, not confirmation of current availability. With stock use at 50% and domestic/household use at 21%, check the intended use before treating a neighboring permit as a residential comparison.</p>"
+  },
+  {
+   "heading": "Budget Beyond the Drilled Hole in Cheyenne County",
+   "html": "<p>The local cost model uses <strong>$35-$55 per foot</strong> for drilling through alluvium and plains sedimentary rock. At the 76 ft median depth, that puts the drilled hole around <strong>$2,700-$4,200</strong>. A finished well with pump, tank, trenching and electrical is estimated at <strong>$8,700-$16,200</strong>.</p><p>Those figures are a planning allowance, not a parcel-specific quote. The 34-256 ft middle depth range is a reason to request written footage pricing and clear terms for going deeper. Ask what casing, grout, development and testing are included. Keep access work, septic installation and other building-site costs separate unless the contractor expressly includes them in the proposal.</p>"
+  },
+  {
+   "heading": "Check Water Quality and the Consequences of a Poor Hole",
+   "html": "<p>The environmental map identifies <strong>59 PFAS sampling/contamination sites</strong> and <strong>3 EPA Superfund/cleanup sites</strong> within about 10 miles. These are screening flags, not findings that a particular domestic well is contaminated. A PFAS sampling location does not necessarily indicate a detection, and proximity alone does not establish a groundwater pathway.</p><p>Before purchase, have the property's water tested for bacteria and nitrate, and discuss PFAS testing and other local concerns with a qualified laboratory. Review casing, grout and wellhead condition. Reported yields cannot rule out a low-producing or unsuccessful new hole. Ask the driller how that outcome is handled, and confirm that the well, septic system and proposed building can be laid out without conflicts.</p>"
+  },
+  {
+   "heading": "Before Closing on Land Near Cheyenne Wells or Kit Carson",
+   "html": "<p>Start with completed wells close to the parcel, not just a county average or an unbuilt permit. Around Cheyenne Wells, Arapahoe and Kit Carson, compare depth, reported yield, aquifer description and construction details. Neighboring Kiowa County and Kit Carson County can provide broader context, but crossing a county line does not make distant wells better comparisons.</p><p>Ask DWR to confirm permit status and allowed uses before assuming a household well can serve livestock, irrigation or another dwelling. Exempt household-use permits have restrictions; other uses may require additional water-rights review. Before committing to a building layout, coordinate drilling access, the well location, septic suitability, driveway grading and utility routing. Resolve water feasibility before treating the lot as ready to build.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Cheyenne County, Colorado?",
+   "a": "The median reported depth is 76 ft, with the middle half between 34 and 256 ft. The 90th percentile is 340 ft, and the deepest reported well is 630 ft. Those figures come from 1,243 depth records. For a particular lot, nearby completed-well logs are a better bidding guide than the county median alone."
+  },
+  {
+   "q": "How much does it cost to drill a well in Cheyenne County?",
+   "a": "The cost model estimates $35-$55 per foot for drilling. At the 76 ft median depth, the hole alone is about $2,700-$4,200, while a finished well with pump, tank, trenching and electrical is about $8,700-$16,200. Request a parcel-specific bid that identifies casing, grout, testing and charges for additional depth."
+  },
+  {
+   "q": "How much water do Cheyenne County wells produce?",
+   "a": "Among 446 reported pump yields, the median is 15.0 gpm and the middle half is 10.0-27.8 gpm. The records include stock and irrigation wells as well as household wells. Although no reported yields fall below 1 gpm, that is not a parcel guarantee. Test an existing well's pumping performance and recovery before buying."
+  },
+  {
+   "q": "Is well water safe to drink in Cheyenne County?",
+   "a": "The county records cannot establish that an individual well is safe. Mapped sites within about 10 miles include 59 PFAS sampling/contamination locations and 3 EPA Superfund/cleanup sites, but those counts do not prove contamination at your property. Obtain laboratory testing for bacteria and nitrate, discuss PFAS testing, and inspect the wellhead and construction records."
+  },
+  {
+   "q": "Is the water table dropping in Cheyenne County?",
+   "a": "The available decade medians do not establish a consistent countywide decline. Reported static levels are 132 ft below ground in the 1960s, 164 ft in the 1970s, 40 ft in the 2010s and 93 ft in the 2020s. Only 114 wells report static levels, and these are not necessarily repeated measurements of the same wells."
+  }
+ ],
+ "tri_lakes_blurb": "For a Cheyenne County lot, plan access and the building site alongside the well location. Tri-Lakes Contracting is a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes.",
+ "_model": "gpt-6-astra",
+ "_usage": {
+  "prompt_tokens": 1442,
+  "completion_tokens": 2229,
+  "total_tokens": 3671,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1439,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 91,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "title": "Wray Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Wray wells have a 100-foot median depth, 15 gpm median yield, and typical finished costs of $9,500-$17,500.",
+ "h1": "What Wray, Colorado Wells Are Really Like",
+ "eyebrow": "Wray well permit guide",
+ "intro_html": "<p>If you are buying land or a home around Wray, the local permit record gives a useful starting point: wells have a <strong>100-foot median depth</strong> and a <strong>15 gpm median reported yield</strong>. The records cover permitted wells within 5 miles of Wray in Yuma County.</p><p>That does not guarantee what a new well will do on one specific lot. Drilling conditions can change across short distances, and only a small share of records report static water levels. Use these figures to screen a property, compare a driller's proposal, and identify questions that need a site-specific answer.</p>",
+ "sections": [
+  {
+   "heading": "Wray well depth depends on the local formation",
+   "html": "<p>Wray wells are generally shallow compared with many Colorado mountain and foothill wells. The median reported depth is <strong>100 feet</strong>, and the middle half runs from <strong>56 to 180 feet</strong>. That range is a practical starting point for a drilling estimate, but it is not a promise that your lot will hit water at the median.</p><p>About <strong>47%</strong> of wells are under 100 feet, while <strong>49%</strong> fall between 100 and 300 feet. Only <strong>4%</strong> are between 300 and 600 feet, and none in the records are above 600 feet. The deepest recorded well is <strong>1,660 feet</strong>, showing that unusual conditions do occur. Permits name unnamed or fractured-bedrock aquifers and the Ogallala most often, with some High Plains Aquifer wells.</p>"
+  },
+  {
+   "heading": "Most Wray wells report useful production",
+   "html": "<p>The reported yield picture is favorable for a typical household buyer. The median is <strong>15.0 gpm</strong>, with the middle half between <strong>10.0 and 20.0 gpm</strong>. About <strong>65%</strong> of reported wells produce more than 15 gpm, while <strong>30%</strong> fall between 5 and 15 gpm.</p><p>Only <strong>4%</strong> report 1 to 5 gpm, and none report under 1 gpm. Those figures describe reported pump yields, not a guarantee of sustained production during every season. Ask for the well permit, completion report, pump information, and any pump test. A strong well can still need properly sized storage, pressure equipment, and electrical service.</p>"
+  },
+  {
+   "heading": "Wray water levels show a shallower recent reading",
+   "html": "<p>Among the <strong>37</strong> records that report a static water level, the median depth to water is <strong>53 feet</strong>, with the middle half between <strong>25 and 100 feet</strong>. That is useful for estimating pump placement and understanding excavation, but the small reporting pool limits how broadly it can be applied.</p><p>The decade comparison does not show a simple falling water table in these records. The median measured water level was <strong>71 feet below surface in the 2010s</strong> and <strong>33 feet below surface in the 2020s</strong>, meaning the more recent reported measurements were shallower. Different locations, well designs, and measurement conditions may explain part of that change. Confirm current conditions on the property rather than relying on the regional median.</p>"
+  },
+  {
+   "heading": "Wray's permit history points to established drilling activity",
+   "html": "<p>Wray has a long record of permitted well construction. Permits were issued in every decade from the <strong>1950s</strong> through the <strong>2020s</strong>, with the largest recorded decade being the <strong>2000s, with 128 permits</strong>. The newest permit year in the records is <strong>2025</strong>.</p><p>The most active driller in the records is <strong>Wellstone Industries Dba Twiss &amp; Wilson Drilling Inc (Twiss, Raymond L.)</strong>, associated with <strong>277</strong> wells. Other frequent names include <strong>Twiss, Aaron D.</strong>, with <strong>45</strong>, and <strong>Wellstone Services, LLC (Beckner, Bryan)</strong>, with <strong>30</strong>. These records can help you understand local experience, but obtain current licensing, availability, insurance, and a written scope before hiring anyone.</p>"
+  },
+  {
+   "heading": "A typical new Wray well costs more than the drilled hole",
+   "html": "<p>For Wray's alluvium and plains sedimentary rock, the drilling model uses about <strong>$35 to $55 per foot</strong>. At the local median depth of 100 feet, that puts the drilled hole at approximately <strong>$3,500 to $5,500</strong>. This is the drilling portion, not the complete water system.</p><p>A finished well with pump, pressure tank, trenching, and electrical work is estimated at about <strong>$9,500 to $17,500</strong>. The final bid can change with access, casing and grout requirements, rock or difficult material, distance to the building site, power arrangements, and water-system design. Ask what is included in the per-foot rate and what happens if the hole must go deeper than the estimate.</p>"
+  },
+  {
+   "heading": "Check PFAS, septic layout, and low-probability dry-hole risk",
+   "html": "<p>There are <strong>15 mapped PFAS sampling or contamination sites</strong> within about 10 miles of Wray. The records show <strong>0</strong> historic mine features and <strong>0</strong> EPA Superfund or cleanup sites. A mapped site does not establish contamination on your parcel, but it is a reason to review available environmental information and test the finished well water before relying on it.</p><p>Low reported yields are uncommon in this dataset, but a regional statistic cannot eliminate dry-hole or low-yield risk. Check neighboring well depths, aquifers, yields, and completion records. Confirm that the well location, septic system, replacement area, driveway, and building envelope fit together. A permit for an exempt household-use well does not by itself solve water-rights, septic, access, or building-code questions.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Wray, Colorado?",
+   "a": "Wray wells have a 100-foot median reported depth. The middle half is 56 to 180 feet, and 47% are under 100 feet. Another 49% are between 100 and 300 feet. The deepest recorded well is 1,660 feet, so a buyer should treat the median as a planning figure rather than a guarantee for a specific parcel."
+  },
+  {
+   "q": "What does a Wray well typically produce?",
+   "a": "The median reported yield near Wray is 15.0 gpm, with the middle half between 10.0 and 20.0 gpm. About 65% of reported wells produce more than 15 gpm, while 4% report 1 to 5 gpm and 0% report under 1 gpm. Request the actual permit and pump-test information for the property."
+  },
+  {
+   "q": "How much does it cost to drill a well in Wray?",
+   "a": "The local drilling model uses $35 to $55 per foot. At Wray's 100-foot median depth, the drilled hole is estimated at $3,500 to $5,500. A finished system with pump, tank, trenching, and electrical work is estimated at $9,500 to $17,500. Access, casing, grout, power, and extra depth can change the final bid."
+  },
+  {
+   "q": "Is well water safe to drink in Wray?",
+   "a": "The permit map identifies 15 PFAS sampling or contamination sites within about 10 miles, but that does not establish a problem on every property. Have the completed well tested before drinking it, especially after construction or a change in ownership. Review nearby environmental information, well construction, septic placement, and the property's own laboratory results."
+  },
+  {
+   "q": "Are Wray well water levels going down?",
+   "a": "The available records do not show a simple decline. Only 37 wells report static water levels, and the median depth to water is 53 feet. The decade medians are 71 feet below surface in the 2010s and 33 feet in the 2020s, so the later reported measurements were shallower. Differences in locations and measurement conditions limit the conclusion."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Wray and the surrounding plains for access driveways, site development, new-build septic systems, and custom homes. Bring the well, septic, driveway, and building plans together before construction starts.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1421,
+  "completion_tokens": 2076,
+  "total_tokens": 3497,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1418,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 137,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

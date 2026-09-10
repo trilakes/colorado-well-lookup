@@ -1,0 +1,77 @@
+{
+ "title": "Gleneagle Well Depth and Drilling Cost",
+ "meta_description": "Gleneagle wells have a 335 ft median depth, 11 gpm median yield, and estimated finished-well costs of $22,800-$35,400.",
+ "h1": "Gleneagle, Colorado Well Depth, Yield, and Cost",
+ "eyebrow": "Gleneagle well buyer guide",
+ "intro_html": "<p>Well records around Gleneagle show a predominantly Denver Basin setting with substantial variation from one lot to the next. Among permitted wells within 5 miles, the median reported depth is <strong>335 feet</strong>, and the median reported pump yield is <strong>11.0 gallons per minute</strong>.</p><p>That is useful for planning, but it is not a guarantee for a specific parcel. The records include wells in Monument, the Air Force Academy area, and Woodmoor, and the local ground can change across short distances. Before buying or building, review nearby well permits, construction reports, water levels, and the intended well permit with a Colorado driller.</p>",
+ "sections": [
+  {
+   "heading": "How deep are Gleneagle wells?",
+   "html": "<p>Gleneagle-area wells are commonly deeper than a shallow domestic well. The median reported depth is <strong>335 feet</strong>, with the middle half between <strong>260 and 460 feet</strong>. That middle range is the practical starting point for a drilling discussion: a bid based only on a shallow estimate could miss the conditions seen in much of the local record.</p><p>Depths are not uniform. <strong>60%</strong> of recorded wells fall between <strong>300 and 600 feet</strong>, while <strong>26%</strong> are between 100 and 300 feet. Another <strong>8%</strong> exceed 600 feet, and the deepest recorded well is 2,348 feet. Permits identify Dawson, unnamed or fractured-bedrock, and Denver aquifers; all Denver Basin aquifer wells represent <strong>100%</strong> of the aquifer classification in this dataset.</p>"
+  },
+  {
+   "heading": "What water yield can a Gleneagle well produce?",
+   "html": "<p>The reported median pump yield near Gleneagle is <strong>11.0 gallons per minute</strong>, with the middle half from <strong>9.0 to 13.0 gallons per minute</strong>. That is a workable production range for many household uses, but the pump test and the permit conditions matter more than the area median when evaluating one property.</p><p>The local record is relatively favorable for avoiding very low-yield wells: <strong>0%</strong> report under 1 gallon per minute, and <strong>1%</strong> report between 1 and 5 gallons per minute. Most, <strong>82%</strong>, report between 5 and 15 gallons per minute, while <strong>17%</strong> report 15 gallons per minute or more. Ask for the well construction report and pumping information, not just a seller’s verbal estimate.</p>"
+  },
+  {
+   "heading": "Gleneagle water levels and the long-term pattern",
+   "html": "<p>The median static water level is <strong>140 feet below the surface</strong>, with the middle half from <strong>99 to 195 feet</strong>. That depth to water affects pump selection, well equipment, and the cost of bringing water into a house. It is separate from total well depth: a 335-foot well can have water standing substantially above the bottom.</p><p>The decade medians vary rather than moving steadily in one direction: 100 feet in the 1970s, 150 in the 1980s, 116 in the 1990s, 145 in the 2000s, 141 in the 2010s, and 149 in the 2020s. This series does not show a simple year-by-year decline. Conditions can still differ by aquifer, location, pumping history, and well construction, so nearby measurements are more useful than a regional average alone.</p>"
+  },
+  {
+   "heading": "Who has drilled around Gleneagle, and when?",
+   "html": "<p>The permit history shows sustained well development around Gleneagle, with the largest decade totals in the <strong>1990s</strong> and <strong>2000s</strong>. Permits issued by decade were 52 in the 1950s, 56 in the 1960s, 546 in the 1970s, 732 in the 1980s, 1,239 in the 1990s, 953 in the 2000s, 689 in the 2010s, and 406 in the 2020s. The newest permit year in the records is 2026.</p><p>Among the most active names are <strong>Fletcher Drilling</strong>, with 1,161 records; <strong>Kunau Drilling LLC</strong>, with 1,054; and <strong>Hamacher Well Works Inc</strong>, with 503. Those counts describe permit records, not a recommendation or a guarantee that a company is available for a new job. Confirm current licensing, insurance, scope, and references before hiring.</p>"
+  },
+  {
+   "heading": "What does a new Gleneagle well cost?",
+   "html": "<p>The local cost model assumes Denver Basin sedimentary bedrock and a drilling rate of <strong>$50-$70 per foot</strong>. At the area’s median depth of 335 feet, the drilled hole is estimated at <strong>$16,800-$23,400</strong>. That is only the drilling portion, not the complete water system.</p><p>A finished well including the pump, pressure tank, trenching, and electrical is estimated at <strong>$22,800-$35,400</strong>. A contractor’s proposal should state the assumed depth, casing and grout, pump system, electrical work, trench distance, water testing, and what happens if the hole must go deeper. Rocky or changing ground, access limitations, and site layout can move the final price beyond a simple per-foot calculation.</p>"
+  },
+  {
+   "heading": "Risks to check before building near Gleneagle",
+   "html": "<p>A good yield record does not remove site-specific risks. The mapped area has <strong>56 PFAS sampling or contamination sites</strong>, <strong>4 historic mine features</strong>, and <strong>5 EPA Superfund or cleanup sites</strong> within about 10 miles. Those locations do not prove contamination on a particular lot, but they are a reason to review environmental mapping, prior land uses, and well-water test results.</p><p>Low yield and dry holes are still possible in fractured or variable ground, even when nearby wells perform well. Check the well’s construction report, casing and grout details, static water level, pump test, and laboratory results. Septic setbacks, drainfield space, access for a drill rig, electrical routing, and the building location should be reviewed together before excavation or a home design is finalized.</p>"
+  },
+  {
+   "heading": "Buying or building on a Gleneagle well lot",
+   "html": "<p>Start with the Colorado Division of Water Resources permit and construction records for the property and neighboring parcels. The local data include 5,394 permitted wells, but only 3,684 report a total depth, 2,689 report a pump yield, and 518 report a static water level. Missing fields are common, so compare every usable nearby record rather than relying on one number.</p><p>For a purchase, make the well, pump, pressure system, water quality, and permit status part of the inspection and contract process. For a new build, have a driller price a likely depth range around the 335-foot median and have the septic designer confirm setbacks and soil conditions. Also confirm the proposed use is allowed by the permit; domestic household wells and other exempt-well rules have specific limits, and over-appropriated basins can require an augmentation plan.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Gleneagle, Colorado?",
+   "a": "The median reported well depth within 5 miles of Gleneagle is 335 feet. The middle half runs from 260 to 460 feet, and 60% of wells are between 300 and 600 feet. Depth varies by parcel and aquifer, so nearby construction reports are more useful for estimating a new well than the median alone."
+  },
+  {
+   "q": "How much does it cost to drill a well in Gleneagle?",
+   "a": "The local model uses $50-$70 per foot. At the 335-foot median depth, drilling alone is estimated at $16,800-$23,400. A finished system with pump, tank, trenching, and electrical is estimated at $22,800-$35,400. Access, final depth, site layout, and ground conditions can change a contractor’s proposal."
+  },
+  {
+   "q": "How much water does a Gleneagle well produce?",
+   "a": "The median reported pump yield is 11.0 gallons per minute, with the middle half from 9.0 to 13.0 gallons per minute. Records show 82% producing between 5 and 15 gallons per minute. These are reported well figures, not a guarantee for a new hole, so request the pump test and well construction report."
+  },
+  {
+   "q": "Is well water safe to drink in Gleneagle?",
+   "a": "Safety cannot be determined from yield or depth. The area has 56 mapped PFAS sampling or contamination sites within about 10 miles, along with historic mine and cleanup sites. Test the property’s water through a qualified laboratory and review prior results, especially before buying. A nearby contamination site does not by itself prove the lot is affected."
+  },
+  {
+   "q": "Are Gleneagle water levels going down?",
+   "a": "The reported decade medians do not show a simple steady decline. Static water levels were 100 feet below surface in the 1970s, 150 in the 1980s, 116 in the 1990s, 145 in the 2000s, 141 in the 2010s, and 149 in the 2020s. Individual wells can differ, so compare current nearby measurements and pumping history."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Gleneagle and nearby communities with access driveways, site development, new-build septic systems, and custom homes. Their work can help coordinate the practical site pieces around a new well and rural build.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1464,
+  "completion_tokens": 2298,
+  "total_tokens": 3762,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1461,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 97,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

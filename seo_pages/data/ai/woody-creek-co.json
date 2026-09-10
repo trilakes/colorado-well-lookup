@@ -1,0 +1,77 @@
+{
+ "title": "Woody Creek Well Depth and Drilling Cost",
+ "meta_description": "Woody Creek wells have a 123 ft median depth, 15 gpm median yield, and estimated finished costs of $14,000-$24,300.",
+ "h1": "What Woody Creek Wells Are Like",
+ "eyebrow": "Woody Creek well guide",
+ "intro_html": "<p>Buying land or a home in Woody Creek means evaluating more than the presence of a well permit. Records within 5 miles show how deep wells were drilled, how much water they reported, and what local bedrock can mean for a new installation.</p><p>The area is dominated by fractured mountain bedrock. That makes neighboring wells useful evidence, but not a guarantee. A parcel near Snowmass Village, Snowmass, or Aspen can still have different drilling conditions, water levels, and construction costs.</p>",
+ "sections": [
+  {
+   "heading": "Woody Creek well depth depends on fractured mountain rock",
+   "html": "<p>The median reported well depth near Woody Creek is 123 feet. The middle half runs from 70 to 260 feet, so a bid based on the median should not be treated as a fixed drilling depth. The deeper end of the local record reaches 400 feet at the 90th percentile, with the deepest recorded well at 1,075 feet.</p><p>Depths are spread across the area: 42% are under 100 feet, 37% fall between 100 and 300 feet, 18% between 300 and 600 feet, and 3% exceed 600 feet. Most permits identify unnamed fractured bedrock, typically granite or gneiss, rather than a predictable basin aquifer. That geology is the main reason nearby wells can vary substantially.</p>"
+  },
+  {
+   "heading": "Most Woody Creek wells report useful production",
+   "html": "<p>Among the records that include a pump yield, the median is 15.0 gallons per minute, and the middle half is 10.0 to 15.0 gallons per minute. Reported production is generally favorable: 63% of wells make more than 15 gallons per minute, while 30% fall between 5 and 15 gallons per minute.</p><p>Low-yield wells are present but uncommon in the available reports. Five percent produce 1 to 5 gallons per minute and 1% report under 1 gallon per minute. These figures describe tested wells, not a promise for an untested parcel. A buyer should request the well construction record, yield test, pump information, and any recent production history before relying on the water supply.</p>"
+  },
+  {
+   "heading": "Water levels vary, with no simple local decline pattern",
+   "html": "<p>The median static water level is 51 feet below the ground surface. The middle half of reported measurements ranges from 20 to 117 feet. That spread matters for pump placement, trenching, and interpreting what a driller tells you about the local water table.</p><p>The decade series does not show a steady drop. The median was 130 feet below surface in the 1990s, 48 feet in the 2000s, 50 feet in the 2010s, and 72 feet in the 2020s. Because only 85 wells report a static water level, these measurements are a limited local indicator rather than a complete groundwater trend. Conditions at a specific lot may differ from the mapped average.</p>"
+  },
+  {
+   "heading": "Permit history points to long local drilling experience",
+   "html": "<p>Colorado DWR records include 1,623 permitted wells within the Woody Creek study area. Of those, 819 are recorded as constructed, 984 report a total depth, and 325 report a pump yield. The records include domestic and household wells at 68%, monitoring wells at 20%, irrigation wells at 5%, and stock wells at 4%.</p><p>Permitting has continued through 2025. The busiest decades were the 1990s, with 376 permits, and the 2000s, with 294. Shelton Drilling Corporation is the most common driller in the records, followed by Collins Drilling Co and Steve Shelton Drilling, Inc. Those names can help when comparing older construction records, though past work does not guarantee current availability or pricing.</p>"
+  },
+  {
+   "heading": "A Woody Creek well may cost $14,000 to $24,300 finished",
+   "html": "<p>The local cost model assumes fractured granite or gneiss and a drilling rate of $65 to $100 per foot. At the 123-foot median depth, the drilled hole is estimated at about $8,000 to $12,300.</p><p>A usable well costs more than the hole. Including the pump, pressure tank, trenching, and electrical work, the estimated finished-well range is $14,000 to $24,300 at the median depth. A shallow result can still require substantial site work, while a deeper hole can push the total higher. Ask every bidder what is included, how over-depth drilling is charged, and whether casing, grout, water testing, permits, and difficult access are separate items.</p>"
+  },
+  {
+   "heading": "Check water quality, dry-hole risk, and the building layout",
+   "html": "<p>Mapped environmental information within about 10 miles includes 13 PFAS sampling or contamination sites, 83 historic mine features, and 2 EPA Superfund or cleanup sites. Those entries do not establish contamination at a particular property, but they are reasons to review site history and test the well water before closing.</p><p>Fractured bedrock also creates uncertainty about both yield and dry-hole risk. Confirm the well location, casing and grout details, pump capacity, and septic setbacks before designing a house. A well that produces adequately may still affect where the septic system, driveway, electrical service, and building can fit. Colorado DWR permit conditions and water rights should be reviewed separately from the physical drilling results.</p>"
+  },
+  {
+   "heading": "Use neighboring records before buying or building in Woody Creek",
+   "html": "<p>Start with the DWR records for the subject parcel and nearby wells. Compare depths, reported yields, static water levels, aquifer descriptions, and construction dates rather than relying on one nearby success. Records from Snowmass Village, Snowmass, and Aspen can provide useful regional context, but the fractured-rock setting makes lot-specific evidence more important.</p><p>For a purchase, make the well inspection and water-quality testing part of due diligence. For a new build, get a driller's estimate that separates drilling from pump, tank, trenching, electrical, casing, grout, and access work. Confirm the permitted use, especially if the plan includes more than ordinary household needs. In an over-appropriated basin, an augmentation plan may be required for some uses.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Woody Creek?",
+   "a": "The median reported depth near Woody Creek is 123 feet. The middle half of wells is 70 to 260 feet deep, while 42% are under 100 feet and 18% are between 300 and 600 feet. The deepest recorded well is 1,075 feet, showing why a median depth is only a starting point for a drilling estimate."
+  },
+  {
+   "q": "How much does it cost to drill a well in Woody Creek?",
+   "a": "The local model uses a drilling rate of $65 to $100 per foot. At the 123-foot median depth, the drilled hole is estimated at $8,000 to $12,300. A finished well with pump, tank, trenching, and electrical is estimated at $14,000 to $24,300. Access, deeper drilling, and work outside that scope can change the bid."
+  },
+  {
+   "q": "How much water do Woody Creek wells produce?",
+   "a": "Reported pump yields have a 15.0 gallons-per-minute median, with the middle half from 10.0 to 15.0 gallons per minute. Sixty-three percent report more than 15 gallons per minute. Still, 5% report 1 to 5 gallons per minute and 1% under 1 gallon per minute, so a yield test and neighboring records matter."
+  },
+  {
+   "q": "Is well water safe in Woody Creek?",
+   "a": "The well records do not establish that every well is safe to drink. Within about 10 miles, mapped information includes 13 PFAS sampling or contamination sites, 83 historic mine features, and 2 EPA Superfund or cleanup sites. Test the specific well for applicable contaminants and review the property and nearby land-use history before relying on it for household water."
+  },
+  {
+   "q": "Are Woody Creek wells getting deeper or running lower?",
+   "a": "The reported median static water level was 130 feet below surface in the 1990s, 48 feet in the 2000s, 50 feet in the 2010s, and 72 feet in the 2020s. That does not show a steady decline. Only 85 wells report static water levels, however, so the series is a limited indicator and may not predict conditions at a particular lot."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving projects around Woody Creek, Snowmass Village, Snowmass, and Aspen. Their work includes access driveways, site development, new-build septic systems, and custom homes.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1446,
+  "completion_tokens": 2100,
+  "total_tokens": 3546,
+  "prompt_tokens_details": {
+   "cached_tokens": 1443,
+   "cache_write_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 158,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

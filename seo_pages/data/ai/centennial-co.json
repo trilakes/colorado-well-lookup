@@ -1,0 +1,73 @@
+{
+ "title": "Centennial Well Depth and Drilling Cost",
+ "meta_description": "Centennial wells have a 280-foot median depth; see yields, water levels, drilling costs, permits and risks before buying.",
+ "h1": "What Centennial Wells Cost, Produce, and Require",
+ "eyebrow": "Centennial well buyer guide",
+ "intro_html": "<p>Well records around Centennial show a wide range of conditions beneath the plains. Among <strong>4,328 permitted wells</strong> in the Colorado DWR records, <strong>2,318 report a total depth</strong> and <strong>854 report a pump yield</strong>. The median well is <strong>280 feet</strong> deep, but the middle half runs from <strong>46 to 468 feet</strong>.</p><p>That spread matters when you price a property. Centennial sits over Denver Basin sedimentary formations, with permits also naming unnamed or fractured-bedrock aquifers. Nearby records from Inverness, Cherry Creek, Dove Valley, Acres Green, Greenwood Village and Meridian can help establish local expectations, but a neighboring well is not a guarantee for your lot.</p>",
+ "sections": [
+  {
+   "heading": "Centennial well depth varies sharply by formation",
+   "html": "<p>A <strong>280-foot median</strong> is a useful starting point for a drilling estimate, not a promised target. Half of the wells with reported depths fall between <strong>46 and 468 feet</strong>. The depth mix shows why bids can differ: <strong>36%</strong> are under 100 feet, <strong>17%</strong> are 100 to 300 feet, <strong>29%</strong> are 300 to 600 feet, and <strong>18%</strong> exceed 600 feet.</p><p>The deepest recorded well reaches <strong>2,485 feet</strong>, while the 90th percentile is <strong>1,252 feet</strong>. Centennial’s Denver Basin sedimentary bedrock and named Denver Basin aquifers do not produce one uniform drilling depth. For a purchase, ask for nearby completed well logs and have the driller explain what depth range is included in the bid, along with casing and grout assumptions.</p>"
+  },
+  {
+   "heading": "Most reported Centennial wells make usable flow",
+   "html": "<p>Reported pump yields are generally stronger than the depth range might suggest. The median is <strong>15.0 gallons per minute</strong>, and the middle half runs from <strong>12.0 to 15.0 gallons per minute</strong>. Of the wells reporting yield, <strong>48%</strong> produce between 5 and 15 gallons per minute and <strong>52%</strong> produce more than 15 gallons per minute.</p><p>No reported wells fall under 1 gallon per minute or between 1 and 5 gallons per minute in this dataset. That is encouraging for a buyer, but it does not remove the need for a well test. Pump yield, storage capacity, household demand and permit terms all matter. A strong short-term test also does not prove the aquifer will respond the same way through every season.</p>"
+  },
+  {
+   "heading": "Centennial water levels show a changing record, not a simple trend",
+   "html": "<p>The overall median static water level is <strong>164 feet below surface</strong>, with the middle half from <strong>70 to 502 feet</strong>. Only <strong>112 wells</strong> report a static water level, so the water-level history is much thinner than the depth record.</p><p>Measurements by decade do not show a straight, continuing decline. The median was <strong>132 feet</strong> in the 1970s, <strong>413 feet</strong> in the 1980s, and <strong>480 feet</strong> in the 2000s. It then measured <strong>253 feet</strong> in the 2010s and <strong>140 feet</strong> in the 2020s. Differences in locations, aquifers, and measurement timing may explain part of that movement. Treat the series as context, not a guarantee of the water level under a particular parcel.</p>"
+  },
+  {
+   "heading": "Centennial permit history identifies the active drilling names",
+   "html": "<p>Permit activity has continued across the area, with the newest permit in <strong>2025</strong>. The busiest period in these records was the 1990s, with <strong>805 permits</strong>. The record also shows <strong>653</strong> permits in the 2000s, <strong>380</strong> in the 2010s, and <strong>228</strong> in the 2020s. Permit totals are not the same as completed wells: <strong>1,958</strong> are recorded as constructed.</p><p>The most active driller names in the records are <strong>Authorized (Pe, Pg)</strong> with 719 entries, <strong>Hier Drilling Co Inc</strong> with 458, and <strong>Hier Drilling Co.</strong> with 305. These are record references, not endorsements. Before relying on a permit, confirm the construction report, well status, allowed use and any later changes with Colorado DWR.</p>"
+  },
+  {
+   "heading": "A Centennial well budget starts near the median depth",
+   "html": "<p>For Denver Basin sedimentary bedrock, the drilling rate model is <strong>$50 to $70 per foot</strong>. At the <strong>280-foot median depth</strong>, that puts the drilled hole at roughly <strong>$14,000 to $19,600</strong>. A finished well, including pump, tank, trenching and electrical, is modeled at about <strong>$20,000 to $31,600</strong>.</p><p>That range is a planning figure, not a fixed bid. The depth mix includes wells beyond 600 feet and a deepest recorded well of 2,485 feet, so an unexpectedly deep hole can change the budget substantially. Ask what the proposal includes for casing, grout, pump sizing, pressure equipment, trenching, electrical work and testing. Also ask how the contractor handles a dry or insufficient well before signing a drilling agreement.</p>"
+  },
+  {
+   "heading": "Check water quality, septic space, and building limits",
+   "html": "<p>Mapped environmental records within about 10 miles include <strong>256 PFAS sampling or contamination sites</strong>, <strong>29 EPA Superfund or cleanup sites</strong>, and <strong>5 historic mine features</strong>. These listings do not prove contamination at a specific address, but they justify a careful site review and baseline water testing. Test the existing well before closing, and use a laboratory that covers the concerns relevant to the property.</p><p>Low yield and dry-hole risk still deserve a written discussion even though the reported yield numbers are favorable. Confirm the DWR permit allows the intended household use. An exempt household-use well has a <strong>35 gallon-per-minute</strong> pumping limit. Septic setbacks, replacement-area requirements, access for a rig, and space for tanks and electrical equipment can affect where a house fits. Have the well, septic and building layout reviewed together.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Centennial, Colorado?",
+   "a": "The median reported well depth around Centennial is 280 feet. The middle half ranges from 46 to 468 feet, while 18% of reported depths are over 600 feet. The deepest record is 2,485 feet. That spread reflects different Denver Basin formations and means nearby well logs are more useful than the median alone when estimating a new well."
+  },
+  {
+   "q": "What does it cost to drill a well in Centennial?",
+   "a": "The local cost model uses $50 to $70 per foot. At the 280-foot median depth, the drilled hole is estimated at $14,000 to $19,600. A finished well with pump, tank, trenching and electrical is estimated at $20,000 to $31,600. A deeper-than-expected hole, difficult access, or added site work can change the final bid."
+  },
+  {
+   "q": "How much water do Centennial wells produce?",
+   "a": "Reported pump yield has a 15.0 gallon-per-minute median, with the middle half between 12.0 and 15.0 gallons per minute. The records show 48% between 5 and 15 gallons per minute and 52% above 15 gallons per minute. No reported wells are under 5 gallons per minute, but only 854 wells report a yield, so testing remains important."
+  },
+  {
+   "q": "Is well water safe in Centennial?",
+   "a": "Safety cannot be determined from a permit record alone. Within about 10 miles, the mapped records include 256 PFAS sampling or contamination sites, 29 EPA Superfund or cleanup sites, and 5 historic mine features. Test the property’s water before purchase and confirm the well’s construction and location. A qualified laboratory can help select testing based on the site."
+  },
+  {
+   "q": "What should I check before buying a home on a Centennial well?",
+   "a": "Review the Colorado DWR permit, construction report, allowed use and any available pump test. The area has 4,328 permitted wells, but only 1,958 are recorded as constructed and 112 report a static water level. Test the water, inspect the pump and pressure system, verify septic capacity and setbacks, and compare nearby well logs in Cherry Creek, Inverness or Dove Valley."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Centennial and the surrounding area with access driveways, site development, new-build septic systems and custom homes. Bring the well, septic and building layout together before construction starts.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1440,
+  "completion_tokens": 2145,
+  "total_tokens": 3585,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1437,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 119,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

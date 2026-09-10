@@ -1,0 +1,76 @@
+{
+ "title": "El Paso County CO wells and well depth",
+ "meta_description": "El Paso County wells have a median depth of 298 ft and a median yield of 10 gpm. See what that means for drilling cost and water supply.",
+ "h1": "Water wells in El Paso County, Colorado",
+ "eyebrow": "Local well realities",
+ "intro_html": "<p>El Paso County covers everything from Colorado Springs and Monument down to Security-Widefield and out toward Falcon and Peyton, and the well data reflects that mix. With 45,408 permits on record, there is a lot of history to learn from before you drill or buy. The numbers below come from actual permitted wells in the county, not estimates.</p><p>I’ll walk through how deep wells typically are here, how much water they make, what the water table is doing, what a new well tends to cost in this Denver Basin bedrock, and the main risks to look for on a rural property in El Paso County.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells run in El Paso County",
+   "html": "<p>Across El Paso County, the median well depth is 298 feet. Half of the reported wells fall between 120 and 410 feet, so most drilling bids will be framed in that range. About 22% of wells are under 100 feet, but 41% land between 300 and 600 feet, and 9% go beyond 600 feet. The deepest well on record reaches 2,770 feet, which shows how variable the Denver Basin and fractured-bedrock aquifers can be.</p><p>For a buyer near Black Forest, Monument, Falcon, or Peyton, that spread means you plan for something around 300 feet but understand you might need significantly more hole if the driller has to chase a productive zone in the Dawson, Denver, or unnamed fractured-bedrock aquifers.</p>"
+  },
+  {
+   "heading": "Water table depth and long-term trend",
+   "html": "<p>Where we have measurements, the median static water level is 140 feet below ground, with the middle half from 80 to 225 feet. That means a typical pump is lifting from around 100–200 feet, not from the full drilled depth. In the 1950s, the median water level was about 30 feet down; by the 1970s it was 118 feet, then 145 feet in the 2000s, 140 feet in the 2010s, and 151 feet so far in the 2020s.</p><p>So the water table in El Paso County has dropped compared to the 1950s and 1960s, then bounced around the 120–150 foot range since the 1970s. That’s a gradual, long-term deepening rather than a sudden crash, but it is one reason to size pumps and storage with some margin.</p>"
+  },
+  {
+   "heading": "Well yields and how much water you get",
+   "html": "<p>On production, El Paso County looks pretty solid. The median reported yield is 10.0 gallons per minute, with the middle half of wells between 8.0 and 12.0 gpm. About 79% of wells fall in the 5–15 gpm range, 16% report 15+ gpm, and 5% are in the 1–5 gpm group. There are no reported wells under 1 gpm in the dataset.</p><p>For a typical exempt household well limited to 15 gpm, a 10 gpm well in Dawson or Denver aquifers is plenty for a single home if you manage outdoor use. Around Gleneagle, Woodmoor, and the Colorado Springs fringe, that 5–15 gpm pattern means most domestic wells are usable, but you still want a pump test on an individual property, especially if you plan irrigation or livestock.</p>"
+  },
+  {
+   "heading": "Who’s been drilling here and permit history",
+   "html": "<p>El Paso County has a long, busy drilling record. Permits climb from 523 in the 1950s and 702 in the 1960s up to 3,578 in the 1970s and 5,873 in the 1980s. Activity peaks in the 1990s with 10,156 permits, then 8,322 in the 2000s, 4,693 in the 2010s, and 3,136 so far in the 2020s. The newest permits run through 2026, so drilling is ongoing across the county.</p><p>About 73% of wells are domestic or household use, 14% are for stock, 5% for irrigation, and 12% for monitoring. On the contractor side, Kunau Drilling, Hamacher Well Works, and Fletcher Drilling show up most often in the records, with thousands of wells apiece around places like Black Forest, Palmer Lake, and the Colorado Springs outskirts.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost here",
+   "html": "<p>Most of El Paso County sits over Denver Basin sedimentary bedrock, which drills at roughly $50–$70 per foot. At the county’s 298-foot median depth, that puts the bare drilled hole in the ballpark of $14,900–$20,900. Once you add casing, pump, pressure tank, trenching, and electrical, a finished domestic well commonly runs about $20,900–$32,900 at that depth.</p><p>Because 41% of wells end up between 300 and 600 feet and 9% go even deeper, you need to budget for the possibility of more footage than the median, especially on higher ground north of Colorado Springs or out toward Peyton and Elbert County. Always get a per-foot quote plus itemized completion costs.</p>"
+  },
+  {
+   "heading": "Risks to watch: low yield, contamination, and siting",
+   "html": "<p>Even though countywide yields look strong, there are still 5% of wells between 1 and 5 gpm, which can be marginal for a bigger household without storage. Fractured-bedrock zones can be hit-or-miss, so a dry or weak hole is possible on any individual lot. On the contamination side, within about 10 miles there are 192 PFAS sampling or contamination sites, 54 EPA Superfund or cleanup sites, and 35 historic mine features.</p><p>That doesn’t mean every rural well around Security-Widefield, Cimarron Hills, or Stratmoor is polluted, but it does mean you test for PFAS and basic potability early in due diligence. Also check that there’s room to meet setback rules between the well, septic system, and any future home site.</p>"
+  },
+  {
+   "heading": "Buying or building on a well lot in El Paso County",
+   "html": "<p>Before closing on land in El Paso County, pull the neighboring well records around places like Black Forest, Falcon, Peyton, and Monument. You want to see how deep they went, which aquifer they list (Dawson, Denver, or unnamed fractured bedrock), and what yield they reported. With a county median depth of 298 feet and a median yield of 10.0 gpm, your goal is to stay in that band or better.</p><p>If there’s no existing well, assume you’ll need a Denver Basin exempt household well and verify you can get the right permit type. In over-appropriated basins nearby, augmentation can come into play, so talk with a local water attorney or engineer if the title work mentions water rights or shared wells.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in El Paso County, Colorado?",
+   "a": "Based on 28,527 wells with reported depths, the median well in El Paso County is 298 feet deep. Half of all wells fall between 120 and 410 feet, but 41% are in the 300–600 foot range and 9% go deeper than 600 feet. The deepest recorded well reaches 2,770 feet, so depth can vary a lot by location and aquifer."
+  },
+  {
+   "q": "What is a typical well yield in El Paso County, CO?",
+   "a": "From 15,784 wells with pump tests, the median yield is 10.0 gallons per minute. The middle half of wells produce between 8.0 and 12.0 gpm, with 79% in the 5–15 gpm band and 16% at 15+ gpm. Only 5% fall between 1 and 5 gpm, and none in the records are under 1 gpm, so most domestic wells have usable production."
+  },
+  {
+   "q": "How deep is the water table in El Paso County?",
+   "a": "For the 2,942 wells that report a static water level, the median depth to water is 140 feet below ground. The middle half are between 80 and 225 feet. Historically, median water levels have moved from about 30 feet in the 1950s to the 120–150 foot range from the 1970s through the 2020s, showing a gradual long-term deepening."
+  },
+  {
+   "q": "What does it cost to drill a well in El Paso County, Colorado?",
+   "a": "In Denver Basin sedimentary bedrock, drilling typically runs about $50–$70 per foot. At the county’s 298-foot median depth, the borehole alone pencils out to roughly $14,900–$20,900. A complete domestic well with pump, pressure tank, trenching, and electrical often totals around $20,900–$32,900, with higher costs if your well has to go deeper than the median."
+  },
+  {
+   "q": "Is well water safe to drink in El Paso County, CO?",
+   "a": "Safety depends on the specific well. County data show 192 PFAS sampling or contamination sites, 54 EPA Superfund or cleanup locations, and 35 historic mine features within about 10 miles, so there are known regional concerns. Many private wells are fine, but you should test for PFAS, metals, bacteria, and basic chemistry on any existing or new well before relying on it."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving El Paso County with access driveways, site development, new-build septic systems, and custom homes. We understand local wells, soils, and building conditions from Black Forest to Falcon.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1540,
+  "completion_tokens": 2379,
+  "total_tokens": 3919,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 191,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

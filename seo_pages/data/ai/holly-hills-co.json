@@ -1,0 +1,77 @@
+{
+ "title": "Holly Hills Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Holly Hills-area wells have a 31 ft median depth, but monitoring wells dominate the records. Compare yields, drilling costs and buyer risks.",
+ "h1": "What Holly Hills Well Records Mean for Your Property",
+ "eyebrow": "Denver County Well Guide",
+ "intro_html": "<p>A shallow well record near Holly Hills is not necessarily a household water supply. Monitoring accounts for 60% of the local permit mix, so the 31 ft median depth needs context before you use it to budget for a home well.</p><p>These figures cover permitted wells within 5 miles of Holly Hills, including nearby Four Square Mile, Cherry Hills Village, Glendale and Englewood. They describe the surrounding records, not a guaranteed drilling result or permission to install a well on your lot.</p>",
+ "sections": [
+  {
+   "heading": "Why the 31 ft Median Can Mislead a Holly Hills Buyer",
+   "html": "<p>Of the 4,180 records reporting depth, the median is 31 ft and the middle half runs from 21-57 ft. That means the central range of recorded drilling is shallow, but it is not a reliable household-well bid range when monitoring wells dominate the permit mix.</p><p>Depths also have a long upper tail: 83% are under 100 ft, the 90th percentile is 482 ft, and the deepest recorded well reaches 2,265 ft. Permits name Alluvial and Denver aquifers, while many leave the aquifer unnamed or broadly classified. The water-bearing formation and intended use matter more than proximity alone. Ask a driller to compare completed supply wells serving similar uses before choosing a target depth.</p>"
+  },
+  {
+   "heading": "Reported Yield Near Holly Hills Is Not a Supply Guarantee",
+   "html": "<p>The reported median pump yield is 15.0 gpm, with the middle half between 10.0-50.0 gpm. Those figures come from only 208 records, a much narrower sample than the depth records. They describe reported pumping results, not a promise that a proposed well will sustain the same output.</p><p>Low production still deserves attention: 3% report under 1 gpm and 7% report 1-5 gpm. A low-yield well can require storage and careful management of peak household demand. Before buying, obtain the actual well's pumping-test information and ask about recovery after pumping. Neither a strong test yield nor a large pump establishes the uses or withdrawals allowed by the permit.</p>"
+  },
+  {
+   "heading": "Shallow Water Levels Do Not Show a Falling Local Trend",
+   "html": "<p>Static water level is the depth to water while a well is resting, not the depth of the drilled hole. Around Holly Hills, 131 records report this measurement. The median is 15 ft below ground, and the middle half falls between 11-25 ft.</p><p>The decade medians are 13 ft in the 2010s and 12 ft in the 2020s. That series does not show a dropping water table; the later median is slightly shallower. It also does not establish that an individual well is stable, because the measurements may represent different wells and conditions. For a purchase, compare dated measurements from the same well and review its water level while pumping.</p>"
+  },
+  {
+   "heading": "A Permit History Shaped by Monitoring Around Holly Hills",
+   "html": "<p>The search area contains 7,531 DWR permit records, with 3,505 recorded as constructed. Permit activity was highest in the listed decades during the 1990s and 2000s, with 1,894 and 1,898 permits respectively. The 2020s account for 418, and the newest permit year is 2025. This is not a count of operating household wells: domestic/household use represents 15% of the mix.</p><p>The most frequent driller-field entry is Authorized (Pe, Pg), at 2,945 records; do not treat that label as a contractor recommendation. Named entries include Ground Exploration Llc (Bender, Joseph T.), with 291, and Hier Drilling Co Inc (Hier, Bruce A.), with 175. Historical record frequency does not establish current availability or suitability for a residential job.</p>"
+  },
+  {
+   "heading": "Budgeting a Holly Hills Well Beyond the Drilled Hole",
+   "html": "<p>The supplied drilling model assumes Denver Basin sedimentary bedrock at $50-$70 per foot. At the recorded median depth, that produces an estimated drilled-hole cost of about $1,600-$2,200. The modeled finished well, including pump, tank, trenching and electrical, is about $7,600-$14,200.</p><p><strong>Treat that as a shallow-depth illustration, not a household-well quote.</strong> The median comes from a monitoring-heavy record set, and your permitted supply may require a different depth or construction. Request a written scope identifying casing, grout, testing and completion work, along with the pump and service connections. Site access, trench routing and the required water source should be settled before relying on a total price.</p>"
+  },
+  {
+   "heading": "Environmental Checks Matter in This Urban Well Search",
+   "html": "<p>Within about 10 miles, the mapped inventory includes 628 PFAS sampling/contamination sites and 171 EPA Superfund/cleanup sites. These are reasons to investigate nearby records, not evidence that every Holly Hills well is contaminated. A sampling location is not automatically a confirmed contamination source, and distance alone does not establish a groundwater pathway.</p><p>Have the actual supply tested, with testing guided by nearby environmental records and intended use. Review casing, grout and the wellhead for potential entry points. Reported low yields also justify checking sustained pumping and recovery; a permit alone does not prove a successful supply. For building or septic work, confirm required separation, drainage and local approvals before fixing the site layout.</p>"
+  },
+  {
+   "heading": "Before Buying or Building Near Holly Hills",
+   "html": "<p>Start by confirming how the parcel is legally supplied with water. An existing permit, a mapped monitoring well and an approved household supply are different things. Check the DWR permit's location, status and allowed uses, then match it to the construction report and the well actually on the property.</p><p>Use nearby records in Four Square Mile, Cherry Hills Village or Greenwood Village as leads, but compare aquifer, use and construction rather than simply choosing the closest dot. Confirm utility service options and applicable local requirements before assuming a new well or septic system is feasible. Make the purchase decision with water-quality results, pumping information and a site-specific construction estimate in hand.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Holly Hills, Colorado?",
+   "a": "Within 5 miles of Holly Hills, recorded well depth has a median of 31 ft, with the middle half at 21-57 ft. However, monitoring represents 60% of the permit mix, so those shallow figures are not a household-well specification. The 90th-percentile depth is 482 ft. Compare nearby supply wells with the same intended use and aquifer before budgeting."
+  },
+  {
+   "q": "How much does it cost to drill a well in Holly Hills?",
+   "a": "The supplied model uses $50-$70 per foot for Denver Basin sedimentary bedrock. At the area's 31 ft median depth, the hole is about $1,600-$2,200 and a finished well about $7,600-$14,200. Because monitoring wells dominate the records, that median may not fit a residential supply. Get a quote based on the permitted source, target depth and complete installation scope."
+  },
+  {
+   "q": "How much water do wells produce near Holly Hills?",
+   "a": "The 208 records with reported pump yields have a median of 15.0 gpm and a middle-half range of 10.0-50.0 gpm. However, 3% report under 1 gpm and 7% report 1-5 gpm. For a particular home, review sustained pumping and recovery rather than assuming the area median will cover demand. The permit separately controls allowed use."
+  },
+  {
+   "q": "Is well water safe to drink in Holly Hills?",
+   "a": "Area permit statistics cannot establish drinking-water safety. The mapped surroundings include 628 PFAS sampling/contamination sites and 171 EPA Superfund/cleanup sites within about 10 miles, but those counts do not prove contamination at a particular well. Review nearby environmental records, inspect the well's construction and arrange testing of the actual supply before relying on it for drinking water."
+  },
+  {
+   "q": "Is the water table dropping near Holly Hills?",
+   "a": "The available decade medians do not show a decline: static water depth was 13 ft in the 2010s and 12 ft in the 2020s. A smaller depth means water was closer to the surface. Only 131 records report static levels, and the decade groups may contain different wells. Check repeat measurements from the specific well before drawing a property-level conclusion."
+  }
+ ],
+ "tri_lakes_blurb": "For a Holly Hills property, Tri-Lakes Contracting is a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes. Coordinate the site plan with verified water service and local septic and building requirements.",
+ "_model": "gpt-6-astra",
+ "_usage": {
+  "prompt_tokens": 1419,
+  "completion_tokens": 2141,
+  "total_tokens": 3560,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1416,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 82,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

@@ -1,0 +1,76 @@
+{
+ "title": "Evergreen CO well depth and drilling cost",
+ "meta_description": "Around Evergreen, 6,040 wells report depths with a 305 ft median. Here’s what that means for well yields, water levels, and drilling costs.",
+ "h1": "Water wells in the Evergreen, Colorado area",
+ "eyebrow": "Evergreen well basics",
+ "intro_html": "<p>Evergreen sits in fractured mountain bedrock, so wells here are all about drilling into cracks in granite and gneiss rather than a big sand aquifer. The Colorado DWR has records on 8,647 permits within about five miles of town, so we have a pretty solid picture of how deep people are drilling and how much water they’re getting.</p><p>If you’re looking at land around Evergreen, Kittredge, Upper Bear Creek, Echo Hills, Indian Hills, Upper Witter Gulch or Genesee, the well data are similar. Below is what those records say about depth, yield, costs, and the main risks to look at before you close on a property or design a new build.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells run around Evergreen",
+   "html": "<p>In this part of Jefferson County, wells are generally moderate to quite deep. Of the 6,040 wells that report a total depth, the median is 305 feet. The middle half fall between 175 and 500 feet, with about 38% in the 300–600 foot range and 17% deeper than 600 feet. The deepest on record goes to 1,600 feet.</p><p>This spread is typical for fractured-bedrock: you’re drilling until you hit enough open fractures. The vast majority of permits list an unnamed fractured-bedrock aquifer, with a smaller number calling it Fractured Crystalline or Fractured Granite. For a new domestic well, a driller’s bid is usually going to assume at least that 300–500 foot range, and they’ll warn you there’s a real chance of needing more hole here than, say, in the plains.</p>"
+  },
+  {
+   "heading": "Water levels and what they suggest about the table",
+   "html": "<p>Evergreen’s static water levels—depth from ground surface down to water in the well—are shallower than the total well depth. Of the 322 wells reporting, the median water level is about 90 feet, and the middle half fall between 40 and 150 feet. That’s what you’re usually lifting water from, even if the borehole is several hundred feet deep.</p><p>By decade, median water levels were about 42–60 feet in the 1960s–1970s, around 40 feet in the 1980s, then dropped deeper to about 150 feet in the 1990s. In the 2010s and 2020s, medians have been around 120 and 100 feet. That doesn’t look like a simple steady decline, but it does show generally deeper levels than several decades ago, so I don’t assume “shallow water” just because an older neighbor says their well is easy.</p>"
+  },
+  {
+   "heading": "How much water Evergreen wells actually make",
+   "html": "<p>Of the 2,875 wells with reported pump tests, the median yield is 6.0 gallons per minute. The middle half run between 3.0 and 9.0 gpm. Most domestic wells fall into the usable range: about 34% are 1–5 gpm, and 57% are 5–15 gpm. Only about 3% test under 1 gpm, and about 6% get 15+ gpm.</p><p>For a single household domestic permit, even a 3–5 gpm well can work fine with proper storage and plumbing. A 6 gpm median is solid for mountain fractured rock. The key is that yields vary a lot over short distances; a 10 gpm well in Upper Bear Creek doesn’t guarantee you’ll see the same in nearby Echo Hills. Always look at the actual completion report and pump test, not just the drilled depth, when you evaluate an existing home.</p>"
+  },
+  {
+   "heading": "Who’s been drilling here and when permits peaked",
+   "html": "<p>Well development around Evergreen really took off in the 1970s and 1990s. Permit records show 2,019 wells in the 1970s, 1,282 in the 1980s, then another 1,791 in the 1990s. Activity slowed a bit after 2000, with 875 permits in the 2000s, 434 in the 2010s, and 218 so far in the 2020s. The newest permits run into 2025, so new construction is still happening.</p><p>Most permits are for domestic or household use, around 94%, with small slices for stock watering and monitoring. On the drilling side, a few outfits show up repeatedly in the records: James Drilling Company (Keaton, Michael K.), Walton, and Living Water Systems Inc. (Goble, Robert) each have several hundred wells in this five-mile radius. That history means there’s usually a stack of nearby well logs your driller can review before setting your design depth and estimated yield.</p>"
+  },
+  {
+   "heading": "Expected cost to drill a new Evergreen well",
+   "html": "<p>In these fractured granite and gneiss conditions, local drilling runs about $65–$100 per foot. At the 305-foot median depth, the bare hole pencils out to roughly $19,800–$30,500. By the time you add casing, grout, pump, pressure tank, trenching and electrical, a typical complete well system at that depth runs in the ballpark of $25,800–$42,500.</p><p>Because 38% of wells end up between 300 and 600 feet and 17% go deeper than 600, you want a budget with room to handle extra footage. A smart approach on raw land near Evergreen, Indian Hills, or Genesee is to drill and test the well early in the project so you know your actual depth and yield before you pour money into driveways or foundations.</p>"
+  },
+  {
+   "heading": "Risks: low yield, contamination, and layout issues",
+   "html": "<p>The main technical risk here is low or marginal yield from fractured-bedrock. A few percent of wells test under 1 gpm, which can work only with careful storage and usage. Dry holes are rare in the records, but you do see some very deep completions chasing water. On an existing home, always review the pump test (gpm) and static level, not just age and depth.</p><p>On the water quality side, the broader area within 10 miles shows 37 PFAS sampling or contamination sites, about 115 historic mine features, and around 50 EPA Superfund or cleanup sites. That doesn’t mean your specific well is impacted, but it’s enough to justify lab testing for a purchase. Plan your septic and well separation properly and avoid downhill flow from older leach fields or mine spoils when you lay out a new build.</p>"
+  },
+  {
+   "heading": "Buying or building on a lot in Evergreen",
+   "html": "<p>Before you buy land around Evergreen, Echo Hills, or Upper Witter Gulch, pull the Colorado DWR well permits within a mile or so. Look at actual depths (commonly in that 175–500 foot middle range), yields (often 3–9 gpm), and static levels near 90 feet. That gives you a realistic idea for bids and water reliability.</p><p>For a vacant parcel, confirm you can get a domestic well permit that matches your planned use and that the lot has room for a compliant septic system and replacement area. On existing homes, ask for the well completion report, pumping equipment age, and any lab tests. With fractured-bedrock wells, assuming “it’s fine because it’s there” can be an expensive mistake; get the data and plan upgrades or storage before you close.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Evergreen, Colorado?",
+   "a": "Around Evergreen, 6,040 wells report a depth and the median is about 305 feet. The middle half fall between 175 and 500 feet. About 10% are under 100 feet, 34% are 100–300 feet, 38% are 300–600 feet, and 17% are deeper than 600 feet. A few go extremely deep, with the deepest on record at 1,600 feet."
+  },
+  {
+   "q": "How much water do Evergreen wells usually produce?",
+   "a": "Based on 2,875 wells with pump tests, the median yield is 6.0 gallons per minute. The middle half are between 3.0 and 9.0 gpm. About 34% of wells come in at 1–5 gpm, 57% at 5–15 gpm, roughly 3% test under 1 gpm, and around 6% exceed 15 gpm. Most domestic wells here produce enough flow with proper system design."
+  },
+  {
+   "q": "What does it cost to drill a well in Evergreen, CO?",
+   "a": "In the fractured granite and gneiss around Evergreen, drilling typically runs $65–$100 per foot. At the area’s 305-foot median depth, that means about $19,800–$30,500 for the drilled hole. A complete working well with pump, pressure tank, trenching, and electrical commonly totals around $25,800–$42,500 at that same depth, depending on site conditions and choices."
+  },
+  {
+   "q": "Is well water safe to drink in Evergreen, Colorado?",
+   "a": "Safety depends on the individual well. Within about 10 miles of Evergreen there are 37 PFAS sampling or contamination sites, about 115 historic mine features, and 50 EPA Superfund or cleanup sites. Those regional factors make it important to test your well for common contaminants and metals. Many homes use their wells safely, but you should rely on lab results, not assumptions."
+  },
+  {
+   "q": "Are wells running dry around Evergreen, or is the water table dropping?",
+   "a": "Data from 322 wells show a median static water level of about 90 feet, with most between 40 and 150 feet. By decade, median levels were shallower (around 40–60 feet) in the 1960s–1980s, then deeper in the 1990s at about 150 feet, and around 120 and 100 feet in the 2010s and 2020s. That’s not a simple steady drop, but it does suggest generally deeper levels than several decades ago."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that handles access driveways, full site development, new-build septic systems and custom homes in the Evergreen area. If you’re planning a rural project here, we can help you build it out from raw ground to finished house and utilities.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1466,
+  "completion_tokens": 2565,
+  "total_tokens": 4031,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 251,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "title": "Wellington Well Depth and Drilling Cost",
+ "meta_description": "Wellington wells have a 66-foot median depth; finished well costs at that depth are estimated at $10,300-$18,600.",
+ "h1": "Wellington, Colorado Well Depth, Yield, and Cost",
+ "eyebrow": "Wellington well records",
+ "intro_html": "<p>Buying land near Wellington means looking closely at the well record, not just the listing. Within 5 miles of Wellington, Colorado, DWR records show 989 permitted wells, with 625 recorded as constructed. Depths vary sharply in the mountain ground here: the median is 66 feet, but the middle half runs from 40 to 300 feet, and the deepest recorded well is 1,855 feet.</p><p>Most permits identify fractured bedrock rather than a named basin aquifer. That makes neighboring well records useful, but not conclusive. A nearby shallow well may not predict the result on your lot. Before buying or building, verify the permit, water right or exempt-well status, expected use, septic layout, and the cost of reaching the selected building site.</p>",
+ "sections": [
+  {
+   "heading": "Wellington well depth is shallow on paper, but variable in the ground",
+   "html": "<p>The reported median depth near Wellington is 66 feet. Two-thirds of the wells with reported depth are under 100 feet, while 9% fall between 100 and 300 feet, 14% between 300 and 600 feet, and 12% exceed 600 feet. The middle half spans 40 to 300 feet, which is the range that matters when comparing drilling bids.</p><p>A driller should not price your lot from the median alone. The local records include wells as deep as 1,855 feet, and 643 wells report a total depth. Most permits name an unnamed or fractured-bedrock aquifer, with 902 wells in that category. Alluvial wells account for 18 records, and Dakota Sandstone wells for 10. Fractured granite and gneiss can change quickly across short distances.</p>"
+  },
+  {
+   "heading": "Most Wellington wells make usable flow, but test the actual lot",
+   "html": "<p>Only 194 wells report a pump yield, so the yield statistics are a useful local guide rather than a guarantee. The median reported yield is 10.0 gallons per minute, with the middle half from 7.0 to 17.2 gallons per minute. Fifty-seven percent report between 5 and 15 gallons per minute, while 35% report more than 15 gallons per minute.</p><p>Low-producing wells are present but not dominant: 6% report 1 to 5 gallons per minute and 2% report under 1 gallon per minute. For a buyer, the important question is sustained performance under the permitted use, not just the driller's initial flow test. Ask for the well construction report, pump information, and any production or recovery testing before relying on the number.</p>"
+  },
+  {
+   "heading": "Wellington water levels do not show a simple falling trend",
+   "html": "<p>Static water level is reported for only 47 wells. Across those records, the median depth to water is 96 feet, with the middle half from 16 to 198 feet below the surface. That spread matters for pump sizing, trenching, and the cost of bringing water into a house.</p><p>The decade comparison does not point to a dropping table in this record set. The median measured level was 96 feet below surface in the 2010s and 90 feet in the 2020s. Those figures are not a site-specific guarantee, and the sample is limited. A buyer should still have the existing well tested for static level, recovery, pump operation, and water quality rather than assuming a regional median applies to the property.</p>"
+  },
+  {
+   "heading": "Wellington has a long permit history and several recurring drillers",
+   "html": "<p>Wellington-area records go back to the 1950s, with 98 permits issued in that decade. The record count rose to 129 in the 1990s and 175 in the 2000s. There were 53 permits in the 2010s and 68 in the 2020s, with the newest permit year listed as 2025. The mix is mainly domestic or household use at 49%, followed by irrigation at 25% and stock at 17%.</p><p>The most active names in these records are Lesh Drilling Inc. (Lesh Jr., Ed), with 102 records; Schott Bros. Drilling (Schott, Carl), with 82; and Authorized (Pe, Pg), with 64. These entries describe permit history, not an endorsement or a current bid. Confirm licensing, availability, scope, and the exact construction method before hiring.</p>"
+  },
+  {
+   "heading": "What a new well can cost near Wellington",
+   "html": "<p>The local cost model assumes fractured mountain bedrock, including granite and gneiss, at $65 to $100 per foot. At the 66-foot median depth, the drilled hole is estimated at about $4,300 to $6,600. That is not the complete water system. A finished well with pump, pressure tank, trenching, and electrical is estimated at $10,300 to $18,600 at that depth.</p><p>Depth is the main uncertainty in the bid. Because the middle half of reported wells runs from 40 to 300 feet, a lot that needs a deeper hole can move well beyond the median-depth estimate. Get written pricing for mobilization, casing, grout, drilling beyond the estimate, pump equipment, power, trenching, water testing, and any difficult access. Confirm what happens if the hole is dry or produces too little water.</p>"
+  },
+  {
+   "heading": "Environmental, septic, and building checks around Wellington",
+   "html": "<p>The mapped area within about 10 miles includes 53 PFAS sampling or contamination sites, 14 EPA Superfund or cleanup sites, and 11 historic mine features. Their presence does not prove a problem on a particular parcel, but it is a reason to order a current water-quality test and review the property's environmental history. Test results should match the intended household use.</p><p>Low yield, a dry hole, poor recovery, and fractured-bedrock variability remain practical risks. Before placing a house, confirm the well location, septic setbacks, reserve area, driveway access, and electrical route with the appropriate professionals. An exempt household-use well still has permit and use limits, including the 35-gpm pumping limit. In an over-appropriated basin, an augmentation plan may be required for some uses. Check DWR records before assuming water is available for a new home.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Wellington, Colorado?",
+   "a": "The median reported well depth within 5 miles of Wellington is 66 feet. The middle half of reported depths runs from 40 to 300 feet. Sixty-six percent are under 100 feet, but 12% are 600 feet or deeper, and the deepest record is 1,855 feet. Fractured granite and gneiss make the depth on a specific lot difficult to predict."
+  },
+  {
+   "q": "How much does it cost to drill a well in Wellington?",
+   "a": "The local model uses $65 to $100 per foot for fractured mountain bedrock. At the 66-foot median depth, the drilled hole is estimated at $4,300 to $6,600. A finished system with pump, tank, trenching, and electrical is estimated at $10,300 to $18,600. A deeper hole, difficult access, or a dry result can change the final cost."
+  },
+  {
+   "q": "How much water do wells produce in Wellington?",
+   "a": "Among the 194 wells that report pump yield, the median is 10.0 gallons per minute. The middle half ranges from 7.0 to 17.2 gallons per minute. Fifty-seven percent report 5 to 15 gallons per minute, while 2% report under 1 gallon per minute. These are reported well results, not a guarantee for a new well on your parcel."
+  },
+  {
+   "q": "Is well water safe in Wellington, Colorado?",
+   "a": "Safety cannot be determined from depth or yield. Records map 53 PFAS sampling or contamination sites, 14 EPA Superfund or cleanup sites, and 11 historic mine features within about 10 miles. That does not establish contamination at a specific property. Have the existing or new well tested by a qualified laboratory, and review the results for the home's intended use."
+  },
+  {
+   "q": "Are Wellington well water levels going down?",
+   "a": "The available record does not show a simple falling trend. Static water level is reported for 47 wells, with a 96-foot median and a middle half from 16 to 198 feet below surface. The median was 96 feet in the 2010s and 90 feet in the 2020s. Those limited measurements do not replace a current test of the individual well."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Wellington and nearby areas with access driveways, site development, new-build septic systems, and custom homes. Bring the well, septic, and building-site planning together before construction starts.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1413,
+  "completion_tokens": 2054,
+  "total_tokens": 3467,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1410,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 103,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

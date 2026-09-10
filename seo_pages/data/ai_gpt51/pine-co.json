@@ -1,0 +1,76 @@
+{
+ "title": "Pine, Colorado well depth and drilling cost",
+ "meta_description": "In Pine, Colorado, wells have a median depth of 305 ft and a median yield of 5 gpm. Learn what that means for drilling cost and water reliability.",
+ "h1": "Water wells in the Pine, Colorado area",
+ "eyebrow": "Park County well guide",
+ "intro_html": "<p>If you are looking at property around Pine in Park County, your water will almost certainly come from a private well in fractured mountain bedrock. State records show thousands of wells in the area, so we have a pretty good picture of how deep they run, how much water they tend to make, and what it usually costs to get a new one drilled and equipped.</p><p>Below is a plain-language rundown of the local well data around Pine and nearby spots like Bailey and Conifer, and how to use it when you are buying or planning to build.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells run around Pine",
+   "html": "<p>Around Pine, the median well depth is 305 feet, with the middle half running from about 200 to 500 feet. About 36% of wells fall between 100 and 300 feet, and another 38% are between 300 and 600 feet, so most drillers will bid assuming something in that 200–500 foot window.</p><p>On the deep end, 18% of wells go past 600 feet, the 90th percentile is 700 feet, and the deepest on record hits 1,700 feet. That range is typical for fractured granite and gneiss. It means you need a budget that can tolerate going well past the median if your hole happens to hit tighter rock or fewer water-bearing fractures.</p>"
+  },
+  {
+   "heading": "Well yield: how much water you can expect",
+   "html": "<p>For wells around Pine, the median reported pump yield is 5.0 gallons per minute, with the middle half between 2.0 and 7.2 gpm. That is generally workable for a single home on an exempt domestic well, especially with good storage and plumbing design.</p><p>The distribution matters for risk. About 7% of wells report under 1 gpm, which can be marginal without storage or augmentation. Another 40% land between 1 and 5 gpm, while 49% are in the 5–15 gpm range and 5% report more than 15 gpm. In fractured-bedrock systems like this, two wells a few hundred feet apart can perform very differently, so nearby well records are worth a careful look.</p>"
+  },
+  {
+   "heading": "Water levels and what they suggest about the water table",
+   "html": "<p>Static water level records near Pine show a median depth to water of 85 feet, with the middle half between 42 and 184 feet below the surface. That is the standing water level in the well, not the total well depth, and it is what drives pumping lift and power needs.</p><p>By decade, median measured water levels have bounced around: about 40–50 feet in the 1960s–1980s and 50s in the 2000s, but closer to 120 feet in the 1990s and 2010s, and 98 feet in the 2020s. That pattern suggests some long-term variability and, in many spots, deeper water levels than earlier records. It is another reason to design for a fairly deep pump setting from the start.</p>"
+  },
+  {
+   "heading": "Who has been drilling here and how active it is",
+   "html": "<p>Within about five miles of Pine there are 8,242 wells in the state permit system, with 5,639 recorded as constructed and 5,826 listing a total depth. Most permits are for domestic or household use, at about 94%, with small shares for stock watering and monitoring.</p><p>Drilling activity ramped up hard in the 1970s and 1990s. The 1970s saw 1,917 permits, the 1980s 1,189, and the 1990s peaked at 2,129. Activity tapered to 833 in the 2000s, 436 in the 2010s, and 258 so far in the 2020s, but the newest permit is from 2025, so new wells are still going in. The most active drillers on record here are Living Water Systems Inc. (Goble, Robert), Stan'S Drilling (Stansbury, Larry), and James Drilling Company (Keaton, Michael K.).</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost around Pine",
+   "html": "<p>The local drilling is in fractured mountain bedrock, mainly granite and gneiss. Typical drilling rates in this kind of ground are about $65–$100 per foot. At the Pine-area median depth of 305 feet, that pencils out to roughly $19,800–$30,500 for the drilled hole itself.</p><p>By the time you add casing, grout, pump, pressure tank, trenching, and electrical, the model puts a finished domestic well around $25,800–$42,500 at that median depth. Because there is a meaningful chance of going deeper than 500 feet, it is smart to run cost scenarios using the 200–500 foot middle range and also something closer to the 700-foot 90th percentile so you know your exposure.</p>"
+  },
+  {
+   "heading": "Local risks: low yield, contamination, and site layout",
+   "html": "<p>Most Pine-area wells are completed in unnamed fractured-bedrock aquifers, with a smaller number labeled Fractured Crystalline or Fractured Granite. This kind of geology is naturally hit-or-miss, which is why there is that 7% share of wells under 1 gpm and an 18% slice deeper than 600 feet. Dry or very low-yield holes are a real possibility on any given parcel.</p><p>Within about 10 miles, there are 5 PFAS sampling or contamination sites, 20 historic mine features, and 3 EPA Superfund or cleanup sites mapped. That does not mean a given well is contaminated, but it does justify water-quality testing, especially for PFAS and metals. When planning build-out, keep good separation between well and septic, and pay attention to slopes and access for drilling and future service.</p>"
+  },
+  {
+   "heading": "Buying or building on a lot in Pine",
+   "html": "<p>For a Pine-area lot, I would start by pulling nearby well permits within a mile or so and looking at depth, yield, and static level, not just one well but a cluster. With a median depth of 305 feet, a middle half between 200 and 500 feet, and some wells going to 700 feet and beyond, you want your budget and schedule to handle the deeper scenario.</p><p>Most permits here are domestic/household, so expect a standard exempt well with typical use limits. Because yields range widely and there is that 7% under 1 gpm, consider storage and water-efficient fixtures in your design. Before closing, plan on a full water test given the PFAS and mining activity in the broader area, and verify that your building envelope leaves room for proper well and septic separation.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Pine, Colorado?",
+   "a": "Around Pine in Park County, the median well depth is about 305 feet. The middle half of wells fall between roughly 200 and 500 feet deep. About 36% of wells are 100–300 feet, 38% are 300–600 feet, and 18% go deeper than 600 feet. The 90th percentile depth is 700 feet, and the deepest recorded well in the area reaches 1,700 feet."
+  },
+  {
+   "q": "How much water do Pine, Colorado wells usually produce?",
+   "a": "In the Pine area, the median reported well yield is 5.0 gallons per minute, with the middle half of wells between 2.0 and 7.2 gpm. About 7% of wells make under 1 gpm, 40% fall in the 1–5 gpm range, 49% are between 5 and 15 gpm, and about 5% report more than 15 gpm. That is generally adequate for a home if plumbing and storage are set up correctly."
+  },
+  {
+   "q": "What does it cost to drill a water well in Pine, Colorado?",
+   "a": "Local drilling in the fractured granite and gneiss around Pine typically runs about $65–$100 per foot. At the area’s median depth of 305 feet, that is roughly $19,800–$30,500 for the drilled hole. A complete domestic well system with pump, pressure tank, trenching, and electrical is commonly in the $25,800–$42,500 range at that same depth, depending on exact site conditions and setup."
+  },
+  {
+   "q": "Is well water safe to drink in Pine, Colorado?",
+   "a": "Safety depends on the specific well. Around Pine there are 5 mapped PFAS sampling or contamination sites, 20 historic mine features, and 3 EPA Superfund or cleanup sites within about 10 miles. That does not automatically affect your well, but it does mean you should test for common parameters plus PFAS and metals before relying on the water for drinking, and retest periodically."
+  },
+  {
+   "q": "Are wells running dry or dropping in Pine, Colorado?",
+   "a": "Static water level data show a median depth to water of 85 feet, with the middle half from 42 to 184 feet. By decade, median water levels have varied: around 40–50 feet in the 1960s–1980s, closer to 120 feet in the 1990s and 2010s, and 98 feet in the 2020s. That points to some long-term variability and, in many locations, deeper water levels than the earlier records, so wells should be designed with a conservative pump setting."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor familiar with the Pine and Bailey area, handling access driveways, site development, new-build septic systems and custom homes to match your well and terrain.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1474,
+  "completion_tokens": 2383,
+  "total_tokens": 3857,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 215,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

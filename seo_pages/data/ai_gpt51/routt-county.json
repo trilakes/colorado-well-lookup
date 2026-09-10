@@ -1,0 +1,76 @@
+{
+ "title": "Routt County well depth and drilling cost",
+ "meta_description": "Routt County wells have a 175 ft median depth and 8 gpm median yield. See what that means for drilling cost, water levels and buying land.",
+ "h1": "Water wells in Routt County, Colorado",
+ "eyebrow": "Local well expectations",
+ "intro_html": "<p>Routt County wells are true mountain wells in fractured bedrock. Records for more than 7,000 permits tell us how deep drillers usually go, what kind of yield they hit, and what that tends to cost in this part of the Rockies.</p><p>This page pulls the county-wide numbers together so you can sanity-check a driller’s bid or a seller’s claims before you close on land outside places like Steamboat Springs, Hayden, Oak Creek, Phippsburg, Yampa or Clark.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells run in Routt County",
+   "html": "<p>The typical Routt County well is not extreme by mountain standards. The median total depth is 175 feet, but the middle half of wells runs from 41 to 350 feet. That wide spread is what you expect in fractured bedrock; one property may hit good water shallow, the next needs double or triple the depth.</p><p>About 40% of wells are under 100 feet, while 53% fall between 100 and 600 feet. Only 7% go deeper than 600 feet, but the deepest well on record reaches 3,643 feet, showing how stubborn some locations can be. When you get a bid, assume you could land anywhere in that 41–350 foot “typical” band unless nearby wells prove otherwise.</p>"
+  },
+  {
+   "heading": "Well yield: how much water is typical here",
+   "html": "<p>On the production side, Routt County wells perform fairly well. The median reported pump yield is 8.0 gallons per minute, and the middle half of wells fall between 5.0 and 12.0 gpm. For a standard exempt household well, that’s usually plenty if the well is constructed and plumbed correctly.</p><p>Low producers are not common but they do exist. About 2% of tested wells make under 1 gpm, and another 16% come in between 1 and 5 gpm. On the other hand, 66% of wells fall in the 5–15 gpm range and 16% exceed 15 gpm. The fractured-bedrock aquifer is hit-or-miss at the property scale, so always look at several neighboring well permits before you bank on a strong well.</p>"
+  },
+  {
+   "heading": "Water levels and long‑term trend",
+   "html": "<p>Static water level tells you how far down the water sits in the casing when the well is at rest. In Routt County, the median depth to water is about 40 feet, with the middle half between 10 and 100 feet. That’s reasonably accessible for most modern pumps and helps keep lift costs in check.</p><p>By decade, the median water level was about 72 feet in the 1990s, then 26 feet in the 2000s, 35 in the 2010s, and 45 in the 2020s. That pattern bounces around rather than trending steadily downward, which suggests local climate and drilling patterns matter more than a simple county-wide decline. On a specific parcel, nearby well logs and measurements are still your best indicator.</p>"
+  },
+  {
+   "heading": "Who has been drilling and how activity has changed",
+   "html": "<p>Routt County’s drilling history is long. Only a handful of permits show up in the 1950s and 1960s, then activity jumps to 779 permits in the 1970s and 632 in the 1980s. Growth really shows in the 1990s with 1,639 permits, followed by 1,377 in the 2000s, 776 in the 2010s, and 797 already in the 2020s, with new permits issued through 2025.</p><p>Most wells are in unnamed fractured-bedrock aquifers; 6,949 permits list that, with smaller numbers in alluvial deposits and the Mancos. The busiest drillers on record are Aztec Drilling Company (Branstetter, Keith) with 947 wells, Arrow Drilling (Berglund, Peter R.) with 552, and Routt Drilling Co. (Ozbun, Jerald A.) with 529. When you pick a driller, it helps if they know the particular hills and valleys around your site.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost in Routt County",
+   "html": "<p>Drilling here is through fractured mountain bedrock like granite and gneiss, so contractors usually price by the foot. The prevailing range runs about $65 to $100 per foot. At the 175 foot median depth, the drilled hole alone pencils out around $11,400 to $17,500.</p><p>Once you add pump, pressure tank, trenching, and electrical, a typical finished residential well in that depth range often lands between about $17,400 and $29,500. Because a quarter of wells are deeper than 350 feet, it’s smart to price your project with a range of depths and know how overruns will be handled if the driller has to chase water deeper.</p>"
+  },
+  {
+   "heading": "Risks to watch: low yield, contamination, and siting",
+   "html": "<p>County-wide numbers look solid, but there are real risks at the parcel level. A small share of wells (about 2%) make under 1 gpm, and another 16% fall in the 1–5 gpm band, so you need a backup plan if your first hole is marginal. In fractured rock, you can also see dry holes or wells that decline over time.</p><p>There are mapped environmental concerns in the broader area: about 29 PFAS sampling or contamination sites, 106 historic mine features, and 8 EPA Superfund or cleanup sites within roughly 10 miles. Those don’t automatically mean your water is bad, but they are a clear reason to run a full lab test panel and think about filtration. Also coordinate well and septic locations early so you keep proper separation and avoid future building conflicts.</p>"
+  },
+  {
+   "heading": "Buying or building on land in Routt County",
+   "html": "<p>Most permitted wells here are for domestic or household use (about 71%), with stock watering and some irrigation making up much of the rest. That lines up with typical rural homes and small-acreage places around Steamboat Springs, Hayden, Oak Creek, Phippsburg, Yampa and Clark.</p><p>Before you buy, pull the nearby well logs: look at depths, yields, and static levels, not just one well but several. Ask the seller for any water-quality test results and pump-service records. If you are over-appropriated or planning irrigation, talk to a water attorney or engineer about permits and augmentation. For vacant land, budget using the 41–350 foot depth band and the yield mix described above so you are not caught off guard if your well ends up deeper or weaker than the county median.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Routt County, Colorado?",
+   "a": "Across Routt County, the median well depth is about 175 feet. The middle half of wells fall between 41 and 350 feet, and only about 7% go deeper than 600 feet. Around 40% of wells are under 100 feet, while roughly 53% land between 100 and 600 feet. A few outliers are much deeper, with the deepest well on record at 3,643 feet."
+  },
+  {
+   "q": "How much water do Routt County wells usually produce?",
+   "a": "Reported pump tests show a median yield of 8.0 gallons per minute in Routt County, with the middle half of wells between 5.0 and 12.0 gpm. About 66% of wells fall in the 5–15 gpm range and 16% exceed 15 gpm. Only around 2% of wells come in under 1 gpm, and another 16% produce between 1 and 5 gpm. That mix generally supports typical household use."
+  },
+  {
+   "q": "What does it cost to drill a well in Routt County?",
+   "a": "In Routt County’s fractured granite and gneiss, drillers typically charge about $65–$100 per foot. At the 175 foot median depth, the borehole alone runs roughly $11,400–$17,500. Once you add pump, pressure tank, trenching, and electrical, a finished residential well in that depth range commonly totals around $17,400–$29,500, depending on site conditions and equipment choices."
+  },
+  {
+   "q": "Is well water safe to drink in Routt County?",
+   "a": "Water quality varies by location. Most wells tap fractured-bedrock aquifers, and there are mapped concerns in the broader area, including about 29 PFAS sampling or contamination sites, 106 historic mine features, and 8 EPA Superfund or cleanup sites within roughly 10 miles. Those don’t guarantee problems at your well, but they make a good case for lab testing for metals, bacteria, PFAS and other contaminants before relying on the water."
+  },
+  {
+   "q": "Are groundwater levels dropping in Routt County?",
+   "a": "Static water-level records don’t show a simple straight-line decline. The median depth to water was about 72 feet in the 1990s, then shallowed to about 26 feet in the 2000s, and measured around 35 feet in the 2010s and 45 feet in the 2020s. County-wide, that looks more like variability than a clear long-term drop, but local conditions can differ, so nearby well logs matter most for a given property."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that handles access driveways, full site development, new-build septic systems and custom homes in mountain settings like Routt County.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1470,
+  "completion_tokens": 2292,
+  "total_tokens": 3762,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 138,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

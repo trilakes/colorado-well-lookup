@@ -1,0 +1,76 @@
+{
+ "title": "Denver County CO well depth and drilling cost",
+ "meta_description": "Denver County wells are shallow, with a 28 ft median depth and typical drilled-hole costs around $1,400–$2,000 at local Denver Basin rates.",
+ "h1": "Understanding water wells in Denver County, Colorado",
+ "eyebrow": "Denver County well guide",
+ "intro_html": "<p>Denver County’s wells look very different from what you see in rural Colorado. Out of 12,599 permitted wells, most are shallow monitoring holes in the Denver Basin bedrock, not household wells. That still tells you a lot about how close the water is to the surface and what drilling conditions look like here.</p><p>If you’re buying property or planning a project in Denver County or nearby areas like Arapahoe or Adams County, it helps to understand how deep wells usually go, what kind of yields show up in the records, and what that means for cost and risk.</p>",
+ "sections": [
+  {
+   "heading": "How deep are wells in Denver County really?",
+   "html": "<p>Across Denver County, reported well depths are very shallow by Colorado standards. The median total depth is only 28 feet, and the middle half of wells fall between 20 and 43 feet. About 94% of wells are under 100 feet. Only 2% fall in each of the 100–300, 300–600, and 600+ foot ranges.</p><p>Most of these are in unnamed fractured-bedrock and alluvial settings within the Denver Basin, not the deep municipal supply wells people hear about. The deepest well on record reaches 2,092 feet, but that’s an outlier. For a small domestic or irrigation well on a Denver County parcel, you’d normally plan around those shallow to moderate depth ranges unless a specific project calls for something deeper.</p>"
+  },
+  {
+   "heading": "Water levels and the local water table trend",
+   "html": "<p>Static water level data in Denver County shows water is generally close to the surface. The median depth to water is 15 feet, with the middle half between 11 and 21 feet. That matches what we see in a lot of monitoring wells across the county.</p><p>Looking at the time trend, the median static water level was 13 feet below ground in the 2010s and 16 feet in the 2020s. That indicates a modest deepening of the water table in the data that’s been reported. On an individual lot, you can still see significant variation, so it’s important to look at the nearest measured wells and not just the county-wide pattern when you’re evaluating a site.</p>"
+  },
+  {
+   "heading": "Well yield in Denver County and what it means for use",
+   "html": "<p>Only 116 wells in Denver County report pump yield, but there’s a wide spread in those numbers. The median yield is 45.0 gpm, with the middle half running from 8.0 to 200.0 gpm. About 63% of reported wells are over 15 gpm, while 16% are between 5 and 15 gpm, and another 16% are in the 1–5 gpm bracket.</p><p>Low producers are present: 5% of reported wells come in under 1 gpm. For a typical exempt household well elsewhere in Colorado, anything above a few gpm is usually workable with proper storage. Here in Denver County, many of these yields are tied to monitoring and special-use wells, so you need to look closely at the intended use and any augmentation or permitting requirements for higher-volume pumping.</p>"
+  },
+  {
+   "heading": "Who’s drilling in Denver County and when",
+   "html": "<p>Denver County’s permit history shows how much subsurface work has gone on here. Permits start in the 1950s with 125 wells, then 115 in the 1960s and 102 in the 1970s. Activity jumps in the 1980s with 574 permits and peaks in the 1990s at 3,552. The 2000s add another 3,018 permits, the 2010s 1,963, and the 2020s already show 923 permits, with the newest issued in 2025.</p><p>Most wells are for monitoring, which matches the 73% monitoring use mix. The busiest drillers in the records are Authorized (Pe, Pg) with 5,882 wells, Ground Exploration LLC (Bender, Joseph T.) with 361, and Layne, Christensen Co. (Tormoehlen, David A.) with 245. That gives you an idea of who has the most local experience in this geology.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost in Denver County",
+   "html": "<p>Drilling here is mainly into Denver Basin sedimentary bedrock. Typical drilling rates run about $50–$70 per foot. At the county’s 28-foot median depth, that puts the drilled hole in the range of about $1,400–$2,000 before any equipment is installed.</p><p>Once you add a pump, pressure tank, trenching, and electrical work, a finished well in this depth range generally lands around $7,400–$14,000. If your project requires something deeper than the shallow monitoring-style wells that dominate the records, you’d scale the drilling portion of the cost up accordingly. Always bid based on a realistic depth range, not just the median, especially in fractured-bedrock conditions where actual depth can vary.</p>"
+  },
+  {
+   "heading": "Key risks: contamination, low yield, and siting",
+   "html": "<p>Denver County has a heavy environmental footprint underground. Within about 10 miles there are 947 PFAS sampling or contamination sites, 75 historic mine features, and 211 EPA Superfund or cleanup sites. That’s why most wells here are permitted as monitoring wells, and it’s also why water quality testing is non‑negotiable for any potable use.</p><p>On the production side, about 5% of reported wells make under 1 gpm, and 16% fall between 1 and 5 gpm. Those can still work with storage for small uses, but they’re marginal for bigger demands. Careful siting relative to existing or planned septic systems, utilities, and buildings is critical, especially on tight urban or infill lots.</p>"
+  },
+  {
+   "heading": "Buying or building on a lot in Denver County",
+   "html": "<p>With 12,599 permitted wells and 73% of them for monitoring, Denver County is more about data and environmental control than classic rural domestic wells. Still, the shallow median depth of 28 feet and median static water level of 15 feet show that groundwater is generally accessible.</p><p>Before you buy, check nearby wells for depth, water level, and yield, and pay attention to the mapped PFAS, mine, and Superfund sites around your property. If you need a domestic or irrigation well, talk with a driller or water attorney about Denver Basin rules, exempt household wells, and any augmentation needs. On a building lot, coordinate well, septic, and foundation plans early so everything fits within the permit and zoning constraints.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Denver County, Colorado?",
+   "a": "In Denver County, reported wells are shallow. The median total depth is 28 feet, and the middle half of wells run from 20 to 43 feet. About 94% of wells are under 100 feet, with only small fractions in the 100–300, 300–600, and 600+ foot ranges. There is a single very deep outlier at 2,092 feet, but that is not typical for most projects here."
+  },
+  {
+   "q": "What is a typical well yield in Denver County?",
+   "a": "Among the 116 wells with reported yields, the median production is 45.0 gpm. The middle half of wells fall between 8.0 and 200.0 gpm. About 63% of wells produce more than 15 gpm, 16% are in the 5–15 gpm range, and another 16% between 1 and 5 gpm. Around 5% of wells report under 1 gpm, so weak producers are present and need to be considered."
+  },
+  {
+   "q": "Is the groundwater level dropping in Denver County?",
+   "a": "Available static water level data show a modest deepening over recent years. The overall median depth to water is 15 feet, with most readings between 11 and 21 feet. By decade, the median was 13 feet below ground in the 2010s and 16 feet in the 2020s. That suggests a slight downward trend in water levels in the measured wells, though conditions can vary a lot from site to site."
+  },
+  {
+   "q": "What does it cost to drill a well in Denver County?",
+   "a": "Drilling into Denver Basin sedimentary bedrock here typically runs about $50–$70 per foot. At the county’s 28‑foot median depth, the drilled hole alone works out to roughly $1,400–$2,000. When you add pump, pressure tank, trenching, and electrical, a complete small well installation in this depth range usually falls around $7,400–$14,000, with deeper or more complex projects costing more."
+  },
+  {
+   "q": "Is well water safe to drink in Denver County?",
+   "a": "Safety depends on location and testing. Denver County has 947 PFAS sampling or contamination sites, 75 historic mine features, and 211 EPA Superfund or cleanup sites within about 10 miles, and 73% of wells are for monitoring. That level of industrial and environmental activity means you should not assume potability. Any well intended for drinking water needs comprehensive lab testing and, if necessary, treatment designed for the contaminants found."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor familiar with Denver County conditions, handling access driveways, site development, new-build septic systems, and custom homes.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1442,
+  "completion_tokens": 2274,
+  "total_tokens": 3716,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 162,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

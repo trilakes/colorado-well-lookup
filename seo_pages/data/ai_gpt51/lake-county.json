@@ -1,0 +1,76 @@
+{
+ "title": "Lake County CO well depth and drilling cost",
+ "meta_description": "Lake County wells have a 106 ft median depth and 10 gpm median yield. See costs, risks and permit trends before you buy or drill.",
+ "h1": "Water wells in Lake County, Colorado",
+ "eyebrow": "Local well realities",
+ "intro_html": "<p>Lake County sits in high mountain country, and most wells here are in fractured bedrock. That makes depth and yield pretty variable from spot to spot. Looking at all 2,719 permitted wells gives a solid picture of what you’re likely to hit before you buy land or hire a driller.</p><p>I’ll walk through how deep wells tend to be, how much water they usually make, what it costs to drill into this rock, and the main risks around old mines, PFAS, and low-producing holes. This is based on Lake County records, not averages from somewhere else.</p>",
+ "sections": [
+  {
+   "heading": "How deep Lake County wells usually go",
+   "html": "<p>Across Lake County, reported well depths center around a 106 ft median, with the middle half running from about 60 to 165 ft. Another way to look at it: about 45% of wells are under 100 ft, another 45% fall between 100 and 300 ft, and only 9% go deeper than 300 ft. A small 1% push past 600 ft, and the deepest on record runs all the way to 1,892 ft.</p><p>For a new domestic well, most drillers in this county will probably bid assuming something in that 60–165 ft range unless your site is on a high ridge or odd geologic feature. The fractured-bedrock setting means your well could still land shallower or deeper than the neighbors, but you’re not in a county where 400–600 ft is routine.</p>"
+  },
+  {
+   "heading": "Who has been drilling, and when",
+   "html": "<p>Lake County has a long drilling history, with permits on record going back to the 1950s. Things really picked up from the 1970s through the 2000s, with 297 permits in the 1970s, 285 in the 1980s, 516 in the 1990s, and 502 in the 2000s. More recent activity is still steady: 276 wells in the 2010s and 234 so far in the 2020s, with permits issued up through 2025.</p><p>Most holes here are domestic or household wells, about 81% of use, with a smaller mix of stock, irrigation, and about 10% monitoring wells. Golden Eagle Drilling Corporation (Shelton, Joe Wayne) shows up most often in the records, followed by Twin Lakes Drilling Co. (Schaffer, James O) and Steve Shelton Drilling, Inc. That local track record matters, because fractured bedrock rewards drillers who know the local fractures and alluvial pockets.</p>"
+  },
+  {
+   "heading": "Well yield: how much water to expect",
+   "html": "<p>Out of 739 wells that report a pump yield in Lake County, the median is 10 gpm, with the middle half between 6 and 12 gpm. That’s solid for a single-family exempt domestic well, even with the 35 gpm pumping cap. Most wells land in that middle band: about 74% produce between 5 and 15 gpm.</p><p>Low producers exist but are not dominant in the data. About 12% report 1–5 gpm, which usually still works for a home with proper storage and conservative use. Only about 1% come in under 1 gpm, which is where you start talking about serious water-use limits or augmentation. There’s also a healthy 13% that report more than 15 gpm. In fractured bedrock, this spread is normal: a few duds, plenty of adequate domestic wells, and a smaller share of strong producers.</p>"
+  },
+  {
+   "heading": "Water levels and what they suggest",
+   "html": "<p>Static water levels are reported on 223 Lake County wells. The median depth to water is about 93 ft below ground, with the middle half between roughly 52 and 172 ft. That means even where total depths reach 150–200 ft, you’re typically not drawing from the very bottom of the hole.</p><p>Looking by decade, the median water level was around 115 ft below surface in the 2010s and about 90 ft in the 2020s. That suggests, in the data we have, water levels have actually been a bit shallower recently, not dropping. Still, fractured-bedrock aquifers are very local. Most permits list an unnamed fractured-bedrock aquifer, with only a small number in Alluvial or Quaternary Alluvium. On valley floors you may see shallower water, while higher benches and ridges around areas like Leadville and Leadville North can run deeper.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost in Lake County",
+   "html": "<p>Drilling here usually means going into hard mountain bedrock such as granite or gneiss. Typical drilling rates run about $65–$100 per foot. At the countywide median depth of 106 ft, the drilled hole alone pencils out around $6,900–$10,600.</p><p>Once you add casing, grout, pump, pressure tank, trenching to the house, and electrical work, a finished domestic well at that depth often totals roughly $12,900–$22,600. If your site ends up more in the 165 ft range, you scale those numbers up in proportion. Because there are very few extremely deep wells compared to the total, the odds of a surprise 600+ ft bill are lower here than in some other mountain counties, but it still pays to budget a healthy contingency.</p>"
+  },
+  {
+   "heading": "Risks to check: mines, PFAS, and low producers",
+   "html": "<p>Lake County’s mining history and industrial sites are a real consideration. Within about 10 miles there are 4,731 historic mine features mapped, along with 22 PFAS sampling or contamination sites and 21 EPA Superfund or cleanup locations. Those don’t automatically mean your well is unsafe, but they do mean water testing is not optional.</p><p>Most wells draw from unnamed fractured-bedrock aquifers, which can be very localized. That’s part of why a small share of wells show under 1 gpm and some come in at 1–5 gpm. When you mix that variability with potential mine-related metals or PFAS, the safe approach is to pull well logs for your immediate area, check setback distances from old workings and proposed septic, and plan on a full lab panel for any existing well.</p>"
+  },
+  {
+   "heading": "Buying or building on a Lake County well lot",
+   "html": "<p>Before you close on a parcel in Lake County, pull permit and well-log records for nearby wells, especially around Leadville and Leadville North. You want to see how deep they went, what yields they reported, and what aquifer type was logged. With a 106 ft median depth and 10 gpm median yield countywide, many lots support a standard exempt domestic well, but local geology can swing that.</p><p>If there is an existing well, verify the permit type, pump test it, and sample for metals and PFAS given the number of mines and cleanup sites in the area. For vacant land, ask drillers with a local track record for depth and yield expectations on that specific bench or valley. Also lay out house, driveway, and septic so you can meet separation distances and keep the well uphill of potential contamination sources where possible.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Lake County, Colorado?",
+   "a": "In Lake County, reported well depths cluster around a 106 ft median. The middle half fall between about 60 and 165 ft. Roughly 45% of wells are under 100 ft and another 45% are between 100 and 300 ft. Only about 9% go deeper than 300 ft, and a small 1% exceed 600 ft. The deepest well on record reaches 1,892 ft, but that’s an outlier, not the norm."
+  },
+  {
+   "q": "What does it cost to drill a well in Lake County, CO?",
+   "a": "Typical drilling in Lake County’s fractured bedrock runs about $65–$100 per foot. At the 106 ft county median depth, the hole alone costs around $6,900–$10,600. A complete domestic setup with pump, pressure tank, trenching, and electrical usually totals roughly $12,900–$22,600 at that depth. Deeper wells will scale up from there, so it’s smart to budget with some cushion above the median."
+  },
+  {
+   "q": "How much water do Lake County wells usually produce?",
+   "a": "Based on 739 wells reporting yield, the median production in Lake County is 10 gpm, with the middle half between 6 and 12 gpm. About 74% of wells fall in the 5–15 gpm range, which is generally comfortable for a household well. Around 12% produce 1–5 gpm, workable with storage, and only about 1% are under 1 gpm, where daily use can be tight without special planning."
+  },
+  {
+   "q": "Are groundwater levels dropping in Lake County, Colorado?",
+   "a": "From the data we have, there’s no clear sign of a countywide drop. Median static water level across 223 wells is about 93 ft below ground, with most between roughly 52 and 172 ft. By decade, the median was around 115 ft in the 2010s and about 90 ft in the 2020s, which actually suggests slightly shallower water levels in recent measurements. Conditions still vary a lot from ridge to valley."
+  },
+  {
+   "q": "Is well water safe to drink in Lake County, CO?",
+   "a": "Safety depends on the specific well. Lake County has 4,731 historic mine features, 22 PFAS sampling or contamination sites, and 21 EPA Superfund or cleanup locations within about 10 miles. Many domestic wells are fine, but this history means you should test any drinking well for metals and PFAS, and review nearby site maps. Testing and proper well construction matter more than countywide averages."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting works in Lake County as a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes, coordinated with your well location and drilling plan.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1430,
+  "completion_tokens": 2391,
+  "total_tokens": 3821,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 147,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "title": "Denver Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Denver-area well records show a 29-foot median depth, but monitoring wells dominate. Review yields, water levels, costs and lot-buying risks in Adams County.",
+ "h1": "Denver well records: what Adams County buyers should know",
+ "eyebrow": "Adams County Well Guide",
+ "intro_html": "<p>A shallow well record near a Denver property does not necessarily mean a cheap household water supply. Monitoring accounts for <strong>69% of permitted uses</strong> in this dataset; domestic and household uses account for 12%. That distinction matters before you use nearby depths to price a new well.</p><p>These figures cover Colorado DWR permits within <strong>5 miles of Denver in Adams County</strong>, not every Denver-area property. There are 8,970 permit records, with 3,975 recorded as constructed. Use them to identify relevant neighboring wells, then check the actual permits and construction reports.</p>",
+ "sections": [
+  {
+   "heading": "Denver’s shallow median is not a household-well bid",
+   "html": "<p>Among the 4,718 records reporting depth, the median is <strong>29 feet</strong>, and the middle half runs from 20 to 45 feet. That is a useful range for understanding the records, but monitoring wells dominate this permit pool. It is not a dependable target depth for a new domestic well.</p><p>Depths under 100 feet account for 94% of reported depths; the deepest record reaches 2,023 feet. Permits name Alluvial and Denver aquifers, while many use an unnamed or fractured-bedrock category. Those labels do not establish your parcel’s geology. Ask a driller to identify the intended water-bearing formation and compare wells serving the same purpose before setting a footage allowance.</p>"
+  },
+  {
+   "heading": "Reported Denver yields look strong, but the sample is narrow",
+   "html": "<p>Only <strong>126 wells report pump yield</strong>, so the yield figures describe a much narrower group than the permit map. The median is 33.0 gpm, with a middle-half range of 15.0–73.8 gpm. Among those reported yields, 75% are at least 15 gpm and 4% fall in the 1–5 gpm band.</p><p>The reported share under 1 gpm is 0%. That does not guarantee a productive hole on an untested lot. A pump-yield entry is also not the same as sustainable household capacity or legal permission to pump at that rate. For a purchase, get a current pumping test that documents drawdown and recovery, then review the permit’s allowed uses.</p>"
+  },
+  {
+   "heading": "Water is often shallow, without a steady downward trend",
+   "html": "<p>The median static water level is <strong>10 feet below ground</strong>, with the middle half between 7 and 17 feet. These measurements come from 271 records. Static level means where water stands when the well is not being pumped; it is not the well’s total depth or a measure of how much water it can deliver.</p><p>Decade medians are 26 feet in the 1960s, 9 feet in the 2000s, 11 feet in the 2010s and 9 feet in the 2020s. That series does <strong>not show a steadily dropping water table</strong>. It also compares different groups of measurements, not necessarily repeat readings from the same wells. Check site-specific groundwater conditions before planning a basement, excavation or septic system.</p>"
+  },
+  {
+   "heading": "Denver permit activity includes more than residential drilling",
+   "html": "<p>Permit issuance was substantial in the 1990s, with 2,034 records, and the 2010s, with 2,060. The 2020s have 737 permits in this dataset, and the newest permit year is 2025. Issuance is not proof that a well was completed, and this monitoring-heavy history should not be read as a count of new household supplies.</p><p>The largest entry in the driller field is <strong>Authorized (Pe, Pg)</strong>, with 3,204 records; that label should not be treated as a conventional drilling-company name. Other active entries include Ground Exploration Llc (Bender, Joseph T.), with 270, and Layne, Christensen Co. (Tormoehlen, David A.), with 141. Historical activity does not establish current availability or suitability for a domestic project.</p>"
+  },
+  {
+   "heading": "What the Denver drilling estimate actually covers",
+   "html": "<p>The supplied cost model uses Denver Basin sedimentary bedrock and a drilling rate of <strong>$50–$70 per foot</strong>. At the recorded median depth of 29 feet, it puts the drilled hole at about $1,400–$2,000 and a finished well with pump, tank, trenching and electrical at about <strong>$7,400–$14,000</strong>.</p><p>Treat that as a conditional estimate, not a household-well quote. The median comes from a monitoring-heavy dataset, and a permitted domestic source may require a different depth or construction. Request a written scope covering casing, grout, development, testing, access and connection work. Have the contractor identify what happens to the price if the planned depth does not produce a usable supply.</p>"
+  },
+  {
+   "heading": "Denver water-quality and construction risks to investigate",
+   "html": "<p>The environmental map lists <strong>662 PFAS sampling or contamination sites</strong> and <strong>182 EPA Superfund or cleanup sites</strong> within about 10 miles. A mapped site is a reason to investigate, not proof that a nearby well is contaminated. Sampling locations and confirmed contamination are not interchangeable.</p><p>Before buying, obtain current water testing and review relevant cleanup records with a qualified water-quality professional. Ask about PFAS testing as well as routine household-well testing. Inspect the wellhead and construction documentation for casing and grout protection. A favorable nearby yield cannot rule out a low-producing or unsuccessful new hole. For building, coordinate the well, septic layout, drainage and excavation access before committing to a house location.</p>"
+  },
+  {
+   "heading": "Buying a Denver-area lot: verify the usable water source",
+   "html": "<p>Start with the parcel’s actual water arrangement, not the nearest dot on the well map. Confirm whether it has a permitted household well, another type of well or a public-water connection. A monitoring permit does not authorize a household supply, and an exempt household-use permit does not automatically allow every outdoor use.</p><p>Compare construction reports from nearby properties around North Washington, Derby and Welby only when the aquifer, use and site conditions are relevant. Ask DWR about permit eligibility and whether augmentation or other approvals apply. Make the purchase decision depend on documented water rights and permitted uses, a satisfactory pumping test, water-quality results and a workable well-and-septic site plan.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Denver, Adams County?",
+   "a": "Reported depths have a median of 29 feet, with the middle half between 20 and 45 feet. However, monitoring accounts for 69% of permitted uses in this dataset. Those shallow records are not a reliable domestic-well target. Compare nearby household wells in the intended aquifer before asking a driller to price your lot."
+  },
+  {
+   "q": "How much does it cost to drill a well in Denver?",
+   "a": "The supplied model uses $50–$70 per foot. At the 29-foot median depth, that means about $1,400–$2,000 for the hole and $7,400–$14,000 finished with pump, tank, trenching and electrical. Because monitoring wells dominate the records, a new household well may require a different depth and budget. Get a parcel-specific construction quote."
+  },
+  {
+   "q": "How much water do Denver wells produce?",
+   "a": "The median reported pump yield is 33.0 gpm, and the middle half spans 15.0–73.8 gpm. Only 126 wells report yield, so that is a limited sample rather than a guarantee for your property. Get a current pumping test and confirm permitted uses; recorded pump capacity does not establish how much water you may legally use."
+  },
+  {
+   "q": "Is well water safe to drink in Denver, Adams County?",
+   "a": "These records cannot establish whether a particular well is safe. The surrounding environmental map includes 662 PFAS sampling or contamination sites and 182 EPA Superfund or cleanup sites within about 10 miles. Proximity alone does not prove contamination. Obtain current household-water testing, discuss PFAS testing and review nearby cleanup information before relying on the supply."
+  },
+  {
+   "q": "Is the water table dropping around Denver?",
+   "a": "The supplied decade medians do not show a steady decline: depth to water was 26 feet in the 1960s, 9 in the 2000s, 11 in the 2010s and 9 in the 2020s. These are grouped measurements, not necessarily repeated readings of the same wells. The overall median static level is 10 feet below ground."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes on Denver-area properties in Adams County. Coordinate those plans with the lot’s well location, groundwater conditions and permitted water supply.",
+ "_model": "gpt-6-astra",
+ "_usage": {
+  "prompt_tokens": 1437,
+  "completion_tokens": 2206,
+  "total_tokens": 3643,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1434,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 112,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

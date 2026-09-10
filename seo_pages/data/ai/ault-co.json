@@ -1,0 +1,73 @@
+{
+ "title": "Ault Well Depth and Drilling Cost",
+ "meta_description": "Ault wells have a 40-foot median depth, but records range to 800 feet. See yields, water levels, permit history and local costs.",
+ "h1": "What Ault Wells Cost, Produce, and Require",
+ "eyebrow": "Ault well buyer guide",
+ "intro_html": "<p>Ault sits on the plains, where nearby well records show a very different picture from many Colorado mountain and foothill areas. The median reported depth is 40 feet, and most wells are less than 100 feet deep. That does not guarantee a shallow or inexpensive well on a particular parcel. Records also include wells as deep as 800 feet, and the available yield and water-level data come from only part of the permit history.</p><p>This page covers permitted wells within 5 miles of Ault, including local context from Pierce, Eaton, Severance, Nunn, Windsor, and Greeley. Use the information to compare a property with nearby wells, then have a licensed driller verify access, geology, casing, grout, pump sizing, and the applicable Colorado DWR permit requirements.</p>",
+ "sections": [
+  {
+   "heading": "Ault well depths are usually shallow, but the spread matters",
+   "html": "<p>Reported well depth in the Ault area has a 40-foot median. The middle half runs from 30 to 57 feet, which gives a driller a useful starting point for a conventional plains bid. The depth mix is also clear: 88% of wells are under 100 feet, while 4% fall between 100 and 300 feet, 7% between 300 and 600 feet, and 1% exceed 600 feet.</p><p>The outliers are important when evaluating a specific lot. The 90th-percentile depth is 199 feet, and the deepest record reaches 800 feet. Local geology is described in the records as alluvium and plains sedimentary rock, with most permits naming an unnamed or fractured-bedrock aquifer. Neighboring well logs are more useful than a countywide average when setting expectations for your parcel.</p>"
+  },
+  {
+   "heading": "Ault yields look strong, but production is not guaranteed",
+   "html": "<p>Among the 259 wells that report a pump yield, the median is 100.0 gallons per minute. The middle half ranges from 13.0 to 350.0 gallons per minute. Records show 69% producing more than 15 gallons per minute, 27% producing between 5 and 15 gallons per minute, and 3% producing between 1 and 5 gallons per minute. No reported wells are under 1 gallon per minute.</p><p>That is encouraging for a buyer, but it is not a promise for an unbuilt well. Yield records may reflect irrigation and stock wells as well as household wells. The use mix is 45% irrigation, 28% domestic or household, 11% stock, and 18% monitoring. An exempt household-use well is subject to Colorado rules, including the 35-gpm pumping limit, so permitted use and pump design still need review.</p>"
+  },
+  {
+   "heading": "Ault water levels show little change in the available record",
+   "html": "<p>The 112 wells reporting static water levels have a median depth to water of 22 feet. The middle half ranges from 8 to 80 feet below the surface. Those figures can help with pump planning and trench work, but a static level is a measurement from a particular well at a particular time. It is not the same as a guaranteed pumping level.</p><p>The decade comparison does not show a strong dropping trend in this record. Median depth to water was 17 feet in the 1960s and 19 feet in the 2020s. That small difference should not be treated as proof that every parcel is stable. Ask for the date and conditions of nearby measurements, and have the driller consider seasonal variation, nearby irrigation pumping, casing, grout, and the planned pump setting.</p>"
+  },
+  {
+   "heading": "Ault's permit history points to an active drilling area",
+   "html": "<p>Colorado DWR records contain 1,748 permitted wells within the study area, with 1,166 recorded as constructed. A total of 1,233 report a total depth, while 259 report a pump yield and 112 report a static water level. The newest permit year is 2026, so this is not simply an old rural-well snapshot.</p><p>The most active names in the records are Lesh Drilling Inc. (Lesh Jr., Ed), with 312 wells; Authorized (Pe, Pg), with 152; and Quality Well &amp; Pump LLC (Jones, Chris), with 41. These counts describe permit records, not current availability or an endorsement. Before hiring, confirm licensing, insurance, schedule, the written construction scope, and who will handle the DWR filing and pump installation.</p>"
+  },
+  {
+   "heading": "What a new Ault well can cost",
+   "html": "<p>For Ault's alluvium and plains sedimentary rock, the local drilling model uses a typical rate of $35-$55 per foot. At the 40-foot median depth, the drilled hole works out to about $1,400-$2,200. That is only the drilling portion, not the complete water system.</p><p>A finished well including the pump, pressure tank, trenching, and electrical is modeled at about $7,400-$14,200. A bid can move outside that range if the site requires greater depth, difficult access, additional casing or grout, unusual trenching, or changes to the pump and storage design. Ask each driller to separate footage, casing, grout, development, pump equipment, trenching, electrical, testing, and permit-related work so competing bids cover the same items.</p>"
+  },
+  {
+   "heading": "Ault buyers should check water quality, yield, and the building site",
+   "html": "<p>Low yield is not the main warning sign in the reported Ault data, but dry holes and poor production remain possible on an individual parcel. The yield sample covers only 259 wells, and many records are for irrigation rather than household use. A buyer should review neighboring logs, confirm the proposed well location, and make the purchase contract contingent on the inspections and approvals that matter to the property.</p><p>Water quality deserves separate attention. The mapped area within about 10 miles contains 495 PFAS sampling or contamination sites and 1 EPA Superfund or cleanup site. There are 0 historic mine features in the mapped information, but that does not replace a current laboratory test. Check septic separation, drainage, floodplain or access issues, and the intended building footprint. A septic designer should confirm that the lot can support the proposed system before construction.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Ault, Colorado?",
+   "a": "Ault wells in the available records have a 40-foot median depth, with the middle half from 30 to 57 feet. About 88% are under 100 feet. Some are much deeper: the 90th-percentile depth is 199 feet, and the deepest record is 800 feet. Nearby well logs are the best guide for a specific lot."
+  },
+  {
+   "q": "What does it cost to drill a well in Ault?",
+   "a": "The local cost model uses $35-$55 per foot. At Ault's 40-foot median depth, drilling alone is estimated at $1,400-$2,200. A finished system with pump, tank, trenching, and electrical is estimated at $7,400-$14,200. Greater depth, access problems, casing, grout, and site conditions can change the bid."
+  },
+  {
+   "q": "How much water do Ault wells produce?",
+   "a": "Of the 259 Ault-area wells reporting pump yield, the median is 100.0 gallons per minute. The middle half ranges from 13.0 to 350.0 gallons per minute, and 69% report more than 15 gallons per minute. Much of the record is irrigation-related, so those figures do not guarantee household production on a new well."
+  },
+  {
+   "q": "Is well water safe in Ault, Colorado?",
+   "a": "Safety cannot be determined from depth or yield. The mapped area within about 10 miles includes 495 PFAS sampling or contamination sites and 1 EPA Superfund or cleanup site. Have the proposed well tested by a qualified laboratory, review nearby land uses and site history, and retest if conditions change. The records show 0 historic mine features."
+  },
+  {
+   "q": "Is the water table dropping around Ault?",
+   "a": "The available decade data does not show a strong decline. Median static water level was 17 feet below the surface in the 1960s and 19 feet in the 2020s. The comparison includes only 112 wells with reported static levels, so it should not be read as a guarantee for a particular parcel. Seasonal pumping and local conditions still matter."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Ault and nearby Weld County communities with access driveways, site development, new-build septic systems, and custom homes. Bring the well, septic, driveway, and building layout together early so the site can be planned as one project.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1419,
+  "completion_tokens": 2045,
+  "total_tokens": 3464,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1416,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 99,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

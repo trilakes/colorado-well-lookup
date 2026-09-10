@@ -1,0 +1,77 @@
+{
+ "title": "Kiowa Well Depth and Drilling Cost",
+ "meta_description": "Kiowa wells have a 315-foot median depth, 12 gpm median yield, and estimated finished costs of $21,800-$34,000.",
+ "h1": "What Kiowa Wells Cost, Produce, and Require",
+ "eyebrow": "Kiowa well facts",
+ "intro_html": "<p>Buying land near Kiowa means evaluating the well as carefully as the house, driveway, and soil. Records within five miles show a median well depth of 315 feet and a median reported yield of 12.0 gallons per minute. Most permits identify Denver Basin aquifers, including the Upper Dawson and Lower Dawson, while other records name fractured bedrock.</p><p>These figures are useful for planning, but they are not a guarantee for a particular lot. A driller still needs to review the parcel, nearby well logs, the permitted use, and the proposed location before giving a firm recommendation.</p>",
+ "sections": [
+  {
+   "heading": "Kiowa well depth reflects Denver Basin geology",
+   "html": "<p>Kiowa wells are commonly deeper than a shallow domestic well. The median reported depth is 315 feet, and the middle half runs from 235 to 390 feet. That gives a driller a useful starting range for a bid, but not a promised completion depth. A well reaching the 90th-percentile depth is 509 feet, and the deepest record reaches 2,256 feet.</p><p>Nearly half of the wells, 49%, fall between 300 and 600 feet. Another 37% are between 100 and 300 feet, while 8% exceed 600 feet. Only 6% are under 100 feet. The records identify Denver Basin aquifer wells throughout the dataset, with Upper Dawson and Lower Dawson appearing often. Some permits instead name an unnamed or fractured-bedrock aquifer, where results can be less predictable.</p>"
+  },
+  {
+   "heading": "Most Kiowa wells report usable production",
+   "html": "<p>The reported median yield near Kiowa is 12.0 gallons per minute, with the middle half between 10.0 and 15.0 gallons per minute. That is a stronger production profile than many buyers expect from a rural well, but yield is only one part of the water-supply picture. Storage, pump sizing, pressure equipment, and the permitted use also matter.</p><p>Of the records with a pump yield, 71% report 5 to 15 gallons per minute and 26% report more than 15 gallons per minute. Three percent report 1 to 5 gallons per minute, and 0% are under 1 gallon per minute. Ask for the actual well construction and pumping records rather than relying only on a neighborhood average.</p>"
+  },
+  {
+   "heading": "Water levels in Kiowa deserve a closer look",
+   "html": "<p>The median static water level is 140 feet below the ground surface, with the middle half from 98 to 185 feet. This is the resting water level, not the depth of the well and not necessarily the level while pumping. A contractor uses that information to help select pump equipment and estimate the work required to reach the water.</p><p>The decade series moves from 120 feet below surface in the 1980s to 130 feet in the 2010s and 166 feet in the 2020s. That pattern indicates deeper measured water levels in the newer records. It is a warning to investigate, not proof that every Kiowa parcel has a declining water table. Measurement locations, aquifers, well construction, and seasonal conditions can differ.</p>"
+  },
+  {
+   "heading": "Permit history shows steady drilling around Kiowa",
+   "html": "<p>Kiowa has a long permit history. Records show 16 permits from the 1950s, 19 from the 1960s, 108 from the 1970s, and 150 from the 1980s. Activity increased to 296 in the 1990s, 404 in the 2000s, and 431 in the 2010s. The 2020s account for 271 permits so far, with the newest permit year listed as 2025.</p><p>The most frequently represented driller is Hamacher Well Works Inc, also listed with Alan Ray Hamacher, with 382 records. Hier Drilling Co Inc, including Bruce A. Hier, appears on 120. Parker Drilling/Pump Service Inc, including Tommy E. Thrasher, appears on 92. Those names help identify local records, but they are not a substitute for checking current licensing, availability, and references.</p>"
+  },
+  {
+   "heading": "Estimated cost to drill a Kiowa well",
+   "html": "<p>The local cost model uses a typical drilling rate of $50 to $70 per foot in Denver Basin sedimentary bedrock. At the 315-foot median depth, the drilled hole alone works out to about $15,800 to $22,000. That is the excavation portion, not the complete water system.</p><p>A finished well with pump, pressure tank, trenching, and electrical is estimated at $21,800 to $34,000 at the median depth. A deeper-than-expected hole, difficult access, casing and grout requirements, power distance, or unusual site conditions can move the final price higher. Get the bid in writing and ask what happens if the hole must go deeper or the first target does not produce enough water.</p>"
+  },
+  {
+   "heading": "Kiowa buyers should check water, septic, and site risks",
+   "html": "<p>Environmental records show 16 PFAS sampling or contamination sites and 4 EPA Superfund or cleanup sites within about 10 miles. That does not establish contamination at a specific well, but it supports getting a water-quality test and reviewing nearby site history. The mapped records show 0 historic mine features, so mining is not the main risk identified in this dataset.</p><p>Low-yield wells and dry holes remain possible even where the local median looks favorable. Confirm the well location, casing, grout, production test, and static water level. Before building, also verify separation from septic components, property lines, driveways, and the proposed house. DWR permitting, exempt household-use rules, and augmentation requirements can affect what the well may legally supply.</p>"
+  },
+  {
+   "heading": "A practical plan for buying or building near Kiowa",
+   "html": "<p>Start with the parcel's DWR permit and construction records, then compare nearby wells in Kiowa, Elizabeth, Elbert, and Ponderosa Park. Franktown, Brick Center, and The Pinery can provide broader regional context, but the closest wells are usually more useful for estimating depth and aquifer behavior. Look for agreement among depth, yield, water level, and construction details rather than relying on one record.</p><p>For a purchase, make the well inspection and water test part of due diligence. For a new build, have the driller, septic designer, excavator, and electrician coordinate the well location and access before work begins. Confirm the approved use with Colorado DWR. A domestic well may serve household needs, but stock, irrigation, and additional structures can involve different permit conditions or water-right requirements.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Kiowa, Colorado?",
+   "a": "The median reported well depth within five miles of Kiowa is 315 feet. The middle half of recorded wells runs from 235 to 390 feet, while 49% fall between 300 and 600 feet. Some wells are much deeper: the 90th-percentile depth is 509 feet, and the deepest record reaches 2,256 feet."
+  },
+  {
+   "q": "What does a Kiowa well typically produce?",
+   "a": "The median reported pump yield near Kiowa is 12.0 gallons per minute, with the middle half between 10.0 and 15.0 gallons per minute. Seventy-one percent of reported yields are between 5 and 15 gallons per minute, and 26% exceed 15 gallons per minute. A pumping test for the specific well is still important."
+  },
+  {
+   "q": "How much does it cost to drill a well in Kiowa?",
+   "a": "The local model uses $50 to $70 per foot. At the 315-foot median depth, drilling the hole is estimated at $15,800 to $22,000. A finished system with pump, tank, trenching, and electrical is estimated at $21,800 to $34,000. Greater depth, access problems, and site-specific construction can increase the final bid."
+  },
+  {
+   "q": "Is well water safe to drink in Kiowa?",
+   "a": "A local well record does not prove drinking-water safety. Within about 10 miles, records identify 16 PFAS sampling or contamination sites and 4 EPA Superfund or cleanup sites. Have the individual well tested before purchase or occupancy, and review its construction and location. Test results, not the neighborhood median, determine whether treatment is needed."
+  },
+  {
+   "q": "Are Kiowa water levels getting lower?",
+   "a": "The median measured static water level was 120 feet below surface in the 1980s, 130 feet in the 2010s, and 166 feet in the 2020s. That series shows deeper measured water levels in newer records. It does not prove uniform decline at every property because wells, aquifers, measurement methods, and conditions vary."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Kiowa and nearby Elbert County communities with access driveways, site development, new-build septic systems, and custom homes. Their team can help coordinate the site work that must fit around a new or existing well.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1430,
+  "completion_tokens": 2269,
+  "total_tokens": 3699,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1427,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 138,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

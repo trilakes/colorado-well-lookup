@@ -1,0 +1,77 @@
+{
+ "title": "Boulder Well Depth and Drilling Cost",
+ "meta_description": "Boulder wells have a 38 ft median depth, 10 gpm median yield, and fractured-bedrock drilling costs that vary by site.",
+ "h1": "Boulder, Colorado Well Depth, Yield, and Cost Guide",
+ "eyebrow": "Boulder well facts",
+ "intro_html": "<p>Buying land or a home in Boulder County means looking past the house and checking the water supply. Permit records within 5 miles of Boulder show a wide range of well depths because this is mountain terrain with fractured granite and gneiss, along with some alluvial and Denver Basin wells.</p><p>The numbers below describe permitted wells near Boulder, including Valmont, Pine Brook Hill, Seven Hills, Paragon Estates, Gunbarrel, and Tall Timber. They can help you compare a property with its neighbors, but the well permit, construction report, water-rights status, and a site-specific drilling bid still control the decision.</p>",
+ "sections": [
+  {
+   "heading": "Boulder well depth depends heavily on the ground beneath the lot",
+   "html": "<p>The median reported well depth near Boulder is 38 feet, but that number needs context. The middle half of reported wells runs from 20 to 200 feet, and the 90th-percentile depth is 351 feet. About 63% are under 100 feet, while 20% fall between 100 and 300 feet, 15% between 300 and 600 feet, and 3% exceed 600 feet. The deepest recorded well is 2,839 feet.</p><p>Many permits identify an unnamed or fractured-bedrock aquifer. In granite and gneiss, water commonly follows fractures rather than a uniform underground layer, so two nearby lots can produce very different drilling results. A median depth is useful for early budgeting, not a promise that your driller will reach water at 38 feet.</p>"
+  },
+  {
+   "heading": "Most Boulder wells make useful flow, but low-yield wells still occur",
+   "html": "<p>Among the wells reporting pump yield, the median is 10.0 gallons per minute, with the middle half between 6.0 and 12.0 gallons per minute. About 67% report yields from 5 to 15 gallons per minute, and 19% report more than 15 gallons per minute. That is generally a workable range for a household, assuming the well, storage, plumbing, and permitted use all fit together.</p><p>Low production is not absent: 12% report 1 to 5 gallons per minute and 2% report under 1 gallon per minute. A buyer should ask for the actual well test, not rely on a neighboring address or a regional median. Also confirm the DWR permit allows the intended household, irrigation, or other use.</p>"
+  },
+  {
+   "heading": "Boulder water levels are shallow in the available records",
+   "html": "<p>The reported median static water level is 11 feet below land surface, with the middle half between 6 and 27 feet. That describes the water level when measured, not the depth of the well and not necessarily the water level during pumping. A shallow static level can still come from a well with limited production.</p><p>The decade series does not show a simple long-term decline. Median depth to water was 16 feet in the 1950s, 22 in the 1960s, 23 in the 1970s, 6 in the 2000s, 9 in the 2010s, and 10 in the 2020s. The older and newer records are not directly comparable in every respect, so use a current measurement from the property when evaluating a purchase.</p>"
+  },
+  {
+   "heading": "Permit history shows continuing well activity around Boulder",
+   "html": "<p>Boulder has a long well record, with 5,919 wells in the Colorado DWR permit data. Of those, 3,488 are recorded as constructed, 3,886 report total depth, 601 report pump yield, and 207 report static water level. The records include domestic or household wells at 51%, monitoring wells at 31%, stock wells at 3%, and irrigation wells at 2%.</p><p>Permits were issued across every decade shown in the records, with the largest count in the 1990s at 902. The newest permit year is 2025. The most active drillers listed are Authorized (Pe, Pg), Ground Water Systems Inc. (Wilson, Richard R.), and Norris &amp; Sons (Norris, T A). A permit search can reveal what has been built nearby, but it does not replace reviewing the subject well’s own construction report.</p>"
+  },
+  {
+   "heading": "Budget Boulder drilling by footage, then add the completion work",
+   "html": "<p>For fractured mountain bedrock around Boulder, the drilling model uses $65 to $100 per foot. At the 38-foot median depth, the drilled hole works out to about $2,500 to $3,800. That is only the hole. A finished well with pump, pressure tank, trenching, and electrical is modeled at about $8,500 to $15,800.</p><p>Actual bids can move outside that range when the site needs a deeper hole, difficult access, extra casing or grout, or more extensive trenching. Ask the driller to separate footage, casing, grout, pump equipment, testing, electrical, and site restoration. Comparing nearby completed wells helps establish a local expectation, while a driller’s proposal should explain what happens if the first hole has inadequate production.</p>"
+  },
+  {
+   "heading": "Check contamination, dry-hole exposure, and the lot layout before closing",
+   "html": "<p>Water quality deserves its own investigation. Within about 10 miles of Boulder, the mapped records include 193 PFAS sampling or contamination sites, 588 historic mine features, and 66 EPA Superfund or cleanup sites. Those are screening flags, not proof that a particular well is contaminated. Test the property’s water through a qualified laboratory and review nearby land uses, mine history, and any prior sampling.</p><p>Low yield and dry-hole risk are harder to solve after construction. Confirm the proposed well location can meet setbacks from septic components and property boundaries, and make sure the lot has room for a replacement area. A new home may also require an augmentation plan in an over-appropriated basin. Have the county, DWR, septic professional, and builder review the plan together before excavation begins.</p>"
+  },
+  {
+   "heading": "Use neighboring records to make a Boulder lot decision",
+   "html": "<p>Before buying, pull the DWR permit and construction records for the property and compare them with wells in Valmont, Pine Brook Hill, Seven Hills, Paragon Estates, Gunbarrel, or Tall Timber as appropriate. Look for depth, reported yield, static water level, aquifer description, casing and grout details, and the permitted use. The nearby data can show whether your proposed location sits in a consistent pocket or a highly variable fractured-rock area.</p><p>For a build, line up the well location, septic system, driveway, utility trench, and house footprint before drilling. For an existing home, collect a recent flow or yield test and laboratory water test, then check the pump and pressure equipment. The practical goal is not finding an average Boulder well; it is proving that this lot has enough legal, usable, and maintainable water for the planned property.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Boulder, Colorado?",
+   "a": "The median reported well depth within 5 miles of Boulder is 38 feet. The middle half runs from 20 to 200 feet, but fractured granite and gneiss create substantial variation. About 63% are under 100 feet, while the deepest recorded well is 2,839 feet. Use neighboring construction records to refine a site-specific drilling expectation."
+  },
+  {
+   "q": "What does it cost to drill a well in Boulder?",
+   "a": "The drilling model for Boulder’s fractured mountain bedrock is $65 to $100 per foot. At the 38-foot median depth, the drilled hole is modeled at about $2,500 to $3,800. A finished well, including pump, tank, trenching, and electrical, is modeled at about $8,500 to $15,800. Difficult access or greater depth can change the bid."
+  },
+  {
+   "q": "How much water do Boulder wells produce?",
+   "a": "Reported well yields have a median of 10.0 gallons per minute, with the middle half from 6.0 to 12.0 gallons per minute. About 67% report 5 to 15 gallons per minute. Low-yield wells remain possible: 12% report 1 to 5 gallons per minute and 2% report under 1 gallon per minute."
+  },
+  {
+   "q": "Is well water safe to drink in Boulder?",
+   "a": "Permit records do not prove that a particular well is safe to drink. Within about 10 miles, mapped records include 193 PFAS sampling or contamination sites, 588 historic mine features, and 66 EPA Superfund or cleanup sites. Test the property’s water through a qualified laboratory and review local mine, industrial, and prior sampling information before relying on it."
+  },
+  {
+   "q": "What should I check before buying a home on a Boulder well?",
+   "a": "Review the property’s DWR permit, construction report, permitted use, well yield, static water level, pump condition, and recent water test. Compare nearby wells because fractured-bedrock results vary. Also confirm septic setbacks, replacement-area space, and water-rights requirements. A new home may need an augmentation plan in an over-appropriated basin, so review the plan before closing."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Boulder-area projects with access driveways, site development, new-build septic systems, and custom homes. Their early site review can help coordinate the well, septic system, utilities, and building layout.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1454,
+  "completion_tokens": 2178,
+  "total_tokens": 3632,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1451,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 93,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

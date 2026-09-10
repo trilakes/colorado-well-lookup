@@ -1,0 +1,77 @@
+{
+ "title": "Del Norte Well Depth and Drilling Cost",
+ "meta_description": "Del Norte wells have a 75-foot median depth, with finished-well costs commonly modeled at $9,800-$17,600.",
+ "h1": "Del Norte, Colorado Well Depth, Yield, and Cost",
+ "eyebrow": "Del Norte well reference",
+ "intro_html": "<p>Buying land or a home near Del Norte means looking beyond the listing’s statement that a property has a well. The local permit record shows how deep nearby wells are, what they report for production, and how much variation a driller may encounter. Within 5 miles of Del Norte, Colorado, the records include 877 permitted wells, although only 600 are recorded as constructed and 154 report a pump yield.</p><p>Most permits name an unnamed or fractured-bedrock aquifer, while some draw from alluvial or unconfined San Luis Valley groundwater. That mix matters when comparing a shallow existing well with a proposed new well. Use these figures to set expectations, then verify the specific parcel, neighboring wells, water rights, septic layout, and permit requirements before closing or building.</p>",
+ "sections": [
+  {
+   "heading": "Del Norte well depths are usually shallow, but the range is wide",
+   "html": "<p>The median recorded well depth near Del Norte is 75 feet. The middle half runs from 39 to 152 feet, meaning half of the reported wells fall inside that range. A driller bidding a typical site may therefore be working with a relatively shallow hole, but should not treat 75 feet as a guarantee.</p><p>The depth mix shows the spread clearly: 58% of wells are under 100 feet, 29% are 100-300 feet, 12% are 300-600 feet, and 1% are deeper than 600 feet. The 90th-percentile depth is 302 feet, and the deepest record reaches 1,100 feet. Mixed sedimentary and alluvial ground can change the drilling plan quickly, so a bid should state what happens if the target depth is exceeded.</p>"
+  },
+  {
+   "heading": "Reported Del Norte yields are generally strong",
+   "html": "<p>Among the 154 wells that report a pump yield, the median is 15.0 gallons per minute, with the middle half between 10.0 and 15.0 gallons per minute. The reported distribution is favorable for many household uses: 66% produce more than 15 gallons per minute, 31% produce 5-15 gallons per minute, and 3% produce 1-5 gallons per minute. No reported wells fall under 1 gallon per minute.</p><p>These are permit-record results, not a promise for an unbuilt well or a guarantee for every existing pump. Yield testing, storage capacity, pump sizing, and the well’s permitted use still matter. A domestic well may be subject to the 35-gallon-per-minute exempt-well pumping limit, and irrigation or expanded use can involve separate water-right requirements.</p>"
+  },
+  {
+   "heading": "Water levels near Del Norte do not show a simple falling trend",
+   "html": "<p>The reported median static water level is 15 feet below the surface, with the middle half between 12 and 60 feet. That is useful for estimating pump and trench conditions, but static level is not the same as the water available during pumping. A shallow water level can also vary with season, recharge, nearby pumping, and the condition of the well.</p><p>The decade comparison does not suggest a dropping table in these records. The median measured level was 24 feet below surface in the 2010s and 13 feet in the 2020s, so the more recent reported median is shallower. This is a comparison of available measurements, not a basin-wide trend study. Ask for the actual well log, recent pumping information, and neighboring measurements before relying on the number for a new lot.</p>"
+  },
+  {
+   "heading": "Permit history points to long local drilling experience",
+   "html": "<p>Del Norte’s permit record includes activity across many decades, with the largest group issued in the 2000s at 180 permits. The record shows 147 permits from the 1990s, 114 from the 1970s, 85 from the 2020s, 71 from the 2010s, 64 from the 1980s, 22 from the 1960s, and 17 from the 1950s. The newest permit year is 2026.</p><p>The most frequent named driller in these records is Valley Pump Company (Self, Clinton L.) with 93 wells, followed by L D Spencer Drilling And Pump (Spencer, Lonnie D.) with 70. Owner records account for 39. Those names show who appears often in the permit data, not who is available or best for your project. Confirm licensing, insurance, references, scope, and the testing included in a current proposal.</p>"
+  },
+  {
+   "heading": "A Del Norte well budget starts with depth, not the pump package",
+   "html": "<p>For the mixed sedimentary and alluvial ground around Del Norte, the drilling model uses $50-$75 per foot. At the 75-foot median depth, the drilled hole models to about $3,800-$5,600. A finished system including the pump, pressure tank, trenching, and electrical models to about $9,800-$17,600.</p><p>That range is a planning figure, not a fixed bid. Casing, grout, difficult access, extra depth, water testing, rock or cobbles, and connection details can change the total. Have each contractor separate drilling, casing and grout, development, pump equipment, electrical, trenching, and testing. A shallow hole can still require substantial site work, and a low initial drilling price may not represent the complete operating system.</p>"
+  },
+  {
+   "heading": "Check water quality, dry-hole exposure, and the building layout",
+   "html": "<p>The local records identify 771 wells with an unnamed or fractured-bedrock aquifer, 37 alluvial wells, and 31 wells in the unconfined San Luis Valley aquifer. Fractured-bedrock water can be unpredictable over short distances even when nearby wells look good. A dry hole or disappointing yield remains possible, so investigate neighboring logs before buying and ask how the contract handles an unsuccessful hole.</p><p>Within about 10 miles, mapped environmental information includes 7 PFAS sampling or contamination sites, 12 historic mine features, and 5 EPA Superfund or cleanup sites. This does not establish contamination at your parcel, but it supports testing the well water and reviewing site history. Place the well, septic system, driveway, house, and backup construction areas together on a sketch before excavation. Septic setbacks, access, drainage, and future repairs can affect the usable building area.</p>"
+  },
+  {
+   "heading": "What to verify before buying or building near Del Norte",
+   "html": "<p>Start with the Colorado Division of Water Resources permit and well construction records for the exact property. Confirm the permitted use, total depth, static level, pump test, production equipment, and any required augmentation plan. Domestic or household use is the main recorded use at 69%, while stock appears on 33% and irrigation on 14%; those categories can overlap, so do not assume a household permit covers every intended use.</p><p>For vacant land, obtain a site-specific driller’s estimate and confirm truck access, power, trench route, and septic feasibility before making the purchase nonrefundable. For an existing home, have the well flow, pressure tank, pump, electrical controls, and water quality checked. Compare the parcel with nearby records in Gerrard, Monte Vista, Center, South Fork, or other nearby areas only as context; the exact lot and aquifer conditions control the decision.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Del Norte, Colorado?",
+   "a": "The median recorded well depth within 5 miles of Del Norte is 75 feet. The middle half runs from 39 to 152 feet. Still, the local range is broad: 29% are 100-300 feet, 12% are 300-600 feet, and the deepest record is 1,100 feet. Use nearby logs to refine an estimate for a specific parcel."
+  },
+  {
+   "q": "How much does it cost to drill a well in Del Norte?",
+   "a": "The local cost model uses $50-$75 per foot in mixed sedimentary and alluvial ground. At the 75-foot median depth, the drilled hole models to about $3,800-$5,600. A finished well with pump, tank, trenching, and electrical models to about $9,800-$17,600. A contractor should confirm access, casing, grout, depth, and testing before giving a firm price."
+  },
+  {
+   "q": "How much water do wells produce near Del Norte?",
+   "a": "Of the 154 wells with reported pump yields, the median is 15.0 gallons per minute and the middle half is 10.0-15.0 gallons per minute. Reported results show 66% above 15 gallons per minute and 3% at 1-5 gallons per minute. These records guide expectations, but a new well needs its own yield test and properly sized storage and pump."
+  },
+  {
+   "q": "Is well water safe to drink in Del Norte?",
+   "a": "The permit map cannot certify drinking-water safety. Nearby mapped environmental information includes 7 PFAS sampling or contamination sites, 12 historic mine features, and 5 EPA Superfund or cleanup sites. Test an existing or new well for the conditions relevant to its location, and repeat testing after ownership changes, repairs, flooding, or unusual taste, odor, or color."
+  },
+  {
+   "q": "Is the water table dropping near Del Norte?",
+   "a": "The available decade medians do not show a simple decline. Reported static water level was 24 feet below surface in the 2010s and 13 feet in the 2020s, while the overall median is 15 feet and the middle half is 12-60 feet. These are recorded measurements, not a basin-wide study, so review the individual well logs and current conditions."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Del Norte and surrounding Rio Grande County sites. The company handles access driveways, site development, new-build septic systems, and custom homes.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1407,
+  "completion_tokens": 2256,
+  "total_tokens": 3663,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1404,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 87,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

@@ -1,0 +1,73 @@
+{
+ "title": "Greeley Well Depth and Drilling Cost",
+ "meta_description": "Greeley wells have a 32 ft median depth; local drilling estimates run $7,100-$13,800 for a finished well.",
+ "h1": "Greeley, Colorado Well Depth, Yield, and Cost",
+ "eyebrow": "Greeley well records explained",
+ "intro_html": "<p>Buying land around Greeley means looking past the presence of a well permit. The local records show shallow wells overall, strong reported yields, and a large amount of monitoring-well data mixed with domestic, stock, and irrigation records. That makes the basic statistics useful, but not a substitute for checking the specific parcel and nearby wells.</p><p>This page covers permitted wells within 5 miles of Greeley in Weld County. Nearby reference points include Garden City, Evans, La Salle, Severance, Eaton, and Milliken. Use the information to frame a driller’s bid, evaluate water risk, and decide what records to request before buying or building.</p>",
+ "sections": [
+  {
+   "heading": "Greeley wells are usually shallow",
+   "html": "<p>The median reported well depth near Greeley is 32 feet. The middle half runs from 22 to 50 feet, and 91% of wells are under 100 feet. The 90th percentile is 87 feet, so a well much deeper than that is outside the common local pattern, though the deepest record reaches 900 feet.</p><p>For a buyer, that range gives a useful starting point for a drilling estimate, not a guaranteed target. Local ground includes alluvium and plains sedimentary rock, while permits also name unnamed or fractured-bedrock aquifers. Conditions can change from one lot to the next. A driller should review nearby completion records, casing and grout requirements, and the intended household or irrigation use before setting a bid.</p>"
+  },
+  {
+   "heading": "Reported yields look strong, but the sample is limited",
+   "html": "<p>Only 142 wells in the records report a pump yield, so treat the yield statistics as directional rather than a promise for every parcel. Among those reports, the median yield is 15.0 gallons per minute, with the middle half from 10.5 to 291.2 gallons per minute. Seventy percent report more than 15 gallons per minute.</p><p>Low-producing wells are present: 1% report under 1 gallon per minute, 6% report 1 to 5 gallons per minute, and 23% report 5 to 15 gallons per minute. A result under 1 gallon per minute can materially affect storage, household use, and future plans. Ask for the well test, pump information, and the permit’s approved use. An exempt household-use well is generally subject to Colorado’s 35 gallon-per-minute pumping limit.</p>"
+  },
+  {
+   "heading": "The water level is close to the surface",
+   "html": "<p>Of the 174 records reporting a static water level, the median depth to water is 15 feet. The middle half is 10 to 20 feet below the surface. That shallow water level helps explain why many local wells are not deep, but it also means construction planning needs to account for groundwater close to the surface.</p><p>The decade figures do not show a dropping water table in this dataset. The median static level was 16 feet below the surface in the 2010s and 14 feet in the 2020s, meaning the more recent median is slightly shallower. These are measurements from different wells and dates, not a continuous monitoring series. Confirm current conditions at the property, especially before designing a basement, septic system, or deep excavation.</p>"
+  },
+  {
+   "heading": "Greeley has a long permit history and several recurring drillers",
+   "html": "<p>The records contain 2,099 permitted wells, with 1,209 recorded as constructed. Permit activity spans from the 1950s through the newest permit year of 2025. The busiest decades in this record are the 1990s with 372 permits, the 2020s with 364, and the 2000s with 287. That history gives buyers a substantial pool of nearby records to compare.</p><p>The most active driller entries are Authorized (Pe, Pg), with 669 records, followed by Lesh Drilling Inc. (Lesh Jr., Ed), with 91, and Drilling Engineers Inc. (Smith, Chester C.), with 76. These are permit-record names, not endorsements. Check the current license, insurance, references, and proposed completion details before hiring anyone. A new well also needs the correct Colorado DWR permit and approved use.</p>"
+  },
+  {
+   "heading": "A median-depth Greeley well starts with a manageable drilling estimate",
+   "html": "<p>For alluvium and plains sedimentary rock near Greeley, the drilling model uses $35 to $55 per foot. At the local median depth of 32 feet, the drilled hole works out to about $1,100 to $1,800. That is only the drilling portion.</p><p>A finished well with pump, pressure tank, trenching, and electrical is estimated at about $7,100 to $13,800 at that median depth. The price can change when the actual site requires more depth, different casing or grout, difficult access, additional trenching, or a different pump setup. Get the bid separated into drilling, casing, pump, electrical, trenching, testing, and permit-related work so a low initial number does not hide the complete project cost.</p>"
+  },
+  {
+   "heading": "Check water quality, dry-hole risk, and the building layout",
+   "html": "<p>There are 1914 PFAS sampling or contamination sites mapped within about 10 miles, along with 5 EPA Superfund or cleanup sites and 2 historic mine features. These mapped sites do not prove a particular parcel is contaminated, but they justify a water-quality review. Test an existing well and ask about nearby environmental records before relying on the water.</p><p>Low yield and dry holes remain possible even where the local median looks favorable. Confirm the well’s construction, pump yield, static level, and permitted use. Septic setbacks, well access for a rig, electrical service, storage, and surface drainage all affect a building plan. On rural land, the well and septic locations should be evaluated together before house placement or excavation begins.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Greeley, Colorado?",
+   "a": "The median reported well depth within 5 miles of Greeley is 32 feet. The middle half runs from 22 to 50 feet, and 91% of recorded wells are under 100 feet. Depth still varies by parcel and aquifer. The deepest record is 900 feet, so a shallow local pattern does not guarantee a shallow well on a specific lot."
+  },
+  {
+   "q": "What does it cost to drill a well in Greeley?",
+   "a": "The local model uses $35 to $55 per foot in alluvium and plains sedimentary rock. At the 32-foot median depth, drilling alone is about $1,100 to $1,800. A finished well with pump, tank, trenching, and electrical is estimated at $7,100 to $13,800. Ask for a complete written bid because access and site design can change the total."
+  },
+  {
+   "q": "How much water do Greeley wells produce?",
+   "a": "Among the 142 wells reporting pump yield, the median is 15.0 gallons per minute. The middle half ranges from 10.5 to 291.2 gallons per minute, and 70% report more than 15 gallons per minute. Results are not available for every recorded well, and 1% report under 1 gallon per minute, so request the specific well test before buying."
+  },
+  {
+   "q": "Is well water safe to drink in Greeley?",
+   "a": "A permit record does not establish that water is safe to drink. Within about 10 miles, the map includes 1914 PFAS sampling or contamination sites, 5 EPA Superfund or cleanup sites, and 2 historic mine features. Those locations do not prove a parcel is affected. Test the property’s water and review environmental records before using it for household purposes."
+  },
+  {
+   "q": "Is the water table dropping near Greeley?",
+   "a": "This dataset does not show a dropping median water table. Reported static water levels have a median of 16 feet below the surface for measurements in the 2010s and 14 feet in the 2020s, which is slightly shallower in the newer decade. The records cover different wells and dates, so they are not a continuous trend for every property."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Greeley and nearby Weld County communities with access driveways, site development, new-build septic systems, and custom homes. Bring the well, septic, access, and house-site decisions together before construction starts.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1422,
+  "completion_tokens": 1988,
+  "total_tokens": 3410,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1419,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 109,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

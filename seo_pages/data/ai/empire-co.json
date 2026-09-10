@@ -1,0 +1,77 @@
+{
+ "title": "Empire Well Depth and Drilling Cost",
+ "meta_description": "Empire wells have a median depth of 80 feet, but fractured mountain bedrock can make drilling and finishing costs vary widely.",
+ "h1": "What Empire, Colorado Wells Are Really Like",
+ "eyebrow": "Empire well buyer guide",
+ "intro_html": "<p>Buying land in Empire means understanding mountain-bedrock wells, not relying on a countywide average. Within 5 miles of town, permitted wells have a <strong>median reported depth of 80 feet</strong>, with the middle half between 50 and 195 feet. That looks manageable on paper, but fractured granite and gneiss can produce very different results from one lot to the next.</p><p>The records show a median reported yield of <strong>10.0 gallons per minute</strong>, while only 44 wells report a static water level. Use these figures to screen a property and compare bids, not to guarantee what a new hole will produce.</p>",
+ "sections": [
+  {
+   "heading": "Empire well depths depend on fractured mountain rock",
+   "html": "<p>Among 483 wells reporting total depth, the median is 80 feet. The middle half runs from 50 to 195 feet, while the 90th percentile reaches 385 feet and the deepest record is 1,100 feet. Depths are distributed unevenly: 55% are under 100 feet, 28% fall between 100 and 300 feet, 13% between 300 and 600 feet, and 4% exceed 600 feet.</p><p>For a drilling bid, the 80-foot median is a starting point, not a promise. Fractured crystalline mountain rock can change quickly across short distances. Neighboring wells in Empire, Georgetown, Silver Plume, and St. Mary's are useful evidence, but your driller still needs to evaluate the actual access, geology, casing, and grout requirements on your parcel.</p>"
+  },
+  {
+   "heading": "Most Empire wells report usable household yields",
+   "html": "<p>Only 165 wells report pump yield, so the yield data is less complete than the depth data. Those reports show a 10.0 gpm median, with the middle half between 6.0 and 12.0 gpm. Seventy-six percent report between 5 and 15 gpm, and 15% report more than 15 gpm. Nine percent fall between 1 and 5 gpm, while 1% are under 1 gpm.</p><p>That distribution is generally encouraging for domestic use, but a yield test is still important. A low-producing well may work for a modest household with storage, yet be a poor fit for extensive irrigation or a large home. Ask for the well construction report, pump test, and any production limits before relying on a seller's verbal estimate.</p>"
+  },
+  {
+   "heading": "Empire water levels vary, and the recent record is higher",
+   "html": "<p>Only 44 permitted wells report a static water level. The median depth to water is 30 feet, with the middle half between 18 and 60 feet. That is useful for estimating pump placement and trench work, but it is not a complete groundwater map for Empire.</p><p>The median measured level was 30 feet below ground surface in the 1970s, 22 feet in the 2010s, and 45 feet in the 2020s. The small reporting set does not establish a simple long-term decline. It does show that measured conditions vary, with the 2020s median deeper than the earlier decade values. Have a driller review nearby levels and confirm pump settings for the specific lot.</p>"
+  },
+  {
+   "heading": "Empire's permit history shows long-running domestic use",
+   "html": "<p>Colorado DWR records include 942 permitted wells within 5 miles of Empire, with 482 recorded as constructed. Domestic or household use accounts for 78% of the listed use mix. Permits were issued across several decades, including 134 in the 1970s, 125 in the 1980s, 166 in the 1990s, and 230 in the 2000s. The newest permit year is 2025.</p><p>The most active drillers in these records are Mcpherson Drilling Company, including Benny Don Mcpherson, with 88 wells; Living Water Systems Inc., including Robert Goble, with 44; and Aspen Drilling Company Inc., including Leroy J. Beery, with 37. Permit history helps identify local experience, but verify current licensing, references, and the scope of any proposed work.</p>"
+  },
+  {
+   "heading": "What drilling and a finished well cost near Empire",
+   "html": "<p>Empire's fractured granite and gneiss are priced differently from easy alluvial ground. The drilling model uses $65 to $100 per foot. At the 80-foot median depth, the drilled hole alone works out to about $5,200 to $8,000.</p><p>A finished system, including the pump, pressure tank, trenching, and electrical work, is modeled at about $11,200 to $20,000 at that median depth. A deeper hole, difficult access, extra casing or grout, and challenging utility routes can change the final bid. Ask contractors to separate drilling, casing, pump equipment, electrical, trenching, testing, and permits so competing estimates are comparable.</p>"
+  },
+  {
+   "heading": "Mine history, water quality, and building constraints deserve a close look",
+   "html": "<p>Within about 10 miles of Empire, the mapped environmental inventory includes 10 PFAS sampling or contamination sites, 3,113 historic mine features, and 18 EPA Superfund or cleanup sites. These mapped features do not prove that a particular well is contaminated, but they are a reason to check the lot's history, nearby drainage, and available water-quality records.</p><p>Low yield and dry holes remain practical risks in fractured bedrock, even where nearby wells perform well. Check well spacing, septic setbacks, building envelopes, access for a rig, and room for tanks and electrical service. A Colorado DWR permit controls the authorized use; an exempt household-use well also has a 35 gpm pumping limit. In an over-appropriated basin, an augmentation plan may be required.</p>"
+  },
+  {
+   "heading": "A sensible Empire lot review starts with nearby wells",
+   "html": "<p>Before buying, collect the DWR permit and construction reports for wells closest to the property, including records around Downieville-Lawson-Dumont, Central, and Idaho Springs when they are geologically relevant. Compare reported depths, yields, static levels, aquifer descriptions, and drilling dates. The local records mostly identify unnamed or fractured-bedrock conditions: 905 wells use that description, while 6 identify Fractured Crystalline and 4 identify Quaternary Alluvium. No reported wells use a Denver Basin aquifer.</p><p>For a buildable lot, get a site-specific drilling opinion before closing if possible. Confirm access, likely casing and grout, septic layout, storage needs, and the cost of getting power to the well. If the property already has a well, make the sale contingent on reviewing the permit, pump test, water quality, and equipment condition.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Empire, Colorado?",
+   "a": "The median reported well depth within 5 miles of Empire is 80 feet. The middle half runs from 50 to 195 feet, but 13% of reported wells are between 300 and 600 feet and 4% exceed 600 feet. Fractured granite and gneiss make the nearby records more useful than a single countywide assumption."
+  },
+  {
+   "q": "What does it cost to drill a well in Empire?",
+   "a": "The local drilling model is $65 to $100 per foot. At the 80-foot median depth, drilling the hole is estimated at about $5,200 to $8,000. A finished well with pump, tank, trenching, and electrical work is modeled at about $11,200 to $20,000. Access, depth, casing, grout, and rock conditions can change the bid."
+  },
+  {
+   "q": "How much water do Empire wells produce?",
+   "a": "Among the 165 wells with reported pump yields, the median is 10.0 gallons per minute and the middle half is 6.0 to 12.0 gpm. Seventy-six percent report between 5 and 15 gpm. The yield records are incomplete, so a buyer should request a pump test rather than assume the median applies to a new well."
+  },
+  {
+   "q": "Is well water safe to drink in Empire, Colorado?",
+   "a": "Safety cannot be determined from depth or yield alone. Within about 10 miles, records map 10 PFAS sampling or contamination sites, 3,113 historic mine features, and 18 EPA Superfund or cleanup sites. Test the actual well for relevant contaminants, review nearby mine and site history, and retest after construction or changes in water quality."
+  },
+  {
+   "q": "Are Empire wells getting deeper or running lower?",
+   "a": "The 44 reported static water levels have a median depth to water of 30 feet, with a middle half of 18 to 60 feet. Median measurements were 30 feet in the 1970s, 22 feet in the 2010s, and 45 feet in the 2020s. That limited record shows variation and a deeper recent median, but it does not prove a basin-wide decline."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Empire and nearby mountain communities with access driveways, site development, new-build septic systems, and custom homes. Their early site review can help coordinate the well, septic, driveway, and building plans on a difficult lot.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1442,
+  "completion_tokens": 2208,
+  "total_tokens": 3650,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1439,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 159,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

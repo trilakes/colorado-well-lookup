@@ -1,0 +1,77 @@
+{
+ "title": "Mount Crested Butte Well Depth and Drilling Cost",
+ "meta_description": "Mount Crested Butte wells have a 108 ft median depth, with drilling costs shaped by fractured mountain bedrock.",
+ "h1": "Mount Crested Butte Well Depth, Yield, and Cost",
+ "eyebrow": "Local well facts and costs",
+ "intro_html": "<p>Buying or building near Mount Crested Butte means dealing with fractured mountain bedrock, not a uniform shallow groundwater basin. The local permit record shows 852 wells within the study area, but only 446 report total depth and 163 report pump yield. That makes the available numbers useful for planning, not a guarantee for one lot.</p><p>Most permits identify an unnamed or fractured-bedrock aquifer. Nearby Crested Butte is about 3 miles away, while Almont, Marble, Aspen, Snowmass Village, and Redstone provide broader local context. The practical way to reduce risk is to compare nearby well records, confirm water rights and permit limits with Colorado DWR, and have a driller price the actual access and geology.</p>",
+ "sections": [
+  {
+   "heading": "What well depth looks like around Mount Crested Butte",
+   "html": "<p>The median reported well depth near Mount Crested Butte is 108 feet. The middle half runs from 45 to 200 feet, meaning many wells fall in that range, but the spread is substantial. The 90th-percentile depth is 400 feet, and the deepest recorded well reaches 1,000 feet.</p><p>Depth distribution is also useful when reviewing a drilling bid: 46% of wells are under 100 feet, 36% are 100 to 300 feet, 14% are 300 to 600 feet, and 4% exceed 600 feet. In fractured granite and gneiss, a nearby shallow well does not guarantee the same result on your parcel. A driller should use neighboring records, road access, proposed well location, and the lot's bedrock conditions when estimating footage.</p>"
+  },
+  {
+   "heading": "Expected well yield in the Crested Butte mountain bedrock",
+   "html": "<p>Reported pump yield has a 10.0 gallons-per-minute median, with the middle half between 4.8 and 15.0 gallons per minute. The distribution is generally favorable on paper: 40% of reported wells produce more than 15 gallons per minute, while 35% fall between 5 and 15 gallons per minute.</p><p>Still, production varies sharply in fractured rock because water moves through cracks rather than a consistent layer. One percent of reported wells produce under 1 gallon per minute, and 25% produce 1 to 5 gallons per minute. Ask for the pumping test, recovery information, and permitted use instead of relying only on a neighbor's yield. A domestic well also needs an appropriate pressure system, storage, and water-quality testing.</p>"
+  },
+  {
+   "heading": "Water levels and what the local measurements suggest",
+   "html": "<p>The median static water level is 23 feet below ground surface, with the middle half between 12 and 80 feet. That describes the depth to water when a well is not being pumped, not the total well depth. A shallow static level can help pump design, but it does not by itself prove that the well will produce enough water during demand.</p><p>The decade series shows a lower reported median depth to water in the 2020s, at 20 feet, than in the 2010s, at 51 feet. That does not establish a region-wide rising water table. Only 44 wells report static water levels, and measurement dates, locations, well construction, and seasonal conditions can differ. Treat the series as a limited local signal and obtain a current measurement for the specific well.</p>"
+  },
+  {
+   "heading": "Permit history and drillers working near Mount Crested Butte",
+   "html": "<p>Permit activity is concentrated in the 1990s and later. The records show 241 permits from the 1990s, 173 from the 2000s, 98 from the 2010s, and 65 from the 2020s. The newest permit year is 2025. Earlier records include 2 permits from the 1950s, 27 from the 1970s, and 54 from the 1980s.</p><p>Bob Williams Drilling Co., listed as Williams, Robert F., appears most often with 285 records. Wildcat Drilling &amp; Pump, Inc., listed as Kissner, Billy D., appears on 54, and Authorized (Pe, Pg) appears on 48. Those counts describe permit records, not current availability or a recommendation. Confirm a contractor's present license, insurance, schedule, and scope. Colorado DWR permit records also help distinguish permitted wells from wells that were constructed but have incomplete reporting.</p>"
+  },
+  {
+   "heading": "Mount Crested Butte well drilling cost at local depths",
+   "html": "<p>The cost model for this area assumes fractured mountain bedrock, including granite and gneiss. Drilling is estimated at $65 to $100 per foot. At the 108-foot median depth, the drilled hole alone works out to about $7,000 to $10,800.</p><p>A finished well is more than the borehole. Including the pump, tank, trenching, and electrical, the modeled total at the median depth is about $13,000 to $22,800. A deeper hole, difficult access, casing or grout requirements, more trenching, and electrical distance can move the bid higher. Ask each driller to separate footage, casing, grout, testing, pump equipment, trenching, electrical work, and allowances for an unsuccessful or low-yield hole. The median is a planning point, not a guaranteed quote for a parcel.</p>"
+  },
+  {
+   "heading": "Risks to check before buying or building",
+   "html": "<p>Low yield is not the only concern. The mapped area contains 503 historic mine features, 5 EPA Superfund or cleanup sites, and 1 PFAS sampling or contamination site within about 10 miles. These mapped features do not prove contamination at your property, but they justify a careful water-quality review, especially if a parcel is near mining activity, drainage, or a cleanup location.</p><p>Review the well construction report for casing, grout, depth, yield, and water-level information. Test existing water before closing and retest after major work or a change in conditions. Locate the well, septic system, replacement area, drive, and building envelope together. A steep or rocky lot may make trenching and septic installation harder even when the well itself is productive. Verify setbacks, permits, and wastewater requirements with the county and state before finalizing a building plan.</p>"
+  },
+  {
+   "heading": "A practical plan for a Mount Crested Butte lot",
+   "html": "<p>Start with the parcel's nearest permitted wells, not a countywide average. Compare depth, reported yield, construction, use, and water levels, then have a licensed driller walk the site before you rely on a budget. The records show 58% domestic or household use, with additional stock, irrigation, and monitoring wells, so confirm that a neighboring well's permit allows the use you need.</p><p>For a new build, confirm the DWR permit path, water-rights requirements, septic layout, access for a drilling rig, and power route together. Exempt household-use wells remain subject to their permit conditions and the applicable pumping limit. In an over-appropriated basin, an augmentation plan may be required. Have your contract address water availability, testing, failed or low-yield drilling, and who pays for extra footage before closing or mobilizing.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Mount Crested Butte?",
+   "a": "The median reported well depth near Mount Crested Butte is 108 feet. The middle half runs from 45 to 200 feet, but the 90th-percentile depth is 400 feet and the deepest recorded well is 1,000 feet. Fractured granite and gneiss make individual results unpredictable, so nearby well records are a guide rather than a guarantee."
+  },
+  {
+   "q": "How much does it cost to drill a well in Mount Crested Butte?",
+   "a": "The local cost model uses $65 to $100 per foot. At the 108-foot median depth, drilling the hole is estimated at $7,000 to $10,800. A finished well with pump, tank, trenching, and electrical is estimated at $13,000 to $22,800. Access, deeper drilling, casing, grout, and low-yield conditions can change the final bid."
+  },
+  {
+   "q": "How much water do wells produce in Mount Crested Butte?",
+   "a": "Reported well yield has a 10.0 gallons-per-minute median, with the middle half between 4.8 and 15.0 gallons per minute. Forty percent of reported wells exceed 15 gallons per minute, while 1% produce under 1 gallon per minute. Because bedrock fractures vary from lot to lot, request the actual pumping and recovery records."
+  },
+  {
+   "q": "Is well water safe to drink in Mount Crested Butte?",
+   "a": "Permit records do not establish that water is safe to drink. Test an existing well before buying and test a new well after construction. The area includes 503 historic mine features, 5 EPA Superfund or cleanup sites, and 1 PFAS sampling or contamination site within about 10 miles. Location-specific testing is important, particularly near mining or cleanup areas."
+  },
+  {
+   "q": "Are there water-table concerns near Mount Crested Butte?",
+   "a": "The reported median static water level is 23 feet below ground surface, with the middle half from 12 to 80 feet. Measurements show a median of 51 feet in the 2010s and 20 feet in the 2020s. Only 44 wells report static levels, so that comparison is not enough to prove a broad water-table trend. Check the specific well's current level."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Mount Crested Butte and surrounding mountain communities with access driveways, site development, new-build septic systems, and custom homes. Their planning approach can help coordinate difficult access, utilities, wastewater, and construction needs on a rural lot.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1422,
+  "completion_tokens": 2311,
+  "total_tokens": 3733,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1419,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 144,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

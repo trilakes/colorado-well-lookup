@@ -1,0 +1,77 @@
+{
+ "title": "Mineral County Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Mineral County wells have an 80-foot median depth. Compare reported yields, water levels and estimated finished-well costs of $11,200-$20,000.",
+ "h1": "What to Expect From a Well in Mineral County",
+ "eyebrow": "Mountain Wells and Land Planning",
+ "intro_html": "<p>Mineral County’s typical reported well is relatively shallow: the median depth is <strong>80 feet</strong>, with a reported median yield of <strong>15.0 gpm</strong>. Those are useful starting points for a land purchase or drilling estimate, not promises about what a particular lot will produce.</p><p>Colorado DWR records include 1,519 permits countywide, with 1,030 recorded as constructed. Around Creede and the surrounding mountain land, check the actual neighboring well logs before carrying county averages into a purchase contract or construction budget.</p>",
+ "sections": [
+  {
+   "heading": "An 80-Foot Median, With a Long Deep-Well Tail",
+   "html": "<p>Of the 1,098 wells reporting depth, the middle half run <strong>50-120 feet</strong>. That gives a driller a practical starting range for a bid, but the agreement should explain how additional footage is charged. Under 100 feet accounts for 59% of reported depths; the 90th-percentile depth is 240 feet, and the deepest record reaches 1,386 feet.</p><p>Most aquifer entries are unnamed or classified as fractured bedrock. In mountain bedrock, the location and connection of water-bearing fractures can matter more than the depth of a nearby well. Around Creede, compare logs from similar terrain rather than assuming a nearby shallow completion sets your drilling depth.</p>"
+  },
+  {
+   "heading": "Reported Production Is Stronger Than a Low-Yield Buyer Might Expect",
+   "html": "<p>The 453 records with pump yields show a <strong>15.0 gpm median</strong>, with the middle half at 10.0-15.0 gpm. For a household buyer, that is an encouraging reported range. The yield mix shows 3% at 1-5 gpm and 0% under 1 gpm.</p><p>Do not read that zero as proof that low-yield wells or unsuccessful drilling never occur. These figures describe reported pump yields, not every permit or drilling attempt. Before buying, obtain a current production test and review recovery behavior. A reported yield also does not authorize irrigation or other uses; the DWR permit controls what the well may legally supply.</p>"
+  },
+  {
+   "heading": "Water Levels Are Deeper in the Recent Records",
+   "html": "<p>Static water level is the depth to standing water in a resting well, not the total drilled depth. Mineral County has just 119 records reporting it. The median is <strong>35 feet below ground</strong>, and the middle half is 10-64 feet.</p><p>The decade medians move from 27 feet in the 2010s to 38 feet in the 2020s. That suggests deeper water levels in the more recent measurements, but it does not establish a countywide falling water table: different wells, locations and measurement conditions may be represented. For a purchase, compare repeated measurements from the same well where available, along with pumping drawdown and recovery.</p>"
+  },
+  {
+   "heading": "Mineral County’s Permit Activity Peaked in Earlier Decades",
+   "html": "<p>The largest permit totals were <strong>303 in the 2000s</strong> and 302 in the 1990s. Records show 170 in the 2010s and 131 in the 2020s, with the newest permit dated 2026. The current decade is incomplete, and permit issuance is not the same as completed drilling. Domestic/household uses account for 80% of the use mix.</p><p>The most active named drillers are Valley Pump Company (Self, Clinton L.) with 192 records, Irrigation Engineering &amp; Supp. (Burk, Coy) with 130, and Larry Burk Drilling (Burk, Larry) with 112. Those historical counts can help identify who completed neighboring wells; they do not establish current availability or licensing.</p>"
+  },
+  {
+   "heading": "Budget Beyond the Drilled Hole Near Creede",
+   "html": "<p>The supplied cost model assumes fractured mountain bedrock—granite or gneiss—at <strong>$65-$100 per foot</strong>. At the county’s 80-foot median depth, the drilled hole is estimated at $5,200-$8,000. A finished well with pump, tank, trenching and electrical is estimated at <strong>$11,200-$20,000</strong>.</p><p>Treat that as a planning allowance, not a parcel-specific quote. The 50-120-foot middle range means bids should clearly separate footage charges from completion work. Ask what casing, grout, testing and mobilization are included. Mountain access and the route between the well and house also deserve a site visit before you commit to a finished-system price.</p>"
+  },
+  {
+   "heading": "Mine Features and Cleanup Sites Call for Targeted Testing",
+   "html": "<p>The environmental mapping lists <strong>460 historic mine features</strong>, 5 PFAS sampling/contamination sites and 5 EPA Superfund/cleanup sites within about 10 miles. These are screening flags, not evidence that every nearby well is contaminated. A sampling location alone does not establish contamination in your water.</p><p>Review the parcel’s relationship to mapped sites and arrange certified laboratory testing for bacteria, nitrate and locally relevant metals; discuss PFAS testing where site history warrants it. Inspect the well cap, casing and drainage, too. Poor surface protection can create problems unrelated to the aquifer. For a new build, coordinate well and septic placement before fixing the house footprint or excavation plan.</p>"
+  },
+  {
+   "heading": "Make the Lot Prove Itself Before You Buy",
+   "html": "<p>Start with the parcel’s DWR permit, construction log, pump information and water-quality results. Confirm that the authorized use matches your plans; a household-use permit should not be assumed to cover outdoor watering or livestock. If the lot has no well, establish the permitting path before treating water as assured.</p><p>Use the Creede and City of Creede pages to narrow the record search. Nearby Hinsdale County and Rio Grande County offer regional context, but closer wells in comparable terrain are better evidence. Make the purchase contingent on satisfactory water due diligence where possible, and have the driller and septic installer review access, setbacks and the proposed building layout together.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Mineral County, Colorado?",
+   "a": "The median reported depth is 80 feet, and the middle half of wells are 50-120 feet deep. Those figures come from 1,098 depth records. Mountain fractures make individual sites unpredictable: the 90th-percentile depth is 240 feet. Use nearby construction logs and a site-specific drilling estimate rather than treating the median as a stopping depth."
+  },
+  {
+   "q": "How much does it cost to drill a well in Mineral County?",
+   "a": "The planning model uses $65-$100 per foot for fractured mountain bedrock. At the 80-foot median depth, the hole alone is about $5,200-$8,000; a finished well with pump, tank, trenching and electrical is about $11,200-$20,000. Ask for an itemized quote that addresses access, casing, grout and charges for additional depth."
+  },
+  {
+   "q": "How much water do wells produce in Mineral County?",
+   "a": "Among 453 records reporting pump yield, the median is 15.0 gpm and the middle half is 10.0-15.0 gpm. The reported share under 1 gpm is 0%, but that does not guarantee production on an untested lot. For an existing home, verify current yield and recovery rather than relying only on the original drilling record."
+  },
+  {
+   "q": "Is well water safe to drink in Mineral County?",
+   "a": "Permit records and production figures cannot establish drinking-water safety. Local mapping includes 460 historic mine features and 5 PFAS sampling/contamination sites within about 10 miles, which warrant parcel-specific review rather than blanket conclusions. Obtain certified laboratory testing for bacteria, nitrate and relevant metals, and discuss PFAS testing based on nearby site history."
+  },
+  {
+   "q": "Is the water table dropping in Mineral County?",
+   "a": "Reported median static water levels deepen from 27 feet below ground in the 2010s to 38 feet in the 2020s. That is a signal worth checking, not proof of a countywide decline. Only 119 records report static levels, and the decade groups may contain different wells. Repeated measurements from the same well are more informative."
+  }
+ ],
+ "tri_lakes_blurb": "For a Mineral County lot near Creede or in the surrounding mountain terrain, Tri-Lakes Contracting is a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes. Coordinate the site layout with well access and septic placement before excavation begins.",
+ "_model": "gpt-6-astra",
+ "_usage": {
+  "prompt_tokens": 1428,
+  "completion_tokens": 2131,
+  "total_tokens": 3559,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1425,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 99,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

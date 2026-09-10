@@ -1,0 +1,77 @@
+{
+ "title": "Winter Park Well Depth and Drilling Cost",
+ "meta_description": "Winter Park wells have a 120-foot median depth, with fractured mountain bedrock affecting yield and drilling cost.",
+ "h1": "Winter Park, Colorado Well Depths, Yields, and Costs",
+ "eyebrow": "Winter Park well records",
+ "intro_html": "<p>Buying land or a home in Winter Park means looking past the presence of a well. The local records show how deep wells were drilled, what reported yields look like, and how much fractured mountain bedrock can affect a new-well budget. Within five miles of Winter Park, Colorado, DWR records include 411 permitted wells. Of those, 190 are recorded as constructed, 207 report a total depth, 68 report a pump yield, and only 17 report a static water level.</p><p>Most permits identify an unnamed or fractured-bedrock aquifer rather than a broad basin aquifer. That makes nearby well records useful for planning, but not a guarantee for a particular lot. A driller still needs to evaluate access, geology, casing, grout, pump design, and the intended household use.</p>",
+ "sections": [
+  {
+   "heading": "Winter Park well depth depends on fractured mountain rock",
+   "html": "<p>The median reported well depth near Winter Park is 120 feet. The middle half runs from 51 to 270 feet, so a typical drilling estimate should not be based on the median alone. One quarter of reported wells are shallower than 51 feet, while another quarter are deeper than 270 feet. The 90th percentile is 350 feet, and the deepest record reaches 1001 feet.</p><p>Depth distribution also shows the spread: 39% of wells are under 100 feet, 43% fall between 100 and 300 feet, 18% are between 300 and 600 feet, and 1% exceed 600 feet. For a driller's bid, ask how the price changes if the hole goes beyond the expected depth. Fractured granite and gneiss can produce water at very different depths on nearby lots.</p>"
+  },
+  {
+   "heading": "Most Winter Park wells report usable production",
+   "html": "<p>Among the 68 wells with a reported pump yield, the median is 10.0 gallons per minute. The middle half ranges from 7.0 to 14.6 gallons per minute. That is a stronger reported production profile than many mountain locations, but the sample is much smaller than the total permit count.</p><p>Seventy-one percent of reported-yield wells produce between 5 and 15 gallons per minute, and 25% report more than 15 gallons per minute. Four percent are in the 1-to-5-gallon-per-minute range, and 0% are reported under 1 gallon per minute. A buyer should still confirm the well's actual test, recovery, storage tank size, and permitted use. A good yield does not automatically settle questions about water rights or year-round supply.</p>"
+  },
+  {
+   "heading": "Winter Park water levels are usually within 100 feet",
+   "html": "<p>Only 17 wells in the local records report a static water level, so this part of the dataset is limited. The median depth to water is 34 feet, with the middle half between 20 and 100 feet. Those figures help a contractor plan pump setting and electrical work, but they should not be treated as a site-specific water-table measurement.</p><p>The permit totals by decade show drilling activity, not a water-level trend: records include 3 permits from the 1950s, 14 from the 1960s, 46 from the 1970s, 27 from the 1980s, 93 from the 1990s, 68 from the 2000s, 34 from the 2010s, and 29 from the 2020s. The newest permit year is 2025. There is not enough reported water-level information here to conclude that the local water table is dropping or rising.</p>"
+  },
+  {
+   "heading": "Winter Park permit history and active drillers",
+   "html": "<p>Domestic and household wells make up 46% of the recorded use mix. Monitoring wells account for 25%, irrigation 2%, and stock use 1%. The aquifer field is especially consistent: 393 permits name an unnamed or fractured-bedrock aquifer, while 6 name alluvial and 4 name Troublesome. No wells in this dataset name a Denver Basin aquifer.</p><p>The most frequently listed drillers are Mcpherson Drilling Company, also shown as Mcpherson, Benny Don, with 50 records; Authorized, shown as Pe, Pg, with 41; and Golden Eagle Drilling Corporation, shown as Shelton, Joe Wayne, with 15. These records describe permit history, not a recommendation or guarantee. Check the actual contractor license, current availability, drilling scope, and references before signing a contract.</p>"
+  },
+  {
+   "heading": "What a new Winter Park well can cost",
+   "html": "<p>Winter Park drilling is priced around fractured mountain bedrock, including granite and gneiss. The stated drilling rate is $65 to $100 per foot. At the local median depth of 120 feet, the drilled hole works out to about $7,800 to $12,000.</p><p>A finished well is a larger project than the hole itself. Including the pump, pressure tank, trenching, and electrical work, the modeled total is about $13,800 to $24,000 at that median depth. A bid should explain what happens if the well reaches 270 feet, 350 feet, or more, since the local records extend to 1001 feet. Also ask whether access work, casing, grout, water testing, permits, and difficult ground are included or priced separately.</p>"
+  },
+  {
+   "heading": "Winter Park risks to check before closing or building",
+   "html": "<p>Nearby records point to several issues worth investigating. Within about 10 miles are 9 PFAS sampling or contamination sites, 276 historic mine features, and 2 EPA Superfund or cleanup sites. Those mapped locations do not prove contamination at a particular well, but they support testing the water and reviewing the site's history before relying on it.</p><p>Low yield and dry holes remain possible in fractured bedrock even where nearby wells perform well. Confirm the well construction record, pump test, static water level, casing, grout, and laboratory results. For a new home, the well location must also work with the septic system, driveway, building envelope, and utility trenching. Water rights matter as well: DWR permits control allowed use, and an augmentation plan may be needed in an over-appropriated basin.</p>"
+  },
+  {
+   "heading": "How to evaluate a Winter Park lot",
+   "html": "<p>Start by collecting the permit and construction records for the property and nearby wells. Compare reported depths, yields, static levels, aquifer descriptions, and use types rather than relying on a single neighboring well. Nearby Fraser is about 3 miles away; Tabernash and St. Mary's are about 8 miles, while Empire is about 10 miles and Eldora and Georgetown are about 12 miles. Those areas can provide context, but local bedrock conditions can change quickly.</p><p>Before buying, make the contract contingent on reviewing water rights and testing the existing well. For vacant land, obtain a written drilling estimate with depth contingencies and verify that a well, septic system, driveway, and home can fit on the site. Ask who pays if the first location is unsuccessful. A Colorado water professional can also explain whether household use is covered by an exempt well and what limits apply.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Winter Park, Colorado?",
+   "a": "The median reported well depth near Winter Park is 120 feet. The middle half of reported depths runs from 51 to 270 feet. About 39% are under 100 feet, while 18% are between 300 and 600 feet. The deepest record is 1001 feet, so a buyer should budget for substantial variation."
+  },
+  {
+   "q": "What does it cost to drill a well in Winter Park?",
+   "a": "The modeled drilling rate in Winter Park is $65 to $100 per foot. At the 120-foot median depth, the drilled hole is estimated at $7,800 to $12,000. A finished well with pump, tank, trenching, and electrical work is estimated at $13,800 to $24,000. Fractured granite and gneiss can push the total higher."
+  },
+  {
+   "q": "How much water do Winter Park wells produce?",
+   "a": "Of the 68 local wells reporting a pump yield, the median is 10.0 gallons per minute and the middle half ranges from 7.0 to 14.6 gallons per minute. Seventy-one percent report between 5 and 15 gallons per minute. These are reported records, not a guarantee for a new well or a substitute for a current pump test."
+  },
+  {
+   "q": "Is well water safe to drink in Winter Park?",
+   "a": "The local records do not establish that every well is safe to drink. Within about 10 miles are 9 PFAS sampling or contamination sites, 276 historic mine features, and 2 EPA Superfund or cleanup sites. Test the specific well through a qualified laboratory, review its history, and continue testing after ownership or land-use changes."
+  },
+  {
+   "q": "Are Winter Park wells in a reliable aquifer?",
+   "a": "Most local permits—393 records—identify an unnamed or fractured-bedrock aquifer. Only 6 identify alluvial and 4 identify Troublesome, with 0 Denver Basin aquifer wells. Reported static water levels have a 34-foot median, but only 17 wells provide that information. Fractured bedrock can vary sharply between nearby lots, so local records are planning evidence, not a guarantee."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Winter Park and the surrounding mountain communities with access driveways, site development, new-build septic systems, and custom homes. Bring the well, septic, excavation, and building plans together early so the site can be evaluated as one project.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1384,
+  "completion_tokens": 2215,
+  "total_tokens": 3599,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1381,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 83,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

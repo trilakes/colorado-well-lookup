@@ -1,0 +1,77 @@
+{
+ "title": "Mancos Well Depth and Drilling Cost",
+ "meta_description": "Mancos wells have a 100 ft median depth, 7 gpm median yield, and estimated finished costs of $11,000-$19,500.",
+ "h1": "Mancos, Colorado Well Depth, Yield, and Cost Guide",
+ "eyebrow": "Mancos well reference",
+ "intro_html": "<p>Buying land or building near Mancos means understanding the local well record before you rely on a contractor’s estimate. Permitted wells within 5 miles show a 100-foot median depth, a 7.0-gpm median reported yield, and a median static water level of 28 feet. Most permits are for domestic or household use, but the records are not complete: 364 wells appear in Colorado DWR permit records, while 198 are recorded as constructed, 210 report total depth, 29 report pump yield, and 14 report static water level.</p><p>The local geology is mainly described as unnamed or fractured-bedrock aquifer, with some Dakota and Mancos aquifer wells. Use these figures to set expectations, not to guarantee a result on a particular parcel. Neighboring well locations, access, casing and grout requirements, septic layout, and the intended household use all affect the final design and price.</p>",
+ "sections": [
+  {
+   "heading": "What well depth looks like around Mancos",
+   "html": "<p>Mancos wells have a 100-foot median reported depth. The middle half runs from 52 to 183 feet, so a normal bid may be based on a relatively shallow hole, but the spread is substantial. About 48% of recorded wells are under 100 feet, while 40% fall between 100 and 300 feet. Another 11% are between 300 and 600 feet, and 1% reach 600 feet or more. The deepest record is 1,085 feet.</p><p>That variation matters when comparing bids. Mixed sedimentary and alluvial ground can drill differently from one lot to the next, while fractured-bedrock conditions can produce uneven water-bearing zones. Ask a driller to review nearby permits rather than relying only on the countywide median. Dolores, Hesperus, Cortez, Marvel, Lewis, and Durango provide useful nearby context, but the closest wells to your parcel matter most.</p>"
+  },
+  {
+   "heading": "Expected well yield for a Mancos property",
+   "html": "<p>The reported yield median near Mancos is 7.0 gallons per minute, with the middle half between 5.0 and 10.0 gallons per minute. Of the wells with yield records, 66% report between 5 and 15 gallons per minute, 21% report between 1 and 5 gallons per minute, and 14% report more than 15 gallons per minute. No recorded well in this set is under 1 gallon per minute.</p><p>Those results are generally workable for ordinary domestic use, but they do not promise a specific flow on an untested lot. A pump test and storage design are still important, especially for a larger home, irrigation plans, livestock, or multiple occupants. Most local permits are domestic or household permits, making up 79% of the use mix. Confirm the permitted use before assuming a well can serve additional demands.</p>"
+  },
+  {
+   "heading": "Water levels and the Mancos groundwater picture",
+   "html": "<p>Among the 14 wells reporting static water level, the median depth to water is 28 feet. The middle half ranges from 13 to 69 feet. That gives a rough local indication of where water stood when those measurements were recorded, but it is not a guaranteed drilling depth or a current measurement for every parcel.</p><p>The permit history does not provide a water-level series by decade, so these records do not establish a dropping or rising groundwater trend. They also cover different locations, construction dates, and aquifer conditions. Before closing on land, ask for the nearest well permits and any available test or maintenance records. A driller can use those records to discuss likely water-bearing zones, pump setting, casing, grout, and whether the proposed well location fits the planned home and septic system.</p>"
+  },
+  {
+   "heading": "Mancos drilling history and local permit records",
+   "html": "<p>Colorado DWR records show 364 permitted wells within 5 miles of Mancos. Permits were issued across several decades: 17 in the 1970s, 41 in the 1980s, 87 in the 1990s, 71 in the 2000s, 40 in the 2010s, and 28 in the 2020s. The newest permit year is 2025. The record includes 198 wells listed as constructed, but only 29 report a pump yield, so the database is stronger for location and permit history than for predicting production.</p><p>The most active named drillers in these records are Mcpherson Drilling Co. (Mcpherson, Billy G.) with 24 wells and Beeman Bros Drilling Inc (Beeman, J. L.) with 23. “Authorized (Pe, Pg)” also appears on 23 records. Treat those counts as historical records, not an endorsement or a guarantee of current availability.</p>"
+  },
+  {
+   "heading": "What a new Mancos well may cost",
+   "html": "<p>For the mixed sedimentary and alluvial ground identified in the local cost model, a typical drilling rate is $50 to $75 per foot. At the 100-foot median depth, the drilled hole works out to about $5,000 to $7,500. That is not the complete water system. A finished well with pump, tank, trenching, and electrical is estimated at about $11,000 to $19,500.</p><p>A deeper-than-typical hole can move the drilling portion higher, and difficult access or fractured-bedrock conditions can affect the work. Get the proposal in writing and ask what is included: mobilization, casing, grout, development, pump testing, pump equipment, pressure tank, electrical connection, trenching, permits, and restoration. Compare bids on the same scope. A low per-foot price may not be the lowest finished cost if major components are excluded.</p>"
+  },
+  {
+   "heading": "Risks to check before buying or building near Mancos",
+   "html": "<p>Low yield is not the main pattern in the available reports, but the sample is limited because only 29 wells report a pump yield. Dry holes and uneven production remain possible, particularly where fractured-bedrock conditions control the water-bearing zones. Have the driller review nearby permits and identify a backup location if the parcel allows one. Confirm the intended well use with Colorado DWR; domestic, stock, irrigation, monitoring, and other uses can have different requirements.</p><p>Environmental due diligence also matters. The mapped area within about 10 miles includes 2 PFAS sampling or contamination sites, 6 historic mine features, and 3 EPA Superfund or cleanup sites. Those mapped sites do not prove contamination at your property, but they justify reviewing available records and testing the finished well. Keep the well, septic system, replacement area, driveway, and house site coordinated. Septic setbacks, access for a rig, trench length, and electrical routing can change both feasibility and cost.</p>"
+  },
+  {
+   "heading": "A practical plan for a Mancos lot",
+   "html": "<p>Start with the exact parcel, not the Mancos median. Pull nearby Colorado DWR permits and compare reported depths, yields, static water levels, construction status, and use. A 100-foot local median with a 52-to-183-foot middle half is useful for budgeting, but it leaves enough variation that a fixed drilling price should be treated carefully. Ask for a site visit before choosing the well location.</p><p>For a new build, place the well and septic layout together with the house, driveway, and utility route. Confirm access for the drill rig and heavy equipment, then request a complete finished-system estimate rather than a per-foot number alone. Test the completed well and water before occupancy. If the property is in an over-appropriated basin, ask whether an augmentation plan or other water-rights issue applies. The permit’s use and the home’s planned demand should match.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Mancos, Colorado?",
+   "a": "The median reported well depth within 5 miles of Mancos is 100 feet. The middle half runs from 52 to 183 feet. About 48% are under 100 feet and 40% are between 100 and 300 feet. The deepest record is 1,085 feet, so a parcel-specific estimate is more useful than the median alone."
+  },
+  {
+   "q": "How much does it cost to drill a well in Mancos?",
+   "a": "The local drilling model uses $50 to $75 per foot. At the 100-foot median depth, the drilled hole is estimated at $5,000 to $7,500. A finished system including pump, tank, trenching, and electrical is estimated at $11,000 to $19,500. Access, depth, ground conditions, and included components can change the final bid."
+  },
+  {
+   "q": "How much water do Mancos wells produce?",
+   "a": "The median reported yield is 7.0 gallons per minute, with the middle half between 5.0 and 10.0 gallons per minute. About 66% of reported yields are between 5 and 15 gallons per minute. Only 29 wells report a pump yield, however, so those figures describe the record and do not guarantee production on a new well."
+  },
+  {
+   "q": "Is well water safe to drink in Mancos?",
+   "a": "Well safety cannot be determined from depth or yield. Test a completed well before using it for drinking. Within about 10 miles, records show 2 PFAS sampling or contamination sites, 6 historic mine features, and 3 EPA Superfund or cleanup sites. These mapped locations do not prove contamination on your parcel, but they support careful testing and records review."
+  },
+  {
+   "q": "Who drills water wells near Mancos, Colorado?",
+   "a": "Historical permit records list Mcpherson Drilling Co. (Mcpherson, Billy G.) on 24 wells and Beeman Bros Drilling Inc (Beeman, J. L.) on 23. “Authorized (Pe, Pg)” also appears on 23 records. These are record counts, not current recommendations or proof of availability. Ask any driller for licensing, insurance, references, and a written scope."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Mancos and nearby communities with access driveways, site development, new-build septic systems, and custom homes. Coordinate the well, septic, driveway, and building work with one site plan before construction begins.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1369,
+  "completion_tokens": 2365,
+  "total_tokens": 3734,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1366,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 113,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

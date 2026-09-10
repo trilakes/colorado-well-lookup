@@ -1,0 +1,77 @@
+{
+ "title": "Colorado Springs Well Depth and Drilling Cost",
+ "meta_description": "Colorado Springs wells have a 55 ft median depth, but local drilling costs vary with geology, access, casing, pump and site work.",
+ "h1": "Colorado Springs Well Depth, Yield, and Drilling Cost",
+ "eyebrow": "Colorado Springs well facts",
+ "intro_html": "<p>This page covers permitted wells within 5 miles of Colorado Springs in El Paso County. The records include 3,998 wells, though only 2,441 report a total depth and 373 report a pump yield. That matters when comparing neighborhoods: the available data is useful, but not every permit has a complete drilling record.</p><p>Colorado Springs has many shallow wells in the permit history, along with deeper Denver Basin and fractured-bedrock wells. A nearby well can help set expectations, but it does not guarantee the same result on your lot.</p>",
+ "sections": [
+  {
+   "heading": "Colorado Springs well depth depends on the ground below the lot",
+   "html": "<p>The median reported well depth near Colorado Springs is 55 feet. The middle half runs from 30 to 194 feet, and 68% of reported wells are under 100 feet. That is a shallow overall profile, but it should not be treated as a bid price or a guarantee.</p><p>Another 12% fall between 100 and 300 feet, 16% between 300 and 600 feet, and 4% exceed 600 feet. The deepest record is 1,840 feet. Those differences reflect local geology, the target aquifer, water-level conditions, and the exact location of the borehole. Denver Basin sedimentary bedrock is the cost model used here, while fractured-bedrock conditions can be harder to predict. A driller should review nearby construction logs before giving a firm allowance.</p>"
+  },
+  {
+   "heading": "What Colorado Springs wells produce for a household",
+   "html": "<p>Among the wells that report a pump yield, the median is 10.0 gallons per minute, with the middle half from 8.0 to 13.0 gallons per minute. That is a solid production range for ordinary household use when the well, pressure system, storage, and water treatment are properly designed.</p><p>Production is not evenly distributed across every permit. Seventy-four percent report 5 to 15 gallons per minute, and 23% report more than 15 gallons per minute. Three percent report 1 to 5 gallons per minute, while 0% are listed under 1 gallon per minute. The yield records represent only 373 wells, so a buyer should request the actual pump test rather than rely only on the area median. An exempt household-use well still has limits, including the 35 gallon-per-minute pumping limit.</p>"
+  },
+  {
+   "heading": "Water levels near Colorado Springs and the recent record",
+   "html": "<p>The median static water level is 47 feet below the surface, with the middle half from 18 to 71 feet. Static water level is not the same as well depth: it describes where water stood when measured, and the level can change with season, pumping, recharge, and the aquifer being measured.</p><p>The decade series does not show a simple dropping pattern in these records. The median measured water level was 66 feet below surface in the 2010s and 31 feet below surface in the 2020s. Those figures come from a limited group of 83 wells reporting static water levels, and the wells and measurement conditions may differ. Treat the change as a reason to inspect individual logs, not proof that groundwater is uniformly rising or falling across Colorado Springs.</p>"
+  },
+  {
+   "heading": "Permit history shows long use around Colorado Springs",
+   "html": "<p>Colorado Springs has a long well record, with permits issued from the 1950s through the newest permit year of 2025. The largest decade in the record is the 1990s, with 764 permits. There were 545 in the 2000s, 356 in the 2010s, and 256 in the 2020s. Older records can be especially useful when a property has a long operating history.</p><p>The permit mix is mainly domestic or household use at 43%, with monitoring wells at 38%, irrigation at 3%, and stock use at 1%. Aquifers named on permits include unnamed or fractured-bedrock aquifers with 3,013 wells, Arapahoe with 449, and Denver with 90. Denver Basin aquifer wells account for 54%. Check the DWR permit, construction report, use type, and any change in ownership before assuming an old well serves a new plan.</p>"
+  },
+  {
+   "heading": "Colorado Springs well drilling cost at the local median depth",
+   "html": "<p>The local cost model uses a typical drilling rate of $50 to $70 per foot in Denver Basin sedimentary bedrock. At the 55-foot median depth, the drilled hole works out to about $2,800 to $3,800. That is only the drilling portion, not the complete water system or the site work needed to connect it to a house.</p><p>A finished well with pump, pressure tank, trenching, and electrical is modeled at about $8,800 to $15,800 at that median depth. A deeper hole, difficult access, casing and grout requirements, rock conditions, electrical distance, or a longer utility trench can move the actual proposal higher. Ask the driller what is included, what happens if the hole is dry, and whether testing, permits, pump installation, and abandonment contingencies are separate.</p>"
+  },
+  {
+   "heading": "Risks to check before buying or building on a Colorado Springs lot",
+   "html": "<p>Low yield is not the main pattern in the available yield records, but the sample is limited and a dry hole is always a site-specific risk. Fractured bedrock can produce uneven results over short distances. Have the seller provide the permit, well construction report, pump test, water-quality results, and maintenance history. Confirm the well is legally usable for the proposed home.</p><p>Environmental screening also deserves attention. Within about 10 miles, the mapped information includes 172 PFAS sampling or contamination sites, 38 historic mine features, and 20 EPA Superfund or cleanup sites. Those locations do not prove contamination at your property, but they support testing before purchase. Septic placement, setbacks, access for a rig, casing and grout, and the separation between the well and septic system should be reviewed before finalizing a building layout.</p>"
+  },
+  {
+   "heading": "A practical lot review for Colorado Springs buyers",
+   "html": "<p>Start with the closest comparable wells, not the countywide median alone. Cimarron Hills is about 3 miles away, while Stratmoor, Manitou Springs, Security-Widefield, the Air Force Academy, and Rock Creek Park provide additional nearby context at different distances. Compare geology, well depth, static level, yield, permit use, and construction date rather than looking at depth by itself.</p><p>For a buildable lot, confirm legal water supply, access for drilling equipment, septic feasibility, electrical routing, and the likely well location before closing. A driller can use neighboring logs to prepare a better allowance, but only a new borehole confirms your result. If the basin is over-appropriated, an augmentation plan may be required for the intended use. Put well testing, water-quality testing, and document review into the purchase process.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Colorado Springs?",
+   "a": "The median reported well depth within 5 miles of Colorado Springs is 55 feet. The middle half runs from 30 to 194 feet, and 68% are under 100 feet. Some wells are much deeper: the deepest record is 1,840 feet. Nearby construction logs are more useful than the median alone for estimating a specific lot."
+  },
+  {
+   "q": "How much does it cost to drill a well in Colorado Springs?",
+   "a": "The local model uses $50 to $70 per foot. At the 55-foot median depth, the drilled hole is estimated at about $2,800 to $3,800. A finished well with pump, tank, trenching, and electrical is estimated at $8,800 to $15,800. Access, depth, geology, casing, electrical distance, and site conditions can change the proposal."
+  },
+  {
+   "q": "How much water do Colorado Springs wells produce?",
+   "a": "Reported pump yields have a 10.0 gallon-per-minute median, with the middle half from 8.0 to 13.0 gallons per minute. Seventy-four percent are reported at 5 to 15 gallons per minute. The yield data covers 373 wells, so request the actual pump test and confirm the permitted use before relying on a neighboring result."
+  },
+  {
+   "q": "Is well water safe to drink in Colorado Springs?",
+   "a": "The well records do not establish drinking-water safety. Testing is important, particularly because mapped information within about 10 miles includes 172 PFAS sampling or contamination sites, 38 historic mine features, and 20 EPA Superfund or cleanup sites. Test the individual well for relevant contaminants and review the construction and maintenance records before using it for household water."
+  },
+  {
+   "q": "What should I check before buying a home on a Colorado Springs well?",
+   "a": "Review the DWR permit, construction report, legal use, pump test, static water level, water-quality results, and maintenance history. The area has 3,998 permitted wells, but only 2,441 report depth and 373 report yield. Confirm septic feasibility, well access, electrical routing, and any augmentation-plan requirement before closing or designing a new home."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Colorado Springs and nearby communities with access driveways, site development, new-build septic systems, and custom homes. Bring the well location and site constraints into the early planning process so the driveway, septic system, utilities, and home layout work together.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1429,
+  "completion_tokens": 2179,
+  "total_tokens": 3608,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1426,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 94,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

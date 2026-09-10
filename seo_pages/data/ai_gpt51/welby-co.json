@@ -1,0 +1,76 @@
+{
+ "title": "Welby, Colorado well depth and drilling cost",
+ "meta_description": "In Welby, Colorado, median well depth is about 32 ft and median yield is 34 gpm. See what that means for drilling cost and water supply.",
+ "h1": "Understanding water wells in Welby, Colorado",
+ "eyebrow": "Local well conditions",
+ "intro_html": "<p>Welby sits on the Denver Basin along the South Platte plain, and the wells around here are shallow by Colorado standards. Within about 5 miles, thousands of permits show most wells tapping alluvial or shallow Denver Basin sediments, with a lot of short holes and strong production. Before you buy or build, it helps to know how deep wells actually go, how much water they make, and what drilling really costs in this part of Adams County.</p>",
+ "sections": [
+  {
+   "heading": "How deep are wells around Welby",
+   "html": "<p>In the Welby area the typical well is not deep. The median total depth is 32 feet, and the middle half of wells run from 20 to 49 feet. About 89% of recorded wells are under 100 feet. Only a small share reach 100–300 feet or deeper, and the very deepest well on record goes down 1,751 feet into the Denver Basin sequence.</p><p>For a new domestic or small irrigation well, most drillers will bid assuming something near that 20–49 foot range unless your specific spot requires deeper Denver Basin bedrock. Alluvial and Quaternary Alluvium completions are common here, but 100% of wells are still classified in Denver Basin sediments, so you can move from loose material into firmer bedrock fairly quickly.</p>"
+  },
+  {
+   "heading": "Water table depth and long-term trend",
+   "html": "<p>The static water level data in Welby show water is generally close to the surface. The median depth to water is about 10 feet, with the middle half of readings between 7 and 23 feet. That means on many lots you’ll encounter groundwater not far below the surface.</p><p>Looking at measurements over time, median water levels were about 24 feet below ground in the 1960s and 23 feet in the 2000s, then rose to about 10 feet in the 2010s and 9 feet in the 2020s. That doesn’t suggest a dropping water table here; if anything, it has been measured shallower in recent decades. Shallow water is good for drilling cost, but it makes proper casing, grouting, and surface drainage important to keep surface contamination out of the well.</p>"
+  },
+  {
+   "heading": "Well yields and how much water to expect",
+   "html": "<p>Production in this part of Adams County is generally strong. Reported yields have a median of 34.0 gallons per minute, with the middle half between 15.0 and 130.0 gpm. About 76% of tested wells produce more than 15 gpm, and 22% fall in the 5–15 gpm range. None of the reported wells are under 1 gpm.</p><p>Those numbers are more than enough for a typical exempt household-use well, which is usually limited by permit to 35 gpm, not by the aquifer. For small irrigation or stock wells, the local yields give you some breathing room, though actual performance will still depend on which alluvial or bedrock zone you intersect and how the well is constructed.</p>"
+  },
+  {
+   "heading": "Who has been drilling in Welby and when",
+   "html": "<p>The permit history around Welby is long and busy. Starting in the 1950s there are hundreds of permits, and activity climbs over time: 380 permits in the 1950s, 363 in the 1960s, and 510 in the 1980s. It really ramps up with 1,637 in the 1990s and 1,659 in the 2000s, then peaks with 2,610 in the 2010s. There are already 996 permits in the 2020s, with the newest issued in 2025.</p><p>Most wells on record are monitoring wells, about 64% of the use mix, with domestic/household at 14%, irrigation at 4%, and a small share for stock. Authorized (Pe, Pg) shows up as the most active driller with 3,289 wells, followed by Layne, Christensen Co. (Tormoehlen, David A.) and Ground Exploration LLC (Bender, Joseph T.).</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost here",
+   "html": "<p>Drilling around Welby is through Denver Basin sedimentary bedrock and associated alluvium, which is straightforward compared to hard crystalline rock. Typical drilling rates run about $50–$70 per foot in this material. At the local median depth of 32 feet, that puts the bare drilled hole roughly in the $1,600–$2,200 range.</p><p>By the time you add steel or PVC casing, grout, a submersible pump, pressure tank, trenching, and electrical, a finished residential well in this area commonly totals around $7,600–$14,200. If your site ends up needing a deeper Denver Basin completion than the local median suggests, you can scale that per-foot drilling rate accordingly when budgeting.</p>"
+  },
+  {
+   "heading": "Key risks in the Welby area: water quality and dry holes",
+   "html": "<p>Low-yield and dry domestic wells are less common here than in many parts of Colorado, given the strong median yield and shallow water levels. The bigger concern in Welby is water quality. Within about 10 miles there are 686 mapped PFAS sampling or contamination sites and 175 EPA Superfund or cleanup sites, plus a historic mine feature.</p><p>Those numbers do not mean your specific well is contaminated, but they do mean you should plan on thorough testing for PFAS, VOCs, and standard potability before relying on a well for drinking. Because so many nearby wells are monitoring wells, they may be tracking exactly these kinds of issues. Septic placement also deserves attention so you keep leach fields downhill and away from your water supply.</p>"
+  },
+  {
+   "heading": "Buying or building on a lot in Welby",
+   "html": "<p>Before you commit to a parcel in or near Welby, pull the Colorado DWR well records for that section and look at nearby total depths, yields, and static levels. With a median depth of 32 feet and water usually around 10 feet down, most residential wells stay shallow and affordable, but you still want to see how close your lot is to alluvial vs thicker bedrock sections.</p><p>Confirm what type of permit is possible on your parcel, since only 14% of existing wells are domestic and a large share are monitoring. Factor in a realistic well budget in the $7,600–$14,200 range plus a compliant septic system. Finally, build in lab testing for PFAS and other contaminants as part of your closing or initial construction costs so there are no surprises after you move in.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Welby, Colorado?",
+   "a": "Around Welby, the median well depth is about 32 feet, and the middle half of wells range from 20 to 49 feet. About 89% of recorded wells are under 100 feet. A few go much deeper into the Denver Basin, including one well on record at 1,751 feet, but most domestic and small irrigation wells stay in the shallow alluvial and upper bedrock zones."
+  },
+  {
+   "q": "How much water do wells in Welby typically produce?",
+   "a": "Reported yields near Welby are generally strong. The median yield is 34.0 gallons per minute, with the middle half between 15.0 and 130.0 gpm. About 76% of tested wells make more than 15 gpm, and 22% fall between 5 and 15 gpm. None of the reported wells are under 1 gpm, which is favorable for household and small irrigation use, assuming proper well construction."
+  },
+  {
+   "q": "Is the water table dropping in Welby, Colorado?",
+   "a": "Based on available static water level measurements, there is no clear sign of a long-term drop. Median depth to water was about 24 feet in the 1960s and 23 feet in the 2000s, then it became shallower, around 10 feet in the 2010s and 9 feet in the 2020s. Locally, groundwater is usually found close to the surface, which helps with drilling cost but calls for careful sealing."
+  },
+  {
+   "q": "What does it cost to drill a well in Welby, Colorado?",
+   "a": "In the Welby area, drilling through Denver Basin sediments typically runs around $50–$70 per foot. At the local median depth of 32 feet, the bare hole might cost roughly $1,600–$2,200. A complete residential well system, including casing, pump, pressure tank, trenching, and electrical work, often ends up in the $7,600–$14,200 range, depending on site conditions and final depth."
+  },
+  {
+   "q": "Is well water safe to drink in Welby, Colorado?",
+   "a": "Water from a properly built well can be safe, but in the Welby area you should not assume potability without testing. There are 686 mapped PFAS sampling or contamination sites and 175 EPA Superfund or cleanup sites within about 10 miles, plus many monitoring wells. Because of that industrial and environmental history, comprehensive lab testing for PFAS and other contaminants is important before using a well for drinking."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting works in the Welby area as a licensed Colorado contractor handling access driveways, full site development, and new-build septic systems. They also build custom homes, coordinating well, septic, and excavation so your project fits local soil and groundwater conditions.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1447,
+  "completion_tokens": 2408,
+  "total_tokens": 3855,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 300,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

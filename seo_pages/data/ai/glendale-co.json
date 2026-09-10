@@ -1,0 +1,77 @@
+{
+ "title": "Glendale Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Glendale-area wells have a 28 ft median depth, but 70% of permits are for monitoring. Review yields, water levels, costs and buyer risks.",
+ "h1": "Glendale well records: what buyers should know",
+ "eyebrow": "Denver County Well Guide",
+ "intro_html": "<p>A shallow well record near Glendale is not necessarily evidence of an inexpensive household water supply. Monitoring accounts for <strong>70% of permitted uses</strong> in this dataset, while domestic/household use accounts for 8%. That distinction matters when comparing depths, yields and construction costs.</p><p>The records cover permitted wells within <strong>5 miles of Glendale</strong>, including nearby Holly Hills, Four Square Mile, Cherry Hills Village, Englewood and Denver. Use these figures to screen a property, then narrow the comparison to wells with the same intended use and aquifer.</p>",
+ "sections": [
+  {
+   "heading": "Glendale’s shallow median needs a closer look",
+   "html": "<p>Among the 5,311 records reporting depth, the median is <strong>28 ft</strong>, and the middle half falls between 20 and 45 ft. The 90th-percentile depth is 75 ft; 91% are under 100 ft. Those figures describe a shallow-heavy inventory, not a dependable drilling target for a new household well.</p><p>Monitoring dominates the records. Permits also name Alluvial and Denver aquifers, while many use an unnamed / fractured-bedrock category. The cost model assumes Denver Basin sedimentary bedrock, but a particular lot needs its own formation review. The deepest recorded well reaches 2,102 ft. Ask a driller to base the bid on comparable supply wells, with allowances for additional depth, casing and grout—not simply the neighborhood median.</p>"
+  },
+  {
+   "heading": "Reported yields vary too much to promise household supply",
+   "html": "<p>Only <strong>143 records report pump yield</strong>, compared with 9,590 total permit records. Their median yield is 15.0 gpm, with a middle half spanning 8.2–113.0 gpm. That broad spread makes the median a rough reference rather than a prediction for a Glendale lot.</p><p>Among reported yields, 4% are under 1 gpm and 13% fall in the 1–5 gpm band. A low-producing well may need storage and careful demand management, but it still needs adequate sustained recovery. The 55% reported at 15+ gpm should not be read as a promise of abundant residential water. Obtain a pumping and recovery test for the actual well, and keep physical production separate from the uses legally allowed by its permit.</p>"
+  },
+  {
+   "heading": "Water sits shallow in the reported measurements",
+   "html": "<p>The median static water level is <strong>15 ft below ground</strong>, with the middle half between 11 and 22 ft. Only 166 records report this measurement. Static level describes where water rests when the well is not being pumped; it does not tell you the well’s total depth or how far the water will draw down during use.</p><p>The decade medians are 14 ft in the 2010s and 15 ft in the 2020s. That small difference, drawn from records that may represent different wells, does <strong>not establish a falling water table</strong>. For a purchase, look for repeated measurements from the same well and review pumping drawdown and recovery alongside them.</p>"
+  },
+  {
+   "heading": "Glendale permit history is largely a monitoring story",
+   "html": "<p>Permit activity was heaviest in the 1990s, with 2,604 permits, followed by 2,461 in the 2000s. Records show 1,415 in the 2010s and 583 in the 2020s, with the newest permit dated 2025. These are issuance counts, not a count of active household wells: 3,956 of the 9,590 records are marked constructed.</p><p>The leading recorded driller entries are <strong>Authorized (Pe, Pg)</strong> with 4,387, Ground Exploration Llc (Bender, Joseph T.) with 333, and Layne, Christensen Co. (Tormoehlen, David A.) with 125. The authorization-style entry is not a clear contractor identity. Given the monitoring-heavy inventory, treat these as historical record entries—not proof of current residential drilling availability or suitability.</p>"
+  },
+  {
+   "heading": "A Glendale drilling allowance is not a household-well quote",
+   "html": "<p>The supplied Denver Basin sedimentary-bedrock model uses <strong>$50–$70 per foot</strong>. At the recorded median depth of 28 ft, it puts the drilled hole at about $1,400–$2,000 and a finished well, including pump, tank, trenching and electrical, at about <strong>$7,400–$14,000</strong>.</p><p>Those figures need a prominent caution: the depth benchmark comes from an inventory dominated by monitoring wells. A permitted household supply targeting a different formation may not resemble that shallow installation. Ask for a site-specific scope covering target aquifer, casing, grout, pump selection, access and utility routing. Have the contractor explain what happens to the price if the bore must go deeper or produces insufficient water.</p>"
+  },
+  {
+   "heading": "Environmental records deserve attention before closing",
+   "html": "<p>Within about 10 miles, the map identifies <strong>700 PFAS sampling/contamination sites</strong> and <strong>186 EPA Superfund/cleanup sites</strong>. These are screening flags, not proof that a particular Glendale well is contaminated. Review nearby site files, groundwater findings and cleanup status, then have a qualified laboratory test the property’s water for contaminants relevant to that review.</p><p>Construction matters too: inspect casing, the sanitary seal, grout documentation and drainage around the wellhead. Reported yields include wells under 1 gpm, but these records do not establish a dry-hole rate. If septic is proposed, confirm that it is allowed and that the lot can accommodate approved separation from the well, buildings and other site constraints.</p>"
+  },
+  {
+   "heading": "Buying near Glendale: verify the supply before the layout",
+   "html": "<p>Start with the parcel’s actual water-service situation. Do not assume a nearby permit means a new well is available or legally usable for the house you want to build. Confirm service options, DWR permit eligibility, the approved aquifer and allowed uses before committing to a water-supply plan. A household-use permit does not automatically authorize irrigation.</p><p>Use neighboring records in Holly Hills, Four Square Mile or Cherry Hills Village only when their use, geology and construction match the proposed well. For an existing supply, request the permit, completion report, pumping test and laboratory results. For a new build, coordinate drilling access, utility trenches, any approved septic layout and the home footprint before site work begins.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Glendale, Colorado?",
+   "a": "Within 5 miles of Glendale, the recorded median depth is 28 ft, and the middle half is 20–45 ft. However, 70% of permitted uses are monitoring. Those shallow records are not a reliable household-well target. Compare wells serving the same purpose and aquifer before using nearby depths to budget a new supply."
+  },
+  {
+   "q": "How much does it cost to drill a well in Glendale?",
+   "a": "The supplied model uses $50–$70 per foot for Denver Basin sedimentary bedrock. At the 28 ft median depth, the hole is about $1,400–$2,000, or $7,400–$14,000 finished with pump, tank, trenching and electrical. Because monitoring wells dominate the depth data, a household well needs a separate site-specific estimate."
+  },
+  {
+   "q": "How much water do wells produce near Glendale?",
+   "a": "The 143 records with reported pump yields have a median of 15.0 gpm and a middle half of 8.2–113.0 gpm. Reported yields under 1 gpm account for 4%. That wide range is a reason to test the actual well’s sustained output and recovery rather than rely on the area median."
+  },
+  {
+   "q": "Is well water safe to drink in Glendale, Colorado?",
+   "a": "The permit data cannot establish drinking-water safety. The surrounding area has 700 mapped PFAS sampling/contamination sites and 186 EPA Superfund/cleanup sites within about 10 miles. Proximity alone does not prove contamination. Review relevant environmental records, inspect the well’s construction and obtain laboratory testing tailored to the property before relying on the water."
+  },
+  {
+   "q": "Is the water table dropping near Glendale?",
+   "a": "The reported decade medians are 14 ft below ground in the 2010s and 15 ft in the 2020s. That difference does not establish a declining water table, especially because the measurements may come from different wells. Only 166 records report static levels. Repeated readings from the same well are more useful for assessing change."
+  }
+ ],
+ "tri_lakes_blurb": "For a Glendale-area lot, Tri-Lakes Contracting is a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes. Coordinate the site layout with confirmed water service and locally approved septic requirements before excavation.",
+ "_model": "gpt-6-astra",
+ "_usage": {
+  "prompt_tokens": 1422,
+  "completion_tokens": 2196,
+  "total_tokens": 3618,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1419,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 106,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

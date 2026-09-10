@@ -1,0 +1,76 @@
+{
+ "title": "Phillips County CO well depth and drilling cost",
+ "meta_description": "In Phillips County the median well depth is 270 ft with a 20 gpm median yield. See what that means for drilling cost, water level trends, and new wells.",
+ "h1": "Water wells in Phillips County, Colorado",
+ "eyebrow": "Local well basics",
+ "intro_html": "<p>Phillips County sits on the plains, over a mix of Ogallala and other High Plains aquifers plus some unnamed fractured-bedrock zones. The state has records for 2,812 well permits here, with 1,480 reporting a total depth and 505 reporting a pump yield. That gives a decent picture of how deep you usually drill, how much water you can expect, and what a new well is likely to cost on land around Holyoke, Haxtun, Amherst, Paoli, and the rest of the county.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells run in Phillips County",
+   "html": "<p>Depths here are moderate by plains standards. The median well depth in Phillips County is 270 feet, and the middle half run from 218 to 305 feet. Only 1% of wells are under 100 feet, while 65% fall between 100 and 300 feet and 34% between 300 and 600 feet. The deepest well on record is 515 feet.</p><p>For a driller’s bid, that 218–305 foot band is the “most likely” range a homeowner should plan for, with some chance of going into the 300–340 foot range, where the 90th percentile sits at 340 feet. Depth depends on your spot relative to the main Ogallala and High Plains aquifer zones versus the unnamed fractured-bedrock areas.</p>"
+  },
+  {
+   "heading": "Well yield: how much water you actually get",
+   "html": "<p>On production, Phillips County looks strong. The median reported pump yield is 20.0 gallons per minute, and the middle half of wells with data range from 14.0 up to 600.0 gpm, showing how irrigation wells can be much bigger producers than household wells. About 2% of tested wells report only 1–5 gpm, 23% fall between 5 and 15 gpm, and 75% are above 15 gpm. No wells in the records come in under 1 gpm.</p><p>For a typical rural house and stock setup, anything around or above that 20.0 gpm median is plenty. The main concern here isn’t ultra-low-yield dry holes; it’s knowing whether the well on your parcel is a small domestic well or one of the larger irrigation-type completions.</p>"
+  },
+  {
+   "heading": "Water table depth and long-term trend",
+   "html": "<p>The static water level data show water isn’t right at the surface. Across 172 measurements, the median depth to water is 158 feet, with the middle half from 121 to 195 feet below ground. So even if your total well depth is around 270 feet, you can expect a substantial column of water in the hole.</p><p>Over time, the water table has been getting deeper. Median static levels by decade go from 121 feet in the 1960s to 134 feet in the 1970s, then down to 182 feet in the 2010s and 190 feet in the 2020s. That pattern points to a declining water table, which matters if you’re planning a long-term home or irrigation system here.</p>"
+  },
+  {
+   "heading": "Who has been drilling and what the permits show",
+   "html": "<p>Phillips County has a long drilling history. Permits start showing up in the 1950s with 33, then climb to 97 in the 1960s and peak at 377 in the 1970s. Activity stays steady after that: 170 permits in the 1980s, 333 in the 1990s, 278 in the 2000s, 182 in the 2010s, and 111 so far in the 2020s. The newest permit year on record is 2025, so new wells are still going in.</p><p>Most wells are for irrigation and domestic needs: 47% of permits list irrigation, 34% domestic or household, 28% stock, and 5% monitoring. Aquifer names are split among 1,682 wells in an unnamed or fractured-bedrock aquifer, 1,087 in the Ogallala, and 22 in the High Plains Aquifer. Major drillers in the records include Wellstone Industries Dba Twiss &amp; Wilson Drilling Inc (Twiss, Raymond L.), Stewart Drilling Co. (Stewart, Dennis W.), and Jim Feighny &amp; Sons (Feighny, Jim).</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost here",
+   "html": "<p>Ground in Phillips County is mainly alluvium and plains sedimentary rock. Typical drilling rates run about $35–$55 per foot. At the county’s 270 foot median depth, that puts the drilled hole itself around $9,400–$14,800. When you add pump, pressure tank, trenching to the house, and electrical, the model points to roughly $15,400–$26,800 for a complete residential well system at that depth.</p><p>Because the middle half of wells fall between 218 and 305 feet, you’ll want a budget that can handle the deeper end of that range. Irrigation wells, especially those targeting the high-yield Ogallala sections, can run deeper and larger diameter, increasing total cost.</p>"
+  },
+  {
+   "heading": "Risks to check: PFAS, low yield spots, and septic",
+   "html": "<p>Countywide, yields look good on paper, with 75% of reported wells over 15 gpm and no reported wells under 1 gpm. Still, a specific parcel can sit over a thinner part of the aquifer or in an area where the unnamed fractured-bedrock aquifer is less predictable. Always review the nearest well logs and test pump results before committing.</p><p>There are 14 mapped PFAS sampling or contamination sites within about 10 miles in this area. That does not mean your well is contaminated, but it is a reason to run a lab test for PFAS and basic potability before drinking from any existing well. Plan your septic system so it stays well downslope and the required distance from the well to protect both water quality and future resale.</p>"
+  },
+  {
+   "heading": "Buying or building on land in Phillips County",
+   "html": "<p>For a new build around Holyoke, Haxtun, Amherst, Paoli, or out in the county, plan your well and septic early in the design. Expect a well depth in that 218–305 foot middle band and a static water level around the 158 foot median, with the recognition that the water table has been dropping from about 121 feet in the 1960s to 190 feet in the 2020s.</p><p>If the parcel already has a well, pull the DWR permit file and check reported depth, yield category (domestic, stock, or irrigation), and any static water level data. For vacant land, talk with a local driller who knows the Ogallala and nearby fractured-bedrock behavior in your immediate area before you finalize the purchase price.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Phillips County, Colorado?",
+   "a": "In Phillips County, the median well depth is 270 feet based on 1,480 wells that report a total depth. The middle half of wells run between 218 and 305 feet. Only about 1% of wells are shallower than 100 feet, while 65% fall in the 100–300 foot range and 34% are between 300 and 600 feet. The deepest recorded well reaches 515 feet."
+  },
+  {
+   "q": "How much water do wells in Phillips County typically produce?",
+   "a": "Among the 505 wells with reported pump tests, the median yield is 20.0 gallons per minute. The middle half range from 14.0 to 600.0 gpm, reflecting a mix of household and irrigation wells. Around 2% of wells are in the 1–5 gpm range, 23% make 5–15 gpm, and 75% produce more than 15 gpm. No wells in the records report less than 1 gpm."
+  },
+  {
+   "q": "Is the water table dropping in Phillips County, CO?",
+   "a": "Static water level data suggest a long-term decline. Median depth to water was 121 feet in the 1960s and 134 feet in the 1970s. More recent measurements show median levels of 182 feet in the 2010s and 190 feet in the 2020s. Overall, the current countywide median static level is 158 feet, but the decade-by-decade trend is toward deeper water levels."
+  },
+  {
+   "q": "What does it cost to drill a water well in Phillips County?",
+   "a": "In Phillips County’s alluvium and plains sedimentary rock, a typical drilling rate runs $35–$55 per foot. At the county’s 270 foot median depth, that puts the bare hole around $9,400–$14,800. A complete residential setup with pump, pressure tank, trenching, and electrical generally totals about $15,400–$26,800 at that same depth. Deeper or larger irrigation wells cost more."
+  },
+  {
+   "q": "Is well water safe to drink in Phillips County, Colorado?",
+   "a": "Water quality varies by location and aquifer. Records show 14 mapped PFAS sampling or contamination sites within about 10 miles, so you should test any existing well before drinking from it. A standard potability panel plus PFAS testing is recommended. Most wells here tap the Ogallala, High Plains, or unnamed fractured-bedrock aquifers, so proper construction and a good septic layout are also important for safety."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that handles access driveways, full site development, new-build septic systems, and custom homes on Phillips County properties.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1455,
+  "completion_tokens": 2290,
+  "total_tokens": 3745,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 126,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

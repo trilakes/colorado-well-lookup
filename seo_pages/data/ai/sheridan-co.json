@@ -1,0 +1,77 @@
+{
+ "title": "Sheridan Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Sheridan-area well records show a 30 ft median depth, but monitoring wells dominate. Compare yields, drilling costs and checks before buying.",
+ "h1": "What Sheridan well records mean for your property",
+ "eyebrow": "Sheridan Area Well Records",
+ "intro_html": "<p>A shallow well record near Sheridan is not necessarily a shallow household water supply. Monitoring accounts for 56% of permitted uses in this dataset, so the area's 30 ft median depth needs context before you use it to budget a home well.</p><p>These figures cover Colorado DWR permits within 5 miles of Sheridan, including nearby Englewood, Bow Mar and Littleton. Of 6,889 permit records, 3,170 are recorded as constructed. Use the map to find comparable wells, then check their use, completion details and water source—not just their distance from your lot.</p>",
+ "sections": [
+  {
+   "heading": "Why Sheridan's 30 ft median needs a closer look",
+   "html": "<p>Among 3,828 records reporting depth, the median is 30 ft and the middle half runs from 20–52 ft. Wells under 100 ft make up 80% of the depth mix. That describes a predominantly shallow record set, not a reliable target depth for a new household well.</p><p>The deeper end matters: the 90th percentile is 494 ft, and the deepest record is 2,021 ft. Permits name Alluvial and Denver aquifers, while many leave the source unnamed or broadly classified. <strong>Ask the driller to price the intended water-bearing formation.</strong> Nearby monitoring holes should not set the depth allowance for a domestic-well bid.</p>"
+  },
+  {
+   "heading": "Reported yields around Sheridan look useful, but coverage is thin",
+   "html": "<p>Only 258 records report pump yield. Within that group, the median is 13.8 gpm and the middle half spans 9.3–15.0 gpm. Those reported rates can be useful for household supply, but a completion-record yield does not establish sustained performance under your planned demand.</p><p>The reported share under 1 gpm is 0%, while 9% fall in the 1–5 gpm band. <strong>That is not proof that low-yield wells or dry holes are absent.</strong> Missing yield reports leave a substantial information gap. For an existing home, request a current pumping and recovery test, along with an assessment of the pump, pressure tank and any storage system.</p>"
+  },
+  {
+   "heading": "Shallow measured water does not show a falling Sheridan water table",
+   "html": "<p>Static water level is the depth to water while a well is resting, not the bottom of the drilled hole. The 175 reporting records have a median static level of 15 ft, with the middle half at 11–24 ft below ground.</p><p>Decade medians are 30 ft in the 1950s, 45 ft in the 1960s, 13 ft in the 2000s, 17 ft in the 2010s and 12 ft in the 2020s. This series does <strong>not</strong> show a consistent deepening trend. It also does not track the same wells through time. Different locations, aquifers and measurement conditions prevent treating it as proof of stable supply on a particular lot.</p>"
+  },
+  {
+   "heading": "Sheridan's permit history is heavily shaped by monitoring work",
+   "html": "<p>Permit activity was highest in the supplied decade totals during the 2000s, with 1,622 permits, following 1,533 in the 1990s. The 2010s account for 810 and the 2020s for 512; the newest permit year is 2025. These are permit counts, not counts of completed household wells.</p><p>Domestic/household use represents 21%, compared with 56% monitoring. The leading driller-field entry is “Authorized (Pe, Pg)” at 2,543 records; that label should not be read as a conventional drilling-company name. Hier Drilling Co Inc appears on 213 records and Ground Exploration Llc on 153. Historical activity is a starting point for research, not confirmation of current availability or domestic-well experience.</p>"
+  },
+  {
+   "heading": "Budgeting a Sheridan well beyond the drilled hole",
+   "html": "<p>The supplied cost model assumes Denver Basin sedimentary bedrock at $50–$70 per foot. Applied to the 30 ft median depth, that puts the drilled hole at about $1,500–$2,100. The modeled finished well, including pump, tank, trenching and electrical, is about $7,500–$14,100.</p><p><strong>Treat that as a median-depth scenario, not a site quote.</strong> The monitoring-heavy dataset can make this allowance a poor fit for a household well targeting deeper water. Request a written scope covering expected depth, casing, grout, pump installation and site access. Ask how additional drilling, difficult ground, water treatment and longer utility runs would be handled before comparing bids.</p>"
+  },
+  {
+   "heading": "Environmental records deserve attention before you drink or dig",
+   "html": "<p>Within about 10 miles, the mapped inventory includes 466 PFAS sampling/contamination sites, 152 EPA Superfund/cleanup sites and 34 historic mine features. These are screening flags—not evidence that every Sheridan well is contaminated. A sampling location also does not necessarily represent a confirmed exceedance.</p><p>Review nearby site records and arrange water testing appropriate to the property's history, including PFAS where warranted. Inspect casing, grout and the wellhead for pathways that could admit surface contamination. Low-yield and dry-hole risk still require site-specific review. For construction, coordinate well placement with any proposed septic system, building excavation, drainage and access rather than resolving those conflicts after drilling.</p>"
+  },
+  {
+   "heading": "Buying near Englewood or Bow Mar: start with the actual permit",
+   "html": "<p>For a Sheridan-area purchase, begin with the property's DWR permit and well completion report. Confirm the authorized use, construction status and whether the well actually serves the home. A monitoring permit does not authorize household supply, and an exempt household-use permit should not be assumed to cover outdoor irrigation.</p><p>Compare nearby wells in Englewood, Bow Mar or Columbine Valley only when their aquifer, use and construction are relevant. For an undeveloped lot, establish the legal water-supply path before committing to a building plan. Resolve any augmentation requirements with DWR, and make room for drilling access, utilities and any approved septic layout in the site plan.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Sheridan, Colorado?",
+   "a": "Within 5 miles of Sheridan, reported well depth has a 30 ft median, with the middle half at 20–52 ft. However, monitoring makes up 56% of permitted uses, so these figures are not a household-well depth forecast. The 90th-percentile depth is 494 ft. Compare wells serving the same purpose and tapping the intended aquifer."
+  },
+  {
+   "q": "How much does it cost to drill a well in Sheridan?",
+   "a": "The supplied model uses $50–$70 per foot for Denver Basin sedimentary bedrock. At the recorded 30 ft median depth, drilling is about $1,500–$2,100, or $7,500–$14,100 for a finished well with pump, tank, trenching and electrical. Because monitoring wells dominate the records, a domestic well may need a different depth allowance and a site-specific quote."
+  },
+  {
+   "q": "How much water do wells produce near Sheridan?",
+   "a": "The 258 records reporting yield have a median of 13.8 gpm, with the middle half at 9.3–15.0 gpm. The reported share under 1 gpm is 0%, but missing reports mean that is not a guarantee against poor production. Have an existing well tested for sustained pumping and recovery before relying on it for a purchase."
+  },
+  {
+   "q": "Is well water safe to drink in Sheridan, Colorado?",
+   "a": "Permit records cannot establish drinking-water safety. The surrounding inventory lists 466 PFAS sampling/contamination sites and 152 EPA Superfund/cleanup sites within about 10 miles, but proximity alone does not prove contamination. Review the relevant site files, inspect the well's construction and obtain current laboratory testing selected for the property's potential exposures."
+  },
+  {
+   "q": "Is the water table dropping around Sheridan?",
+   "a": "The supplied measurements do not show a consistent dropping trend. Median depth to water was 13 ft in the 2000s, 17 ft in the 2010s and 12 ft in the 2020s. These are grouped records, not repeated readings from the same wells. They cannot establish the long-term reliability of an individual property's supply."
+  }
+ ],
+ "tri_lakes_blurb": "For a Sheridan-area lot, Tri-Lakes Contracting is a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes. Coordinate those plans with the property's permitted water supply and well location before excavation.",
+ "_model": "gpt-6-astra",
+ "_usage": {
+  "prompt_tokens": 1442,
+  "completion_tokens": 2145,
+  "total_tokens": 3587,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1439,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 100,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

@@ -1,0 +1,77 @@
+{
+ "title": "Edgewater Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Edgewater-area wells have a 28 ft median depth, but monitoring wells dominate the records. Review yields, costs and checks before buying.",
+ "h1": "What Edgewater Well Records Mean for Your Property",
+ "eyebrow": "Jefferson County Well Records",
+ "intro_html": "<p>A shallow well record near Edgewater is not necessarily a guide to a household water supply. Monitoring accounts for 55% of the permits in this dataset, while domestic and household uses account for 25%. That distinction matters when comparing depths, production and drilling budgets.</p><p>The records cover permitted wells within 5 miles of Edgewater, including nearby Mountain View, Lakeside, Wheat Ridge and Lakewood. Colorado DWR lists 11,506 permits in that area, with 5,654 recorded as constructed. Use these records to narrow your questions about a property—not as proof that a new residential well will be permitted or perform like its neighbors.</p>",
+ "sections": [
+  {
+   "heading": "Why Edgewater’s 28-Foot Median Needs Context",
+   "html": "<p>Among the 6,308 records reporting depth, the median is 28 feet and the middle half runs from 20 to 47 feet. That is a shallow spread, but it describes a mixed-use dataset dominated by monitoring permits. It is not a dependable residential drilling specification.</p><p>Some 88% of reported depths are under 100 feet, while the deepest record reaches 1,997 feet. Permits name Alluvial and Denver aquifers, alongside a much larger unnamed or fractured-bedrock category. For a useful bid, match nearby records by intended use, aquifer and construction—not just distance. A shallow alluvial completion and a deeper sedimentary-bedrock supply can require very different drilling and casing work.</p>"
+  },
+  {
+   "heading": "Reported Production Near Edgewater",
+   "html": "<p>The 290 records with pump yields show a median of 10.2 gpm, with the middle half between 8.0 and 15.0 gpm. Those reported rates can support household demand in many circumstances, but a permit entry does not establish sustained production, recovery or current pump condition.</p><p>Low production still deserves attention: 3% report under 1 gpm, and 8% fall in the 1–5 gpm group. For a buyer, an under-1-gpm result is a reason to investigate storage needs and recovery before committing. Ask for a current pumping and recovery test. Yield reporting is sparse compared with the overall permit inventory, so these figures should not be treated as parcel-level odds of success.</p>"
+  },
+  {
+   "heading": "Shallow Water Levels, Without a Clear Declining Trend",
+   "html": "<p>Static water level is the resting depth to water, not the bottom of the well or the water level during pumping. Across 223 reporting records near Edgewater, its median is 14 feet below ground, with the middle half between 10 and 19 feet.</p><p>The decade medians do not show a steady decline: they are 13 feet in the 1950s, 16 in the 1960s, 13 in the 2000s, 16 in the 2010s and 13 in the 2020s. These are different groups of measurements, not continuous monitoring of the same wells. They do not establish a dropping regional water table, but they also cannot guarantee stable water levels at a particular property.</p>"
+  },
+  {
+   "heading": "Reading Edgewater’s Permit and Driller History",
+   "html": "<p>Permit activity was highest in the 2000s, with 2,406 permits, following 2,199 in the 1990s. The records list 1,619 in the 2010s and 825 in the 2020s, with the newest permit dated 2025. The current decade is incomplete, and monitoring-heavy activity should not be mistaken for household well construction.</p><p>The leading driller-field entry is “Authorized (Pe, Pg),” appearing in 4,134 records; do not assume that label identifies a residential drilling company. Named drillers include Adams Water Well Drilling (Adams, George E), with 175 records, and Ground Exploration Llc (Bender, Joseph T.), with 161. Historical appearances do not establish current availability or suitability for a domestic project.</p>"
+  },
+  {
+   "heading": "An Edgewater Well Budget Starts With the Intended Aquifer",
+   "html": "<p>The supplied cost model uses Denver Basin sedimentary bedrock and a drilling rate of $50–$70 per foot. At the dataset’s 28-foot median depth, that puts the drilled hole at about $1,400–$2,000. A finished well with pump, tank, trenching and electrical is modeled at about $7,400–$14,000.</p><p><strong>Do not use that finished price as a firm household-well quote.</strong> The median comes from mixed-use records, and your permitted supply may need a different depth or completion. Have the contractor identify the assumed aquifer and separately spell out casing, grout, pump equipment, access and utility connections. The drilled footage is only part of the job, particularly when site access or trench routes are constrained.</p>"
+  },
+  {
+   "heading": "Water Quality and Site Risks Around Edgewater",
+   "html": "<p>Within about 10 miles, the map identifies 649 PFAS sampling or contamination sites, 97 historic mine features and 183 EPA Superfund or cleanup sites. Those are screening leads, not evidence that an individual well is contaminated. A sampling location is not necessarily a confirmed contamination source.</p><p>Review the relevant site files and get current laboratory testing suited to the property’s location and history. Check casing, grout and surface drainage as well. The yield records cannot tell you the likelihood of a dry hole. For a build, coordinate any proposed septic system, well location, excavation and foundation plan with local requirements; shallow recorded water levels warrant checking actual site conditions rather than assuming a dry excavation.</p>"
+  },
+  {
+   "heading": "Before Buying a Lot in Edgewater or Wheat Ridge",
+   "html": "<p>Start with the parcel’s actual water-service options and DWR permit status. A nearby well in Mountain View, Lakeside or Wheat Ridge does not establish a right to drill on your lot. Verify the permitted use, construction documents and any restrictions before relying on well water for a purchase or building plan.</p><p>Do not assume an exempt household-use permit allows irrigation or every proposed use. Depending on the water source and legal setting, augmentation requirements may apply. For an existing supply, request a current production test and water-quality results. For a new build, settle the water source before finalizing driveway access, septic feasibility, trenching routes and the house location.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Edgewater, Colorado?",
+   "a": "Within 5 miles of Edgewater, reported well depths have a median of 28 feet, and the middle half runs from 20 to 47 feet. However, monitoring uses account for 55% of permits. Compare household wells in the same aquifer before treating those shallow figures as a target depth for a residential supply."
+  },
+  {
+   "q": "How much does it cost to drill a well in Edgewater?",
+   "a": "The supplied model estimates $50–$70 per foot for Denver Basin sedimentary bedrock. At the 28-foot median depth, the hole is about $1,400–$2,000, or about $7,400–$14,000 finished with pump, tank, trenching and electrical. Because monitoring permits dominate the dataset, a household well may require a different depth and budget."
+  },
+  {
+   "q": "How much water do wells near Edgewater produce?",
+   "a": "The 290 records reporting pump yield have a median of 10.2 gpm, with the middle half at 8.0–15.0 gpm. Some 3% report under 1 gpm. Those entries describe reported production, not guaranteed long-term supply. Before buying, have the actual well tested for pumping performance and recovery, and review whether storage is needed."
+  },
+  {
+   "q": "Is well water safe to drink in Edgewater?",
+   "a": "The permit statistics do not establish drinking-water safety. The surrounding map includes 649 PFAS sampling or contamination sites and 183 EPA Superfund or cleanup sites within about 10 miles, but proximity alone does not prove contamination. Review nearby site records and obtain current laboratory testing appropriate to the property before relying on the water."
+  },
+  {
+   "q": "Is the water table dropping near Edgewater?",
+   "a": "The available decade medians do not show a steady decline. Median depth to water alternates between 13 and 16 feet across the reported decades, with 13 feet in the 2020s. These measurements come from different groups of wells rather than a continuous monitoring network, so they cannot establish the trend at an individual property."
+  }
+ ],
+ "tri_lakes_blurb": "For an Edgewater-area project, Tri-Lakes Contracting is a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes. Coordinate the site plan with confirmed water service and local wastewater requirements before committing to the building layout.",
+ "_model": "gpt-6-astra",
+ "_usage": {
+  "prompt_tokens": 1446,
+  "completion_tokens": 2200,
+  "total_tokens": 3646,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1443,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 154,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

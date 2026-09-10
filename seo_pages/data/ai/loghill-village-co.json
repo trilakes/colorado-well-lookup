@@ -1,0 +1,77 @@
+{
+ "title": "Loghill Village Well Depth and Drilling Cost",
+ "meta_description": "Loghill Village wells have a 220 ft median depth, 10 gpm median yield, and estimated finished costs of $20,300-$34,000.",
+ "h1": "Loghill Village Well Depth, Yield, and Cost",
+ "eyebrow": "Ouray County well guide",
+ "intro_html": "<p>Buying land or a home in Loghill Village means dealing with mountain bedrock, variable well depths, and incomplete records. Within 5 miles, Colorado DWR records show 430 permitted wells, with 267 reporting a total depth and 106 reporting a pump yield. The local record points to a typical well around 220 feet, but the spread is wide. Nearby Ridgway, Portland, Colona, Ouray, Telluride, and Sawpit provide useful regional context, but the well on the specific parcel matters most.</p><p>This guide uses permitted-well records to explain what a buyer or builder should ask before committing to a lot. A driller's estimate, pump test, water-quality testing, septic layout, and DWR permit review are still needed for a property-specific decision.</p>",
+ "sections": [
+  {
+   "heading": "How deep are wells around Loghill Village?",
+   "html": "<p>The median reported well depth near Loghill Village is 220 feet. The middle half runs from 100 to 310 feet, so a bid based only on the median can miss the conditions on a particular parcel. Twenty-four percent of reported wells are under 100 feet, 41% fall between 100 and 300 feet, and 30% are between 300 and 600 feet. Five percent are deeper than 600 feet.</p><p>The ground here is fractured mountain bedrock, including granite and gneiss. Water may come from fractures rather than a consistent shallow formation, making depth and production less predictable. The deepest record is 4,421 feet, but it is not a normal planning assumption. Ask a licensed driller to review nearby completions, access, casing, grout, and the likely stopping depth before accepting a fixed-price proposal.</p>"
+  },
+  {
+   "heading": "What a Loghill Village well may produce",
+   "html": "<p>Among the 106 wells reporting a pump yield, the median is 10.0 gallons per minute. The middle half ranges from 6.2 to 15.0 gallons per minute. Forty-seven percent report between 5 and 15 gallons per minute, while 37% report more than 15 gallons per minute. Fourteen percent report between 1 and 5 gallons per minute, and 2% are under 1 gallon per minute.</p><p>That distribution is encouraging for ordinary household use, but it is not a guarantee for an untested parcel. A low-yield well can still work with storage, while a stronger well does not remove the need for safe construction and water testing. Confirm the permitted use, pump-test results, storage tank plan, and any household or irrigation demand before you compare properties.</p>"
+  },
+  {
+   "heading": "Water levels and the local mountain trend",
+   "html": "<p>Reported static water levels have a median depth of 50 feet below the surface, with the middle half from 9 to 145 feet. That range is broad enough to affect pump placement, trenching, and the cost of bringing water into a home. Static level is not the same as a pumping level, so a driller should explain drawdown and recovery for the specific well.</p><p>The decade figures do not show a clear falling water table in this record. The median measured depth to water was 61 feet in the 2010s and 50 feet in the 2020s, meaning the later median was shallower. Only 29 wells report a static water level, however, and the measurements may come from different locations and conditions. Treat the series as limited context, not a parcel-level groundwater forecast.</p>"
+  },
+  {
+   "heading": "Who has drilled near Loghill Village?",
+   "html": "<p>Permit history shows activity across several decades, with 3 permits in the 1950s, 43 in the 1970s, 65 in the 1980s, 86 in the 1990s, 56 in the 2000s, 48 in the 2010s, and 24 in the 2020s. The newest permit year in the records is 2025. These figures describe permits, not necessarily current construction activity or available contractors.</p><p>The most common driller in the records is Valley Drilling Co. (Stoy, Kenneth), associated with 95 wells. Bill Kissner Drilling Inc (Kissner, Bill F.) appears on 26, and Mccracken Well Drilling Inc (Mccracken, Alan E.) appears on 20. Use these records to identify local experience, then verify current licensing, references, scheduling, access requirements, and what the quoted work includes.</p>"
+  },
+  {
+   "heading": "What drilling a well may cost here",
+   "html": "<p>For fractured mountain bedrock around Loghill Village, the cost model uses $65-$100 per foot. At the 220-foot median depth, the drilled hole works out to about $14,300-$22,000. A finished system with pump, pressure tank, trenching, and electrical is estimated at $20,300-$34,000.</p><p>That is a planning range, not a guaranteed bid. Actual cost can change with road access, steep ground, casing and grout requirements, water encountered, drilling beyond the planned depth, and the distance to the building site. Ask for separate line items for drilling, casing, grout, pump equipment, tank, trenching, electrical, testing, and permits. A cheap per-foot number can be misleading if the completion work is excluded.</p>"
+  },
+  {
+   "heading": "Risks to check before building in Loghill Village",
+   "html": "<p>Low yield is not the only concern. Records identify 393 wells in unnamed or fractured-bedrock aquifers, with 14 in Dakota Sandstone and 8 in Dakota. No Denver Basin aquifer wells are reported. Fractured rock can produce well in one location and poorly a short distance away, so neighboring wells are useful evidence but not a guarantee.</p><p>Within about 10 miles, mapped environmental records include 4 PFAS sampling or contamination sites, 13 historic mine features, and 1 EPA Superfund or cleanup site. Those maps do not prove contamination at a home, but they support testing for site-appropriate contaminants and reviewing land history. Before construction, confirm septic setbacks, the well location, access for drilling equipment, foundation elevation, and whether the water right and DWR permit support the intended household, stock, or irrigation use.</p>"
+  },
+  {
+   "heading": "A practical plan for buying or building here",
+   "html": "<p>Start with the parcel's DWR permit and completion report, not a regional average. Confirm the well's depth, yield, static water level, construction details, permitted use, and whether the recorded well serves the property being sold. If the parcel has no well, have a driller review nearby records in Loghill Village and the surrounding mountain terrain before you set a drilling budget.</p><p>For a purchase, make the well inspection and water-quality test part of due diligence. For a new build, locate the well and septic system together so access, setbacks, trenching, and drainage work as one plan. Budget around the local $20,300-$34,000 finished-system estimate at the median depth, then keep room for difficult access or deeper drilling. DWR rules may require an augmentation plan in an over-appropriated basin, so verify the water-use plan before designing the house.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Loghill Village?",
+   "a": "The median reported depth is 220 feet, and the middle half of reported wells ranges from 100 to 310 feet. Local conditions vary because the area is fractured mountain bedrock. Thirty percent of reported wells are between 300 and 600 feet, while the deepest record is 4,421 feet. Nearby well records can help a driller estimate a specific parcel."
+  },
+  {
+   "q": "How much does it cost to drill a well in Loghill Village?",
+   "a": "The local cost model uses $65-$100 per foot in fractured granite and gneiss. At the 220-foot median depth, the drilled hole is estimated at $14,300-$22,000. A finished system with pump, tank, trenching, and electrical is estimated at $20,300-$34,000. Access, casing, grout, deeper drilling, and site distance can change the bid."
+  },
+  {
+   "q": "How much water does a well produce in Loghill Village?",
+   "a": "The median reported pump yield is 10.0 gallons per minute, with a middle-half range of 6.2 to 15.0 gallons per minute. Forty-seven percent of reported wells produce 5 to 15 gallons per minute, while 2% are under 1 gallon per minute. These figures are regional records, not a guarantee for a new or untested well."
+  },
+  {
+   "q": "Is well water safe in Loghill Village?",
+   "a": "The well records do not establish whether water at a particular home is safe to drink. Testing is important because mapped records within about 10 miles include 4 PFAS sampling or contamination sites, 13 historic mine features, and 1 EPA Superfund or cleanup site. Test the individual well for common drinking-water concerns and contaminants appropriate to the property's history."
+  },
+  {
+   "q": "Are there old well permits near Loghill Village?",
+   "a": "Yes. The records include permits from the 1950s through the 2020s, with the newest permit year being 2025. The largest decade total is 86 permits in the 1990s. Records show 430 permitted wells within 5 miles, but only 227 are recorded as constructed. Review the actual permit and completion report for the property rather than relying on age alone."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Loghill Village and the surrounding Ouray County area. The company handles access driveways, site development, new-build septic systems, and custom homes.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1421,
+  "completion_tokens": 2201,
+  "total_tokens": 3622,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1418,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 56,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

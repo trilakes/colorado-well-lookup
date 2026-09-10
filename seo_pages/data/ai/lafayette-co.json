@@ -1,0 +1,77 @@
+{
+ "title": "Lafayette Well Depth and Drilling Cost",
+ "meta_description": "Lafayette wells have a 173 ft median depth, 10 gpm median yield, and estimated finished costs of $14,600-$24,100.",
+ "h1": "What Lafayette Wells Cost, Produce, and Require",
+ "eyebrow": "Lafayette well buyer guide",
+ "intro_html": "<p>Buying land in Lafayette means understanding the well records behind the property, not just assuming nearby homes have the same water. Within five miles, Colorado DWR records include 3,898 permitted wells, though only 2,249 are recorded as constructed and 525 report a pump yield. The local record points to generally productive wells, but depth and water quality still vary by site.</p><p>Most permits are for domestic or household use, and the area is tied to Denver Basin aquifer records. Use the statistics below to frame a driller's bid, test a seller's claims, and identify questions about septic, contamination, and building access before closing.</p>",
+ "sections": [
+  {
+   "heading": "Lafayette well depths vary more than the median suggests",
+   "html": "<p>The median reported well depth near Lafayette is 173 feet. The middle half runs from 40 to 310 feet, which is a wide range for estimating drilling work on a specific lot. A driller should not price a new well from the median alone. The 90th-percentile depth is 520 feet, and the deepest record reaches 1,400 feet.</p><p>About 39% of wells are under 100 feet, while 31% fall between 100 and 300 feet. Another 23% are 300 to 600 feet, and 7% exceed 600 feet. Permits name unnamed or fractured-bedrock aquifers most often, with Laramie Fox Hills and alluvial records also present. Fractured-bedrock conditions can change over short distances, so neighboring logs are useful but not a guarantee.</p>"
+  },
+  {
+   "heading": "Most Lafayette wells make usable household volumes",
+   "html": "<p>Among the 525 wells reporting a pump yield, the median is 10.0 gallons per minute, and the middle half is 9.0 to 15.0 gallons per minute. That is a stronger production profile than a low-yield area, but a reported yield is not the same as a permanent guarantee. The test method, recovery, storage, and household demand still matter.</p><p>About 65% of reported wells produce 5 to 15 gallons per minute, and 29% report more than 15 gallons per minute. Only 2% are under 1 gallon per minute, while 4% are between 1 and 5 gallons per minute. Ask for the well construction report, pump information, and a current flow or recovery test before relying on a seller's estimate.</p>"
+  },
+  {
+   "heading": "Lafayette water levels show variation, not a simple decline",
+   "html": "<p>The median static water level is 20 feet below the surface, with the middle half from 10 to 42 feet. That gives a useful starting point for pump and electrical planning, but static water level is not the same as the water a well can continuously produce. It can change with season, pumping, recharge, and measurement conditions.</p><p>The decade series does not show a steady downward trend. Median measurements were 27 feet in the 1950s, 26 in the 1960s, 22 in the 1970s, 27 in the 1980s, 31 in the 2010s, and 11 in the 2020s. Only 119 records report a static water level, so treat the series as local history rather than a complete groundwater monitoring record.</p>"
+  },
+  {
+   "heading": "Lafayette has a long permit history and several familiar drillers",
+   "html": "<p>Permit activity stretches from the 1950s through the newest record in 2026. The busiest decades in the records were the 1990s with 497 permits and the 1970s with 484. There were 315 permits in the 2020s, compared with 267 in the 2010s. A permit count describes recorded activity, not necessarily the number of functioning wells today.</p><p>The most active names in these records are Authorized (Pe, Pg), with 557 wells; Waneka &amp; Son Drilling (Waneka, Don), with 532; and Ground Water Systems Inc (Wilson, Richard R.), with 211. These are useful starting points for finding local logs and drilling history, but get a current written scope and verify who will perform the work on your lot.</p>"
+  },
+  {
+   "heading": "A median-depth Lafayette well can cost $14,600 to $24,100 finished",
+   "html": "<p>The cost model for Lafayette's Denver Basin sedimentary bedrock uses a typical drilling rate of $50 to $70 per foot. At the 173-foot median depth, the drilled hole works out to about $8,600 to $12,100. That is only the hole, not a ready-to-use water system.</p><p>A finished well including the pump, pressure tank, trenching, and electrical is estimated at $14,600 to $24,100 at that median depth. A 310-foot well, or one that needs difficult access, extra casing, more trenching, or specialized construction, will not fit that median-depth estimate. Ask exactly what casing, grout, pump equipment, testing, permits, electrical work, and restoration are included.</p>"
+  },
+  {
+   "heading": "Check Lafayette water quality, dry-hole risk, and the building plan",
+   "html": "<p>Production looks favorable in the reported records, but no area is risk-free. Within about 10 miles are 618 PFAS sampling or contamination sites, 104 historic mine features, and 27 EPA Superfund or cleanup sites. Those mapped sites do not prove a particular parcel is contaminated. They do justify a site-specific water test and a review of nearby land uses, especially before buying an older home.</p><p>Also confirm the permit's authorized use. Domestic or household wells make up 57% of the records, while monitoring wells make up 22%. A well permit, septic approval, driveway plan, and building plan are separate issues. Check setbacks, septic soil conditions, access for a rig, pump power, storage needs, and any augmentation requirements that apply to the proposed use.</p>"
+  },
+  {
+   "heading": "What to do before buying or building near Lafayette",
+   "html": "<p>Start with the well permit and construction report for the exact parcel. Then compare nearby records in Louisville, Broomfield, Leyner, Erie, Paragon Estates, and Superior, without treating any one neighbor as a promise of results. Look for depth, aquifer description, yield, static level, casing, grout, pump, and the age of the equipment.</p><p>For a vacant lot, have a licensed driller review access and propose a siting plan before you close. Price the complete system rather than drilling alone, and make the water-quality test part of the transaction. If the intended use exceeds an exempt household-use well's limits, confirm water rights and any augmentation plan requirements with Colorado DWR. A buyer's inspection should cover both the well and the septic/building layout.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Lafayette, Colorado?",
+   "a": "The median reported well depth within five miles of Lafayette is 173 feet. The middle half runs from 40 to 310 feet, while the 90th-percentile depth is 520 feet. About 39% are under 100 feet, but 7% exceed 600 feet. Use nearby logs to plan, not to guarantee the depth on your parcel."
+  },
+  {
+   "q": "What does it cost to drill a well in Lafayette?",
+   "a": "The local cost model uses $50 to $70 per foot. At the 173-foot median depth, the drilled hole is estimated at $8,600 to $12,100. A finished system with pump, tank, trenching, and electrical is estimated at $14,600 to $24,100. Deeper drilling, access problems, and added construction can raise the total."
+  },
+  {
+   "q": "How much water do Lafayette wells produce?",
+   "a": "Among 525 wells reporting pump yield, the median is 10.0 gallons per minute and the middle half is 9.0 to 15.0 gallons per minute. About 65% report 5 to 15 gallons per minute, while 2% report under 1 gallon per minute. Request the actual well report and a current test before relying on a yield claim."
+  },
+  {
+   "q": "Is well water safe to drink in Lafayette?",
+   "a": "The records do not establish that every well is safe to drink. About 10 miles around Lafayette include 618 PFAS sampling or contamination sites, 104 historic mine features, and 27 EPA Superfund or cleanup sites. Test the specific well, review its construction and use history, and retest after ownership changes or nearby land-use changes."
+  },
+  {
+   "q": "Are Lafayette well water levels dropping?",
+   "a": "The available measurements do not show a simple steady decline. Median static water levels were 27 feet below surface in the 1950s, 31 feet in the 2010s, and 11 feet in the 2020s. Only 119 wells report a static level, so the series is limited and should not substitute for a current measurement at the property."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Lafayette and nearby Boulder County communities with access driveways, site development, new-build septic systems, and custom homes. Bring the well, septic, and building layout together before construction starts.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1446,
+  "completion_tokens": 2293,
+  "total_tokens": 3739,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1443,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 133,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

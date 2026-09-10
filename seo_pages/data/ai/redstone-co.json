@@ -1,0 +1,77 @@
+{
+ "title": "Redstone Well Depth and Drilling Cost",
+ "meta_description": "Redstone wells have a median depth of 85 feet, but fractured bedrock makes yield and drilling cost site-specific.",
+ "h1": "Redstone, Colorado Well Depths, Yields, and Costs",
+ "eyebrow": "Redstone well records",
+ "intro_html": "<p>Buying land near Redstone means dealing with mountain bedrock, not a predictable basin aquifer. Permitted-well records within 5 miles show a median total depth of 85 feet, a median reported yield of 15.0 gallons per minute, and a median static water level of 64 feet. Those figures are useful for screening a property, but they do not guarantee what a new well will find. Only 195 wells report total depth, 56 report pump yield, and 8 report static water level. Neighboring well locations, construction reports, and a site-specific driller's estimate matter before you buy or build.</p>",
+ "sections": [
+  {
+   "heading": "Redstone well depth: shallow records, hard-rock uncertainty",
+   "html": "<p>Redstone wells in the records have a median depth of 85 feet. The middle half runs from 55 to 144 feet, so many bids may fall in that range, but the spread is important: the 90th-percentile depth is 245 feet and the deepest recorded well is 600 feet. About 56% are under 100 feet, 37% fall from 100 to 300 feet, and 7% are from 300 to 600 feet.</p><p>That pattern is consistent with fractured mountain bedrock, identified on 328 permits as an unnamed or fractured-bedrock aquifer. Granite and gneiss can produce water through fractures that change sharply across a parcel. A median-depth estimate is a planning point, not a drilling guarantee.</p>"
+  },
+  {
+   "heading": "How much water do Redstone wells produce?",
+   "html": "<p>Reported well yields are generally strong, but the sample is limited to 56 wells. The median is 15.0 gallons per minute, with the middle half from 10.0 to 15.0 gallons per minute. Of the reported yields, 68% are above 15 gallons per minute, 27% are from 5 to 15 gallons per minute, and 5% are from 1 to 5 gallons per minute. No reported well is under 1 gallon per minute.</p><p>For a buyer, that is encouraging but not a promise for an untested lot. Fractured rock can make nearby wells perform differently. Ask for the well completion report, pump test information, storage capacity, and any history of seasonal shortage before relying on the headline median.</p>"
+  },
+  {
+   "heading": "Water levels around Redstone and what the records show",
+   "html": "<p>The reported static water level has a median depth of 64 feet, with the middle half from 22 to 112 feet below ground. In practical terms, a pump installer may need to plan around a water level that varies substantially from one location to another. Static water level is not the same as pumping level, and it does not by itself tell you how quickly a well will recover.</p><p>Only 8 wells report a static water level, so the Redstone records are too sparse to establish a reliable water-table trend. The permit counts by decade show activity rather than groundwater decline: 18 permits in the 1960s, 42 in the 1970s, 60 in the 1980s, 89 in the 1990s, 49 in the 2000s, 21 in the 2010s, and 10 in the 2020s. The newest permit year is 2025.</p>"
+  },
+  {
+   "heading": "Who drilled near Redstone, and when?",
+   "html": "<p>Permit history reaches from the 1960s through 2025, with the largest recorded decade being the 1990s at 89 permits. The records include 329 permitted wells, of which 187 are recorded as constructed. The most active drillers named in the data are Shelton Drilling Corporation, with 88 records; Collins Drilling Co, with 64; and Steve Shelton Drilling, Inc., with 46.</p><p>Those names can help when comparing older completion reports, but a past driller's presence does not establish current availability or price. Before closing, pull the actual DWR permit and construction record for the property and nearby parcels. Confirm the permitted use: 80% of the records are domestic or household wells, while monitoring wells account for 10%.</p>"
+  },
+  {
+   "heading": "What a new Redstone well may cost",
+   "html": "<p>For Redstone's fractured granite and gneiss, the drilling model uses a typical rate of $65 to $100 per foot. At the local median depth of 85 feet, the drilled hole is estimated at about $5,500 to $8,500. A finished system, including pump, pressure tank, trenching, and electrical, is estimated at about $11,500 to $20,500.</p><p>That range is not a fixed bid. A deeper hole, difficult access, casing and grout requirements, unexpected fracture conditions, or longer utility runs can move the total. Have a driller separate drilling, casing, grout, pump equipment, trenching, electrical, water testing, and permits in the estimate. Ask what happens if the first hole is low-yield or dry.</p>"
+  },
+  {
+   "heading": "Redstone risks to check before construction",
+   "html": "<p>Two PFAS sampling or contamination sites and 52 historic mine features are mapped within about 10 miles. There are no EPA Superfund or cleanup sites in that area, but a mapped feature still deserves a parcel-specific review. Test existing well water for appropriate local concerns, especially if the property is near mining activity or a potential contamination source.</p><p>Low yield and dry holes remain possible in fractured rock even though 68% of reported yields exceed 15 gallons per minute. Confirm the proposed well location, access for a rig, setbacks from septic components, and room for a replacement or storage system. A septic designer should evaluate soil, slope, and groundwater separation before a house site is selected. A DWR permit and any required augmentation plan also need review for the intended use.</p>"
+  },
+  {
+   "heading": "Buying or building near Redstone: a practical sequence",
+   "html": "<p>Start with neighboring wells, not the median alone. Compare depths, reported yields, static levels, construction dates, and uses on parcels close to the lot. The local record is dominated by fractured-bedrock wells, with 328 permits naming that aquifer type and only 1 naming an alluvial aquifer, so distance to a productive neighbor does not remove geologic uncertainty.</p><p>Before making the purchase contingent on water, have a Colorado well driller review the records and price the likely depth range. Verify the permit status, household-use limitations, access route, septic layout, and electrical path. If you are building, coordinate the well, septic, driveway, and house location before excavation. For an existing home, obtain recent water-quality results and a pump test or flow evaluation rather than relying only on the seller's description.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells near Redstone, Colorado?",
+   "a": "Permitted wells within 5 miles of Redstone have a median depth of 85 feet. The middle half runs from 55 to 144 feet, while the 90th-percentile depth is 245 feet and the deepest record is 600 feet. About 56% are under 100 feet. Fractured granite and gneiss can still make one parcel require a much deeper hole than its neighbors."
+  },
+  {
+   "q": "How much does it cost to drill a well in Redstone?",
+   "a": "The local drilling model uses $65 to $100 per foot. At the 85-foot median depth, the drilled hole is estimated at $5,500 to $8,500. A finished well with pump, tank, trenching, and electrical is estimated at $11,500 to $20,500. Access, depth, casing, grout, utilities, and difficult bedrock can change the final bid."
+  },
+  {
+   "q": "How much water do wells near Redstone produce?",
+   "a": "Among the 56 Redstone-area wells that report pump yield, the median is 15.0 gallons per minute and the middle half is 10.0 to 15.0 gallons per minute. The records show 68% above 15 gallons per minute, 27% from 5 to 15, and 5% from 1 to 5. A neighboring result is not a guarantee for your lot."
+  },
+  {
+   "q": "Is well water safe to drink in Redstone, Colorado?",
+   "a": "Safety depends on the individual well and testing, not the area median. Two PFAS sampling or contamination sites and 52 historic mine features are mapped within about 10 miles, with no EPA Superfund or cleanup sites. Test an existing well before purchase and after construction, and review nearby mining or contamination features with a qualified water professional."
+  },
+  {
+   "q": "Are there well permits near Redstone, Colorado?",
+   "a": "Yes. DWR records contain 329 permitted wells within 5 miles of Redstone, with 187 recorded as constructed. The newest permit year is 2025. Most are domestic or household wells, accounting for 80% of the records. Confirm the specific parcel's permit, allowed use, construction status, and any water-right or augmentation requirements before closing."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Redstone-area projects with access driveways, site development, new-build septic systems, and custom homes. Early coordination can keep the well, septic, driveway, and building layout workable on a mountain site.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1380,
+  "completion_tokens": 2187,
+  "total_tokens": 3567,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1377,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 123,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

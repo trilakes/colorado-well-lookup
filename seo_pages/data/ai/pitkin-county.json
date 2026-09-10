@@ -1,0 +1,77 @@
+{
+ "title": "Pitkin County Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Pitkin County wells have a 105-foot median depth. Compare reported yields, water levels and modeled finished-well costs of $12,800-$22,500.",
+ "h1": "What to Expect From a Well in Pitkin County",
+ "eyebrow": "Mountain Ground, Local Well Records",
+ "intro_html": "<p>A well near Woody Creek may tell you more about your lot than a countywide average, but Pitkin County’s records give you a useful starting point. Reported wells have a median depth of <strong>105 feet</strong> and a median pump yield of <strong>15.0 gpm</strong>. Neither figure is a promise for an undrilled mountain parcel.</p><p>Colorado DWR records contain <strong>4,760 permitted wells</strong> across Pitkin County, with <strong>2,416 recorded as constructed</strong>. Those are permit records, not a count of working household water supplies. Use them to narrow your questions before buying land, commissioning a test or requesting a drilling bid.</p>",
+ "sections": [
+  {
+   "heading": "From Aspen to Redstone, Depth Depends on the Ground",
+   "html": "<p>The <strong>105-foot median</strong> comes from <strong>2,855 depth reports</strong>. The middle half falls between <strong>60 and 210 feet</strong>, a useful starting range for comparing bids—not a depth guarantee. Ask what the bid includes at the planned depth and how additional footage will be charged. The <strong>90th-percentile depth is 380 feet</strong>, so a budget based only on the median can come up short.</p><p>Permit aquifer labels are mostly unnamed or fractured bedrock, covering <strong>4,517 wells</strong>; Mancos appears on <strong>107</strong> and Alluvial on <strong>46</strong>. Mountain bedrock supplies water through fractures that can change over short distances. Around Aspen, Snowmass and Redstone, compare nearby construction logs and ground conditions rather than assuming all county wells encounter the same formation.</p>"
+  },
+  {
+   "heading": "A Reported 15 gpm Is Encouraging, Not a Supply Guarantee",
+   "html": "<p>Among <strong>948 reported pump yields</strong>, Pitkin County’s median is <strong>15.0 gpm</strong>, with the middle half at <strong>10.0–15.0 gpm</strong>. That is an encouraging starting point for a household supply, but a reported pumping result does not establish year-round performance. Test duration, recovery and seasonal conditions matter.</p><p>The records put <strong>1% below 1 gpm</strong> and <strong>5% between 1 and 5 gpm</strong>. Low-yield wells are a small share of these reports, but buying one can mean managing demand and adding storage. Have an existing well’s sustained output and recovery checked before relying on it for a home. Water available at the pump also does not establish permission to irrigate or supply other uses; the permit controls those uses.</p>"
+  },
+  {
+   "heading": "Pitkin County Water Levels Do Not Show a Steady Decline",
+   "html": "<p>Static water level is the depth to standing water before pumping, not the bottom of the well. The <strong>232 reported measurements</strong> have a median of <strong>50 feet below ground</strong>, with the middle half between <strong>24 and 116 feet</strong>. Keep that distinction clear when reviewing a driller’s log or planning pump installation.</p><p>Decade medians move from <strong>37 feet in the 1980s</strong> to <strong>95 in the 1990s</strong>, then <strong>48 in the 2000s</strong>, <strong>67 in the 2010s</strong> and <strong>51 in the 2020s</strong>. That sequence does <em>not</em> show a steady countywide decline. These are grouped measurements, not repeated readings from the same wells. A lot-specific assessment needs local measurements and pumping history, especially where separate bedrock fractures supply neighboring properties.</p>"
+  },
+  {
+   "heading": "Who Drilled Pitkin County’s Wells—and When",
+   "html": "<p>The largest permit decade shown is the <strong>1990s, with 1,136 permits</strong>, followed by <strong>782 in the 2000s</strong>. Records show <strong>452 in the 2010s</strong> and <strong>323 in the 2020s</strong>, with the newest permit dated <strong>2025</strong>. The latest decade is incomplete, so that smaller total should not be treated as a direct measure of declining drilling activity.</p><p>Shelton Drilling Corporation leads the listed driller records with <strong>1,516</strong>, followed by Collins Drilling Co with <strong>485</strong> and Steve Shelton Drilling, Inc. with <strong>368</strong>. These are historical record counts, not confirmation of current availability. Domestic/household use accounts for <strong>71%</strong> of permits, while monitoring accounts for <strong>16%</strong>. Check the actual use and construction record before treating a mapped well as a residential comparison.</p>"
+  },
+  {
+   "heading": "Budgeting a New Well in Pitkin County Mountain Bedrock",
+   "html": "<p>The local cost model uses fractured mountain bedrock—granite or gneiss—and a drilling rate of <strong>$65–$100 per foot</strong>. At the <strong>105-foot median depth</strong>, the drilled hole is modeled at about <strong>$6,800–$10,500</strong>. A finished well with pump, tank, trenching and electrical is modeled at about <strong>$12,800–$22,500</strong>.</p><p>Use those figures as planning allowances, not a parcel quote. The county’s <strong>60–210-foot middle depth range</strong> leaves substantial room for footage costs to change. Ask the driller to separate drilling, casing, grout and testing from the pump and service connection. Mountain access, rig setup and the trench route to the house also deserve an on-site review before you commit to a construction budget.</p>"
+  },
+  {
+   "heading": "Mine Features, PFAS Records and Low-Yield Ground",
+   "html": "<p>The mapped environmental screen within about <strong>10 miles</strong> lists <strong>16 PFAS sampling/contamination sites</strong>, <strong>130 historic mine features</strong> and <strong>2 EPA Superfund/cleanup sites</strong>. Those records warrant a closer look, but proximity alone does not establish contamination in a particular well. A sampling location is not automatically a confirmed contaminated household supply.</p><p>Before buying, obtain current laboratory testing and ask local environmental health staff which additional tests fit the property’s setting. Inspect the wellhead, casing and surface drainage, and review nearby septic placement. A permitted location does not guarantee a productive borehole in fractured rock. Discuss unsuccessful drilling and low-yield contingencies before work starts, and coordinate the well, septic system, building footprint and equipment access rather than designing them independently.</p>"
+  },
+  {
+   "heading": "Before Closing on a Woody Creek or Snowmass Lot",
+   "html": "<p>Start with the parcel, then work outward. For property in Woody Creek, Snowmass Village or Norrie, examine nearby depth reports, construction logs and pumping tests on comparable ground. A county median is useful for screening; neighboring wells are more useful for framing questions for the driller. Even close wells can intercept different fractures.</p><p>Match the DWR permit to the property and confirm its allowed uses. Household-use permission should not be assumed to include outdoor watering or livestock. Depending on location and intended use, augmentation requirements may affect the plan. For an existing home, request water-quality results, pump service records and a current performance test. For vacant land, resolve permit eligibility, rig access, septic feasibility and the service route before finalizing the house location.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Pitkin County?",
+   "a": "The median reported depth is 105 feet, and the middle half of wells falls between 60 and 210 feet. The 90th-percentile depth is 380 feet. Those figures come from 2,855 depth reports. On a mountain parcel, nearby construction logs and fracture conditions are more useful than assuming your well will stop at the median."
+  },
+  {
+   "q": "How much does it cost to drill a well in Pitkin County?",
+   "a": "The bedrock drilling model uses $65–$100 per foot. At the 105-foot median depth, the hole is about $6,800–$10,500, while a finished well with pump, tank, trenching and electrical is about $12,800–$22,500. Get a parcel-specific quote that addresses access, casing, grout and additional footage rather than treating the model as a fixed price."
+  },
+  {
+   "q": "How much water do wells produce in Pitkin County?",
+   "a": "Reported pump yields have a median of 15.0 gpm, with the middle half between 10.0 and 15.0 gpm. Among the 948 yield reports, 1% are below 1 gpm and 5% fall between 1 and 5 gpm. Have sustained output and recovery tested before buying; a recorded yield is not a guarantee of seasonal performance."
+  },
+  {
+   "q": "Is well water safe to drink in Pitkin County?",
+   "a": "Safety has to be established by testing the individual well. The nearby environmental screen lists 16 PFAS sampling/contamination sites, 130 historic mine features and 2 EPA Superfund/cleanup sites within about 10 miles. That does not prove a particular well is affected. Review local site records and obtain laboratory testing suited to the property’s setting."
+  },
+  {
+   "q": "Is the water table dropping in Pitkin County?",
+   "a": "The supplied records do not show a steady countywide decline. Median depth to standing water was 37 feet in the 1980s, 95 in the 1990s, 48 in the 2000s, 67 in the 2010s and 51 in the 2020s. These grouped measurements are not a same-well monitoring series, so they cannot establish a trend for your property."
+  }
+ ],
+ "tri_lakes_blurb": "For a Pitkin County mountain lot, Tri-Lakes Contracting is a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes. Coordinate those plans with the well location, drilling access and the ground your project will occupy.",
+ "_model": "gpt-6-astra",
+ "_usage": {
+  "prompt_tokens": 1474,
+  "completion_tokens": 2544,
+  "total_tokens": 4018,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1471,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 179,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

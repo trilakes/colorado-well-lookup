@@ -1,0 +1,77 @@
+{
+ "title": "Clark Colorado Well Depth and Drilling Cost",
+ "meta_description": "Clark well records show a 164-foot median depth, 8 gpm median yield, and finished well costs of $16,600-$28,400.",
+ "h1": "Clark, Colorado Well Depth, Yield, and Cost Guide",
+ "eyebrow": "Clark well records explained",
+ "intro_html": "<p>Buying land near Clark means dealing with mountain-bedrock drilling, variable well depths, and a limited amount of water-level data. Records within 5 miles show 743 permitted wells, with 475 recorded as constructed. Of those, 490 report total depth and 147 report pump yield.</p><p>The local record points to a typical well that is about 164 feet deep and produces a median reported yield of 8.0 gallons per minute. Those are useful planning figures, not guarantees for a specific parcel. A neighboring well can still be much deeper, weaker, or drilled into different fractures.</p>",
+ "sections": [
+  {
+   "heading": "How deep are wells around Clark?",
+   "html": "<p>The median reported well depth near Clark is 164 feet. The middle half runs from 68 to 305 feet, so a driller bidding a new well should allow for substantial variation even before reaching the deeper end of the local record. The 90th percentile is 500 feet, and the deepest recorded well is 900 feet.</p><p>Depth distribution is mixed: 33% are under 100 feet, 38% fall between 100 and 300 feet, 23% are between 300 and 600 feet, and 6% exceed 600 feet. The main reason is the local fractured mountain bedrock, identified on permits as unnamed or fractured-bedrock aquifer in 727 wells. Fractures, not a uniform sand layer, control where water is found.</p>"
+  },
+  {
+   "heading": "What water yield can a Clark well make?",
+   "html": "<p>Among the 147 wells reporting pump yield, the median is 8.0 gallons per minute. The middle half ranges from 4.6 to 12.0 gallons per minute. Most reported wells, 64%, produce between 5 and 15 gallons per minute, while 10% report more than 15 gallons per minute.</p><p>Low-producing wells are present but not dominant: 4% report under 1 gallon per minute and 22% report between 1 and 5 gallons per minute. For a buyer, a reported yield under 1 gallon per minute deserves careful review of storage, household demand, and any required pumping test. Confirm the actual permit rights and use limits with Colorado DWR rather than treating a yield record as a guaranteed supply.</p>"
+  },
+  {
+   "heading": "What does the water-level record show?",
+   "html": "<p>The median static water level is 64 feet below ground surface, with the middle half from 30 to 101 feet. That helps a contractor estimate pumping conditions, but only 50 wells report a static water level, so the dataset is much thinner than the depth record.</p><p>Measurements by decade show a median of 50 feet below surface in the 2010s and 80 feet in the 2020s. That change suggests deeper measured water levels in the more recent group, but it does not prove a region-wide decline. Different locations, seasons, well depths, and measurement methods can affect the comparison. Get a current measurement from the subject well and ask for neighboring well logs before relying on a trend.</p>"
+  },
+  {
+   "heading": "Who has drilled near Clark, and when?",
+   "html": "<p>Permit activity extends across several decades, with 5 permits issued in the 1960s, 74 in the 1970s, 83 in the 1980s, 159 in the 1990s, 165 in the 2000s, 96 in the 2010s, and 63 in the 2020s. The newest permit year in the records is 2025. Most permitted uses are domestic or household, accounting for 83%; monitoring wells account for 9%.</p><p>The most active drillers in these records are Routt Drilling Co. (Ozbun, Jerald A.) with 102 wells, Aztec Drilling Company (Branstetter, Keith) with 100, and Arrow Drilling (Berglund, Peter R.) with 82. These records can help identify local experience, but they do not replace current licensing, availability, and written bids.</p>"
+  },
+  {
+   "heading": "What does a new well cost near Clark?",
+   "html": "<p>For fractured granite and gneiss, the drilling rate model is $65-$100 per foot. At the local median depth of 164 feet, the drilled hole works out to about $10,600-$16,400. That is only the drilling portion, not a complete water system.</p><p>A finished well with pump, pressure tank, trenching, and electrical is modeled at about $16,600-$28,400 at that same median depth. A deeper-than-median hole can push the price higher, and a difficult access route or extra casing and grout can add work. Ask each bidder to separate drilling, casing, grout, pump equipment, trenching, electrical, testing, and permitting so bids can be compared on the same scope.</p>"
+  },
+  {
+   "heading": "Clark well risks: water quality, yield, and septic",
+   "html": "<p>Fractured bedrock makes dry holes and low-yield results harder to predict than in a consistent shallow aquifer. The local records include 4% of reported yields under 1 gallon per minute, so a buyer should not assume every parcel matches the 8.0-gallon-per-minute median. A pump test, well construction report, and current production information matter.</p><p>There is 1 mapped PFAS sampling or contamination site within about 10 miles, along with 66 historic mine features and no EPA Superfund or cleanup sites. Those mapped features do not determine the safety of a particular well. Test the water before purchase and after construction, especially where mining, septic systems, or other potential sources are nearby. Confirm setbacks, casing, grout, and septic suitability before finalizing a building plan.</p>"
+  },
+  {
+   "heading": "What to check before buying or building near Clark",
+   "html": "<p>Start with the exact parcel, then review nearby DWR well permits, construction reports, depths, yields, static levels, and permitted uses. The nearby areas of Steamboat Springs, Hayden, Walden, Oak Creek, Craig, and Phippsburg can provide broader context, but wells closest to the property are the better comparison.</p><p>For a vacant lot, make the well plan part of the feasibility work rather than waiting until after closing. Confirm legal access for a rig, likely drill-site location, septic and replacement-area layout, electrical routing, and storage needs. A household-use well may be exempt from some permitting requirements, but Colorado rules still control what the well can legally supply; over-appropriated basins may require an augmentation plan. Have a licensed driller and water-rights professional review the permit before relying on it.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Clark, Colorado?",
+   "a": "The median reported depth near Clark is 164 feet. The middle half runs from 68 to 305 feet, but the record reaches 900 feet. Fractured granite and gneiss make depth highly site-specific because water follows individual fractures. Nearby well logs can guide a bid, but they cannot guarantee the depth on a new parcel."
+  },
+  {
+   "q": "How much water does a well produce in Clark?",
+   "a": "Reported pump yields have an 8.0-gallon-per-minute median, with the middle half between 4.6 and 12.0 gallons per minute. Sixty-four percent of reported yields are between 5 and 15 gallons per minute. Four percent are under 1 gallon per minute, so confirm the subject well's test and storage capacity before buying."
+  },
+  {
+   "q": "How much does it cost to drill a well in Clark, Colorado?",
+   "a": "The local fractured-bedrock cost model is $65-$100 per foot. At the 164-foot median depth, drilling is estimated at $10,600-$16,400. A finished system with pump, tank, trenching, and electrical is estimated at $16,600-$28,400. Greater depth, access problems, casing, grout, and site conditions can increase the final bid."
+  },
+  {
+   "q": "Is well water safe to drink in Clark, Colorado?",
+   "a": "Well records do not establish drinking-water safety. There is 1 mapped PFAS sampling or contamination site within about 10 miles, plus 66 historic mine features. Those locations are screening information, not a result for a specific property. Test the well for relevant contaminants before purchase and use, and retest after construction or any water-quality change."
+  },
+  {
+   "q": "Are Clark, Colorado wells getting deeper or losing water?",
+   "a": "The median static water level was 50 feet below surface for measurements in the 2010s and 80 feet in the 2020s. That suggests deeper measured water levels in the newer group, but only 50 wells report static levels, and location or seasonal differences may explain part of the change. A current measurement and nearby records are more useful for one parcel."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Clark and the surrounding mountain communities. The company handles access driveways, site development, new-build septic systems, and custom homes.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1413,
+  "completion_tokens": 2096,
+  "total_tokens": 3509,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1410,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 90,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

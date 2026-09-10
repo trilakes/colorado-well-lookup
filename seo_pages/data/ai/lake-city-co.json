@@ -1,0 +1,73 @@
+{
+ "title": "Lake City Well Depth and Drilling Cost",
+ "meta_description": "Lake City wells have a 120-foot median depth, with fractured bedrock, variable yields, and finished costs of $13,800-$24,000.",
+ "h1": "Lake City, Colorado Well Depth, Yield, and Cost",
+ "eyebrow": "Lake City well records",
+ "intro_html": "<p>Buying land around Lake City means dealing mainly with fractured mountain bedrock. Records within five miles show a wide range of well depths, water production, and drilling conditions. The typical well is not necessarily representative of every lot, so nearby permits and the local geology deserve close attention before you buy or build.</p><p>Colorado DWR records list 520 permitted wells in the area. Of those, 326 are recorded as constructed, 324 report a total depth, 112 report a pump yield, and only 24 report a static water level. That uneven recordkeeping matters: the statistics are useful for planning, but they are not a guarantee for an untested parcel.</p>",
+ "sections": [
+  {
+   "heading": "What drives well depth around Lake City",
+   "html": "<p>The median recorded well depth near Lake City is 120 feet. The middle half runs from 37 to 300 feet, meaning the local records include both relatively shallow wells and substantially deeper holes. The 90th percentile is 483 feet, and the deepest record reaches 902 feet.</p><p>Depth is spread across the area: 45% of wells are under 100 feet, 29% fall between 100 and 300 feet, 21% run from 300 to 600 feet, and 5% exceed 600 feet. Most permits name an unnamed or fractured-bedrock aquifer, with 505 wells in that category. Granite and gneiss can change quickly across short distances, so a driller's bid should clearly state the assumed depth, footage rate, casing, grout, and what happens if the hole must go deeper.</p>"
+  },
+  {
+   "heading": "How much water a Lake City well produces",
+   "html": "<p>Among the wells reporting a pump yield, the median is 15.0 gallons per minute. The middle half ranges from 6.0 to 15.0 gallons per minute. Production is stronger in the records than many mountain buyers might assume: 57% report more than 15 gallons per minute, 22% report 5 to 15 gallons per minute, and 19% report 1 to 5 gallons per minute.</p><p>Only 2% report under 1 gallon per minute. That is encouraging, but yield data exists for 112 wells rather than all permitted wells. Ask for a pump test and confirm the intended household use with the Colorado Division of Water Resources. An exempt household-use well is generally limited to 35 gallons per minute, and a strong well still needs suitable storage, pump equipment, and water-quality testing.</p>"
+  },
+  {
+   "heading": "Water levels and what the records can tell you",
+   "html": "<p>The 24 wells reporting a static water level have a median depth to water of 20 feet. The middle half ranges from 12 to 52 feet below ground. Those measurements suggest that water is often encountered relatively shallowly in the reporting set, but they do not establish the water level at every Lake City parcel.</p><p>The permit history does not provide enough static-water measurements to show a reliable decade-by-decade decline or rise. Do not treat the 20-foot median as a guaranteed pumping level. A static reading can differ from the level while a pump is running, and seasonal conditions matter. For a purchase, request the well construction report, current static level, pump-test results, and any information on recovery after pumping.</p>"
+  },
+  {
+   "heading": "Who has drilled near Lake City, and when",
+   "html": "<p>Bob Williams Drilling Co., listed in the records as Williams, Robert F., is the dominant driller in this dataset with 204 permits. Peeples, Clyde L is associated with 20, and permits marked Authorized (Pe, Pg) account for 15. These records can help identify local drilling history, but they are not a recommendation and do not confirm current availability.</p><p>Permitting increased from 7 permits in the 1950s to 13 in the 1960s, 40 in the 1970s, 99 in the 1980s, and 122 in the 1990s. The record shows 77 in the 2000s, 40 in the 2010s, and 30 in the 2020s. The newest permit year is 2025. Check the actual DWR permit and construction documents rather than relying only on a map marker.</p>"
+  },
+  {
+   "heading": "Lake City well drilling cost and bid planning",
+   "html": "<p>Lake City's fractured granite and gneiss are modeled at $65 to $100 per foot for drilling. At the 120-foot median depth, the drilled hole works out to about $7,800 to $12,000. That is the hole only, not a complete water system.</p><p>A finished well with pump, pressure tank, trenching, and electrical is modeled at about $13,800 to $24,000 at the median depth. A deeper-than-typical hole can move beyond that range, especially if casing, grout, difficult access, extra trenching, or specialized equipment is needed. Get a written proposal that separates drilling, casing, grout, development, pump testing, pump and tank equipment, electrical work, and trenching. Also ask whether the price changes when the driller encounters poor production.</p>"
+  },
+  {
+   "heading": "Risks to check before building near Lake City",
+   "html": "<p>Low yield is only one concern. Fractured bedrock can produce water unevenly, and a nearby successful well does not prove the same result on your lot. The records show 2% of reporting wells under 1 gallon per minute, while yield information is missing for most permitted wells. A dry hole or weak production should be addressed in the purchase contract before you close.</p><p>Environmental review is also important. Within about 10 miles, the mapped records include 3 PFAS sampling or contamination sites, 124 historic mine features, and 2 EPA Superfund or cleanup sites. Test the well for common drinking-water concerns and site-specific concerns suggested by the property's history. Confirm septic setbacks, suitable soil, driveway access, building envelopes, and power routes before finalizing a house plan.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Lake City, Colorado?",
+   "a": "The median recorded well depth within five miles of Lake City is 120 feet. The middle half runs from 37 to 300 feet, while the 90th percentile is 483 feet and the deepest record is 902 feet. Because most permits name fractured bedrock, depth can change sharply between nearby lots."
+  },
+  {
+   "q": "How much does it cost to drill a well in Lake City?",
+   "a": "The local drilling model is $65 to $100 per foot. At the 120-foot median depth, the drilled hole is estimated at $7,800 to $12,000. A finished well with pump, tank, trenching, and electrical is estimated at $13,800 to $24,000. Difficult access or extra depth can increase the bid."
+  },
+  {
+   "q": "How much water do wells produce in Lake City?",
+   "a": "Among 112 wells reporting a pump yield, the median is 15.0 gallons per minute and the middle half is 6.0 to 15.0 gallons per minute. Fifty-seven percent report more than 15 gallons per minute, but yield records are incomplete. Require a pump test rather than relying only on area averages."
+  },
+  {
+   "q": "Is well water safe to drink in Lake City?",
+   "a": "Safety cannot be determined from depth or yield alone. The area has 3 mapped PFAS sampling or contamination sites, 124 historic mine features, and 2 EPA Superfund or cleanup sites within about 10 miles. Test the well before using it for drinking, with additional testing based on the property's location and history."
+  },
+  {
+   "q": "What should I check before buying land with a well near Lake City?",
+   "a": "Review the Colorado DWR permit, construction report, pump-test results, static water level, and water-quality tests. Only 24 wells in the records report a static water level, so do not assume the area median of 20 feet applies to the property. Also confirm septic suitability, setbacks, access, power, and the intended well-use rules."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Lake City and surrounding mountain properties with access driveways, site development, new-build septic systems, and custom homes. Early site planning can coordinate the well, septic, driveway, utilities, and building location.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1375,
+  "completion_tokens": 1970,
+  "total_tokens": 3345,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1372,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 120,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

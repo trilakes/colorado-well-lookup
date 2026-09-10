@@ -1,0 +1,76 @@
+{
+ "title": "Ouray County CO well depth and drilling cost",
+ "meta_description": "In Ouray County, the median well depth is 220 ft and the median yield is 10 gpm. See what that means for drilling cost and water supply.",
+ "h1": "Water wells in Ouray County, Colorado",
+ "eyebrow": "Local well basics",
+ "intro_html": "<p>Ouray County wells are classic high-country mountain wells: a lot of fractured bedrock, a wide depth range, and generally decent production when you hit good fractures. Looking across all permitted wells here gives a pretty clear picture of what buyers and builders are stepping into.</p><p>These numbers are from Colorado Division of Water Resources permits for Ouray County only, not from neighboring places like Ridgway, Loghill Village, Portland or Ouray’s town systems. Use them as a planning tool, then verify details on the specific parcel you care about.</p>",
+ "sections": [
+  {
+   "heading": "How deep Ouray County wells usually go",
+   "html": "<p>Across Ouray County, the median well depth is about 220 feet, with the middle half of wells running from 110 to 322 feet. About 21% of wells are under 100 feet, 44% fall between 100 and 300 feet, 29% are 300 to 600 feet, and 7% go past 600 feet. The deepest on record reaches 4,421 feet, which shows how stubborn fractured bedrock here can be when water is hard to find.</p><p>For bidding purposes, most drillers here will be thinking in the 200–300 foot range but will warn you it can easily run deeper. That spread in depths is normal in granite and gneiss: one neighbor might hit at 150 feet, the next doesn’t get reliable water until 400+.</p>"
+  },
+  {
+   "heading": "Well yield and how much water is typical here",
+   "html": "<p>Of the wells that report a test, the median yield in Ouray County is 10 gallons per minute, with the middle half between 4 and 15 gpm. About 5% of wells come in under 1 gpm, 22% between 1 and 5 gpm, 48% between 5 and 15 gpm, and 25% at 15+ gpm.</p><p>For a single household on an exempt domestic permit, anything in the 4–10 gpm range is usually workable with proper storage and plumbing. The 5% under 1 gpm are the problem wells you hear stories about, so it pays to look closely at yields on adjacent parcels before closing on a property, especially in rougher bedrock areas away from the main valleys.</p>"
+  },
+  {
+   "heading": "Water levels and what they say about the aquifer",
+   "html": "<p>Only a slice of Ouray County wells report static water level, but the pattern is still helpful. The median depth to water is about 100 feet, with the middle half between 42 and 162 feet below ground. That means it’s common to drill considerably deeper than the water level so you have storage in the hole and a safety cushion in dry years.</p><p>By decade, the median water level was about 122 feet in the 2010s and about 108 feet in the 2020s, in the wells that were measured. That does not point to a clear long-term drop in the water table in this dataset, but conditions are very local in fractured bedrock, so nearby well logs are still the best guide.</p>"
+  },
+  {
+   "heading": "Who’s been drilling here and how busy it’s been",
+   "html": "<p>Ouray County has 1,227 wells in the state records, with 729 marked as constructed and 780 listing a total depth. Drilling really picked up after the 1960s: there are 9 permits from the 1950s and 5 from the 1960s, then 112 in the 1970s, 170 in the 1980s, 256 in the 1990s, 195 in the 2000s, 129 in the 2010s, and 113 already in the 2020s, with permits running through 2025.</p><p>Valley Drilling Co. (Stoy, Kenneth) shows up on 325 wells, Mccracken Well Drilling Inc on 103, and Western Drilling Services, LLC on 62. That tells you there are a few outfits who know Ouray County’s fractured-bedrock patterns very well from practical experience.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost in Ouray County",
+   "html": "<p>Ouray County sits on fractured mountain bedrock (mainly granite and gneiss), and the cost model for this kind of drilling runs about $65–$100 per foot. At the county’s median depth of 220 feet, just the drilled hole pencils out around $14,300–$22,000.</p><p>Once you add in casing, grout, pump, pressure tank, trenching, and electrical, a typical finished domestic well at that depth comes in around $20,300–$34,000. If your site ends up closer to the 300–600 foot range that 29% of wells fall into, budget proportionally higher. In the rugged terrain between places like Loghill Village and San Juan County, access and setup can also affect bids.</p>"
+  },
+  {
+   "heading": "Risks to check: low yield, mines, and contamination",
+   "html": "<p>In Ouray County’s fractured-bedrock system, the main practical risk is a low-yield or deep well. About 5% of tested wells come in under 1 gpm, and 7% of all wells go past 600 feet. That’s where drilling cost and long-term reliability can get uncomfortable for a homeowner.</p><p>There are also environmental factors. Within about 10 miles there are 322 historic mine features, 9 PFAS sampling or contamination sites, and 5 EPA Superfund or cleanup sites. That doesn’t mean your well is unsafe, but you should absolutely plan on good water testing and sensible well placement away from septic systems, barns, and fuel storage.</p>"
+  },
+  {
+   "heading": "Buying or building on a lot in Ouray County",
+   "html": "<p>Most wells in Ouray County are for domestic or household use (71%), with stock (17%), irrigation (7%), and monitoring (13%) making up the rest. Almost all are in unnamed fractured-bedrock aquifers, with a smaller group in the Dakota and Dakota Sandstone formations. There are no Denver Basin aquifer wells here.</p><p>Before you buy, pull well logs for nearby parcels and note actual depths, yields, and water levels. Have a driller who works in Ouray County, Montrose County, or San Miguel County look at the geology, access, and your planned house and septic locations. On marginal-looking lots, make any purchase contract contingent on securing a well permit and, ideally, a successful test hole.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Ouray County, Colorado?",
+   "a": "In Ouray County, the median well depth is about 220 feet. The middle half of wells fall between 110 and 322 feet, but the range is wide: about 21% are under 100 feet, 44% are 100–300 feet, 29% are 300–600 feet, and 7% go deeper than 600 feet. The deepest recorded well reaches 4,421 feet."
+  },
+  {
+   "q": "How much water do Ouray County wells produce?",
+   "a": "Among wells that report a pump test, the median yield is 10 gallons per minute, with the middle half between 4 and 15 gpm. About 5% of wells are under 1 gpm, 22% fall between 1 and 5 gpm, 48% are between 5 and 15 gpm, and 25% produce 15 gpm or more. Most domestic wells work fine with 4–10 gpm and proper storage."
+  },
+  {
+   "q": "Is the water table dropping in Ouray County?",
+   "a": "The limited static water level data do not show a clear long-term decline. The overall median depth to water is about 100 feet, with a middle half from 42 to 162 feet. By decade, median water level was about 122 feet in the 2010s and about 108 feet in the 2020s. In fractured bedrock, though, conditions vary a lot over short distances."
+  },
+  {
+   "q": "What does it cost to drill a well in Ouray County?",
+   "a": "In Ouray County’s fractured mountain bedrock, the drilling cost model runs about $65–$100 per foot. At the county median depth of 220 feet, that means roughly $14,300–$22,000 for the borehole, and about $20,300–$34,000 for a finished domestic well with pump, tank, trenching, and electrical. Deeper wells, in the 300–600 foot range, scale up from there."
+  },
+  {
+   "q": "Are there contamination concerns for wells in Ouray County?",
+   "a": "The records show 322 historic mine features, 9 PFAS sampling or contamination sites, and 5 EPA Superfund or cleanup sites within about 10 miles. Most private wells are still usable, but these numbers mean you should test for metals and other contaminants, and keep your well sited and constructed correctly relative to septic systems and surface activities."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor familiar with Ouray County terrain, handling access driveways, full site development, new-build septic systems and custom homes. They coordinate well, septic, and building layout so mountain parcels are built out efficiently and to code.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1439,
+  "completion_tokens": 2175,
+  "total_tokens": 3614,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 97,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

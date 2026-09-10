@@ -1,0 +1,76 @@
+{
+ "title": "Holly Hills well depth and drilling cost",
+ "meta_description": "In Holly Hills, median well depth is 31 ft and median yield is 15 gpm. Learn what that means for drilling cost, water levels, and buying a lot.",
+ "h1": "Understanding water wells in Holly Hills, Colorado",
+ "eyebrow": "Local well basics",
+ "intro_html": "<p>Holly Hills sits in a heavily developed part of Denver County where most wells are shallow but the deeper Denver Basin is underneath. Within about 5 miles there are 7,531 permitted wells on record, so there is a lot of local data to look at before you buy or drill.</p><p>Here is what the Colorado DWR well records say about well depth, yield, water levels, drilling costs, and risks in the Holly Hills area and nearby places like Four Square Mile, Cherry Hills Village, Glendale, Greenwood Village, Englewood, and Cherry Creek.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells run around Holly Hills",
+   "html": "<p>Wells around Holly Hills are generally quite shallow, with a median total depth of 31 feet and the middle half between 21 and 57 feet. About 83% of wells are under 100 feet, which tells you many are completed in alluvial or very shallow bedrock zones rather than deep confined aquifers.</p><p>That said, the depth range is wide. The 90th percentile is 482 feet and the deepest well on record in the area goes to 2,265 feet, so a small share of wells are tapping the deeper Denver Basin system. Only 4% of wells fall between 100 and 300 feet, another 4% between 300 and 600 feet, and 9% extend beyond 600 feet. The mix means a driller’s bid could be based on either a shallow alluvial target or a true deep Denver Basin well, depending on your permit and lot.</p>"
+  },
+  {
+   "heading": "Well yields and how much water you can expect",
+   "html": "<p>Yields near Holly Hills are generally strong. The median reported pump rate is 15 gpm, and the middle half of wells fall between 10 and 50 gpm. Over half of the measured wells, 54%, produce at least 15 gpm, and another 37% are between 5 and 15 gpm. For a typical exempt household well, anything over about 5 gpm is usually workable for normal domestic demand if the well is constructed correctly.</p><p>Lower producers are less common here but do exist. About 7% of wells make between 1 and 5 gpm, and roughly 3% report under 1 gpm. Those low-yield wells can still be managed with storage and careful use, but they’re a red flag when you’re evaluating a specific property. With only 208 wells reporting yield, you should look carefully at the closest, most recent wells to your lot rather than relying on the area-wide median.</p>"
+  },
+  {
+   "heading": "Water levels and what they say about the water table",
+   "html": "<p>Where static water level has been reported, the median depth to water is 15 feet below the surface, with the middle half between 11 and 25 feet. That’s a very shallow water table compared to many parts of Colorado, which fits the high share of shallow wells under 100 feet in the Holly Hills area.</p><p>The decade data suggests no obvious long-term drop in the measured water levels. Median static level in the 2010s was about 13 feet, and in the 2020s it has been about 12 feet. That’s a slight rise, at least in the limited set of 131 wells that report static levels. Keep in mind that many of the wells here are monitoring wells in alluvial and shallow bedrock zones, so their levels may not reflect conditions in deeper Denver Basin completions.</p>"
+  },
+  {
+   "heading": "Who is drilling and how the permit history looks",
+   "html": "<p>Permitting around Holly Hills picked up heavily starting in the 1990s. Records show 171 wells permitted in the 1950s, 165 in the 1960s, and 279 in the 1970s. Activity rose to 290 in the 1980s, then jumped to 1,894 permits in the 1990s and 1,898 in the 2000s. The 2010s still had 895 permits, and there are already 418 in the 2020s, with the newest permit dated 2025.</p><p>Use types are dominated by monitoring wells at about 60%, with domestic or household wells at 15%, irrigation wells at 5%, and stock wells at 1%. That pattern reflects the urban and suburban setting, with a lot of environmental and groundwater monitoring. Authorized (Pe, Pg) has 2,945 wells on record here, Ground Exploration LLC (Bender, Joseph T.) has 291, and Hier Drilling Co Inc (Hier, Bruce A.) has 175, all with long experience in the local geology.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost in Holly Hills",
+   "html": "<p>The ground under Holly Hills is Denver Basin sedimentary bedrock, and typical drilling rates in this material run about $50 to $70 per foot. At the local median depth of 31 feet, the drilled hole itself pencils out to roughly $1,600 to $2,200. Once you add casing, grout, pump, pressure tank, trenching, and electrical, a complete working well in that depth range usually lands around $7,600 to $14,200 based on area models.</p><p>Those costs assume a shallow well. If your permit or water court decree requires a deeper Denver Basin target, the per-foot rate still applies, but total cost scales up quickly. The fact that 9% of wells exceed 600 feet, and a few reach well over 1,000 feet, is a reminder to get a depth estimate tied to nearby, recent wells before you budget a project.</p>"
+  },
+  {
+   "heading": "Local risks: contamination, low yield, and siting issues",
+   "html": "<p>The main non-geologic concern in this part of Denver County is contamination. Within roughly 10 miles of Holly Hills there are 628 PFAS sampling or contamination sites and 171 EPA Superfund or cleanup sites mapped. That density is part of why 60% of wells in the area are for monitoring. Before you drink from a private well here, plan on a full lab water test that includes PFAS and other urban contaminants.</p><p>On the water-supply side, only a small share of wells report under 1 gpm or between 1 and 5 gpm, but those low yields matter when they’re on your specific lot. Shallow static levels around 15 feet also mean septic setbacks and proper casing and grout are critical. Work with your driller and septic designer to keep the well uphill and well away from leach fields and any older systems on or near the property.</p>"
+  },
+  {
+   "heading": "Buying or building on a well lot in Holly Hills",
+   "html": "<p>If you are buying or planning to build in Holly Hills, start by pulling the DWR records for the closest wells, not just the area averages. Around here, 100% of recorded wells are classified within the Denver Basin aquifer system, but most are actually very shallow completions in unnamed fractured bedrock or alluvial zones, with 5,980 wells in unnamed/fractured bedrock, 371 in alluvial, and 193 specifically tagged as Denver.</p><p>Confirm whether your permit will be an exempt household well or part of an augmentation plan, since that changes both depth targets and pumping limits. Have your contract contingent on a satisfactory well yield test and a clean water-quality report. In a dense, mixed-use area like this part of Denver County, careful siting, good construction, and thorough testing matter as much as the raw depth and yield numbers.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells near Holly Hills, Colorado?",
+   "a": "Within about 5 miles of Holly Hills, the median well depth is 31 feet, with the middle half of wells between 21 and 57 feet deep. About 83% of wells are under 100 feet. A smaller share reach much deeper formations, with the 90th percentile at 482 feet and a few going as deep as 2,265 feet into the Denver Basin system."
+  },
+  {
+   "q": "What is a typical well yield in Holly Hills, Colorado?",
+   "a": "Reported yields around Holly Hills are generally strong. The median yield is 15 gpm, and the middle half of wells fall between 10 and 50 gpm. About 54% of wells with data produce at least 15 gpm, and 37% are between 5 and 15 gpm. Only about 3% are under 1 gpm, so most domestic wells in this area have good production potential."
+  },
+  {
+   "q": "Are groundwater levels dropping near Holly Hills, Colorado?",
+   "a": "From the data available, there is no clear sign of a dropping water table in the shallow zones that are monitored. Median static water level was about 13 feet below ground in the 2010s and about 12 feet in the 2020s, based on 131 wells with measurements. That suggests relatively stable shallow groundwater, though deeper Denver Basin conditions may differ."
+  },
+  {
+   "q": "How much does it cost to drill a well in Holly Hills, Colorado?",
+   "a": "In the Denver Basin sedimentary bedrock under Holly Hills, typical drilling rates are around $50 to $70 per foot. At the local median depth of 31 feet, the drilled hole might run roughly $1,600 to $2,200, and a complete well with pump, tank, trenching, and electrical is commonly in the $7,600 to $14,200 range, assuming a shallow completion and no unusual construction issues."
+  },
+  {
+   "q": "Is well water safe to drink in Holly Hills, Colorado?",
+   "a": "Water can be good, but testing is essential here. Within about 10 miles of Holly Hills there are 628 PFAS sampling or contamination sites and 171 EPA Superfund or cleanup sites, and 60% of local wells are monitoring wells. Before using a private well for drinking, plan a full lab analysis, including PFAS and common urban contaminants, and review results with a water professional."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor that can handle access driveways, full site development, and new-build septic systems in the Holly Hills area. They also build custom homes, coordinating foundations, utilities, and site work so your well and septic system are integrated into the overall plan.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1419,
+  "completion_tokens": 2396,
+  "total_tokens": 3815,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 135,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

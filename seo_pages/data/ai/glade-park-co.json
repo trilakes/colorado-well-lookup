@@ -1,0 +1,73 @@
+{
+ "title": "Glade Park Well Depth and Drilling Cost",
+ "meta_description": "Glade Park wells have a 495-foot median depth, with typical finished-well costs of $30,800-$49,100.",
+ "h1": "What Glade Park Wells Cost and How They Perform",
+ "eyebrow": "Glade Park well guide",
+ "intro_html": "<p>Glade Park wells are commonly deep, and most are completed in unnamed or fractured-bedrock aquifers. Records within five miles show a <strong>495-foot median well depth</strong>, with the middle half between <strong>410 and 590 feet</strong>. The typical reported yield is <strong>5.0 gallons per minute</strong>.</p><p>That gives a buyer a useful starting point, but not a guarantee for a specific parcel. Only a portion of the recorded wells report both construction details and pump yield. Before buying land or pricing a home site, review nearby permits, confirm the intended well use, and have a driller evaluate access and geology.</p>",
+ "sections": [
+  {
+   "heading": "Glade Park well depth reflects fractured ground",
+   "html": "<p>Most Glade Park wells are deeper than a typical shallow alluvial well. <strong>68% are between 300 and 600 feet</strong>, while <strong>24% are deeper than 600 feet</strong>. Only <strong>6% fall between 100 and 300 feet</strong>, and just <strong>1% are under 100 feet</strong>. The deepest recorded well reaches <strong>960 feet</strong>.</p><p>The records identify <strong>549 wells</strong> in unnamed or fractured-bedrock aquifers. In this setting, depth can change substantially from one lot to the next as a driller follows water-bearing fractures and usable formations. For bidding, the 410-to-590-foot middle range is more useful than assuming a shallow strike. A quote should state what happens if the hole must go deeper, along with casing, grout, development, pump setting, and testing.</p>"
+  },
+  {
+   "heading": "The usual Glade Park yield is usable but not excessive",
+   "html": "<p>Among wells reporting pump yield, the median is <strong>5.0 gallons per minute</strong>, and the middle half runs from <strong>4.0 to 7.0 gallons per minute</strong>. Most reported wells, <strong>67%</strong>, produce between <strong>5 and 15 gallons per minute</strong>. Another <strong>29%</strong> produce between <strong>1 and 5 gallons per minute</strong>, while <strong>1%</strong> are under <strong>1 gallon per minute</strong>.</p><p>A five-gallon-per-minute well can serve ordinary household use when storage and pump controls are designed correctly, but it does not automatically support heavy irrigation or high-demand landscaping. The permit use mix is largely domestic or household use at <strong>96%</strong>, with stock use reported on <strong>28%</strong> of permits and irrigation on <strong>1%</strong>. Ask for a sustained yield test, not just a brief recovery reading.</p>"
+  },
+  {
+   "heading": "Glade Park water levels show no clear decade decline",
+   "html": "<p>Reported static water levels have a median depth of <strong>310 feet below the surface</strong>, with the middle half from <strong>246 to 470 feet</strong>. That is the depth to the water level when the well is not being pumped, not the total well depth. A pump must be selected around the actual water level, pumping drawdown, well depth, and storage design.</p><p>The decade comparison is nearly unchanged: the median was <strong>310 feet</strong> in the <strong>2010s</strong> and <strong>311 feet</strong> in the <strong>2020s</strong>. This limited permit record does not show a meaningful broad decline between those periods. It is still not a guarantee for a new lot. Local fractures, seasonal conditions, nearby pumping, and differences in measurement methods can matter more than the area-wide median.</p>"
+  },
+  {
+   "heading": "Permit history points to a few recurring drillers",
+   "html": "<p>Colorado DWR records include <strong>556 permitted wells</strong> within five miles of Glade Park. Of those, <strong>381 are recorded as constructed</strong>, <strong>397 report total depth</strong>, and <strong>236 report pump yield</strong>. The newest permit year is <strong>2025</strong>, so the area continues to see well activity rather than being represented only by older construction.</p><p>The busiest names in these records are <strong>Rocky Mtn Drilling And Pump Services LLC (Logue, James M.)</strong> with <strong>178</strong> records, <strong>Rocky Mountain Drlg./Pump Svcs (Wisener, A. L.)</strong> with <strong>144</strong>, and <strong>Colorado Drilling Company (Carns, Don R)</strong> with <strong>63</strong>. Permit history helps identify local experience, but a buyer should still verify current licensing, insurance, references, access requirements, and the exact scope of a new-well contract.</p>"
+  },
+  {
+   "heading": "A Glade Park well at median depth can cost substantially more",
+   "html": "<p>For the mixed sedimentary and alluvial ground described in this area, the drilling model uses <strong>$50 to $75 per foot</strong>. At the <strong>495-foot median depth</strong>, that puts the drilled hole at about <strong>$24,800 to $37,100</strong>. This is the hole itself, not the complete water system.</p><p>A finished well with pump, pressure tank, trenching, and electrical is modeled at about <strong>$30,800 to $49,100</strong>. Treat that as a planning range, not a fixed bid. A contractor should identify mobilization, road and pad work, casing and grout, drilling through difficult formations, water testing, pump installation, and connection to the home. The 410-to-590-foot middle depth range is important when comparing bids because a quote based on a shallow assumption may not match local conditions.</p>"
+  },
+  {
+   "heading": "Check water quality, dry-hole exposure, and the building site",
+   "html": "<p>Mapped environmental information within about ten miles includes <strong>2 PFAS sampling or contamination sites</strong> and <strong>1 historic mine feature</strong>. There are <strong>0 EPA Superfund or cleanup sites</strong> in the mapped information. These records do not prove contamination at a particular well, but they are a reason to test before closing and to ask about nearby land uses, mine workings, and the intended household water source.</p><p>Low yield and a dry hole remain possible in fractured bedrock even where nearby wells perform well. Confirm the permit, allowed use, well location, septic separation, driveway access, and a buildable area before purchasing. A septic designer should evaluate soil and setbacks early. The well, septic system, electrical route, tank location, and house foundation need to work together on the actual parcel, not just on a sketch.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Glade Park?",
+   "a": "The median recorded well depth within five miles of Glade Park is 495 feet. The middle half runs from 410 to 590 feet, and 24% of recorded wells are deeper than 600 feet. Most are in unnamed or fractured-bedrock aquifers, so the depth on a nearby parcel is a useful guide but not a guarantee."
+  },
+  {
+   "q": "How much does it cost to drill a well in Glade Park?",
+   "a": "The local drilling model uses $50 to $75 per foot. At the 495-foot median depth, the drilled hole is estimated at $24,800 to $37,100. A finished well with pump, tank, trenching, and electrical is estimated at $30,800 to $49,100. Site access, difficult formations, and the final pump system can change the bid."
+  },
+  {
+   "q": "How much water do Glade Park wells produce?",
+   "a": "The median reported pump yield is 5.0 gallons per minute, with the middle half from 4.0 to 7.0 gallons per minute. Most reported wells produce between 5 and 15 gallons per minute, while 1% are under 1 gallon per minute. Have the specific well tested and size storage for the intended household demand."
+  },
+  {
+   "q": "Is well water safe in Glade Park?",
+   "a": "The mapped area includes 2 PFAS sampling or contamination sites and 1 historic mine feature, with 0 EPA Superfund or cleanup sites. Those records do not determine water quality at a parcel. Test the well for the contaminants relevant to the site and proposed use, and review the results before relying on the water for a home."
+  },
+  {
+   "q": "Is the water table dropping in Glade Park?",
+   "a": "Reported static water levels had a median of 310 feet below surface in the 2010s and 311 feet in the 2020s. That limited comparison does not show a meaningful broad decline. The middle half of reported static levels is 246 to 470 feet, and conditions can vary considerably between fractured-bedrock wells on nearby lots."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Glade Park with access driveways, site development, new-build septic systems, and custom homes. Bring the well, septic, driveway, and house layout together before construction starts.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1415,
+  "completion_tokens": 2104,
+  "total_tokens": 3519,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1412,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 90,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

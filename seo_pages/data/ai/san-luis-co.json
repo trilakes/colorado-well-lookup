@@ -1,0 +1,73 @@
+{
+ "title": "San Luis Well Depth and Drilling Cost",
+ "meta_description": "San Luis wells have a 60 ft median depth, with typical completed well costs of $9,000-$16,500.",
+ "h1": "San Luis, Colorado Well Depths, Yields, and Costs",
+ "eyebrow": "Local well records explained",
+ "intro_html": "<p>Buying land near San Luis means looking closely at the well record before you assume water will be easy or inexpensive. Within 5 miles of San Luis, Colorado, DWR records show 361 permitted wells, including 261 recorded as constructed. Most reported wells are relatively shallow, but the records also include wells as deep as 800 feet. The useful questions are practical: how deep might drilling go, what yield is realistic, and what should be checked before closing or building?</p>",
+ "sections": [
+  {
+   "heading": "San Luis well depths range from shallow valley holes to 800 feet",
+   "html": "<p>The median reported well depth near San Luis is 60 feet. The middle half runs from 19 to 124 feet, so many local drilling bids should be based on a shallow hole rather than a deep mountain-style well. Still, the range is wide: 66% of wells are under 100 feet, 26% are 100-300 feet, 7% are 300-600 feet, and 1% are deeper than 600 feet. The deepest record is 800 feet.</p><p>That spread matters when comparing bids. A 60-foot estimate may fit the local center of the records, but a driller still needs to evaluate the exact lot, access, geology, casing, and grout requirements. Permit records are useful background, not a guarantee of depth on an untested parcel.</p>"
+  },
+  {
+   "heading": "Most San Luis wells report useful yields, but records are limited",
+   "html": "<p>Only 24 wells in the records report a pump yield, so the yield statistics are a guide rather than a guarantee for every property. Among those reports, the median yield is 12.0 gallons per minute, with the middle half from 10.0 to 26.2 gallons per minute. That is generally a workable range for a household well when the well, pump, storage, and water system are properly designed.</p><p>The reported mix is 62% at 5-15 gallons per minute, 33% above 15 gallons per minute, and 4% at 1-5 gallons per minute. No reported wells are under 1 gallon per minute. A buyer should still make the purchase contract contingent on confirming the existing well's production and testing its equipment.</p>"
+  },
+  {
+   "heading": "Water levels near San Luis are commonly shallow, but no decline trend is proven",
+   "html": "<p>Only 11 wells report a static water level, so the water-level sample is small. The median depth to static water is 45 feet, and the middle half is 20-95 feet. In plain terms, the reported water levels are often not far below the ground surface, but the actual level on a particular lot can differ with location, season, construction, and pumping.</p><p>The permit counts increased from 6 in the 1960s to 90 in the 2010s, with 19 issued in the 2020s and the newest permit year listed as 2024. That is a record of permitting activity, not a water-table measurement. It does not establish that groundwater is dropping or stable. Ask for recent well-performance and water-level information before relying on the resource.</p>"
+  },
+  {
+   "heading": "San Luis drilling records show activity from several contractors",
+   "html": "<p>Permit records go back to the 1960s and include 361 wells within the mapped area. The most active names in these records are Authorized (Pe, Pg), with 63 wells; Valley Pump Company (Self, Clinton L.), with 19; and Mitchell Drilling Co. (Mitchell Jr., John C.), with 11. These counts describe recorded permit history and do not by themselves rate current workmanship, availability, or warranty service.</p><p>When planning a new well, confirm that the contractor will handle the required Colorado DWR permitting and will document depth, casing, grout, pump testing, and water quality. For an existing well, compare the permit record with what is physically on the property. Missing or inconsistent records deserve attention before a purchase or construction loan.</p>"
+  },
+  {
+   "heading": "A typical San Luis well budget starts near $9,000 finished",
+   "html": "<p>The local cost model assumes mixed sedimentary and alluvial ground and a drilling rate of $50-$75 per foot. At the 60-foot median depth, the drilled hole is modeled at about $3,000-$4,500. That is not the complete water system. A finished well including the pump, pressure tank, trenching, and electrical is modeled at about $9,000-$16,500.</p><p>Use the range as an early budgeting tool, not a fixed quote. Difficult access, deeper-than-expected drilling, casing and grout requirements, power distance, trench conditions, and pump needs can change the total. Get a written scope that separates drilling from the pump system and site work, especially on rural parcels outside San Luis toward San Acacio or Fort Garland.</p>"
+  },
+  {
+   "heading": "Check water quality, dry-hole risk, septic space, and site access",
+   "html": "<p>Most permits name an unnamed or fractured-bedrock aquifer, with 350 wells in that category. Six permits name the Unconfined San Luis Vall aquifer and 2 name the Unconfined San Luis Valley Aquifer; none are Denver Basin aquifer wells. Fractured ground can be unpredictable, so nearby depth and yield records should not be treated as a promise for the next lot.</p><p>Environmental screening also matters. Within about 10 miles are 4 PFAS sampling or contamination sites, 1 historic mine feature, and 2 EPA Superfund or cleanup sites. Test existing or new water for contaminants appropriate to the site, and locate the well, septic system, residence, driveway, and utility trench together. Confirm setbacks, drainage, equipment access, and any need for an augmentation plan before construction.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in San Luis, Colorado?",
+   "a": "The median reported well depth within 5 miles of San Luis is 60 feet. The middle half runs from 19 to 124 feet, and 66% of reported wells are under 100 feet. Depths still vary substantially: 26% are 100-300 feet, and the deepest record is 800 feet. A local drilling estimate remains necessary for each parcel."
+  },
+  {
+   "q": "What does it cost to drill a well in San Luis?",
+   "a": "The local drilling model uses $50-$75 per foot in mixed sedimentary and alluvial ground. At the 60-foot median depth, the drilled hole is estimated at $3,000-$4,500. A finished system with pump, tank, trenching, and electrical is estimated at $9,000-$16,500. Access, depth, casing, grout, power, and site conditions can change the quote."
+  },
+  {
+   "q": "How much water do San Luis wells produce?",
+   "a": "Only 24 wells report pump yield, so the sample is limited. Those records show a median yield of 12.0 gallons per minute, with the middle half from 10.0 to 26.2 gallons per minute. Reported yields include 62% at 5-15 gallons per minute and 33% above 15 gallons per minute. Verify production for the specific well."
+  },
+  {
+   "q": "Is well water safe in San Luis, Colorado?",
+   "a": "Safety cannot be determined from depth or yield alone. Records identify 4 PFAS sampling or contamination sites, 1 historic mine feature, and 2 EPA Superfund or cleanup sites within about 10 miles. Test an existing or new well for contaminants appropriate to its location, and review nearby environmental information before buying or drinking the water."
+  },
+  {
+   "q": "What should I check before buying land with a well near San Luis?",
+   "a": "Review the DWR permit, construction record, pump test, static water level, and water-quality results. The local records show a 45-foot median static water level, but only 11 wells report that measurement. Confirm septic and building locations, access for a drilling rig, electrical needs, and applicable water-use requirements. Nearby records are useful context, not a guarantee."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving San Luis and nearby Costilla County communities with access driveways, site development, new-build septic systems, and custom homes. Coordinate the well, septic, utilities, and building site before construction begins.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1380,
+  "completion_tokens": 2027,
+  "total_tokens": 3407,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1377,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 82,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

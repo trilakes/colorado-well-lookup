@@ -1,0 +1,76 @@
+{
+ "title": "Arapahoe County CO well depth and drilling cost",
+ "meta_description": "In Arapahoe County the median well depth is 176 ft with a typical yield around 12 gpm. Here’s what that means for drilling cost, water table, and buying land.",
+ "h1": "Water wells in Arapahoe County, Colorado",
+ "eyebrow": "Local well data guide",
+ "intro_html": "<p>Arapahoe County stretches across the plains from Aurora and Centennial out toward Strasburg, so well conditions change as you move east. The state has over 16,000 well permits on record here, and more than 9,000 list a total depth. That gives us a pretty good picture of how deep drillers usually go, what kind of water you can expect, and what it tends to cost in this county’s Denver Basin bedrock.</p><p>If you’re looking at a place outside the Aurora or Littleton city systems, plan on your well being one of the bigger checks you write. Use the numbers below to sanity‑check any quote or seller claim.</p>",
+ "sections": [
+  {
+   "heading": "How deep wells run in Arapahoe County",
+   "html": "<p>Across Arapahoe County, the median well depth is 176 feet, with the middle half running from 32 to 480 feet. That’s a wide spread. Almost half of wells are under 100 feet, but 25% fall between 300 and 600 feet and 18% go past 600 feet. A few push much deeper, up to 780 feet at the 90th percentile, and the deepest on record reaches 2,821 feet.</p><p>Closer to Aurora, Centennial, and Littleton you see more Denver Basin municipal and domestic wells, often deeper. Out toward Strasburg and the open plains, there are still some shallower domestic and stock wells. When a driller bids your well, expect them to talk in ranges, not a single number, because this mix tells you hole depth here is highly site‑specific.</p>"
+  },
+  {
+   "heading": "Well yield: how much water you actually get",
+   "html": "<p>For the 3,465 wells in Arapahoe County that report a pump test, the median yield is 12 gallons per minute, with the middle half between 10 and 15 gpm. That’s solid for a single home, small irrigated yard, and some stock use. About 67% of wells fall in the 5–15 gpm band and 31% report 15+ gpm.</p><p>None of the reported wells are under 1 gpm, and only 2% are in the 1–5 gpm range. So chronically low producers are not the norm in this dataset. Still, yields in the Denver, Arapahoe, and fractured‑bedrock aquifers can vary well to well, so you want to review nearby permits before buying raw ground.</p>"
+  },
+  {
+   "heading": "Water table behavior and long-term trend",
+   "html": "<p>Static water levels in Arapahoe County have a median of 88 feet below ground, with the middle half between 27 and 218 feet. That’s the standing water in the hole before pumping. The decade data jump around: median depths were 34–40 feet in the 1950s–60s, then deeper in the 1970s–1990s (up to 250 feet), then a much shallower 28 feet in the 2000s, and 110–95 feet in the 2010s–2020s.</p><p>With only 763 wells reporting static level and those big swings, this doesn’t read as a clean county‑wide decline or recovery. It points more to localized conditions changing with development around Aurora and Centennial versus the rural eastern plains. For your parcel, nearby well logs tell you more than the county average.</p>"
+  },
+  {
+   "heading": "Who’s drilling here and when wells went in",
+   "html": "<p>Well activity here has been steady for decades. The state shows 351 permits from the 1950s and 353 from the 1960s, then a jump: 1,410 in the 1970s and 1,664 in the 1980s as suburban growth pushed out from Denver County. The 1990s and 2000s were the biggest decades, with 2,852 and 3,287 permits. Even the 2010s and 2020s still show 1,889 and 1,141 permits, with new wells permitted through 2025.</p><p>Authorized (Pe, Pg) has about 3,068 wells on record here, Crandall Drilling &amp; Pump Service about 1,014, and Hier Drilling Co Inc about 864. Those are the crews you most often see tied to permits in Aurora, Centennial, and out toward Strasburg and the Elbert County line.</p>"
+  },
+  {
+   "heading": "What a new well is likely to cost in Arapahoe County",
+   "html": "<p>Most of Arapahoe County sits on Denver Basin sedimentary bedrock, and drillers here typically run about $50–$70 per foot. At the county’s 176‑foot median depth, that puts the drilled hole itself around $8,800–$12,300. By the time you add pump, pressure tank, trenching, and electrical, a finished residential well usually lands in the $14,800–$24,300 range.</p><p>Remember how spread out depths are: the middle half of wells runs 32–480 feet. If you end up on the deeper side, your cost can easily exceed that median‑based estimate. When comparing quotes on land around Foxfield, Greenwood Village, or out by Strasburg, pin the driller down on the per‑foot rate and the depth assumption they’re using.</p>"
+  },
+  {
+   "heading": "Risks to check: dry holes, contamination, and siting",
+   "html": "<p>Across 9,158 wells with depth and 3,465 with yield, the data don’t show a big cluster of sub‑1 gpm wells here, which lowers the dry‑hole risk on paper. Still, fractured‑bedrock and variable Denver Basin sands mean there are no guarantees at a single lot level, especially in more rural parts near the Elbert County line.</p><p>Contamination is a real concern in parts of Arapahoe County: within roughly 10 miles there are 646 PFAS sampling or contamination sites and 168 EPA Superfund or cleanup sites, plus 6 historic mine features. Around Aurora, Centennial, and Littleton, you want a good water‑quality test panel on any existing well. Also plan your septic and well separation carefully to keep your own system from being the problem down the road.</p>"
+  },
+  {
+   "heading": "Buying or building on a well lot in Arapahoe County",
+   "html": "<p>There are 16,238 well permits on record here, with 8,148 wells shown as constructed and 9,158 listing depth. That density of information is a plus when you’re evaluating a parcel near Dove Valley, Cherry Creek, Columbine, or Strasburg. You can usually find two or three nearby wells to benchmark depth and yield.</p><p>Most permits are domestic or household (44%), stock (14%), irrigation (7%), and monitoring (30%). For an exempt household well, plan for the standard 35 gpm pumping limit and use restrictions. Before you close, verify that the permit matches the actual well, pull a recent water test, and have a contractor look at access for a rig and where a future septic system will fit without crowding the well.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are water wells in Arapahoe County, Colorado?",
+   "a": "Based on 9,158 wells that report total depth, the median well in Arapahoe County is 176 feet. The middle half range from 32 to 480 feet. About 46% are under 100 feet, 25% fall between 300 and 600 feet, and 18% extend past 600 feet. A few reach 780 feet or more, with the deepest recorded at 2,821 feet."
+  },
+  {
+   "q": "What is a typical well yield in Arapahoe County?",
+   "a": "Of the 3,465 wells that report a pump test, the median yield is 12 gpm, with the middle half between 10 and 15 gpm. About 67% of wells produce 5–15 gpm and 31% report 15+ gpm. Only 2% fall in the 1–5 gpm band, and none are recorded under 1 gpm, so most wells here produce enough for a normal household."
+  },
+  {
+   "q": "How much does it cost to drill a well in Arapahoe County?",
+   "a": "In Arapahoe County’s Denver Basin bedrock, typical drilling runs $50–$70 per foot. At the 176‑foot median depth, the drilled hole alone usually costs about $8,800–$12,300. A complete residential setup with pump, pressure tank, trenching, and electrical often totals in the $14,800–$24,300 range. Deeper‑than‑median wells will land toward the higher end or above these figures."
+  },
+  {
+   "q": "Is well water safe to drink in Arapahoe County, Colorado?",
+   "a": "Safety depends on location and testing. The county has 646 mapped PFAS sampling or contamination sites, 168 EPA Superfund or cleanup locations, and 6 historic mine features within about 10 miles. Many homes use wells safely, but around Aurora, Centennial, and Littleton you should budget for a full lab test on any existing well and periodic retesting over time."
+  },
+  {
+   "q": "What aquifers supply wells in Arapahoe County?",
+   "a": "Permits here show a mix of Denver Basin units and fractured bedrock. About 2,387 wells list the Denver aquifer and 1,336 list the Arapahoe aquifer, while 8,671 are simply recorded as an unnamed or fractured‑bedrock aquifer. The dataset indicates that 100% of wells are classified as Denver Basin aquifer wells, so most drilling targets these sedimentary formations beneath the plains."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor familiar with Arapahoe County’s plains conditions. We handle access driveways, full site development, new-build septic systems, and custom home construction aligned to your well and utilities layout.",
+ "_model": "gpt-5.1",
+ "_usage": {
+  "prompt_tokens": 1537,
+  "completion_tokens": 2380,
+  "total_tokens": 3917,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 146,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

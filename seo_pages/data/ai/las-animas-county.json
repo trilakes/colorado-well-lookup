@@ -1,0 +1,77 @@
+{
+ "title": "Las Animas County Wells: Depth, Yield and Drilling Cost",
+ "meta_description": "Las Animas County wells have a 150-foot median depth and 6.5 gpm median yield. See local drilling costs, water levels and checks before buying.",
+ "h1": "Planning a Well in Las Animas County",
+ "eyebrow": "Local Groundwater and Land",
+ "intro_html": "<p>A well budget near Kim should not be based solely on a well record near Weston or Stonewall Gap. Las Animas County covers varied ground, and the countywide median depth of <strong>150 feet</strong> is a starting point, not a drilling target.</p><p>Colorado DWR records contain <strong>7,988 permitted wells</strong> in the county, with 5,785 recorded as constructed. These figures cover all permitted uses, not just home wells. Start with the county numbers below, then narrow the search to completed wells around the parcel you are considering.</p>",
+ "sections": [
+  {
+   "heading": "A 150-Foot Median Leaves Plenty of Room in the Bid",
+   "html": "<p>Among the 3,088 wells reporting depth, the middle half run <strong>70-300 feet</strong>. That spread matters more to a drilling allowance than the median alone: nearby records at the deeper end can justify a substantially different bid. The 90th-percentile depth is 516 feet, while the deepest reported well reaches 2,458 feet. That extreme is not a reasonable default for a household budget.</p><p>Alluvium and plains sedimentary rock provide the broad drilling context. Most permits carry an unnamed or fractured-bedrock aquifer label; Dakota and Cheyenne also appear. Those labels do not establish a uniform water-bearing layer. Compare local completion logs around Trinidad, Aguilar or Kim rather than assuming the county median applies equally across them.</p>"
+  },
+  {
+   "heading": "What 6.5 Gpm Means for a County Home Well",
+   "html": "<p>The <strong>6.5 gpm median yield</strong> comes from 632 reported pump yields. The middle half produce 3.0-10.0 gpm, and 58% fall in the 5-15 gpm band. These records give a useful starting point for household planning, but a reported pump yield is not a guarantee of sustained supply through every season.</p><p>At the low end, 3% report under 1 gpm and 28% fall in the 1-5 gpm band. A buyer looking at a low-producing well needs a current pumping and recovery test, plus a storage and demand assessment. Do not assume a stronger well can legally support landscaping or livestock: the DWR permit's authorized uses still control.</p>"
+  },
+  {
+   "heading": "Water Levels Do Not Show a Steady Countywide Decline",
+   "html": "<p>Static water level is the depth to resting water in the well, not the bottom of the drilled hole. Among 246 reporting wells, the median is <strong>54 feet below ground</strong>, with the middle half at 30-178 feet. That helps frame pump planning, but it does not tell you how far water will draw down while pumping.</p><p>Decade medians are 51 feet in the 2000s, 100 feet in the 2010s and 45 feet in the 2020s. This is not a steadily deepening series. It also does not prove recovery: the summaries may represent different wells and locations. For a property near Segundo or El Moro, repeated measurements from that well are more useful than countywide decade comparisons.</p>"
+  },
+  {
+   "heading": "The Permit Surge and the Drillers in the Records",
+   "html": "<p>The largest decade count is <strong>3,660 permits in the 2010s</strong>, compared with 1,171 in the 1990s and 845 in the 2000s. Records include 341 permits in the 2020s, with the newest permit year listed as 2025. Permit issuance is not the same as completed drilling, and the current decade is incomplete.</p><p>The most active listed drillers are Boday Well Drilling under Alex Boday, with 611 records; Boday Well Drilling under Kathleen Boday, with 362; and Snyder Well Pump Service under Marion M. Snyder, with 280. These are historical record counts, not confirmation of current availability. Domestic/household uses account for 34% of permits and stock uses 26%, so compare intended use as well as location when reviewing neighbors.</p>"
+  },
+  {
+   "heading": "Budgeting the Hole and the Finished Well Separately",
+   "html": "<p>For the county's alluvium and plains sedimentary rock, the model uses <strong>$35-$55 per foot</strong>. At the 150-foot median depth, that puts the drilled hole at about <strong>$5,200-$8,200</strong>. A finished well with pump, tank, trenching and electrical is modeled at <strong>$11,200-$20,200</strong>. These are planning ranges, not parcel-specific quotes.</p><p>Ask the driller what the footage price includes, particularly casing and grout, and how additional depth or difficult conditions will be billed. Then separate the pump installation and utility connection work. On a lot near Cokedale or Starkville, access and the proposed house location deserve a site review before accepting a finished-well allowance. The county's broad depth range makes an extra-depth contingency important.</p>"
+  },
+  {
+   "heading": "Mine Features, PFAS Mapping and Site Constraints",
+   "html": "<p>The environmental mapping includes <strong>703 PFAS sampling/contamination sites</strong>, 304 historic mine features and 1 EPA Superfund/cleanup site within about 10 miles. These are screening flags, not proof that a particular domestic well is contaminated. A PFAS sampling location does not necessarily indicate a detection, and distance alone cannot establish a groundwater connection.</p><p>Review the mapped sites around the parcel and choose laboratory tests based on local concerns. Check casing, grout and surface drainage as well. Low yield is documented in the permit data; a nearby producing well still cannot rule out an unsuccessful hole on your land. Before setting the house location, coordinate the well, septic system, replacement area and construction access so the layout meets applicable setbacks.</p>"
+  },
+  {
+   "heading": "Before Closing on Land Near Weston, Kim or Trinidad",
+   "html": "<p>Start with the parcel's DWR permit, construction report and any pump-test or water-quality records. Confirm that the well serves the property being sold and that its authorized uses match your plans. An exempt household-use permit does not automatically allow outdoor watering. In an over-appropriated basin, uses outside an available exemption may require augmentation.</p><p>Next, compare nearby completed wells for depth, yield and aquifer notes. The county's 150-foot median is useful background, but the closest comparable logs should guide the drilling discussion. For an existing home, make current yield and water-quality checks part of due diligence. For vacant land, have the driller and site contractor review access, septic placement and the house layout before committing to a build budget.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Las Animas County, Colorado?",
+   "a": "The median reported depth is 150 feet, and the middle half of wells are 70-300 feet deep. Those figures come from 3,088 depth records. Local geology can move a parcel well outside that range, so use nearby construction logs to set a drilling allowance rather than treating the county median as a promised depth."
+  },
+  {
+   "q": "How much does it cost to drill a well in Las Animas County?",
+   "a": "The model uses $35-$55 per foot for drilling. At the 150-foot median depth, the hole is about $5,200-$8,200, while a finished well with pump, tank, trenching and electrical is about $11,200-$20,200. Ask for a written scope covering casing, grout, additional footage and site-specific connection work."
+  },
+  {
+   "q": "How much water do wells produce in Las Animas County?",
+   "a": "Reported pump yields have a median of 6.5 gpm, with the middle half at 3.0-10.0 gpm. Among reporting wells, 3% produce under 1 gpm. A current pumping and recovery test is important before buying, especially when household demand or planned livestock use could strain a low-producing well."
+  },
+  {
+   "q": "Is well water safe to drink in Las Animas County?",
+   "a": "Safety has to be established for the individual well through testing and inspection. Mapping lists 703 PFAS sampling/contamination sites and 304 historic mine features within about 10 miles, but those counts do not prove contamination in your well. Review nearby site records and arrange laboratory testing suited to the property's potential exposures."
+  },
+  {
+   "q": "Is the water table dropping in Las Animas County?",
+   "a": "The available decade medians do not show a steady decline: static water depth was 51 feet in the 2000s, 100 feet in the 2010s and 45 feet in the 2020s. These may be different sets of wells. Repeated measurements from the same well are needed to assess a property's groundwater trend."
+  }
+ ],
+ "tri_lakes_blurb": "For a Las Animas County lot, coordinate well access with the driveway, septic layout and house site early. Tri-Lakes Contracting is a licensed Colorado contractor for access driveways, site development, new-build septic systems and custom homes.",
+ "_model": "gpt-6-astra",
+ "_usage": {
+  "prompt_tokens": 1482,
+  "completion_tokens": 2228,
+  "total_tokens": 3710,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1479,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 109,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}

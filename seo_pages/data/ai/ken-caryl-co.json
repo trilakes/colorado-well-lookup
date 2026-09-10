@@ -1,0 +1,73 @@
+{
+ "title": "Ken Caryl Well Depth and Drilling Cost",
+ "meta_description": "Ken Caryl wells have a 64 ft median depth, but local records range to 1,601 ft. See yields, water levels, permits and drilling costs.",
+ "h1": "Ken Caryl Colorado Well Depth, Yield and Cost Guide",
+ "eyebrow": "Ken Caryl well records",
+ "intro_html": "<p>Buying land or a home in Ken Caryl means looking past the presence of a well and checking what that well actually does. DWR permit records within five miles show 2,788 wells, including 1,542 recorded as constructed. The local numbers vary widely because this mountain-area setting includes Denver Basin sedimentary bedrock, alluvial areas and fractured-bedrock wells.</p><p>Depth, yield and water quality are separate questions. A shallow well may have a strong supply, while a deeper well may still produce poorly. Use the records as a screening tool, then verify the specific well's permit, construction report, pump test, water quality and legal use before closing.</p>",
+ "sections": [
+  {
+   "heading": "Ken Caryl well depths vary sharply by ground conditions",
+   "html": "<p>The median reported well depth near Ken Caryl is 64 feet. The middle half runs from 30 to 285 feet, so a driller's bid based only on the median could be misleading. The 90th-percentile depth is 528 feet, and the deepest record reaches 1,601 feet.</p><p>More than half of the wells, 56%, are under 100 feet. Another 19% fall between 100 and 300 feet, while 16% are 300 to 600 feet and 9% exceed 600 feet. In this Denver Basin sedimentary-bedrock setting, the local geology and the target aquifer matter more than distance alone. Fractured-bedrock wells can be especially unpredictable, so neighboring well depths are useful but not a guarantee.</p>"
+  },
+  {
+   "heading": "What Ken Caryl wells produce for household use",
+   "html": "<p>Among the 246 wells in the records that report a pump yield, the median is 10.0 gallons per minute. The middle half produces 5.0 to 14.0 gallons per minute. That is a workable range for many household systems, but a yield test is more useful than a permit average for judging one property.</p><p>The low-yield tail still matters: 2% report under 1 gallon per minute, 21% report 1 to 5, 53% report 5 to 15, and 24% report more than 15. A buyer should ask how the well performed during testing, what storage tank is installed, and whether the pump and pressure system match the home's expected demand. A reported yield is not the same as a legal right to use water.</p>"
+  },
+  {
+   "heading": "Water levels near Ken Caryl are not showing a simple decline",
+   "html": "<p>The median static water level is 32 feet below the surface, with the middle half between 15 and 119 feet. This is the standing water level measured when a well is not being pumped, not the depth of the well and not necessarily the level during heavy household use.</p><p>The decade series does not suggest a dropping table in these records. The median measured level was 30 feet below ground in the 2010s and 25 feet in the 2020s, meaning the later median is closer to the surface. Only 50 wells report a static water level, however, and measurements can reflect different locations, seasons and conditions. Treat the trend as limited context, not a guarantee for a particular parcel near Columbine, Dakota Ridge or Littleton.</p>"
+  },
+  {
+   "heading": "Ken Caryl has a long permit history and several recorded drillers",
+   "html": "<p>Permits in the five-mile area span decades. The largest period in the records is the 1990s, with 679 permits. Other totals are 87 in the 1950s, 53 in the 1960s, 228 in the 1970s, 328 in the 1980s, 354 in the 2000s, 215 in the 2010s and 190 in the 2020s. The newest permit year is 2025.</p><p>Most active driller records identify Authorized (Pe, Pg) with 567 wells, Layne, Christensen Co. (Tormoehlen, David A.) with 134, and Hier Drilling Co Inc (Hier, Bruce A.) with 102. These names help when tracing nearby construction history, but they do not replace a current licensed driller's evaluation. Check the DWR permit and construction report, including casing, grout, depth, pump information and approved use.</p>"
+  },
+  {
+   "heading": "A median-depth Ken Caryl well costs about $9,200 to $16,500 finished",
+   "html": "<p>The local drilling model uses a typical rate of $50 to $70 per foot in Denver Basin sedimentary bedrock. At the 64-foot median depth, the drilled hole works out to about $3,200 to $4,500. That is only the hole, not a complete operating system.</p><p>Including the pump, pressure tank, trenching and electrical work, the modeled finished-well range is about $9,200 to $16,500 at the median depth. A deeper-than-median site, difficult access, more casing or a different pump setup can move the bid higher. Ask each contractor to separate drilling, casing and grout, pump equipment, electrical, trenching, testing and permit-related work so competing bids describe the same scope.</p>"
+  },
+  {
+   "heading": "Check water quality, dry-hole risk and the building layout",
+   "html": "<p>Water quality deserves its own investigation. Within about 10 miles, the mapped environmental inventory includes 151 PFAS sampling or contamination sites, 69 EPA Superfund or cleanup sites and 61 historic mine features. That does not prove a problem at a specific well, but it is a reason to test existing well water and review nearby land uses before relying on it.</p><p>Low yield and dry holes remain possible because the records include a wide depth range and many wells have no reported pump yield. Before building, confirm septic setbacks, the wellhead location, access for a drill rig, electrical routing and space for tanks. Ask about casing and grout protection, and do not assume a permit for a household well allows unrestricted irrigation or other uses. In an over-appropriated basin, an augmentation plan may be required for some uses.</p>"
+  }
+ ],
+ "faq": [
+  {
+   "q": "How deep are wells in Ken Caryl, Colorado?",
+   "a": "The median reported depth is 64 feet, and the middle half runs from 30 to 285 feet. Local records range from shallow wells to 1,601 feet, with 9% deeper than 600 feet. Ground conditions and the aquifer targeted on the parcel matter more than the median, so nearby well records should support, not replace, a site-specific drilling estimate."
+  },
+  {
+   "q": "How much does it cost to drill a well in Ken Caryl?",
+   "a": "The drilling model uses $50 to $70 per foot. At the 64-foot median depth, the drilled hole is estimated at about $3,200 to $4,500. A finished system with pump, tank, trenching and electrical is modeled at about $9,200 to $16,500. Deeper drilling, access problems, casing and site-specific equipment can change the bid."
+  },
+  {
+   "q": "How much water does a Ken Caryl well produce?",
+   "a": "Of the 246 wells reporting pump yield, the median is 10.0 gallons per minute and the middle half is 5.0 to 14.0. Records show 2% under 1 gallon per minute and 21% from 1 to 5. Ask for the property's pump test and storage information, because an area statistic cannot predict one well's performance."
+  },
+  {
+   "q": "Is well water safe to drink in Ken Caryl?",
+   "a": "Safety cannot be determined from the permit map alone. The area has 151 mapped PFAS sampling or contamination sites, 69 EPA Superfund or cleanup sites and 61 historic mine features within about 10 miles. Test the existing well for relevant contaminants, review its history and retest after construction or nearby land-use changes before using it for drinking."
+  },
+  {
+   "q": "Are Ken Caryl water levels dropping?",
+   "a": "The limited reported measurements do not show a simple decline. Median static water level was 30 feet below the surface in the 2010s and 25 feet in the 2020s. Overall, the median is 32 feet below ground, with the middle half from 15 to 119 feet. Only 50 wells report static levels, so this is regional context rather than a guarantee for a lot."
+  }
+ ],
+ "tri_lakes_blurb": "Tri-Lakes Contracting is a licensed Colorado contractor serving Ken Caryl and nearby Jefferson County communities with access driveways, site development, new-build septic systems and custom homes. Bring the well, septic and building-site decisions together before construction starts.",
+ "_model": "gpt-5.6-luna",
+ "_usage": {
+  "prompt_tokens": 1422,
+  "completion_tokens": 2019,
+  "total_tokens": 3441,
+  "prompt_tokens_details": {
+   "cached_tokens": 0,
+   "cache_write_tokens": 1419,
+   "audio_tokens": 0
+  },
+  "completion_tokens_details": {
+   "reasoning_tokens": 101,
+   "audio_tokens": 0,
+   "accepted_prediction_tokens": 0,
+   "rejected_prediction_tokens": 0
+  }
+ }
+}
