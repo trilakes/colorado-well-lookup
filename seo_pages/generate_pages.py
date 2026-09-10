@@ -257,7 +257,15 @@ body{padding-bottom:84px}
 .sheet .ok,.sheet .err{display:none;margin-top:8px;font-weight:600}.sheet .ok{color:#86efac}.sheet .err{color:#fca5a5}
 """
 
-TRACK_JS = '<script src="https://trilakeshq.com/api/track.js?app=well-tool" defer></script>'
+META_PIXEL_ID = "2055046475436860"   # the pixel act_2160947411424216 (Tri-Lakes ads) owns; same one the home page fires
+TRACK_JS = (
+    '<script src="https://trilakeshq.com/api/track.js?app=well-tool" defer></script>\n'
+    "    <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};"
+    "if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];"
+    "s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');"
+    f"fbq('init','{META_PIXEL_ID}');fbq('track','PageView');fbq('trackCustom','WellPageView',{{content_name:document.title,page:location.pathname}});</script>\n"
+    f'    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id={META_PIXEL_ID}&ev=PageView&noscript=1"></noscript>'
+)
 
 
 def esc(s) -> str:
@@ -636,6 +644,7 @@ def render(r: dict, ai: dict) -> str:
               Array.prototype.forEach.call(f.querySelectorAll('input,select,textarea,button'),function(el){{el.style.display='none';}});
               try{{navigator.sendBeacon('{HQ_LEAD_ENDPOINT}',new Blob([JSON.stringify({{email:email,address:PLACE+' (well page lead: '+d.project_type.value+')',source:'well_page_lead',app:'well-tool',page:location.pathname}})],{{type:'text/plain'}}));}}catch(e){{}}
               try{{if(window.HQ){{HQ.conversion('well_page_lead',email,{{}});}}}}catch(e){{}}
+              try{{if(window.fbq){{fbq('track','Lead',{{content_name:d.project_type.value,content_category:'well_page',place:PLACE}});}}}}catch(e){{}}
               try{{sessionStorage.setItem('tlLeadSent','1');}}catch(e){{}}
               var fab=document.getElementById('fab');if(fab)fab.classList.remove('on');
             }})
@@ -648,6 +657,7 @@ def render(r: dict, ai: dict) -> str:
       var fab=document.getElementById('fab'),sheet=document.getElementById('sheet'),bg=document.getElementById('sheet-bg');
       function openSheet(){{sheet.classList.add('on');bg.classList.add('on');fab.classList.remove('on');
         try{{if(window.HQ){{HQ.event('lead_sheet_open',PLACE);}}}}catch(e){{}}
+        try{{if(window.fbq){{fbq('trackCustom','LeadFormOpen',{{place:PLACE}});}}}}catch(e){{}}
         setTimeout(function(){{var i=sheet.querySelector('input[name=name]');if(i)i.focus();}},250);}}
       function closeSheet(){{sheet.classList.remove('on');bg.classList.remove('on');showFab();}}
       function dismissed(){{try{{return sessionStorage.getItem('tlFabOff')==='1'||sessionStorage.getItem('tlLeadSent')==='1';}}catch(e){{return false;}}}}
