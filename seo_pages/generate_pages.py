@@ -335,7 +335,8 @@ def render(r: dict, ai: dict) -> str:
     for s in ai["sections"]:
         sections_html += f"<section class='block'><h2>{esc(s['heading'])}</h2>{clean_frag(s['html'])}</section>\n"
 
-    faq_html = "".join(f"<div class='faq-item'><h3>{esc(f['q'])}</h3><p>{esc(f['a'])}</p></div>" for f in ai["faq"])
+    faq_html = "".join(f"<div class='faq-item'><h3>{esc(f['q'])}</h3><p>{clean_frag(f['a'])}</p></div>" for f in ai["faq"])
+    faq_plain = [(re.sub(r"<[^>]+>", "", f["q"]), re.sub(r"<[^>]+>", "", f["a"])) for f in ai["faq"]]
 
     # internal links
     if is_county:
@@ -357,7 +358,7 @@ def render(r: dict, ai: dict) -> str:
         parent_ld = {"@type": "ListItem", "position": 3, "name": r["county_name"], "item": f"{BASE_URL}/wells/{cslug}/"}
 
     ld_faq = {"@context": "https://schema.org", "@type": "FAQPage",
-              "mainEntity": [{"@type": "Question", "name": f["q"], "acceptedAnswer": {"@type": "Answer", "text": f["a"]}} for f in ai["faq"]]}
+              "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in faq_plain]}
     crumb_items = [{"@type": "ListItem", "position": 1, "name": "Colorado Well Finder", "item": BASE_URL + "/"},
                    {"@type": "ListItem", "position": 2, "name": "Wells by county", "item": BASE_URL + "/wells/"}, parent_ld]
     if not is_county:
@@ -535,7 +536,7 @@ def render(r: dict, ai: dict) -> str:
 
         <div class="lead" id="lead">
             <h2>Tell us about your project</h2>
-            <p class="sub">Driveway, site work, septic or a build near {esc(r['name'])}. Kyle at Tri-Lakes reads every one of these.</p>
+            <p class="sub">Driveway, site work, septic or a build near {esc(r['name'])}. Licensed GC, excavator and septic installer.</p>
             <form id="tl-lead" novalidate>
                 <input type="text" name="name" placeholder="Your name" required>
                 <input type="tel" name="phone" placeholder="Phone" required>
@@ -553,7 +554,7 @@ def render(r: dict, ai: dict) -> str:
                 <input type="text" name="company_website" class="hp" tabindex="-1" autocomplete="off">
                 <button type="submit">Send to Tri-Lakes Contracting</button>
             </form>
-            <p class="ok" id="tl-ok">Got it. Kyle will get back to you shortly.</p>
+            <p class="ok" id="tl-ok">Got it. Tri-Lakes will get back to you shortly.</p>
             <p class="err" id="tl-err">Something went wrong sending that. Email <a href="mailto:kyle@trilakes.co">kyle@trilakes.co</a> instead.</p>
         </div>
 
@@ -581,7 +582,7 @@ def render(r: dict, ai: dict) -> str:
 
     <!-- Floating lead bar: one tap opens the form from anywhere on the page -->
     <div class="fab" id="fab">
-        <div class="txt"><b>Driveway, septic, site work or a build near {esc(r['name'])}?</b><small>Licensed GC, excavator &amp; septic installer. Tell Kyle what you need &mdash; 30 seconds.</small></div>
+        <div class="txt"><b>Driveway, septic, site work or a build near {esc(r['name'])}?</b><small>Licensed GC, excavator &amp; septic installer. Tell us what you need &mdash; 30 seconds.</small></div>
         <button class="go" id="fab-go" type="button">Get a quote</button>
         <button class="x" id="fab-x" type="button" aria-label="Dismiss">&times;</button>
     </div>
@@ -589,7 +590,7 @@ def render(r: dict, ai: dict) -> str:
     <div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
         <button class="x" id="sheet-x" type="button" aria-label="Close">&times;</button>
         <h3 id="sheet-title">Tell Tri-Lakes what you need</h3>
-        <p class="sub">Driveway, septic, site development, feasibility or a custom build near {esc(r['name'])}. Kyle reads every one.</p>
+        <p class="sub">Driveway, septic, site development, feasibility or a custom build near {esc(r['name'])}.</p>
         <form class="tl-form" id="tl-lead-2" novalidate>
             <input type="text" name="name" placeholder="Your name" required>
             <input type="tel" name="phone" placeholder="Phone" required>
@@ -607,7 +608,7 @@ def render(r: dict, ai: dict) -> str:
             <textarea name="message" placeholder="What are you looking to get done?" required></textarea>
             <input type="text" name="company_website" class="hp" tabindex="-1" autocomplete="off">
             <button type="submit" class="send">Send to Tri-Lakes Contracting</button>
-            <p class="ok full">Got it. Kyle will get back to you shortly.</p>
+            <p class="ok full">Got it. Tri-Lakes will get back to you shortly.</p>
             <p class="err full">Something went wrong. Email <a href="mailto:kyle@trilakes.co" style="color:#e6c76b">kyle@trilakes.co</a> or call <a href="tel:+17198883255" style="color:#e6c76b">(719) 888-3255</a>.</p>
         </form>
         <p class="alt">Shopping a lot? <a href="https://trilakes.co/build-feasibility?utm_source=coloradowell&amp;utm_medium=well_page_sheet&amp;utm_campaign={esc(r['slug'])}#instant" target="_blank" rel="noopener">Run the $99 instant buildability check &rarr;</a></p>
